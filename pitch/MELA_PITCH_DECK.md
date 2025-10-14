@@ -18,7 +18,7 @@ Founded 2025
 
 **Current Pain Points:**
 - **Zero US market awareness**: Quality products invisible to global buyers
-- **Platform commoditization**: Amazon/Etsy bury brand stories in generic listings
+- **Platform commoditization**: Amazon/eBay/Etsy bury brand stories in generic listings
 - **Individual marketing too costly**: Each brand can't afford US customer acquisition alone
 - **Complex market entry**: Payments, logistics (forward shipping, ₹2,000+ per order kills margins), trust barriers block expansion
 
@@ -40,6 +40,11 @@ Indian brands excel at quality and customer service domestically but lack infras
 
 **The Insight:**
 Diaspora families want authentic Indian products but face fragmented shopping experiences across individual brand sites. They seek trusted curation in one place.
+
+**Cross-Border E-Commerce Tailwinds:**
+- **Baby products = top category**: Baby supplies among leading categories for cross-border e-commerce
+- **Market growth**: Global cross-border e-commerce growing to $800B by 2025, $2T by 2030
+- **India export push**: Government targeting $1T merchandise exports by 2030; e-commerce as key driver
 
 ---
 
@@ -89,6 +94,7 @@ Western consumers (starting with Indian diaspora) prefer a curated marketplace o
 
 **What We Offer Customers:**
 - **Curated quality**: Vetted brands with proven track records in India
+- **Tariff-friendly access**: Brands ship directly; customers avoid high import duties (India has 28% standard tax rate, 0% de minimis threshold)
 - **Trust signals**: GOTS certified, organic materials, safety certifications
 - **Cultural authenticity**: Real Indian design and craftsmanship
 - **Unified discovery**: All brands in one trusted platform (shopping across multiple sites)
@@ -150,11 +156,11 @@ Once supply and demand validated, build full marketplace capabilities:
 - **US fulfillment centers**: Reduce shipping costs and delivery times
 - **Integrated payments/returns**: Unified checkout and customer experience
 - **Logistics optimization**: Bulk shipping, consolidated orders, better margins
-- **Higher take rate**: 20-30% vs. 15-20% affiliate model (justified by added value)
+- **Enhanced value-add services**: Justifying higher commission rates based on full-stack support
 
 **Unit Economics (Phase 1 - Affiliate Model):**
 - Average Order Value: $60-100 (baby fashion)
-- Commission Rate: 15-20% (affiliate)
+- Commission Rate: 2-5% (first year validation pricing)
 - Customer Acquisition Cost: $15-25 (shared across brands)
 - Repeat purchase rate: 30-40% (consumable baby products)
 
@@ -198,7 +204,7 @@ Once supply and demand validated, build full marketplace capabilities:
 | Player | Approach | Mela Advantage |
 |--------|----------|----------------|
 | **Individual Brand Sites** | Each brand runs own Shopify | Unified discovery, shared marketing costs |
-| **Amazon/Etsy** | Commoditized listings | Brand storytelling, premium positioning |
+| **Amazon/Etsy/eBay** | Commoditized listings | Brand storytelling, premium positioning |
 | **General Marketplaces** | Broad product range | Category focus, cultural expertise |
 | **India-based E-commerce** | High int'l shipping costs | Local US presence (future), optimized logistics |
 
@@ -213,7 +219,14 @@ Once supply and demand validated, build full marketplace capabilities:
 
 ## Slide 10: Why Now? Market Timing Advantage
 
-### Uncertainty creates first-mover opportunity
+### Uncertainty creates first-mover opportunity + Massive trade tailwinds
+
+**Massive Trade Expansion Underway:**
+- **India-US**: $500B trade goal by 2030 (from $191B currently); US is India's #1 trading partner at $131.84B in FY25
+- **India-Europe**: EU-India FTA negotiations ongoing; trade grew 90% over past decade to €120B
+- **India-EFTA**: $100B investment commitment over 15 years (signed March 2024)
+- **Export targets**: India targeting $1 trillion in merchandise exports by 2030 (12.2% CAGR)
+- **Government backing**: All major markets committed to deepening India trade ties
 
 **Warren Buffett Wisdom:**
 "Be fearful when others are greedy, and greedy when others are fearful"
@@ -221,11 +234,12 @@ Once supply and demand validated, build full marketplace capabilities:
 **Current Environment:**
 - **Tariff uncertainty**: Competitors hesitating, we capture mindshare while market is open
 - **Policy changes are temporary**: Brand presence built now lasts decades
+- **Trade agreement momentum**: Governments actively working to expand India-US commerce
 - **Performance-based protection**: Zero fixed costs mean we adapt to any regulatory changes
-- **Global platform resilience**: Multi-market expansion (Europe, Middle East, Australia) reduces single-country policy risk
+- **Global platform resilience**: Multi-market expansion (Europe 2026+, Middle East 2026+, Australia 2027+) reduces single-country policy risk
 
 **First-Mover Advantages:**
-- **NOW**: Opportunity window - limited competition, maximum attention
+- **NOW**: Opportunity window - limited competition, maximum attention, government tailwinds
 - **6-12 months**: Market stabilization - more players enter
 - **1-2 years**: Saturated market - established players dominate
 
@@ -234,6 +248,7 @@ Once supply and demand validated, build full marketplace capabilities:
 - No long-term contracts or fixed commitments
 - Multi-market diversification spreads risk
 - Brands can test market without major investment
+- Riding macro trade expansion between India and US
 
 ---
 
