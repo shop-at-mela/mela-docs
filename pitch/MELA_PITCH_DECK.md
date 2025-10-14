@@ -255,12 +255,12 @@ Once supply and demand validated, build full marketplace capabilities:
 - ✅ **Success**: Brands agree to performance-based model
 
 **Month 2:**
-- 🎯 **Target**: First 10 products live on platform
+- 🎯 **Target**: First 1000 products live on platform
 - 📊 **Metric**: SEO rankings for target keywords
 - ✅ **Success**: Organic traffic begins flowing
 
 **Month 3:**
-- 🎯 **Target**: 100+ unique visitors, 10+ customer inquiries
+- 🎯 **Target**: 10k+ unique visitors, X% customer inquiries
 - 📊 **Metric**: Conversion rate, engagement time, bounce rate
 - ✅ **Success**: Customers express purchase intent, validate unified marketplace value
 
@@ -272,81 +272,7 @@ Once supply and demand validated, build full marketplace capabilities:
 
 ---
 
-## Slide 12: Financial Projections - Conservative Scenario
-
-### Year 1 Focus: Validation & Foundation (Baby Fashion Only)
-
-**Assumptions:**
-- 10 brand partners by Month 6
-- Average 20 products per brand = 200 SKUs
-- $70 average order value
-- 15% commission rate
-- 100 orders/month by Month 12 (conservative)
-
-**Year 1 Projections:**
-- **GMV**: $42,000 (Months 7-12, ramping from 10 to 100 orders/month)
-- **Revenue**: $6,300 (15% commission)
-- **Costs**: $30,000 (hosting, marketing, operations)
-- **Net**: -$23,700 (expected in validation phase)
-
-**Year 2 Projections (if validated):**
-- **GMV**: $500,000 (expand to 30 brands, 500 orders/month average)
-- **Revenue**: $75,000 (15% commission)
-- **Costs**: $100,000 (team expansion, marketing scale)
-- **Net**: -$25,000 (approaching break-even)
-
-**Year 3 Projections (scaling):**
-- **GMV**: $2.5M (100 brands, expand to 2-3 categories, Europe launch)
-- **Revenue**: $375,000 (15% commission)
-- **Costs**: $250,000 (small team, marketing, operations)
-- **Net**: +$125,000 (profitable)
-
-**Key Drivers:**
-- Brand acquisition rate
-- Average products per brand
-- Customer acquisition cost
-- Repeat purchase rate
-- Category expansion timing
-
----
-
-## Slide 13: Expansion Roadmap - Geographic & Category
-
-### Multi-market platform reduces policy risk, expands addressable market
-
-**Geographic Expansion:**
-
-**Phase 1: United States (2024-2025)** 🇺🇸
-- **Status**: LIVE NOW
-- **Focus**: Baby fashion validation
-- **Market**: 4.5M Indian Americans
-
-**Phase 2: Europe (2025 Q2-Q3)** 🇪🇺
-- **Status**: IN DEVELOPMENT
-- **Focus**: All validated categories
-- **Market**: Large Indian diaspora in UK, Germany, Netherlands
-- **Advantage**: Multi-market diversification
-
-**Phase 3: Middle East (2025 Q4)** 🇦🇪
-- **Status**: PLANNED
-- **Focus**: Premium baby & children products
-- **Market**: High-income Indian expat families in UAE, Saudi Arabia, Qatar
-
-**Phase 4: Australia & New Zealand (2026+)** 🇦🇺
-- **Status**: ROADMAP
-- **Focus**: Full marketplace expansion
-
-**Category Expansion Pipeline:**
-
-**Phase 1: Baby Fashion (Current)** - Validation focus
-**Phase 2: Baby Care Products** - Organic/Ayurvedic care (proven demand)
-**Phase 3: Toys & Books** - Educational toys, regional language books
-**Phase 4: Home & Nursery** - Cultural decor, traditional furnishings
-**Phase 5+: Broader Categories** - Based on validated demand signals
-
----
-
-## Slide 14: Team & Advisors
+## Slide 12: Team & Advisors
 
 ### [Your team information here]
 
@@ -368,27 +294,27 @@ Once supply and demand validated, build full marketplace capabilities:
 
 ---
 
-## Slide 15: The Ask
+## Slide 13: The Ask
 
-### Seeking validation support and early partnership
+### Seeking expert guidance to validate the hypothesis
 
 **Current Stage:** Pre-seed / Validation
 
 **What We're Seeking:**
-- **$50K-100K**: Fund 6-month validation period
-  - Brand onboarding efforts
-  - Initial marketing spend
-  - Platform optimization
-  - Customer acquisition testing
+- **Expert advice and introductions**: Help onboarding baby clothing, shoes, and accessories brands
+- **Industry connections**: Access to Indian D2C brand networks and communities
+- **Strategic guidance**: Feedback on partnership model and value proposition
+- **Legal guidance**: Content licensing, affiliate agreements, and brand partnership structures
+- **Potential angel/pre-seed support**: For those interested in backing the validation phase
 
-**Use of Funds:**
-- 40% - Brand acquisition & partnership development
-- 30% - Customer acquisition & marketing experiments
-- 20% - Platform development & optimization
-- 10% - Operations & legal setup
+**Why Expert Help Matters Now:**
+- **Critical validation phase**: Need 10+ brand commitments to prove supply-side hypothesis
+- **Brand trust building**: Warm intros and advisor endorsements accelerate partnership conversations
+- **Market expertise**: Navigate baby fashion category nuances and brand concerns
+- **Network effects**: Each successful brand partner can refer others
 
 **What Success Looks Like in 6 Months:**
-- 10+ brand partnerships committed
+- 10+ brand partnerships committed (baby clothing, shoes, accessories)
 - 200+ SKUs live on platform
 - 500+ unique monthly visitors
 - 50+ customer transactions
@@ -404,7 +330,7 @@ If hypotheses validate, raise seed round ($300K-500K) to:
 
 ---
 
-## Slide 16: Vision - Building the Global Platform for Indian Brands
+## Slide 14: Vision - Building the Global Platform for Indian Brands
 
 ### Where we're headed if validation succeeds
 
@@ -432,7 +358,7 @@ If hypotheses validate, raise seed round ($300K-500K) to:
 
 ---
 
-## Slide 17: Appendix - Supporting Data
+## Slide 15: Appendix - Supporting Data
 
 ### Additional details and research
 
