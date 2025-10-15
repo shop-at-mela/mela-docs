@@ -48,14 +48,15 @@
 
 **Step 2: Setup & Launch** (1 week)
 - Provide product photos/descriptions
-- We create your brand page on Mela
+- **Our AI optimizes your listings**: Titles for SEO/conversion, auto-extract item aspects
+- We create your brand page with smart product recommendations
 - Set up affiliate links to YOUR Shopify
 
 **Step 3: Grow Together** (Ongoing)
 - We drive traffic via SEO, content, social media
-- Customers discover you on Mela, buy from YOUR site
+- Customers discover you on Mela, click through to YOUR site
 - You fulfill orders using existing process
-- Pay 2-5% commission only on completed sales
+- Pay commission per qualified visit (MVP validation; moving to conversion-based post-validation)
 
 **Total time: 2 weeks maximum. Zero upfront investment.**
 
@@ -68,11 +69,14 @@
 - Cultural connection (festivals, traditional designs)
 - Gift market (grandparents, extended family)
 
-### 🚀 Marketing We Handle
+### 🚀 Marketing & Technology We Handle
+- **AI optimization**: Product titles optimized for discovery/conversion using LLMs
+- **Smart discovery**: Similar products (brand + category) shown to increase sales
 - **SEO**: Ranking for "Indian baby clothes USA"
 - **Content**: Brand stories, festival campaigns
 - **Social**: Instagram/Facebook diaspora targeting
 - **We spend OUR budget** to drive traffic to your products
+- **Future AI**: Personalized campaigns, predictive repeat purchase
 
 ### 🛡️ Brand Protection
 - Dedicated brand pages (not generic listings)
@@ -95,18 +99,18 @@
 ❌ **No monthly subscriptions**
 ❌ **No setup charges**
 ❌ **No marketing fees**
-✅ **2-5% commission on completed sales ONLY** (first year validation pricing)
+✅ **Commission per qualified visit** (MVP validation pricing; moving to conversion-based 2-5% post-validation)
 
 ### How It Compares
 - **Shopify + Ads**: $1,000-5,000/month fixed cost, uncertain ROI
 - **Amazon**: 15% referral fee + fulfillment costs + no brand control
 - **eBay**: 12-15% final value fee + listing fees + auction pricing
 - **Etsy**: 6.5% + 3% payment processing + commoditized
-- **Mela**: 0% fixed + 2-5% commission + brand storytelling + curated audience
+- **Mela**: 0% fixed + per-visit during validation (conversion-based post-validation) + brand storytelling + curated audience
 
 ### What You Keep
 ✅ Your existing Shopify operations
-✅ Your pricing and margins (95-98% of sale)
+✅ Your pricing and margins (100% of sales during MVP validation)
 ✅ Your customer data and relationships
 ✅ Your brand equity and control
 

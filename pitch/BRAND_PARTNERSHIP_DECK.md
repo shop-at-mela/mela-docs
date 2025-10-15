@@ -62,9 +62,12 @@ Indian Americans actively seek baby products from India but face a fragmented, f
 - **Simple integration**: Product photos + descriptions, affiliate links to your site
 
 **What This Means for You:**
+- **Easy onboarding**: We use AI (LLMs) to optimize your product titles for better discovery and conversion
+- **Automatic item aspects**: AI extracts standardized attributes making it easy for buyers to find your products
+- **Smart recommendations**: Customers see similar products from your brand and category, increasing sales
 - Keep your existing operations (Shopify, shipping, customer service)
 - We drive qualified traffic to YOUR site
-- You pay only commission on completed sales
+- You pay commission per qualified visit (MVP validation model; moving to conversion-based post-validation)
 - Zero upfront investment required
 
 **Phase 2: Full Marketplace (After Validation)**
@@ -95,9 +98,9 @@ We're not extracting value from you. We're building an export business **togethe
 
 ### 1. 💰 Performance-Based Model
 - **Zero listing fees**: No setup costs, no monthly fees
-- **Commission on sales only**: Pay only when you make a sale
+- **Commission per visit**: Pay per qualified visitor during MVP validation; moving to conversion-based (2-5%) post-validation
 - **Cancel anytime**: No long-term contracts
-- **Transparent pricing**: 2-5% commission (first year validation pricing)
+- **Transparent pricing**: Performance-based only, no upfront costs
 
 ### 2. 🎯 Targeted Market Access
 - **Premium customers**: Indian American families with $126K median income
@@ -105,11 +108,14 @@ We're not extracting value from you. We're building an export business **togethe
 - **Existing behavior**: Already asking visitors to bring baby items from India
 - **Gift market**: Grandparents, extended family purchasing from abroad
 
-### 3. 🚀 Marketing We Handle
+### 3. 🚀 Marketing & Technology We Handle
+- **AI-optimized listings**: Product titles optimized for SEO and conversion using LLMs
+- **Smart product discovery**: Automatic similar product recommendations increase basket size
 - **SEO-driven traffic**: Ranking for "Indian baby clothes USA", festival searches
 - **Content marketing**: Brand stories, buying guides, festival campaigns
 - **Social media**: Instagram/Facebook targeting diaspora families
 - **Customer acquisition**: We spend OUR budget to drive traffic
+- **Future AI marketing**: Personalized campaigns, predictive repeat purchase targeting
 
 ### 4. 🛡️ Brand Protection & Control
 - **Your brand, your way**: Dedicated brand pages showcasing heritage
@@ -168,7 +174,8 @@ Build US presence NOW while competitors hesitate. Brand awareness built today co
 
 ### Step 2: Setup & Launch (1 week)
 - Provide product photos and descriptions
-- We create your dedicated brand page
+- **Our AI optimizes your listings**: Product titles for SEO/conversion, auto-extract item aspects
+- We create your dedicated brand page with smart product recommendations
 - Set up affiliate tracking to your Shopify
 - Test links and ensure smooth customer experience
 
@@ -177,7 +184,7 @@ Build US presence NOW while competitors hesitate. Brand awareness built today co
 - Customers discover your products on Mela
 - They click through to YOUR Shopify to purchase
 - You fulfill orders using existing process
-- We track sales via affiliate links
+- We track qualified visits (MVP model; moving to conversion tracking post-validation)
 - Monthly commission billing
 
 **Total Time to Start Selling**: 2 weeks maximum
@@ -248,7 +255,7 @@ Build US presence NOW while competitors hesitate. Brand awareness built today co
 🚀 **Founding Partner Status** (First 10 brands only)
 - **Prominent placement**: Featured on homepage during validation phase
 - **Marketing spotlight**: Dedicated social media features and blog posts
-- **Special validation pricing**: 2-5% commission during first year validation phase
+- **Special validation pricing**: Per-visit model during MVP; conversion-based post-validation
 - **Voice in product**: Your feedback shapes platform features
 - **Early market access**: First to expand to Europe, Middle East, Australia
 
@@ -276,27 +283,28 @@ Build US presence NOW while competitors hesitate. Brand awareness built today co
 - ❌ **No monthly subscriptions**
 - ❌ **No setup charges**
 - ❌ **No marketing fees**
-- ✅ **Commission on completed sales only**: 2-5% (first year validation pricing)
+- ✅ **Commission per qualified visit**: MVP validation pricing; moving to conversion-based (2-5%) post-validation
 
-**How It Works:**
+**How It Works (MVP Validation Model):**
 1. Customer discovers your products on Mela
 2. They click through to YOUR Shopify site
 3. They purchase directly from you
-4. We track sale via affiliate link
-5. You pay commission at end of month
+4. We track qualified visits sent to your site
+5. You pay commission per visit at end of month
+6. Post-validation: Shift to conversion-based commission on completed sales
 
 **What You Keep:**
-- Your existing pricing and margins
+- Your existing pricing and margins (100% of sales during MVP validation)
 - Your customer relationships
 - Your brand equity
-- 80-85% of each sale
+- Simple per-visit fee structure
 
 **Comparison to Alternatives:**
 - Shopify + Facebook Ads: $1,000-5,000/month fixed cost, uncertain ROI
 - Amazon: 15% referral fee + fulfillment costs + no brand control
 - eBay: 12-15% final value fee + listing fees + auction-based pricing
 - Etsy: 6.5% transaction fee + 3% payment processing + commoditized
-- Mela: 0% fixed cost + 2-5% commission (first year) + brand storytelling + curated audience
+- Mela: 0% fixed cost + per-visit during validation (conversion-based post-validation) + brand storytelling + curated audience
 
 ---
 
@@ -325,7 +333,7 @@ Build US presence NOW while competitors hesitate. Brand awareness built today co
 - Become the go-to brand for diaspora families
 
 **Our Incentive Alignment:**
-We ONLY make money when you make sales. If you don't succeed, we don't succeed. This forces us to actually drive traffic and generate sales for you.
+During MVP validation, we make money based on qualified traffic we send you. This forces us to drive high-quality, engaged visitors who are genuinely interested in your products. Post-validation, we shift to conversion-based where we only earn when you make sales.
 
 ---
 
@@ -346,7 +354,7 @@ A: Since brands ship directly, customers handle import duties at their end. Our 
 A: SEO (ranking for "Indian baby clothes USA"), content marketing (brand stories, buying guides), social media (Instagram/Facebook diaspora targeting), and community engagement (parenting groups).
 
 **Q: What if my products don't sell?**
-A: You pay zero fees. We learn what resonates with diaspora customers, adjust our approach, and iterate. No risk to you. We may suggest product variations based on customer feedback.
+A: During MVP validation, you pay per qualified visit we send, not per sale. This means you get traffic regardless of conversion. We learn what resonates with diaspora customers, adjust our approach, and iterate. Post-validation, we shift to conversion-based commission. No risk to you.
 
 **Q: Can I sell on Amazon/Etsy while partnering with Mela?**
 A: Absolutely! We're not exclusive. We're an additional channel, not a replacement for your existing sales channels.
@@ -450,7 +458,7 @@ Validating demand with baby fashion in the USA. Proving brands and customers bot
 1. **Transparent communication**: Monthly performance reports, quarterly strategy sessions
 2. **Marketing investment**: We spend OUR budget to drive traffic to your products
 3. **Your voice matters**: Partner feedback shapes platform decisions and roadmap
-4. **Performance-based only**: We make money only when you make sales
+4. **Performance-based only**: MVP validation via per-visit model; post-validation via conversion-based commission
 5. **Brand protection**: Quality curation maintains premium positioning
 6. **Long-term partnership**: Building sustainable relationships, not extracting quick value
 7. **Data transparency**: Full access to your analytics and customer insights

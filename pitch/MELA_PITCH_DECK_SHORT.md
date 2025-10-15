@@ -15,7 +15,7 @@
 
 ### Our Approach
 **Phase 1**: Affiliate discovery platform (validate demand, zero ops complexity)
-**Phase 2**: Full marketplace with US fulfillment (scale post-validation)
+**Phase 2**: Full marketplace with payments and fulfillment incl. returns (scale post-validation)
 
 **Founded 2025 | Currently validating with first 10 baby fashion brands**
 
@@ -24,26 +24,30 @@
 ## Slide 2: Problem → Solution
 
 ### The Problem
-**Brands:** Discovery gap - 100+ brands exist, customers know only 2-3. High social media ad costs, can't afford individual US marketing.
+**Brands:** Discovery gap - 100+ brands exist, customers know only 2-3. High social media ad costs, can't afford individual global georgraphy  marketing.
 
-**Customers:** Want authentic Indian baby products but face fragmented experience across individual Shopify sites. No trusted curation.
+**Customers:** Want authentic Indian baby products (MVP category) but face fragmented experience across individual Shopify sites. No trusted curation.
 
 ### Our Solution
-**Discovery platform** that curates Indian brands and drives traffic to their sites via:
+**AI-powered discovery platform** that curates Indian brands and drives traffic to their sites via:
+- **Easy brand onboarding**: LLMs optimize product titles, extract standardized item aspects and assocaite category for SEO/conversion; 
+- **Smart discovery**: AI recommendations for similar products (same brand + category)
 - SEO (ranking for "Indian baby clothes USA")
 - Content marketing (brand stories, festival campaigns)
 - Targeted diaspora social media
 
-**Brands keep operations, we drive customers. 2-5% commission only on completed sales.**
+**Brands keep operations, we drive customers. Commission per qualified visit during MVP validation; moving to conversion-based (2-5%) post-validation.**
 
 ---
 
 ## Slide 3: Business Model - Affiliate Discovery
 
 ### Current Model (Validation Phase)
+- **AI-powered onboarding**: LLMs optimize listings; auto-extract item aspects for easy discovery
+- **Smart recommendations**: Similar products (brand + category) increase basket size
 - **Zero operational complexity**: No inventory, payments, logistics
 - **Brands handle fulfillment**: Orders on their Shopify sites
-- **Affiliate tracking**: Commission only on completed sales (2-5% first year)
+- **Visit-based tracking**: Commission per qualified visit during MVP; moving to conversion-based (2-5%) post-validation
 - **No risk for brands**: Zero listing fees, no contracts
 
 ### Why Start Lean
@@ -53,7 +57,7 @@
 ✅ Proves value to brands and customers first
 
 ### Evolution Path
-Post-validation → US fulfillment + integrated checkout + enhanced services
+Post-validation → US fulfillment + integrated checkout + AI marketing (personalized campaigns, predictive repeat purchase, CLV optimization)
 
 ---
 

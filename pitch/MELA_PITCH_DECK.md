@@ -85,11 +85,13 @@ Western consumers (starting with Indian diaspora) prefer a curated marketplace o
 - **Validate first, build later**: Prove demand before investing in infrastructure
 
 **What We Offer Brands (Phase 1):**
+- **AI-powered onboarding**: LLM-optimized product titles for discovery and conversion; automated item aspects extraction
 - **Pure discovery platform**: SEO-driven traffic for "Indian baby clothes", festival searches
-- **Performance-based model**: Zero listing fees, pay only on completed sales (affiliate tracking)
+- **Performance-based model**: Zero listing fees, pay per qualified visit during MVP validation (moving to conversion-based commission post-validation)
 - **Brand storytelling**: Dedicated pages showcasing heritage and craftsmanship
+- **Smart product discovery**: AI-driven similar products (same brand + category) to increase basket size
 - **Collaborative marketing**: Co-created content, festival campaigns, social media
-- **Simple integration**: Product photos + descriptions, affiliate links to your Shopify
+- **Simple integration**: Product photos + descriptions, links to your Shopify
 - **Zero fulfillment burden**: You keep using your existing operations
 
 **What We Offer Customers:**
@@ -105,6 +107,7 @@ Once supply and demand validated, build full marketplace:
 - US fulfillment centers for faster delivery
 - Integrated payments/returns for unified experience
 - Logistics optimization for better margins
+- **AI-powered marketing**: Personalized campaigns, predictive repeat purchase targeting, diaspora engagement optimization
 - Transform from affiliate discovery → full-stack marketplace
 
 ---
@@ -137,10 +140,12 @@ Masilo, Nino Bambino, The Little Tailor, Pluchi Baby, Crane Baby, Dulaar.co, Cur
 ### Phase 1: Pure Discovery (Current) → Phase 2: Full-Stack Marketplace (Post-Validation)
 
 **Current Model: Affiliate Discovery Platform**
-- **Mela = Discovery engine**: Curate, market, and drive traffic to brand sites
+- **Mela = AI-powered discovery engine**: Curate, optimize listings, and drive traffic to brand sites
+- **Easy onboarding**: LLMs optimize product titles for SEO and conversion; auto-extract standardized item aspects
+- **Smart product recommendations**: Similar products from same brand and category increase discovery
 - **Brands handle fulfillment**: Orders processed on brand Shopify sites
 - **Zero operational complexity**: No inventory, payments, returns, or logistics
-- **Commission on sales**: Brands pay % only on completed transactions via affiliate tracking
+- **Commission per visit (MVP validation model)**: Brands pay per qualified visitor sent to their site; moving to conversion-based commission post-validation
 - **No listing fees**: Zero upfront costs or monthly subscriptions
 - **No contracts**: Cancel anytime, pure performance-based
 
@@ -156,12 +161,13 @@ Once supply and demand validated, build full marketplace capabilities:
 - **US fulfillment centers**: Reduce shipping costs and delivery times
 - **Integrated payments/returns**: Unified checkout and customer experience
 - **Logistics optimization**: Bulk shipping, consolidated orders, better margins
+- **AI-driven growth**: Personalized marketing campaigns, predictive repeat purchase, customer lifetime value optimization
 - **Enhanced value-add services**: Justifying higher commission rates based on full-stack support
 
-**Unit Economics (Phase 1 - Affiliate Model):**
-- Average Order Value: $60-100 (baby fashion)
-- Commission Rate: 2-5% (first year validation pricing)
+**Unit Economics (Phase 1 - Affiliate Model - MVP):**
+- Commission Model: Per qualified visit during MVP validation; moving to conversion-based (2-5%) post-validation
 - Customer Acquisition Cost: $15-25 (shared across brands)
+- Target: Validate traffic quality and brand interest before full conversion tracking
 - Repeat purchase rate: 30-40% (consumable baby products)
 
 ---
