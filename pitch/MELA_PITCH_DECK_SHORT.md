@@ -137,7 +137,7 @@ Post-validation → US fulfillment + integrated checkout + AI marketing (persona
 - Each successful brand refers others (network effects)
 
 ### 6-Month Success
-10+ brands | 1,000+ products | 10k+ visitors | Validated hypotheses
+10+ brands | 10k+ products | 10k+ visitors | Validated hypotheses
 
 **Then raise seed ($300K-500K) to scale customer acquisition and expand to Europe (2026+)**
 

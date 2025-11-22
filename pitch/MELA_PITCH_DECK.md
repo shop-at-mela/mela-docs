@@ -336,9 +336,8 @@ Once supply and demand validated, build full marketplace capabilities:
 
 **What Success Looks Like in 6 Months:**
 - 10+ brand partnerships committed (baby clothing, shoes, accessories)
-- 200+ SKUs live on platform
-- 500+ unique monthly visitors
-- 50+ customer transactions
+- 10,000+ products live on platform
+- 10,000+ unique monthly visitors
 - Clear understanding of unit economics
 - Validated hypotheses on supply and demand
 

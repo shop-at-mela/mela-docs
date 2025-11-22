@@ -226,19 +226,14 @@ Build US presence NOW while competitors hesitate. Brand awareness built today co
 ### First 6 Months Partnership Goals
 
 **Brand Onboarding:**
-- 10-15 founding partner brands committed
-- 1,000+ products live on Mela platform
+- 10+ founding partner brands committed
+- 10,000+ products live on Mela platform
 - Each brand gets dedicated brand page and marketing support
 
 **Customer Acquisition:**
 - 10,000+ unique monthly visitors to Mela
-- 500+ diaspora families actively shopping
 - Strong engagement with brand stories and product pages
-
-**Sales Performance:**
-- 50+ customer transactions across partner brands
-- Average order value: $60-100 (baby fashion typical)
-- Growing repeat purchase rate (consumable products)
+- High-quality traffic driven to brand sites
 
 **Your Benefits:**
 - Qualified traffic driven to YOUR site

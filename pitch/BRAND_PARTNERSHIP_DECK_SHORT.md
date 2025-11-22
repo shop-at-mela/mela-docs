@@ -14,7 +14,7 @@
 - **High demand**: Families already asking visitors to bring baby items from India
 
 ### Zero-Risk Partnership
-✨ **No listing fees** | 🎯 **Ready customers** | 📈 **2-5% commission only**
+✨ **No listing fees** | 🎯 **Ready customers** | 📈 **Performance-based only**
 
 **Start selling in 2 weeks with zero upfront investment**
 
@@ -148,7 +148,7 @@
 ### 🚀 Limited to First 10 Brands Only
 
 **Special Validation Pricing:**
-✅ **2-5% commission** during first year (vs. standard rates later)
+✅ **Per-visit model** during MVP validation (vs. conversion-based post-validation)
 
 **Extra Visibility:**
 ✅ **Featured placement** on homepage during validation
