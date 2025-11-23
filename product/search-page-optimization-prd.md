@@ -1,15 +1,31 @@
 # Search Page Optimization PRD
 
 **Document Owner:** Product Team
-**Last Updated:** November 21, 2025
-**Status:** Draft
+**Last Updated:** November 22, 2025
+**Status:** Draft - Revised Based on Expert Analysis
 **Priority:** High
 
 ---
 
 ## Executive Summary
 
-This PRD outlines comprehensive improvements to Mela's search and filtering experience based on analysis of best-in-class marketplaces (Amazon, Etsy, Zappos) and established UX research from Baymard Institute and Algolia. Currently, only 16% of major ecommerce sites provide a good filtering experience, presenting a significant opportunity for Mela to differentiate through superior search UX.
+This PRD outlines improvements to Mela's search and filtering experience based on analysis of best-in-class marketplaces (Amazon, Etsy, Zappos) and established UX research from Baymard Institute and Algolia. Currently, only 16% of major ecommerce sites provide a good filtering experience, presenting a significant opportunity for Mela to differentiate through superior search UX.
+
+**Phase 1 (P0) - Critical UX Fixes:**
+- Mobile optimization (70%+ of traffic)
+- Scroll position preservation (eliminate page jump frustration)
+- Active filter display (visibility and easy removal)
+- Category auto-select (remove unnecessary click)
+- Trust signals (ratings, reviews, seller verification)
+- Image optimization (lazy loading, grid layout)
+- Analytics instrumentation (baseline data collection)
+- Performance improvements (sub-300ms filter response)
+
+**Phase 2 (P2) - Future Enhancements:**
+- Faceted sorting
+- Result count indicators
+- Category-specific filters
+- Advanced features
 
 **Key Goals:**
 - Increase conversion rate by 5-10% through improved product discoverability
@@ -19,19 +35,76 @@ This PRD outlines comprehensive improvements to Mela's search and filtering expe
 
 ---
 
+## Priority Summary
+
+### Phase 1 (P0) - Execute Immediately (1 Month)
+
+**Focus**: Fix critical UX issues affecting all users
+
+| Feature | Why P0 | Expected Impact |
+|---------|--------|----------------|
+| **Scroll Position Preservation** | Most frustrating UX issue; affects every filter interaction | -25% abandonment, +40% filter engagement |
+| **Active Filter Display** | Critical companion to scroll fix; users need visibility | +30% filter removal usage |
+| **Category Auto-Select** | Remove unnecessary click for single category | -1 click per session, immediate clarity |
+| **Trust Signals** | New marketplace + baby products = need reassurance | Reduced bounce rate, higher confidence |
+| **Image Optimization** | Baby products are visual; fast loading critical | Better perceived performance, faster decisions |
+| **Analytics Baseline** | Can't improve without data; all metrics show "TBD" | Enable data-driven optimization |
+| **Mobile Optimization** | 70%+ of traffic is mobile; mobile-first audience | +10% mobile conversion |
+| **Performance Improvements** | Slow filters kill engagement; competitive baseline | +20% perceived performance |
+
+**Timeline**: 5 weeks implementation (Week 0 analytics + 5 weeks dev)
+
+**Investment**: 1 developer, 5-6 weeks
+
+**ROI**: 5-8% conversion increase expected, 200% ROI in year 1
+
+---
+
+### Phase 2 (P2) - Execute Later (Months 2-3)
+
+**Focus**: Enhancement features that add value but aren't blocking
+
+| Feature | Why P2 | Notes |
+|---------|--------|-------|
+| **Result Count Indicators** | Nice to have, not critical | Requires additional API calls |
+| **Faceted Sorting** | Advanced feature; current sorting adequate | More complex implementation |
+| **Category-Specific Filters** | Only one category currently | Important for future expansion |
+| **Zero-Result Prevention** | Quality of life, not critical pain point | Can be added incrementally |
+
+**Timeline**: 2 months
+
+**Investment**: 1 developer, part-time
+
+**Dependency**: P0 features must be stable first
+
+---
+
 ## Problem Statement
 
 ### Current Pain Points
 
-Based on analysis of Mela's current implementation:
+Based on analysis of Mela's current implementation and user testing:
 
-1. **Limited Filter Visibility**: Filters are present but may not be prominent enough for quick product refinement
-2. **Generic Sorting Options**: Only basic sorting (price, date) without category-specific sort types
-3. **No Faceted Sorting**: Users can't combine scope and sorting in one action (e.g., "Baby Clothing by: Lowest Price")
-4. **Missing Result Count Indicators**: Filters don't show how many products match each option
-5. **Mobile Experience Gap**: Desktop-first filter design may not optimize for mobile browsing patterns
-6. **Limited Filter Context**: No visual confirmation of active filters or easy removal
-7. **Zero-Result Scenarios**: Potential for filter combinations that return no results
+**P0 - Critical Issues (Phase 1):**
+1. **Scroll Position Reset**: Page jumps to top when filters are selected, losing user context (CRITICAL)
+2. **Limited Filter Context**: No visual confirmation of active filters or easy removal
+3. **No Default Category**: Extra click required to select obvious single category
+4. **Missing Trust Signals**: No ratings, reviews, or seller verification (critical for new marketplace + baby products)
+5. **Image Performance**: No lazy loading, undefined grid layout, slow initial load
+6. **No Analytics Baseline**: All success metrics show "TBD" - can't measure improvement
+7. **Mobile Experience Gap**: Desktop-first filter design not optimized for 70%+ mobile traffic
+8. **Slow Filter Response**: Page refreshes feel sluggish, reducing engagement
+
+**P1 - Enhancement Opportunities (Phase 1 - Future):**
+9. **Quick Filters Missing**: No horizontal scrollable filter pills for common attributes (age, organic, new arrivals)
+10. **No Visual Category State**: Can't tell which category is selected on desktop (weak visual indicator)
+11. **No Category Count Badges**: Users don't know how many products are in each category
+
+**P2 - Enhancement Opportunities (Phase 2):**
+12. **Missing Result Count Indicators**: Filters don't show how many products match each option (non-category filters)
+13. **No Faceted Sorting**: Users can't combine scope and sorting in one action (e.g., "Baby Clothing by: Lowest Price")
+14. **Generic Sorting Options**: Only basic sorting (price, date) without category-specific sort types
+15. **Zero-Result Scenarios**: Potential for filter combinations that return no results
 
 ### User Impact
 
@@ -137,9 +210,500 @@ Based on analysis of top marketplaces and UX research:
 
 ## Proposed Solution
 
-### 1. Enhanced Filter System
+### Phase 1 (P0) - Critical UX Fixes
 
-#### 1.1 Result Count Indicators
+#### 1. Scroll Position Preservation (CRITICAL)
+
+**Problem**: Page jumps to top when filters are selected, forcing users to scroll back repeatedly
+
+**Solution**: Preserve scroll position on filter selection
+
+**Implementation**:
+- Save scroll Y position before filter API call
+- Apply filter and update results
+- Restore exact scroll position after render
+- Add subtle visual indicator that filter was applied
+
+**Why P0**:
+- Most frustrating UX issue (NN/g research)
+- Affects every filter interaction
+- Drives search abandonment
+- Quick to implement (1 week)
+
+**Expected Impact**: -25% search abandonment, +40% filter engagement
+
+---
+
+#### 2. Active Filter Display
+
+**Feature**: Show all active filters with easy removal
+
+```
+Active Filters: [Age: 0-6 months ✕] [Material: Organic Cotton ✕] [Clear All]
+```
+
+**Implementation**:
+- Display active filters as removable chips/badges
+- Sticky positioning at top of results
+- Include "Clear All" option
+- Visual distinction (color, border) from inactive filters
+- Click ✕ to remove individual filter
+
+**Why P0**:
+- Critical companion to scroll preservation
+- Users need to see what filters are active
+- Easy removal without scrolling to sidebar
+- Reduces cognitive load
+
+**Expected Impact**: +30% filter removal usage, improved user satisfaction
+
+---
+
+#### 3. Category Auto-Select
+
+**Problem**: Users must manually select category despite only one option existing
+
+**Solution:**
+```javascript
+// Auto-select "Baby Products" on search page load
+defaultCategory: 'baby_products'
+```
+
+**Implementation:**
+- Hardcode default to "Baby Products" (Mela's only category currently)
+- Pre-select on page load
+- User can change if needed
+- URL state preserves selection
+
+**Future Enhancement (P2):**
+- Smart selection based on highest product count
+- Remember user's last-viewed category
+- Context-aware defaults (homepage vs direct URL)
+
+**Why P0:**
+- 2-day implementation
+- Removes friction for 100% of users
+- Especially valuable on mobile (one less tap)
+- Single category marketplace makes this simple
+
+**Expected Impact:** -1 click per session, immediate clarity
+
+---
+
+#### 4. Enable Trust & Conversion Badges on Search Page
+
+**Problem**: Trust badges exist on homepage but not enabled on search page
+
+**Current State:**
+- `TrustBadges` component already exists in ListingCard
+  - Shows certifications: GOTS, BPA Free, Non-toxic, CE, BIS
+  - Displays up to 2 certifications overlaid on image
+- `ConversionBadges` component already exists in ListingCard
+  - Shows: Bestseller, Low Stock (urgency), New Arrival
+  - Priority: bestseller > low stock > new arrival
+- Homepage CategoryShowcase already using both:
+  ```javascript
+  showTrustBadges={true}
+  showConversionBadges={true}
+  ```
+- **Search page NOT using these badges** (props set to `false`)
+
+**Why This Is Critical:**
+- Components already built and working on homepage
+- New marketplace = users need reassurance everywhere
+- Baby products = parents extremely safety-conscious
+- Trust signals directly impact conversion rate
+- Search page is primary product discovery (more traffic than homepage)
+
+**Solution - Enable Existing Badges:**
+```javascript
+// In SearchResultsPanel.js or SearchPage component
+<ListingCard
+  listing={listing}
+  showTrustBadges={true}        // ← Enable (currently false)
+  showConversionBadges={true}    // ← Enable (currently false)
+  isBestseller={/* logic */}     // ← Add bestseller detection
+  stockCount={listing.currentStock?.quantity}
+  isNew={/* check listing age */}
+/>
+```
+
+**What's Already Working:**
+- TrustBadges reads from `listing.attributes.publicData.certification`
+- ConversionBadges accepts props: `isBestseller`, `stockCount`, `isNew`
+- Badges styled and mobile-optimized
+- CSS classes already defined in ListingCard.module.css
+
+**Implementation:**
+1. Enable props in SearchResultsPanel (1 line change)
+2. Add bestseller logic (check sales/reviews data)
+3. Add "isNew" logic (check `createdAt` date < 30 days)
+4. Ensure certification data exists in listings
+
+**Why P0:**
+- **1-2 day implementation** (mostly enabling existing code!)
+- Critical for search page credibility
+- Baby products require extra trust
+- Reuses existing, tested components
+
+**Expected Impact:** Reduced bounce rate, higher confidence, increased add-to-cart
+
+---
+
+#### 5. Image Optimization & Grid Layout
+
+**Problem**: Images load slowly, undefined grid layout, poor perceived performance
+
+**Current Issues:**
+- No lazy loading (all images load immediately)
+- No responsive image sizing (srcset)
+- Grid density not optimized (mobile vs desktop)
+- No loading skeletons
+
+**Solution:**
+
+**1. Lazy Loading:**
+```javascript
+<img
+  loading="lazy"
+  src={imageUrl}
+  alt={listing.title}
+/>
+```
+
+**2. Responsive Images (srcset):**
+```javascript
+<img
+  srcset={`
+    ${listing.images[0].variants['listing-card']} 1x,
+    ${listing.images[0].variants['listing-card-2x']} 2x
+  `}
+  src={listing.images[0].variants['listing-card']}
+/>
+```
+
+**3. Grid Layout Optimization:**
+- Desktop: 4 columns
+- Tablet: 3 columns
+- Mobile: 2 columns
+- Define 3:4 aspect ratio for consistency
+
+**4. Loading Skeletons:**
+```jsx
+{isLoading ? (
+  <SkeletonGrid count={12} />
+) : (
+  <ProductGrid listings={listings} />
+)}
+```
+
+**Why P0:**
+- 3-4 day implementation
+- Baby products are highly visual (parents assess safety visually)
+- Perceived performance directly impacts engagement
+- Mobile users (70%+) need fast loading
+
+**Expected Impact:** Faster perceived load time, better mobile experience, reduced bounce
+
+---
+
+#### 6. Analytics Instrumentation
+
+**Problem**: All success metrics show "TBD" - cannot measure improvement without baseline data
+
+**Current State:**
+- No filter interaction tracking
+- No scroll behavior monitoring
+- No trust signal click tracking
+- No mobile-specific metrics
+
+**Solution - Event Tracking:**
+
+```javascript
+// Filter interactions
+gtag('event', 'filter_applied', {
+  filter_type: 'age_group',
+  filter_value: '0_6_months',
+  device_type: 'mobile'
+});
+
+// Trust signal clicks
+gtag('event', 'trust_signal_click', {
+  signal_type: 'seller_badge',
+  listing_id: listing.id.uuid
+});
+
+// Scroll restoration events
+gtag('event', 'scroll_restored', {
+  scroll_position: scrollY,
+  restoration_time: duration
+});
+
+// Mobile filter modal
+gtag('event', 'mobile_filter_open', {
+  active_filters_count: activeFilters.length
+});
+```
+
+**Metrics to Track:**
+
+| Event | Purpose |
+|-------|---------|
+| filter_applied | Which filters are used most |
+| filter_removed | Which filters get removed |
+| active_filter_chip_click | Is active filters bar used? |
+| scroll_restored | Is scroll preservation working? |
+| mobile_filter_modal_open | Mobile engagement rate |
+| trust_signal_click | Are badges noticed/clicked? |
+| image_load_time | Image performance monitoring |
+
+**Why P0:**
+- 2-3 day implementation
+- Week 0 (before development starts)
+- Cannot optimize what you can't measure
+- All current baselines show "TBD"
+- Pre-launch is perfect time for baseline collection
+
+**Expected Impact:** Data-driven decisions, measurable ROI, optimization opportunities identified
+
+---
+
+#### 7. Mobile Optimization
+
+**Feature**: Separate list-browsing and filter-edit modes
+
+**List-Browsing Mode**:
+- Primary focus on product grid
+- Sticky filter button (top-right)
+- Active filters shown as removable chips
+- Quick sort dropdown
+
+**Filter-Edit Mode**:
+- Full-screen filter panel (slide in from right)
+- All filter groups visible
+- "Apply Filters" button at bottom
+- Product count preview updates live
+
+**Why P0**:
+- 70%+ of Mela's traffic is mobile
+- Target audience is mobile-first (tech-savvy diaspora)
+- Current desktop-first design fails on mobile
+- Critical for conversion rate
+
+**Implementation**:
+- Enhance existing SearchFiltersMobile component
+- Full-screen overlay mode
+- Bottom sheet animation
+- Live result count
+- Touch-optimized interactions (min 44px targets)
+
+**Expected Impact**: +10% mobile conversion, +35% mobile filter engagement
+
+---
+
+#### 8. Performance Improvements
+
+**Feature**: Sub-300ms filter application
+
+**Implementation**:
+- Client-side filter state management
+- Debounced API calls (300ms)
+- Optimistic UI updates
+- Loading skeleton for results
+- Filter result caching
+
+**Why P0**:
+- Slow filters kill engagement
+- Users expect instant feedback
+- Pairs with scroll preservation
+- Competitive table stakes
+
+**Technical Notes**:
+- Current Redux architecture supports this
+- May need query optimization on backend
+- Consider adding filter result cache in Redux
+
+**Expected Impact**: +20% perceived performance, reduced bounce rate
+
+---
+
+### Phase 1.5 (P1) - Future Enhancements (Post-P0)
+
+#### 9. Quick Filters (Horizontal Pills)
+
+**Feature**: Scrollable horizontal filter chips for common attributes
+
+**Problem**: Sidebar filters require extra taps on mobile; age filtering buried
+
+**Solution:**
+```
+┌─────────────────────────────────┐
+│ [0-3m] [3-6m] [6-12m] [Organic]│ ← Horizontal scroll
+│ [New Arrivals] [On Sale] →     │
+├─────────────────────────────────┤
+│ [Product Grid]                  │
+```
+
+**Why P1 (Not P0):**
+- 40-60% higher mobile engagement (Baymard research)
+- Industry standard for mobile commerce
+- Perfect for age-based filtering (baby products #1 criterion)
+- **BUT:** Can be added after core P0 features stabilize
+
+**Implementation:**
+- Add QuickFilters component above product grid
+- Horizontal scrollable container
+- Map to existing filter params (age_group, material, etc.)
+- Mobile-optimized touch targets
+
+**Effort:** 3-4 days
+
+**Expected Impact:** +40-60% filter engagement on mobile
+
+---
+
+#### 10. Visual Category Active State
+
+**Feature**: Strong visual indicator for selected category (desktop)
+
+**Problem**: Hard to tell which category is selected in sidebar
+
+**Current (Weak):**
+```
+☑ Baby Clothing
+☐ Baby Shoes
+```
+
+**Solution (Strong Visual Hierarchy):**
+```css
+.category-active {
+  background: #DBEAFE;            /* Light blue background */
+  border-left: 4px solid #3B82F6; /* Blue accent border */
+  font-weight: 600;                /* Bold text */
+  color: #1E40AF;                  /* Darker blue text */
+}
+```
+
+**Why P1 (Not P0):**
+- Nice visual enhancement but not blocking
+- Active filters bar (P0) already shows selected category
+- Only valuable when multiple categories exist
+
+**Effort:** 1-2 days
+
+**Expected Impact:** Clearer desktop UX, reduced confusion
+
+---
+
+#### 11. Category Count Badges
+
+**Feature**: Display product count next to each category
+
+**Solution:**
+```
+Baby Clothing        127
+Baby Shoes            34
+Baby Accessories      56
+```
+
+**API Query:**
+```javascript
+const categoryFacets = await sdk.listings.query({
+  meta_facets: 'pub_categoryLevel2',
+});
+```
+
+**Why P1 (Not P0):**
+- Useful for exploration but not critical
+- More valuable when multiple categories exist
+- Requires facet API integration
+
+**Effort:** 3-4 days
+
+**Expected Impact:** Better exploration, sets expectations
+
+---
+
+### Phase 2 (P2) - Future Enhancements
+
+#### 12. Breadcrumb Navigation
+
+**Feature**: Visual navigation path showing category hierarchy
+
+**Current Gap:**
+- Users don't see navigation path
+- No easy way to navigate back up category levels
+- Especially confusing on mobile (sidebar hidden)
+
+**Solution:**
+```
+Home › Baby Products › Baby Clothing
+```
+
+**Visual Design:**
+
+**Desktop:**
+```
+┌─ Search Results ──────────────────────────┐
+│ Home › Baby Products › Baby Clothing      │  ← Clickable path
+│                                            │
+│ [Product Grid]                             │
+└────────────────────────────────────────────┘
+```
+
+**Mobile (Condensed):**
+```
+┌─ Search ──────────────┐
+│ ... › Baby Clothing   │  ← Truncated on mobile
+└───────────────────────┘
+```
+
+**Why P2 (Not P0 or P1):**
+- Nice to have for context
+- Active filters bar (P0) already shows selection
+- More valuable when multiple categories exist
+- Can be added after P0 and P1 are stable
+
+**Implementation:**
+- Use existing CategoryBreadcrumb component
+- Integrate with SearchPage
+- Sticky positioning (optional)
+- Clickable links to parent categories
+
+**Effort:** 1 week
+
+**Expected Impact:** Better context and navigation, reduced confusion
+
+---
+
+#### 13. Smart Category Suggestions (Autocomplete)
+
+**Feature**: Show category suggestions in search autocomplete
+
+**Example:**
+```
+User types: "onesie"
+
+Search Suggestions:
+─────────────────
+🔍 onesie organic cotton
+🔍 onesie 0-6 months
+📁 in Baby Clothing (47 results)  ← Category suggestion
+📁 in Onesies & Bodysuits (32)    ← Subcategory
+```
+
+**Why P2:**
+- Requires autocomplete implementation
+- Advanced feature, not blocking
+- Needs search analytics to be effective
+
+**Effort:** 1-2 weeks
+
+**Expected Impact:** Better category discovery, reduced zero-results
+
+---
+
+#### 14. Result Count Indicators (Non-Category Filters)
 
 **Feature**: Display product count for each filter option
 
@@ -156,66 +720,15 @@ Material:
 - Update counts dynamically as filters are applied
 - Gray out or hide options with zero results
 
-**Priority**: P0 (High Impact)
-
-#### 1.2 Active Filter Display
-
-**Feature**: Show all active filters with easy removal
-
-```
-Active Filters: [Age: 0-6 months ✕] [Material: Organic Cotton ✕] [Clear All]
-```
-
-**Implementation**:
-- Display active filters as removable chips/badges
-- Place at top of search results
-- Include "Clear All" option
-- Visual distinction (color, border) from inactive filters
-
-**Priority**: P0 (High Impact)
-
-#### 1.3 Category-Specific Filters
-
-**Feature**: Show different filters based on product category
-
-**Baby Clothing**:
-- Age Group, Material, Color, Size, Certification, Key Features
-
-**Baby Gear** (Future):
-- Age Group, Safety Certification, Material, Weight Capacity
-
-**Traditional Clothing** (Future):
-- Occasion, Season, Style, Fabric, Region
-
-**Implementation**:
-- Extend configListing.js with category-specific filter configurations
-- Conditionally render filters based on active category
-- Use existing `isFieldForCategory` utility function
-
-**Priority**: P1 (Medium Priority)
-
-#### 1.4 Multi-Select Within Same Filter
-
-**Feature**: Allow selecting multiple values in same filter type
-
-**Example**:
-```
-Size:
-☑ 0-6 months
-☑ 6-12 months
-☐ 12-18 months
-```
-
-**Current Status**: Already supported via multi-enum schema type
-**Action Needed**: Verify UX makes this capability clear to users
-
-**Priority**: P2 (Validation)
+**Why P2**:
+- Nice to have, but not critical
+- Requires additional API calls
+- Can be added after P0 fixes stabilize
+- Category counts already handled in P0
 
 ---
 
-### 2. Faceted Sorting Implementation
-
-#### 2.1 Smart Sort Suggestions
+#### 15. Faceted Sorting Implementation
 
 **Feature**: Suggest category-specific sorting when scope is clear
 
@@ -233,243 +746,208 @@ Sort by:
 └─────────────────────────────────┘
 ```
 
-**Implementation**:
-1. Detect high-relevance category from search query
-2. Display category-specific sort options at top
-3. Include generic sort options below separator
-4. Apply both scope filter and sort when selected
-
-**Technical Approach**:
-- Extend sortConfig in configSearch.js with faceted sort logic
-- Add relevance threshold for suggesting faceted sorts
-- Create new sort option type: `{ key: 'baby_clothing_price', scope: 'baby_clothing', sort: 'price' }`
-
-**Priority**: P0 (High Differentiation)
-
-#### 2.2 Category-Specific Sort Types
-
-**Feature**: Offer sorting options unique to product categories
-
-**Baby Products**:
-- Sort by: Age Group (youngest first)
-- Sort by: Safety Rating
-- Sort by: Softness (material quality)
-
-**Traditional Clothing** (Future):
-- Sort by: Formality (casual to formal)
-- Sort by: Season (current season first)
-
-**Implementation**:
-- Define category-specific sort types in configListing.js
-- Map to backend API meta-fields or computed scores
-- Display only when category filter is active
-
-**Priority**: P1 (Enhancement)
+**Why P2**:
+- Advanced feature, not blocking
+- Requires category relevance detection
+- More complex implementation
+- Current sorting works adequately
 
 ---
 
-### 3. Mobile Optimization
+#### 16. Category-Specific Filters
 
-#### 3.1 Dual-Mode Interface
+**Feature**: Show different filters based on product category
 
-**Feature**: Separate list-browsing and filter-edit modes
-
-**List-Browsing Mode**:
-- Primary focus on product grid
-- Sticky filter button (top-right)
-- Active filters shown as removable chips
-- Quick sort dropdown
-
-**Filter-Edit Mode**:
-- Full-screen filter panel (slide in from right)
-- All filter groups visible
-- "Apply Filters" button at bottom
-- Product count preview updates live
-
-**Implementation**:
-- Create mobile-specific SearchFiltersMobile component (exists)
-- Enhance with full-screen overlay mode
-- Add bottom sheet animation
-- Include live result count
-
-**Priority**: P0 (Mobile-First)
-
-#### 3.2 Filter Placement & Design
-
-**Mobile**:
-- Filter button: Top-right corner (user expectation)
-- Icon: Three horizontal lines or funnel icon
-- Badge showing number of active filters
-
-**Desktop**:
-- Left sidebar (current approach is good)
-- Collapsible filter groups
-- Sticky positioning during scroll
-
-**Priority**: P1 (UX Enhancement)
+**Why P2**:
+- Currently only one category (baby products)
+- Will be important for category expansion
+- Not urgent for current product set
 
 ---
 
-### 4. Zero-Result Prevention
-
-#### 4.1 Smart Filter Hiding
+#### 17. Zero-Result Prevention
 
 **Feature**: Hide or disable filters that would return zero results
 
-**Implementation**:
-- Query available facet combinations before rendering
-- Gray out options that would return empty results
-- Show tooltip: "No products match this combination"
-- Alternative: Remove options entirely
-
-**Trade-offs**:
-- Pro: Prevents user frustration
-- Con: May hide options user expects to see
-- Decision: Gray out with tooltip (transparent approach)
-
-**Priority**: P1 (Quality of Life)
-
-#### 4.2 Related Products Suggestion
-
-**Feature**: When filters return zero results, suggest related products
-
-**Example**:
-```
-No products found for: Age 0-6 months + Organic Cotton + Blue
-
-Try:
-- View all Organic Cotton products (47 items)
-- View all Blue baby products (23 items)
-- Remove a filter to see more options
-```
-
-**Priority**: P2 (Nice to Have)
+**Why P2**:
+- Quality of life improvement
+- Not a critical pain point
+- Can be added incrementally
 
 ---
 
-### 5. Filter Performance & Speed
+#### 18. Advanced Features (P3 - Future)
 
-#### 5.1 Instant Filter Response
-
-**Feature**: Sub-300ms filter application
-
-**Implementation**:
-- Client-side filter state management
-- Debounced API calls (300ms)
-- Optimistic UI updates
-- Loading skeleton for results
-
-**Technical Notes**:
-- Current Redux architecture supports this
-- May need query optimization on backend
-- Consider adding filter result cache
-
-**Priority**: P0 (Performance)
-
-#### 5.2 Filter Preloading
-
-**Feature**: Preload filter facet counts on page load
-
-**Implementation**:
-- Fetch facet counts alongside search results
-- Cache in Redux store
-- Update incrementally as filters applied
-
-**Priority**: P1 (Performance)
-
----
-
-### 6. Advanced Features (Future)
-
-#### 6.1 Saved Searches & Filters
-
-**Feature**: Allow users to save frequent search + filter combinations
-
-**Use Case**: Parent shopping for 6-12 month organic cotton clothes regularly
-
-**Priority**: P3 (Future)
-
-#### 6.2 Smart Filter Suggestions
-
-**Feature**: ML-based suggestions based on user behavior
-
-**Example**: "Most parents also filter by: Organic Cotton, GOTS Certified"
-
-**Priority**: P3 (Future)
-
-#### 6.3 Filter History
-
-**Feature**: Recently used filters appear at top
-
-**Priority**: P3 (Future)
+- Saved searches & filters
+- Smart filter suggestions (ML-based)
+- Filter history
+- Filter presets
 
 ---
 
 ## Technical Implementation
 
-### Phase 1: Foundation (Weeks 1-2)
+### Week 0: Analytics & Baseline (Pre-Development)
 
-**Goal**: Implement core filter improvements
+**Goal**: Establish measurement framework and collect baseline data
 
-1. **Result Count Indicators**
-   - Modify SearchPage.duck.js to fetch facet counts
-   - Update FilterComponent to display counts
-   - Add dynamic count updates on filter change
+1. **Analytics Instrumentation**
+   - Set up Google Analytics event tracking
+   - Define filter interaction events
+   - Create trust signal click tracking
+   - Set up scroll behavior monitoring
 
-2. **Active Filter Display**
+2. **Baseline Data Collection**
+   - Internal team testing (1 week)
+   - Record current filter engagement rates
+   - Document current bounce rates
+   - Measure current performance metrics
+
+**Deliverable**: Analytics dashboard + baseline metrics documented
+
+---
+
+### Phase 1 (P0) - Weeks 1-5
+
+**Goal**: Fix critical UX issues affecting all users
+
+#### Week 1: Scroll Position Preservation + Active Filters
+1. **Scroll Position Logic**
+   - Modify SearchPageWithGrid.js to save/restore scroll position
+   - Add componentDidUpdate logic to restore after render
+   - Implement scroll state in component state
+   - sessionStorage fallback for edge cases
+
+2. **Active Filters Bar (Complete)**
    - Create ActiveFiltersBar component
    - Implement filter removal logic
    - Style as removable chips
-
-3. **Mobile Filter Optimization**
-   - Enhance SearchFiltersMobile component
-   - Implement full-screen mode
-   - Add bottom apply button with live count
+   - Add sticky positioning CSS
+   - Mobile-optimized layout
 
 **Files to Modify**:
-- `/web-client/src/containers/SearchPage/SearchPage.duck.js`
-- `/web-client/src/containers/SearchPage/FilterComponent.js`
-- `/web-client/src/containers/SearchPage/SearchFiltersMobile/SearchFiltersMobile.js`
+- `/web-client/src/containers/SearchPage/SearchPageWithGrid.js`
+- `/web-client/src/containers/SearchPage/ActiveFiltersBar.js` (new)
 - `/web-client/src/containers/SearchPage/SearchPage.module.css`
 
-### Phase 2: Faceted Sorting (Weeks 3-4)
+---
 
-**Goal**: Implement smart sorting with category suggestions
+#### Week 2: Category Auto-Select + Trust Badges
+3. **Auto-Select Default Category**
+   - Modify SearchPage.js to auto-select "Baby Products" on load
+   - Add logic to skip auto-select if URL has category param
+   - Test with direct search page navigation
 
-1. **Faceted Sort Logic**
-   - Extend configSearch.js sortConfig structure
-   - Add relevance detection for category scoping
-   - Create FacetedSortBy component
+4. **Enable Trust & Conversion Badges**
+   - Enable showTrustBadges prop in SearchResultsPanel
+   - Enable showConversionBadges prop in SearchResultsPanel
+   - Add bestseller detection logic
+   - Add "isNew" logic (createdAt < 30 days)
+   - Pass stockCount from listing data
 
-2. **Category-Specific Sort Types**
-   - Define category-specific sort options in configListing.js
-   - Map to backend sort parameters
-   - Conditionally display based on active category
+**Files to Modify**:
+- `/web-client/src/containers/SearchPage/SearchPage.js`
+- `/web-client/src/containers/SearchPage/SearchResultsPanel.js`
+- (TrustBadges & ConversionBadges already exist in ListingCard)
 
-**Files to Create/Modify**:
-- `/web-client/src/containers/SearchPage/SortBy/FacetedSortBy.js` (new)
-- `/web-client/src/config/configSearch.js`
-- `/web-client/src/config/configListing.js`
-- `/web-client/src/containers/SearchPage/SearchPage.shared.js`
+---
 
-### Phase 3: Quality & Performance (Weeks 5-6)
+#### Week 3: Image Optimization + Performance
+5. **Image Optimization**
+   - Implement lazy loading on product images
+   - Add responsive srcset for listing cards
+   - Define grid layout density (4/3/2 columns)
+   - Create loading skeleton components
 
-**Goal**: Polish and optimize
-
-1. **Zero-Result Prevention**
-   - Add facet availability checking
-   - Implement gray-out styling for unavailable filters
-   - Add helpful tooltips
-
-2. **Performance Optimization**
-   - Implement filter result caching
+6. **Performance Improvements**
+   - Implement debounced API calls (300ms)
    - Add optimistic UI updates
-   - Optimize bundle size
+   - Client-side filter state caching
+   - Memoize ListingCard components
 
-3. **Testing & Refinement**
-   - A/B test key changes (faceted sort, result counts)
-   - Mobile usability testing
-   - Performance benchmarking
+**Files to Modify**:
+- `/web-client/src/components/ListingCard/ListingCard.js`
+- `/web-client/src/containers/SearchPage/SearchResultsPanel.js`
+- `/web-client/src/containers/SearchPage/SearchPage.duck.js`
+- `/web-client/src/components/LoadingSkeleton/` (new)
+
+---
+
+#### Week 4: Mobile Optimization
+7. **Mobile Filter Modal**
+   - Enhance SearchFiltersMobile component
+   - Implement full-screen overlay mode
+   - Add bottom sheet animation
+   - Live result count preview
+   - Touch-optimized targets (min 44px)
+
+8. **Mobile Image & Performance**
+   - Mobile-specific grid layout (2 columns)
+   - Touch-optimized active filters chips
+   - Swipe gesture support (optional)
+
+**Files to Modify**:
+- `/web-client/src/containers/SearchPage/SearchFiltersMobile/SearchFiltersMobile.js`
+- `/web-client/src/containers/SearchPage/SearchFiltersMobile/SearchFiltersMobile.module.css`
+
+---
+
+#### Week 5: QA + Testing
+9. **Cross-Device Testing**
+   - Test on iOS (Safari)
+   - Test on Android (Chrome)
+   - Desktop browsers (Chrome, Safari, Firefox, Edge)
+   - Tablet testing
+
+10. **Bug Fixes & Polish**
+   - Fix critical bugs
+   - Performance optimization tweaks
+   - Analytics verification
+
+**Deliverable**: Production-ready P0 features
+
+---
+
+### Phase 1.5 (P1) - Month 2 (Future Enhancement)
+
+**Goal**: Add high-value enhancements after P0 stabilizes
+
+#### Weeks 6-7: Quick Filters (Horizontal Pills)
+- Create QuickFilters component
+- Implement horizontal scrollable container
+- Map to existing filter params (age_group, material, etc.)
+- Mobile-optimized touch targets
+- Desktop integration
+
+#### Weeks 8-9: Visual Category State + Count Badges
+- Update category filter CSS for active/inactive states
+- Query Sharetribe API for category facet counts
+- Display counts next to category options
+- Handle zero-count gracefully
+
+---
+
+### Phase 2 (P2) - Months 3-4 (Future)
+
+**Goal**: Advanced features for mature marketplace
+
+#### Weeks 10-11: Breadcrumb Navigation
+- Create CategoryBreadcrumb component
+- Integrate with SearchPage
+- Sticky positioning (optional)
+- Clickable links to parent categories
+
+#### Weeks 12-13: Result Count Indicators (Non-Category)
+- Query Sharetribe API for facet counts (all filters)
+- Update FilterComponent to display counts
+- Add dynamic count updates on filter change
+- Gray out zero-result options
+
+#### Weeks 14-15: Faceted Sorting + Smart Suggestions
+- Extend configSearch.js sortConfig structure
+- Add relevance detection for category scoping
+- Implement search autocomplete with category suggestions
+- Create FacetedSortBy component
 
 ---
 
@@ -549,56 +1027,49 @@ Apply button: Fixed bottom, full width, primary color
 
 ---
 
-## A/B Testing Plan
+## Validation & Testing Plan
 
-### Test 1: Result Count Indicators
+### Phase 1 (P0) Validation
 
-**Hypothesis**: Showing result counts will increase filter engagement by 25%
+**Focus**: Ensure P0 features work flawlessly before launch
 
-**Variants**:
-- Control: Current filter UI without counts
-- Variant A: Result counts shown
-- Variant B: Result counts + hide zero-result options
+**Testing Approach**:
+1. **Unit Testing**: All new components and functions
+2. **Integration Testing**: Filter flow end-to-end
+3. **Cross-Browser Testing**: Chrome, Safari, Firefox, Edge
+4. **Device Testing**:
+   - Desktop: Mac, Windows (1920px, 1366px viewports)
+   - Tablet: iPad, Android tablets (768px-1024px)
+   - Mobile: iPhone, Android phones (<768px)
+5. **Performance Testing**:
+   - Filter response time (<300ms)
+   - Page load impact
+   - Memory usage
 
-**Metrics**:
+**Key Test Scenarios**:
+- Apply multiple filters sequentially
+- Remove filters individually and via "Clear All"
+- Scroll position preservation across filter changes
+- Mobile filter modal interactions
+- Filter state persistence during navigation
+
+**Success Criteria**:
+- Zero critical bugs
+- All P0 features working on target browsers
+- Performance benchmarks met
+- Positive feedback from internal testing
+
+---
+
+### Phase 2 (P2) Validation
+
+**Post-Launch Metrics Tracking** (for future P2 features):
 - Filter engagement rate
-- Filters applied per session
-- Conversion rate
+- Result count indicator usage
+- Faceted sorting adoption
+- Mobile vs desktop conversion rates
 
-**Duration**: 2 weeks
-
-### Test 2: Faceted Sorting
-
-**Hypothesis**: Faceted sorting will reduce search abandonment by 15%
-
-**Variants**:
-- Control: Generic sorting only
-- Variant A: Faceted sort suggestions (top of dropdown)
-- Variant B: Faceted sort suggestions + category-specific types
-
-**Metrics**:
-- Search abandonment rate
-- Sort usage rate
-- Time to product selection
-- Conversion rate
-
-**Duration**: 2 weeks
-
-### Test 3: Mobile Filter UI
-
-**Hypothesis**: Full-screen filter mode will increase mobile conversions by 10%
-
-**Variants**:
-- Control: Current partial overlay
-- Variant A: Full-screen filter modal
-- Variant B: Bottom sheet drawer
-
-**Metrics**:
-- Mobile filter engagement
-- Mobile conversion rate
-- Mobile bounce rate
-
-**Duration**: 2 weeks
+**Approach**: Track baseline metrics after P0 launch, then measure improvements with each P2 feature
 
 ---
 
@@ -639,60 +1110,95 @@ Apply button: Fixed bottom, full width, primary color
 
 ### Launch Readiness Checklist
 
-**Functionality**:
-- [ ] Result counts display correctly on all filters
-- [ ] Active filters show as removable chips
-- [ ] Mobile filter modal works on all devices
-- [ ] Faceted sorting suggestions appear for relevant searches
-- [ ] Zero-result filters are hidden/grayed out
+**Functionality** (P0 Features):
+- [ ] Scroll position preserved on filter selection
+- [ ] Active filters show as removable chips with sticky positioning
+- [ ] Default category auto-selected on search page load
+- [ ] Trust signals displayed (ratings, reviews, seller badges)
+- [ ] Image lazy loading implemented
+- [ ] Grid layout optimized (4/3/2 columns)
+- [ ] Analytics instrumentation complete with baseline data
+- [ ] Mobile filter modal works on all devices (full-screen mode)
 - [ ] Filter performance <300ms response time
+- [ ] Individual filter removal via chips
+- [ ] "Clear All" functionality working
 
 **Quality**:
 - [ ] Cross-browser testing complete (Chrome, Safari, Firefox, Edge)
 - [ ] Mobile testing on iOS and Android
 - [ ] Accessibility audit passed (keyboard navigation, screen readers)
-- [ ] Performance benchmarks met (Lighthouse score >90)
+- [ ] Performance benchmarks met (filter response <300ms)
 
 **Business**:
-- [ ] A/B tests show positive results (or neutral)
-- [ ] Analytics tracking in place for all new features
+- [ ] Analytics tracking in place for all P0 features
 - [ ] Documentation updated for team
+- [ ] Internal testing completed with positive feedback
 
 ---
 
 ## Timeline & Milestones
 
-### Month 1
-- **Week 1-2**: Phase 1 (Foundation)
-  - Result count indicators
-  - Active filter display
-  - Mobile optimization
+### Week 0: Analytics & Baseline (Pre-Development)
+- Set up Google Analytics event tracking
+- Define measurement framework
+- Internal team testing for baseline data
+- **Deliverable**: Analytics dashboard + baseline metrics
 
-- **Week 3-4**: Phase 2 (Faceted Sorting)
-  - Faceted sort implementation
-  - Category-specific sort types
+### Phase 1 (P0) - Weeks 1-5
 
-### Month 2
-- **Week 5-6**: Phase 3 (Quality & Performance)
-  - Zero-result prevention
-  - Performance optimization
-  - Testing
+**Week 1: Scroll Position + Active Filters**
+- Implement scroll save/restore logic
+- Build complete active filters bar with sticky positioning
+- Desktop and mobile implementation
+- **Deliverable**: Complete feedback loop for filter interactions
 
-- **Week 7-8**: A/B Testing & Iteration
-  - Run A/B tests
-  - Analyze results
-  - Iterate based on findings
+**Week 2: Category Auto-Select + Trust Badges**
+- Implement category auto-selection (2 days)
+- Enable existing TrustBadges on search page (1 day)
+- Enable existing ConversionBadges on search page (1 day)
+- Add bestseller and "isNew" detection logic (1 day)
+- **Deliverable**: Trust-building elements enabled
 
-### Month 3
-- **Week 9-10**: Final Polish
-  - Address feedback
-  - Additional optimizations
-  - Documentation
+**Week 3: Image Optimization + Performance**
+- Implement lazy loading
+- Add responsive srcset
+- Define grid layout (4/3/2 columns)
+- Create loading skeletons
+- Add debouncing and caching
+- **Deliverable**: Fast, optimized product grid
 
-- **Week 11-12**: Full Rollout
-  - Gradual rollout to 100%
-  - Monitor metrics
-  - Support & bug fixes
+**Week 4: Mobile Optimization**
+- Enhance mobile filter modal (full-screen)
+- Mobile-specific grid layout
+- Touch-optimized interactions
+- Mobile performance tuning
+- **Deliverable**: Mobile-first experience complete
+
+**Week 5: QA + Testing**
+- Cross-device testing (iOS, Android, Desktop)
+- Cross-browser testing
+- Bug fixes and polish
+- Analytics verification
+- **Deliverable**: P0 features ready for production
+
+---
+
+### Phase 1.5 (P1) - Month 2 (Future)
+
+**Weeks 6-7: Quick Filters**
+- Horizontal scrollable filter pills
+- Age and popular attributes
+- Mobile-optimized
+
+**Weeks 8-9: Visual Category Enhancements**
+- Active state indicators
+- Category count badges
+
+**Month 3-4: Phase 2 (P2)**
+- Breadcrumb navigation
+- Result count indicators
+- Faceted sorting
+- Smart suggestions
 
 ---
 
@@ -713,32 +1219,35 @@ Apply button: Fixed bottom, full width, primary color
 
 ## Post-Launch Plan
 
-### Monitoring (First 30 Days)
+### Monitoring (First 30 Days Post-Launch)
 
 **Key Metrics Dashboard**:
 - Search conversion rate (daily)
 - Filter engagement rate (daily)
 - Mobile vs. desktop performance (weekly)
-- Zero-result occurrences (daily)
+- Filter application rate (daily)
 - Page load times (daily)
 - Error rates (real-time alerts)
+- Scroll position preservation success rate
 
 ### Iteration Plan
 
 **Week 1-2 Post-Launch**:
 - Monitor for critical issues
 - Hot-fix any blocking bugs
-- Collect user feedback
+- Collect internal team feedback
+- Gather early user feedback via support channels
 
 **Week 3-4 Post-Launch**:
-- Analyze A/B test results
-- Plan iteration cycle 1
-- Address top user pain points
+- Analyze metrics and usage patterns
+- Identify optimization opportunities
+- Address top pain points or edge cases
 
 **Month 2-3 Post-Launch**:
 - Implement learnings from data
-- Plan advanced features (saved searches, smart suggestions)
-- Optimize based on usage patterns
+- Plan Phase 2 (P2) features based on priorities
+- Optimize based on real usage patterns
+- Consider Phase 2 roadmap
 
 ---
 
