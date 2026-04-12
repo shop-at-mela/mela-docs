@@ -2,19 +2,36 @@
 
 This repository contains strategic documentation and materials for Mela, an export-first marketplace for Indian brands.
 
+## 📋 Quick Start
+
+- [PROJECT_ROADMAP.md](./PROJECT_ROADMAP.md) - Active projects, tasks, and priorities
+- [MELA_PITCH_DECK.md](./pitch/MELA_PITCH_DECK.md) - Investor presentation
+- [changelog.md](./technical/changelog/changelog.md) - Recent platform updates
+
 ## Contents
 
 ### `/pitch/`
 Pitch deck and presentation materials
 - `MELA_PITCH_DECK.md` - Complete investor pitch deck
+- `BRAND_PARTNERSHIP_DECK.md` - Brand partner presentations
 
 ### `/strategy/`
 Strategic planning documents and roadmaps
-- (Future: Go-to-market plans, expansion strategies, competitive analysis)
+- Target audience research
+- Brand partnership strategies
+- Market opportunity analysis
 
 ### `/product/`
-Product requirements and specifications
-- (Future: Feature specs, user stories, technical requirements)
+Product requirements and implementation plans
+- PRDs (Product Requirements Documents)
+- Feature specifications
+- Implementation plans
+
+### `/technical/`
+Technical documentation and architecture
+- Data models and schemas
+- API specifications
+- Deployment guides
 
 ## About Mela
 

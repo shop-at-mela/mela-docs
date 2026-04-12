@@ -1,8 +1,8 @@
 # Search Page Optimization PRD
 
 **Document Owner:** Product Team
-**Last Updated:** November 22, 2025
-**Status:** Draft - Revised Based on Expert Analysis
+**Last Updated:** April 11, 2026
+**Status:** In Progress — Phase 1 partially shipped
 **Priority:** High
 
 ---
@@ -13,13 +13,13 @@ This PRD outlines improvements to Mela's search and filtering experience based o
 
 **Phase 1 (P0) - Critical UX Fixes:**
 - ✅ Mobile optimization (70%+ of traffic) - Search query bar & spacing DONE
-- ⏳ Scroll position preservation (eliminate page jump frustration)
+- ⏳ Scroll position preservation (eliminate page jump frustration) — **TODO: unshipped**
 - ✅ Active filter display (visibility and easy removal) - DONE
 - ✅ Category auto-select (remove unnecessary click) - DONE
 - ✅ Trust signals (ratings, reviews, seller verification) - DONE
-- ⏳ Image optimization (lazy loading, grid layout)
-- ⏳ Analytics instrumentation (baseline data collection)
-- ⏳ Performance improvements (sub-300ms filter response)
+- ⏳ Image optimization (lazy loading, grid layout) — **TODO: unshipped**
+- ⏳ Analytics instrumentation (baseline data collection) — **TODO: unshipped, blocks all metric targets**
+- ⏳ Performance improvements (sub-300ms filter response) — **TODO: unshipped**
 
 **Phase 2 (P2) - Future Enhancements:**
 - Faceted sorting

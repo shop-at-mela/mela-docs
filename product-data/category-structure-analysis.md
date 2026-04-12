@@ -44,10 +44,10 @@ This document provides a comprehensive analysis of marketplace category structur
 
 | L0 Category | L1 Count | Total L2 Count | Priority |
 |-------------|----------|----------------|----------|
-| Baby & Kids | 9 | 26 | Tier 1 (Live) |
+| Baby & Kids | 9 | 27 | Tier 1 (Live) |
 | Home & Kitchen | 6 | 26 | Tier 1 |
-| Fashion | 4 | 17 | Tier 1 |
-| Jewelry & Accessories | 5 | 18 | Tier 1 |
+| Fashion | 4 | 16 | Tier 1 |
+| Jewelry & Accessories | 4 | 15 | Tier 1 |
 | Beauty & Wellness | 5 | 24 | Tier 1 |
 | Food & Gourmet | 3 | 11 | Tier 2 |
 | Art & Craft | 4 | 16 | Tier 2 |
@@ -65,16 +65,18 @@ This document provides a comprehensive analysis of marketplace category structur
 |-------------|------------------|-------|
 | **Clothing** | Tops & Bodysuits, Bottoms, Dresses/Rompers/Sets, Sleepwear, Outerwear | 5 |
 | **Footwear** | First Walkers & Soft Soles, Kids Shoes | 2 |
-| **Accessories** | Hats & Hair Accessories, Socks & Tights, Bibs & Burp Cloths | 3 |
+| **Accessories** | Hats & Hair Accessories, Bags & Backpacks, Socks & Tights, Bibs & Burp Cloths | 4 |
 | **Nursery** | Cribs & Bedding, Furniture & Decor | 2 |
 | **Gear** | Strollers & Car Seats, Carriers & Travel, High Chairs & Bouncers | 3 |
 | **Feeding** | Bottles & Feeding Essentials, Tableware & Cups | 2 |
 | **Bath & Care** | Bath Time, Potty Training, Diapers & Skincare | 3 |
 | **Toys** | Baby Toys (0-2 yrs), Learning & Educational, Creative Play, Plush & Pretend Play | 4 |
 | **Health & Safety** | Baby Monitors & Health, Safety Equipment | 2 |
-| | **TOTAL L2** | **26** |
+| | **TOTAL L2** | **27** |
 
 **Baby & Kids Attributes:**
+- **Gender**: Girls, Boys, Unisex
+- **Style**: Ethnic, Casual, Festive, Sleepwear
 - **Occasion**: Everyday, Festive & Cultural, Special Occasion
 - **Material**: Organic Cotton, Muslin, Bamboo, Wood, Natural Rubber
 - **Toy Style**: Montessori, Waldorf, Traditional, STEM
@@ -100,7 +102,7 @@ This document provides a comprehensive analysis of marketplace category structur
 
 ---
 
-### 3. FASHION (L0) — 17 L2 Categories
+### 3. FASHION (L0) — 16 L2 Categories
 *Apparel exports at $30-35B. Block print/handloom gaining 67% search growth. Fabindia derives 75% revenue from garments.*
 
 | L1 Category | L2 Subcategories | Count |
@@ -108,8 +110,8 @@ This document provides a comprehensive analysis of marketplace category structur
 | **Women's Ethnic** | Sarees, Tunics (Kurtas & Kurtis), Tunic Sets (Salwar Suits), Skirt Sets (Lehengas), Scarves & Wraps (Dupattas) | 5 |
 | **Women's Contemporary** | Tops & Blouses, Dresses, Pants & Palazzos, Jackets & Shrugs | 4 |
 | **Men's Clothing** | Tunics (Kurtas), Mandarin Collar Jackets (Nehru Jackets), Shirts, Ethnic Sets | 4 |
-| **Kids' Fashion** | Girls' Ethnic, Girls' Casual, Boys' Ethnic, Boys' Casual | 4 |
-| | **TOTAL L2** | **17** |
+| **Footwear** | Embroidered Flats (Juttis & Mojris), Handcrafted Leather Sandals (Kolhapuris), Ethnic Heels | 3 |
+| | **TOTAL L2** | **16** |
 
 **Fashion Attributes** (moved from categories):
 - **Occasion**: Wedding & Bridal, Festival, Party, Casual, Work, Daily Wear
@@ -120,12 +122,12 @@ This document provides a comprehensive analysis of marketplace category structur
 - **Size**: Indian (XS-3XL), US (0-16), UK (4-20)
 - **Color**, **Sleeve Length**, **Neckline**
 
-**Note**: Footwear and bags moved to Jewelry & Accessories L0.
+**Note**: Bags moved to Jewelry & Accessories L0. Footwear moved to Fashion L0 for outfit-completion discoverability.
 **Note**: "Occasion Wear" and "Sustainable & Handloom" moved to attributes for cross-category filtering.
 
 ---
 
-### 4. JEWELRY & ACCESSORIES (L0) — 18 L2 Categories
+### 4. JEWELRY & ACCESSORIES (L0) — 15 L2 Categories
 *India processes 90% of world's diamonds. Gems & Jewelry exports at $9.97B. India is 2nd largest leather exporter globally.*
 
 | L1 Category | L2 Subcategories | Count |
@@ -134,8 +136,7 @@ This document provides a comprehensive analysis of marketplace category structur
 | **Earrings** | Studs, Drops & Dangles, Hoops, Traditional Drops (Jhumkas) | 4 |
 | **Bracelets & Bangles** | Cuffs & Bracelets, Bangles, Charm Bracelets | 3 |
 | **Bags & Leather** | Handbags & Clutches, Leather Bags & Totes, Embroidered Bags, Crossbody & Slings | 4 |
-| **Footwear** | Embroidered Flats (Juttis & Mojris), Handcrafted Leather Sandals (Kolhapuris), Ethnic Heels | 3 |
-| | **TOTAL L2** | **18** |
+| | **TOTAL L2** | **15** |
 
 **Jewelry & Accessories Attributes** (moved from categories):
 - **Primary Material**: Gold, Silver, Brass, Copper, German Silver, Leather
@@ -145,7 +146,7 @@ This document provides a comprehensive analysis of marketplace category structur
 - **Gemstones**: Diamond, Ruby, Emerald, Pearl, Turquoise, Semi-precious
 - **Occasion**: Wedding, Festival, Daily Wear, Party
 
-**Removed**: Watches, Sunglasses, Wallets (not India's export strength)
+**Removed**: Watches, Sunglasses, Wallets (not India's export strength); Footwear moved to Fashion L0
 **Restructured**: Product-type categories (Necklaces, Earrings, etc.) with technique/material as filterable attributes
 
 ---
@@ -206,15 +207,15 @@ This document provides a comprehensive analysis of marketplace category structur
 
 | L0 Category | L1 Count | L2 Count | Export Potential | India Advantage |
 |-------------|----------|----------|------------------|-----------------|
-| Baby & Kids | 9 | 26 | High | Organic cotton, wooden toys, sustainable materials |
+| Baby & Kids | 9 | 27 | High | Organic cotton, wooden toys, sustainable materials |
 | Home & Kitchen | 6 | 26 | Very High | Handwoven textiles, brass/copper, carpets, craftsmanship |
-| Fashion | 4 | 17 | Very High | Handloom, block print, sustainable fashion, ethnic wear |
-| Jewelry & Accessories | 5 | 18 | Very High | 90% diamond processing, #2 leather exporter, artisan jewelry |
+| Fashion | 4 | 16 | Very High | Handloom, block print, sustainable fashion, ethnic wear, traditional footwear |
+| Jewelry & Accessories | 4 | 15 | Very High | 90% diamond processing, #2 leather exporter, artisan jewelry |
 | Beauty & Wellness | 5 | 24 | High | Ayurveda expertise, natural ingredients, ancient formulations |
 | Food & Gourmet | 3 | 11 | Medium-High | Spices leadership ($4.72B), tea heritage, authentic flavors |
 | Art & Craft | 4 | 16 | Medium | Traditional art forms, GI-tagged crafts, cultural uniqueness |
 
-**Total**: 7 L0 Categories, 36 L1 Categories, 138 L2 Subcategories
+**Total**: 7 L0 Categories, 35 L1 Categories, 135 L2 Subcategories
 
 **Note**: 13 former L2 categories moved to attributes for better cross-category filtering (Occasion, Technique, Material, Certification)
 
@@ -236,6 +237,8 @@ This document provides a comprehensive analysis of marketplace category structur
 #### Baby & Kids
 | Attribute | Type | Values |
 |-----------|------|--------|
+| Gender | Single-select | Girls, Boys, Unisex |
+| Style | Single-select | Ethnic, Casual, Festive, Sleepwear |
 | Occasion | Single-select | Everyday, Festive & Cultural, Special Occasion |
 | Material | Multi-select | Organic Cotton, Muslin, Bamboo, Wood, Natural Rubber |
 | Toy Style | Single-select | Montessori, Waldorf, Traditional, STEM |
@@ -301,7 +304,7 @@ This document provides a comprehensive analysis of marketplace category structur
 - Focus: Expand vendor base to 25, implement attribute filters
 
 ### Phase 2: Home & Kitchen + Fashion
-- 43 new L2 categories (26 + 17)
+- 39 new L2 categories (26 + 13)
 - Target: 50 vendors
 - Focus: Sustainable/handloom positioning, technique-based filtering
 
