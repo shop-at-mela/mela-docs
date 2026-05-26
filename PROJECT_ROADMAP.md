@@ -13,9 +13,13 @@ This document tracks active projects, planned initiatives, and completed work ac
 **Owner:** PM (copy) → Developer (footer config in Sharetribe Console)
 **PRD:** [footer-legalese-prd.md](./product/prds/footer-legalese-prd.md)
 
+**Key constraint:** Mela is operated under personal name (no LLC, no business entity — H-1B visa restriction). ToS must reflect individual operator, no affiliate income, curated directory model.
+
 **Tasks:**
-- [ ] Generate ToS + Privacy Policy via Termly.io (~1 day, PM)
-- [ ] Add content to `/terms-of-service` and `/privacy-policy` CMS pages
+- [ ] Generate ToS using `legal/terms-of-service-prompt.md` via Termly.io or ChatGPT (~1–2 hrs)
+- [ ] Generate Privacy Policy using `legal/privacy-policy-prompt.md` via Termly.io (~30 min)
+- [ ] Manually review both: remove any affiliate disclosure, entity/company references, or retailer language
+- [ ] Add content to `/terms-of-service` and `/privacy-policy` CMS pages in Sharetribe Console
 - [ ] Configure footer links in Sharetribe Console (Legal column)
 - [ ] Add copyright + platform disclaimer to footer slogan field
 - [ ] Confirm privacy@[domain] email is live

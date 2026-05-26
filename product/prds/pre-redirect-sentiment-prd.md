@@ -1,9 +1,11 @@
 # Pre-Redirect Sentiment Collection PRD
 
 **Feature:** "Was Mela Helpful?" Feedback Modal + Broader Sentiment Strategy
-**Status:** Ready for Development — ⚠️ Unshipped as of April 2026 (all ACs unchecked)
+**Status:** ✅ Shipped — implementation diverged from spec; see build notes below
 **Priority:** High — Pre-Production (launch blocker for baseline data)
 **Owner:** Developer + PM
+
+> **Build note (2026-05-25):** The pre-redirect modal was shipped as `RedirectTrustSheet` + `SentimentSheet` (in `src/components/`) rather than the `ShopifyRedirectModal` name specified here. The implementation was absorbed into `trust-conversion-signals-prd.md`, which is the authoritative tracking document for this feature. ACs below are updated to reflect actual shipping status.
 
 ---
 
@@ -118,11 +120,11 @@ Sharetribe has no native feedback or plugin system. All tools integrate via JS.
 
 ## Acceptance Criteria
 
-- [ ] Clicking "Shop from {brand}" shows the modal before navigating away
-- [ ] Selecting Yes, No, or Skip navigates to Shopify within 200ms of click
-- [ ] Response is captured in Airtable (async, non-blocking)
-- [ ] Modal is skippable — shopper is never blocked from reaching Shopify
-- [ ] Modal does not re-appear for the same listing in the same browser session
-- [ ] Mobile-responsive at 375px
-- [ ] Hotjar script added to `public/index.html` (or via env-based inject)
-- [ ] Zero-results search state shows a text input prompt (P1, can trail by 1 sprint)
+- [x] Clicking "Shop from {brand}" shows the modal before navigating away — shipped as `RedirectTrustSheet` triggered on first CTA click per session
+- [x] Selecting Yes, No, or Skip navigates to Shopify within 200ms of click — "Continue to [Brand] →" always pinned and accessible
+- [x] Response is captured async (non-blocking) — posts to webhook as `event: 'pre_shopify_redirect'`
+- [x] Modal is skippable — shopper is never blocked from reaching Shopify
+- [x] Modal does not re-appear for the same listing in the same browser session — gated by `mela_redirect_trust_shown` session key; subsequent CTA clicks skip the sheet and redirect directly
+- [x] Mobile-responsive at 375px
+- [ ] Hotjar script added to `public/index.html` (or via env-based inject) — ❌ not found in `public/index.html`
+- [ ] Zero-results search state shows a text input prompt (P1) — ❌ not built

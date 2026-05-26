@@ -1,10 +1,33 @@
 # SEO & AEO — Category Pages + Brand Storefront Pages PRD
 
 **Document Owner:** Product / SEO Team  
-**Last Updated:** 2026-04-11  
-**Status:** Draft — Ready for Review  
+**Last Updated:** 2026-05-25  
+**Status:** Partial — Category pages shipped with SEO schema; brand storefront SEO not yet built  
 **Priority:** High — Organic acquisition foundation  
 **Related PRDs:** `brand-storefront-prd.md`, `brands-page-prd.md`, `technical/sitemap-prd.md`
+
+## Build Status Summary *(updated 2026-05-25)*
+
+| Requirement | Status | Notes |
+|-------------|--------|-------|
+| Dedicated `CategoryPage` component (not SearchPage) | ✅ Shipped | `src/containers/CategoryPage/CategoryPage.js` (450 lines) |
+| `BreadcrumbList` JSON-LD on category pages | ✅ Shipped | Confirmed in `CategoryPage.js` lines 138–141 |
+| `CollectionPage` + `ItemList` JSON-LD on category pages | ✅ Shipped | Confirmed in `CategoryPage.js` lines 192–212 |
+| Canonical URL on category pages | ✅ Shipped | `CategoryPage` uses `Page` component with canonical |
+| Subcategory navigation pills on L0 pages | ✅ Shipped | `CategoryBreadcrumb` component + category pills |
+| `/brands` directory (`BrandsPage`) | ✅ Shipped | `src/containers/BrandsPage/BrandsPage.js` (266 lines) with canonical URL + schema |
+| `/brands/:brandSlug` → dedicated brand storefront | ❌ Not built | Route exists but renders `ProfilePage`, not a dedicated storefront with `Organization` JSON-LD |
+| `Organization` JSON-LD on brand pages | ❌ Not built | ProfilePage has no Organization entity schema |
+| `BreadcrumbList` on brand storefront pages | ❌ Not built | |
+| `ItemList` JSON-LD for brand's products | ❌ Not built | |
+| `<title>` + `<meta description>` per brand page | ❌ Not built | ProfilePage renders generic meta |
+| Brand slug canonical → `/brands/:brandSlug` | ❌ Not built | `/u/:id` does not redirect to or canonicalize to slug |
+| Category pages in `sitemap-default.xml` | ⚠️ Verify | Sitemap PRD covers this; verify after CategoryPage ship |
+| Brand slugs in `sitemap-brands.xml` | ⚠️ Verify | Requires slug registry in `configBrands.js` |
+| Editorial description + FAQ on category pages | ⚠️ Partial | Category descriptions exist in config; FAQ block not confirmed |
+| Google Rich Results Test passing | ⚠️ Not verified | Run after verifying schema output |
+
+**Overall:** Category page SEO is substantially built. Brand storefront SEO (Organization schema, canonical slugs, rich meta) is the remaining gap — blocked on the brand storefront PRD (`brand-storefront-prd.md`).
 
 ---
 
@@ -109,7 +132,26 @@ There are currently two brand-related PRDs with significant scope overlap:
 
 ## 5. Feature Requirements
 
-### 5A — Category Pages (`/categories/:L0/:L1?/:L2?`)
+### 5A — Category Pages (`/categories`, `/categories/:L0/:L1?/:L2?`)
+
+#### Root Page `/categories` — Must Have (P0)
+
+- Renders `CategoryPage` component (not SearchPage).
+- `loadData: null` — no API call; page is entirely config-driven from `categoryConfiguration`.
+- Displays all L0 categories as **cards** (name + top 3 subcategory names + "Browse →" link).
+- Occasion strip above cards: Diwali, New Baby, Gifting, Everyday — links to SearchPage with `pub_occasion` filter.
+- Featured brands strip: 3 brand logos/names, links to `/brands/:slug`.
+- `BreadcrumbList` schema: Home only.
+- `ItemList` schema: one `ListItem` per L0 category (AEO).
+- `<title>`: `All Categories — {marketplaceName}`.
+- `<meta name="description">`: editorial, not templated.
+
+#### Root Page `/categories` — Should Have (P1)
+
+- Product count per category card (e.g., "47 products") when available.
+- Occasion strip localised for seasonal context (Diwali strip visible Oct–Nov; New Baby always visible).
+
+---
 
 #### Must Have (P0)
 
@@ -120,7 +162,8 @@ There are currently two brand-related PRDs with significant scope overlap:
 
 **Editorial content block (above product grid):**
 - H1: Category display name (e.g., "Baby Clothing")
-- Subtitle/description: 1–2 sentences of editorial copy, config-driven per category.
+- Subtitle/description: **per-category editorial copy** (2–3 sentences, human voice, not a template). A generic `"Discover authentic Indian {categoryName} products"` template used across all categories is treated as thin/duplicate content by Google and fails the Arun/Sarah trust test.
+- Certification callout bar (when certifications are configured for this category): e.g., "✓ GOTS Certified · ✓ OEKO-TEX · ✓ Handcrafted in India".
 - Breadcrumb nav: Home > Category L0 > Category L1 (clickable, routes to parent category URLs).
 
 **Structured data (JSON-LD):**
@@ -379,20 +422,99 @@ Target queries where Mela should appear as the authoritative answer:
 
 ## 8. UX Requirements
 
-### Category Page Layout
+### 8A — UXR Findings (April 2026)
+
+*Based on persona analysis against current implementation. See `UXR/buyer-personas.md` for full persona details.*
+
+#### The Core UXR Problem
+
+None of our four personas think in L0 category taxonomy. They think in **occasions** (Diwali, new baby gift), **values** (organic, GOTS), and **brand names** (Masilo, Baby Forest). A flat list of category labels answers "what do you sell?" — not "what's right for me?"
+
+#### Persona × Page Audit
+
+| Persona | `/categories` root | L0 page | Critical gap |
+|---------|-------------------|---------|--------------|
+| **Priya** (heritage seeker) | ❌ No occasion entry points — her primary mental model | ⚠️ Subcategory pills don't explain cultural context ("Angrakha" means nothing) | Occasion strip missing |
+| **Arun** (cultural reclaimer) | ❌ No editorial guidance — feels like a filing cabinet | ❌ No trust anchors explaining why these products matter | Copy is SEO boilerplate, not human |
+| **Neha** (first-gen) | ⚠️ Doesn't name brands she recognises | ❌ "No products yet" empty state signals poor inventory — she will leave | Empty state is a trust-killer |
+| **Sarah** (conscious shopper) | ❌ No sustainability/certification filter visible | ❌ No certification callout before the product grid | Trust signals below the fold |
+
+#### Copy Principle (from UXR anchoring rule)
+
+> *"Mela" carries the cultural identity so copy doesn't have to.*
+
+Category page copy must **describe the products** (cultural origin, craft, certification), never **describe the user** ("your Indian finds"). See `UXR/buyer-personas.md` Cross-Cutting Insight for full guidance.
+
+---
+
+### 8B — `/categories` Root Page Layout
+
+The root page is a **curated discovery hub**, not a sitemap. Priority content order:
 
 ```
 ┌─────────────────────────────────────┐
 │ [Topbar]                            │
 ├─────────────────────────────────────┤
-│ Breadcrumb: Home > Baby Clothing    │
-│ H1: Baby Clothing                   │
-│ Description: 1–2 sentence editorial │
-│ Subcategory pills (if L0 page):     │
-│   [Rompers] [Sleepwear] [Onesies]  │
+│ Breadcrumb: Home › All Categories   │
+│ H1: Shop by Category (or "Explore") │
+├─────────────────────────────────────┤
+│ OCCASION STRIP (above the fold)     │
+│  🪔 Diwali  🌸 New Baby  🎁 Gift   │
+│  ☀️ Everyday                        │
+│  → links to /s?pub_occasion=X       │
+├─────────────────────────────────────┤
+│ CATEGORY CARDS (2-col mobile,       │
+│  3-col desktop)                     │
+│  ┌──────────┐  ┌──────────┐         │
+│  │Baby&Kids │  │ Home &   │         │
+│  │ Clothing │  │ Kitchen  │         │
+│  │ Footwear │  │ Bedding  │         │
+│  │ Skincare │  │ Décor    │         │
+│  │ Browse→  │  │ Browse→  │         │
+│  └──────────┘  └──────────┘         │
+├─────────────────────────────────────┤
+│ FEATURED BRANDS strip               │
+│ [Masilo] [Baby Forest] [Aagghhoo]  │
+│ → Browse all brands                 │
+├─────────────────────────────────────┤
+│ [Footer]                            │
+└─────────────────────────────────────┘
+```
+
+**Key decisions:**
+- Occasion strip links to **SearchPage** with `pub_occasion` filter (has full filter UI) — not CategoryPage, which doesn't render filters yet.
+- Category cards show name + top 3 subcategory names as a preview — not just a pill label.
+- Featured brands strip: 3 logos with brand names, link to `/brands/:slug`.
+- No product grid on root page — this is navigation, not search results.
+- `loadData: null` — page is entirely config-driven, no API call needed.
+
+**Schema for `/categories` root:**
+- `ItemList` of L0 categories (AEO: AI engines can answer "what categories does Mela have?")
+- `BreadcrumbList`: Home only
+
+---
+
+### 8C — L0 Category Page Layout (`/categories/:level1`)
+
+```
+┌─────────────────────────────────────┐
+│ [Topbar]                            │
+├─────────────────────────────────────┤
+│ Breadcrumb: Home > Baby & Kids      │
+│ H1: Baby & Kids                     │
+│ Editorial intro (2–3 sentences,     │
+│   human voice — not SEO template)   │
+├─────────────────────────────────────┤
+│ CERTIFICATION CALLOUT BAR           │
+│  ✓ GOTS Certified  ✓ OEKO-TEX      │
+│  ✓ Handcrafted in India             │
+│  (shown when certifications exist   │
+│   in this category)                 │
+├─────────────────────────────────────┤
+│ Subcategory pills:                  │
+│  [Clothing] [Footwear] [Skincare]   │
 ├─────────────────────────────────────┤
 │ Product Grid (12–24 products)       │
-│ (same card component as SearchPage) │
 ├─────────────────────────────────────┤
 │ Featured Brands in this category    │
 │ [BrandCard] [BrandCard] [BrandCard] │
@@ -406,10 +528,33 @@ Target queries where Mela should appear as the authoritative answer:
 ```
 
 **Key UX decisions:**
-- No search bar on CategoryPage (distinguish from SearchPage — this is a curated browse, not ad-hoc search).
-- Filter panel: minimal (Age Group, Certification only — not the full SearchPage filter set).
-- Mobile: breadcrumb collapses to "< Baby Clothing" back-arrow pattern.
-- Empty state: if no products in category, show "Coming Soon" with CTA to `/brands` page.
+- Editorial intro is **per-category config-driven copy**, not a template (`"Discover authentic Indian {categoryName} products"`). Template copy is both SEO-thin and fails the Arun/Sarah trust test.
+- Certification callout bar renders only when relevant certifications are configured for this category.
+- Empty state: show brand logos/names (with links to `/brands/:slug`) rather than "No products in X yet" — preserves trust for Neha.
+- No search bar on CategoryPage (curated browse, not ad-hoc search).
+- Filter panel: minimal — Age Group and Certification only (not full SearchPage filter set).
+- Mobile: breadcrumb collapses to "‹ Baby & Kids" back-arrow pattern.
+
+---
+
+### 8D — L1 Category Page Layout (`/categories/:level1/:level2`)
+
+Same structure as L0 but:
+- Breadcrumb: Home > Baby & Kids > Clothing
+- H1: the L1 category name
+- No subcategory pills (or sibling category links if L2 exists)
+- Deeper product grid (more specific = higher intent = more products expected)
+
+---
+
+### Brand Storefront Page Layout
+
+The layout is fully specified in `brand-storefront-prd.md`. SEO/AEO additions:
+
+- Brand header must include: founding year, country of origin, certification badges with **text labels** (not icon-only — text is what gets indexed).
+- "About" section must be a real `<p>` tag (not a modal, not a tooltip) so it's crawlable.
+- FAQ accordion must be server-rendered (not client-only) for crawlability.
+- All certification names must be spelled out in full at least once per page.
 
 ### Brand Storefront Page Layout
 

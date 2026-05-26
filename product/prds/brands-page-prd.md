@@ -13,6 +13,22 @@
 
 ---
 
+## Build Status Summary *(updated 2026-05-25)*
+
+| Item | Status | Notes |
+|------|--------|-------|
+| `BrandsPage` container (`/brands` directory) | ✅ Shipped | `src/containers/BrandsPage/BrandsPage.js` (266 lines) — canonical URL, schema.org, lazy loading |
+| `BrandCardHome` component | ✅ Shipped | `src/components/BrandCardHome/` — used on homepage and BrandsPage |
+| `BrandFilterBar` component | ✅ Shipped | `src/components/BrandFilterBar/` — filter by category/certification |
+| `BrandsPage.duck.js` (data loading) | ✅ Shipped | `src/containers/BrandsPage/BrandsPage.duck.js` |
+| `/brands/:brandSlug` individual brand storefront | ⚠️ Partial | Route exists; renders `ProfilePage` — no dedicated storefront component or `Organization` JSON-LD. Full storefront SEO tracked in `seo-aeo-category-brand-pages-prd.md` |
+| Featured brand placement / hero brand carousel | ✅ Shipped | `feat: hero brand carousel` git commit (`a251da5dc`) |
+| Brand tenure signal ("Verified Partner since [year]") | ❌ Not built | `trust-conversion-signals-prd.md` §3.6 — derivable from `author.createdAt` |
+| "Mela Verified" badge on brand cards | ❌ Not built | `trust-conversion-signals-prd.md` §3.4 |
+| Schema.org rich results passing | ⚠️ Not verified | Run Google Rich Results Test on `/brands` |
+
+---
+
 ## 1. Market Opportunity
 
 ### Target Audience

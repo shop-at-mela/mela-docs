@@ -104,9 +104,12 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 ### Should Have (P1)
 - **WhyIndia editorial section**: "Why Indian Design?" — 3 pillars (Centuries of Craft, Rooted in Sustainability, Bold Joyful Design) + CTA to SearchPage
 - **WhyIndia merged with FeaturedBrandPartners**: Both in a single `<section>` wrapper in MelaHomePage
-- **Coming Soon section**: Positioned below Indian Brands section, above TrustAssurance — 4 feature teaser cards: Unified Checkout, Community Reviews, Order Tracking, Wishlists & Gift Registry; footer note stating current affiliate model honestly
+- **Coming Soon section**: Positioned below Indian Brands section, above TrustAssurance — 1 feature card: Wishlists & Gift Registry *(Unified Checkout, Community Reviews, Order Tracking removed 2026-05-25 — incompatible with directory positioning)*; footer note: "Checkout happens directly on each brand's Shopify store — we link you there securely."
 - **TrustAssurance cert card**: "Baby Safe" → "Quality Verified / Independently Quality Tested"
-- **TrustAssurance section title**: "Why Families Trust Mela" → "Why Families Should Trust Mela"
+- **TrustAssurance section title**: ~~"Why Families Should Trust Mela"~~ → "Every Brand Here Earned Its Place" *(updated 2026-05-25)*
+- **TrustAssurance subtitle**: "We do the research so you don't have to." *(updated 2026-05-25)*
+- **Hero trust model callout** *(UXR finding 2026-05-25)*: Add a single-line callout near the hero (below CTA buttons, above trust badges) that preempts the affiliate model surprise: `"You browse here — then shop directly on each brand's own store."` This removes the trust cliff before users reach TrustAssurance. Copy must not be apologetic or overly explanatory — one line, matter-of-fact. Particularly important for Sarah and Arun who have no prior relationship with Indian brand Shopify stores.
+- **Featured artisan story in hero area** *(UXR finding 2026-05-25)*: Add one concrete artisan/brand callout adjacent to or beneath the hero headline — e.g., a rotating quote or single-line callout: `"Handwoven in Varanasi by Nizhoni Weavers"` paired with a product image. Even a static example converts trust for Sarah (conscious parent) and Arun (second-gen cultural reclaimer) better than all the badge infrastructure, because it makes the catalog feel real and specific rather than aggregated. This is not a full editorial section — it is a single line + image above the fold. WhyIndia (full editorial) is still needed below. Copy must use regional specificity, not "Indian handweaving" — see UXR Principle 8.
 
 ### Nice to Have (P2)
 - Email signup CTA within "Coming Soon" section for launch notifications
@@ -114,6 +117,7 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 - WhyIndia section with real editorial image (brand photography, not stock)
 - Occasion pills linked to curated landing pages rather than SearchPage filter params
 - "Coming Soon: Women's Kurtas" placeholder card to signal roadmap
+- **"New to Mela?" guided entry module** *(UXR finding 2026-05-25)*: A small discovery module for first-time visitors who don't know where to start. Arun (second-gen) navigates by need and occasion, not by category — he needs hand-holding that the category grid doesn't provide. The module offers 3-4 curated "start here" entry points by use-case: Gifting, Baby Shower, Diwali, First Piece for Home. Each links to a curated SearchPage filter combo. This is editorially maintained (not algorithmic) and can be a static component initially. Copy: `"Not sure where to start? We'll help."` — casual, inviting, not condescending. Do not use "New to Indian design" — see UXR cultural-framing principle.
 
 ---
 
@@ -163,7 +167,7 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 
 | Location | Element | Old Copy | New Copy |
 |----------|---------|----------|----------|
-| en.json | `SectionMelaHero.heroHeadline` | "Sustainable Baby Fashion with Indian Design Heritage" | "Discover Quality Indian Brands for Your Family" |
+| en.json | `SectionMelaHero.heroHeadline` | "Sustainable Baby Fashion with Indian Design Heritage" | "Discover Quality Indian Brands for Your Family" *(UXR note 2026-05-25: this headline still leads with origin — "Indian Brands" — rather than with value. Consider an alternative for a later iteration that leads with craft or quality: e.g., "The craft behind the product. The story behind the brand." The category pills and subheadline handle the scope; the H1 can anchor on value instead of geography. Do not change in this sprint — validate with analytics first.)* |
 | en.json | `SectionMelaHero.heroSubheadline` | "Discover premium organic clothing and accessories from innovative Indian designers. GOTS certified quality, traditional craftsmanship, delivered worldwide." | "Handpicked baby, home, and fashion brands from India — quality-verified, culturally rooted, delivered to your door." |
 | en.json | `SectionMelaHero.shopNow` | "Shop Now" | "Explore Brands" |
 | en.json | `SectionMelaHero.viewCategories` | "View Categories" | "Browse Categories" |
@@ -171,7 +175,10 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 | en.json | `CategoryShowcase.subtitle` | "Discover our carefully curated collection of sustainable baby fashion" | "Curated Indian design across categories" |
 | en.json | `AgeNavigation.title` | "Shop by Baby's Age" | "Shop Baby by Age" |
 | en.json | `FeaturedBrandPartners.subtitle` | "Discover premium brands that meet our strict quality and safety standards" | "We vet every Indian brand so you don't have to — quality, safety, and cultural craft, all in one place." |
-| en.json | `TrustAssurance.sectionTitle` | "Why Families Trust Mela" | "Why Families Should Trust Mela" |
+| en.json | `MelaHomePage.trustTitle` | "Why Families Trust Mela" | "Every Brand Here Earned Its Place" *(updated 2026-05-25)* |
+| en.json | `MelaHomePage.trustSubtitle` | "Your peace of mind is our priority - from quality to delivery" | "We do the research so you don't have to." *(updated 2026-05-25)* |
+| en.json | `MelaHomePage.qualityGuarantees` | "Our Quality Promise" | "How We Vet Every Brand" *(updated 2026-05-25)* |
+| en.json | `MelaHomePage.securityFeatures` | "Shopping with Confidence" | "Shopping on Brand Sites" *(updated 2026-05-25)* |
 | en.json | `TrustAssurance.certCard` | "Baby Safe" | "Quality Verified / Independently Quality Tested" |
 | MelaHomePage.js | `pageDescription` | "Discover GOTS certified organic baby clothes..." | "Mela curates the best Indian baby, fashion, and home brands for families in the US. Discover quality-verified brands, explore products, and shop directly on brand stores." |
 
@@ -180,40 +187,45 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 ## 7. Acceptance Criteria
 
 ### Hero
-- [ ] H1 reads "Discover Quality Indian Brands for Your Family"
-- [ ] Subheadline references baby, home, and fashion verticals
-- [ ] Hero trust badge shows "Quality Verified" (not "Baby Safe")
-- [ ] Hero quick-nav has exactly 4 pills: Baby & Kids, Fashion, Home & Kitchen, Gifts
-- [ ] Each quick-nav pill links to SearchPage with the correct `pub_categoryLevel1` param
-- [ ] "Explore Brands" CTA navigates to `/brands`
-- [ ] "Browse Categories" CTA navigates to `/categories`
+- [x] H1 reads "Discover Quality Indian Brands for Your Family"
+- [x] Subheadline references baby, home, and fashion verticals
+- [x] Hero trust badge shows "Quality Verified" (not "Baby Safe")
+- [x] Hero quick-nav has category pills *(shipped with 6 pills — Baby & Kids, Fashion, Home & Kitchen, Jewelry, Beauty, Art — PRD spec of 4 broadened in implementation)*
+- [x] Each quick-nav pill links to SearchPage with the correct `pub_categoryLevel1` param
+- [x] "Explore Brands" CTA navigates to `/brands`
+- [x] "Browse Categories" CTA navigates to `/categories`
 
 ### CategoryShowcase
-- [ ] OccasionStrip appears above AgeNavigation with 4 occasion pills (Diwali & Festivals, New Baby, Everyday, Gifting)
-- [ ] AgeNavigation title reads "Shop Baby by Age" (not "Shop by Baby's Age")
-- [ ] Category section subtitle does not contain the word "baby"
+- [x] OccasionStrip appears above AgeNavigation *(shipped with 2 occasions — Diwali & Festivals + Gifting — code comment: "Only two validated occasions for Mela's US diaspora audience"; New Baby + Everyday were dropped)*
+- [x] AgeNavigation title reads "Shop Baby by Age" (not "Shop by Baby's Age")
+- [x] Category section subtitle does not contain the word "baby"
 
 ### Indian Brands Section
-- [ ] FeaturedBrandPartners subtitle reflects curation-as-value-prop
-- [ ] FeaturedBrandPartners and WhyIndia are inside the same `<section>` in MelaHomePage
-- [ ] WhyIndia renders 3 pillar cards with icon, title, and description
-- [ ] WhyIndia "Explore Indian Brands" CTA links to SearchPage
+- [x] FeaturedBrandPartners subtitle reflects curation-as-value-prop
+- [ ] FeaturedBrandPartners and WhyIndia are inside the same `<section>` in MelaHomePage — ❌ WhyIndia not yet built (P1 remaining)
+- [ ] WhyIndia renders 3 pillar cards with icon, title, and description — ❌ Not built
+- [ ] WhyIndia "Explore Indian Brands" CTA links to SearchPage — ❌ Not built
 
 ### Coming Soon
-- [ ] ComingSoonSection renders below Indian Brands section, above TrustAssurance
-- [ ] All 4 feature cards display with icon, title, description, and "Coming Soon" badge
-- [ ] Honest affiliate model footer note is visible on mobile and desktop
+- [x] ComingSoonSection renders below Indian Brands section, above TrustAssurance
+- [x] Only Wishlists & Gift Registry card displays (Unified Checkout, Community Reviews, Order Tracking are commented out)
+- [x] Footer note reads "Checkout happens directly on each brand's Shopify store — we link you there securely." (no "currently")
 
 ### TrustAssurance
-- [ ] TrustAssurance cert card reads "Quality Verified / Independently Quality Tested"
-- [ ] TrustAssurance section title reads "Why Families Should Trust Mela"
+- [x] TrustAssurance cert card reads "Quality Verified / Independently Quality Tested"
+- [x] Section title reads "Every Brand Here Earned Its Place"
+- [x] Section subtitle reads "We do the research so you don't have to."
+- [x] Quality section heading reads "How We Vet Every Brand"
+- [x] Security section heading reads "Shopping on Brand Sites"
+- [x] "Mela Curation Promise" card is not present; 4 cards remain
+- [x] First security card reads "Shop Directly With the Brand"
 
 ### SEO & i18n
-- [ ] SEO `<title>` does not contain "Baby Clothes" or "Baby Fashion" as primary terms
-- [ ] Page meta description reflects discovery + multi-category positioning
-- [ ] schema.org OfferCatalog contains at least 3 category entries (Baby & Kids, Fashion, Home & Kitchen)
-- [ ] All new i18n strings are present in `en.json` with matching `id` values in JSX
-- [ ] No regressions in existing sections (SavedItems, CategoryShowcase, TrustAssurance)
+- [x] SEO `<title>` does not contain "Baby Clothes" or "Baby Fashion" as primary terms
+- [x] Page meta description reflects discovery + multi-category positioning
+- [x] schema.org OfferCatalog contains at least 3 category entries (Baby & Kids, Fashion, Home & Kitchen)
+- [x] All new i18n strings are present in `en.json` with matching `id` values in JSX
+- [x] No regressions in existing sections (SavedItems, CategoryShowcase, TrustAssurance)
 
 ---
 

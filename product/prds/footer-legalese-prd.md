@@ -26,14 +26,57 @@ Mela is not yet legally covered for public launch. `/terms-of-service` and `/pri
 
 ## Mela's Legal Context
 
-Mela operates as a **discovery and affiliate platform**, not a retailer:
-- Mela does not sell products directly
+Mela operates as a **curated discovery directory**, not a retailer or marketplace:
+- Mela does not sell products
 - Mela does not process payments
 - Mela does not ship goods or manage fulfillment
-- Transactions happen on each brand's Shopify store
-- Mela earns through affiliate/referral relationships with brands
+- Transactions happen on each brand's own Shopify store
+- Mela earns no revenue and has no affiliate or referral relationships with featured brands
+- Mela is operated by an individual (no LLC, no business entity) due to H-1B visa constraints
 
-This materially limits legal exposure but does not eliminate it.
+This materially limits legal exposure but does not eliminate it — a published Privacy Policy is legally required because Mela collects email addresses and uses analytics.
+
+---
+
+## Founder's Immigration & Incorporation Status
+
+**Important context that governs all legal structure decisions for Mela:**
+
+The founder is on an **H-1B visa**, which prohibits self-employment, forming an LLC as an operator, and earning income from a side business. This is not a typical startup legal risk — it is an immigration risk. A violation can affect visa status and green card proceedings.
+
+### What this means for Mela's current phase
+
+| Activity | Status |
+|----------|--------|
+| Building and sharing the product for feedback | Allowed |
+| Sharing a public URL with no revenue | Allowed |
+| Forming an LLC in founder's name | Not allowed |
+| Signing affiliate agreements | Not allowed |
+| Earning any income from Mela | Not allowed |
+| Using spouse's LLC as operator | Not allowed — same immigration risk, different wrapper |
+
+### Entity options when status changes
+
+- **Single-member LLC** — appropriate at first revenue or formal brand partnerships
+- **Add EIN + business bank account** — once LLC is formed
+- **Convert to Delaware C-Corp** — only needed if raising venture capital
+
+### Using a spouse's LLC
+
+The founder's spouse holds an LLC for a photography business. **Using it for Mela is not recommended** for the following reasons:
+- Liability contamination — a Mela dispute exposes photography business assets
+- The LLC's operating agreement does not authorize marketplace/affiliate activity
+- Spouse is the legal owner; founder has no formal ownership stake
+- Legal pages and ToS would show the photography LLC's name
+- Tax and accounting complexity from mixed business activities
+- Does not resolve the H-1B compliance question
+
+### Path forward
+
+1. Consult an immigration attorney before taking any formal incorporation step
+2. Keep Mela as a non-commercial validation project until status changes
+3. Do not sign affiliate agreements or accept revenue in current status
+4. Sharing a URL for feedback with no revenue and no contracts is the lowest-risk activity available now
 
 ---
 
@@ -45,14 +88,15 @@ This materially limits legal exposure but does not eliminate it.
 
 | Section | Content |
 |---------|---------|
-| Platform role | "Mela is a product discovery platform, not a retailer. We do not sell, ship, or fulfill orders. Clicking 'Shop from [brand]' takes you to a third-party Shopify store." |
+| Platform role | "Mela is a curated discovery directory, not a retailer. We do not sell, ship, or fulfill orders. Clicking 'Shop on [brand]' takes you to that brand's own Shopify store." |
+| Operator | Individual (personal name) — no business entity due to H-1B constraints |
 | User accounts | What data is stored, how to delete account, age requirement (13+) |
 | Saved items | Mela saves product links on your behalf; not a purchase or reservation |
-| Brand listings | Listings are submitted by brands; Mela does not verify accuracy of descriptions, pricing, or availability |
-| Affiliate disclosure | Mela may earn a commission when you purchase through links (FTC requirement) |
+| Brand listings | Brands are editorially selected by Mela; Mela does not verify real-time accuracy of descriptions, pricing, or availability |
+| No affiliate disclosure | Mela earns no commissions and has no affiliate relationships — remove any FTC affiliate disclosure language from generator output |
 | Prohibited use | No scraping, fake accounts, misleading reviews |
-| Limitation of liability | Mela is not responsible for product quality, delivery, or disputes on Shopify stores |
-| Governing law | Recommend: Delaware |
+| Limitation of liability | Mela is not responsible for product quality, delivery, or disputes on brand Shopify stores |
+| Governing law | [Founder's state] — no Delaware entity, no incorporation until immigration status changes |
 | Changes to terms | Right to update with notice |
 
 ### 2. Privacy Policy — `/privacy-policy`
@@ -105,16 +149,17 @@ Footer is configured via **Sharetribe Console → Content → Footer**. No code 
 | Cookie Policy | `/privacy-policy#cookies` |
 
 **Footer inline disclaimer text (add to copyright/slogan field):**
-> © 2026 Mela. A discovery platform for sustainable Indian brands. Mela is not a retailer — products are sold by independent brands on their own Shopify stores.
+> © 2026 Mela. A curated directory of Indian brands. Mela is not a retailer — clicking through takes you to each brand's own store.
 
 ---
 
 ## Acceptance Criteria
 
-- [ ] `/terms-of-service` has real legal content (not placeholder)
-- [ ] `/privacy-policy` has real legal content including cookie and CCPA section
-- [ ] Affiliate disclosure is present in ToS (FTC requirement)
-- [ ] Platform disclaimer ("Mela is not a retailer") is present in both ToS and footer
+- [ ] `/terms-of-service` has real legal content (not placeholder) — use `legal/terms-of-service-prompt.md` to generate
+- [ ] `/privacy-policy` has real legal content including cookie and CCPA section — use `legal/privacy-policy-prompt.md` to generate
+- [ ] ToS states Mela earns no commissions and has no affiliate relationships (no FTC affiliate disclosure)
+- [ ] ToS operator is listed as individual name, not a company or LLC
+- [ ] Platform disclaimer ("Mela is a curated directory, not a retailer") is present in both ToS and footer
 - [ ] Footer links to both pages (configured in Sharetribe Console)
 - [ ] Footer shows copyright + one-line disclaimer
 - [ ] Both pages are mobile-readable at 375px

@@ -16,6 +16,26 @@
 
 ---
 
+## Build Status Summary *(updated 2026-05-25)*
+
+| Item | Component / File | Status |
+|------|-----------------|--------|
+| Redux duck (`savedListings`) | `src/ducks/savedListings.duck.js` | ✅ Shipped (269 lines) |
+| `SavedListingButton` on `ListingCard` | `src/components/ListingCard/ListingCard.js` line 378 | ✅ Shipped |
+| `SavedItemsBanner` (auth nudge) | `src/components/SavedItemsBanner/`, used in `TopbarContainer` | ✅ Shipped |
+| Homepage `SavedItems` module ("Your Saved Items / meri pasand") | `src/containers/MelaHomePage/sections/SavedItems/SavedItemsModule.js` | ✅ Shipped |
+| `SavedPage` container (`/saved` route) | `src/containers/SavedPage/SavedPage.js`, route configured | ✅ Shipped |
+| Heart icon on `ListingCard` (hollow ↔ filled) | `src/components/ListingCard/` | ⚠️ Verify — `SavedListingButton` is imported but heart visual states unclear |
+| Topbar `"❤ Saved"` link (authenticated) | `src/containers/TopbarContainer/` | ⚠️ Verify — `SavedItemsBanner` is in Topbar but may be auth nudge banner, not nav link |
+| Auth gate — Tier 1 modal on first anon click | New modal or bottom sheet | ❓ Unknown — no separate auth gate modal found |
+| Auth gate — Tier 2 persistent banner (≥2 anon saves) | Part of `SavedItemsBanner` | ⚠️ Likely partial — `SavedItemsBanner` exists, tier logic unknown |
+| localStorage migration on login | `src/ducks/auth.duck.js` | ❓ Unknown — verify `migrateLocalSavesToProfile` dispatch |
+| `/saved` page `noindex` meta | `SavedPage.js` | ❓ Verify |
+
+**Overall**: Core save/unsave loop and all primary surfaces are shipped. Auth gate tiers, topbar nav link, and localStorage migration need verification.
+
+---
+
 ## 1. Problem Statement
 
 ### Current State
@@ -267,6 +287,8 @@ if (pending.length > 0) {
   - `🔔 Get back to items you loved, instantly`
   - `🛍️ Build your personal collection`
 
+> **UXR note 2026-05-25**: The generic fallback bullets above sell *bookmarking*, but users come to Mela to *discover* — they haven't found things they love yet when they hit the signup page. The value of an account should be framed around discovery continuity (Mela remembers what you care about, surfaces new relevant products) rather than retrieval. Consider replacing the generic fallback with: `"Mela remembers what you love — and surfaces new arrivals you'll want to see."` as a headline + shorter bullets. See also §8 below for the `SignupPage/ValueProposition` component, which currently uses copy that violates the user-layer "Indian" framing rule.
+
 #### 5.10 Save Count in Listing Title Area (Social Proof)
 - On ListingPage, show: `"Saved by [N] people"` (requires aggregated count — store in listing `metadata` via Integration API cron job, updated nightly)
 - This is a Phase 1.5 feature — include as P1 but can ship after core save is live
@@ -393,6 +415,14 @@ This makes shared collections eligible for rich results.
 1. Same contextual prompt as login (above form)
 2. **Post-signup redirect**: if `melaUnsavedItems` exists, after signup + email verification auto-migrate all saved items and redirect to `/saved`
 3. **Social login copy**: `"Continue with Google to save your finds"` — replaces the generic `"Continue with Google"` when pending saves exist
+
+> **UXR copy audit 2026-05-25 — `SignupPage/ValueProposition` component**: The current customer-facing `ValueProposition.js` on the signup page has two copy violations that should be corrected before this feature ships:
+>
+> 1. **Headline**: `"Never Lose Track of Your Favorites"` — frames signup value as retrieval/bookmarking rather than discovery. Users arrive at signup before they've found things they love. Recommended replacement: `"Your personal guide to what's new on Mela"` (discovery-forward) or `"Pick up right where you left off"` (return-visit framing, neutral enough to work at all stages).
+>
+> 2. **Subtitle**: `"Save and organize the Indian products you love"` — applies "Indian" at the **user identity layer** (possessive: "you love"), which this PRD explicitly prohibits (§3, copy rule). The word "Indian" describes a product origin; it should not describe a user's personal collection. Recommended replacement: `"Save the products you love — and find new ones you'll want."` The cultural identity lives in Mela's brand; it does not need to be re-imposed on the user's personal saves.
+>
+> These are copy-only changes (no component restructure needed) — update `en.json` keys under `SignupPage.ValueProposition.*`.
 
 ### What NOT to Change
 - Do not add a dedicated save-related signup step — keep the flow minimal

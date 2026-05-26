@@ -1,85 +1,73 @@
-# Terms of Service Creation Prompt
+# Terms of Service — Generation Prompt
 
-## Prompt for Terms of Service Creation
+Use this prompt with Termly.io, ChatGPT, or a similar tool to generate Mela's Terms of Service.
+Review the output manually before publishing — generator defaults assume a retailer; correct any language implying Mela sells, ships, or processes payments.
 
-Create a comprehensive Terms of Service document for "Mela/Laem", a proof-of-concept affiliate marketplace platform with the following characteristics:
+---
 
-### **Business Model & Current Status:**
-- Proof-of-concept marketplace aggregating products from various brands
-- Uses web scraping technology to collect product information from brand websites
-- Plans to operate as an affiliate marketplace (will earn commissions on referred sales in the future)
-- Currently generates no revenue - purely testing market demand and validating business hypothesis
-- Has NOT joined any affiliate programs yet - this is part of the validation process
-- No formal business entity established yet
-- Plans to formalize legal structure, revenue model, and affiliate partnerships once proof-of-concept validates market need
+## Prompt
 
-### **Platform Functionality:**
-- Scrapes and displays product information, prices, and availability from third-party brand websites
-- Redirects users to original brand websites to complete purchases
-- Does not process payments or handle transactions directly
-- Does not store user payment information
-- Provides product discovery and comparison services
-- Currently testing user engagement and market demand before monetization
+Create a Terms of Service for **Mela**, a personal project (not a registered business entity) that operates as a curated discovery directory for Indian brands. Key facts:
 
-### **Required Information Template to Complete:**
-**Business Details:**
-- Business Name: [Mela or Laem - choose one]
-- Contact Email: [your email for legal/support inquiries]
-- Business Address: [your current address]
-- Governing Law: [your state], United States
-- Effective Date: [platform launch date]
-- Last Updated: [today's date]
+### What Mela Is
+- A curated directory and discovery platform — not a retailer, marketplace, or e-commerce store
+- Operated by an individual (personal name, not a company or LLC)
+- Generates zero revenue; no income, no affiliate programs, no monetization of any kind
+- Lists brands that have been independently selected and featured editorially
+- Users browse Mela, then click through to each brand's own Shopify store to complete a purchase
+- Mela is not a party to any transaction between users and brands
+- Mela does not process payments, handle fulfillment, or manage returns
 
-**Current Status:**
-- Affiliate Programs: None currently - testing market validation first
-- Revenue Generation: $0 - pre-monetization phase
-- Business Entity: None established yet
+### What Mela Does Not Do
+- Mela does not sell products
+- Mela does not process credit cards or hold payment information
+- Mela does not ship or fulfill orders
+- Mela does not earn commissions or affiliate fees
+- Mela is not affiliated with, endorsed by, or partnered with any featured brand
 
-**Technical Implementation:**
-- Data Collection: [specify what you track - analytics, clicks, etc.]
-- Scraped Websites: [list major brands/sites you scrape from]
-- Cookie Types: [essential, analytics, etc.]
-- Analytics Tools: [Google Analytics, other tracking tools]
-- Geographic Scope: [which countries/regions you serve]
+### Platform Functionality
+- Product and brand information displayed on Mela is curated manually or via data feeds; accuracy is not guaranteed (prices, availability, and descriptions may differ from the brand's actual store)
+- Users can create accounts to save brands and products for later
+- Clicking "Shop on [Brand]" redirects the user to that brand's own third-party Shopify store; from that point, the brand's own Terms of Service and Privacy Policy govern
 
-### **Legal Considerations to Address:**
-- Web scraping practices and data usage rights for validation purposes
-- Future affiliate relationship framework and disclosures
-- Intellectual property protections for scraped content
-- User data collection and privacy (minimal data collection for testing)
-- Limitation of liability for a non-revenue, pre-monetization platform
-- Terms regarding product information accuracy and availability
-- Disclaimer about relationship with featured brands (currently none)
-- Content usage and fair use provisions for market testing
-- User conduct and acceptable use policies
-- Framework for future monetization without requiring new terms
+### Legal Structure
+- **Operator**: [Your Full Name], an individual
+- **Contact Email**: [your email]
+- **Governing Law**: [Your state], United States
+- **Effective Date**: [date]
+- No business entity has been formed; this is a personal, non-commercial project
 
-### **Tone & Approach:**
-- Clear, accessible language for consumers
-- Professional but not overly complex for a startup
-- Protective of the platform while being transparent about validation phase
-- Includes standard legal protections while acknowledging pre-monetization status
-- Flexible framework that can accommodate future affiliate partnerships
-- Honest about current limitations and testing phase
+### Required Sections
 
-### **Key Sections to Include:**
-1. Service description and current validation phase limitations
-2. User rights and responsibilities during testing phase
-3. Data scraping and content usage policies for market research
-4. Future affiliate relationship framework and disclosure requirements
-5. Intellectual property protections and fair use claims
-6. Privacy and data collection (minimal, for validation purposes)
-7. Disclaimers and limitations of liability for pre-revenue platform
-8. Governing law and dispute resolution
-9. Changes to terms (especially important for evolving business model)
-10. Contact information and feedback channels
+1. **Service Description** — Mela is a discovery directory; we curate and link, we do not sell
+2. **User Accounts** — email + saved items; how to request deletion; age requirement (13+)
+3. **Saved Items / Wishlists** — saving a product on Mela is not a purchase or reservation
+4. **Third-Party Brand Sites** — once a user clicks through to a brand's Shopify store, Mela has no control; that brand's terms apply
+5. **Accuracy Disclaimer** — product info (price, availability, descriptions) may not reflect current brand store state; Mela makes no warranty
+6. **No Affiliate Relationship** — Mela does not earn commissions; featured brands are not paying partners
+7. **Prohibited Use** — no scraping, no fake accounts, no commercial use of content
+8. **Intellectual Property** — Mela's original curation and editorial content is protected; brand names and product images belong to their respective owners
+9. **Limitation of Liability** — Mela is not responsible for product quality, delivery failures, returns, or disputes on brand stores
+10. **No Warranty** — platform provided as-is; no uptime guarantees
+11. **Changes to Terms** — right to update with reasonable notice
+12. **Governing Law & Disputes** — [state] law; informal resolution preferred given non-commercial nature
+13. **Contact** — [your email]
 
-### **Special Considerations for Pre-Monetization Phase:**
-- Emphasize this is a market validation exercise
-- Include framework for future affiliate partnerships without requiring new terms
-- Address user expectations during testing phase
-- Protect against liability while building user base
-- Allow flexibility for business model changes
-- Include provisions for data portability if users want to leave during testing
+### Tone
+- Plain English, not legalese
+- Honest about what Mela is and isn't
+- No language implying current or future revenue, affiliate income, or business partnerships
+- No language about "our company" — use "Mela" or "I" (individual operator)
 
-Please ensure the Terms of Service is appropriate for a pre-revenue, market validation stage while still providing necessary legal protections for web scraping, future affiliate marketing, and user interactions. The document should be flexible enough to accommodate business model evolution without requiring complete rewrites.
+---
+
+## What to Remove From Generator Output
+
+Review and remove any auto-generated language that:
+- Implies Mela sells or fulfills products
+- References "our store", "our products", or "your order"
+- Includes refund or return policies (Mela has none — returns are handled by brand stores)
+- References affiliate disclosures or commission relationships (Mela has none)
+- References a business entity, LLC, company registration number, or EIN
+- Promises specific uptime SLAs
+- Includes GDPR sections (Mela targets US users only at launch)

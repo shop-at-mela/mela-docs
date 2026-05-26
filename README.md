@@ -35,11 +35,11 @@ Technical documentation and architecture
 
 ## About Mela
 
-Mela is building an affiliate discovery platform that connects Indian brands with global customers, starting with baby fashion in the US market.
+Mela is a curated directory of India's best brands, helping global customers discover authentic Indian products starting with baby fashion in the US market.
 
 **Mission:** Bring India's best brands to global markets
 
-**Current Focus:** Validating supply and demand for curated Indian baby fashion brands
+**Current Focus:** Building a curated discovery experience for Indian baby fashion brands
 
 ## Last Updated
 January 2025
