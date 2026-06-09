@@ -1,6 +1,6 @@
 # Mela Project Roadmap & Task List
 
-**Last Updated:** 2026-04-11
+**Last Updated:** 2026-06-08
 
 This document tracks active projects, planned initiatives, and completed work across the Mela platform.
 
@@ -55,6 +55,45 @@ This document tracks active projects, planned initiatives, and completed work ac
 ## 📋 Active Projects
 
 ### 🔴 High Priority
+
+#### 🆕 Social Content — Drive Traffic to Mela
+**Status:** Ready to start
+**Owner:** PM (strategy + content) + Developer (Pinterest feed)
+**PRD:** [social-content-strategy-prd.md](./product/social-content-strategy-prd.md)
+
+**Context:** Basic platform is live. Next phase is traffic — social (Pinterest + Instagram + Reddit) as the inspiration layer that feeds the web app. Automation keeps social in sync with Mela product/brand data without ongoing manual effort. Pinterest is the first priority (highest ROI, most automatable). See PRD for full platform strategy and automation architecture.
+
+**Phase 1 — Pinterest Catalog Feed (Week 1–2)**
+- [ ] Add `/feeds/pinterest` server route to web-client — queries all active listings via Sharetribe SDK, returns Pinterest-compatible XML catalog
+- [ ] Create Pinterest Business account
+- [ ] Register catalog feed URL in Pinterest Catalog Manager
+- [ ] Verify Product Pins auto-create from feed
+- [ ] Create 5 curated occasion boards: Diwali, New Baby, Modern Indian Nursery, Organic Baby Essentials, Heritage Gifting
+
+**Phase 2 — Scheduling Tool Setup (Week 2–3, no engineering)**
+- [ ] Create Buffer (Essentials) account
+- [ ] Connect Instagram Business + Pinterest Business to Buffer
+- [ ] Configure draft → approval workflow (all auto-posts land in Pending, not auto-published)
+
+**Phase 3 — Automation Triggers (Week 3–4)**
+- [ ] Set up Zapier/Make account
+- [ ] Build "new listing → Instagram Story draft → Buffer queue" workflow
+- [ ] Build "new brand → carousel caption via Claude API → Buffer queue" workflow
+- [ ] Build "new brand → Pinterest brand board + first 10 pins" workflow
+- [ ] Test end-to-end: list a product, confirm pin appears + Story drafted
+
+**Phase 4 — Seasonal Calendar Automation (Week 4–5)**
+- [ ] Build seasonal script: 4 weeks before each event, query listings by occasion tag, populate Buffer queue
+- [ ] Events to cover: Diwali (Oct), New Year gifting (Dec), Mother's Day (Apr), Holi (Feb), New Baby (evergreen monthly)
+- [ ] Set up Slack/email notification: "Your [season] content queue is ready — review and approve"
+
+**Success Metrics:**
+- 📌 Pinterest catalog feed live and syncing daily
+- 📌 First 5 brand spotlights published to Instagram
+- 📈 Pinterest referral traffic > 5% of total Mela sessions (Month 3–6)
+- ⏱️ Ongoing manual effort ≤ 3 hours/week
+
+---
 
 #### 0. SEO & AEO — Category Pages + Brand Storefront Pages
 **Status:** Draft — Ready for Review
@@ -241,6 +280,19 @@ This document tracks active projects, planned initiatives, and completed work ac
   - 📋 Performance optimization
   - 📋 Analytics improvements
   - 📋 Error monitoring
+
+## 🎯 Q2–Q3 2026 Goals (Current Phase)
+
+1. **Social Traffic**
+  - 📋 Pinterest catalog feed live and auto-syncing
+  - 📋 Instagram brand spotlight cadence established (1/week)
+  - 📋 Reddit community presence in r/IndiaMoms, r/AsianParenting
+  - 📋 Automation running: new product/brand → social content with minimal manual effort
+
+2. **Inspiration Layer on Web App** *(follows social setup)*
+  - 📋 Occasion/collection pages as social landing destinations (`/collections/diwali-gifting-guide` etc.)
+  - 📋 Editorial brand stories elevated on homepage
+  - 📋 Occasion-based navigation alongside category pills
 
 ---
 
