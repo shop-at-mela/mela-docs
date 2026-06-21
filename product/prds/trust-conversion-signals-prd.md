@@ -330,6 +330,7 @@ const isMelaVerified = publicData.certification?.length > 0
 - [ ] Uses `publicData.brand`; no new data fields required
 
 **Bestseller pipeline:**
+- [x] `isBestseller` listing field defined in `configListing.js` as `localOnly: true` (boolean schemaType; merges regardless of Console config); `FilterComponent` handles `SCHEMA_TYPE_BOOLEAN` via `SelectSingleFilter` — done 2026-06-21
 - [ ] Weekly job sets `publicData.isBestseller = true` on top 20% of listings by orders per L1 category (last 90 days)
 - [ ] Badge cap: no more than 3 listings per L1 tagged `isBestseller` at any time
 - [ ] `ListingCard.ConversionBadges` renders "Bestseller" for those listings

@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-05-25  
+**Last updated:** 2026-06-21  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 ---
@@ -22,13 +22,13 @@
 | PRD | Status | Priority | Blocking / Blocked By | Remaining Work (P0) |
 |-----|--------|----------|-----------------------|---------------------|
 | [homepage-redesign-prd.md](prds/homepage-redesign-prd.md) | 🟡 Partial | P0 | — | WhyIndia editorial section (P1) |
-| [trust-conversion-signals-prd.md](prds/trust-conversion-signals-prd.md) | 🟡 Partial | P0 | `isBestseller` needs pipeline | "Ships to US · US cards · Sold by [Brand]" static line on ListingPage (~30 min); `isBestseller` tagger script |
+| [trust-conversion-signals-prd.md](prds/trust-conversion-signals-prd.md) | 🟡 Partial | P0 | `isBestseller` needs pipeline | "Ships to US · US cards · Sold by [Brand]" static line on ListingPage (~30 min); `isBestseller` tagger script (field + filter now built) |
 | [pre-redirect-sentiment-prd.md](prds/pre-redirect-sentiment-prd.md) | ✅ Shipped | P0 | — | Hotjar script; zero-results text prompt (P1) |
 | [saved-items-pasand-prd.md](prds/saved-items-pasand-prd.md) | 🟡 Partial | P1 | — | Verify auth gate tiers; verify Topbar "❤ Saved" nav link; verify localStorage migration on login |
 | [footer-legalese-prd.md](prds/footer-legalese-prd.md) | ⛔ Blocked | P0 | Legal copy not written | Write ToS + Privacy Policy copy |
 | [brands-page-prd.md](prds/brands-page-prd.md) | 🟡 Partial | P1 | — | Brand tenure signal; Mela Verified badge; brand storefront SEO (see seo-aeo PRD) |
 | [brand-storefront-prd.md](prds/brand-storefront-prd.md) | 🔲 Ready | P1 | Depends on `brands-page-prd.md` | Full brand storefront at `/brands/:brandSlug` — Organization JSON-LD, brand story, certifications |
-| [seo-aeo-category-brand-pages-prd.md](prds/seo-aeo-category-brand-pages-prd.md) | 🟡 Partial | P0 | Brand storefront blocked on `brand-storefront-prd.md` | Category pages ✅ done; brand storefront SEO entirely unbuilt |
+| [seo-aeo-category-brand-pages-prd.md](prds/seo-aeo-category-brand-pages-prd.md) | 🟡 Partial | P0 | — | Category pages ✅; canonical URLs + `/u/:id` redirect ✅; JSON-LD (Org, BreadcrumbList, ItemList), sitemap, 404 for bad slugs still needed |
 | [search-page-optimization-prd.md](prds/search-page-optimization-prd.md) | 🟡 Partial | P1 | — | Scroll position preservation; analytics instrumentation; image lazy loading |
 | [newsletter-login-nudge-prd.md](prds/newsletter-login-nudge-prd.md) | 🔲 Ready | P1 | Requires Beehiiv account | Newsletter email capture; save nudge redesign; Beehiiv integration |
 | [enrichment-pipeline-stage2-update-prd.md](prds/enrichment-pipeline-stage2-update-prd.md) | 🟡 Partial | P1 | — | Web-client ✅ done; verify pipeline (`prompt_engine.py`) and ingestion outputs `metaDescription` + `searchSynonyms` |

@@ -597,15 +597,15 @@ The layout is fully specified in `brand-storefront-prd.md`. SEO/AEO additions:
 
 ### Brand Storefront Pages
 
-- [ ] `configBrands.js` has a `slug` field for every curated brand (~10 brands).
-- [ ] `/brands/masilo` 301-redirects to `/u/{masilo-uuid}` (the existing fully-built brand storefront).
-- [ ] Brand storefront content (name, logo, tagline, certifications, about, brand story) already renders via existing `BrandStorefront` component — verify it still works after redirect.
+- [x] `configBrands.js` has a `slug` field for every curated brand (13 brands as of 2026-06-21, incl. The Nesavu).
+- [x] `/u/{brand-uuid}` client-side redirects to `/brands/:brandSlug` — canonical URL is `/brands/:slug` (direction reversed from original AC: slug is the canonical, not the redirect target).
+- [x] Brand storefront content (name, logo, tagline, certifications, about, brand story) renders via `BrandStorefront` component at `/brands/:brandSlug`.
 - [ ] Certifications rendered as text labels (not icon-only) — verify existing implementation satisfies this.
 - [ ] `Organization` JSON-LD present with: `name`, `url`, `logo`, `description`, `foundingLocation`, `hasCredential` (from certifications data).
 - [ ] `BreadcrumbList` JSON-LD present: Home > Brands > {BrandName}.
 - [ ] `ItemList` JSON-LD present for brand's products.
-- [ ] `<link rel="canonical">` on `/brands/:brandSlug` points to itself.
-- [ ] `<link rel="canonical">` on `/u/:id` (for brand users) points to `/brands/:brandSlug`.
+- [x] `<link rel="canonical">` on `/brands/:brandSlug` points to itself (ProfilePage passes `canonicalURL={brandCanonicalUrl}` to Page component).
+- [x] `<link rel="canonical">` on `/u/:id` (for brand users) points to `/brands/:brandSlug` (ProfilePage.js computes `brandCanonicalUrl` and passes to `<Page canonicalURL=...>`; client redirect also fires for direct UUID access).
 - [ ] `<title>` = `{BrandName} — Indian Baby Products | Mela`.
 - [ ] `<meta name="description">` includes brand tagline + top certification + Mela context.
 - [ ] `<meta property="og:image">` set to brand logo or hero image.
