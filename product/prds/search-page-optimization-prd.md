@@ -1516,6 +1516,12 @@ Apply button: Fixed bottom, full width, primary color
 - Easy filter removal
 - Multiple value selection within same filter type
 
+**Society of Cloth** (closest UX benchmark for curated South Asian brands):
+- Search overlay surfaces curated editorial collections as "Popular Searches" (*Community Favorites*, *Gifting*, *The Linen Edit*, *Embroidery*) rather than a blank input — converts because it surfaces intent the user didn't know they had
+- Product cards swap to a second image on hover — low engineering cost, high perceived quality signal, especially valuable for baby/kids where parents want to see the item in use
+- **Implication for Mela Phase 2**: Replace blank search default state with 4–6 editorial collection tiles (e.g., *New to the US*, *For the Baby Shower*, *Ayurvedic Beauty*); add hover image swap to `ListingCardThumbnail`
+- Full breakdown: `strategy/competitive-analysis.md`
+
 ### Technical References
 
 - Sharetribe Flex CLI documentation for search schemas

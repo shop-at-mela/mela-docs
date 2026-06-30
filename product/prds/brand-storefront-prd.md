@@ -36,6 +36,14 @@
 - **Competitive gap**: No platform curates verified Indian organic baby brands with rich storytelling
 - **SEO potential**: Brand profile pages can rank for "[Brand Name] products," "[Brand Name] reviews"
 
+**Competitive Benchmark — Society of Cloth**:
+Society of Cloth (societyofcloth.com, NYC 2023) is the closest executed analog for Mela's brand-first positioning. Key patterns to match or exceed:
+- Each designer gets a first-class collection URL (`/collections/jodi`, `/collections/gundi-studios`) — brand identity is the product, not a subcategory
+- Homepage sections, nav, and product cards all foreground the designer name above the product name
+- Brand pages feel like mini-storefronts with their own visual identity, not generic profile templates
+- **Mela's advantage**: SoC is a single-operator retailer; Mela's storefront is self-serve, scalable, and covers categories (baby, beauty, home) SoC doesn't touch
+- Full breakdown: `strategy/competitive-analysis.md`
+
 ### Target Audience: 6 Demographic Segments
 
 #### 1. New Parents (25-35 years) - "Research-Intensive Buyers"
