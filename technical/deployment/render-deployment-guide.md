@@ -227,6 +227,30 @@ GOOGLE_CLIENT_SECRET=your-google-client-secret
 3. Add your Render domain to allowed domains
 4. Update any webhook URLs if needed
 
+### 5.3 Configure Search Schema via Sharetribe CLI
+
+Certain publicData fields must be registered in Sharetribe's search schema before they can be used as query filters. Run these against the production marketplace ID after deployment.
+
+**Required: `sku` field** (enables the Recommended Products carousel)
+
+```bash
+flex-cli search set --key sku --type enum --scope public -m <your-marketplace-prod>
+```
+
+Verify it was added:
+```bash
+flex-cli search -m <your-marketplace-prod>
+```
+
+You should see `sku` in the output. Sharetribe re-indexes existing listings after a schema change — allow a few minutes before the carousel returns results.
+
+**Why this is needed**: The Recommended Products duck queries `pub_sku: [skus]` to resolve cross-product links stored in `publicData.recommendedProducts`. Without `sku` in the search schema, Sharetribe silently ignores the filter and returns arbitrary listings, leaving the carousel empty.
+
+> Also run the dev equivalent if not already done:
+> ```bash
+> flex-cli search set --key sku --type enum --scope public -m <your-marketplace-dev>
+> ```
+
 ## Step 6: Testing
 
 ### 6.1 Basic Functionality Test
