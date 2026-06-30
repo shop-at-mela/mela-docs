@@ -195,8 +195,10 @@ Priya actively wants cultural context at the *product* level — she needs to kn
 │ • Shops on Myntra/FirstCry when in India                        │
 ├─────────────────────────────────────────────────────────────────┤
 │ SHOPPING BEHAVIOR                                               │
-│ • Knows exactly which Indian brands she wants                   │
-│ • Frustrated that those brands don't ship to US easily          │
+│ • On Myntra/FirstCry: demand-fulfillment mode — knows brands    │
+│ • On Mela: switches to inspiration mode — open to brands she    │
+│   didn't know to look for yet                                   │
+│ • Frustrated that preferred brands don't ship to US easily      │
 │ • Compares US prices to India prices (expects some markup)      │
 │ • Bulk orders when family visits India                          │
 │ • Recommends brands to other Indian moms in her network         │
@@ -258,6 +260,17 @@ Priya actively wants cultural context at the *product* level — she needs to kn
 - "How long will it actually take to arrive?"
 - "Is this the same quality as buying in India?"
 - "Have other people in my community ordered from here?"
+
+### Neha's Shopping Mode on Mela
+
+Neha is the most behaviorally split persona — she has two distinct modes that don't always coincide with a single session:
+
+- **Fulfillment mode** (what she does on Myntra): Arrives knowing the brand, the SKU, often the approximate price. Any platform that adds friction to this path loses her immediately.
+- **Inspiration mode** (what she does on Mela): Arrives with a loose intent ("something for the baby," "a festival outfit") and is genuinely open to being surprised. This is where Mela can expand her brand repertoire beyond what she already knows from India.
+
+**The sub-variant to know:** First-gen immigrants who came to the US *via marriage* (rather than for education or work) arrive at Mela more strongly in inspiration mode. They may shop Indian brands, but they built their brand familiarity differently — through a partner's family, through home visits, through WhatsApp group sharing — rather than through years of independently browsing Myntra. These users have strong cultural taste but less rigid brand loyalty, which makes curation particularly valuable to them.
+
+**Design implication:** Always surface familiar brands fast (fulfillment path), but invest equally in the discovery layer — curated collections, "you might also like from Indian artisans," occasion-based browsing. Neha in inspiration mode is where Mela earns loyalty beyond convenience.
 
 ### Neha's Relationship With "Indian" in Copy
 Neha grew up in Chennai with a strong Tamil identity. "Indian" as a monolith is both accurate and reductive for her — it is true but it collapses Carnatic music, Kanchipuram silk, and Pongal traditions into the same bucket as Punjabi bhangra wear and Rajasthani block print.
@@ -362,6 +375,7 @@ This is the most psychologically sensitive case. Arun experiences low-grade impo
 | **Trust priority** | Certifications | Authenticity | Brand + price fairness | Accessibility |
 | **Shopping trigger** | Everyday need | Festivals | Ongoing need | Occasions + identity |
 | **Key fear** | Greenwashing | Costume-y look | Being overcharged (knows real cost) | Not being "Indian enough" |
+| **Shopping mode on Mela** | Pure inspiration | Occasion-led inspiration | Split (fulfillment + inspiration) | Pure inspiration |
 | **"Indian" on products** | ✅ Trust signal | ✅ Essential for authenticity | ✅ Acceptable; regional is better | ✅ Discovery tool |
 | **"Indian" on user layer** | ❌ Cultural tourism framing | ❌ Erases her American identity | ❌ Reductive monolith | ❌ Amplifies impostor syndrome |
 
@@ -457,14 +471,61 @@ Every user who reaches the platform has already passed through the cultural fram
 
 ---
 
+---
+
+## Cross-Cutting UXR Insight: The Inspiration vs. Fulfillment Divide
+
+> *Added: June 2026 — based on first-gen user feedback: "Customers come to eBay/Amazon knowing what they want. On Mela they would come for inspiration."*
+>
+> *Source: Wife of founder — came to US via marriage, shops actively from Indian brands*
+
+### The Core Behavioral Shift
+
+Users arrive on platforms in fundamentally different shopping modes. Mela sits in a distinct position that most existing Indian product channels do not occupy:
+
+| Platform | Shopping Mode | User State | UX Optimized For |
+|----------|--------------|-----------|-----------------|
+| Amazon / eBay | **Fulfillment** | "I know what I want. Help me find it fast." | Search, price comparison, quick checkout |
+| Myntra / FirstCry | **Fulfillment** | "I know the brand/product. Show me inventory." | Brand navigation, size/filter, fast checkout |
+| Pinterest / Instagram | **Inspiration** | "Show me something I'll love." | Browse, discovery, visual serendipity |
+| **Mela** | **Inspiration → Fulfillment** | "I came to discover. I leave knowing what I want." | Curated browse + trust signals + confident checkout |
+
+### Why This Changes the UX Priority Order
+
+This insight inverts the common assumption that search is the most important UX surface. For Mela:
+
+1. **Discovery surfaces come first**: Homepage, curated collections, "shop by occasion," editorial content — these are where Mela wins. A customer who arrives with loose intent ("something Indian for the nursery") and leaves having discovered a brand they now trust has had a successful Mela session.
+
+2. **Search is the fallback, not the default**: Neha may use search to find a specific brand she already knows. But she came to Mela because Mela can also show her things Myntra wouldn't surface for a US shopper. Both paths matter, but the investment priority should be discovery-first.
+
+3. **Curation is the core product**: The fact that users come for inspiration means Mela's editorial judgment — what brands it carries, how it groups products, what stories it tells — is itself the value proposition. Mela is not a search engine pointing at Indian inventory. It is a curated discovery experience that happens to have checkout.
+
+### Per-Persona Mode Analysis
+
+| Persona | Arrives in Mode | Mela's Unique Role |
+|---------|----------------|-------------------|
+| Sarah | Pure inspiration — "something sustainable I can't find on Etsy" | Introduce her to an artisan universe she couldn't discover elsewhere |
+| Priya | Occasion-led — "something for Diwali but not sure what" | Curate by occasion so she discovers the right item before she knew to search for it |
+| Neha | Split — fulfillment (specific brand) + inspiration (new discoveries) | Surface known brands fast; use recommendations to expand her repertoire |
+| Arun | Pure inspiration — has no frame of reference for what to want | Cultural context + visual storytelling to make the first discovery feel safe |
+
+### The Design Principle
+
+> **Mela is a destination for discovery, not a shortcut to India's Amazon.**
+
+A user who could go to Myntra to find what they want chooses Mela because Mela shows them what they didn't know they wanted. That is a fundamentally different value proposition, and the product should be built accordingly: discovery-first, curation-led, with checkout as the conclusion of an inspirational journey — not the purpose of a search session.
+
+---
+
 ## Persona Updates
 
 | Date | Update |
 |------|--------|
 | Jan 2026 | Initial personas created based on market research |
 | Apr 2026 | Added per-persona "Relationship With 'Indian' in Copy" sections; added Cross-Cutting UXR Insight: The "Indian" Anchoring Principle |
+| Jun 2026 | Updated Neha's shopping behavior to reflect dual-mode (fulfillment on Myntra, inspiration on Mela); added "Shopping Mode on Mela" subsection with "came via marriage" sub-variant; added "Shopping mode on Mela" row to comparison matrix; added Cross-Cutting UXR Insight: The Inspiration vs. Fulfillment Divide (source: first-gen user feedback) |
 
 ---
 
-*Last updated: April 2026*
-*Source: Mela market research, why-mela-matters analysis, copy review of saved-items feature*
+*Last updated: June 2026*
+*Source: Mela market research, why-mela-matters analysis, copy review of saved-items feature, first-gen user feedback (founder's wife)*
