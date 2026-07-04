@@ -1,0 +1,103 @@
+---
+# Mela Social Campaign — YAML Format
+# The Alternate Week 1 (July 3–6, 2026)
+
+brand: The Alternate
+brand_slug: the-alternate
+week: 1
+date_posted: "2026-07-03"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Sarah
+category: fashion
+
+instagram:
+  submission_id: b3b48431-2e35-447f-9c8c-fd429c1f5926
+  destination: https://shopatmela.com/brands/the-alternate
+  caption: |
+    The Alternate creates handcrafted slip-ons and boots with vegan-friendly velvet and ethical craftsmanship. Each pair is meticulously embroidered and designed for those who value artisan quality and sustainable style. Perfect for weddings, everyday wear, and celebrating individuality through thoughtful design.
+
+    Featured in this carousel:
+    • Abstract Embroidery Slip-Ons (Beige)
+    • Bit Loafers (Beige)
+    • Alligator Mules (Brown)
+    • Ankle Boots with Croco Detail
+
+    Discover The Alternate on Mela →
+
+    📍 Handcrafted in India | Shipped to the US
+    #TheAlternate #VeganFashion #EthicalFootwear #ArtisanCrafts #SustainableLiving
+
+  products:
+    - name: Abstract Embroidery Slip-Ons (Beige)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6f8aca06-fae7-4d61-bec1-725dd7fba34d.jpg
+      blotato_visual_id: 6ce70a93-cdef-4813-9e0b-00b4846981ae
+      price_inr: 7990
+      price_usd: 96
+      dev_listing_id: 6a14b1db-ce13-43b1-b0a5-5e218d4e1499
+      shopatmela_url: https://www.shopatmela.com/l/6a14b1db-ce13-43b1-b0a5-5e218d4e1499
+
+    - name: Bit Loafers (Beige)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4b1592a3-35b3-4603-b7c3-ea9f813b2a8a.jpg
+      blotato_visual_id: 532a4996-21f1-4f00-9d1e-c36ae19c45e0
+      price_inr: 6990
+      price_usd: 84
+      dev_listing_id: 6a14b24b-e6f8-4aab-8462-06b276f18143
+      shopatmela_url: https://www.shopatmela.com/l/6a14b24b-e6f8-4aab-8462-06b276f18143
+
+    - name: Alligator Mules (Brown)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4e0bf72f-ef52-46e0-a51b-c8140c7bce78.jpg
+      blotato_visual_id: 0d5aeb81-00b3-4141-aa11-dc2f46ec1e1c
+      price_inr: 2990
+      price_usd: 36
+      dev_listing_id: 6a14b203-bc50-4248-a1a3-47be09baa6bc
+      shopatmela_url: https://www.shopatmela.com/l/6a14b203-bc50-4248-a1a3-47be09baa6bc
+
+    - name: Ankle Boots with Croco Detail
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-47d65a03-ba9b-43a3-8392-30305f44cd49.jpg
+      blotato_visual_id: d6713072-1aed-4586-a3da-9f5f4a808115
+      price_inr: 7490
+      price_usd: 90
+      dev_listing_id: 6a14b20d-105e-4244-ab97-cf683b937c8b
+      shopatmela_url: https://www.shopatmela.com/l/6a14b20d-105e-4244-ab97-cf683b937c8b
+
+pinterest:
+  boards:
+    - the-alternate
+    - artisan-footwear
+
+  pins:
+    - name: Abstract Embroidery Slip-Ons (Beige)
+      title: Abstract Embroidery Slip-Ons | Handcrafted Vegan Footwear
+      description: Handcrafted slip-ons in rich beige velvet with striking abstract embroidery. 100% vegan-friendly, ethically made in India. Perfect for weddings and special occasions. Artisan design, comfortable insoles. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6f8aca06-fae7-4d61-bec1-725dd7fba34d.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a14b1db-ce13-43b1-b0a5-5e218d4e1499
+
+    - name: Bit Loafers (Beige)
+      title: Bit Loafers in Beige | Handcrafted Slip-On Shoes
+      description: Handcrafted bit loafers in soft beige. Versatile design for work and leisure, comfortable and stylish. Artisan-made in India with attention to detail. Vegan-friendly materials. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4b1592a3-35b3-4603-b7c3-ea9f813b2a8a.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a14b24b-e6f8-4aab-8462-06b276f18143
+
+    - name: Alligator Mules (Brown)
+      title: Alligator Mules in Brown | Affordable Artisan Footwear
+      description: Handcrafted alligator mules in rich brown. Affordable artisan footwear with unique texture and style. Perfect for everyday wear and special occasions. Ethically made in India. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4e0bf72f-ef52-46e0-a51b-c8140c7bce78.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a14b203-bc50-4248-a1a3-47be09baa6bc
+
+    - name: Ankle Boots with Croco Detail
+      title: Ankle Boots with Croco Detail | Handcrafted Indian Footwear
+      description: Handcrafted ankle boots featuring unique crocodile texture detail. Double layered comfort, artisan design. Versatile for various occasions. Ethically produced in India. Sizes available. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-47d65a03-ba9b-43a3-8392-30305f44cd49.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a14b20d-105e-4244-ab97-cf683b937c8b
+
+notes:
+  category_note: Same as Week 1 & 2; diversify to home/jewelry in Week 3
+  persona_intro: Sarah (materials + craftsmanship + ethical/vegan) — different from Arun in Fizzy Goblet
+  copy_quality: All captions use proper affiliate language (ethically made in India, discovered on Mela)
+  shipping_clarity: All captions note "Shipped to the US" (diaspora trust signal for wedding-focused brand)
+  price_point_spread: ₹2,990–₹7,990 ($36–$96) shows accessibility + premium options
+  team_feedback: Awaiting publication and initial engagement data

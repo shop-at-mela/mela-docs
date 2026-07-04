@@ -1,0 +1,177 @@
+---
+# Mela Social Campaign — YAML Format
+# Fizzy Goblet Week 1 (June 28, 2026)
+
+brand: Fizzy Goblet
+brand_slug: fizzy-goblet
+week: 1
+date_posted: "2026-06-28"
+status: published
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Arun
+category: fashion
+
+# INSTAGRAM
+instagram:
+  submission_id: null  # not recorded for Week 1
+  destination: https://shopatmela.com/brands/fizzy-goblet
+  caption: |
+    Handcrafted in India by skilled artisans, Fizzy Goblet reimagines traditional juttis, wedges, and kolhapuris for modern life. Each pair features intricate mirror work, gold zari embroidery, and vegetable-tanned leather—techniques passed down through generations.
+
+    From festive celebrations to everyday elegance, these handcrafted shoes ground you in heritage. Double-cushioned comfort and bespoke embellishments make each step intentional.
+
+    Featured in this carousel:
+    • 24K Magic Criss Cross Wedge
+    • A Glass Act Juttis
+    • Balcony Breeze Juttis
+    • After Hours Heels
+    • All Day Black Boots
+    • Benaras Beauty Salsa Heels
+    • Betty Ballet Flats
+
+    Discover Fizzy Goblet on Mela →
+
+    📍 Handcrafted in India | Shipped to the US
+    #FizzyGoblet #HandmadeInIndia #IndianCraftsmanship #ArtisanBrands #SustainableStyle
+
+  products:
+    - name: 24K Magic Criss Cross Wedge
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-33476dc3-d86c-4211-8a45-5861b604e6bb.jpg
+      blotato_visual_id: null
+      dev_listing_id: 6a17b5d1-7d32-4f83-b39a-540e4ad0e37f
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5d1-7d32-4f83-b39a-540e4ad0e37f
+
+    - name: A Glass Act Juttis
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7734ae3d-694d-423a-96c4-9207f15a6c6e.jpg
+      blotato_visual_id: null
+      dev_listing_id: 6a17b5d8-38e7-4d1d-b95f-9de629138323
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5d8-38e7-4d1d-b95f-9de629138323
+
+    - name: Balcony Breeze Juttis
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-eacae169-4966-4382-bdfd-a7bdcaf35d15.jpg
+      blotato_visual_id: null
+      dev_listing_id: 6a17b60b-25de-4259-bfbb-4fd375913796
+      shopatmela_url: https://www.shopatmela.com/l/6a17b60b-25de-4259-bfbb-4fd375913796
+
+    - name: After Hours Heels
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e732f462-dcf9-4bcc-ab94-13c3bd124bc2.jpg
+      blotato_visual_id: null
+      dev_listing_id: 6a17b5de-247a-45ca-8c50-fc39e590b6f8
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5de-247a-45ca-8c50-fc39e590b6f8
+
+    - name: All Day Black Boots
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e279a5da-7d25-4343-9e5b-eb9c6bb7e88c.jpg
+      blotato_visual_id: null
+      dev_listing_id: 6a17b5e4-bedb-41a0-9101-2fbb52ba09a3
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5e4-bedb-41a0-9101-2fbb52ba09a3
+
+    - name: Benaras Beauty Salsa Heels
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f8e01cc7-f885-4e4c-94fd-09806ab1cc50.jpg
+      blotato_visual_id: null
+      dev_listing_id: 6a17b64c-a50d-49de-9d59-f2c5df972362
+      shopatmela_url: https://www.shopatmela.com/l/6a17b64c-a50d-49de-9d59-f2c5df972362
+
+    - name: Betty Ballet Flats
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e3eb43c5-797e-4134-af32-3264e753a608.jpg
+      blotato_visual_id: null
+      dev_listing_id: 6a17b652-d9ef-49f0-bedf-66e7c31cd15c
+      shopatmela_url: https://www.shopatmela.com/l/6a17b652-d9ef-49f0-bedf-66e7c31cd15c
+
+# PINTEREST
+pinterest:
+  boards:
+    - fizzy-goblet
+  posting_strategy: manual  # 1 pin/day warmup; Blotato API unavailable until 100+ views/month
+
+  pins:
+    - name: 24K Magic Criss Cross Wedge
+      status: posted
+      title: 24K Magic Criss Cross Wedge | Handcrafted Embroidered Footwear
+      description: Gold embroidered criss-cross wedge heel handcrafted in India. Mirror work, regal dori detailing, double cushioning. Perfect for festive occasions. 4-inch heel, sizes 36-41. Vegetable-tanned leather sole. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-33476dc3-d86c-4211-8a45-5861b604e6bb.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5d1-7d32-4f83-b39a-540e4ad0e37f
+
+    - name: A Glass Act Juttis
+      status: queued
+      title: A Glass Act Juttis | Gold & Silver Embroidered Flats
+      description: Handcrafted juttis with intricate mirror work, gold and silver zari, and beads. Double cushioning for comfort. Traditional embroidered flats from India. Sizes 35-41. Perfect for ethnic wear and celebrations. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7734ae3d-694d-423a-96c4-9207f15a6c6e.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5d8-38e7-4d1d-b95f-9de629138323
+
+    - name: Balcony Breeze Juttis
+      status: queued
+      title: Balcony Breeze Juttis | Handcrafted Indian Embroidered Flats
+      description: Affordable handcrafted juttis under $100. Embroidered design, double cushioning, vegetable-tanned leather. Traditional Indian footwear for everyday elegance. Artisan-made in India. Sizes available. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-eacae169-4966-4382-bdfd-a7bdcaf35d15.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b60b-25de-4259-bfbb-4fd375913796
+
+    - name: After Hours Heels
+      status: queued
+      title: After Hours Heels | Maroon Handcrafted Heels for Women
+      description: Maroon leather heels handcrafted in India. 2-inch heel, double cushioning, minimalist design. Versatile for everyday wear and special occasions. Sizes 36-41. Modern artisan footwear from India. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e732f462-dcf9-4bcc-ab94-13c3bd124bc2.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5de-247a-45ca-8c50-fc39e590b6f8
+
+    - name: All Day Black Boots
+      status: queued
+      title: All Day Black Boots | Handcrafted Leather Boots from India
+      description: Black leather boots handcrafted in India with detachable leather floral charm. 3-inch heel, double cushioning, artisan details. Perfect for everyday elegance. Sizes 36-41. Heritage craftsmanship, modern design. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e279a5da-7d25-4343-9e5b-eb9c6bb7e88c.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b5e4-bedb-41a0-9101-2fbb52ba09a3
+
+    - name: Benaras Beauty Salsa Heels
+      status: queued
+      title: Benaras Beauty Salsa Heels | Limited Edition Kareena Kapoor Collab
+      description: Benaras Beauty salsa heels by Fizzy Goblet x Kareena Kapoor Khan. Gold embroidered, handcrafted in India. Limited edition. Artisan celebration heels with intricate detailing. Sizes 35-41. Luxury festive footwear. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f8e01cc7-f885-4e4c-94fd-09806ab1cc50.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b64c-a50d-49de-9d59-f2c5df972362
+
+    - name: Betty Ballet Flats
+      status: queued
+      title: Betty Ballet Flats | Handcrafted Casual Elegant Flats
+      description: Ballet flats handcrafted in India. Casual elegant design, comfortable everyday footwear. Artisan-made with double cushioning. Perfect for work and leisure. Sizes 35-41. Modern Indian craftsmanship. Discovered on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e3eb43c5-797e-4134-af32-3264e753a608.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b652-d9ef-49f0-bedf-66e7c31cd15c
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/fizzy-goblet
+  checks:
+    brand_story:
+      result: pass
+      note: Craft origin + heritage framing visible
+    artisan_details:
+      result: pass
+      note: Techniques, traditions well-documented
+    cultural_context:
+      result: pass
+      note: Indian footwear heritage positioning clear
+    aesthetic_match:
+      result: pass
+      note: Brand positioning aligns with carousel vibe
+    product_findability:
+      result: warn
+      note: Products not easily discoverable without names in caption — mitigated by adding list to caption
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations:
+    - theme: product_not_findable
+      severity: medium
+      status: resolved
+      description: Products featured in carousel are not easily discoverable on brand page without product names in caption. Users cannot identify which specific shoes are shown or search for them on destination page.
+      mitigation: Included product names in post caption as "Featured in this carousel: [list]" — applied in this post and carried forward to all future campaigns.
+
+# NOTES
+notes:
+  category_note: First Fizzy Goblet campaign; 7 products covering wedges, juttis, heels, boots, flats
+  copy_quality: Caption uses craft origin + cultural context framing (Arun persona)
+  shipping_clarity: Caption notes "Shipped to the US" for diaspora audiences
+  pinterest_warmup: Manual posting 1 pin/day required; Blotato API unavailable until account reaches 100+ views/month
+  key_learnings:
+    - Product titles matter — include in caption (not image overlays) so users can search destination page
+    - Lifestyle scenes outperform white-background product shots; Amala Earth aesthetic resonates
+    - Craft positioning strong — Fizzy Goblet artisan narrative translates well to social discovery
