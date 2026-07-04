@@ -51,12 +51,20 @@ Products should be **styled in natural scenes**, not isolated on white:
 - **NO product titles in post visuals** — let imagery speak
 - **NO prices in carousel/feed posts** — prices on destination page only
 - **Typography:** Clean, minimal, serif or elegant sans-serif (not bold/heavy)
-- **Watermark:** "Discovered on [Mela Logo]" — subtle, bottom-right corner
-  - **Placement:** Bottom-right, small (10-15% of image width)
-  - **Style:** Semi-transparent, doesn't overshadow product
-  - **Color:** Navy #2D2D7B (Mela brand) or white for contrast
-  - **Purpose:** Signals discovery platform without cluttering aesthetic
-  - **Logo file:** `/mela-docs/Mela logos/mela-logo.png`
+
+### Affiliate & Watermark
+**All post visuals must include a watermark:**
+- **Watermark text:** "Discovered on [Mela Logo]"
+- **Placement:** Bottom-right corner only
+- **Size:** 10–15% of image width (small, unobtrusive)
+- **Style:** Semi-transparent, does NOT overshadow product
+- **Color:** Navy #2D2D7B (Mela brand) or white (for contrast if needed)
+- **Purpose:** Signals discovery platform (Mela is the curator, not the manufacturer) without cluttering the aesthetic
+
+**Caption framing:**
+- Frame product as "by [Brand], discovered on Mela" — NOT "from Mela"
+- Never imply Mela manufactured or exclusively sells the product
+- Use discovery language: "hard to find" not "unavailable"
 
 ---
 
@@ -86,6 +94,15 @@ Products should be **styled in natural scenes**, not isolated on white:
 - Transitions should be smooth, minimal (fade preferred)
 - No auto-text overlays; let visuals tell the story
 - 4-7 slides max to maintain engagement
+
+### Blotato Templates & Specs
+| Use case | Template | Aspect Ratio | Notes |
+|---|---|---|---|
+| Single product + real photo | Image Slideshow (5903b592-1255-43b4-b9ac-f8ed7cbf6a5f/v1) | Instagram 1:1, Pinterest 9:16 | Pass actual product image URL |
+| Product in lifestyle scene | Product Scene Placement (f524614b-ba01-448c-967a-ce518c52a700) | Platform-dependent | 4–7 slides; smooth transitions |
+| Multi-product carousel | Image Slideshow | 1:1 (Instagram) | Multiple images, consistent styling |
+
+**When creating prompts:** Use outcome language ("do not overshadow the product"). Include [Mela watermark spec](#affiliate--watermark) in every prompt.
 
 ---
 
@@ -145,33 +162,23 @@ Products should be **styled in natural scenes**, not isolated on white:
 
 ## Blotato Prompt Template
 
-When creating visuals with Blotato, use this structure:
+When creating visuals with Blotato:
 
+1. **Reference this guide's baseline**: Earthy tones, soft lighting, calm artisanal mood (inspired by @amala.earth)
+2. **Apply category-specific styling** from [Category-Specific Styling](#category-specific-styling-within-mela-baseline) section
+3. **Include Mela watermark** per [Affiliate & Watermark](#affiliate--watermark) rules
+4. **Use outcome language**: "do not overshadow the product", "emphasize handcrafted qualities"
+5. **NO product names, NO prices, NO text overlays** — let visuals tell the story
+
+Example structure:
 ```
-Create [X] lifestyle scenes for [BRAND] [PRODUCT TYPE] (category: [CATEGORY]):
+Create lifestyle scenes for [BRAND] [PRODUCT TYPE]:
+Scene 1: [Product Name] on [surface] with [complementary items], [lighting]
+Scene 2: [Product Name] styled with [natural materials], [mood]
 
-Scene 1: [Product Name] on [surface] with [complementary items], [lighting description]
-Scene 2: [Product Name] styled with [natural materials], [mood description]
-...
-
-**MELA BASELINE (required for all):**
-Style: Earthy, soft lighting, calm artisanal mood (inspired by @amala.earth)
-NO product names, NO prices, NO text overlays
-Emphasize handcrafted qualities and natural materials
-Use natural lighting and warm color tones
-Include contextual styling (fabrics, plants, ceramics) to show heritage
-
-**CATEGORY-SPECIFIC ACCENT (see visual-style-guide.md for [CATEGORY]):**
-[e.g. for fashion: emphasize embroidery/fabric detail; show weave/stitching closeups]
-[e.g. for jewelry: macro shots of metalwork detail; gemstone colors]
-[e.g. for home: show glaze/texture detail; functional styling]
-
-**ADD WATERMARK:**
-Add subtle text watermark "Discovered on [Mela Logo]" in bottom-right corner
-- Use Mela logo (navy #2D2D7B)
-- Semi-transparent, small (10-15% of image width)
-- Do NOT overshadow the product
-- Use elegant, minimal typography
+MELA BASELINE: Earthy, soft lighting, artisanal mood (see visual-style-guide.md)
+CATEGORY ACCENT: [Fashion: embroidery detail] [Jewelry: metalwork macro] [Home: glaze texture] (see visual-style-guide.md)
+WATERMARK: "Discovered on [Mela Logo]" bottom-right, semi-transparent, navy #2D2D7B
 ```
 
 ---
