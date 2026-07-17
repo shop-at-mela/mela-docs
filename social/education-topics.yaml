@@ -1,0 +1,135 @@
+---
+# Education Topics — weekly non-product content queue
+# Feeds the `trust_service` and `cultural_education` content types (see category-routing.yaml).
+# /social-launch and /social-review pick ONE topic per week, alternating type.
+# Platform per topic follows `content_types` in category-routing.yaml (by TYPE, not category).
+#
+# Sourced from the Mela brand pipeline sheet (Google Sheets, gid=704623254), July 2026.
+# IMPORTANT: entries with `verify: true` contain craft/quality specifics that MUST be
+# confirmed on the brand's own page before publishing — do not claim unverified craft or
+# certification details (Sarah/Neha guardrails: no vague/unsubstantiated claims).
+
+meta:
+  version: 1
+  last_updated: "2026-07-04"
+  cadence: "1 topic per week; alternate trust_service <-> cultural_education"
+  selection: >
+    Pick a status:backlog topic; prefer a brand that is live or in-QA on Mela (see brand_pool).
+    On use, set status:used and record week_used. Verify any `verify:true` claim first.
+
+topics:
+  # ---- Trust / service (brand-agnostic; always relevant to diaspora buyers) ----
+  - id: ship-01
+    type: trust_service
+    angle: "How international shipping from India actually works — realistic timelines & tracking"
+    platforms: [instagram, reddit]
+    personas: [neha, sarah]
+    source_brands: [any]
+    status: backlog
+
+  - id: pay-01
+    type: trust_service
+    angle: "Paying in USD for Indian brands — how checkout & payment work via Mela"
+    platforms: [instagram, reddit]
+    personas: [neha]
+    source_brands: [any]
+    status: backlog
+
+  - id: returns-01
+    type: trust_service
+    angle: "Returns & customer service when buying from India-based brands"
+    platforms: [instagram, reddit]
+    personas: [sarah, neha]
+    source_brands: [any]
+    status: backlog
+
+  - id: sizing-01
+    type: trust_service
+    angle: "India vs US sizing for footwear & apparel — how to get it right the first time"
+    platforms: [instagram, reddit]
+    personas: [sarah, arun]
+    source_brands: [fizzy-goblet, the-alternate, gully-labs]
+    status: backlog
+
+  # ---- Trust / service (brand-specific quality / materials — VERIFY on brand page) ----
+  - id: quality-superbottoms
+    type: trust_service
+    angle: "SuperBottoms — materials & safety behind reusable baby products"
+    platforms: [instagram, reddit]
+    personas: [sarah]
+    source_brands: [superbottoms]
+    verify: true
+    status: backlog
+
+  - id: quality-fizzy
+    type: trust_service
+    angle: "What 'vegetable-tanned leather' means and why it matters"
+    platforms: [instagram]
+    personas: [sarah, arun]
+    source_brands: [fizzy-goblet]
+    verify: true
+    status: backlog
+
+  # ---- Cultural education (craft heritage — VERIFY craft claims before publishing) ----
+  - id: craft-juttis
+    type: cultural_education
+    angle: "The jutti & kolhapuri — handcrafted Indian footwear heritage"
+    platforms: [instagram]
+    personas: [arun]
+    source_brands: [fizzy-goblet, needledust]
+    verify: true
+    status: backlog
+
+  - id: craft-handloom
+    type: cultural_education
+    angle: "Handloom weaving and the weavers behind the cloth"
+    platforms: [instagram]
+    personas: [arun, sarah]
+    source_brands: [suta, chidiyaa]
+    verify: true
+    status: backlog
+
+  - id: craft-jewelry
+    type: cultural_education
+    angle: "Contemporary Indian jewelry — technique, materials & motifs"
+    platforms: [instagram]
+    personas: [priya, arun]
+    source_brands: [isharya, tarinika, curio-cottage]
+    verify: true
+    status: backlog
+
+  - id: craft-ayurveda-baby
+    type: cultural_education
+    angle: "Ayurvedic / natural traditions in baby care"
+    platforms: [instagram]
+    personas: [sarah, priya]
+    source_brands: [baby-forest, choosekind]
+    verify: true
+    status: backlog
+
+  - id: craft-ayurveda-beauty
+    type: cultural_education
+    angle: "Ayurveda in modern skincare"
+    platforms: [instagram]
+    personas: [sarah]
+    source_brands: [vilvah, bipha-ayurveda]
+    verify: true
+    status: backlog
+
+  - id: craft-modern-indian
+    type: cultural_education
+    angle: "Modern Indian design — heritage reinterpreted for today's home & wardrobe"
+    platforms: [instagram]
+    personas: [arun, priya]
+    source_brands: [nicobar, kaunteya]
+    verify: true
+    status: backlog
+
+# Brands closest to live on Mela (in-QA / production-leaning per pipeline sheet, July 2026).
+# Prefer these when choosing a weekly topic so education ties to shoppable brands.
+brand_pool:
+  baby_and_kids: [superbottoms, pluchi, aagghhoo, baby-forest, choosekind]
+  fashion: [gully-labs, the-alternate, banjaaran-studio, fizzy-goblet, nicobar, polite-society]
+  jewelry_and_accessories: [isharya]
+  # Wider pipeline (not yet in QA): tarinika, curio-cottage, suta, needledust, payal-singhal,
+  # chidiyaa, vilvah, bipha-ayurveda, kaunteya, gado-living, masilo, malabar-baby, and more.

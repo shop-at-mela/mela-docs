@@ -6,7 +6,7 @@
 - **URL**: https://www.pinterest.com/shopatmela/
 - **Handle**: @shopatmela
 - **Status**: Active (warmup phase as of June 2026)
-- **Posting cadence**: 2–3 pins/day
+- **Posting cadence**: 3–5 pins/day during warmup (manual; not algorithm-gated the way Instagram warmup is) — **canonical in [`category-routing.yaml`](category-routing.yaml) → `cadence`** (scales to 5–10/day auto once the Catalog Feed ships)
 - **Primary content**: Product pins (catalog API), brand boards, occasion collections
 - **Conversion focus**: High ROI for Mela's product mix
 
@@ -14,8 +14,9 @@
 - **URL**: https://www.instagram.com/shopatmela/
 - **Handle**: @shopatmela
 - **Status**: Active (warmup phase as of June 2026)
-- **Posting cadence**: 4–5 posts/week + daily Stories
-- **Primary content**: Brand carousels, educational Reels, new arrivals Stories, seasonal posts
+- **Posting cadence**: 3–4 standalone posts/week, at least 2 product-forward — **canonical in [`category-routing.yaml`](category-routing.yaml) → `cadence`**
+- **Feed layout**: Theme-row grid is **deferred** (`category-routing.yaml` → `grid.enabled: false`) — reach (standalone posts optimized individually) is the higher-ROI use of production time until there's real profile-visit volume to navigate. See `grid.activation_gate` for the re-enable trigger.
+- **Primary content**: Product-forward posts/Reels (real photos reused as motion where possible, brand-supplied footage), educational content, new arrivals Stories, seasonal posts
 - **Trust focus**: Brand education and cultural authenticity layer
 
 ### Reddit
@@ -49,11 +50,11 @@
 
 ## Seasonal Calendar
 
-Posts are queued 4 weeks before major events:
-- **Diwali**: October 1 (queue from Sept 1)
-- **Holi**: February 1 (queue from Jan 1)
-- **Mother's Day**: April 1 (queue from Mar 1)
-- **New Year**: December 1 (queue from Nov 1)
+Posts are queued 4 weeks before major events — **except Pinterest boards**, which need to be live earlier for search indexing lead time (Pinterest surfaces seasonal content weeks before the event itself, not on it):
+- **Diwali**: October 1 — Pinterest board live by **mid-August** (~6-7 weeks out, not 4); Instagram content queue from Sept 1
+- **Holi**: February 1 — Pinterest board live by **mid-December**; Instagram content queue from Jan 1
+- **Mother's Day**: April 1 — Pinterest board live by **mid-February**; Instagram content queue from Mar 1
+- **New Year**: December 1 — Pinterest board live by **mid-October**; Instagram content queue from Nov 1
 
 ---
 

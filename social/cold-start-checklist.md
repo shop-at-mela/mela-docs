@@ -1,210 +1,84 @@
-# Mela Cold-Start Execution Checklist
+# Mela Cold-Start — Month 1 (Checklist + Playbook)
 
-**Use this during Month 1.** Post it on your desk or phone home screen.
+**Active during warmup.** The one operational doc for Month 1. Keep it on your phone home screen.
 
----
+**The real goal:** cold start isn't viral growth — it's **proving the model works so [wife] becomes the face of Mela.** Everything below serves that decision.
 
-## Daily (5 min + 25 min)
-
-### Post Time (5 min)
-- [ ] **9:00am:** Instagram feed post goes live (scheduled via Blotato)
-- [ ] **11:00am:** Pinterest pin goes live (scheduled)
-- [ ] Check both platforms — posts live? No errors?
-
-### Engagement (25 min, best done 2–3 hours after posting)
-- [ ] Reply to ANY comments within 4 hours (show the account is active)
-- [ ] Like + comment on 3 other artisan/design accounts (build reciprocal engagement)
-- [ ] Follow 3 accounts in: sustainable brands, Indian artisans, design/craft niches
-- [ ] Check DMs (if any)
-
-**Total daily:** ~30 min  
-**Best time to engage:** Lunch break or evening (when your audience is browsing)
+**Cadence & counts are canonical in [`category-routing.yaml`](category-routing.yaml) → `cadence` + `grid`.** This doc never restates them — it points, so there's one source of truth. Today: **9 IG feed posts/week = 3 theme-rows (2 brand-themed + 1 education)**, Pinterest ~1 pin/day (warmup), Stories = overflow.
 
 ---
 
-## Weekly (Sunday, 30 min)
+## The weekly rhythm
 
-### Metrics Check
-- [ ] Open Blotato dashboard
-- [ ] Note this week's posts: saves, clicks, comments, reach
-- [ ] Which post won? (highest saves/clicks)
-- [ ] Which category/brand resonated?
-- [ ] Follower growth this week: +[X]?
-- [ ] Any brand engagement? (Did featured brands respond/share?)
+- **Once/week — create (batch, ≤3 hrs):** run `/social-launch` → it plans the 3 rows, drafts all tiles + anchors, you + [wife] review, it schedules in Blotato. One sitting = the whole week. *Reels-first anchors push creation time up; fall back to static theme cards to stay in budget.*
+- **Daily — engage (~30 min):** presence, not posting (posts auto-publish from the schedule).
+- **Sunday — measure (30 min):** metrics + wife touchpoint + queue next week.
 
-**Example checklist:**
-```
-Week 1 Results:
-- Post 1 (Brand A): 15 saves, 3 clicks, 1 comment ✓
-- Post 2 (Brand B): 6 saves, 0 clicks ✗
-- Post 3 (Brand C): 22 saves, 5 clicks ✓
-→ Winner: Brand C (footwear). Do more next week.
-```
-
-### Content Queue (if needed)
-- [ ] If Weeks 2–4 posts aren't batch-created yet, run `/social-launch` for next batch
-- [ ] Or manually queue products in `/social-review` for next week
-
-### Wife Touchpoint
-- [ ] Share this week's results with her ("Here's what worked")
-- [ ] Ask: "Anything you'd change about the posts?" (aesthetic feedback)
-- [ ] Check-in: "Feeling good about this?" (morale + buy-in)
+For a one-off outside the batch (a brand just went live), run `/social-review` instead.
 
 ---
 
-## Weekly Platform-Specific Tasks
+## Daily (~30 min)
 
-### Instagram (M–F posting day + 1 hour/week)
-- [ ] Post Mon–Fri 9:00am (scheduled)
-- [ ] Reply to comments daily
-- [ ] Share a story mid-week (behind-the-scenes or "this week's discoveries")
-- [ ] Follow 5–10 accounts per week (mix of brands + complementary accounts)
-- [ ] Check Insights: engagement rate on this week's posts
+- [ ] Confirm the day's IG + Pinterest posts went live (no errors)
+- [ ] Reply to any comments/DMs within ~4 hours (shows the account is alive)
+- [ ] Like + comment on 3 artisan/design accounts; follow 3–5 in-niche accounts
+- [ ] Screenshot the post for the proof folder (optional)
 
-### Pinterest (Pins posted Tue + Thu + ongoing)
-- [ ] Pin goes live Tue 11am + Thu 3pm (scheduled)
-- [ ] Check Pin Analytics: saves, outbound clicks, impression
-- [ ] Pinterest = longer lifespan, so don't stress daily engagement
-- [ ] If a pin gets 20+ saves by Friday, consider repinning or creating a similar variant next week
+**Follow:** sustainable/artisan brands, Indian makers, slow-design (#slowfashion #artisanmade), eco-lifestyle, micro-influencers (10K–100K, high engagement). **Don't follow:** generic/bot/dead accounts. Comment genuinely on 2–3 of their posts before following.
 
 ---
 
-## What to Track (for Month 1 data)
+## Sunday (~30 min)
 
-Keep a simple spreadsheet:
-
-| Date | Post | Platform | Content | Saves | Clicks | Comments | Notes |
-|---|---|---|---|---|---|---|---|
-| 7/8 | Brand A Footwear | IG | Lifestyle | 15 | 3 | 1 | Wife liked the styling |
-| 7/8 | Brand A Footwear | Pinterest | Same | 8 | 2 | — | Pin performed OK |
-| 7/9 | Brand B Jewelry | IG | Detail | 6 | 0 | 0 | Weak response |
-| 7/10 | Brand C Home | IG | Flat lay | 22 | 5 | 2 | **WINNER** |
-
-**Why track?** By Week 3, you'll see patterns (which categories win, which brands resonate, which formats work). This data informs Week 3–4 strategy.
+- [ ] **Metrics** (Blotato dashboard): saves, clicks, comments, reach per post. Which post/category/brand won? Follower growth this week?
+- [ ] **Track** it in [`metrics-log.md`](metrics-log.md). By Week 3 the pattern (which categories/brands/formats win) drives selection. Cross-check GA4 by UTM campaign (`category-routing.yaml` → `tracking`) — Blotato's saves/clicks are engagement-side only and won't show whether a click became a Mela session; GA4 data only exists from the first UTM-tagged campaign onward.
+- [ ] **Queue:** if next week isn't batched, run `/social-launch`.
+- [ ] **Wife touchpoint:** share what worked → "anything you'd change about the posts?" (aesthetic) → "feeling good about this?" (buy-in).
 
 ---
 
-## Red Flags (When to Pause & Diagnose)
+## Week-by-week decision gates
 
-| Red Flag | What to Check |
+| Week | Goal | Decision / watch |
+|---|---|---|
+| **1 — Consistency** | Show a consistent, beautiful curation aesthetic | Posts live on schedule? Any post break 15+ saves? Wife: "this looks like Mela"? *Don't obsess over followers yet.* |
+| **2 — Test + repeat** | Lean into what won W1; test if flat | Follower growth 5–15/day? Wife: "I could do this"? *Don't launch new formats — master the feed.* |
+| **3 — Double down or pivot** | Feature winners; try a new category/format if mixed | **Clicks to Mela** (the real metric, > followers)? Wife ready to take over W4? *Don't pay for ads — organic is proving the model.* |
+| **4 — Stabilize or hand off** | Establish sustainable routine | Month-1 summary; if wife commits, she drives content decisions. |
+
+**Month-1 targets (success = recruit the face):** 300–500 organic followers · 3–8% saves+comments/post · 50–100 clicks to Mela · consistent aesthetic (wife signs off) · **wife buy-in — the metric everything else supports.**
+
+---
+
+## Red flags → diagnose
+
+| Symptom | Check |
 |---|---|
-| Week 1: Zero engagement on any post | Is the visual in-brand? Is caption resonating? Is the product appealing? Redo Week 2 differently. |
-| Week 2: Follower growth stalled (0–2/day) | Check if posts are scheduling correctly. Check if hashtags/captions align with your audience. Engage more (follow + comment). |
-| Week 2: Wife says "I don't like the aesthetic" | Show her `visual-style-guide.md`. Adjust if needed. Better to pivot now than Week 4. |
-| Week 3: No clicks to Mela site | Check destination URLs. Check captions (are they compelling enough to click?). Test CTAs. |
-| Week 3: No offer from wife to take over | She's not convinced yet. That's OK—double down on Month 1, ask for feedback, iterate. Plan B: hire someone. |
+| W1 zero engagement | Visual in-brand? Caption resonating? Product appealing? Redo next week differently. |
+| W2 follower growth stalled | Posts scheduling correctly? Captions/hashtags aligned to audience? Engage more. |
+| Wife: "I don't like the aesthetic" | Show `visual-style-guide.md`; adjust now, not W4. |
+| W3 no clicks to Mela | Check destination URLs + CTA strength. |
+| No offer to take over | She's not convinced — double down, ask what's missing. Plan B: hire a curator who embodies Mela's taste. |
 
 ---
 
-## Engagement Accounts to Prioritize
+## Recruiting [wife] as the face
 
-**Follow these types of accounts (5–10 per week):**
-- Sustainable fashion brands (Etsy shops, Instagram boutiques)
-- Indian artisan accounts (small businesses, heritage crafts)
-- Slow design communities (#slowfashion, #ethicallymade, #artisanmade)
-- Complementary lifestyle accounts (eco-home, ethical beauty, conscious living)
-- Micro-influencers in the space (10K–100K followers, high engagement)
+**Why her:** better taste, more authentic social energy, embodies the curation philosophy better than founder-as-poster.
 
-**Don't follow:**
-- Generic accounts (recipes, fitness, news)
-- Competitors trying to poach customers
-- Accounts with no engagement (bots, dead accounts)
+**The ask is small — don't oversell the work:** you create + batch (once/week), she posts + engages (~1 hr/day) and picks next week's brands. She's the **curator, not the operator.**
 
-**When you follow + comment:** Be genuine. Comment on their last 2–3 posts before following. This drives reciprocal engagement.
+**The arc:** W1 "posts are going live consistently, first ones got [X] saves" → W2 "these are people who like the curation; the work is ~1 hr/day" → W3 "metrics look good — will you take over W4? You're the curator, own it."
 
 ---
 
-## Week-by-Week Decision Checklist
+## Common pitfalls
 
-### End of Week 1
-- [ ] All 5 posts live? Scheduled correctly?
-- [ ] Any technical issues?
-- [ ] Wife feedback: "Aesthetic is solid"?
-- [ ] Plan Week 2 similar or adjust?
-
-### End of Week 2
-- [ ] Data collected: which posts won?
-- [ ] Week 3 calendar locked in?
-- [ ] Wife says: "I could do this"? (Y/N)
-- [ ] Engagement routine sustainable? (Y/N)
-
-### End of Week 3
-- [ ] 15 posts live total—metric any good?
-- [ ] Clicks to Mela site tracking?
-- [ ] Wife commitment: "Ready to take over starting Week 4?" (Y/N/Maybe)
-- [ ] If not ready: What's missing? (more engagement? different aesthetic? different brands?)
-
-### End of Week 4
-- [ ] Month 1 summary: followers, clicks, wife commitment
-- [ ] If wife taking over: hand off posting duties
-- [ ] If not: Plan B (hire manager? adjust strategy? continue solo?)
-- [ ] Plan Month 2: growth tactics, new platforms, paid ads?
+❌ Posting inconsistently (batch so you never skip — the algorithm punishes gaps) · ❌ Obsessing over follower count (track saves + clicks) · ❌ Forcing wife into an "operator" role (she approves + posts; you create) · ❌ Changing the aesthetic mid-month (let `visual-style-guide.md` prove itself) · ❌ Following random accounts (quality > quantity in the artisan/sustainable niche).
 
 ---
 
-## Post-Publish Routine (10 min per day)
+## Handoff to Month 2
 
-1. **Verify post is live** (9:15am, just after scheduling)
-2. **Screenshot it** (save to folder for proof)
-3. **Share to personal accounts** (if you have them—free amplification)
-4. **Tag the brand in comments** (if not already tagged in caption; encourages them to reshare)
-5. **Respond to any immediate comments** (within 1 hour if possible)
-
----
-
-## Month 1 Goal Checklist
-
-By July 31, you should have:
-
-- [ ] 20 posts live (5/week × 4 weeks)
-- [ ] Consistent aesthetic (wife signs off)
-- [ ] Data on which brands/categories win
-- [ ] Wife decision on taking over (Yes/No/Month 2)
-- [ ] 300–500 followers (organic)
-- [ ] 50–100 clicks to Mela site (from social)
-- [ ] Routine that feels sustainable (30 min/day for Arun's engagement, can hand off to wife)
-
-**If you hit all this:** Month 1 was a success. Month 2 is growth.  
-**If you miss some:** Diagnose what broke (aesthetic? product selection? team capacity?) and adjust Month 2.
-
----
-
-## Automation Tools
-
-**Don't manually post.** Use:
-- **Blotato:** Schedule Week 1–4 posts in batch (saves hours)
-- **Google Calendar:** Block 30 min daily for engagement (keeps you accountable)
-- **Spreadsheet:** Track metrics weekly (simple, no fancy tools needed)
-
-**Optional:**
-- Buffer/Later: More scheduling features (but Blotato is simpler for Mela's needs)
-- Analytics dashboard: If follower count matters, use Blotato's native dashboard
-
----
-
-## If Wife Takes Over (Week 4+)
-
-**Arun's role:**
-- Create 5 visuals + captions 1×/week (batched)
-- Review with wife (30 min)
-- Feedback loop (if wife wants tweaks)
-
-**Wife's role:**
-- Post daily (5 min)
-- Respond to comments (15 min)
-- Decide which brands to feature next (collaborative, 30 min/week)
-- Check metrics weekly (insights into what's working)
-
-**Weekly sync:** 30 min call to align on next week's theme/brands.
-
----
-
-## Cheat Sheet: Daily Reminder
-
-**9:00am:** Post live? ✓  
-**11:00am:** Pinterest live? ✓  
-**2:00pm:** Reply to comments ✓  
-**2:30pm:** Follow 3 accounts ✓  
-**Sunday 6pm:** Week recap (metrics + wife check-in) ✓  
-
-That's it. Consistency beats perfection.
+By end of W4 you'll have: a 30-day calendar + visual proof the aesthetic works, early data on winning brands/categories, and either wife-as-face or a decision to hire. **Cold start is "over"** when you're at ~1K followers, wife is posting, and you're seeing 5–10 clicks/day to Mela. Month 2 = growth; Month 3+ = scale (partnerships, paid, TikTok).

@@ -98,7 +98,7 @@ Products should be **styled in natural scenes**, not isolated on white:
 ### Blotato Templates & Specs
 | Use case | Template | Aspect Ratio | Notes |
 |---|---|---|---|
-| Single product + real photo | Image Slideshow (5903b592-1255-43b4-b9ac-f8ed7cbf6a5f/v1) | Instagram 1:1, Pinterest 9:16 | Pass actual product image URL |
+| Single product + real photo | Image Slideshow (5903b592-1255-43b4-b9ac-f8ed7cbf6a5f/v1) | Instagram 1:1, Pinterest 2:3 (1000x1500) | Pass actual product image URL; request Pinterest output at 1000x1500 explicitly — don't reuse the Instagram 1:1/4:5 render, it ships smaller/less prominent in-feed than Pinterest's own recommended ratio |
 | Product in lifestyle scene | Product Scene Placement (f524614b-ba01-448c-967a-ce518c52a700) | Platform-dependent | 4–7 slides; smooth transitions |
 | Multi-product carousel | Image Slideshow | 1:1 (Instagram) | Multiple images, consistent styling |
 
@@ -109,34 +109,46 @@ Products should be **styled in natural scenes**, not isolated on white:
 ## Platform-Specific Guidelines
 
 ### Instagram Feed (Carousel Posts)
-- **Aspect ratio:** 1:1 (square)
+- **Aspect ratio:** 1:1 (square) for the post itself; **note the profile grid crops to 3:4 portrait** — keep key content centered (see Instagram Grid Row Anchors)
 - **Format:** 4–7 slides per carousel
 - **Text:** Minimal on images, save context for caption
 - **Style:** Vary between product detail + styled scene shots
-- **Cadence:** 4–5 posts/week
+- **Cadence:** 9 feed posts/week (= three theme-rows: 2 brand-themed + 1 education); overflow → Stories. Feed posts stay a multiple of 3 to keep row alignment.
 
-**Caption approach (Arun persona):**
-- Lead with craft origin + cultural context (1–2 sentences)
-- Brief occasion/use case (1 sentence)
-- Craft detail highlight (1 sentence)
+**Caption approach:**
+- **Lead is persona-led** — the selected persona sets the opening (Sarah → certification, Priya → occasion, Arun → craft origin, Neha → regional specificity). Persona is chosen per post in `/social-review` Phase 2; see the caption table in `social-content-strategy-prd.md` for the leads + guardrails (not restated here).
+- Then: brief occasion/use → craft detail → CTA "Discover [Brand] on Mela →"
 - **Include product list** — "Featured in this carousel: [product 1, product 2, ...]" (aids discoverability on destination page)
-- CTA: "Discover [Brand] on Mela →"
 - NO price in caption; NO text overlays on images
-- Product titles in caption help users search/navigate destination page
+
+### Instagram Grid Row Anchors (Theme Cards & Teaser Reels)
+
+The Instagram **feed** is laid out as **theme-rows of 3**. A weekly `/social-launch` batch = **3 rows (9 tiles): 2 brand-themed rows + 1 education row.** Each row shares one brand or one education theme, with a navigation **anchor** in the **center** tile. Across weeks the center column forms a vertical "spine" of anchors that lets profile visitors (esp. Arun, Priya) navigate. Row planning lives in `/social-launch`; routing config in `category-routing.yaml` → `grid`.
+
+- **Brand-themed row composition:** a brand row is `[craft-story / founder / artisan tile] · [center ANCHOR] · [product tile]` — story + product, **not** a product catalog (inspiration-first). Only the product tile cross-posts to Pinterest.
+- **3:4 grid crop (critical):** The IG profile grid crops feed posts to **3:4 portrait**. Design the anchor at the post's native ratio but keep the **theme title / wordmark / logo inside the centered 3:4 safe zone** — anything near the top/bottom edge clips on the grid. This is the one spec that most often breaks an anchor.
+- **Anchor forms (reels-first):**
+  - **Teaser reel** (DEFAULT — reels carry the reach): motion photo-collage — cut-out craft elements (jewelry, textiles, dried flowers, brass vessels, motifs tied to the theme) drift and layer over a textured ground, then **converge into the brand/theme wordmark**. Trending Sufi/folk audio; one-line curiosity caption that builds intrigue, doesn't explain. **Show no product directly.** Semi-automated: Blotato can build the collage, but **audio + final publish are a manual step natively in Instagram** (Blotato templates are silent). ~2 anchor reels/week.
+  - **Theme card** (FALLBACK — when a reel can't be produced that week): static Canva graphic — Mela brand kit (navy #2D2D7B + marigold #F0A030), the brand/category/theme name as the legible focal element, earthy baseline. Cheap to produce.
+- **Converge-line gating:** the wordmark reveal may read **"coming soon"** ONLY for a brand genuinely not-yet-live on Mela. For a live brand it must read **"Now on Mela" / "Discover on Mela"** — never imply unavailability.
+- **Side tiles:** the flanking posts (craft/founder story on one side, product on the other) follow the normal category styling below, tuned to sit tonally with the anchor.
+- **Watermark:** anchors still carry the "Discovered on [Mela Logo]" watermark, but subordinate to the theme wordmark.
 
 ### Instagram Stories
 - Quick product feature: "[Product] · Handcrafted in [region]"
 - Behind-the-scenes: artisan at work, detail shots
 - Curation moments: "This week's discoveries"
 - Minimal text (sticker-based, not overlaid)
+- **Grid-neutral:** Stories never appear in the profile grid — they absorb any feed overflow beyond the 3-per-row cadence without scrambling row alignment.
 
 ### Pinterest Pins (Individual & Series)
-- **Aspect ratio:** 2:3 (1000x1500px) or 1:1 (1000x1000px)
+- **Aspect ratio:** 2:3 (1000x1500px) — Pinterest's own recommended ratio; don't fall back to 1:1 or reuse an Instagram 4:5 render (verified against Pinterest's current pin-spec guidance — pins under 2:3 render smaller in-feed, though they won't get cropped the way over-tall pins do)
 - **Style:** Lifestyle scene with product prominent
-- **Text on pin:** Title only (brand + product category), ≤60 chars
+- **Text on pin (title):** Keyword-led, not a bare SKU name. ✓ "Gold Wedding Wedges | Handcrafted in India" ✗ "24K Magic Criss Cross Wedge" — the product's own name can appear, but lead with what someone would actually search
 - **Description:** Keyword-rich, 2–3 sentences, no price
-- **Strategy:** 1–2 pins per week per brand; build boards over time
-- **Link strategy:** Use specific product URLs, not brand page — `https://www.shopatmela.com/l/{Dev_Listing_ID}` (extract from classified CSV)
+- **Board naming:** craft/occasion-descriptive, never a bare brand slug as the sole board (e.g. `artisan-footwear`, `Heritage Gifting` — not `fizzy-goblet`). A brand-specific board can exist *in addition*, never instead of a discoverable one — nobody searches Pinterest for a brand slug they've never heard of
+- **Strategy:** manual warmup can run 3–5 pins/day, not capped at 1/day — Pinterest volume isn't gated by the same "warmup" concept as Instagram's algorithm; cadence is canonical in `category-routing.yaml` → `cadence`
+- **Link strategy:** Use specific product URLs, not brand page — `https://www.shopatmela.com/l/{Dev_Listing_ID}` (extract from classified CSV) — with UTM params per `category-routing.yaml` → `tracking`
 
 **Pin description template:**
 > [Brand Name] Handcrafted [Product Type] | [Craft Technique] [Regional Origin] | Sustainable artisan goods from India, shipped to the US.

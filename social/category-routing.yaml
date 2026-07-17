@@ -1,0 +1,201 @@
+---
+# Category Routing — canonical, executable routing config
+# Read by /social-launch (Phase 2) and /social-review (Phase 2).
+# Maps each Mela category → platform lead, persona angle, board, format, visual accent.
+#
+# Source-of-truth split:
+#   - WHY (funnel rationale)          → social-content-strategy-prd.md
+#   - HOW routing decisions are made  → THIS FILE (skills read it, don't re-derive)
+#   - HOW visuals are styled          → visual-style-guide.md (Category-Specific Styling)
+
+meta:
+  version: 1
+  last_updated: "2026-07-03"
+  active_phase: warmup   # warmup | target — flip to `target` when Pinterest Catalog Feed ships
+
+# Platform funnel roles + where links point
+platforms:
+  pinterest:
+    role: top_of_funnel_discovery
+    link_target: listing_page      # https://www.shopatmela.com/l/{Dev_Listing_ID}
+  instagram:
+    role: mid_funnel_trust
+    link_target: brand_page        # https://shopatmela.com/brands/{brand_slug}
+    # For story-driven formats (brand_spotlight_carousel — fashion, art_and_craft) append
+    # /about. The brand page's default (products) tab shows only the tagline; the full
+    # brand_story the caption promises ("techniques passed down through generations", etc.)
+    # only renders on /about. Product-only formats (collection_carousel etc.) keep the
+    # bare brand_page URL — no story claim to back up there.
+    link_target_about_suffix: "/about"   # https://shopatmela.com/brands/{brand_slug}/about
+
+# UTM tracking — appended to every destination URL by /social-launch and /social-review
+# before it goes into a caption or pin. Required so GA4/referral data can attribute
+# clicks by platform+campaign (see social-content-strategy-prd.md → Campaign Logging).
+# A destination URL published without this is a defect, not an omission.
+tracking:
+  utm_required: true
+  schema: "?utm_source={platform}&utm_medium=social&utm_campaign={brand_slug}_w{week}&utm_content={product_slug_or_content_type}"
+  utm_source_values: { instagram: instagram, pinterest: pinterest, reddit: reddit }
+  example: "https://www.shopatmela.com/l/6a17b614-...?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w2&utm_content=bali_bellini_kolha_flats"
+
+# Posting cadence by phase (read `meta.active_phase`)
+# NOTE: Instagram FEED cadence is a multiple of 3 by design — the feed is planned as
+# theme-rows (see `grid` block). Stories are grid-neutral and absorb any overflow.
+cadence:
+  warmup:
+    pinterest: "3-5 pins/day, manual — Pinterest isn't algorithm-gated by 'warmup' the way Instagram is; the 1/day figure used through early campaigns was an unnecessary self-imposed cap, not a platform constraint"
+    instagram: "3-4 standalone posts/week (no row/anchor structure while grid.enabled=false, below) — at least 2 should be product-forward Reels/motion, optimized for individual reach, not row position"
+  target:
+    pinterest: "5-10 pins/day, Catalog Feed auto"
+    instagram: "9 feed posts/week (= three grid rows: 2 brand-themed + 1 education) + daily Stories — once grid.enabled is flipped back on, see grid.activation_gate"
+
+# Rotation guardrails — enforced against campaign logs (social/log/*.yaml)
+rotation:
+  brand_recency_days: 7                       # same brand posted within N days → suggest alternative
+  persona_fatigue: { window: 5, max_same: 3 } # same persona 3+ of last 5 → rotate
+  category_concentration: { window: 3, max_same: 3 }  # 3+ consecutive same category → require different
+
+# Instagram feed grid — theme-row layout (Instagram ONLY; Pinterest has no row logic).
+# The IG feed is planned in rows of 3 that share one brand OR one education theme.
+# Each weekly /social-launch batch = THREE rows (2 brand-themed + 1 education). See /social-launch Phase 2.
+grid:
+  enabled: false                 # DEFERRED (2026-07-13) — see activation_gate below. Reach (Pinterest SEO,
+                                  # standalone IG posts) is the higher-ROI use of production time at 4 total
+                                  # posts published and near-zero profile-visit volume; wayfinding infrastructure
+                                  # has no audience yet. Don't re-derive this from scratch — see
+                                  # social-content-strategy-prd.md discussion history for the full reasoning.
+  activation_gate: >
+    Re-enable once Instagram Insights shows a consistent, meaningful count of profile visits /
+    website taps from non-followers per week (tracked in the metrics sheet — see
+    cold-start-checklist.md → Sunday). Before that signal exists, nobody is on the profile to
+    navigate, so the anchor "spine" has no audience.
+  platform: instagram            # Pinterest is a masonry board — this block never applies to it
+  row_size: 3                    # feed posts per themed row; keep feed cadence a multiple of this
+  rows_per_week: 3               # weekly batch = 3 rows = 9 feed posts
+  weekly_rows:                   # composition of the 3 rows per weekly /social-launch batch
+    brand_rows: 2                # two brand-themed rows — MUST be two DIFFERENT Mela categories
+    theme_rows: 1                # one education row (from education-topics.yaml)
+  anchor:
+    tile: center                 # navigation label sits in the MIDDLE tile of the row
+    forms: [theme_card, teaser_reel]   # static Canva card (preferred) OR motion-collage reel (opportunistic)
+    default: theme_card          # CARD-FIRST — Instagram's native grid-reorder (June 2026) lets a theme_card
+                                  # be retrofitted into a row later; Reels are excluded from reorder and always
+                                  # surface at the top of the grid regardless of post date, so they can never
+                                  # be slotted into a row after the fact
+    fallback: teaser_reel        # opportunistic only — build same-week or skip; never planned as a retrofit
+    role: >
+      The anchor names the row's brand/category/theme so profile visitors can navigate.
+      Across weeks the center column forms a vertical 'spine' of anchors.
+    flanks: >
+      The two side tiles are supporting posts (e.g. craft/founder story on one side,
+      product on the other), styled to sit with the anchor.
+  row_composition:
+    # Brand rows are BRAND-THEMED, not a product catalog (inspiration-first): anchor + 1 product + 1 story tile.
+    brand_row: "3 posts for ONE in-QA/live brand: center anchor + 1 product tile + 1 craft-story/founder/artisan tile. Only the product tile cross-posts to Pinterest."
+    theme_row: "1 education-topics.yaml topic — IG-only (trust_service or cultural_education)"
+  brand_row_rotation: "the 2 brand rows in a week MUST be two different Mela categories (see rotation.category_concentration)"
+  # Publish ORDER matters: IG fills the grid newest-first, top-left. To make a row read
+  # left -> right, the intended LEFTMOST tile must publish LAST (most recently).
+  ordering_rule: >
+    Moot for photo/carousel tiles as of Instagram's June 2026 native grid-reorder — drag tiles into
+    position after the fact instead of sequencing publish order. Still a hard constraint for Reels
+    specifically, which reorder cannot move: leftmost tile publishes last, center 2nd, right first.
+    Across the 3 rows: publish rows bottom-to-top, so the intended TOP row's top-left tile is the
+    very last post. Which row sits on top is chooseable per week (e.g. a launching brand's row on top).
+  discipline:
+    - "Post feed content in multiples of row_size (a full week = 9). One extra post shifts every historical row and scrambles alignment."
+    - "Post full rows only. Never insert a single ad-hoc feed post mid-row — route ad-hoc items to Stories, or make them next week's anchor."
+    - "The top (newest) row is always 'in progress' until all 3 tiles are live — expected, not a defect."
+  teaser_gating:
+    # Guards the copy-positioning rule (never imply 'unavailable') + Neha's availability dealbreaker.
+    coming_soon_ok_if: "brand is genuinely NOT yet live on Mela (in-QA per education-topics brand_pool)"
+    live_brand_wordmark: "'Now on Mela' / 'Discover on Mela' — NEVER 'coming soon' for a live brand"
+  reel_production_note: >
+    Reels-first is SEMI-automated: Blotato can generate the motion collage, but trending Sufi/folk
+    audio + the final publish are a MANUAL step natively in Instagram (Blotato templates are silent).
+    ~2 anchor reels/week. If a reel can't be produced that week, fall back to the static theme_card.
+  asset_spec:
+    grid_crop: "3:4 portrait — IG profile grid crops to portrait; keep anchor text in the safe zone (see visual-style-guide.md)"
+
+# Content types — PLATFORM IS DECIDED BY TYPE, NOT CATEGORY.
+# Product content cross-posts to both platforms for EVERY category (art_and_craft included).
+# Non-product content is single-platform by nature — this is where the IG/Reddit lean lives,
+# never a category exclusion.
+content_types:
+  product:            # single / collection / brand-spotlight posts + pins
+    platforms: [instagram, pinterest]
+    note: "All categories cross-post. Instagram = 1 carousel; Pinterest = 1 pin per product."
+  trust_service:      # 5-7 day shipping, product quality, customer service, returns
+    platforms: [instagram, reddit]
+    note: "Purchase-objection content. Pinterest is discovery mode — not where people evaluate shipping/CS."
+  cultural_education: # craft heritage, technique, origin ('block printing, 500 years old')
+    platforms: [instagram]
+    note: "Reels/feed. Optional light Pinterest process-pin only if strongly visual."
+
+# Routing table — one entry per Mela category (routes PRODUCT content; both platforms always)
+categories:
+  home_and_kitchen:
+    platform_lead: pinterest
+    personas: [priya, arun]
+    boards:
+      pinterest: [home, occasion]
+      instagram: feed
+    format: collection_carousel
+    visual_accent: "functional context; glaze / wood-grain detail"
+
+  baby_and_kids:
+    platform_lead: pinterest
+    personas: [sarah, priya]
+    boards:
+      pinterest: ["Modern Indian Nursery", "Organic Baby Essentials"]
+      instagram: feed
+    format: collection_carousel
+    visual_accent: "safety, comfort, soft pastels"
+
+  jewelry_and_accessories:
+    platform_lead: pinterest
+    personas: [priya, neha]
+    boards:
+      pinterest: [gifting, occasion]
+      instagram: feed
+    format: collection_carousel
+    visual_accent: "macro metalwork; flat-lay on linen"
+
+  food_and_gourmet:
+    platform_lead: pinterest
+    personas: [priya, sarah]
+    boards:
+      pinterest: [gifting, occasion]
+      instagram: feed
+    format: single_or_collection
+    visual_accent: "appetizing warm light; ingredient context"
+
+  beauty_and_wellness:
+    platform_lead: pinterest
+    personas: [sarah]
+    boards:
+      pinterest: [beauty, wellness]
+      instagram: feed
+    format: single_or_collection
+    visual_accent: "spa-calm; natural ingredients"
+
+  fashion:
+    platform_lead: instagram
+    personas: [arun, sarah]
+    boards:
+      # `[brand]` = board THEMED around the brand's craft (e.g. "Artisan Footwear"),
+      # never the bare brand slug as the board's name/URL — see visual-style-guide.md
+      # → Pinterest Pins → Board naming. A brand-slug board can exist in addition.
+      pinterest: [brand]
+      instagram: brand_spotlight
+    format: brand_spotlight_carousel
+    visual_accent: "embroidery / weave closeups; drape"
+
+  art_and_craft:
+    platform_lead: instagram
+    personas: [arun]
+    boards:
+      pinterest: [brand]   # same naming rule as fashion, above
+      instagram: educational
+    format: educational_carousel
+    visual_accent: "brushwork; handmade imperfection"
