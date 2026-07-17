@@ -3472,6 +3472,36 @@ gots_certified: {
 
 ---
 
+## Affiliate Brand Tier — About Tab Gap (July 2026)
+
+### The problem
+
+Everything in this PRD — the certification 3-layer system, founder photo, press logos, FAQ, impact section — was designed and validated against **partner brands** with full Sharetribe onboarding (Masilo is the reference case in the UX Review below). It assumes `publicData` is populated: `certifications` (JSON with proof), `brandLogoUrl`, `pressFeatures`, `establishedYear`, plus a rich `brandStory`.
+
+A second, larger population never goes through that onboarding: **affiliate brands sourced by the scraper pipeline** (`Mela-scrapper-integrations/.../shopify_brands.py`). For these, only `brand_tagline` and `brand_story` exist — a tagline and one paragraph of text, nothing else. No certifications JSON, no founder photo, no press mentions, no FAQ. Fizzy Goblet, The Alternate, and every other brand in that scraper's output are in this tier.
+
+When a page designed around rich `publicData` receives only a bio-fallback paragraph, the sections built for certifications/press/FAQ simply don't render — what's left is exactly what surfaced in a July 2026 social-strategy review: a page with one paragraph of text and nothing else. Not a bug in `BrandStorefront.js` (the `story = brandStory || bio` fallback in that component works as designed) — a content-tier gap this PRD never defined a design for.
+
+### Immediate fix (routing, not design)
+
+Social content already links to the brand page's default (Products) tab, where only `brandTagline`'s first sentence shows via the `bio.split('.')[0]` fallback — not `/u/{user-id}/about`, where the fuller `brand_story` paragraph actually renders. `category-routing.yaml` → `platforms.instagram.link_target_about_suffix` now specifies `/about` for story-driven formats. This doesn't fix the sparse design below, just stops routing traffic past the one page where the story exists at all.
+
+### Recommended: a defined affiliate-tier About layout
+
+Don't try to backfill certifications/founder photos/press for scraped brands — that data mostly doesn't exist and chasing it defeats the point of an affiliate model. Instead, give the single `brand_story` paragraph a **structured presentation** instead of a plain text block, using data the scraper already collects but doesn't surface on the page:
+
+- **Pull-quote treatment**: lift the most vivid sentence of `brand_story` out as a large-type callout above the full paragraph (a craft/heritage claim like "brings India's rich tradition of artisanal footwear into contemporary fashion" reads very differently as a pull-quote than buried mid-paragraph).
+- **Craft-origin chip**: a small badge — region + technique (e.g. "Maharashtra · Kolhapuri leatherwork") — next to the story. Can be extracted from `brand_story` text at content-prep time; doesn't require a new scraped field.
+- **Product strip, not certification badges**: replace the certification-badge row (empty for this tier) with 2-3 real product images already in the listing data, linking into the Products tab — gives the page visual weight without inventing trust signals that aren't real.
+- **"Discovered on Mela" curation badge** in place of the certification badges — an honest trust signal for this tier (Mela vetted/selected the brand) instead of a blank space where GOTS/OEKO-TEX badges would go for a partner brand.
+- **Underused data worth surfacing**: `shopify_brands.py` already captures `brand_instagram`/`brand_facebook`/`brand_youtube` per brand, but nothing in `BrandStorefront.js` uses it. Even a simple "Follow [Brand] →" link would add a second content element to a currently one-element page, and costs no new scraping work.
+
+### Open question for whoever picks this up
+
+Does `BrandStorefront.js` need an explicit tier flag (e.g. `brandTier: 'affiliate' | 'partner'`) to select which About layout renders, or should it stay purely data-driven (render whatever fields are present, fall back gracefully when they're not)? A data-driven approach is simpler but risks the exact silent degradation described above recurring for the *next* field this PRD assumes and a future brand doesn't have.
+
+---
+
 ## UX Review Findings (Dec 15, 2024)
 
 ### 🔍 Live Site Analysis: Masilo Storefront

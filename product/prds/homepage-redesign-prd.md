@@ -206,10 +206,10 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 - [ ] WhyIndia renders 3 pillar cards with icon, title, and description — ❌ Not built
 - [ ] WhyIndia "Explore Indian Brands" CTA links to SearchPage — ❌ Not built
 
-### Coming Soon
-- [x] ComingSoonSection renders below Indian Brands section, above TrustAssurance
-- [x] Only Wishlists & Gift Registry card displays (Unified Checkout, Community Reviews, Order Tracking are commented out)
-- [x] Footer note reads "Checkout happens directly on each brand's Shopify store — we link you there securely." (no "currently")
+### Coming Soon — REMOVED (reversed by `homepage-hero-prd.md` T1-6, built 2026-07-10)
+- [x] ~~ComingSoonSection renders below Indian Brands section, above TrustAssurance~~ — **section removed** from `MelaHomePage.js` (trust liability on first impression). Component remains in repo, unmounted.
+- [x] ~~Only Wishlists & Gift Registry card displays~~ — n/a (section unmounted)
+- [x] ~~Footer note reads "Checkout happens directly…"~~ — n/a (section unmounted)
 
 ### TrustAssurance
 - [x] TrustAssurance cert card reads "Quality Verified / Independently Quality Tested"
@@ -276,3 +276,70 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 - Women's / Adult fashion homepage entry point — add once catalog is populated
 - WhyIndia with real brand photography — once asset library is built
 - A/B testing section order
+
+---
+
+## 11. Hero — owned by `homepage-hero-prd.md`
+
+**The hero (first fold + cold-load) is specified in `homepage-hero-prd.md`** — the dedicated, dev-reviewed hero PRD. Hero strategy briefly lived here in §11 (a later session strayed into this file); **as of 2026-07-09 it is consolidated into `homepage-hero-prd.md`**: the breadth/scale counter (that PRD's §4 T1-7), the QA-pseudo-production env reality (§12), Bet-1/Bet-2 staging, and affiliate-native image sourcing (§10) are folded there, and the keep-vs-drop **carousel** decision is logged in that PRD's §0 Open Decisions. This PRD retains everything **below the fold** (category/occasion nav, WhyIndia, TrustAssurance). The explored *editorial brand-hero* strategy (roster, product picks, image specs) is preserved for reference in **Appendix A** below and cross-referenced from `homepage-hero-prd.md`.
+
+---
+
+## Appendix A: Explored & Set Aside — Editorial Brand-Hero Strategy
+
+> **Status: superseded by §11 (2026-07-09).** This editorial brand-hero strategy — a rotating single-brand hero with per-brand AI-generated earthy scenes, 3 variants each (~24 assets), driven from a curated manifest — was developed in depth (roster, product picks, a validated Blotato pipeline) before a first-principles review + UX-expert/PM panels set it aside.
+>
+> **Why we moved away:** (1) a single-brand hero **cannot show category breadth** — the #1 bounce lever — and it optimizes the lowest-ranked sub-job (emotional specificity); (2) breadth/credibility are carried better by **labeled pills + a scale number** (language/data) than by imagery; (3) **AI-composited scenes read as inauthentic** to a craft-fluent diaspora audience, and a **multi-category collage** adds focal-point chaos + exoticization risk; (4) the 24-asset pipeline is a **large, unvalidated investment** ahead of any evidence the hero *image* moves bounce. The roster, product picks, data-quality flags, and pipeline notes below are **retained as reference** — still useful for the §11 featured-artisan band and for social visuals — even though the rotation / AI-scene strategy is not being pursued.
+
+The hero "Featured artisan story" (see §4 P1 *Featured artisan story in hero area*; copy must follow UXR Principle 8 on regional specificity) rotates a single concrete brand callout above the fold. Which brands anchor that rotation is a supply/curation decision, prioritized in tiers. **Tier A is the ingest-first set** — these fill the current first-impression gap (the hero reads baby-only and category-narrow).
+
+### Master Hero Brand List
+
+Consolidated roster — each row carries the full picture from supply rationale through production direction. **Category accent** and **Hero direction** derive from `visual-style-guide.md` → *Category-Specific Styling* (each brand gets a distinct visual on a shared, locked Mela baseline). Tiers reflect selection rationale: **A** = fills a critical first-impression gap (ingest first); **B** = unmistakably Indian-craft at a glance (proves the value prop).
+
+| Tier | Brand | Category | Why it's a strong future hero | Persona fit | Category accent | Hero direction |
+|------|-------|----------|-------------------------------|-------------|-----------------|----------------|
+| A | **Suta** | Fashion (handloom saree) | The single most legible "Indian craft you can't buy here" visual — handloom drape. Already §12's #1 supply ask. | Priya, Neha, Sarah | Fashion — drape/movement, weave macro | Handloom saree mid-drape on marble + neutral linen; lead with fabric flow |
+| A | **Isharya** | Jewelry | Modern Indian jewelry — the anti-cliché jewelry hook (color + metalwork craft in 5s without going full temple-traditional). Already account-in-QA. | Arun, Sarah | Jewelry — metalwork macro | Piece on linen + botanical element, macro on metalwork; deliberately *modern*, not temple-traditional |
+| A | **Kaunteya** | Home & Kitchen | Fine bone-china tableware with Indian (Pichwai-style) motifs — elevated, modern, distinctly Indian. Opens the "lifestyle discovery" breadth the hero currently lacks entirely. | Priya, Arun, Sarah | Home & Kitchen — functional context, glaze detail, negative space | Bone-china in a styled table scene, Pichwai motif visible; must read as scene, not product-on-white |
+| A | **House of Chikankari** | Fashion (chikankari) | Lucknawi hand-embroidery — heritage craft, elegant not costume-y. Reads "artisan" instantly. | Priya, Neha | Fashion — embroidery macro | Chikankari hand-embroidery closeup on soft neutral fabric; stitching irregularities = authenticity |
+| B | **Fizzy Goblet** | Fashion (footwear) | Embroidered juttis/heels — Indian craft you wear daily; the visual-style-guide's canonical fashion example. Reads handcrafted at a glance. | Priya, Neha, Arun | Fashion — embroidery detail, gold-silk drape | Juttis on warm marble + draped gold silk, macro on zardozi/embroidery detail |
+| B | **Nicobar** | Home & Kitchen / Fashion (lifestyle) | Contemporary, minimal Indian lifestyle — proves breadth and modern-diaspora appeal. *Tension: its understated aesthetic is the least "Indian-craft at a glance" of this group — may fit a "not-only-traditional" bucket better.* | Arun, Sarah | Home/Fashion — negative space, functional context | Linen apparel or tableware in an airy, coastal-modern scene; understated, editorial |
+| B | **Baby Forest** | Baby & Kids (Ayurvedic care) | Anchors the CORE baby vertical with authentic Ayurvedic craft — bridges heritage with Mela's primary category. | Sarah, Neha, Priya | Baby & Kids — safe/nurturing context, natural props | Ayurvedic baby-care bottles on soft linen with herbs/botanicals, bright soft natural light |
+| B | **Banjaaran** | Fashion (footwear) | Banjaaran Studio makes **shoes**, not textiles — hand-illustrated women's cone mules (botanical/animal art) + Devanagari-named leather loafers/brogues drawing on Indian textile traditions (Patola, Ikat). Folk-art craft on footwear. *Note: overlaps category with Fizzy Goblet — consider dropping one or differentiating (Fizzy = women's embroidered juttis; Banjaaran = illustrated/leather + menswear).* | Priya, Arun | Fashion — footwear, hand-illustrated / leather detail | Illustrated cone mule on wood/marble, macro on hand-painted art; or Patola/Ikat leather brogue |
+
+### Hero visual treatment (design decision)
+
+Each brand in the roster gets a **distinct hero visual** so the rotation telegraphs multi-category breadth (saree drape / metalwork / tableware / footwear / hand-embroidery) rather than collapsing to "clothes" — this directly serves the §1 wrong-category-scope reframe. All sit on a **shared, locked Mela baseline** (natural surfaces, golden-hour lighting, earthy palette, "Discovered on [Mela Logo]" watermark bottom-right, no title/price overlay) so the rotating hero reads as one coherent surface, not a stock carousel. Per-brand differentiation is the **category accent only** (columns 5–6 of the master list above).
+
+**Production guardrail:** lock the shared baseline as a template/preset (background family, lighting, watermark placement) *first*, then swap only the category accent per brand — prevents the four heroes from drifting apart tonally as they're produced at different times.
+
+### Hero Product Picks (per brand)
+
+**Rotation model:** 3 single-subject hero variants per brand, randomized in the hero slot (≈24 compositions across 8 brands). **Exceptions:** Kaunteya and Nicobar tableware picks are styled *table scenes* (one focal piece + supporting props), still 3 variants each. Picks are curated from each brand's `isBestseller` flag in `Mela-scrapper-integrations/scrapper_csvs/.../classified_products_prod/`, chosen for craft-legibility against the Hero direction above.
+
+| Brand | Hero pick 1 (lead) | Hero pick 2 | Hero pick 3 | Why these |
+|-------|--------------------|-------------|-------------|-----------|
+| **Suta** | A golden winged kingfisher *(saree w/ blouse)* | A Sky Dipped In Blue *(saree)* | A Tale of Maroon Saree | Kingfisher motif carries a craft story for the macro; the other two are clean single-tone drapes (blue, jewel-maroon) that read handloom instantly. |
+| **Isharya** | Bombay Deco Tassel Statement Mirror Earrings (Gold) | Inayat Mirror & Hydro Emerald Statement Earrings | Jugni Dazzling Mirror & CZ Choker | Mirror-work is the signature craft. Deco + emerald deliver the "modern, not temple-traditional" hook; choker adds a non-earring silhouette. Maang Tikka deliberately excluded (too traditional). |
+| **Kaunteya** | PICHWAI – Coffee Mug *(green/pink)* | MADHUBAN – Coffee Pot | Airavata – Jug *(Garuda/Swan)* | Pichwai motif = most legibly Indian bone-china. Coffee pot + sculptural animal jug build the styled table scene. |
+| **House of Chikankari** | HOC Chanderi Chikankari Long Kurta – **White** | HOC Aari Embroidered Cotton Long Kurta – White | HOC Cotton Dobby Chikankari Long Kurta – Peach | White-on-white is the signature chikankari — best macro for stitch irregularities. Aari adds a second embroidery texture; peach gives one soft-colour variant. |
+| **Fizzy Goblet** | City Palace : Juttis | Maharani Mode : Juttis | Jaipur : Kolha Flats | Heritage-named embroidered juttis = the zardozi macro. Celebrity-collab sneakers/heels (Kareena/Payal LE) excluded — less craft-legible for a hero. |
+| **Nicobar** | Sindhuraa Filter Coffee Set | Marigold Conical Mug + Quarter Plate | Leh Dress – Black & Gold Printed | Lean tableware to counter Nicobar's "not-Indian-at-a-glance" tension — filter coffee + marigold motif carry the most cultural signal; one printed dress covers fashion breadth. |
+| **Baby Forest** | Maasoom Maalish Baby Body Massage Oil | Laad Pyaar Baby Feeding Bottle | Sneh Uphaar Newborn Gift Basket | Ayurvedic massage oil (styled with herbs/botanicals) = the heritage hero; bottle is the clean product shot; gift basket ties to the "New Baby" occasion. Hindi names reinforce authenticity. |
+| **Banjaaran** | The Enchanted Lillies Cone Mules (Women) | सिंह (Simha) – The Regal Protector Loafers | Patola / Ikat Brogues | Hand-illustrated botanical mules + Devanagari-named mythological loafers + textile-tradition-named leather (Patola/Ikat) = folk-art-on-footwear. |
+
+**Data-quality flags:** *Suta* has no `isBestseller` flags and a truncated export (15 rows) — re-pull before it anchors the #1 slot. *Banjaaran* has no flags (picks are editorial) and is a **footwear** brand (not textiles). *Chikankari*'s flag was polluted with tag-labels (`EXCLUDE`, `_Label_Sale`) — filtered to real `Cat:Kurta` rows. *Isharya/Nicobar* had 100+ flagged bestsellers — curated hard to the signature craft.
+
+### Hero Image Specs (mobile-first + desktop)
+
+The hero renders on both mobile and desktop, so each composition is produced in **two crops** from the same styled scene (keep the product centered in a 1:1 safe zone so both crops hold):
+
+| Target | Aspect | Render size (2×) | Notes |
+|--------|--------|------------------|-------|
+| **Mobile (primary)** | 4:5 portrait | 1080 × 1350 | Mobile-first — 82% of target users research on mobile. Product + craft macro must read at 375px width. |
+| **Desktop** | 16:9 landscape | 2400 × 1350 | Wide hero; keep focal product and any caption line inside the centered safe zone (edges may crop on ultrawide). |
+
+**No watermark on hero images** — unlike social visuals, homepage heroes omit the "Discovered on [Mela Logo]" watermark (the page itself is Mela-branded).
+
+**Validated production pipeline (2026-07-09):** Blotato **Product Scene Placement** template (`f524614b-ba01-448c-967a-ce518c52a700`) — feed the real product image URL + an earthy scene description (≤500 chars). Native output is **1080 × 1350 (4:5)** = mobile crop with no rework; **desktop 16:9 is a downstream crop** (compose with top negative space so the crop holds — tight macro shots like jewelry need extra scene margin). Template exposes no aspect-ratio input, so 16:9 is always a crop, never a native render.

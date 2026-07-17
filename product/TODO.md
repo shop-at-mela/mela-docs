@@ -4,6 +4,26 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-16
+
+### Next
+- [ ] Instrument `/brands` brand-order reorder: track rank-position CTR (click rate by card position) + category-section CTR per brand once the anchor+rotation ordering ships, so the curated order can actually be checked against the random-shuffle baseline it replaces instead of being another unmeasured heuristic swap (from `/brands` brand-order UX panel critique, 2026-07-16; builds on `homepage-hero-prd.md` §12A/§12A.1)
+- [ ] Decide and document the `/brands` anchor-tier visibility tradeoff: curation is currently planned to stay invisible to users (no "Featured"/"Most Authentic" badge, to avoid an authenticity-hierarchy read) — write down that reasoning explicitly as a considered tradeoff against opaque-algorithmic-ranking disclosure norms, rather than leaving it as an undocumented default (from `/brands` brand-order UX panel critique, 2026-07-16)
+
+---
+
+## 2026-07-12
+
+### Shipped
+- `feat(homepage-hero)` — Cold-load value-prop hero (homepage-hero-prd Tier 0/1 + refinements): standalone why-line carrying the model-set message, demoted+labeled category pills with new `CategoryIcon` glyphs (replacing emoji), warm cream surface tokens across hero/brands/trust, curated carousel order (`getCuratedBrandIds`) with price/heart chrome hidden + "Handcrafted in … India" cue, threshold-gated breadth signal, carousel pause/play + reduced-motion, ComingSoonSection removed
+- `chore(deps)` — Pinned `shimmer` (runtime dep of Sentry/OpenTelemetry instrumentation that yarn wasn't hoisting; server threw "Cannot find module 'shimmer'")
+
+### Next
+- [ ] Supply: ingest Suta, Isharya, Kaunteya, House of Chikankari (top of the 2026-07-12 onboarding priority, §12A) and publish Fizzy Goblet listings in QA so the curated hero carousel actually leads with them
+- [ ] Update `getCuratedBrandIds` (`configBrands.js`) to follow the full §12A onboarding order as those brands land
+
+---
+
 ## 2026-06-21
 
 ### Shipped
