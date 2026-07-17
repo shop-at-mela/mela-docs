@@ -1,6 +1,13 @@
 # Mela Social Campaign — YAML Format
 # Template for strict machine-readable campaign logging
 # Use this structure for all campaign files: [brand-slug]-week-[N]-campaign.yaml
+#
+# COPY GUARDRAILS (see social-content-strategy-prd.md → Caption Strategy & Persona
+# Guardrails for the full banned-phrase list): never "Shipped to the US" without
+# naming the brand as the actor; never "traditional/ethnic/Bollywood/costume";
+# never "ethically made/sustainable/vegan-friendly" without a specific cert.
+# This template's own example copy below is a compliant reference — copy its
+# pattern, not older campaign logs, which predate this rule being enforced.
 
 ---
 # METADATA
@@ -31,7 +38,7 @@ instagram:
 
     Discover Fizzy Goblet on Mela →
 
-    📍 Handcrafted in India | Shipped to the US
+    📍 Handcrafted in India | Ships to the US from Fizzy Goblet
     #FizzyGoblet #ArtisanFootwear #IndianCraftsmanship #HandmadeShoes #SustainableStyle
 
   products:
@@ -72,13 +79,13 @@ pinterest:
   pins:
     - name: Bali Bellini Kolha Flats
       title: Bali Bellini Kolha Flats | Handcrafted Indian Footwear
-      description: Kolha flats handcrafted in India by Fizzy Goblet. Traditional design with modern comfort, double cushioning, vegetable-tanned leather. Perfect for everyday elegance. Sizes available. Discovered on Mela.
+      description: Kolha flats handcrafted in Maharashtra by Fizzy Goblet artisans. Modern silhouette with double cushioning, vegetable-tanned leather. Perfect for everyday elegance. Sizes available. Discovered on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e4dd02bd-944b-456f-84d3-81fa0361fbb5.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17b614-6e96-4806-a428-18fdb1d8d075
 
     - name: Chrome & Tonic Kolhas
       title: Chrome & Tonic Kolhas | Handcrafted Embroidered Flats
-      description: Chrome & Tonic kolhas by Fizzy Goblet. Handcrafted kolhas with traditional design and modern styling. Double cushioning, artisan-made in India. Perfect for ethnic wear and celebrations. Discovered on Mela.
+      description: Chrome & Tonic kolhas by Fizzy Goblet. Handcrafted with contemporary styling, double cushioning, artisan-made in Maharashtra. Perfect for festive occasions and everyday elegance. Discovered on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a75dcf07-8675-46c5-8aba-9c4d208a9387.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17bc57-60cc-48d7-ab60-7a2daf82f854
 
@@ -127,6 +134,6 @@ ux_review:
 notes:
   category_note: Continuing Week 1 footwear focus; next week consider diversifying to home/jewelry
   copy_quality: All captions use proper affiliate language (ships from India, discovered on Mela)
-  shipping_clarity: All captions note "Shipped to the US" for diaspora audiences
+  shipping_clarity: All captions name the brand as shipping actor ("Ships to the US from [Brand]") for diaspora audiences
   product_diversity: 3 new formats (kolhas, loafers, designer collab) from 7 featured in Week 1
   team_feedback: Wife approved aesthetic; no revisions needed

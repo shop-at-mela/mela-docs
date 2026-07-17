@@ -141,8 +141,12 @@ ux_review:
   destination_url: https://shopatmela.com/brands/fizzy-goblet
   checks:
     brand_story:
-      result: pass
-      note: Craft origin + heritage framing visible
+      result: warn  # re-checked 2026-07-13: was `pass`, no longer accurate for the default tab
+      note: Full story exists at /brands/fizzy-goblet/about but the destination this campaign
+        actually linked to (default Products tab) shows only a one-sentence tagline. Caption
+        promised "techniques passed down through generations" — not backed up at the linked URL.
+        Fix going forward is the /about routing in category-routing.yaml, not this log; left here
+        as a correction so campaign history reflects what was actually true.
     artisan_details:
       result: pass
       note: Techniques, traditions well-documented
