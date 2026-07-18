@@ -4,6 +4,19 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-18
+
+### Shipped
+- `feat(analytics)` — Cross-shop / entry-exit attribution tracking (`crossshop-tracking-prd.md`): GTM + GA4 (via GTM) + Microsoft Clarity install (env-var gated), `entrySource.js` (first-touch UTM/referrer capture, session-persisted), `brandClickout.js` (`brand_clickout` dataLayer event + `openBrandStorefront()`), wired into all three Shop-from-Brand CTA surfaces (`OrderPanel`, `ProductOrderForm`, `InquiryWithoutPaymentForm`) via a single `onShopNow` path — also closes a pre-existing gap where two of those surfaces bypassed `RedirectTrustSheet`. Spec at `web-client/docs/analytics/crossshop-tracking.md`.
+
+### Next
+- [ ] Create the GTM container, GA4 property, and Clarity project; set `REACT_APP_GTM_ID` / `REACT_APP_GA4_ID` / `REACT_APP_CLARITY_ID`; configure the GA4 Event tag in GTM for `brand_clickout`
+- [ ] Run the verification checklist in `crossshop-tracking.md` §6 (GTM Preview, GA4 DebugView, Clarity dashboard) end-to-end before trusting any report — PRD ACs stay unchecked until this passes
+- [ ] Register the four GA4 custom dimensions (`brand_name`, `category`, `entry_source`, `product_id`) once the first real `brand_clickout` event has fired in DebugView
+- [ ] Confirm the `brand_id` proposal (listing author/brand-user UUID, not a real schema field today) — see PRD §5b
+
+---
+
 ## 2026-07-16
 
 ### Next
