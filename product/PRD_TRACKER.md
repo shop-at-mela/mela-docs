@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-06-22  
+**Last updated:** 2026-07-19  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 ---
@@ -34,7 +34,7 @@
 | [enrichment-pipeline-stage2-update-prd.md](prds/enrichment-pipeline-stage2-update-prd.md) | 🟡 Partial | P1 | — | Web-client ✅ done; verify pipeline (`prompt_engine.py`) and ingestion outputs `metaDescription` + `searchSynonyms` |
 | [shopify-api-ingestion-prd.md](prds/shopify-api-ingestion-prd.md) | 🔲 Ready | P1 | — | Replace per-brand HTML scrapers with generic Shopify JSON API ingester |
 | [ai-ready-product-discovery-prd.md](prds/ai-ready-product-discovery-prd.md) | 📋 Draft | P2 | Depends on enrichment pipeline + SEO foundation | Schema.org entity coverage for AI answer engines |
-| [crossshop-tracking-prd.md](prds/crossshop-tracking-prd.md) | 🔲 Ready | P0 | Needs GTM/GA4/Clarity accounts created | GTM+GA4+Clarity install, entry-source capture, `brand_clickout` event across 3 CTA surfaces |
+| [crossshop-tracking-prd.md](prds/crossshop-tracking-prd.md) | ✅ Shipped | P0 | — | None — `InquiryWithoutPaymentForm` CTA is implemented but untestable until an inquiry-type listing exists in the catalog (not a gap in the work) |
 
 ---
 

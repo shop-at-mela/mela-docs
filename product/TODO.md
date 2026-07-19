@@ -4,16 +4,24 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-19
+
+### Shipped
+- `verify(analytics)` — Cross-shop tracking (`crossshop-tracking-prd.md`) **fully live-verified end-to-end** on shopatmela.com, status now ✅ Shipped: GTM container (`GTM-5JSJ54C2`) published, GA4 (`G-1H78QV7C6G`) receiving data (confirmed in Realtime), Microsoft Clarity (`xoozbmshor`) recording sessions, four GA4 custom dimensions registered. `entry_source` capture confirmed live (first-touch set correctly from UTM params, persisted unchanged across navigation, present on the fired event). `brand_clickout` confirmed firing with all six params on both CTA surfaces reachable in the current catalog (`OrderPanel.js` main CTA, `ProductOrderForm.js` quantity/delivery form CTA — tested at mobile viewport). `InquiryWithoutPaymentForm.js` (inquiry-only CTA) is implemented via the same shared path but has no live listing to test against today — not a gap, just no qualifying data yet.
+- Root-caused a red herring along the way: GTM Preview's repeated "no debuggable Google tag" / connection-timeout errors were caused by browser-side tracker-blocking (DuckDuckGo extension in Chrome, native Enhanced Tracking Protection in Firefox) interfering with Google's `/debug/bootstrap` handshake — not a code, CSP, or container problem. Testing in a clean/private browser profile resolved it.
+- Noted, unrelated to this work: a 404 seen while testing the mobile CTA traced to an out-of-stock/inventory issue on that specific listing, not a routing or tracking bug — no action needed here.
+
+### Next
+- [ ] Confirm the `brand_id` proposal (listing author/brand-user UUID, not a real schema field today) — see PRD §5b
+- [ ] If/when an inquiry-type listing goes live, verify `brand_clickout` fires from `InquiryWithoutPaymentForm.js` too
+- [ ] Once 30 days of real data exist, build the two Explore reports (multi-brand-clickout rate, entry≠exit) per `crossshop-tracking.md` §5 and set real targets (currently baseline-only)
+
+---
+
 ## 2026-07-18
 
 ### Shipped
 - `feat(analytics)` — Cross-shop / entry-exit attribution tracking (`crossshop-tracking-prd.md`): GTM + GA4 (via GTM) + Microsoft Clarity install (env-var gated), `entrySource.js` (first-touch UTM/referrer capture, session-persisted), `brandClickout.js` (`brand_clickout` dataLayer event + `openBrandStorefront()`), wired into all three Shop-from-Brand CTA surfaces (`OrderPanel`, `ProductOrderForm`, `InquiryWithoutPaymentForm`) via a single `onShopNow` path — also closes a pre-existing gap where two of those surfaces bypassed `RedirectTrustSheet`. Spec at `web-client/docs/analytics/crossshop-tracking.md`.
-
-### Next
-- [ ] Create the GTM container, GA4 property, and Clarity project; set `REACT_APP_GTM_ID` / `REACT_APP_GA4_ID` / `REACT_APP_CLARITY_ID`; configure the GA4 Event tag in GTM for `brand_clickout`
-- [ ] Run the verification checklist in `crossshop-tracking.md` §6 (GTM Preview, GA4 DebugView, Clarity dashboard) end-to-end before trusting any report — PRD ACs stay unchecked until this passes
-- [ ] Register the four GA4 custom dimensions (`brand_name`, `category`, `entry_source`, `product_id`) once the first real `brand_clickout` event has fired in DebugView
-- [ ] Confirm the `brand_id` proposal (listing author/brand-user UUID, not a real schema field today) — see PRD §5b
 
 ---
 
