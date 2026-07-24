@@ -35,11 +35,11 @@ Technical documentation and architecture
 
 ## About Mela
 
-Mela is a curated directory of India's best brands, helping global customers discover authentic Indian products starting with baby fashion in the US market.
+Mela is a curated directory of India's best brands, helping global customers discover authentic Indian products across fashion, home & kitchen, jewelry, and baby/kids in the US market.
 
 **Mission:** Bring India's best brands to global markets
 
-**Current Focus:** Building a curated discovery experience for Indian baby fashion brands
+**Current Focus:** Building a curated discovery experience for Indian brands across fashion, home & kitchen, jewelry, and baby/kids
 
 ## Last Updated
 January 2025
