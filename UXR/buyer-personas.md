@@ -2,6 +2,8 @@
 
 Detailed buyer personas for UX research and development testing.
 
+> **Scope note (Jul 2026):** These personas were originally researched around baby/kids products, Mela's initial wedge category. Mela's catalog now spans fashion, home & kitchen, jewelry, and baby/kids. The core psychological drivers below (sustainability scrutiny, heritage-seeking, price-fairness, cultural identity) are treated as category-agnostic, but each persona's behavior in fashion/home/jewelry specifically has not been directly researched — see the "Category Affinity" note at the end of each persona, flagged as hypothesis, not confirmed research.
+
 ---
 
 ## Persona 1: Sarah Chen - The Conscious American Parent
@@ -27,7 +29,7 @@ Detailed buyer personas for UX research and development testing.
 │ • Member of local "conscious parenting" Facebook group          │
 ├─────────────────────────────────────────────────────────────────┤
 │ SHOPPING BEHAVIOR                                               │
-│ • Researches for days before buying baby products               │
+│ • Researches for days before buying for her family              │
 │ • Reads reviews on multiple sites                               │
 │ • Checks certifications (knows GOTS, OEKO-TEX, B Corp)          │
 │ • Looks up brand founders and company stories                   │
@@ -35,7 +37,7 @@ Detailed buyer personas for UX research and development testing.
 │ • Shares finds with her parenting community                     │
 ├─────────────────────────────────────────────────────────────────┤
 │ GOALS                                                           │
-│ • Find baby products that are ACTUALLY sustainable              │
+│ • Find products that are ACTUALLY sustainable                   │
 │ • Avoid mass-produced fast fashion for her kids                 │
 │ • Support artisans and fair trade when possible                 │
 │ • Discover unique products not available at Target/Amazon       │
@@ -66,7 +68,7 @@ Detailed buyer personas for UX research and development testing.
 
 ### Sarah's User Journey
 
-1. **Discovery**: Searching "organic baby clothes not Amazon" or sees Instagram ad
+1. **Discovery**: Searching "organic baby clothes not Amazon" / "sustainable home goods India" or sees Instagram ad
 2. **Evaluation**: Spends 10+ minutes reading brand story, checking certifications
 3. **Comparison**: Opens multiple tabs, compares with other sustainable brands
 4. **Decision**: Certification + artisan story + reviews = purchase
@@ -85,6 +87,9 @@ Sarah is not Indian and does not identify with that label. She is shopping on Me
 - **"Indian" on products** (e.g. "Made in Jaipur by artisans"): ✅ Signals authenticity and supply-chain transparency — exactly what she wants
 - **"Indian" applied to her** (e.g. "your favourite Indian finds"): ❌ Reframes her as a cultural tourist, triggers subtle guilt about cultural appropriation — she never feels this on Etsy
 - **Key copy principle**: Let the product description carry the cultural origin; let her personal layer be about her taste, not her ethnicity
+
+### Sarah's Category Affinity — Hypothesis, not validated
+Her core driver (evidence-backed sustainability, not category) plausibly extends to home goods (linens, kitchenware) where the same certification/materials scrutiny applies. Jewelry is untested — a higher-consideration purchase where "greenwashing" skepticism may translate into "authenticity" skepticism instead. Needs direct testing before assuming her baby-category trust bar transfers as-is.
 
 ---
 
@@ -114,8 +119,8 @@ Sarah is not Indian and does not identify with that label. She is shopping on Me
 │ • Shops for Indian items around Diwali, Holi, birthdays         │
 │ • Has bought from random Etsy sellers with mixed results        │
 │ • Mom sometimes brings clothes from India trips                 │
-│ • Doesn't know Indian baby brands (left India as infant)        │
-│ • Matt often initiates searches for "Indian baby outfits"       │
+│ • Doesn't know Indian brands broadly (left India as infant)     │
+│ • Matt often initiates searches for "Indian baby/home items"    │
 │ • Willing to spend more for special occasion / cultural items   │
 ├─────────────────────────────────────────────────────────────────┤
 │ GOALS                                                           │
@@ -150,7 +155,7 @@ Sarah is not Indian and does not identify with that label. She is shopping on Me
 
 ### Priya's User Journey
 
-1. **Discovery**: Searching "Indian baby outfit Diwali" or recommendation from Indian mom group
+1. **Discovery**: Searching "Indian baby outfit Diwali" / "Diwali home decor" or recommendation from Indian mom group
 2. **Evaluation**: Looks for authenticity cues, modern aesthetic, cultural explanation
 3. **Sharing**: Shows Matt - they decide together
 4. **Decision**: If it looks authentic + appropriate for occasion + good reviews
@@ -169,6 +174,9 @@ Priya actively wants cultural context at the *product* level — she needs to kn
 - **"Indian" on products**: ✅ Essential — she needs to know provenance and cultural occasion
 - **"Indian" applied to her saves/collection**: ❌ Creates an invisible wall between "her Indian stuff" and "the family's stuff" when browsing with her husband Matt or non-Indian friends. Her children are mixed-heritage — "Indian finds" erases that
 - **Key copy principle**: Frame cultural context around occasions and product stories, not the user's identity
+
+### Priya's Category Affinity — Hypothesis, not validated
+Her driver is occasion, not product type — home décor (Diwali, Holi) and jewelry (festival wear, gifting to Matt's side of the family) plausibly trigger the same "authentic vs. costume-y" scrutiny she applies to clothing. Untested whether she'd browse these categories outside a specific occasion trigger, or only shops them reactively like baby clothing.
 
 ---
 
@@ -190,7 +198,7 @@ Priya actively wants cultural context at the *product* level — she needs to kn
 │ • Moved to US 6 years ago for master's degree                   │
 │ • Grew up in Chennai, knows Indian brands well                  │
 │ • Parents and in-laws visit 1-2 times per year                  │
-│ • Currently asks family to bring baby clothes when visiting     │
+│ • Currently asks family to bring clothes/items when visiting    │
 │ • Active in Bay Area Indian mom WhatsApp groups                 │
 │ • Shops on Myntra/FirstCry when in India                        │
 ├─────────────────────────────────────────────────────────────────┤
@@ -266,7 +274,7 @@ Priya actively wants cultural context at the *product* level — she needs to kn
 Neha is the most behaviorally split persona — she has two distinct modes that don't always coincide with a single session:
 
 - **Fulfillment mode** (what she does on Myntra): Arrives knowing the brand, the SKU, often the approximate price. Any platform that adds friction to this path loses her immediately.
-- **Inspiration mode** (what she does on Mela): Arrives with a loose intent ("something for the baby," "a festival outfit") and is genuinely open to being surprised. This is where Mela can expand her brand repertoire beyond what she already knows from India.
+- **Inspiration mode** (what she does on Mela): Arrives with a loose intent ("something for the baby," "a festival outfit," "kitchenware for the new house") and is genuinely open to being surprised. This is where Mela can expand her brand repertoire beyond what she already knows from India.
 
 **The sub-variant to know:** First-gen immigrants who came to the US *via marriage* (rather than for education or work) arrive at Mela more strongly in inspiration mode. They may shop Indian brands, but they built their brand familiarity differently — through a partner's family, through home visits, through WhatsApp group sharing — rather than through years of independently browsing Myntra. These users have strong cultural taste but less rigid brand loyalty, which makes curation particularly valuable to them.
 
@@ -277,6 +285,9 @@ Neha grew up in Chennai with a strong Tamil identity. "Indian" as a monolith is 
 - **"Indian" on products**: ✅ Acceptable at the macro level; she prefers more specific regional/brand attribution when possible ("Fabindia" or "Tirupur cotton" land better than "Indian cotton")
 - **"Indian" applied to her collection**: ❌ Redundant and slightly reductive — she knows what she saved and why; the label adds nothing
 - **Key copy principle**: Regional specificity beats national generality for trust. "Indian" is a floor, not a ceiling
+
+### Neha's Category Affinity — Hypothesis, not validated
+Likely the persona with the strongest cross-category confidence — she already shops fashion, jewelry, and home goods from Indian brands via Myntra/FirstCry, not just baby items, so brand recognition and price-fairness scrutiny (30-50% markup ceiling) probably apply uniformly. Untested whether her split fulfillment/inspiration behavior holds the same way outside baby/kids — jewelry in particular is a higher-stakes purchase where her price scrutiny may sharpen further.
 
 ---
 
@@ -342,7 +353,7 @@ Neha grew up in Chennai with a strong Tamil identity. "Indian" as a monolith is 
 
 ### Arun's User Journey
 
-1. **Discovery**: Instagram ad, or searching "Indian baby clothes modern"
+1. **Discovery**: Instagram ad, or searching "Indian baby clothes modern" / "modern Indian home decor"
 2. **Evaluation**: Looking for modern aesthetic, not "too traditional"
 3. **Validation**: Shows Anjali, checks if influencers have featured it
 4. **Decision**: If it feels accessible, modern, and meaningful
@@ -361,6 +372,9 @@ This is the most psychologically sensitive case. Arun experiences low-grade impo
 - **"Indian" on products**: ✅ Discovery tool for him — he doesn't know Indian brands, so "Indian design" as a category label helps him find things
 - **"Indian" applied to his collection**: ❌ Quietly reinforces the question "Am I Indian enough to save these?" His saves should feel like expressions of *his* evolving taste — not a scored performance of Indian-ness. `"Your favourite Mela finds"` respects his agency; `"your favourite Indian finds"` categorizes him
 - **Key copy principle**: Describe the cultural origin of products; never describe the user by their cultural origin
+
+### Arun's Category Affinity — Hypothesis, not validated
+His impostor syndrome may intensify outside baby/kids — a toddler's festival outfit is lower personal stakes than choosing "authentic" home décor or jewelry for himself, where the fear of being judged "not Indian enough" is more direct (it's his taste on display, not just his kid's). Needs direct testing before assuming his baby-category comfort transfers to categories that read as personal identity statements.
 
 ---
 
@@ -455,7 +469,7 @@ Every user who reaches the platform has already passed through the cultural fram
 |-------------|--------------|------------|
 | Product origin description | ✅ Always | "Handwoven in Rajasthan" / "Made by artisans in Tirupur" |
 | Brand-level catalog description | ✅ Yes | "100+ Indian brands curated for you" |
-| Category navigation labels | ✅ Yes | "Indian Fashion" / "Indian Baby" |
+| Category navigation labels | ✅ Yes | "Indian Fashion" / "Indian Home & Kitchen" / "Indian Jewelry" / "Indian Baby" |
 | User possessives / personal layer | ❌ Never | "your favourite Mela finds" / "your collection" |
 | Persona-targeted campaigns | ⚠️ Sparingly | Only when Indian-American identity IS the explicit context (Diwali guides, heritage gifting) |
 | Cultural texture / sub-labels | ✅ Yes (opt-in) | "meri pasand" as italic subtitle, not primary nav label |
@@ -517,6 +531,20 @@ A user who could go to Myntra to find what they want chooses Mela because Mela s
 
 ---
 
+## Known Gaps & Limitations
+
+> *Added Jul 2026, following a `/uxr panel` review of whether these four personas are the right set to drive Mela's strategy and execution. These are documented gaps, not fixes — closing them requires real research (interviews, analytics review), not more inference from this document.*
+
+- **Evidence tier is thin.** The persona set is built on unspecified "market research" plus one direct source (the founder's wife). No stated interview count or sample size underlies any individual persona. Treat this as a hypothesis-generation tool (per UXR Principle 1), not validated segmentation — especially for strategic bets like pricing or geographic expansion.
+- **All four personas are gated on parenthood.** Now that Mela's catalog spans fashion, home & kitchen, and jewelry — not just baby/kids — non-parent buyers (self-purchasers, wedding/housewarming gift-givers, grandparents as primary shoppers) are a plausible and currently unrepresented segment. Priya's and Arun's own bios mention involved grandparents, but no persona centers them.
+- **Demographically narrow along axes other than "Indian."** All four are married, heterosexual-partnered, parenting, and comfortably affluent (HHI $145K–$350K, well above the US household median). No single parents, LGBTQ+ families, or lower-income households are represented. Geographically, all five cities (Portland, Chicago suburbs, Bay Area, Austin) skew tech-hub — larger Indian-American population centers (NJ/NY metro, Houston, DC/Northern Virginia, Atlanta) aren't represented.
+- **Decision-making style may not transfer across categories.** Every persona is written as a high-effort deliberator ("researches for days," "opens multiple tabs, compares"). That's plausible for a first baby-safety purchase but may not hold for lower-consideration, higher-frequency categories like fashion. The Category Affinity notes above flag *which* categories each persona might shop; they don't yet test whether *how* they shop changes with the category.
+- **Post-purchase journey is thin relative to discovery.** Each persona has a detailed pre-purchase journey (Discovery → Evaluation → Comparison → Decision) but post-purchase gets one line in the Feature Testing Matrix. Pain points the personas themselves name — Priya's sizing confusion, Neha's shipping-timeline anxiety, Sarah's distrust of international shipping — aren't resolved into trust signals or a returns/repeat-purchase journey anywhere in this doc.
+
+**Quick wins that don't require new research:** check existing site analytics/order data for the share of purchases with no child-related context (fashion/jewelry/home-only carts) and for customer geography — both would confirm or rule out two of the gaps above using data Mela likely already has.
+
+---
+
 ## Persona Updates
 
 | Date | Update |
@@ -524,8 +552,10 @@ A user who could go to Myntra to find what they want chooses Mela because Mela s
 | Jan 2026 | Initial personas created based on market research |
 | Apr 2026 | Added per-persona "Relationship With 'Indian' in Copy" sections; added Cross-Cutting UXR Insight: The "Indian" Anchoring Principle |
 | Jun 2026 | Updated Neha's shopping behavior to reflect dual-mode (fulfillment on Myntra, inspiration on Mela); added "Shopping Mode on Mela" subsection with "came via marriage" sub-variant; added "Shopping mode on Mela" row to comparison matrix; added Cross-Cutting UXR Insight: The Inspiration vs. Fulfillment Divide (source: first-gen user feedback) |
+| Jul 2026 | Corrected baby-only framing to reflect Mela's multi-category catalog (fashion, home & kitchen, jewelry, baby/kids); added scope note; added per-persona "Category Affinity" sections flagged as unvalidated hypothesis, not confirmed research |
+| Jul 2026 | Ran `/uxr panel` review of whether these 4 personas are the right set for strategy; added "Known Gaps & Limitations" section (thin evidence base, parenthood gating, demographic/geographic narrowness, untested cross-category decision style, thin post-purchase journey); reconciled `pm/SKILL.md`'s single-persona "Primary user" line with the 4-persona co-equal model |
 
 ---
 
-*Last updated: June 2026*
-*Source: Mela market research, why-mela-matters analysis, copy review of saved-items feature, first-gen user feedback (founder's wife)*
+*Last updated: July 2026*
+*Source: Mela market research, why-mela-matters analysis, copy review of saved-items feature, first-gen user feedback (founder's wife). Category Affinity notes (Jul 2026) are analyst hypotheses pending direct research — not yet tested with real users.*
