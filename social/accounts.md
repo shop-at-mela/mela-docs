@@ -6,7 +6,7 @@
 - **URL**: https://www.pinterest.com/shopatmela/
 - **Handle**: @shopatmela
 - **Status**: Active (warmup phase as of June 2026)
-- **Posting cadence**: 3–5 pins/day during warmup (manual; not algorithm-gated the way Instagram warmup is) — **canonical in [`category-routing.yaml`](category-routing.yaml) → `cadence`** (scales to 5–10/day auto once the Catalog Feed ships)
+- **Posting cadence**: BLOCKED via Blotato API until warmup completes — Blotato hard-rejects Pinterest posts with a "warm up for 2 weeks, 1 pin/day manually, reconnect at 100+ views/month" error (confirmed 2026-07-24 via a real API call, not assumed). Until then, pins must be posted manually, directly in the Pinterest app, 1/day — **canonical in [`category-routing.yaml`](category-routing.yaml) → `cadence`** (scales to 5–10/day auto once the Catalog Feed ships)
 - **Primary content**: Product pins (catalog API), brand boards, occasion collections
 - **Conversion focus**: High ROI for Mela's product mix
 

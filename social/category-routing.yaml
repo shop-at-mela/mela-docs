@@ -43,17 +43,29 @@ tracking:
 # theme-rows (see `grid` block). Stories are grid-neutral and absorb any overflow.
 cadence:
   warmup:
-    pinterest: "3-5 pins/day, manual — Pinterest isn't algorithm-gated by 'warmup' the way Instagram is; the 1/day figure used through early campaigns was an unnecessary self-imposed cap, not a platform constraint"
+    # CORRECTED 2026-07-24: the "3-5 pins/day, not a platform constraint" claim below was
+    # wrong — verified by an actual blotato_create_post call to Pinterest, which hard-rejects
+    # with: "Your Pinterest still looks pretty new. You MUST warm it up for 2 weeks... Start
+    # posting 1 pin per day manually... Once you get 100+ views per month, reconnect your
+    # Pinterest account with Blotato." This is Blotato/Pinterest enforcing it, not a cautious
+    # self-imposed cap — Blotato's API refuses ALL Pinterest posts until warmup completes.
+    pinterest: "BLOCKED via Blotato API until warmup completes: 1 pin/day posted MANUALLY (directly in the Pinterest app, not through Blotato) for ~2 weeks, until the account reaches 100+ views/month. Only then does Blotato accept Pinterest posts. /social-review should draft Pinterest pin content (title/description/link/image) for the user to post manually, and log it as such, until this account clears warmup."
     instagram: "3-4 standalone posts/week (no row/anchor structure while grid.enabled=false, below) — at least 2 should be product-forward Reels/motion, optimized for individual reach, not row position"
   target:
     pinterest: "5-10 pins/day, Catalog Feed auto"
     instagram: "9 feed posts/week (= three grid rows: 2 brand-themed + 1 education) + daily Stories — once grid.enabled is flipped back on, see grid.activation_gate"
 
-# Rotation guardrails — enforced against campaign logs (social/log/*.yaml)
+# Rotation guardrails — enforced against campaign logs (social/log/[brand-slug]/week-*.yaml)
 rotation:
   brand_recency_days: 7                       # same brand posted within N days → suggest alternative
   persona_fatigue: { window: 5, max_same: 3 } # same persona 3+ of last 5 → rotate
   category_concentration: { window: 3, max_same: 3 }  # 3+ consecutive same category → require different
+  # Added 2026-07-25: neither skill actually checked this before — /social-review had no
+  # product-level check at all, /social-launch only said "flag all for exclusion" (read
+  # as permanent, no expiry). A finite brand catalog re-surfacing occasionally is fine —
+  # this is a COOLDOWN, not a ban. Match by dev_listing_id across all campaign logs
+  # (instagram.products[].dev_listing_id and pinterest.pins[].dev_listing_id/link).
+  product_recency_days: 60  # same product (dev_listing_id) featured within N days → suggest a different product from the same brand; after the window, repeating it is fine
 
 # Instagram feed grid — theme-row layout (Instagram ONLY; Pinterest has no row logic).
 # The IG feed is planned in rows of 3 that share one brand OR one education theme.
@@ -116,6 +128,52 @@ grid:
     ~2 anchor reels/week. If a reel can't be produced that week, fall back to the static theme_card.
   asset_spec:
     grid_crop: "3:4 portrait — IG profile grid crops to portrait; keep anchor text in the safe zone (see visual-style-guide.md)"
+
+# Pinterest board strategy — decided 2026-07-24, after a 5-brand batch defaulted
+# to ad-hoc board picks (a jewelry post nearly went on a footwear board) because
+# no concrete board list existed despite visual-style-guide.md's "never a bare
+# brand slug as the sole board" rule.
+#
+# POLICY: a limited, fixed set of evergreen THEME boards, contributed to by every
+# relevant brand over time — NOT a new board per post or per brand. Pinterest's
+# ranking rewards board topical authority accumulated across many pins over months;
+# a board spun up for one campaign and never touched again (4-8 pins, dead) never
+# reaches that threshold, and every new one-off board fragments Mela's total pin
+# volume across more dead ends instead of building a few boards worth finding.
+# A brand-specific board MAY exist in addition once a brand earns it (see
+# brand_board_threshold) but a pin's PRIMARY board is always the category theme
+# board — never the brand board alone.
+pinterest_boards:
+  brand_board_threshold: 8  # min live pins before a brand earns its own supplementary board
+  # Resolution rule for /social-review Phase 2/6: look up the category's `boards.pinterest`
+  # placeholder(s) (in the `categories` table below) in this map to get the real Pinterest
+  # board_id — pass that id directly to blotato_create_post's boardId, no name lookup needed.
+  # Re-verify with blotato_list_pinterest_boards if a call ever 404s (ids are stable but
+  # don't assume this list never changes). All boards below were created 2026-07-24.
+  boards:
+    home:                        { board_name: "Home and Kitchen",        board_id: "1103593152379723626", status: live }
+    occasion:                    { board_name: "Gifting and Occasions",   board_id: "1103593152379723628", status: live }
+    gifting:                     { board_name: "Gifting and Occasions",   board_id: "1103593152379723628", status: live }  # same board as `occasion` — one combined board, not two
+    "Modern Indian Nursery":     { board_name: "Modern Indian Nursery",   board_id: "1103593152379723629", status: live }
+    "Organic Baby Essentials":   { board_name: "Organic Baby Essentials", board_id: "1103593152379723630", status: live }
+    beauty:                      { board_name: "Beauty Ritual",           board_id: "1103593152379723631", status: live }
+    wellness:                    { board_name: "Beauty Ritual",           board_id: "1103593152379723631", status: live }  # same board as `beauty`
+    brand:                       { board_name: "Artisan Footwear",        board_id: "1103593152379641541", status: live }  # fashion/footwear theme board — already existed
+  existing_brand_boards:
+    # Per-brand boards created before this policy existed. Kept as optional secondary
+    # destinations (a fashion/footwear pin can go to both "Artisan Footwear" AND the
+    # brand's own board) — never used as a pin's only board going forward.
+    - "Fizzy Goblet"
+    - "The Alternate"
+  fallback_board: "Brands from India"  # use ONLY when no theme board exists yet for a category and same-day manual board creation isn't practical; flag the gap to the user regardless
+  seasonal_boards:
+    # Per accounts.md → Seasonal Calendar. Created ahead of the lead time listed there,
+    # contributed to by every relevant brand's seasonal pins. Pinterest content has a long
+    # shelf life — these stay evergreen and get re-seeded each year, not retired.
+    - { name: "Diwali Gifting",      live_by: "mid-August" }
+    - { name: "Holi Colors",         live_by: "mid-December" }
+    - { name: "Mother's Day Edit",   live_by: "mid-February" }
+    - { name: "New Year, New Home",  live_by: "mid-October" }
 
 # Content types — PLATFORM IS DECIDED BY TYPE, NOT CATEGORY.
 # Product content cross-posts to both platforms for EVERY category (art_and_craft included).
