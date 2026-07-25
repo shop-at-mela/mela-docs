@@ -1,0 +1,128 @@
+---
+# Mela Social Campaign — YAML Format
+# Tarinika Week 1 (scheduled 2026-07-24)
+
+brand: Tarinika
+brand_slug: tarinika
+week: 1
+date_posted: "2026-07-24"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Neha
+category: jewelry_and_accessories
+
+# INSTAGRAM
+instagram:
+  submission_id: 883f0632-082b-459d-9533-6272977b818e
+  schedule_id: "2830740"
+  scheduled_time: "2026-07-24T22:00:00Z"
+  destination: https://shopatmela.com/brands/tarinika
+  caption: |
+    Antique-finish jewelry handcrafted by goldsmiths across India — Tarinika's pieces carry the weight of temple-inspired design and kempu stone-setting traditions, reworked for everyday wear.
+
+    This edit spans a multi-layered necklace set with pearl and emerald-tone detailing, antique kempu chandbali earrings in red and green, hand-finished antique bangles, and classic jhumka drops — each piece hand-finished by artisans working in Indian goldsmithing techniques.
+
+    Pairs as easily with a kurta as with a blazer — from festive occasions to everyday layering.
+
+    Featured in this carousel:
+    • Aadhira Nakshatra CZ Layered Necklace Set
+    • Aaravi Antique Chandbali Earrings
+    • Aanchal Antique Bangles
+    • Aarush Antique Jhumka Earrings
+
+    Discover Tarinika on Mela — link in bio
+
+    📍 Handcrafted in India | Ships to the US from Tarinika
+    #Tarinika #IndianJewelry #AntiqueJewelry #HandcraftedJewelry #TempleJewelry
+
+  products:
+    - name: Aadhira Nakshatra CZ Layered Necklace Set
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-41eeaa80-180f-43a2-b4d9-732516958aeb.jpg
+      price_usd: 205
+      dev_listing_id: 6a585596-f694-41c3-8137-9767c98ce747
+      shopatmela_url: https://www.shopatmela.com/l/6a585596-f694-41c3-8137-9767c98ce747
+
+    - name: Aaravi Antique Chandbali Earrings
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-20eb596b-5327-44ff-9940-0f58cb39d665.jpg
+      price_usd: 25
+      dev_listing_id: 6a5855bf-ac0b-48e8-bbd4-a87d25d92dea
+      shopatmela_url: https://www.shopatmela.com/l/6a5855bf-ac0b-48e8-bbd4-a87d25d92dea
+
+    - name: Aanchal Antique Bangles
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0c3e0068-e2ee-48ea-8f81-c8c0a8b4d4d3.jpg
+      price_usd: 65
+      dev_listing_id: 6a5855ae-833a-415f-8b3b-756c096a46f1
+      shopatmela_url: https://www.shopatmela.com/l/6a5855ae-833a-415f-8b3b-756c096a46f1
+
+    - name: Aarush Antique Jhumka Earrings
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6d173805-d29f-4bbd-9a50-4c3b39c01f75.jpg
+      price_usd: 30
+      dev_listing_id: 6a5855f7-c9b2-427a-b3ba-baea6aff8865
+      shopatmela_url: https://www.shopatmela.com/l/6a5855f7-c9b2-427a-b3ba-baea6aff8865
+
+# PINTEREST
+pinterest:
+  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  boards:
+    - name: Gifting and Occasions
+      board_id: "1103593152379723628"
+
+  pins:
+    - name: Aadhira Nakshatra CZ Layered Necklace Set
+      status: manual_pending
+      title: Layered Bridal Necklace Set | Antique Indian Jewelry
+      description: Multi-layered necklace and earring set with antique kempu stone setting, pearls, and emerald-tone accents. Handcrafted by Indian goldsmiths using temple-jewelry techniques. A statement piece for weddings and festive occasions. Tarinika on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-41eeaa80-180f-43a2-b4d9-732516958aeb.jpg
+      link: https://www.shopatmela.com/l/6a585596-f694-41c3-8137-9767c98ce747?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w1&utm_content=aadhira-necklace-set
+
+    - name: Aaravi Antique Chandbali Earrings
+      status: manual_pending
+      title: Antique Red & Green Chandbali Earrings
+      description: Antique-finish chandbali earrings set with red and green kempu stones, a South Indian goldsmithing technique. Lightweight and finished by hand. Tarinika on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-20eb596b-5327-44ff-9940-0f58cb39d665.jpg
+      link: https://www.shopatmela.com/l/6a5855bf-ac0b-48e8-bbd4-a87d25d92dea?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w1&utm_content=aaravi-chandbali-earrings
+
+    - name: Aanchal Antique Bangles
+      status: manual_pending
+      title: Antique Kempu Bangles | Handcrafted Indian Jewelry
+      description: Hand-finished antique bangles on a gold-toned base with kempu stone detailing inspired by South Indian temple jewelry. Tarinika on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0c3e0068-e2ee-48ea-8f81-c8c0a8b4d4d3.jpg
+      link: https://www.shopatmela.com/l/6a5855ae-833a-415f-8b3b-756c096a46f1?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w1&utm_content=aanchal-antique-bangles
+
+    - name: Aarush Antique Jhumka Earrings
+      status: manual_pending
+      title: Antique Jhumka Earrings | Handcrafted in India
+      description: Classic antique-finish jhumka earrings, hand-finished by Indian goldsmiths. A staple silhouette in Indian jewelry design. Tarinika on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6d173805-d29f-4bbd-9a50-4c3b39c01f75.jpg
+      link: https://www.shopatmela.com/l/6a5855f7-c9b2-427a-b3ba-baea6aff8865?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w1&utm_content=aarush-jhumka-earrings
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/tarinika
+  checks:
+    brand_story:
+      result: pass
+      note: Page loaded cleanly and consistently across repeated checks 2026-07-23
+    product_findability:
+      result: pass
+      note: Product names included in caption
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations:
+    - theme: destination_not_linked
+      severity: medium
+      status: open
+      description: Instagram feed/carousel captions are not clickable — "Discover [Brand] on Mela →" was inert text on all prior campaigns (Fizzy Goblet W1/W2, The Alternate W1) despite implying a tappable link. Caught 2026-07-23 when the user asked directly about IG linking strategy.
+      mitigation: Caption CTA reworded to "Discover [Brand] on Mela — link in bio" to be accurate. Root cause not fully solved — bio link currently points to shopatmela.com (homepage), not a brand-specific or multi-link directory. Flagged to user as a possible dev-lead ticket (self-hosted link-in-bio page) — not yet built.
+
+# NOTES
+notes:
+  category_note: First jewelry_and_accessories post; breaks the fashion-only concentration from the prior 3 campaigns
+  persona_intro: Neha (regional specificity, no price callout) — used deliberately as an occasional persona per guardrail, not primary rotation
+  visual_pipeline_note: Regenerated via Blotato Product Scene Placement (not Image Slideshow) — see feedback_blotato_scene_watermark_gap memory. No watermark applied (known gap, not solved this batch).
+  pinterest_board_strategy: First campaign under the new evergreen-theme-board policy (category-routing.yaml -> pinterest_boards, decided 2026-07-24) — pinned to "Gifting and Occasions", not a new Tarinika-specific board.
+  brand_tagging: No @handle tag per feedback_no_brand_tagging_yet — no affiliate agreement, accounts still building credibility.

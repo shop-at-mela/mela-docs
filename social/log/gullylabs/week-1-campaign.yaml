@@ -1,0 +1,156 @@
+---
+# Mela Social Campaign — YAML Format
+# Gully Labs Week 1 (scheduled 2026-07-30)
+
+brand: Gully Labs
+brand_slug: gullylabs
+week: 1
+date_posted: "2026-07-30"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: brand_spotlight_carousel
+persona: Arun
+category: fashion
+
+# INSTAGRAM
+instagram:
+  submission_id: 421b6e00-b4b8-479b-b057-9da2bd43e59b
+  schedule_id: "2831045"
+  scheduled_time: "2026-07-30T17:00:00Z"
+  destination: https://shopatmela.com/brands/gullylabs/about
+  destination_note: brand_spotlight_carousel is story-driven per category-routing.yaml -> platforms.instagram.link_target_about_suffix — links to /about, not the bare brand page.
+  caption: |
+    Gully Labs takes India's street culture and puts regional craft on the sole of a sneaker — this drop runs through Himachal weaves, Punjab embroidery, and Rajasthani jute.
+
+    Buransh Red is built around handwoven Kullu fabric from Himachal Pradesh, worn traditionally as a shawl textile and reworked here into the sneaker's upper. The 1928 Turf Olive carries gold-embroidered Phulkari patterns — Punjab's centuries-old floral embroidery craft — across a vintage runner silhouette. Aandhi Kobicha is built from raw jute, a nod to resilience and street culture, made in collaboration with RAGA. Baaz Indrani draws its embroidery from the grace of Indian classical dance, made with PRXKHXR, while Baaz Leila Navy and Barfi Burgundy round out the drop for everyday wear.
+
+    Featured in this carousel:
+    • GL001 Buransh Red
+    • Gully Number 001 – Baaz Leila Navy
+    • Gully Number 001 – Baaz Indrani Edition
+    • Gully Number 001 – Barfi Burgundy
+    • Gully Number 001 X RAGA – Aandhi Kobicha
+    • Gully Number 002 – 1928 Turf Olive
+
+    Discover Gully Labs on Mela — link in bio
+
+    📍 Handcrafted in India | Ships to the US from Gully Labs
+    #GullyLabs #StreetwearIndia #Phulkari #ArtisanSneakers #IndianCraftsmanship
+
+  products:
+    - name: GL001 Buransh Red
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6847bc96-84fe-48d4-bd82-4b901238a7a4.jpg
+      price_usd: 115
+      dev_listing_id: 69fa0b94-0e86-4e55-9cef-e1e0dc4c1706
+      shopatmela_url: https://www.shopatmela.com/l/69fa0b94-0e86-4e55-9cef-e1e0dc4c1706
+
+    - name: Gully Number 001 – Baaz Leila Navy
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-749e3311-9b6d-4ed4-8831-4d5ea3291086.jpg
+      price_usd: 61
+      dev_listing_id: 69fa0ce9-3a28-4c5c-856c-d0daa078fa8f
+      shopatmela_url: https://www.shopatmela.com/l/69fa0ce9-3a28-4c5c-856c-d0daa078fa8f
+
+    - name: Gully Number 001 – Baaz Indrani Edition
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e854f05e-f9b5-4c90-8445-9f51c8ccc23b.jpg
+      price_usd: 115
+      dev_listing_id: 69fa0d8c-d047-4b90-ac33-e3c93a2d5735
+      shopatmela_url: https://www.shopatmela.com/l/69fa0d8c-d047-4b90-ac33-e3c93a2d5735
+
+    - name: Gully Number 001 – Barfi Burgundy
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b3ba3126-da44-42cf-a0c6-863adf4a9db3.jpg
+      price_usd: 97
+      dev_listing_id: 69fa0e7c-62cc-40fd-a11b-f17ac62b9511
+      shopatmela_url: https://www.shopatmela.com/l/69fa0e7c-62cc-40fd-a11b-f17ac62b9511
+
+    - name: Gully Number 001 X RAGA – Aandhi Kobicha
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-dd3f8ffe-ae1e-4ad7-8af3-9e3e5918e970.jpg
+      price_usd: 85
+      dev_listing_id: 69fa0f2c-740c-4711-a16d-8b40d6e771d7
+      shopatmela_url: https://www.shopatmela.com/l/69fa0f2c-740c-4711-a16d-8b40d6e771d7
+
+    - name: Gully Number 002 – 1928 Turf Olive
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3e6c70e6-f3ab-4c46-9c9c-72125a5665c8.jpg
+      price_usd: 91
+      dev_listing_id: 69fa0fb7-6396-45ca-a447-5baa335cd242
+      shopatmela_url: https://www.shopatmela.com/l/69fa0fb7-6396-45ca-a447-5baa335cd242
+
+# PINTEREST
+pinterest:
+  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  boards:
+    - name: Artisan Footwear
+      board_id: "1103593152379641541"
+
+  pins:
+    - name: GL001 Buransh Red
+      status: manual_pending
+      title: Kullu Weave Sneakers | Handcrafted in India
+      description: Sneakers featuring handwoven Kullu fabric from Himachal Pradesh, a regional shawl-weaving craft reworked into streetwear. Collab with Aryan Katoch. Gully Labs on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6847bc96-84fe-48d4-bd82-4b901238a7a4.jpg
+      link: https://www.shopatmela.com/l/69fa0b94-0e86-4e55-9cef-e1e0dc4c1706?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=buransh-red
+
+    - name: Gully Number 001 – Baaz Leila Navy
+      status: manual_pending
+      title: Navy Embroidered Sneakers | Gully Labs
+      description: Embroidered navy sneakers made for dancers, skaters, and everyday movement. Gully Labs on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-749e3311-9b6d-4ed4-8831-4d5ea3291086.jpg
+      link: https://www.shopatmela.com/l/69fa0ce9-3a28-4c5c-856c-d0daa078fa8f?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=baaz-leila-navy
+
+    - name: Gully Number 001 – Baaz Indrani Edition
+      status: manual_pending
+      title: Dance-Inspired Embroidered Sneakers
+      description: Sneakers stylized with PRXKHXR, embroidery inspired by the grace and rhythm of Indian classical dance. Gully Labs on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e854f05e-f9b5-4c90-8445-9f51c8ccc23b.jpg
+      link: https://www.shopatmela.com/l/69fa0d8c-d047-4b90-ac33-e3c93a2d5735?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=baaz-indrani-edition
+
+    - name: Gully Number 001 – Barfi Burgundy
+      status: manual_pending
+      title: Burgundy Suede Sneakers | Gully Labs
+      description: Premium suede sneakers in burgundy, a tribute to the holiday season. Gully Labs on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b3ba3126-da44-42cf-a0c6-863adf4a9db3.jpg
+      link: https://www.shopatmela.com/l/69fa0e7c-62cc-40fd-a11b-f17ac62b9511?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=barfi-burgundy
+
+    - name: Gully Number 001 X RAGA – Aandhi Kobicha
+      status: manual_pending
+      title: Raw Jute Sneakers | Gully Labs x RAGA
+      description: Sneakers crafted from raw jute with RAGA, built as a symbol of resilience and street culture. Gully Labs on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-dd3f8ffe-ae1e-4ad7-8af3-9e3e5918e970.jpg
+      link: https://www.shopatmela.com/l/69fa0f2c-740c-4711-a16d-8b40d6e771d7?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=aandhi-kobicha
+
+    - name: Gully Number 002 – 1928 Turf Olive
+      status: manual_pending
+      title: Phulkari Embroidered Sneakers
+      description: Vintage runner silhouette with gold-embroidered Phulkari patterns — Punjab's floral embroidery craft — on olive suede. Gully Labs on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3e6c70e6-f3ab-4c46-9c9c-72125a5665c8.jpg
+      link: https://www.shopatmela.com/l/69fa0fb7-6396-45ca-a447-5baa335cd242?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=1928-turf-olive
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/gullylabs/about
+  checks:
+    brand_story:
+      result: pass
+      note: Page loaded cleanly and consistently across repeated checks 2026-07-23
+    product_findability:
+      result: pass
+      note: Product names included in caption
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations:
+    - theme: destination_not_linked
+      severity: medium
+      status: open
+      description: Same root cause as tarinika-week-1 — IG captions aren't clickable; bio link is generic homepage, not brand-specific.
+      mitigation: Caption CTA reworded to "link in bio" for accuracy. Bio link / link-directory fix still open.
+
+# NOTES
+notes:
+  category_note: Fourth consecutive category shift this batch (home_and_kitchen -> jewelry -> baby_and_kids x2 -> fashion) — deliberately breaks the fashion-only concentration flagged before this batch started.
+  persona_note: Arun (craft origin + cultural context) — each product's regional craft (Kullu weave, Phulkari, jute, classical-dance embroidery) given its own sentence of cultural context per Arun's guardrail.
+  format_note: brand_spotlight_carousel (6 products) rather than the batch's default 4 — added 2 extra bestsellers (Baaz Leila Navy, Baaz Indrani Edition) on user request to better match the format's 6-8 slide recommendation.
+  visual_pipeline_note: Regenerated via Blotato Product Scene Placement — see feedback_blotato_scene_watermark_gap memory. No watermark applied (known gap).
+  pinterest_board_strategy: Pinned to "Artisan Footwear" — same theme board as Fizzy Goblet and The Alternate, consistent footwear categorization.
+  brand_tagging: No @handle tag per feedback_no_brand_tagging_yet.

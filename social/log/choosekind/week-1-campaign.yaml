@@ -1,0 +1,136 @@
+---
+# Mela Social Campaign — YAML Format
+# ChooseKind Week 1 (scheduled 2026-07-26)
+
+brand: ChooseKind
+brand_slug: choosekind
+week: 1
+date_posted: "2026-07-26"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Sarah
+category: baby_and_kids
+
+# INSTAGRAM
+instagram:
+  submission_id: 3929cb80-b01b-42bc-a849-5fd9486f3d39
+  schedule_id: "2831042"
+  scheduled_time: "2026-07-26T17:00:00Z"
+  destination: https://shopatmela.com/brands/choosekind
+  caption: |
+    Handcrafted by small ateliers in India, with a level of material care you don't always find in kids' shoes — the Dodo–LOVEBUGS pair, for one, is naturally dyed using flowers and vegetable pigments, with a bunny charm made from leftover fabric scraps.
+
+    Every piece in this edit is made by hand, so slight variations in color and stitching are part of the design, not a flaw: mismatched candy-colored Baisi flats, Dodo's naturally-dyed violet-and-mocha pair, a Humphead bag in pastel gingham, and Quaggle, a convertible tote-to-backpack in color-blocked panels.
+
+    For toddlers through big kids — playdates, school days, or just growing up in something made with care.
+
+    Featured in this carousel:
+    • Baisi – Fruity Pop
+    • Dodo – LOVEBUGS
+    • Humphead – Sweet Pop Pals
+    • Quaggle – Patch On
+
+    Discover ChooseKind on Mela — link in bio
+
+    📍 Handcrafted in India | Ships to the US from ChooseKind
+    #ChooseKind #HandcraftedKids #SlowFashionKids #KidsShoes #MadeWithCare
+
+  products:
+    - name: Baisi – Fruity Pop
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-02682140-d8d7-4950-9cfa-2ad72de6a8a6.jpg
+      price_usd: 39
+      dev_listing_id: 6a1cf257-e981-4882-9fee-76d1c0d24225
+      shopatmela_url: https://www.shopatmela.com/l/6a1cf257-e981-4882-9fee-76d1c0d24225
+
+    - name: Dodo – LOVEBUGS
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2c02cdf3-426f-4a70-b984-f2045294fe48.jpg
+      price_usd: 49
+      dev_listing_id: 6a1cf3f9-6264-4b48-a830-e260ac168608
+      shopatmela_url: https://www.shopatmela.com/l/6a1cf3f9-6264-4b48-a830-e260ac168608
+
+    - name: Humphead – Sweet Pop Pals
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3009193-3dab-4805-9e2f-f07212d68c25.jpg
+      price_usd: 61
+      dev_listing_id: 6a1cf633-d21c-4399-8a90-452e02b10fcf
+      shopatmela_url: https://www.shopatmela.com/l/6a1cf633-d21c-4399-8a90-452e02b10fcf
+
+    - name: Quaggle – Patch On
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3e67b85-82ec-46d0-a8be-0ecb88c17590.jpg
+      price_usd: 73
+      dev_listing_id: 6a1cf956-8424-457c-aa68-dc50b797c79f
+      shopatmela_url: https://www.shopatmela.com/l/6a1cf956-8424-457c-aa68-dc50b797c79f
+
+# PINTEREST
+pinterest:
+  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  boards:
+    - name: Organic Baby Essentials
+      board_id: "1103593152379723630"
+
+  pins:
+    - name: Baisi – Fruity Pop
+      status: manual_pending
+      title: Handcrafted Candy-Colored Kids Shoes | ChooseKind
+      description: Mismatched candy-inspired toddler shoes, handcrafted from fabric with lemon and mango charm details. Slight variations are part of the handmade charm. ChooseKind on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-02682140-d8d7-4950-9cfa-2ad72de6a8a6.jpg
+      link: https://www.shopatmela.com/l/6a1cf257-e981-4882-9fee-76d1c0d24225?utm_source=pinterest&utm_medium=social&utm_campaign=choosekind_w1&utm_content=baisi-fruity-pop
+
+    - name: Dodo – LOVEBUGS
+      status: manual_pending
+      title: Naturally Dyed Kids Shoes | Handcrafted in India
+      description: Violet-and-mocha toddler shoes naturally dyed using flowers and vegetable pigments, with a bunny charm made from leftover fabric scraps. ChooseKind on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2c02cdf3-426f-4a70-b984-f2045294fe48.jpg
+      link: https://www.shopatmela.com/l/6a1cf3f9-6264-4b48-a830-e260ac168608?utm_source=pinterest&utm_medium=social&utm_campaign=choosekind_w1&utm_content=dodo-lovebugs
+
+    - name: Humphead – Sweet Pop Pals
+      status: manual_pending
+      title: Pastel Gingham Kids Bag | Handcrafted in India
+      description: A playful pastel gingham bag with candy-shaped appliqués, handcrafted by small ateliers in India. Each bag is one of a kind. ChooseKind on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3009193-3dab-4805-9e2f-f07212d68c25.jpg
+      link: https://www.shopatmela.com/l/6a1cf633-d21c-4399-8a90-452e02b10fcf?utm_source=pinterest&utm_medium=social&utm_campaign=choosekind_w1&utm_content=humphead-sweet-pop-pals
+
+    - name: Quaggle – Patch On
+      status: manual_pending
+      title: Convertible Kids Backpack-Tote | ChooseKind
+      description: A color-blocked convertible bag that transforms from tote to backpack, handcrafted in India with playful clip-on charm loops. ChooseKind on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3e67b85-82ec-46d0-a8be-0ecb88c17590.jpg
+      link: https://www.shopatmela.com/l/6a1cf956-8424-457c-aa68-dc50b797c79f?utm_source=pinterest&utm_medium=social&utm_campaign=choosekind_w1&utm_content=quaggle-patch-on
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/choosekind
+  checks:
+    brand_story:
+      result: pass
+      note: Page loaded cleanly 2026-07-23
+    product_findability:
+      result: pass
+      note: Product names included in caption
+    aesthetic_match:
+      result: warn
+      note: Featured-product thumbnails appeared as blank white boxes in one screenshot during review; did not reproduce on a second check. Low confidence — worth a follow-up spot-check, not confirmed broken.
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations:
+    - theme: destination_not_linked
+      severity: medium
+      status: open
+      description: Same root cause as tarinika-week-1 — IG captions aren't clickable; bio link is generic homepage, not brand-specific.
+      mitigation: Caption CTA reworded to "link in bio" for accuracy. Bio link / link-directory fix still open, see tarinika-week-1-campaign.yaml for full note.
+    - theme: aesthetic_mismatch
+      severity: low
+      status: open
+      description: Featured-product thumbnails blank in one screenshot (see aesthetic_match check above) — not reproduced, may be a load-timing artifact rather than a real bug.
+      mitigation: None applied — flagged for a follow-up check, not urgent enough to block this post.
+
+# NOTES
+notes:
+  category_note: Second baby_and_kids post scheduled this batch (with The Nesavu) — both land within a 3-post window per category-concentration rotation, acceptable per the freshness check done in Phase 2.
+  persona_note: Sarah persona grounded in one concrete material claim (Dodo's natural dye process) rather than a blanket sustainability claim across all 4 products, per Sarah's guardrail against vague "eco-friendly" language.
+  visual_pipeline_note: Regenerated via Blotato Product Scene Placement — see feedback_blotato_scene_watermark_gap memory. No watermark applied (known gap).
+  pinterest_board_strategy: Pinned to "Organic Baby Essentials" theme board per category-routing.yaml -> pinterest_boards.
+  brand_tagging: No @handle tag per feedback_no_brand_tagging_yet.

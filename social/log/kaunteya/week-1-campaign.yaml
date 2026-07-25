@@ -1,0 +1,141 @@
+---
+# Mela Social Campaign — YAML Format
+# Kaunteya Week 1 — DRAFT, held pending destination page fix
+
+brand: Kaunteya
+brand_slug: kaunteya
+week: 1
+date_posted: null  # not published — see status
+status: draft_held
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Priya
+category: home_and_kitchen
+
+# INSTAGRAM
+instagram:
+  submission_id: null  # not submitted — held per user decision 2026-07-22
+  destination: https://shopatmela.com/brands/kaunteya
+  caption: |
+    Set your festive table with a story this Diwali — Kaunteya's hand-painted fine bone china brings centuries-old Indian art traditions to everyday tableware.
+
+    Each piece is wheel-thrown, then hand-painted by trained artisans: the Airavata mugs draw their motifs from Pattachitra scroll painting — a centuries-old narrative art form from Odisha depicting the vahanas (divine mount animals) of Hindu mythology — while the Byah collection is inspired by Bappuji ki Phad, a Rajasthani folk-painting tradition.
+
+    Perfect for a Diwali chai spread, a housewarming gift, or simply upgrading your everyday coffee ritual with a piece of hand-painted heritage.
+
+    Featured in this carousel:
+    • Airavata Coffee Mug – Garuda
+    • Airavata Coffee Mug – Owl
+    • Byah Jug
+    • Byah Coffee Mug
+
+    Discover Kaunteya on Mela — link in bio
+
+    📍 Hand-painted in India | Ships to the US from Kaunteya
+    #Kaunteya #HandPaintedCeramics #IndianArtisans #Pattachitra #ArtisanTableware
+
+  products:
+    - name: Airavata Coffee Mug – Garuda
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3d4cb7de-23b0-4acd-8bf9-6fb1a599c1c4.jpg
+      price_usd: 30
+      dev_listing_id: 6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984
+
+    - name: Airavata Coffee Mug – Owl
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg
+      price_usd: 30
+      dev_listing_id: 6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4
+
+    - name: Byah Jug
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-520833c6-65e9-446e-be6a-81df37f73fd5.jpg
+      price_usd: 89
+      dev_listing_id: 6a5cd6f4-8bd7-4701-b761-f735d71859c7
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd6f4-8bd7-4701-b761-f735d71859c7
+
+    - name: Byah Coffee Mug
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d461c194-5f2a-4870-9b18-cb406148928a.jpg
+      price_usd: 30
+      dev_listing_id: 6a5cd6bb-fe0a-435f-b93a-c3539ae8fba6
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd6bb-fe0a-435f-b93a-c3539ae8fba6
+
+# PINTEREST
+pinterest:
+  posting_mode: manual  # Blotato hard-blocked regardless — see cadence note; moot while post is held anyway
+  boards:
+    - name: Home and Kitchen
+      board_id: "1103593152379723626"
+
+  pins:
+    - name: Airavata Coffee Mug – Garuda
+      status: draft_held
+      title: Hand-Painted Pattachitra Coffee Mug | Kaunteya
+      description: Fine bone china coffee mug hand-painted with Pattachitra motifs depicting Garuda, the mythological vahana. Wheel-thrown and hand-finished by trained artisans in India. A meaningful piece for your festive table or everyday chai ritual. Kaunteya on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3d4cb7de-23b0-4acd-8bf9-6fb1a599c1c4.jpg
+      link: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-garuda
+
+    - name: Airavata Coffee Mug – Owl
+      status: draft_held
+      title: Hand-Painted Owl Motif Coffee Mug | Kaunteya
+      description: Fine bone china mug hand-painted with Pattachitra-inspired owl motifs, wheel-thrown and finished by trained Indian artisans. A distinctive piece for your morning coffee or a thoughtful housewarming gift. Kaunteya on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg
+      link: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-owl
+
+    - name: Byah Jug
+      status: draft_held
+      title: Hand-Painted Ceramic Jug | Phad Art Tableware
+      description: Fine bone china jug hand-decorated with black-and-gold motifs inspired by the Bappuji ki Phad folk-art tradition of Rajasthan. A striking serveware piece for festive gatherings or everyday table styling. Kaunteya on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-520833c6-65e9-446e-be6a-81df37f73fd5.jpg
+      link: https://www.shopatmela.com/l/6a5cd6f4-8bd7-4701-b761-f735d71859c7?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-jug
+
+    - name: Byah Coffee Mug
+      status: draft_held
+      title: Phad Art Coffee Mug | Hand-Painted Ceramic
+      description: Fine bone china coffee mug hand-decorated in black and gold, inspired by the Bappuji ki Phad folk-painting tradition of Rajasthan. Wheel-thrown, hand-finished, and made for daily rituals. Kaunteya on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d461c194-5f2a-4870-9b18-cb406148928a.jpg
+      link: https://www.shopatmela.com/l/6a5cd6bb-fe0a-435f-b93a-c3539ae8fba6?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-coffee-mug
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/kaunteya
+  checks:
+    brand_story:
+      result: fail
+      note: Page white-screens 100% of the time (4/4 repeated checks, 2026-07-22/23) — not a content issue, a hard crash.
+  observations:
+    - theme: destination_broken
+      severity: high
+      status: open
+      description: >
+        shopatmela.com/brands/kaunteya renders a completely blank white page, reproduced
+        4/4 times. Root cause traced via browser console: the map component tries to load
+        mapbox-sdk.min.js via a proxy (discoveronmela.onrender.com), that request 503s, and
+        the failure-handling path calls an undefined function (`showUserError`), throwing an
+        uncaught ReferenceError during componentDidMount with no error boundary to catch it —
+        killing the entire React mount. Confirmed NOT universal: Fizzy Goblet and Tarinika
+        brand pages loaded fine repeatedly in the same session, so this is data/route-specific
+        to Kaunteya, not a site-wide outage (a separate, unrelated Render cold-start was also
+        observed and self-resolved earlier in the same session — do not conflate the two).
+      mitigation: >
+        None yet — this is a dev bug requiring either (a) fixing/guarding the missing
+        showUserError reference, or (b) making the map fail gracefully (omit the map) instead
+        of crashing the whole page. Post built and ready per user decision (2026-07-22) to
+        prepare content now and hold publish until the page is fixed. Route to product/dev
+        backlog.
+    - theme: destination_not_linked
+      severity: medium
+      status: open
+      description: Same root cause as tarinika-week-1 — IG captions aren't clickable; bio link is generic homepage, not brand-specific.
+      mitigation: Caption CTA reworded to "link in bio" for accuracy. Bio link / link-directory fix still open.
+
+# NOTES
+notes:
+  category_note: First home_and_kitchen post — breaks the fashion-only concentration that existed before this 5-brand batch.
+  persona_note: Priya (occasion-first) — Diwali/gifting/housewarming framing fits the tableware well.
+  hold_reason: Destination page is completely broken (see destination_broken observation). User explicitly chose to build the post now and hold publish rather than wait for the fix or skip the brand entirely (2026-07-22).
+  visual_pipeline_note: Regenerated via Blotato Product Scene Placement — see feedback_blotato_scene_watermark_gap memory. No watermark applied (known gap).
+  pinterest_board_strategy: Would pin to "Home and Kitchen" theme board — moot while held, and Pinterest posting is separately hard-blocked via Blotato regardless (see cadence note in category-routing.yaml).
+  brand_tagging: No @handle tag per feedback_no_brand_tagging_yet.
+  next_step: Re-check https://shopatmela.com/brands/kaunteya once the showUserError/map crash is fixed, then move this campaign from draft_held to scheduled.

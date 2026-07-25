@@ -1,0 +1,137 @@
+---
+# Mela Social Campaign — YAML Format
+# The Nesavu Week 1 (scheduled 2026-07-28)
+
+brand: The Nesavu
+brand_slug: the-nesavu
+week: 1
+date_posted: "2026-07-28"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Priya
+category: baby_and_kids
+
+# INSTAGRAM
+instagram:
+  submission_id: aba8c82b-b995-4081-afbb-0cf1aa7f558c
+  schedule_id: "2831043"
+  scheduled_time: "2026-07-28T17:00:00Z"
+  destination: https://shopatmela.com/brands/the-nesavu
+  caption: |
+    Navratri, poojas, first birthdays — The Nesavu's pattu pavadais bring Kanchipuram and Salem's silk-weaving traditions into pieces made for your family's biggest occasions.
+
+    Each pavadai is woven and finished with the same regional silk techniques used in South Indian bridal wear, sized for babies and toddlers with modern, machine-washable finishes that don't compromise on the craft. From a first-birthday photoshoot to Navratri golu visits to temple functions, these pieces are made to be worn — not just admired.
+
+    Featured in this carousel:
+    • Baby Girl Pattu Pavadai for First Birthday and Pooja
+    • Toddler Pattu Pavadai for Navratri and Festive Pooja
+    • Girls Pattu Pavadai for Festivals and Traditional Occasions
+    • Baby Girl Jacquard Pattu Pavadai for Temple Wear
+
+    Discover The Nesavu on Mela — link in bio
+
+    📍 Woven in South India | Ships to the US from The Nesavu
+    #TheNesavu #PattuPavadai #SouthIndianSilk #IndianKidsWear #Navratri
+
+  products:
+    - name: Baby Girl Pattu Pavadai for First Birthday and Pooja
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7387352e-4e40-4231-bca7-e57676a7c5a0.jpg
+      price_usd: 18
+      dev_listing_id: 6a598f34-b298-48a9-bd82-56339821b117
+      shopatmela_url: https://www.shopatmela.com/l/6a598f34-b298-48a9-bd82-56339821b117
+
+    - name: Toddler Pattu Pavadai for Navratri and Festive Pooja
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6433aedd-29b3-4384-8639-2236afc780c0.jpg
+      price_usd: 29
+      dev_listing_id: 6a598f45-5816-4bc4-bd5d-977f1f645a2a
+      shopatmela_url: https://www.shopatmela.com/l/6a598f45-5816-4bc4-bd5d-977f1f645a2a
+
+    - name: Girls Pattu Pavadai for Festivals and Traditional Occasions
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e5ffcc3b-09a8-42da-88d9-125995ad651e.jpg
+      price_usd: 32
+      dev_listing_id: 6a59a10b-4abd-4c7e-ad73-3f976ab7c0c8
+      shopatmela_url: https://www.shopatmela.com/l/6a59a10b-4abd-4c7e-ad73-3f976ab7c0c8
+
+    - name: Baby Girl Jacquard Pattu Pavadai for Temple Wear
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-09ae64f7-3efb-42c5-a21e-dccb5566ebb7.jpg
+      price_usd: 30
+      dev_listing_id: 6a59c4aa-0816-41bb-9eeb-76dbb6fc0178
+      shopatmela_url: https://www.shopatmela.com/l/6a59c4aa-0816-41bb-9eeb-76dbb6fc0178
+
+# PINTEREST
+pinterest:
+  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  boards:
+    - name: Modern Indian Nursery
+      board_id: "1103593152379723629"
+      note: Best available fit, not a perfect match — this board is nursery/organic-essentials framed, not festive/occasion wear. No dedicated occasion board exists yet for baby_and_kids; flagged in observations below.
+
+  pins:
+    - name: Baby Girl Pattu Pavadai for First Birthday and Pooja
+      status: manual_pending
+      title: Silk Pattu Pavadai for Baby's First Birthday
+      description: South Indian silk pavadai woven in the Kanchipuram and Salem style, sized for baby girls. Perfect for first-birthday photoshoots and pooja ceremonies. The Nesavu on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7387352e-4e40-4231-bca7-e57676a7c5a0.jpg
+      link: https://www.shopatmela.com/l/6a598f34-b298-48a9-bd82-56339821b117?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-first-birthday
+
+    - name: Toddler Pattu Pavadai for Navratri and Festive Pooja
+      status: manual_pending
+      title: Silk Pattu Pavadai for Navratri | Toddler Wear
+      description: Toddler silk pavadai in the Kanchipuram silk-weaving style, made for Navratri golu visits and festive pooja days. The Nesavu on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6433aedd-29b3-4384-8639-2236afc780c0.jpg
+      link: https://www.shopatmela.com/l/6a598f45-5816-4bc4-bd5d-977f1f645a2a?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-navratri
+
+    - name: Girls Pattu Pavadai for Festivals and Traditional Occasions
+      status: manual_pending
+      title: Girls Silk Pattu Pavadai | South Indian Weave
+      description: Silk pavadai for girls, woven using South Indian silk techniques and finished for festival wear. The Nesavu on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e5ffcc3b-09a8-42da-88d9-125995ad651e.jpg
+      link: https://www.shopatmela.com/l/6a59a10b-4abd-4c7e-ad73-3f976ab7c0c8?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-festivals
+
+    - name: Baby Girl Jacquard Pattu Pavadai for Temple Wear
+      status: manual_pending
+      title: Jacquard Silk Pavadai for Temple Wear
+      description: Jacquard silk pavadai set, woven for temple visits and festive family occasions. The Nesavu on Mela.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-09ae64f7-3efb-42c5-a21e-dccb5566ebb7.jpg
+      link: https://www.shopatmela.com/l/6a59c4aa-0816-41bb-9eeb-76dbb6fc0178?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-temple-wear
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/the-nesavu
+  checks:
+    brand_story:
+      result: warn
+      note: Page loads correctly roughly half the time (see observation below)
+    product_findability:
+      result: pass
+      note: Product names included in caption
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations:
+    - theme: destination_not_linked
+      severity: medium
+      status: open
+      description: Same root cause as tarinika-week-1 — IG captions aren't clickable; bio link is generic homepage, not brand-specific.
+      mitigation: Caption CTA reworded to "link in bio" for accuracy. Bio link / link-directory fix still open.
+    - theme: destination_unreliable
+      severity: high
+      status: open
+      description: The Nesavu's brand page failed ~50% of repeated load attempts during Phase 4 review (2026-07-23) — 2x "502 Bad Gateway", 1x raw browser error page, 2x loaded fine. Distinct from Kaunteya's 100%-reproducible client-side crash; this looks like a backend timeout, possibly related to this brand's unusually large catalog (3,586 rows in the source CSV). Not caused by the general Render cold-start seen earlier in the same session (that had already resolved by the time this was tested).
+      mitigation: User decided to proceed with the post despite the flakiness rather than hold it (2026-07-23) — a majority of clicks should land fine, but this is an open reliability risk worth dev attention, not a one-post fix.
+    - theme: collection_not_surfaced
+      severity: low
+      status: open
+      description: No Pinterest board exists yet for festive/occasion baby & kids wear — the two configured baby_and_kids boards ("Modern Indian Nursery", "Organic Baby Essentials") are both framed around nursery goods and organic-materials essentials, not festive occasion wear like pattu pavadais.
+      mitigation: Used "Modern Indian Nursery" as the closer fit for this batch. Consider a dedicated "Festive Kids Wear" or occasion-themed board if The Nesavu / similar festive-wear brands become a recurring category.
+
+# NOTES
+notes:
+  category_note: Second baby_and_kids post this batch (with ChooseKind) — acceptable per Phase 2 freshness check, not 3+ consecutive.
+  persona_note: Priya (occasion-first) — strong natural fit given the pattu pavadai occasion range (first birthday, Navratri, temple visits); avoided "traditional/ethnic/costume-inspired" per Priya's guardrail throughout caption and pin copy.
+  visual_pipeline_note: Regenerated via Blotato Product Scene Placement — see feedback_blotato_scene_watermark_gap memory. No watermark applied (known gap).
+  pinterest_board_strategy: Pinned to "Modern Indian Nursery" as closest available theme board — see collection_not_surfaced observation above for the gap this exposes.
+  brand_tagging: No @handle tag per feedback_no_brand_tagging_yet.
