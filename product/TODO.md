@@ -4,6 +4,19 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-25
+
+### Shipped
+- `feat(hero-section)` — BrandHeroCard (`brand-hero-card-webclient-prd.md`), status now ✅ Shipped: new image-forward hero card (1:1 product image, bottom gradient scrim, white brand name/tagline overlay) replaces `BrandCardHome` in the homepage hero carousel only — `BrandCardHome.js`/`.module.css` untouched, still shared by BrandsPage/FeaturedBrandPartners/PartnerCTACard. Resolves `publicData.brandHeroImageIds[i]` to a Sharetribe variant URL (preferred), falls back to `brandHeroImages[i]` (Shopify URL) on absence or runtime load failure; brands with no hero source at all are filtered out of the carousel (no logo fallback, no dead dots). Mobile carousel rebuilt as a scroll-snap track (88%-width slides with next-card peek) instead of the prior single-slide index swap, per user's mobile-first direction; desktop keeps a single 340px slide. Design direction (serif name + logo chip hybrid) landed via `/mockup` + `/ux-design` + `/uxr` + persona passes before implementation.
+- Caught and fixed a real WCAG AA gap during the dev-lead acceptance pass: the initial scrim gradient and a marigold-tinted eyebrow color only held 4.5:1 contrast for the *average* case — a 2-line-wrapped brand name or tagline over a near-white product photo measured 4.22–4.28:1. Widened the scrim's opaque plateau to cover the tallest realistic text stack and reverted all overlay text to solid white (verified 4.97:1 at the worst-case point via direct sRGB luminance calculation, not visual inspection).
+- Also fixed, incidentally: a test-pollution bug in the new `BrandHeroCard.test.js` where a failed assertion mid-test skipped `jest.spyOn` cleanup, corrupting every subsequent test in the file — root cause was a fresh `configureStore()` on every `rerender()` call rather than RTL's `wrapper` option reusing one store instance.
+
+### Next
+- [ ] The Nesavu and Masilo have no hero image source (brand-wide watermark; no CSV yet, respectively) and are absent from the hero carousel — re-check the curated first-fold order (`configBrands.js`) once they get `brandHeroImageIds`/`brandHeroImages`
+- [ ] Full `npm test` run flagged one pre-existing, unrelated failure (`LandingPage.test.js` error-fallback test) — not touched by this work, left as-is
+
+---
+
 ## 2026-07-19
 
 ### Shipped

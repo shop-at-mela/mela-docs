@@ -1,6 +1,6 @@
 # BrandHeroCard — web-client PRD (new session)
 
-**Status:** Ready to implement. Self-contained for a fresh session.
+**Status:** ✅ Shipped (2026-07-25). Self-contained for a fresh session.
 **Scope:** web-client only (the React/Redux/Sharetribe app). Backend/data path is separate
 (see "Dependency" below).
 **Companion doc:** `mela-docs/product/prds/brand-hero-image-calibration.md` — the rubric and
