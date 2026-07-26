@@ -4,6 +4,20 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-26
+
+### Shipped
+- `fix(brand-hero-card)` — correction to the 2026-07-25 BrandHeroCard ship (`brand-hero-card-webclient-prd.md`, still ✅ Shipped — no status change, this is a correctness fix on an already-shipped feature). Two issues found during a follow-up dev-lead review and fixed:
+  - **P0 — the hero carousel was silently broken end-to-end.** The new `fetchHeroBrands` thunk requested each brand's profile image but only kept the user entity from the response, dropping the accompanying image entity. That left a dangling relationship reference in the store; resolving it inside `getHeroBrands` threw synchronously on every render, and with no error boundary around `HeroSection`, React quietly gave up re-rendering it — leaving the loading skeleton frozen on screen forever while the Redux store kept updating correctly underneath. Looked identical to a stuck network fetch from the outside; the actual crash was several layers deeper (traced via live Redux/React-fiber inspection in the running dev app, then confirmed against a browser console trace). Fixed by capturing the response's `included` image entities, matching the pattern already used by the two sibling fetch thunks in the same file.
+  - **Scope-correctness gap:** hero-carousel eligibility no longer requires bestseller/configured products (the card renders no products at all, so that requirement was silently dropping brands with a real hero image and nothing else), and candidate coverage expanded from the first 10 curated brands to all curated brands, via a dedicated `fetchHeroBrands` thunk/`getHeroBrands` selector kept fully separate from `fetchFeaturedBrands` (which `FeaturedBrandPartners` still depends on unchanged).
+  - Also fixed the focus-ring color (`--marketplaceColorLight`, already used elsewhere for a light purple, silently defeated the marigold fallback) — now points at `--colorAccent`, the actual marigold token.
+- Verified all four fixes live against the dev Sharetribe API across multiple hard reloads (not just unit tests): hero cards render correctly, image varies per mount, keyboard focus ring is marigold, zero console errors. Full suite: 134/134 test suites, 2207/2207 tests passing.
+
+### Next
+- (carried from 2026-07-25, still open) The Nesavu and Masilo have no hero image source and are absent from the hero carousel — re-check the curated first-fold order once they get `brandHeroImageIds`/`brandHeroImages`
+
+---
+
 ## 2026-07-25
 
 ### Shipped
