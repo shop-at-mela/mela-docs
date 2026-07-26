@@ -108,6 +108,13 @@ Products should be **styled in natural scenes**, not isolated on white:
 
 ## Platform-Specific Guidelines
 
+### Caption Style (All Platforms)
+
+Applies to every caption, pin description, and Story text:
+- **No dashes.** Never use a hyphen, en dash, or em dash (-, –, —) to join clauses in caption text. Write two short sentences instead.
+- **Short sentences.** One idea per sentence. Split anything that strings clauses together with commas into separate sentences.
+- Hyphenated compound words should read as two words where the meaning still holds (e.g. "handwoven," "GOTS certified," "artisan made"). Keep a hyphen only where it's a fact that can't change, like a brand's own spelling.
+
 ### Instagram Feed (Carousel Posts)
 - **Aspect ratio:** 1:1 (square) for the post itself; **note the profile grid crops to 3:4 portrait** — keep key content centered (see Instagram Grid Row Anchors)
 - **Format:** 4–7 slides per carousel

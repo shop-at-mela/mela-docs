@@ -1,13 +1,17 @@
 # Outreach Templates
 
 Copy/paste templates for reaching out to people in India about Mela. Every template needs the
-`[bracketed]` placeholders filled in — templates sent without real personalization (especially
+`[bracketed]` placeholders filled in. Templates sent without real personalization (especially
 the hook line) read as spam, particularly on Instagram.
+
+**Style:** No hyphens or dashes in template text; keep sentences short, one idea each (see
+`visual-style-guide.md` → Caption Style).
 
 Core positioning line, reused across all templates:
 
-> I'm building Mela — a discovery platform that helps Indian-origin shoppers in the US find
-> homegrown Indian brands (fashion, home, beauty) that are hard to access from outside India.
+> I'm building Mela. It's a discovery platform that helps Indian origin shoppers in the US find
+> homegrown Indian brands in fashion, home, and beauty. These brands are hard to access from
+> outside India.
 
 ---
 
@@ -19,18 +23,18 @@ platforms, OMS/WMS providers).
 
 **Connection note (300 char limit):**
 ```
-Hi [Name] — I'm building Mela, a discovery platform bringing homegrown Indian brands to Indian-origin shoppers in the US. A lot of the D2C brands [Company] works with feel like exactly who we're built for. Would love to connect and hear your read on this space.
+Hi [Name]. I'm building Mela, a discovery platform bringing homegrown Indian brands to Indian origin shoppers in the US. A lot of the D2C brands [Company] works with feel like exactly who we're built for. Would love to connect and hear your read on this space.
 ```
 
 **Full message (already connected / InMail):**
 ```
 Hi [Name],
 
-I'm building Mela — a discovery platform that helps Indian-origin shoppers in the US find homegrown Indian brands (fashion, home, beauty) that are hard to access from outside India.
+I'm building Mela, a discovery platform that helps Indian origin shoppers in the US find homegrown Indian brands (fashion, home, beauty) that are hard to access from outside India.
 
-A lot of the D2C brands [Company] works with on the omnichannel side feel like exactly the sellers Mela is built for, so I wanted to get your take — both on how you're seeing Indian brands think about global/diaspora demand, and whether there's a natural overlap worth exploring between [Company]'s brand network and what we're building.
+A lot of the D2C brands [Company] works with on the omnichannel side feel like exactly the sellers Mela is built for. I wanted to get your take. How are you seeing Indian brands think about global and diaspora demand? And is there a natural overlap worth exploring between [Company]'s brand network and what we're building?
 
-Would love a quick chat if you're open to it — no pressure either way.
+Would love a quick chat if you're open to it. No pressure either way.
 
 [Your name]
 ```
@@ -40,21 +44,21 @@ Needs a real, specific detail about the brand each time — this is the template
 without personalization.
 
 ```
-Hi [Name] — I've been a fan of [Brand]'s [specific product/story] for a while. I'm building Mela, a platform that helps Indian-origin shoppers in the US discover homegrown brands like yours that are hard to find outside India. Would love to tell you more about what listing on Mela could look like — open to a quick chat?
+Hi [Name]. I've been a fan of [Brand]'s [specific product/story] for a while. I'm building Mela, a platform that helps Indian origin shoppers in the US discover homegrown brands like yours that are hard to find outside India. Would love to tell you more about what listing on Mela could look like. Open to a quick chat?
 ```
 
 ### 3. Investors / advisors in Indian D2C or diaspora commerce
 Framed as comparing notes, not a raise ask.
 
 ```
-Hi [Name] — I'm building Mela, a discovery platform that helps Indian-origin shoppers in the US find homegrown Indian brands that are hard to access from outside India. Saw your focus on [their stated thesis, e.g. "India consumer / diaspora commerce"] and would genuinely value your read on the space. Not looking for anything formal right now — just keen to compare notes if you're open to a short call.
+Hi [Name]. I'm building Mela, a discovery platform that helps Indian origin shoppers in the US find homegrown Indian brands that are hard to access from outside India. Saw your focus on [their stated thesis, e.g. "India consumer, diaspora commerce"] and would genuinely value your read on the space. Not looking for anything formal right now. Just keen to compare notes if you're open to a short call.
 ```
 
 ### 4. Media / influencers / community builders
 Reference something specific they've posted.
 
 ```
-Hi [Name] — loved your [specific post/series, e.g. "homegrown kidswear roundup"]. I'm building Mela, a discovery platform that helps Indian-origin shoppers in the US find homegrown Indian brands that are hard to access from outside India. Content like yours is exactly what helps people discover these brands — would love to explore whether there's a fit to collaborate.
+Hi [Name]. Loved your [specific post/series, e.g. "homegrown kidswear roundup"]. I'm building Mela, a discovery platform that helps Indian origin shoppers in the US find homegrown Indian brands that are hard to access from outside India. Content like yours is exactly what helps people discover these brands. Would love to explore whether there's a fit to collaborate.
 ```
 
 ---
@@ -75,10 +79,10 @@ get flooded with generic "collab" DMs from agencies.
 
 **Opener — brand founder:**
 ```
-Hey! Been eyeing [specific product, e.g. "the block-print set from your new drop"] — really beautiful work. I'm building Mela (@shopatmela), helping Indian-origin shoppers in the US discover homegrown brands like yours that are tough to find outside India. Would love to tell you more if you're open to it 🙂
+Hey! Been eyeing [specific product, e.g. "the block-print set from your new drop"]. Really beautiful work. I'm building Mela (@shopatmela), helping Indian origin shoppers in the US discover homegrown brands like yours that are tough to find outside India. Would love to tell you more if you're open to it 🙂
 ```
 
 **Follow-up (only after they respond):**
 ```
-So the short version — we're a discovery platform for the US diaspora market, and brands like yours are exactly who we're built for. No cost to list, we just help you get found by people already looking for exactly this. Happy to send more details or hop on a quick call, whatever's easier for you.
+So the short version: we're a discovery platform for the US diaspora market, and brands like yours are exactly who we're built for. No cost to list. We just help you get found by people already looking for exactly this. Happy to send more details or hop on a quick call, whatever's easier for you.
 ```
