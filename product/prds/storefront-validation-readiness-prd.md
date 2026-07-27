@@ -238,12 +238,12 @@ Verified 2026-07-26: export produces 54 brands — 54 with `storeUrl`, 43 with `
 
 **P0**
 - [ ] Vetting strip visible without scroll at 1440×900 and 1280×720; both analytics events fire.
-- [ ] Zero instances of "Your marketplace," "Post a new listing" (buyer UI), or "Search listings…" in rendered output.
-- [ ] "Add certifications" absent from `/brands` for logged-out and buyer sessions; present for brand-owner role.
+- [ ] Zero instances of "Your marketplace," "Post a new listing" (buyer UI), or "Search listings…" in rendered output. **Partial (2026-07-26)**: search placeholder fixed (`TopbarSearchForm.placeholder`); "Your marketplace"/"Post a new listing" live in the Sharetribe Console-managed footer asset (`/content/footer.json`), not in web-client — cannot be fixed from a code commit. Needs Console edit or `footer-legalese-prd.md` owner.
+- [x] "Add certifications" absent from `/brands` for logged-out and buyer sessions; present for brand-owner role. Fixed 2026-07-26: `BrandCardHome`'s certifications placeholder now respects the `showPlaceholders` prop `BrandsPage.js` already passed as `false`.
 - [ ] "Fizzy Goblet" spelled correctly everywhere it renders; 19-brand name audit logged.
-- [ ] `/categories/Fashion` title contains "Fashion" and no baby-product claims; `/brands` title makes no GOTS/organic claim; homepage title reflects resolved positioning.
-- [ ] Hero H1 contains no family-first framing; meta description matches.
-- [ ] $0 SKUs excluded from all public grids.
+- [x] `/categories/Fashion` title contains "Fashion" and no baby-product claims; `/brands` title makes no GOTS/organic claim; homepage title reflects resolved positioning. Applied 2026-07-26 per `positioning-copy.md`.
+- [x] Hero H1 contains no family-first framing; meta description matches. Applied 2026-07-26.
+- [x] $0 SKUs excluded from all public grids. Fixed 2026-07-26 via a single guard in `ListingCard.js` (covers category/search/homepage carousels) + `BrandCardHome.js` (brand-tile mini-grids).
 - [x] Test outbound click on: product redirect flow and About-tab "Brand website" link → both fire `brand_clickout`, distinguished by `category`/`product_id` (populated vs. `null`); OCTR dashboard query documented (product-level redirects = primary OCTR; brand-level reported separately). Verified 2026-07-26 (`crossshop-tracking.md` §3).
 
 **P1**
@@ -251,8 +251,8 @@ Verified 2026-07-26: export produces 54 brands — 54 with `storeUrl`, 43 with `
 - [ ] 5 flagship pages show story summary, banner imagery, vetted badge, and the on-Mela "Browse {N} Products" primary CTA above the grid, matching the updated mockups (P1.1a).
 - [x] **REWORK (decision 2026-07-26), done same day**: outbound store link/CTA removed from the hero band — a prior pass had implemented it there and checked this AC off; it has now been undone. Hero band's sole CTA is the on-Mela "Browse {N} Products" anchor. `brandStoreUrl` renders only as a plain "Brand website" link in the About & Story tab (new tab), still routed through `openBrandStorefront`/`RedirectTrustSheet`. Product-level redirect flow is unchanged and remains the only purchase-path outbound. Test suite updated and passing (27/27, 2 pre-existing skips unrelated to this change).
 - [ ] Seeding run completed: `brandCity`/`brandCountry`/`brandStoreUrl`/`brandSocial`/`melaVetted` present on all seeded brand profiles (spot-check 5 flagships via Integration API).
-- [ ] Fashion category first 24 cards contain ≥3 distinct brands (when inventory allows) and zero utility-basic items in the first 8.
-- [ ] Homepage total scroll height reduced ≥25% from 10,073px baseline; vetting section reachable ≤2 viewports sooner.
+- [ ] Fashion category first 24 cards contain ≥3 distinct brands (when inventory allows) and zero utility-basic items in the first 8. **Checked 2026-07-26**: diversity-cap + demotion logic built and live-verified working (`categoryMerchandising.js`), but `/categories/Fashion`'s first page is 100% one brand (House of Chikankari) in the current catalog — confirms the PRD's own §8 "single-brand categories" risk, not a code bug. AC blocked on supply, not build.
+- [ ] Homepage total scroll height reduced ≥25% from 10,073px baseline; vetting section reachable ≤2 viewports sooner. **Measured 2026-07-26**: 8,526px (15.4% reduction) — vetting section is reachable well within 2 viewports now (right after the hero), but the 25% target is not met. The 3 new P1.3 modules are heavier than the spec's projection assumed.
 - [ ] Every AC above verified **mobile-first at 390px** (primary surface), then desktop 1440px.
 
 ---
