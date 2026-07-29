@@ -2,10 +2,10 @@
 
 ## Document Information
 - **Created**: 2026-07-18
-- **Status**: ✅ Shipped (core tracking) — GTM/GA4/Clarity live and verified end-to-end on shopatmela.com (2026-07-19): `entry_source` capture confirmed live (first-touch + never-overwrite behavior both confirmed), `brand_clickout` confirmed firing with all params on the two CTA surfaces reachable in the current catalog (`OrderPanel.js` main CTA, `ProductOrderForm.js` quantity/delivery form). The third surface (`InquiryWithoutPaymentForm.js`) is implemented and wired through the same shared `openBrandStorefront()` path but **not live-testable today** — no inquiry-type listing exists in the current catalog to exercise it (see AC checklist). 🔲 **Dashboards (§13) are Ready, not yet built** — blocked on a small pending code change (7th `session_id` event param) needed to compute the two hypothesis metrics natively in GA4; see §13.0.
+- **Status**: ✅ Shipped (core tracking) — GTM/GA4/Clarity live and verified end-to-end on shopatmela.com (2026-07-19): `entry_source` capture confirmed live (first-touch + never-overwrite behavior both confirmed), `brand_clickout` confirmed firing with all params on the two CTA surfaces reachable in the current catalog (`OrderPanel.js` main CTA, `ProductOrderForm.js` quantity/delivery form). The third surface (`InquiryWithoutPaymentForm.js`) is implemented and wired through the same shared `openBrandStorefront()` path but **not live-testable today** — no inquiry-type listing exists in the current catalog to exercise it (see AC checklist). Event schema extended to 7 params (2026-07-27, `mela_session_id` added and live-verified — see §13.0). 🟡 **Dashboards (§13) — code + GA4 custom dimension (`Mela Session ID`) done; the two Explorations still to be built.**
 - **Owner**: Product / Dev
 - **Related docs**:
-  - `web-client/docs/analytics/crossshop-tracking.md` (source of truth for the event schema, GA4 setup steps, and reporting recipes — this PRD does not duplicate it)
+  - `mela-docs/technical/analytics/crossshop-tracking.md` (source of truth for the event schema, GA4 setup steps, and reporting recipes — this PRD does not duplicate it)
   - `mela-docs/social/category-routing.yaml` (existing UTM schema this feature must interoperate with)
   - `product/prds/pre-redirect-sentiment-prd.md` (the existing pre-redirect interstitial this feature instruments)
   - `product/prds/trust-conversion-signals-prd.md` (documents the "Shop on {brand} →" CTA this feature instruments)
@@ -157,7 +157,7 @@ None — no user-facing UI changes. The only observable behavior change is that 
 
 ## 9. Success Metrics & Measurement
 
-Reporting lives entirely in GA4 — see `web-client/docs/analytics/crossshop-tracking.md` for the exact report-building steps. Summary:
+Reporting lives entirely in GA4 — see `mela-docs/technical/analytics/crossshop-tracking.md` for the exact report-building steps. Summary:
 
 | Metric | Definition | Report |
 |---|---|---|
@@ -174,13 +174,13 @@ Both are **baseline-only** for this PRD — no target is set until 30 days of re
 - **Risk**: `brand_id` (author UUID) proposal in §5b needs sign-off — if rejected, `brand_id` ships as `null` until a real field is defined, and cross-brand analysis falls back to `brand_name` string matching (works, but not collision-proof against near-duplicate brand names).
 - **Risk**: Because two CTA surfaces currently bypass `RedirectTrustSheet` (§5d), fixing that as a byproduct of this work is a (small, positive) behavior change beyond pure instrumentation — flagged for visibility, not hidden in the diff.
 - **No Sharetribe Console dependency** — this is entirely web-client code + external analytics consoles, no listing-field/extended-data changes needed for the MVP event schema.
-- **Dependency (added 2026-07-22)**: the two GA4 Explorations in §13.1 need a session identifier, and GA4 blocks registering its auto-collected `ga_session_id` as a custom dimension (reserved parameter name). Needs sign-off on adding a 7th `session_id` event param (reusing the existing `getOrCreateSessionId()` from `sentimentCapture.js`) before the dashboards in §13 can be built — additive change, doesn't affect anything already shipped/verified. See §13.0.
+- **Resolved 2026-07-27** (was a dependency added 2026-07-22): the two GA4 Explorations in §13.1 need a session identifier, and GA4 blocks/drops both its auto-collected `ga_session_id` and a plain `session_id` as reserved parameter names (the latter silently, with no error — see §13.0). Fixed by adding a 7th `mela_session_id` event param (reusing the existing `getOrCreateSessionId()` from `sentimentCapture.js`) — shipped and live-verified (stable across multiple clickouts in one session), and the `Mela Session ID` GA4 custom dimension is registered. Remaining: build the two Explorations (§13.1).
 
 ---
 
 ## 11. Out of Scope / Future Considerations
 
-See `web-client/docs/analytics/crossshop-tracking.md` → "Future roadmap" section (source of truth, not duplicated here): server-side tagging, consent-mode/GDPR, affiliate-app postback / Tier-2 conversion tracking, a real `brand_id` schema field if the author-UUID proposal is rejected.
+See `mela-docs/technical/analytics/crossshop-tracking.md` → "Future roadmap" section (source of truth, not duplicated here): server-side tagging, consent-mode/GDPR, affiliate-app postback / Tier-2 conversion tracking, a real `brand_id` schema field if the author-UUID proposal is rejected.
 
 ---
 
@@ -201,33 +201,29 @@ Reviewed `mela-docs/social/` end to end. Findings and recommendations:
 
 The two hypothesis metrics (§9) need to be checkable at a glance, not rebuilt from scratch every week. Two tiers, roughly matched to effort: (1) pin the two metrics as saved GA4 Explorations so they're one click away, and (2) build an actual shareable dashboard in Looker Studio for the simpler trend metrics that don't need session-level distinct-count logic.
 
-### 13.0 Blocker discovered while building this: `ga_session_id` is a reserved GA4 parameter
+### 13.0 Blocker discovered while building this: GA4 reserves both `ga_session_id` AND plain `session_id`
 
 Both Tier 1 explorations below originally assumed registering GA4's auto-collected `ga_session_id` as a custom dimension (scope: Event) to get a per-session identifier to group by. **This fails in the GA4 Console with "Parameter name is not allowed for this scope"** — `ga_session_id` is a protected/reserved parameter name and cannot be registered directly, a real GA4 platform limitation (not specific to this property).
 
-**Fix (proposed, not yet implemented in code)**: Mela's codebase already has an app-level session ID generator — `getOrCreateSessionId()` in `web-client/src/util/sentimentCapture.js` (a `crypto.randomUUID()` persisted in `sessionStorage`, currently used only for the sentiment-feedback feature). The plan is to reuse it rather than fight GA4's reserved namespace:
+**First fix attempt**: reuse Mela's existing app-level session ID generator — `getOrCreateSessionId()` in `web-client/src/util/sentimentCapture.js` (a `crypto.randomUUID()` persisted in `sessionStorage`, originally built for the sentiment-feedback feature) — under the field name `session_id` (no `ga_` prefix), on the theory that only the exact auto-collected name was reserved.
 
-1. Export `getOrCreateSessionId()` from `sentimentCapture.js` (currently private to that file).
-2. Add it as a **7th field** on the `brand_clickout` dataLayer push in `brandClickout.js` — `session_id: getOrCreateSessionId()`. This extends the event schema documented in `web-client/docs/analytics/crossshop-tracking.md` §3 from six params to seven; that doc needs updating alongside the code change.
-3. In GTM: add a 7th Data Layer Variable (`DLV - session_id` → `session_id`), add it as a 7th Event Parameter on the `GA4 - brand_clickout` tag, republish the container.
-4. In GA4: register the custom dimension using event parameter `session_id` (not `ga_session_id`) — scope Event, dimension name `Session ID`. This should succeed since `session_id` isn't a reserved name.
+**Second surprise**: `session_id` (still no `ga_` prefix) turned out to *also* be reserved — but silently. Unlike `ga_session_id`, which fails loudly at custom-dimension creation time, `session_id` was accepted everywhere in the pipeline (code, GTM Data Layer Variable, GTM Event Parameter mapping — all verified correctly configured) and simply **never reached GA4 at all**, confirmed by checking GA4 DebugView's actual received parameters for the `brand_clickout` event and finding it absent while all six original params were present. No error anywhere; it was just dropped. Root-caused by process of elimination: code re-verified correct via direct `window.dataLayer` inspection, GTM tag/variable config re-verified correct via screenshots, ruling out caching and stale Preview sessions — leaving GA4-side reserved-name dropping as the only remaining explanation.
 
-**Status: this code change has not been made yet** — it needs sign-off since it modifies the already-shipped, verified, published event schema (additive only; nothing existing breaks). The steps below assume it's done. Until then, Tier 1's session-scoped tables can't be built via the GA4 Console UI.
+**Actual fix (shipped and live-verified 2026-07-27)**: renamed the field to `mela_session_id`, matching the codebase's existing `mela_`-prefix convention for custom keys (`mela_entry_source`, `mela_redirect_trust_shown`, `mela_sentiment_shown`). Confirmed reaching GA4 correctly in DebugView after the rename. `brand_clickout` now ships 7 fields; two clicks in the same session produced two events sharing one identical `mela_session_id` value (non-empty, UUID-length), confirming both the field exists and persists correctly across multiple clickouts in a session — exactly the behavior the Tier 1 dashboards need.
+
+**GA4 custom dimension registered (2026-07-27)** — dimension name **`Mela Session ID`** (not "Session ID" — named explicitly to avoid confusion with GA4's own native session concept), event parameter `mela_session_id`, scope Event. One more wrinkle: the parameter didn't appear in the "Event parameter" dropdown/picker even after being confirmed live in DebugView (the picker lags behind actual data — a known GA4 quirk, not an error) — the field turned out to accept a **typed/manual entry** even when not offered as a dropdown suggestion, which unblocked registration without needing to wait out the propagation delay.
 
 ### 13.1 Tier 1 — Pin the two hypothesis reports inside GA4 (click-by-click)
 
-**Step 0: Register the Session ID custom dimension** (once §13.0's code change ships)
-1. GA4 → **Admin → Custom definitions → Custom dimensions → Create custom dimension**.
-2. Dimension name: `Session ID`. Scope: **Event**. Event parameter: `session_id`.
-3. Save.
+**Step 0: Register the Mela Session ID custom dimension** — ✅ already done (see §13.0). If redoing this for another property: GA4 → **Admin → Custom definitions → Custom dimensions → Create custom dimension** → Dimension name `Mela Session ID`, Scope **Event**, Event parameter `mela_session_id` (type it manually if it doesn't appear in the picker — see §13.0 note) → Save.
 
 **Step 1: Build "Cross-Shop: Multi-Brand Clickout Rate"**
 1. GA4 → left nav → **Explore → Blank** (Free Form technique).
 2. Rename it (top-left): `Cross-Shop: Multi-Brand Clickout Rate`.
-3. **Variables** panel (left) → **Dimensions** → **+** → add `Session ID`, `Brand Name`.
+3. **Variables** panel (left) → **Dimensions** → **+** → add `Mela Session ID`, `Brand Name`.
 4. **Metrics** → **+** → add `Event count`.
 5. **Tab Settings** (center-right column):
-   - **Rows**: drag in `Session ID`, then drag in `Brand Name` as a **second, nested row** directly below it — this expands each session into its distinct brands clicked.
+   - **Rows**: drag in `Mela Session ID`, then drag in `Brand Name` as a **second, nested row** directly below it — this expands each session into its distinct brands clicked.
    - **Values**: drag in `Event count`.
    - **Filters**: `Event name` exactly matches `brand_clickout`.
 6. Add a **Segment** to isolate the cohort: left panel → **Segments → + New segment → Session segment** → add a condition scoping to sessions where `Brand Name` (under `brand_clickout`) has 2+ distinct values within the session. GA4's segment-builder condition UI shifts between versions — if a "unique count ≥ 2" option isn't visible where expected, screenshot what's actually on screen and treat this as a live debugging session the same way the GTM Tag Assistant issue was resolved, rather than assuming the documented click path still matches.
@@ -236,9 +232,9 @@ Both Tier 1 explorations below originally assumed registering GA4's auto-collect
 
 **Step 2: Build "Cross-Shop: Entry vs Exit"**
 1. **Explore → Blank**, name it `Cross-Shop: Entry vs Exit`.
-2. Dimensions: add `Session ID`, `Brand Name`, `Entry Source`.
+2. Dimensions: add `Mela Session ID`, `Brand Name`, `Entry Source`.
 3. Metrics: add `Event count`.
-4. Rows: `Session ID` → nested `Entry Source` → nested `Brand Name`. Values: `Event count`. Filter: `Event name` = `brand_clickout`.
+4. Rows: `Mela Session ID` → nested `Entry Source` → nested `Brand Name`. Values: `Event count`. Filter: `Event name` = `brand_clickout`.
 5. This lets you scan sessions where `Entry Source` starts with `brand_ad:` and check whether the nested `Brand Name` values include anything beyond that same brand slug. No paid campaigns exist yet (§12.2), so expect zero `brand_ad:*` rows for now — until then, use the same table segmented by the non-brand entry sources (`pinterest`, `instagram`, `seo`, `direct`) to compare cross-shop rates across acquisition channels, which is the softer version of this question that's answerable today.
 6. Save the exploration.
 
@@ -261,6 +257,6 @@ Better for a single glanceable page, or for sharing a view-only link with someon
 | Pie/donut — Sessions by Entry Source | Dimension: `Entry Source`, Metric: Sessions or Event count |
 | Table — Entry Source × Brand Name | Dimension 1: `Entry Source`, Dimension 2: `Brand Name`, Metric: Event count — a rough, non-session-scoped proxy for entry≠exit, useful for a fast visual scan even though it isn't session-precise the way the GA4 Exploration is |
 
-**What not to build here**: don't attempt "% of sessions with 2+ distinct brands" as a Looker Studio calculated field against the standard GA4 connector — it aggregates at the query level, not the session level, so a distinct-count-per-session metric will silently compute wrong (counting distinct brands across the whole date range, not per session). That metric stays in the GA4 Exploration from Tier 1. If it's ever needed in Looker Studio too, the real path is enabling BigQuery export on the GA4 property (free at Mela's current volume) and writing the metric in SQL — revisit only if the simpler dashboard proves useful enough to justify it (see `web-client/docs/analytics/crossshop-tracking.md` → "Future roadmap").
+**What not to build here**: don't attempt "% of sessions with 2+ distinct brands" as a Looker Studio calculated field against the standard GA4 connector — it aggregates at the query level, not the session level, so a distinct-count-per-session metric will silently compute wrong (counting distinct brands across the whole date range, not per session). That metric stays in the GA4 Exploration from Tier 1. If it's ever needed in Looker Studio too, the real path is enabling BigQuery export on the GA4 property (free at Mela's current volume) and writing the metric in SQL — revisit only if the simpler dashboard proves useful enough to justify it (see `mela-docs/technical/analytics/crossshop-tracking.md` → "Future roadmap").
 
 **Sharing**: **Share → Manage access** — view-only, no GA4 login required for the recipient.
