@@ -24,6 +24,7 @@
 - **Communities**: r/IndiaMoms, r/AsianParenting, r/SustainableFashion, etc.
 - **Cadence**: 3–5 quality interactions/week
 - **Automation**: None — founder/team only
+- **Full playbook**: see [`reddit-strategy.md`](reddit-strategy.md) for ground rules, participation modes, candidate subreddits, and how this ties into the AEO co-mention goal in `aeo-next-steps.md`
 
 ### TikTok
 - **Status**: Deferred to Phase 2 (not yet launched)
