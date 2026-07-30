@@ -4,6 +4,20 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-29
+
+### Shipped
+- `fix(seo)` — **P0**: category-mismatched product metadata, confirmed via external AEO/Gemini audit (`mela-docs/engineering/done/seo-optimization-summary.md` → Phase 2). `ListingPageCoverPhoto.js` and `ListingPageCarousel.js` hardcoded `"Authentic Indian Baby Products"` into every listing's title tag, meta description, and JSON-LD seller/audience fields — regardless of the listing's actual category. A House of Chikankari kaftan or a Kaunteya mug shipped with baby-product metadata, which reads as miscategorized/low-quality data to semantic-search crawlers (Gemini) and undercuts Mela's multi-category positioning. Fixed by deriving `categoryDisplayName` from `config.categoryConfiguration.categories` via the existing `findCategoryById` helper already used for category chips in both files — no new data model, just wiring in what already existed. Also generalized the JSON-LD `audience` block (`audienceType: 'Parents'` → `'Shoppers'`) since it was baby-specific across all categories. 50/50 ListingPage test suites still passing (no test had covered the old string — that's how it shipped unnoticed).
+- Confirmed, not fixed: `SearchPage.shared.js`'s `isCategoryPage`/`isBrandPage` branches in `createSearchResultSchema` (lines ~534-571) contain the same hardcoded "Baby Products"/"Baby Brand" strings, but tracing `routeConfiguration.js` shows `/categories/*` routes to `CategoryPage` and `/brands/:brandSlug` routes to `ProfilePage` — SearchPage is never reached at those paths anymore. This is dead code left over from before the dedicated components shipped, not a live bug. Left untouched (removal is a separate cleanup decision); noted below.
+
+### Next
+- [ ] **Critical** — Google Merchant Center product feed: no Content API / Shopping feed integration exists at all (confirmed — only a stray JSON-LD comment referencing "Google Shopping" on the price field). Net-new engineering scope: map existing `publicData` fields (`brand`, `material`, `itemAspects`, `sku`) into a Merchant Center feed with explicit `"Ships to US"` shipping attributes. Worth its own PRD rather than a quick add. See `seo-optimization-summary.md` Phase 2 §2.
+- [ ] **Critical** — `aggregateRating`/`review` is completely absent from the Product JSON-LD (`ListingPageCoverPhoto.js` schema object has no rating/review keys). Already flagged as P2 in `seo-aeo-category-brand-pages-prd.md` §5B, but blocked on a real precondition: Mela has no review/rating data model yet. Needs a product decision — build reviews before AEO can use them, or defer AEO rating schema indefinitely.
+- [ ] Housekeeping (not urgent): remove the dead `isCategoryPage`/`isBrandPage` branches in `SearchPage.shared.js` `createSearchResultSchema` (~lines 534-571) — unreachable now that `CategoryPage`/`ProfilePage` own those routes, but left in place and could confuse a future editor into "fixing" schema that never runs.
+- [ ] Digital PR (co-mentions) and the informational content hub are tracked as content workstreams, not engineering, in `mela-docs/social/aeo-next-steps.md`.
+
+---
+
 ## 2026-07-26
 
 ### Shipped
