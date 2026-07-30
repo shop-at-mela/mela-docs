@@ -8,6 +8,11 @@
 # IMPORTANT: entries with `verify: true` contain craft/quality specifics that MUST be
 # confirmed on the brand's own page before publishing — do not claim unverified craft or
 # certification details (Sarah/Neha guardrails: no vague/unsubstantiated claims).
+#
+# These topics are also the seed list for the informational content hub / blog (AEO next
+# step) — see `aeo-next-steps.md` §2. Long-form articles repurpose these same verified
+# angles rather than being researched separately; do not add a blog-only topic type here,
+# it would confuse the weekly picker's trust_service/cultural_education rotation.
 
 meta:
   version: 1

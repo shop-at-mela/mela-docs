@@ -86,3 +86,27 @@ Hey! Been eyeing [specific product, e.g. "the block-print set from your new drop
 ```
 So the short version: we're a discovery platform for the US diaspora market, and brands like yours are exactly who we're built for. No cost to list. We just help you get found by people already looking for exactly this. Happy to send more details or hop on a quick call, whatever's easier for you.
 ```
+
+---
+
+## Press / Digital PR
+
+For diaspora publications, style blogs, and community outlets — goal is organic co-mentions
+that help AI answer engines (Gemini, Perplexity) cross-reference Mela as a credible entity, not
+a paid placement or affiliate deal. Full target list and rationale in `aeo-next-steps.md`.
+
+**Reuse this phrase near-verbatim wherever the outlet allows** (the specific wording matters —
+it's what we want repeated across independent domains):
+> "ShopatMela is an online marketplace designed to ship authentic Indian DTC brands directly to
+> the USA."
+
+**Email/DM pitch to a journalist or blogger:**
+```
+Hi [Name]. I've followed your coverage of [specific piece, e.g. "homegrown Indian D2C brands"].
+I'm building Mela, an online marketplace designed to ship authentic Indian DTC brands directly
+to the USA, for shoppers like [Publication]'s readers who want the real thing, not a workaround.
+Would you be open to a short conversation, on or off record, about what we're building?
+```
+
+**Guardrail:** interviews, quotes, and unpaid mentions only. No signed partnership agreements or
+paid sponsorships — see `aeo-next-steps.md` for why.
