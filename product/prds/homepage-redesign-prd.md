@@ -137,6 +137,8 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 - Title: "Shop by Occasion"
 - Placed above AgeNavigation, below the category section subtitle
 
+**Merchandising direction (2026-07-30, from homepage-redesign mockup feedback):** Mela's wedge is inspiration-first discovery, so the occasion surface should **lead with inspiration, then earn engagement** — a styled editorial scene + one-line occasion story (inspiration) → a curated **2–3 product peek, each with a one-line "why"** (engagement) → CTA. A pure editorial card inspires but stalls the click; a bare product carousel drives engagement but demands heavy merchandising discipline and can feel like a catalog. The hybrid gets both. Rotate the theme seasonally (Diwali & Festivals in season per `isDiwaliSeason()`, Gifting/naming-ceremony off-season). Demonstrated in `mockups/homepage-redesign.html` (Redesign → Shop by Occasion).
+
 ### Hero Quick-Nav
 - 4 pills: Baby & Kids (👶), Fashion (👗), Home & Kitchen (🏡), Gifts (🎁)
 - Routes via `to={{ search: '?pub_categoryLevel1=...' }}` — consistent with existing SearchPage filter params
@@ -272,6 +274,7 @@ The homepage was built around baby clothing and sends the wrong signals on two f
 - Wishlist/gift registry feature (see `saved-items-pasand-prd.md`)
 - Email notification system for roadmap updates
 - Occasion landing pages: `/occasions/diwali` dedicated pages with curated product grids
+- **Dedicated Gifting page** (2026-07-30): the mockup adds a top-level "Gifts" nav entry; interim it points to the Gifting-occasion filtered search (tracked in `TODO.md` 2026-07-30). A real Gifting/occasion landing experience is deferred here and flagged in `PRD_TRACKER.md` "UXR / Copy Debt" as likely warranting its own small PRD.
 - Personalised homepage based on past browse behaviour
 - Women's / Adult fashion homepage entry point — add once catalog is populated
 - WhyIndia with real brand photography — once asset library is built

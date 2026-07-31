@@ -43,5 +43,6 @@ Use this close to verbatim where possible — it's the phrase we want AI models 
 - Per-brand "how to buy" guides for `brand_pool` brands closest to live (e.g. "How to buy SuperBottoms / Fizzy Goblet / Nicobar in the United States") — highest-intent query match to the audit's example phrasing.
 - Trust/service topics as evergreen guides: shipping timelines (`ship-01`), USD checkout (`pay-01`), returns (`returns-01`), US/India sizing (`sizing-01`).
 - Cultural/craft topics as long-form pieces once `verify: true` claims are confirmed: juttis/kolhapuris, handloom weaving, Indian jewelry technique, ayurvedic baby care, ayurveda in skincare, modern Indian design.
+- **Occasion / gifting guides (added 2026-07-30, from homepage-redesign mockup):** explainer + gift-guide pieces for culturally-relevant occasions the diaspora searches — e.g. "What is a naming ceremony / annaprashan (and what to gift)", "Diwali gifting for the diaspora", baby shower / griha pravesh / Raksha Bandhan guides. Doubles as long-tail AEO and as fuel for Pinterest occasion boards and the homepage "occasion edit" surfaces. Same `verify: true` discipline; pairs with the planned `occasion` / gift-suitability enrichment in `prompt_engine.py`.
 
 **Status:** backlog — no blog route exists; this is blocked on an engineering decision (build vs. defer) before content production starts.

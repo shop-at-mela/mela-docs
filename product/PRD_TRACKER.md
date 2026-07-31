@@ -92,7 +92,11 @@ Items flagged during the 2026-05-25 UXR + UX design content analysis that need a
 
 | Item | Flagged In | Effort | Priority |
 |------|-----------|--------|----------|
-| Hero headline reframe (value-first vs origin-first) | `homepage-redesign-prd.md` §6 note | Copy-only | After analytics baseline |
+| Hero headline reframe (value-first vs origin-first). **Update 2026-07-30:** the v1 mockup's belonging line ("Bring a little of home…") reads as US-centric for US-raised shoppers; 3 replacement variants (Story-led / Discovery-led / Heritage-led, leading with craft + makers + sustainability) are rendered in `mockups/homepage-redesign.html`. Route the choice through the PMF survey / browse-alongs. | `homepage-redesign-prd.md` §6 note; homepage-redesign mockup | Copy-only | After analytics baseline |
+| Dedicated Gifting / occasion landing page (occasion is only a filter/module today — `brand-storefront-occasion-module-prd.md`; `/occasions/*` deferred in `homepage-redesign-prd.md` §10). Likely warrants its own small PRD. Interim nav link tracked in `TODO.md` 2026-07-30. | homepage-redesign mockup (pt 1) | New PRD + page | Med — validation wedge |
+| BrandCardHome redesign: big primary photo + thumbnail filmstrip, **hover-to-swap desktop / tap mobile** (no swipe → no gesture conflict with the horizontal brand row; watch perf — card renders many times per row). Demonstrated in mockup. | homepage-redesign mockup (pt 7); `brand-hero-card-webclient-prd.md` | Component + spec | Med |
+| Homepage certification education: keep condensed chips but teach on demand (tap/hover definitions — `CertificationBadge` already supports `showTooltip`); move deep education to a "How we vet" / sustainability surface. | homepage-redesign mockup (pt 8); `TrustAssurance` | Copy + progressive-disclosure | Low–Med |
+| Occasion merchandising: inspiration + engagement hybrid (styled editorial scene + curated 2-product peek with why-line + CTA), rotated seasonally. | homepage-redesign mockup (pt 5); `homepage-redesign-prd.md` §5 | Copy + component | Med |
 | ~~`SignupPage/ValueProposition` — fix headline + "Indian" user-layer copy~~ | `saved-items-pasand-prd.md` §8 | ✅ Done 2026-05-25 | — |
 | Hero trust model callout (one-line affiliate model explainer near CTA) | `homepage-redesign-prd.md` P1 new item | Copy + JSX, ~1 hr | High |
 | Featured artisan story in hero area | `homepage-redesign-prd.md` P1 new item | Requires brand photo + copy | Medium |

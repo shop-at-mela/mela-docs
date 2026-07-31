@@ -4,6 +4,15 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-30
+
+### Next
+- [ ] **P1** — Add "Gifts" to the top nav + mobile hamburger, pointing to the Gifting-occasion filtered search (`?pub_occasion=has_any:gifting`) as an **interim** destination. A dedicated Gifting page is a separate, larger item (see PRD_TRACKER "UXR / Copy Debt"). Surfaced by the homepage-redesign mockup feedback pass (`mockups/homepage-redesign.html`).
+- [ ] Design specs (not engineering-ready yet, tracked in `PRD_TRACKER.md` "UXR / Copy Debt"): BrandCardHome redesign (big photo + hover/tap thumbnails), homepage certification education surface, occasion merchandising (inspiration + product-peek hybrid), and the 3 culture/story/heritage hero-copy variants. All demonstrated in `mockups/homepage-redesign.html` (Redesign view).
+- [ ] Pipeline (`prompt_engine.py`): occasion enrichment expansion + a separate gift-suitability aspect — a `# TODO` block is now in `create_enrichment_prompt`; gated on richer product understanding, cross-linked to `enrichment-pipeline-stage2-update-prd.md`.
+
+---
+
 ## 2026-07-29
 
 ### Shipped
