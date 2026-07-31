@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-07-25  
+**Last updated:** 2026-07-30  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 ---
@@ -36,6 +36,7 @@
 | [ai-ready-product-discovery-prd.md](prds/ai-ready-product-discovery-prd.md) | 📋 Draft | P2 | Depends on enrichment pipeline + SEO foundation | Schema.org entity coverage for AI answer engines |
 | [crossshop-tracking-prd.md](prds/crossshop-tracking-prd.md) | ✅ Shipped | P0 | — | None — `InquiryWithoutPaymentForm` CTA is implemented but untestable until an inquiry-type listing exists in the catalog (not a gap in the work) |
 | [brand-hero-card-webclient-prd.md](prds/brand-hero-card-webclient-prd.md) | ✅ Shipped | P1 | — | First-fold coverage shrinks (The Nesavu, Masilo absent from hero) until those brands get `brandHeroImageIds`/`brandHeroImages` |
+| [dev-to-production-migration-prd.md](prds/dev-to-production-migration-prd.md) | 📋 Draft | — | No production Sharetribe environment confirmed provisioned yet | `configBrands.js` production brand-ID map is empty (biggest item); social-share image re-upload; 5 other open questions (see PRD §8) — not started |
 
 ---
 
