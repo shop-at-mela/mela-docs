@@ -4,6 +4,24 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-07-31
+
+### Shipped
+- `feat(homepage)` — built the approved homepage-redesign sections into `web-client` (from `mockups/homepage-redesign.html` + founder feedback):
+  - **Hero copy** → story-led "Option A": headline "The makers and stories behind India's best brands.", global-shipping subheadline (`SectionMelaHero.heroHeadline`/`heroSubheadline`). Hero trust badges flipped US→global ("Ships Worldwide" / "Secure Checkout"). CTA unchanged ("Explore Brands"); **no "Shop Gifts" CTA** yet (see Next).
+  - **CategoryTiles** (`src/components/CategoryTiles/`) — new reusable compact 6-tile category grid reusing `CategoryIcon` SVG glyphs; replaces the Fashion/Baby product carousels on the homepage (`CategoryShowcase` render swapped in `MelaHomePage.js`).
+  - **OccasionCard** (`src/components/OccasionCard/`) — extracted the colored occasion panel (festive/gifting themes) into a reusable component; `OccasionStrip` now renders it.
+  - **BrandPhotoCard** (`src/components/BrandPhotoCard/`) + **EarnedItsPlace** section (`sections/EarnedItsPlace/`) — "Every Brand Here Earned Its Place" now SHOWN: big primary photo + thumbnail filmstrip (hover desktop / tap mobile swap, no swipe), why-line derived from `brandCraft`/`brandTagline`/bio. Reuses the FeaturedBrandPartners data path (`getFeaturedBrandsWithProducts`); replaces the "Trusted by Parents" grid on the homepage.
+  - **TrustAssurance** retitled "Every Brand Here Earned Its Place" → **"Shop with Confidence"** (certs + FAQ kept). Avoids duplicate titles.
+  - Tests: 4 new suites + updated HeroSection/CategoryShowcase/MelaHomePage tests. 115 passing across the homepage tree.
+
+### Next
+- [ ] **P1** — Bring back a **"Shop Gifts"** primary CTA in the hero (and the deferred Gifts nav entry) once a real **Gifting landing page** exists. Deferred per founder (2026-07-31): no Shop-Gifts CTA until the destination is good. Ties to the dedicated Gifting page item in `PRD_TRACKER.md` "UXR / Copy Debt".
+- [ ] **Featured Edit / "The naming-ceremony edit"** — deferred (2026-07-31). Build later as a **rotating, multi-occasion** editorial edit (not just naming ceremony), once the occasion/gift-suitability enrichment (below + `prompt_engine.py` TODO) gives products the tags to populate it. Demonstrated in `mockups/homepage-redesign.html`.
+- [ ] **Positioning consistency (flag):** the hero now says "shipped worldwide" but `VettingStrip` ("Ship to all 50 states"), the `TrustAssurance` FAQ, and the `MelaHomePage` meta description remain US-specific (US cards, $800 de minimis). Decide whether to globalize the rest or keep US-diaspora framing everywhere except the hero.
+
+---
+
 ## 2026-07-30
 
 ### Next
