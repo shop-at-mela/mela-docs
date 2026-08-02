@@ -42,6 +42,14 @@ tracking:
 # NOTE: Instagram FEED cadence is a multiple of 3 by design — the feed is planned as
 # theme-rows (see `grid` block). Stories are grid-neutral and absorb any overflow.
 cadence:
+  # Posting interval (added 2026-08-01, user directive): posts publish EVERY ALTERNATE DAY —
+  # one post every other day — regardless of active_phase. This is the concrete spacing rule
+  # behind the per-week counts below (every-other-day ≈ 3-4/week, matching warmup.instagram).
+  # When a batch/"next slot" schedule is requested and Blotato has NO configured queue slots
+  # (blotato_create_post with useNextFreeSlot returns "No available slot time found"), do NOT
+  # publish everything at once — compute each post's scheduledTime as the previous post's
+  # publish/scheduled time + 48h and pass it explicitly.
+  posting_interval: every_other_day   # 48h between consecutive posts; source of truth for /social-review + /social-launch scheduling
   warmup:
     # CORRECTED 2026-07-24: the "3-5 pins/day, not a platform constraint" claim below was
     # wrong — verified by an actual blotato_create_post call to Pinterest, which hard-rejects
