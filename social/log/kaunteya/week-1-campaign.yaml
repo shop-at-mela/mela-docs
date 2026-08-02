@@ -1,12 +1,12 @@
 ---
 # Mela Social Campaign — YAML Format
-# Kaunteya Week 1 — DRAFT, held pending destination page fix
+# Kaunteya Week 1 — reactivated 2026-07-31, destination page fix confirmed
 
 brand: Kaunteya
 brand_slug: kaunteya
 week: 1
-date_posted: null  # not published — see status
-status: draft_held
+date_posted: 2026-08-01  # published to Instagram via Blotato (immediate)
+status: posted
 platforms:
   - instagram
   - pinterest
@@ -16,8 +16,10 @@ category: home_and_kitchen
 
 # INSTAGRAM
 instagram:
-  submission_id: null  # not submitted — held per user decision 2026-07-22
-  destination: https://shopatmela.com/brands/kaunteya
+  submission_id: 93b1e34d-e6e4-4322-a546-40a6f39269b6  # published 2026-08-01
+  schedule_id: null  # immediate publish, no schedule
+  public_url: https://www.instagram.com/p/DbhUxeonCln/
+  destination: https://shopatmela.com/brands/kaunteya?utm_source=instagram&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=collection_carousel
   caption: |
     Set your festive table with a story this Diwali — Kaunteya's hand-painted fine bone china brings centuries-old Indian art traditions to everyday tableware.
 
@@ -63,35 +65,35 @@ instagram:
 
 # PINTEREST
 pinterest:
-  posting_mode: manual  # Blotato hard-blocked regardless — see cadence note; moot while post is held anyway
+  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
   boards:
     - name: Home and Kitchen
       board_id: "1103593152379723626"
 
   pins:
     - name: Airavata Coffee Mug – Garuda
-      status: draft_held
+      status: manual_pending  # ready once Instagram post is scheduled
       title: Hand-Painted Pattachitra Coffee Mug | Kaunteya
       description: Fine bone china coffee mug hand-painted with Pattachitra motifs depicting Garuda, the mythological vahana. Wheel-thrown and hand-finished by trained artisans in India. A meaningful piece for your festive table or everyday chai ritual. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3d4cb7de-23b0-4acd-8bf9-6fb1a599c1c4.jpg
       link: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-garuda
 
     - name: Airavata Coffee Mug – Owl
-      status: draft_held
+      status: manual_pending  # ready once Instagram post is scheduled
       title: Hand-Painted Owl Motif Coffee Mug | Kaunteya
       description: Fine bone china mug hand-painted with Pattachitra-inspired owl motifs, wheel-thrown and finished by trained Indian artisans. A distinctive piece for your morning coffee or a thoughtful housewarming gift. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg
       link: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-owl
 
     - name: Byah Jug
-      status: draft_held
+      status: manual_pending  # ready once Instagram post is scheduled
       title: Hand-Painted Ceramic Jug | Phad Art Tableware
       description: Fine bone china jug hand-decorated with black-and-gold motifs inspired by the Bappuji ki Phad folk-art tradition of Rajasthan. A striking serveware piece for festive gatherings or everyday table styling. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-520833c6-65e9-446e-be6a-81df37f73fd5.jpg
       link: https://www.shopatmela.com/l/6a5cd6f4-8bd7-4701-b761-f735d71859c7?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-jug
 
     - name: Byah Coffee Mug
-      status: draft_held
+      status: manual_pending  # ready once Instagram post is scheduled
       title: Phad Art Coffee Mug | Hand-Painted Ceramic
       description: Fine bone china coffee mug hand-decorated in black and gold, inspired by the Bappuji ki Phad folk-painting tradition of Rajasthan. Wheel-thrown, hand-finished, and made for daily rituals. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d461c194-5f2a-4870-9b18-cb406148928a.jpg
@@ -102,12 +104,19 @@ ux_review:
   destination_url: https://shopatmela.com/brands/kaunteya
   checks:
     brand_story:
-      result: fail
-      note: Page white-screens 100% of the time (4/4 repeated checks, 2026-07-22/23) — not a content issue, a hard crash.
+      result: pass
+      note: >
+        RE-CHECKED 2026-07-31: page loads cleanly, 2/2 repeated checks. Full hero, tagline,
+        craft chip, and "Browse 387 Products" all render. Console only shows a non-fatal
+        "mapbox access token not in place" warning, no crash. The showUserError ReferenceError
+        described below no longer reproduces — appears fixed.
+    mobile_responsive:
+      result: tbd
+      note: Only checked at desktop width (1515px) during this re-check. Still needs a mobile pass.
   observations:
     - theme: destination_broken
       severity: high
-      status: open
+      status: resolved
       description: >
         shopatmela.com/brands/kaunteya renders a completely blank white page, reproduced
         4/4 times. Root cause traced via browser console: the map component tries to load
@@ -119,11 +128,9 @@ ux_review:
         to Kaunteya, not a site-wide outage (a separate, unrelated Render cold-start was also
         observed and self-resolved earlier in the same session — do not conflate the two).
       mitigation: >
-        None yet — this is a dev bug requiring either (a) fixing/guarding the missing
-        showUserError reference, or (b) making the map fail gracefully (omit the map) instead
-        of crashing the whole page. Post built and ready per user decision (2026-07-22) to
-        prepare content now and hold publish until the page is fixed. Route to product/dev
-        backlog.
+        RESOLVED 2026-07-31: page now loads cleanly (2/2 checks), console shows only a
+        harmless missing-Mapbox-token warning, no ReferenceError. Reactivating this campaign
+        from draft_held. Original dev bug details kept above for the record.
     - theme: destination_not_linked
       severity: medium
       status: open
@@ -138,4 +145,4 @@ notes:
   visual_pipeline_note: Regenerated via Blotato Product Scene Placement — see feedback_blotato_scene_watermark_gap memory. No watermark applied (known gap).
   pinterest_board_strategy: Would pin to "Home and Kitchen" theme board — moot while held, and Pinterest posting is separately hard-blocked via Blotato regardless (see cadence note in category-routing.yaml).
   brand_tagging: No @handle tag per feedback_no_brand_tagging_yet.
-  next_step: Re-check https://shopatmela.com/brands/kaunteya once the showUserError/map crash is fixed, then move this campaign from draft_held to scheduled.
+  next_step: RESOLVED 2026-07-31, moved to ready_to_schedule. Submit to Blotato for Instagram scheduling (Week 2 batch); manually post the 4 Pinterest pins once the IG post is live, per posting_mode.

@@ -1,0 +1,213 @@
+---
+# Mela Social Campaign — YAML Format
+# Ankid Week 2 (2026-07-31) — replaces Vilvah, dropped after its Ayurveda claim
+# was found unverifiable (see education-topics.yaml craft-ayurveda-beauty note).
+# All 4 featured products individually verified live against shopatmela.com/l/{id}
+# before writing this caption — see social-launch SKILL.md Phase 1 "Product-data
+# verification" guardrail (added 2026-07-31 after this campaign's research surfaced
+# a high Dev_Listing_ID mismatch rate in Ankid's classified product CSV).
+
+brand: Ankid
+brand_slug: ankid
+week: 2
+date_posted: 2026-08-03  # scheduled to Instagram via Blotato (alternate-day slot after Kaunteya)
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Arun
+category: baby_and_kids
+
+# INSTAGRAM
+instagram:
+  submission_id: 5e8c9cf8-aa84-4f2a-a757-70226f92e45f  # scheduled 2026-08-03T22:30:00Z
+  schedule_id: null  # Blotato returned only postSubmissionId; scheduledTime 2026-08-03T22:30:00Z
+  destination: https://shopatmela.com/brands/ankid?utm_source=instagram&utm_medium=social&utm_campaign=ankid_w2&utm_content=collection_carousel
+  caption: |
+    Ankid dresses India's youngest for festivals the way generations of artisans have. Patterns carved into wooden blocks and stamped by hand, motifs appliqued and embroidered one piece at a time.
+
+    This edit spans a hand block printed bandana in rust gingham checks, a hand block printed top and pants set for toddlers, a silk bandhgala set with hand embroidered florals for baby boys, and a hand appliqued top with Colombo inspired motifs for toddlers.
+
+    From festival mornings to everyday play, each piece made in India and finished by hand.
+
+    Featured in this carousel:
+    • Hand Block Printed Bandana
+    • Hand Block Printed Top and Pants Set for Toddlers
+    • Silk Bandhgala Set with Hand Embroidered Florals
+    • Hand Appliqued Gathered Top for Toddlers
+
+    Discover @ankid.in on Mela, link in bio
+
+    📍 Handcrafted in India | Ships to the US from Ankid
+    #Ankid #HandBlockPrint #IndianKidswear #MadeInIndia #HandCrafted
+
+  products:
+    - name: Hand Block Printed Bandana in Pink
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b6e5efcf-1d03-4651-a367-7edab620d360.jpg  # Blotato Product Scene Placement render 2026-08-01
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a5ffd2f-2bc7-4bfa-9272-a0a1ba23f68d?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=b57329bc720ae70890114aabb93144ec
+      source_image_note: >
+        Gallery image 2, not the listing hero. The hero (6a5ffd2d-84c2) is a gingham DRESS on a
+        child with the bandana only visible as a headband. This one is the bandana alone, knotted,
+        ruffle edge, on a warm tan ground. Verified visually 2026-08-01.
+      price_usd: 10
+      dev_listing_id: 6a5ffd2f-a99f-4fce-87d1-9d8361b2d03c
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffd2f-a99f-4fce-87d1-9d8361b2d03c
+      verified: true  # live listing confirms "Hand Block-Printed Cotton... Made in India" 2026-07-31
+
+    - name: Hand Block Printed Top and Pants Set for Toddlers 2-5Y
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2bcf625c-1434-444e-90a9-596c3b95f981.jpg  # Blotato Product Scene Placement render 2026-08-01
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a60024b-c1f8-46eb-bf3b-7dfe1b63a43a?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=bb8a3c238cdc60c9473edf2f8071c75e
+      source_image_note: >
+        Flat lay, peach top with floral applique plus rust gingham pants, warm tan ground. Already
+        close to the Mela baseline. Verified visually 2026-08-01.
+      price_usd: 42
+      dev_listing_id: 6a60024b-6d51-41e1-84cd-ec35f5f5b8b4
+      shopatmela_url: https://www.shopatmela.com/l/6a60024b-6d51-41e1-84cd-ec35f5f5b8b4
+      verified: true  # live listing confirms "Hand block-printed cotton pants... Made in India" 2026-07-31
+
+    - name: Silk Bandhgala Set for Boys 0-6M
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-80ba4a9d-fd98-496c-b7b9-d1806e7b4464.jpg  # Blotato Product Scene Placement render 2026-08-01
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a5ffeed-0d09-4b00-bc4c-2e374d5f12e8?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=395ae7d99031a98556564f6f3a3450cc
+      source_image_note: >
+        Garments on hangers: white pyjama, black kurta, bandhgala with hand embroidered red floral
+        and pocket square. This is the ONLY usable image in the listing and it is what substantiates
+        the caption's hand embroidered floral claim. The other three are unusable: cropped legs and
+        sandals (6a5ffee6), a size chart (6a5ffee8), and a portrait of a school age boy (6a5ffeeb).
+        Verified visually 2026-08-01.
+      price_usd: 93
+      dev_listing_id: 6a5ffeee-70a0-40ee-bb55-16a6f473cc5f
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffeee-70a0-40ee-bb55-16a6f473cc5f
+      verified: true  # live listing confirms silk chanderi, hand embroidered floral detail 2026-07-31
+      note: This is a brand_hero_listing_id from shopify_brands.py, not from the classified CSV. Not block printed; silk with hand embroidery. Caption describes it accurately as such, not as block print.
+
+    - name: Hand Appliqued Gathered Top for Toddlers 1-2Y
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bdc3cc25-3dd5-4f60-b2a1-4b459b6b209d.jpg  # Blotato Product Scene Placement render 2026-08-01
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a5ffe35-d28c-4ab9-9d6e-718db3976270?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=6f84974f28fb2784fa46028af497578c
+      source_image_note: >
+        Mustard linen gathered top, hand appliqued Colombo motifs (palm, tuk tuk, elephant, masks),
+        flat on white. Shot on white, which is exactly what Product Scene Placement should replace
+        per visual-style-guide. Verified visually 2026-08-01.
+      price_usd: 48
+      dev_listing_id: 6a5ffe38-9194-4a6d-9da1-d013c1b5d7d7
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffe38-9194-4a6d-9da1-d013c1b5d7d7
+      verified: true  # live listing confirms linen blend, hand appliqued Colombo inspired motifs 2026-07-31
+      note: Also a brand_hero_listing_id. Not block printed; hand appliqued. Caption describes it accurately as such.
+
+# PINTEREST
+pinterest:
+  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  boards:
+    - name: Gifting and Occasions
+      board_id: "1103593152379723628"
+      note: Chose this over the two existing baby_and_kids boards (Modern Indian Nursery, Organic Baby Essentials) — both are nursery/organic framed, not festive wear. Same board-fit gap The Nesavu W1 flagged; using the occasion board instead of forcing a nursery-themed mismatch again.
+
+  pins:
+    - name: Hand Block Printed Bandana in Pink
+      status: manual_pending
+      title: Hand Block Printed Bandana for Kids | Ankid
+      description: A hand block printed cotton bandana in rust gingham checks, printed with carved wooden blocks and finished with ruffle detailing. Made in India by Ankid.
+      image_url: null
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a5ffd2f-2bc7-4bfa-9272-a0a1ba23f68d?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=b57329bc720ae70890114aabb93144ec
+      link: https://www.shopatmela.com/l/6a5ffd2f-a99f-4fce-87d1-9d8361b2d03c?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w2&utm_content=bandana-pink
+
+    - name: Hand Block Printed Top and Pants Set for Toddlers
+      status: manual_pending
+      title: Hand Block Printed Top and Pants Set | Ankid
+      description: A soft cotton top paired with hand block printed gingham pants, finished with a floral applique. Printed with carved wooden blocks and made in India. Ankid on Mela.
+      image_url: null
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a60024b-c1f8-46eb-bf3b-7dfe1b63a43a?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=bb8a3c238cdc60c9473edf2f8071c75e
+      link: https://www.shopatmela.com/l/6a60024b-6d51-41e1-84cd-ec35f5f5b8b4?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w2&utm_content=top-pants-set
+
+    - name: Silk Bandhgala Set for Boys
+      status: manual_pending
+      title: Silk Bandhgala Set for Baby Boys | Ankid
+      description: A classic bandhgala reimagined in silk chanderi with hand embroidered floral detail, paired with soft cotton pyjamas. Made in India by Ankid, for festive family occasions.
+      image_url: null
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a5ffeed-0d09-4b00-bc4c-2e374d5f12e8?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=395ae7d99031a98556564f6f3a3450cc
+      link: https://www.shopatmela.com/l/6a5ffeee-70a0-40ee-bb55-16a6f473cc5f?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w2&utm_content=silk-bandhgala-set
+
+    - name: Hand Appliqued Gathered Top for Toddlers
+      status: manual_pending
+      title: Hand Appliqued Top for Toddlers | Ankid
+      description: A mustard gathered top in breathable linen blend, hand appliqued and embroidered with Colombo inspired motifs. Made in India by Ankid.
+      image_url: null
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a5ffe35-d28c-4ab9-9d6e-718db3976270?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=6f84974f28fb2784fa46028af497578c
+      link: https://www.shopatmela.com/l/6a5ffe38-9194-4a6d-9da1-d013c1b5d7d7?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w2&utm_content=applique-top
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/ankid
+  checks:
+    brand_story:
+      result: pass
+      note: Loaded cleanly 2026-07-31, full hero, tagline, "Vetted by Mela" badge, 234 products.
+    product_findability:
+      result: pass
+      note: Product names included in caption
+    mobile_responsive:
+      result: pass
+      note: Checked at 430px width 2026-07-31, hero image and brand info rendered cleanly, no layout break. First campaign this check has actually been completed for, rather than left tbd.
+  observations:
+    - theme: product_data_unreliable
+      severity: high
+      status: fixed  # 2026-08-01
+      description: >
+        At campaign time Ankid's CSV had many rows tagged with the right craft but pointing at
+        the wrong live product (e.g. a "hand block printed" row resolving to a ruffle dress), so
+        all 4 featured products were hand-verified live and 2 used curated brand_hero_listing_ids
+        instead of CSV rows. Root-caused 2026-08-01 to a listing-pipeline Dev_Listing_ID
+        write-back drift bug (not a scraper/classifier fault); pipeline fixed to key write-back
+        by SKU and Ankid's CSV reconciled against live Sharetribe (234/234 rows corrected,
+        verified). Ankid CSV row→listing mapping is now trustworthy for captions.
+        Engineering detail: project_listing_id_drift_bug memory + scripts/reconcile-listing-ids.js.
+    - theme: listing_image_quality
+      severity: medium
+      status: open
+      description: >
+        NEW 2026-08-01, distinct from product_data_unreliable above. That one was ID mapping and
+        is fixed. This is the images WITHIN correctly resolved listings. Three problems found by
+        opening every gallery image for all 4 products:
+        (1) Hero image is often not the product. The bandana listing's hero is a gingham dress on
+        a child; the bandana appears only as a headband. Anything that grabs a listing hero
+        programmatically will pull the wrong garment.
+        (2) Non-product images sit inline in the gallery. The bandhgala listing has a size chart
+        as gallery image 3 and a face portrait as image 4. Only 1 of its 4 images shows the product.
+        (3) Listing titles can contradict the photo. The bandana is titled "in Pink" and is
+        visibly rust/terracotta.
+      mitigation: >
+        Per campaign workaround only: every source_image_url in this file was picked by eye, not
+        by hero position, and each carries a source_image_note explaining the choice. Caption and
+        pin copy changed from "pink" to "rust" to match the photo; the carousel bullet dropped the
+        colour word so it still matches the listing name without asserting a wrong colour.
+        Route to the data/listings team: (a) listings need a designated primary product image,
+        (b) size charts and portraits should not sit in the product gallery, (c) Ankid's bandana
+        listing title needs correcting at source, which also fixes the caption divergence.
+
+    - theme: destination_not_linked
+      severity: medium
+      status: open
+      description: Same root cause as tarinika-week-1 — IG captions aren't clickable; bio link is generic homepage, not brand-specific.
+      mitigation: Caption CTA reworded to "link in bio" for accuracy. Bio link / link-directory fix still open.
+
+# NOTES
+notes:
+  category_note: baby_and_kids appearing a 3rd time across all campaigns to date (after ChooseKind and The Nesavu), though not 3 consecutive (GullyLabs-fashion and Kaunteya-home sit between). Worth watching next batch.
+  persona_note: Arun (craft origin + cultural context) — wooden block printing is a strong craft-heritage story; each carousel item's actual technique (block print vs embroidery vs applique) is named accurately rather than applying one craft term to all 4.
+  brand_swap_note: Originally planned as Vilvah (beauty_and_wellness) with an Ayurveda-in-skincare education pairing. Swapped out 2026-07-31 when the Ayurveda claim was found unsubstantiated in Vilvah's authoritative brand_story. Ankid picked instead because it pairs with this week's already-selected education topic (craft-blockprint) and its brand-level block-printing claim is independently verified in shopify_brands.py.
+  visual_pipeline_note: >
+    UPDATED 2026-08-01. Real product photos are now resolved and recorded per product in
+    source_image_url, each visually verified against the caption. image_url stays null until
+    Blotato renders. Feed source_image_url into Product Scene Placement
+    (f524614b-ba01-448c-967a-ce518c52a700), poll blotato_get_visual_status, then write the render
+    URL into image_url. Do not AI-generate the products themselves.
+    The imgix URLs are signed and the s= signature is bound to the w/h params, so rewriting
+    dimensions returns 403. Copy them whole.
+    Ready-to-run steps: mela-docs/social/log/ankid/BLOTATO-RUNBOOK.md
+  caption_colour_fix: >
+    2026-08-01. Caption and bandana pin description changed from "pink gingham checks" to "rust
+    gingham checks" after the real photo showed rust/terracotta. Carousel bullet shortened to
+    "Hand Block Printed Bandana" so it still matches the listing name without asserting a colour
+    the photo contradicts. No other caption text touched. See listing_image_quality observation.
+  pinterest_board_strategy: Used "Gifting and Occasions" instead of the two existing baby_and_kids boards, which are nursery/organic themed and don't fit festive wear (same gap flagged in The Nesavu W1).
+  brand_tagging: Tagged @ankid.in per shopify_brands.py brand_instagram field.

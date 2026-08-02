@@ -1,0 +1,118 @@
+---
+# Mela Social Campaign — YAML Format
+# Ankid Week 2 Education Post (2026-07-31) — cultural_education, IG only
+# Topic: craft-blockprint from education-topics.yaml, selected via the topic
+# scoring method in social-launch SKILL.md Phase 1 (type alternates from the
+# last-used trust_service topic; source brand overlaps this week's Ankid
+# product post; source brand unused in recent topics).
+
+brand: Ankid
+brand_slug: ankid
+week: 2
+date_posted: null
+status: on_hold  # HELD 2026-08-01 per user decision — see slide_count_decision note below
+platforms:
+  - instagram
+format: educational_carousel
+persona: Sarah
+category: null  # non-product content, routed by content_types not category
+content_type: cultural_education
+topic_id: craft-blockprint
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  schedule_id: null
+  destination: https://shopatmela.com/brands/ankid?utm_source=instagram&utm_medium=social&utm_campaign=ankid_w2&utm_content=cultural_education
+  caption: |
+    Hand block printing starts with a block of wood, carved by hand into a pattern, then dipped in dye and pressed onto cotton one stamp at a time. No screen, no machine. Every repeat is placed by a printer's eye and hand, which is why two pieces from the same run are never perfectly identical.
+
+    Ankid uses this technique across its festival wear for children, printing directly onto cotton with wooden blocks before a single seam is sewn.
+
+    It is slower than digital printing and it shows: slightly uneven lines, a print that breathes with the fabric instead of sitting on top of it.
+
+    Look closely at your next block printed piece. The small variations are the proof it was made by hand, not a flaw to overlook.
+
+    Discover @ankid.in on Mela, link in bio
+
+    📍 Block printed by hand in India
+    #HandBlockPrint #IndianCraft #BlockPrinting #MadeInIndia #Ankid
+
+  # Blotato render outputs for the educational carousel, in slide order.
+  # 2 slides rendered 2026-08-01 (block-print macro + printed set on linen). Post is HELD,
+  # not scheduled — these are kept for reuse if/when the slide-count decision is resolved.
+  image_url:
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-86bb166e-63f3-40c6-9916-8207538e46e4.jpg  # slide 1: rust gingham block-print macro, raking light
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e2dbf7dc-d3f8-4528-9e0c-4988f2f82a25.jpg  # slide 2: printed top + pant set flat on linen
+
+  anchor_products:
+    - name: Hand Block Printed Bandana in Pink
+      dev_listing_id: 6a5ffd2f-a99f-4fce-87d1-9d8361b2d03c
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffd2f-a99f-4fce-87d1-9d8361b2d03c
+      verified: true
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a5ffd2f-2bc7-4bfa-9272-a0a1ba23f68d?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=b57329bc720ae70890114aabb93144ec
+      source_image_note: >
+        Gallery image 2, NOT the listing hero. The hero is a gingham dress on a child; the bandana
+        is only a headband in it. This shot shows the block printed check clearly, which is what a
+        block printing education post needs. Verified visually 2026-08-01.
+
+    - name: Hand Block Printed Top and Pants Set for Toddlers 2-5Y
+      dev_listing_id: 6a60024b-6d51-41e1-84cd-ec35f5f5b8b4
+      shopatmela_url: https://www.shopatmela.com/l/6a60024b-6d51-41e1-84cd-ec35f5f5b8b4
+      verified: true
+      source_image_url: https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a60024b-c1f8-46eb-bf3b-7dfe1b63a43a?auto=format&crop=edges&fit=crop&h=1602&w=2400&s=bb8a3c238cdc60c9473edf2f8071c75e
+      source_image_note: >
+        Flat lay showing the gingham block print at full width. Best available image for showing
+        the repeat and the slight registration variation the caption talks about.
+        Verified visually 2026-08-01.
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/ankid
+  checks:
+    brand_story:
+      result: pass
+      note: Same page as the product post this week; loaded cleanly 2026-07-31.
+    claim_verification:
+      result: pass
+      note: >
+        verify:true per education-topics.yaml craft-blockprint entry. Both anchor products
+        individually confirmed live to say "hand block-printed" / "Made in India" before
+        writing this caption. Brand-level claim (wooden blocks, hand printed) also confirmed
+        against shopify_brands.py brand_story, not just the product CSV.
+  observations: []
+
+# NOTES
+notes:
+  slide_count_decision: >
+    HELD 2026-08-01. The runbook's education prompt described 4 slides (print macro, carved wooden
+    printing blocks, printed set flat, print-meets-seam detail). But Blotato's Product Scene
+    Placement template composites exactly ONE real product photo per render, and this campaign only
+    supplies 2 anchor product photos. The two missing slides (carved wooden blocks, seam detail)
+    would require AI-GENERATING objects that appear in no product photo, which the runbook's "scene
+    placement only, do not AI-generate the products" rule forbids. So 2 truthful slides were rendered
+    (recorded in instagram.image_url) rather than 4 fabricated ones. User chose to HOLD this post
+    rather than ship 2 slides or fabricate the other 2. Open decision: accept the 2-slide version, OR
+    source real photos of carved blocks / the printing process from the brand to build a genuine
+    4-slide craft-process carousel. Posts 1 (Kaunteya) and 2 (Ankid product) shipped this session.
+  selection_note: >
+    Chosen over craft-ayurveda-beauty (originally planned for Vilvah, now source_brands
+    narrowed to bipha-ayurveda only after the Ayurveda claim was found false for Vilvah).
+    Scored highest on source-brand overlap with this week's product row (Ankid) per the
+    topic scoring method now documented in social-launch SKILL.md Phase 1.
+  persona_note: Sarah (specific process facts, not vague claims) — leads with the concrete mechanics of block printing rather than a general craft-heritage framing, to keep persona rotation balanced against Arun (used on this week's product post) and Priya (used twice already this batch, on Kaunteya and The Nesavu history).
+  type_alternation: This is the first cultural_education post published; no prior trust_service post exists yet to alternate from. Next education pick should be trust_service per meta.cadence.
+  visual_pipeline_note: >
+    UPDATED 2026-08-01. Source photos resolved and visually verified, recorded per anchor product
+    in source_image_url. image_url stays empty until Blotato renders. Feed source_image_url into
+    Product Scene Placement (f524614b-ba01-448c-967a-ce518c52a700), poll blotato_get_visual_status,
+    then fill image_url in slide order. Do not AI-generate the products themselves.
+    The imgix URLs are signed and the s= signature is bound to the w/h params, so rewriting
+    dimensions returns 403. Copy them whole.
+    Ready-to-run steps: mela-docs/social/log/ankid/BLOTATO-RUNBOOK.md
+  yaml_validity_fix: >
+    2026-08-01. This file did not parse as YAML before today. A stray `image_url: null` sat at the
+    same indent as the anchor_products list items, mixing a mapping key into a sequence. Any
+    /social-review Phase 1 run that loads every log file would have errored or skipped this
+    campaign. image_url is now a proper sibling key under `instagram`. Worth a lint step on
+    social/log/*/*.yaml so this class of break is caught at write time.
