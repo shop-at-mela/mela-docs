@@ -16,11 +16,30 @@
 
 meta:
   version: 1
-  last_updated: "2026-07-04"
+  last_updated: "2026-07-31"
   cadence: "1 topic per week; alternate trust_service <-> cultural_education"
   selection: >
     Pick a status:backlog topic; prefer a brand that is live or in-QA on Mela (see brand_pool).
     On use, set status:used and record week_used. Verify any `verify:true` claim first.
+  replenishment: >
+    ADDED 2026-07-31 after craft-ayurveda-beauty's vilvah claim was found unverifiable
+    (see that entry's note). When the backlog runs low, or a batch's brand has no matching
+    topic, regenerate candidates with this method rather than inventing claims:
+      1. Pull verified brand_craft + brand_story text per brand from shopify_brands.py
+         (grep '"brand_craft": "[^"]' | grep -v placeholder — skip blank/placeholder entries,
+         those aren't launch-ready copy yet).
+      2. Cross-check any claim against the classified product CSV's tags (Item_Aspects /
+         Key Features column) if the brand also has one — CSV tags are classifier-generated
+         and can be wrong (see the vilvah/Ayurvedic case); shopify_brands.py's brand_story
+         is the higher-trust source when the two disagree.
+      3. De-dup against existing topics.source_brands so a brand/craft angle isn't repeated.
+      4. Favor brands already in this week's product-post lineup (Phase 1 brand selection)
+         so the education post can pair thematically with a brand row, but it's not required —
+         brand-agnostic trust_service topics (shipping, customs, vetting, etc.) don't need this.
+      5. Mark every new craft/quality claim `verify: true` — confirm on the brand's own site
+         before the post ships, same bar as the original 12 topics.
+    This method is not yet automated — topic *generation* (this method) and topic
+    *selection* per week are both currently manual passes.
 
 topics:
   # ---- Trust / service (brand-agnostic; always relevant to diaspora buyers) ----
@@ -117,7 +136,14 @@ topics:
     angle: "Ayurveda in modern skincare"
     platforms: [instagram]
     personas: [sarah]
-    source_brands: [vilvah, bipha-ayurveda]
+    source_brands: [bipha-ayurveda]
+    # CORRECTED 2026-07-31: vilvah removed as a source brand. Its classified product CSV
+    # tags "Key Features: Ayurvedic", but the authoritative brand_story/brand_craft in
+    # shopify_brands.py says "skincare from one farm in Tamil Nadu... goat milk, cold
+    # pressed oils, botanical extracts... no synthetic chemicals" — no Ayurveda claim
+    # anywhere. Likely a classifier over-generalization (natural ingredients -> Ayurvedic),
+    # not a brand-stated fact. Don't restore vilvah here without a verified source.
+    # Use craft-farm-to-bottle-beauty below for Vilvah's actual angle instead.
     verify: true
     status: backlog
 
@@ -127,6 +153,117 @@ topics:
     platforms: [instagram]
     personas: [arun, priya]
     source_brands: [nicobar, kaunteya]
+    verify: true
+    status: backlog
+
+  # ---- Added 2026-07-31: sourced via the topic-sourcing method below, to replenish the
+  # backlog after craft-ayurveda-beauty's vilvah claim was found unverifiable (see above). ----
+
+  - id: craft-farm-to-bottle-beauty
+    type: cultural_education
+    angle: "One farm, one bottle — what 'grown on our own farm' means for skincare"
+    platforms: [instagram]
+    personas: [sarah, neha]
+    source_brands: [vilvah]
+    verify: true  # confirm "own farm" + no-synthetic-chemicals claim against Vilvah's own site before publishing
+    status: backlog
+    note: Accurate replacement for Vilvah's angle — single-farm sourcing, cold-pressed oils, no synthetic chemicals, per shopify_brands.py brand_story (not the "Ayurvedic" CSV mistag).
+
+  - id: craft-chikankari
+    type: cultural_education
+    angle: "Chikankari — Lucknow's shadow-work embroidery, and how to spot the real thing"
+    platforms: [instagram]
+    personas: [arun, sarah]
+    source_brands: [house-of-chikankari]
+    verify: true
+    status: backlog
+
+  - id: craft-kantha
+    type: cultural_education
+    angle: "Kantha — how worn-out sarees become running-stitch textile art"
+    platforms: [instagram]
+    personas: [arun]
+    source_brands: [banjaaran-studio]
+    verify: true
+    status: backlog
+
+  - id: craft-blockprint
+    type: cultural_education
+    angle: "Hand block printing — the carved wood stamps behind everyday cotton prints"
+    platforms: [instagram]
+    personas: [priya, arun]
+    source_brands: [ankid, banjaaran-studio]
+    verify: true
+    status: used
+    week_used: 2
+    note: >
+      Selected 2026-07-31 for Week 2 batch, anchored on Ankid (not Banjaaran Studio).
+      Banjaaran's classified CSV listed block print items, but its live catalog turned out
+      to be all footwear with illustrated faux leather, not textile block printing, so it
+      couldn't substantiate the claim. Ankid's brand-level block-printing claim is verified
+      in shopify_brands.py, and 2 of its products were individually confirmed live before
+      use (see ankid/week-2-education-campaign.yaml). See social-launch SKILL.md's
+      product-data verification guardrail for why individual verification was needed even
+      after picking a brand with a correct top-level claim.
+      UPDATE 2026-08-01: the per-product "right tag, wrong product" mismatches that made
+      individual verification necessary here were root-caused to a Dev_Listing_ID write-back
+      index-drift bug in the listing pipeline (out-of-stock rows shifted every subsequent ID
+      one row earlier), NOT a scraper/classifier fault. The pipeline now keys write-back by
+      SKU and Ankid's CSV has been reconciled against live Sharetribe (see
+      ankid/week-2-campaign.yaml observations → product_data_unreliable root_cause/resolution,
+      and scripts/reconcile-listing-ids.js). The verify-live guardrail still stands as good
+      practice, but Ankid's CSV row→listing mapping is now trustworthy.
+
+  - id: craft-goldsmithing-isharya
+    type: cultural_education
+    angle: "Beyond filigree — the metal, stone, and enamel work behind statement jewelry"
+    platforms: [instagram]
+    personas: [priya, arun]
+    source_brands: [isharya]
+    verify: true
+    status: backlog
+
+  - id: craft-knitwear
+    type: cultural_education
+    angle: "Hand-finished knitwear — what separates machine knit from hand finished"
+    platforms: [instagram]
+    personas: [sarah, priya]
+    source_brands: [pluchi]
+    verify: true
+    status: backlog
+
+  - id: trust-vetting-01
+    type: trust_service
+    angle: "What 'Vetted by Mela' actually means — how brands get onto the platform"
+    platforms: [instagram, reddit]
+    personas: [sarah, neha]
+    source_brands: [any]
+    verify: true  # needs actual internal vetting criteria confirmed before publishing — this is a platform trust claim
+    status: backlog
+
+  - id: trust-customs-duties-01
+    type: trust_service
+    angle: "Import duties and customs — will you owe anything extra on an order from India?"
+    platforms: [instagram, reddit]
+    personas: [neha, sarah]
+    source_brands: [any]
+    verify: true  # high-stakes claim, must confirm actual duty/customs facts, not assume
+    status: backlog
+
+  - id: trust-small-batch-01
+    type: trust_service
+    angle: "Small batch vs. mass produced — why your order might take longer, and why that's the point"
+    platforms: [instagram, reddit]
+    personas: [sarah, neha]
+    source_brands: [any]
+    status: backlog
+
+  - id: trust-gifting-international-01
+    type: trust_service
+    angle: "Gifting from India to the US — can you ship directly to someone else's address?"
+    platforms: [instagram, reddit]
+    personas: [priya]
+    source_brands: [any]
     verify: true
     status: backlog
 
