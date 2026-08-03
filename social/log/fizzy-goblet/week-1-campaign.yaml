@@ -167,7 +167,9 @@ ux_review:
       severity: medium
       status: resolved
       description: Products featured in carousel are not easily discoverable on brand page without product names in caption. Users cannot identify which specific shoes are shown or search for them on destination page.
-      mitigation: Included product names in post caption as "Featured in this carousel: [list]" — applied in this post and carried forward to all future campaigns.
+      mitigation: >
+        Included product names in post caption as "Featured in this carousel: [list]" — applied
+        in this post and carried forward to all future campaigns.
 
 # NOTES
 notes:

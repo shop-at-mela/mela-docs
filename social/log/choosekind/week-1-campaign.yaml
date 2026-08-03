@@ -6,7 +6,7 @@ brand: ChooseKind
 brand_slug: choosekind
 week: 1
 date_posted: "2026-07-26"
-status: scheduled
+status: live  # Instagram live 2026-07-31; all 4 Pinterest pins manually posted 2026-07-31.
 platforms:
   - instagram
   - pinterest
@@ -72,28 +72,28 @@ pinterest:
 
   pins:
     - name: Baisi – Fruity Pop
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Handcrafted Candy-Colored Kids Shoes | ChooseKind
       description: Mismatched candy-inspired toddler shoes, handcrafted from fabric with lemon and mango charm details. Slight variations are part of the handmade charm. ChooseKind on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-02682140-d8d7-4950-9cfa-2ad72de6a8a6.jpg
       link: https://www.shopatmela.com/l/6a1cf257-e981-4882-9fee-76d1c0d24225?utm_source=pinterest&utm_medium=social&utm_campaign=choosekind_w1&utm_content=baisi-fruity-pop
 
     - name: Dodo – LOVEBUGS
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Naturally Dyed Kids Shoes | Handcrafted in India
       description: Violet-and-mocha toddler shoes naturally dyed using flowers and vegetable pigments, with a bunny charm made from leftover fabric scraps. ChooseKind on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2c02cdf3-426f-4a70-b984-f2045294fe48.jpg
       link: https://www.shopatmela.com/l/6a1cf3f9-6264-4b48-a830-e260ac168608?utm_source=pinterest&utm_medium=social&utm_campaign=choosekind_w1&utm_content=dodo-lovebugs
 
     - name: Humphead – Sweet Pop Pals
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Pastel Gingham Kids Bag | Handcrafted in India
       description: A playful pastel gingham bag with candy-shaped appliqués, handcrafted by small ateliers in India. Each bag is one of a kind. ChooseKind on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3009193-3dab-4805-9e2f-f07212d68c25.jpg
       link: https://www.shopatmela.com/l/6a1cf633-d21c-4399-8a90-452e02b10fcf?utm_source=pinterest&utm_medium=social&utm_campaign=choosekind_w1&utm_content=humphead-sweet-pop-pals
 
     - name: Quaggle – Patch On
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Convertible Kids Backpack-Tote | ChooseKind
       description: A color-blocked convertible bag that transforms from tote to backpack, handcrafted in India with playful clip-on charm loops. ChooseKind on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3e67b85-82ec-46d0-a8be-0ecb88c17590.jpg

@@ -6,7 +6,7 @@ brand: Gully Labs
 brand_slug: gullylabs
 week: 1
 date_posted: "2026-07-30"
-status: scheduled
+status: live_ig_pinterest_pending  # Instagram confirmed live 2026-07-31 (user report). Pinterest still manual_pending — see pinterest.posting_mode.
 platforms:
   - instagram
   - pinterest

@@ -6,7 +6,7 @@ brand: Tarinika
 brand_slug: tarinika
 week: 1
 date_posted: "2026-07-24"
-status: scheduled
+status: live  # Instagram live 2026-07-31; all 4 Pinterest pins manually posted 2026-07-31.
 platforms:
   - instagram
   - pinterest
@@ -72,28 +72,28 @@ pinterest:
 
   pins:
     - name: Aadhira Nakshatra CZ Layered Necklace Set
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Layered Bridal Necklace Set | Antique Indian Jewelry
       description: Multi-layered necklace and earring set with antique kempu stone setting, pearls, and emerald-tone accents. Handcrafted by Indian goldsmiths using temple-jewelry techniques. A statement piece for weddings and festive occasions. Tarinika on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-41eeaa80-180f-43a2-b4d9-732516958aeb.jpg
       link: https://www.shopatmela.com/l/6a585596-f694-41c3-8137-9767c98ce747?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w1&utm_content=aadhira-necklace-set
 
     - name: Aaravi Antique Chandbali Earrings
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Antique Red & Green Chandbali Earrings
       description: Antique-finish chandbali earrings set with red and green kempu stones, a South Indian goldsmithing technique. Lightweight and finished by hand. Tarinika on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-20eb596b-5327-44ff-9940-0f58cb39d665.jpg
       link: https://www.shopatmela.com/l/6a5855bf-ac0b-48e8-bbd4-a87d25d92dea?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w1&utm_content=aaravi-chandbali-earrings
 
     - name: Aanchal Antique Bangles
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Antique Kempu Bangles | Handcrafted Indian Jewelry
       description: Hand-finished antique bangles on a gold-toned base with kempu stone detailing inspired by South Indian temple jewelry. Tarinika on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0c3e0068-e2ee-48ea-8f81-c8c0a8b4d4d3.jpg
       link: https://www.shopatmela.com/l/6a5855ae-833a-415f-8b3b-756c096a46f1?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w1&utm_content=aanchal-antique-bangles
 
     - name: Aarush Antique Jhumka Earrings
-      status: manual_pending
+      status: posted  # manually posted to Pinterest 2026-07-31
       title: Antique Jhumka Earrings | Handcrafted in India
       description: Classic antique-finish jhumka earrings, hand-finished by Indian goldsmiths. A staple silhouette in Indian jewelry design. Tarinika on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6d173805-d29f-4bbd-9a50-4c3b39c01f75.jpg
