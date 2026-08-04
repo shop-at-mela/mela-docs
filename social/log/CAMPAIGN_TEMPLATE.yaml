@@ -45,6 +45,7 @@ instagram:
     - name: Bali Bellini Kolha Flats
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e4dd02bd-944b-456f-84d3-81fa0361fbb5.jpg
       blotato_visual_id: 9b6b74c6-3c44-43b2-a354-d9e1290fb17b
+      alt_text: Handcrafted tan leather kolha flats with double cushioning on a warm neutral surface  # literal image description; keyword-led; passed to blotato altText
       price_usd: 80
       dev_listing_id: 6a17b614-6e96-4806-a428-18fdb1d8d075
       shopatmela_url: https://www.shopatmela.com/l/6a17b614-6e96-4806-a428-18fdb1d8d075
@@ -52,6 +53,7 @@ instagram:
     - name: Chrome & Tonic Kolhas
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a75dcf07-8675-46c5-8aba-9c4d208a9387.jpg
       blotato_visual_id: 39723e1c-7036-47fd-9564-101927a35bcc
+      alt_text: Embroidered handcrafted kolha flats in chrome and tonic tones on a soft neutral backdrop
       price_usd: 80
       dev_listing_id: 6a17bc57-60cc-48d7-ab60-7a2daf82f854
       shopatmela_url: https://www.shopatmela.com/l/6a17bc57-60cc-48d7-ab60-7a2daf82f854
@@ -59,6 +61,7 @@ instagram:
     - name: Double Espresso Loafers
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f84ed864-653b-4d2c-b902-c5ecb4f16f9d.jpg
       blotato_visual_id: 9b2d1748-07be-4180-9522-f110caeb390f
+      alt_text: Premium handcrafted espresso brown leather loafers on a warm textured surface
       price_usd: 99
       dev_listing_id: 6a1800ff-03a0-4a77-946b-9ecf4e2b8d74
       shopatmela_url: https://www.shopatmela.com/l/6a1800ff-03a0-4a77-946b-9ecf4e2b8d74
@@ -66,6 +69,7 @@ instagram:
     - name: Belle's Rose Juttis (Ivory, Payal Singhal Collab)
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-abf15a12-4a4d-4b22-8536-744cda0985cd.jpg
       blotato_visual_id: bb9dc166-9eef-4b9f-848d-dc62531ccfa7
+      alt_text: Ivory embroidered juttis from the Payal Singhal x Fizzy Goblet collaboration on a soft neutral ground
       price_usd: 70
       dev_listing_id: 6a17b646-8255-496b-b28a-d3f7c5cf6455
       shopatmela_url: https://www.shopatmela.com/l/6a17b646-8255-496b-b28a-d3f7c5cf6455
@@ -80,24 +84,28 @@ pinterest:
     - name: Bali Bellini Kolha Flats
       title: Bali Bellini Kolha Flats | Handcrafted Indian Footwear
       description: Kolha flats handcrafted in Maharashtra by Fizzy Goblet artisans. Modern silhouette with double cushioning, vegetable-tanned leather. Perfect for everyday elegance. Sizes available. Discovered on Mela.
+      alt_text: Handcrafted tan leather kolha flats with double cushioning on a warm neutral surface  # literal image description; keyword-led
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e4dd02bd-944b-456f-84d3-81fa0361fbb5.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17b614-6e96-4806-a428-18fdb1d8d075
 
     - name: Chrome & Tonic Kolhas
       title: Chrome & Tonic Kolhas | Handcrafted Embroidered Flats
       description: Chrome & Tonic kolhas by Fizzy Goblet. Handcrafted with contemporary styling, double cushioning, artisan-made in Maharashtra. Perfect for festive occasions and everyday elegance. Discovered on Mela.
+      alt_text: Embroidered handcrafted kolha flats in chrome and tonic tones on a soft neutral backdrop
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a75dcf07-8675-46c5-8aba-9c4d208a9387.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17bc57-60cc-48d7-ab60-7a2daf82f854
 
     - name: Double Espresso Loafers
       title: Double Espresso Loafers | Premium Handcrafted Footwear
       description: Premium handcrafted loafers by Fizzy Goblet. Double cushioning, refined design, versatile for work and leisure. Artisan-made in India, sizes 36-41. Luxury footwear for everyday elegance. Discovered on Mela.
+      alt_text: Premium handcrafted espresso brown leather loafers on a warm textured surface
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f84ed864-653b-4d2c-b902-c5ecb4f16f9d.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a1800ff-03a0-4a77-946b-9ecf4e2b8d74
 
     - name: Belle's Rose Juttis (Ivory, Payal Singhal Collab)
       title: Belle's Rose Juttis | Payal Singhal x Fizzy Goblet Limited Edition
       description: Limited edition juttis from Payal Singhal x Fizzy Goblet collaboration. Handcrafted in ivory with intricate embroidery, double cushioning. Artisan design meets modern style. Sizes 35-41. Discovered on Mela.
+      alt_text: Ivory embroidered juttis from the Payal Singhal x Fizzy Goblet collaboration on a soft neutral ground
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-abf15a12-4a4d-4b22-8536-744cda0985cd.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17b646-8255-496b-b28a-d3f7c5cf6455
 
