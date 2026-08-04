@@ -42,26 +42,50 @@ instagram:
     - name: Airavata Coffee Mug – Garuda
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3d4cb7de-23b0-4acd-8bf9-6fb1a599c1c4.jpg
       price_usd: 30
-      dev_listing_id: 6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984
+      # UNRESOLVED 2026-08-03: dev_listing_id below is WRONG and a swap will NOT fix it — do
+      # not "correct" this to 6a5cd5bd (Owl/green) or 6a5cd5c4 (confirmed live = Swan motif,
+      # yellow, via listing-image inspection) without a real decision. Searched all 387 live
+      # Kaunteya listings for "Garuda" in the title: zero matches. The CSV's only "Garuda" row
+      # (SKU airavata-coffee-mug-garuda) is Out of Stock, and its old listing slot
+      # (6a5cd5bd) now holds the Owl/green restock — this design is not currently sellable on
+      # Mela. The Instagram post is already live (public_url below) with this item named in
+      # the caption, but IG only deep-links to the generic brand page, so no broken per-product
+      # link went out. The Pinterest pin for this item is still manual_pending — do NOT post it
+      # (or run attach-social-scene.js for it) until this is resolved: either Kaunteya has a
+      # newer live Garuda listing under a different SKU (re-search), or this item needs to be
+      # dropped/swapped in the post for something actually in stock.
+      dev_listing_id: 6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984  # WRONG — reverted to pre-investigation value, see note above. Do not attach-social-scene against this.
       shopatmela_url: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984
 
     - name: Airavata Coffee Mug – Owl
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg
       price_usd: 30
-      dev_listing_id: 6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4
-      shopatmela_url: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4
+      # CORRECTED 2026-08-03: was 6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4 — swapped with "Garuda"
+      # above. This campaign's own Owl scene image is a mint-green mug (live-titled "Green"),
+      # matching the classified CSV's own "Airavata - Coffee Mug Owl" product name for that SKU.
+      dev_listing_id: 6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984
 
     - name: Byah Jug
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-520833c6-65e9-446e-be6a-81df37f73fd5.jpg
       price_usd: 89
-      dev_listing_id: 6a5cd6f4-8bd7-4701-b761-f735d71859c7
-      shopatmela_url: https://www.shopatmela.com/l/6a5cd6f4-8bd7-4701-b761-f735d71859c7
+      # CORRECTED 2026-08-03: was 6a5cd6f4-8bd7-4701-b761-f735d71859c7, a live listing titled
+      # "Tea Pot" — a Dev_Listing_ID data-entry error in this campaign log, not a CSV/pipeline
+      # bug (Mela-scrapper-integrations/scripts/reconcile-listing-ids.js confirms the CSV
+      # itself is clean). Correct ID found by matching CSV "Product Name" "Byah - Jug" (SKU
+      # byah-jug).
+      dev_listing_id: 6a5cd6b3-7f0b-4bfb-96c3-36cc3648e94f
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd6b3-7f0b-4bfb-96c3-36cc3648e94f
 
     - name: Byah Coffee Mug
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d461c194-5f2a-4870-9b18-cb406148928a.jpg
       price_usd: 30
-      dev_listing_id: 6a5cd6bb-fe0a-435f-b93a-c3539ae8fba6
-      shopatmela_url: https://www.shopatmela.com/l/6a5cd6bb-fe0a-435f-b93a-c3539ae8fba6
+      # CORRECTED 2026-08-03: was 6a5cd6bb-fe0a-435f-b93a-c3539ae8fba6, a live listing titled
+      # "Serving Bowl" — same class of data-entry error as Byah Jug above, not a CSV bug.
+      # Correct ID found by matching CSV "Product Name" "BYAH - Coffee Mug" (SKU
+      # byah-coffee-mug-set-of-2).
+      dev_listing_id: 6a5cd67d-b7ce-4339-8696-0f429764cb42
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd67d-b7ce-4339-8696-0f429764cb42
 
 # PINTEREST
 pinterest:
@@ -72,10 +96,13 @@ pinterest:
 
   pins:
     - name: Airavata Coffee Mug – Garuda
-      status: manual_pending  # ready once Instagram post is scheduled
+      status: blocked  # DO NOT manually post — see dev_listing_id note in instagram.products above. No live listing for this design currently exists.
       title: Hand-Painted Pattachitra Coffee Mug | Kaunteya
       description: Fine bone china coffee mug hand-painted with Pattachitra motifs depicting Garuda, the mythological vahana. Wheel-thrown and hand-finished by trained artisans in India. A meaningful piece for your festive table or everyday chai ritual. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3d4cb7de-23b0-4acd-8bf9-6fb1a599c1c4.jpg
+      # UNRESOLVED 2026-08-03: reverted to the original (wrong, pre-investigation) link — do
+      # not point this at 6a5cd5c4, that listing is confirmed live as the Swan motif, not
+      # Garuda. See dev_listing_id note in instagram.products above.
       link: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-garuda
 
     - name: Airavata Coffee Mug – Owl
@@ -83,21 +110,24 @@ pinterest:
       title: Hand-Painted Owl Motif Coffee Mug | Kaunteya
       description: Fine bone china mug hand-painted with Pattachitra-inspired owl motifs, wheel-thrown and finished by trained Indian artisans. A distinctive piece for your morning coffee or a thoughtful housewarming gift. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg
-      link: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-owl
+      # CORRECTED 2026-08-03: link updated to match the dev_listing_id swap above.
+      link: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-owl
 
     - name: Byah Jug
       status: manual_pending  # ready once Instagram post is scheduled
       title: Hand-Painted Ceramic Jug | Phad Art Tableware
       description: Fine bone china jug hand-decorated with black-and-gold motifs inspired by the Bappuji ki Phad folk-art tradition of Rajasthan. A striking serveware piece for festive gatherings or everyday table styling. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-520833c6-65e9-446e-be6a-81df37f73fd5.jpg
-      link: https://www.shopatmela.com/l/6a5cd6f4-8bd7-4701-b761-f735d71859c7?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-jug
+      # CORRECTED 2026-08-03: link updated to match the dev_listing_id fix above (was pointing at "Tea Pot").
+      link: https://www.shopatmela.com/l/6a5cd6b3-7f0b-4bfb-96c3-36cc3648e94f?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-jug
 
     - name: Byah Coffee Mug
       status: manual_pending  # ready once Instagram post is scheduled
       title: Phad Art Coffee Mug | Hand-Painted Ceramic
       description: Fine bone china coffee mug hand-decorated in black and gold, inspired by the Bappuji ki Phad folk-painting tradition of Rajasthan. Wheel-thrown, hand-finished, and made for daily rituals. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d461c194-5f2a-4870-9b18-cb406148928a.jpg
-      link: https://www.shopatmela.com/l/6a5cd6bb-fe0a-435f-b93a-c3539ae8fba6?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-coffee-mug
+      # CORRECTED 2026-08-03: link updated to match the dev_listing_id fix above (was pointing at "Serving Bowl").
+      link: https://www.shopatmela.com/l/6a5cd67d-b7ce-4339-8696-0f429764cb42?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-coffee-mug
 
 # UX REVIEW
 ux_review:
@@ -146,3 +176,27 @@ notes:
   pinterest_board_strategy: Would pin to "Home and Kitchen" theme board — moot while held, and Pinterest posting is separately hard-blocked via Blotato regardless (see cadence note in category-routing.yaml).
   brand_tagging: No @handle tag per feedback_no_brand_tagging_yet.
   next_step: RESOLVED 2026-07-31, moved to ready_to_schedule. Submit to Blotato for Instagram scheduling (Week 2 batch); manually post the 4 Pinterest pins once the IG post is live, per posting_mode.
+  listing_id_fix_2026_08_03: >
+    Byah Jug and Byah Coffee Mug's dev_listing_id/shopatmela_url were wrong — both pointed
+    at a different live listing (Tea Pot and Serving Bowl respectively) than the product
+    named in the campaign. Root-caused via Mela-scrapper-integrations's
+    reconcile-listing-ids.js: the classified CSV itself is clean (0 rewrites needed across
+    387 live-matched rows), so this was a data-entry error made when this campaign log was
+    authored, not the Ankid-style pipeline write-back bug. Caught before any harm — the
+    Instagram post links to the generic brand page (not per-product), and the 4 Pinterest
+    pins were still manual_pending, not yet posted.
+
+    Airavata Coffee Mug – Owl was also fixed: its scene image (mint-green mug, owl motif)
+    was pointing at the "Yellow"/Swan listing; corrected to 6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984,
+    verified both visually (live listing image) and against the CSV's own "Airavata - Coffee
+    Mug Owl" product name for that SKU.
+
+    Airavata Coffee Mug – Garuda is UNRESOLVED, not fixed — see the dev_listing_id note on
+    that product entry. Its scene image (cream/ivory mug, eagle motif) doesn't match either
+    candidate listing: 6a5cd5bd is confirmed live as Owl/green, and 6a5cd5c4 is confirmed
+    live as Swan/yellow (checked its actual product photos, not just the title). A search of
+    all 387 live Kaunteya listings found zero titled "Garuda" — the CSV's one Garuda row is
+    Out of Stock, and that listing slot (6a5cd5bd) has since been reused for the Owl restock.
+    This design does not currently exist as a purchasable listing on Mela. Needs a human
+    decision (source a real Garuda listing if one exists under an unexpected SKU, or drop/
+    replace this carousel item) — do not attempt another automatic ID match.
