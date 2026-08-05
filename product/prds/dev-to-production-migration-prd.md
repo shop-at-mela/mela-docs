@@ -7,7 +7,7 @@
 - **Related docs**:
   - `mela-docs/technical/deployment/render-deployment-guide.md` (generic Render deploy walkthrough — this PRD is the migration-specific checklist that doc doesn't cover)
   - `web-client/src/config/configBrands.js` (contains the empty `production` brand-ID stub this PRD's largest checklist item resolves)
-  - `mela-docs/product/prds/crossshop-tracking-prd.md` (GTM/GA4/Clarity tracking — question of whether it needs a prod-specific setup lives here)
+  - `mela-docs/product/prds/insights/crossshop-tracking-prd.md` (GTM/GA4/Clarity tracking — question of whether it needs a prod-specific setup lives here)
 
 ---
 

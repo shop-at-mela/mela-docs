@@ -1,7 +1,9 @@
 # PRD Tracker
 
-**Last updated:** 2026-07-30  
+**Last updated:** 2026-08-05  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
+
+**Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
 
 ---
 
@@ -34,7 +36,8 @@
 | [enrichment-pipeline-stage2-update-prd.md](prds/enrichment-pipeline-stage2-update-prd.md) | 🟡 Partial | P1 | — | Web-client ✅ done; verify pipeline (`prompt_engine.py`) and ingestion outputs `metaDescription` + `searchSynonyms` |
 | [shopify-api-ingestion-prd.md](prds/shopify-api-ingestion-prd.md) | 🔲 Ready | P1 | — | Replace per-brand HTML scrapers with generic Shopify JSON API ingester |
 | [ai-ready-product-discovery-prd.md](prds/ai-ready-product-discovery-prd.md) | 📋 Draft | P2 | Depends on enrichment pipeline + SEO foundation | Schema.org entity coverage for AI answer engines |
-| [crossshop-tracking-prd.md](prds/crossshop-tracking-prd.md) | ✅ Shipped | P0 | — | None — `InquiryWithoutPaymentForm` CTA is implemented but untestable until an inquiry-type listing exists in the catalog (not a gap in the work) |
+| [crossshop-tracking-prd.md](prds/insights/crossshop-tracking-prd.md) | ✅ Shipped | P0 | — | None — `InquiryWithoutPaymentForm` CTA is implemented but untestable until an inquiry-type listing exists in the catalog (not a gap in the work) |
+| [shopper-visibility-reporting-prd.md](prds/insights/shopper-visibility-reporting-prd.md) | 🟡 Partial | P0 | Blocks P1 storefront work — OCTR baseline must be captured first (`storefront-validation-readiness-prd.md` §8) | Phase 1 site search ✅; turn Enhanced measurement Site search off; build Potential Shoppers Funnel + record OCTR baseline; two cross-shop Explorations; Looker Studio dashboard |
 | [brand-hero-card-webclient-prd.md](prds/brand-hero-card-webclient-prd.md) | ✅ Shipped | P1 | — | First-fold coverage shrinks (The Nesavu, Masilo absent from hero) until those brands get `brandHeroImageIds`/`brandHeroImages` |
 | [dev-to-production-migration-prd.md](prds/dev-to-production-migration-prd.md) | 📋 Draft | — | No production Sharetribe environment confirmed provisioned yet | `configBrands.js` production brand-ID map is empty (biggest item); social-share image re-upload; 5 other open questions (see PRD §8) — not started |
 
