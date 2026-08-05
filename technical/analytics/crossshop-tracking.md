@@ -1,7 +1,7 @@
 # Cross-Shop & Entry/Exit Attribution Tracking
 
 **Status**: MVP implemented and live-verified — GTM/GA4/Clarity install, entry-source capture, `brand_clickout` event (now 7 params, `mela_session_id` added 2026-07-27; GA4 custom dimension `Mela Session ID` registered).
-**PRD**: `mela-docs/product/prds/crossshop-tracking-prd.md` (problem statement, goals, ACs — this file is the technical/operational source of truth for the event schema and GA4 setup).
+**PRD**: `mela-docs/product/prds/insights/crossshop-tracking-prd.md` (problem statement, goals, ACs — this file is the technical/operational source of truth for the event schema and GA4 setup).
 **Code**: `web-client/src/util/analytics/entrySource.js`, `web-client/src/util/analytics/brandClickout.js`, `web-client/src/util/sentimentCapture.js` (session ID source), `web-client/src/util/includeScripts.js`, `web-client/src/index.js`, `web-client/server/csp.js`.
 
 This document is the source of truth for the `dataLayer` event schema, the `entry_source` normalization rules, GA4 Console setup steps, and how to build the two hypothesis reports. If code and this doc ever disagree, the code wins and this doc needs updating.
@@ -148,9 +148,9 @@ Both are GA4 **Explore** reports (Explore → Blank), not standard reports, beca
 1. Explore → Free form.
 2. Dimensions: `Mela Session ID` (custom dimension, event parameter `mela_session_id` — GA4's own `ga_session_id`/`session_id` are reserved and can't be used, see §3), `Brand Name`.
 3. Metric: Event count, filtered to `Event name = brand_clickout`.
-4. Rows: Mela Session ID. Add "Brand Name" as a nested row or use a **Count distinct** aggregation on Brand Name per session (Explore supports this via the "Count distinct" metric type against the Brand Name dimension, segmented by session).
-5. Segment sessions into `sessions_with_1_brand` vs `sessions_with_2plus_brands` (Explore segment builder: "Brand Name count distinct ≥ 2" within session scope).
-6. Multi-brand-clickout rate = `sessions_with_2plus_brands / all_sessions_with_at_least_1_brand_clickout`.
+4. Rows: `Mela Session ID`, with `Brand Name` as a nested row. Values: Event count. Set **Show rows** to 500.
+5. **Correction 2026-08-04**: steps 4 and 5 previously described a **Count distinct** metric on Brand Name and a segment condition "Brand Name count distinct ≥ 2". **Neither exists in GA4.** The Explore metric picker has no count-distinct aggregation over an arbitrary dimension, and the segment builder offers condition matching and sequences only. Compute the rate outside GA4 instead: export the table (**Export as CSV** or Google Sheets, top right of the canvas), pivot with rows `Mela Session ID` and value `COUNTA` of `Brand Name`.
+6. Multi-brand-clickout rate = `COUNTIF(counts, ">=2") / COUNTA(counts)` — i.e. `sessions_with_2plus_brands / all_sessions_with_at_least_1_brand_clickout`. Exact, and about five minutes a week at current volume. The durable fix is BigQuery export (free at Mela's volume); SQL in `product/prds/insights/shopper-visibility-reporting-prd.md`.
 
 ### 5b. Entry ≠ exit (mutualization signal)
 

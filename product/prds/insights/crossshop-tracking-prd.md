@@ -2,7 +2,7 @@
 
 ## Document Information
 - **Created**: 2026-07-18
-- **Status**: ✅ Shipped (core tracking) — GTM/GA4/Clarity live and verified end-to-end on shopatmela.com (2026-07-19): `entry_source` capture confirmed live (first-touch + never-overwrite behavior both confirmed), `brand_clickout` confirmed firing with all params on the two CTA surfaces reachable in the current catalog (`OrderPanel.js` main CTA, `ProductOrderForm.js` quantity/delivery form). The third surface (`InquiryWithoutPaymentForm.js`) is implemented and wired through the same shared `openBrandStorefront()` path but **not live-testable today** — no inquiry-type listing exists in the current catalog to exercise it (see AC checklist). Event schema extended to 7 params (2026-07-27, `mela_session_id` added and live-verified — see §13.0). 🟡 **Dashboards (§13) — code + GA4 custom dimension (`Mela Session ID`) done; the two Explorations still to be built.**
+- **Status**: ✅ Shipped (core tracking) — GTM/GA4/Clarity live and verified end-to-end on shopatmela.com (2026-07-19): `entry_source` capture confirmed live (first-touch + never-overwrite behavior both confirmed), `brand_clickout` confirmed firing with all params on the two CTA surfaces reachable in the current catalog (`OrderPanel.js` main CTA, `ProductOrderForm.js` quantity/delivery form). The third surface (`InquiryWithoutPaymentForm.js`) is implemented and wired through the same shared `openBrandStorefront()` path but **not live-testable today** — no inquiry-type listing exists in the current catalog to exercise it (see AC checklist). Event schema extended to 7 params (2026-07-27, `mela_session_id` added and live-verified — see §13.0). 🟡 **Dashboards (§13) — code + GA4 custom dimension (`Mela Session ID`) done; the two Explorations still to be built. Reporting scope moved 2026-08-04 to `shopper-visibility-reporting-prd.md`; §13.1 Step 1 point 6 corrected there and inline (GA4 has no distinct-count segment).**
 - **Owner**: Product / Dev
 - **Related docs**:
   - `mela-docs/technical/analytics/crossshop-tracking.md` (source of truth for the event schema, GA4 setup steps, and reporting recipes — this PRD does not duplicate it)
@@ -199,6 +199,8 @@ Reviewed `mela-docs/social/` end to end. Findings and recommendations:
 
 ## 13. Building Trackable Dashboards for Cross-Shop Data (added 2026-07-22)
 
+> **Superseded in part, 2026-08-04.** Reporting work has moved to `product/prds/insights/shopper-visibility-reporting-prd.md`, which covers this section's two explorations (as its Phase 3) plus site search tracking, a potential-shopper funnel, and the Looker Studio dashboard, with a sequencing plan. §13.1 Step 1 point 6 below was **not buildable as written** — see the inline correction. This section remains here as the origin record of the `mela_session_id` blocker (§13.0), which is still accurate and still worth reading.
+
 The two hypothesis metrics (§9) need to be checkable at a glance, not rebuilt from scratch every week. Two tiers, roughly matched to effort: (1) pin the two metrics as saved GA4 Explorations so they're one click away, and (2) build an actual shareable dashboard in Looker Studio for the simpler trend metrics that don't need session-level distinct-count logic.
 
 ### 13.0 Blocker discovered while building this: GA4 reserves both `ga_session_id` AND plain `session_id`
@@ -226,9 +228,8 @@ Both Tier 1 explorations below originally assumed registering GA4's auto-collect
    - **Rows**: drag in `Mela Session ID`, then drag in `Brand Name` as a **second, nested row** directly below it — this expands each session into its distinct brands clicked.
    - **Values**: drag in `Event count`.
    - **Filters**: `Event name` exactly matches `brand_clickout`.
-6. Add a **Segment** to isolate the cohort: left panel → **Segments → + New segment → Session segment** → add a condition scoping to sessions where `Brand Name` (under `brand_clickout`) has 2+ distinct values within the session. GA4's segment-builder condition UI shifts between versions — if a "unique count ≥ 2" option isn't visible where expected, screenshot what's actually on screen and treat this as a live debugging session the same way the GTM Tag Assistant issue was resolved, rather than assuming the documented click path still matches.
-7. Name the segment `Sessions with 2+ brands`, add it as a comparison alongside "All Sessions" at the top of the canvas. That segment's session count ÷ total sessions with any `brand_clickout` = the rate.
-8. Save the exploration.
+6. ~~Add a **Segment** to isolate the cohort: sessions where `Brand Name` has 2+ distinct values within the session.~~ **Not buildable — corrected 2026-08-04.** GA4's segment builder offers condition matching and sequences but has **no distinct-count aggregation over a dimension**, and the Explore metric picker has no count-distinct metric either. The click path above was written against an assumed capability that does not exist. Instead: set **Show rows** to 500 in Tab Settings, export the table (**Export as CSV** / Google Sheets, top right of the canvas), and pivot in Sheets with rows `Mela Session ID` and value `COUNTA` of `Brand Name`. The rate is `COUNTIF(counts, ">=2") / COUNTA(counts)`. At current cold-start volume this takes about five minutes and is exact. The durable fix is BigQuery export (free at Mela's volume) — see `shopper-visibility-reporting-prd.md` §4 P2 for the SQL.
+7. Save the exploration.
 
 **Step 2: Build "Cross-Shop: Entry vs Exit"**
 1. **Explore → Blank**, name it `Cross-Shop: Entry vs Exit`.
