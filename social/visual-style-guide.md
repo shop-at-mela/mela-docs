@@ -104,6 +104,118 @@ Products should be **styled in natural scenes**, not isolated on white:
 
 **When creating prompts:** Use outcome language ("do not overshadow the product"). Include [Mela watermark spec](#affiliate--watermark) in every prompt.
 
+**Product Scene Placement is for PRODUCT posts only.** Do NOT route `trust_service` or `cultural_education` posts through it — that is what makes education posts look identical to product ads. Education posts use the Education Visual System below.
+
+---
+
+## Education Visual System
+
+Education posts (`trust_service` and `cultural_education`, from `education-topics.yaml`) are a **separate visual language from product posts**. Product posts chase *desire* (soft, warm, product-forward, branding hidden). Education posts chase *saves and shares* (they teach, reassure, or explain). If an education post looks like a product still on linen, it reads as an ad and gets scrolled past — and it wastes the format that actually earns reach for a cold account.
+
+### The one rule that governs every education post
+
+> **Slide 1 is a hook, never a product.** The product, if it appears at all, is the *payoff* — the last slide, framed as "made this way, by [brand], on Mela." For logistics/trust posts there is usually no product at all.
+
+A product macro on slide 1 signals "sponsored, scroll." A question or a process image signals "wait, what?" and earns the swipe/save.
+
+### Two sub-systems
+
+| | **Cultural education** (living culture) | **Trust / service** (modern logistics) |
+|---|---|---|
+| Feeling | Documentary, editorial | Utility, reassurance |
+| Topics | craft, technique, origin, design | shipping, customs, sizing, returns, payment, vetting |
+| Slide 1 | Process/material/place image **or** a big-type question | Branded title card: e.g. "Shipping from India, explained" |
+| Middle slides | Teaching cards (how it's made) + illustrative process imagery | Timeline / chart / myth-vs-fact / conversion table |
+| Payoff slide | *One* product shot: "made this way, by [brand] on Mela" (optional) | No product — CTA card only |
+| Branding | Subtle (documentary restraint), watermark only | **Navy #2D2D7B + marigold #F0A030 worn openly** — this is a Mela utility, not a product |
+| Product photo | Last slide only, optional | Never |
+
+### Slide-1 options that are NOT a product
+
+1. **Typographic hook card** — Mela design system, one bold line: *"No two are ever identical. Here's why."* Cheapest to produce, highest save-rate. Built via the [HTML card system](#producing-education-visuals-canva-free), not Blotato.
+2. **Process / material still** — the *tool or raw material*, not the finished good: a carved wooden block, an indigo vat, a loom, dye-stained hands. Blotato-generated as an **illustrative editorial image** (see license below).
+3. **Place / map** — an illustrated map ("Where India's crafts come from"). Distinctive, ownable, reusable across many posts.
+
+### Illustrative-imagery license (resolves the "don't fabricate" paralysis)
+
+The "do not AI-generate props / do not fabricate the product" rule in the runbooks applies to **product posts** — never invent a product's features. **Cultural-education posts run under editorial/illustration license:** a representative image of a carved printing block, an indigo dye vat, or a loom is legitimate teaching imagery, the same way a magazine uses a stock diagram.
+
+Hard boundary: illustrative imagery **must never be captioned or implied to be a specific brand's own workshop, a specific artisan, or a specific product's making.** It illustrates the *technique*, generically. When in doubt, the caption says "block printing works like this," never "here is Ankid's printing table."
+
+### Living culture, not heritage (framing rule)
+
+Frame craft as **alive and being made now**, not as a museum relic. Mela sells contemporary brands *reinterpreting* craft (Nicobar, Kaunteya, Isharya), so the story is *why this is still made by hand in 2026 and who makes a living from it* — not "an ancient 500-year-old tradition." This matches the catalog, earns AEO value, and avoids the exoticizing/othering trap flagged in [What NOT to Do](#what-not-to-do). Every `cultural_education` topic carries a `contemporary_angle` in `education-topics.yaml`; lead with it. (Same reframe governs website brand/category copy — see `shopify_brands.py` brand-voice house rule.)
+
+### Producing education visuals (Canva-free)
+
+Canva MCP is expensive. Reach for it last. In cost order:
+
+1. **HTML/CSS → PNG (PRIMARY, zero marginal cost).** Hook cards, teaching cards, timelines, myth-vs-fact cards, sizing tables, and maps are all text + shape layouts — exactly what HTML/CSS does best. Author them from the reusable Mela card templates (brand kit encoded once: navy #2D2D7B, marigold #F0A030, earthy palette, serif display), fill in per-post text, and render to PNG at the exact aspect ratio (IG 1:1 or 4:5, Story 9:16, Pinterest 2:3) via headless Chrome / the `claude-in-chrome` browser. Version-controlled, repeatable, on-brand, free. Covers ~90% of what Canva was used for.
+2. **Blotato (already paid for) for photographic stills.** Process/material/place imagery HTML can't produce (carved block, dye, loom, dyer's hands). Use Blotato's image generation, **not** Product Scene Placement, under the illustrative license above.
+3. **SVG → PNG** for pure-vector infographics (diagrams, maps) — even lighter than HTML, no browser needed.
+4. **Canva** — reserved for one-off compositions the above genuinely can't do, only when the payoff justifies the cost.
+
+> Template location: `mela-docs/social/templates/` — HTML card kit, **built and rendering** (see its README). Cards: `hook-card.html` (cultural slide-1 hook), `shipping-timeline.html` + `myth-vs-fact.html` (trust/service), shared brand tokens in `mela-kit.css`. Render: `./render.sh <file.html> <out.png> [square|story|pin]`. Copy a template, edit inside the `<!-- EDIT -->` markers, render, post. Add new card types here as they recur.
+
+### Tool decision procedure (run this, don't re-reason it every time)
+
+Four tools, decided by two questions. Rendered imagery forces Blotato; anything graphic goes to code; Canva is only the uncodeable one-off. Run the gates in order.
+
+**Gate 0 — static or motion?**
+- **Motion** (reel / video, e.g. a row-anchor teaser) → **Blotato motion collage**; trending audio + final publish are a **manual in-Instagram step** (see `category-routing.yaml` → `grid.reel_production_note`). The rest of this procedure is for **static frames** (including each frame of a slideshow).
+
+**Gate 1 — does any layer need *rendered imagery* (photographic OR illustrative/painterly) that can't be built from type + shapes?**
+- Layer is an **actual product** → **real product photo** (never AI-generate a product).
+- Layer is **craft material / process / place, or a deliberately illustrated style** → **Blotato** image-gen (illustrative license: illustrates the technique generically, never labeled as a specific brand's workshop/artisan).
+- **No such layer** → skip to Gate 2.
+
+**Gate 2 — the graphic / text layer: expressible as text + shapes + lines + charts + tables + a photo?**
+- **Yes, pure vector** (map, diagram, icon set) → **SVG**.
+- **Yes, with text flow / tables / mixed content** → **HTML**.
+- **No** (needs freeform manual composition or stock art) → **Canva**.
+
+```python
+def choose_tool(asset):
+    if asset.is_motion:
+        return "Blotato collage (+ manual audio/publish in IG)"
+    img = None
+    if asset.needs_rendered_imagery:            # photographic OR illustrative
+        img = "real product photo" if asset.is_actual_product else "Blotato"
+        if not asset.has_text_or_graphic_overlay:
+            return img
+    if asset.expressible_in_code:               # type, shapes, charts, tables, maps
+        layer = "SVG" if asset.is_pure_vector else "HTML"
+    else:
+        layer = "Canva"
+    return layer if img is None else f"{img} + {layer} composited on top"
+```
+
+**The one judgment call — `expressible_in_code`:** if you can describe the slide as boxes, lines, text, a chart, a table, or a photo → codeable (HTML/SVG). If describing it needs "an illustration of…" or "a hand-arranged collage of…" → Canva.
+
+**Non-negotiable guardrails (these are *why* the branches are what they are):**
+- **Exact / factual text NEVER goes inside a Blotato-generated layer.** Diffusion models garble text — shipping days, sizes, prices, claims come out as gibberish. The picture comes from Blotato; the words are composited on top via HTML/SVG. This is why "photo + headline" is **always a hybrid**, never Blotato-with-text.
+- **Watermark via the HTML/SVG layer, not a Blotato prompt.** Blotato watermark text is an unsolved gap (see campaign notes) — bake "Discovered on Mela" into the composited layer for reliability. Another reason to composite over a Blotato still rather than prompt for text.
+- **Multi-aspect-ratio → weight toward HTML/SVG.** One asset usually ships IG 1:1 + Story 9:16 + Pinterest 2:3; a responsive HTML/SVG file re-renders all three for free, while Canva/Blotato triples the work.
+- **Real charts → load the `dataviz` skill first**, not ad-hoc chart HTML (keeps palette + accessibility consistent). A simple timeline or table is fine in plain HTML.
+
+**Why Canva is genuinely last, not just "expensive":** the usual "Canva is faster for a one-off" logic assumes a *human* hand-codes the HTML. Here the agent writes the HTML in seconds, so HTML's per-asset effort ≈ 0 even for one-offs. Canva only wins when Gate 2 is a hard "no" (truly uncodeable).
+
+**Cheat sheet:**
+
+| Asset | Gate | Tool |
+|---|---|---|
+| Hook card (type on color) | 2 | HTML |
+| Shipping timeline / customs explainer | 2 | HTML |
+| Myth-vs-fact card | 2 | HTML |
+| India↔US sizing table | 2 | HTML |
+| "Where crafts come from" map / process diagram | 2 (pure vector) | SVG |
+| Carved block / indigo dye / loom still | 1 (imagery) | Blotato |
+| Dyer's hands at work | 1 (imagery) | Blotato |
+| Product payoff slide | 1 (actual product) | real product photo |
+| Photo with a headline / factual text over it | 1 + 2 | Blotato photo + HTML text composited |
+| Row-anchor teaser | 0 (motion) | Blotato collage + manual audio/publish |
+| Freeform collage needing stock art | 2 = no | Canva |
+
 ---
 
 ## Platform-Specific Guidelines
@@ -176,6 +288,12 @@ The Instagram **feed** is laid out as **theme-rows of 3**. A weekly `/social-lau
 ❌ Corporate stock photo aesthetic  
 ❌ Overly stylized/unattainable lifestyle scenes  
 ❌ Bright neons or harsh color contrasts  
+
+**For education posts specifically:**  
+❌ A product hero shot on slide 1 (it reads as an ad — see [Education Visual System](#education-visual-system))  
+❌ Routing `trust_service` / `cultural_education` through Product Scene Placement  
+❌ "Ancient / 500-year-old heritage" framing that treats living craft as a museum relic  
+❌ Captioning generic illustrative process imagery as a specific brand's own workshop/artisan  
 
 ---
 
