@@ -1,0 +1,65 @@
+---
+# Mela Social Campaign — Education (trust_service), topic ship-01
+# Batched via /social-launch on 2026-08-06. Grid DEFERRED, standalone post.
+# Brand-agnostic, so filed under log/_education/ rather than a brand folder.
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: 2026-08-11   # scheduled to Instagram via Blotato (alternate-day slot)
+status: scheduled
+platforms:
+  - instagram
+  # trust_service also routes to Reddit per content_types — separate MANUAL step, not scheduled here.
+persona: Neha
+category: null
+content_type: trust_service
+topic_id: ship-01
+format: educational_carousel
+
+instagram:
+  submission_id: 02bcdebf-a486-4c84-b066-e6de2aeb47ea
+  scheduled_time: 2026-08-11T15:00:00Z
+  destination: https://shopatmela.com/?utm_source=instagram&utm_medium=social&utm_campaign=ship01_w1&utm_content=shipping_explained
+  caption: |
+    How long does it actually take to get something from India?
+
+    Here is the honest version. You discover a brand on Mela, then buy on the brand's own site. Most makers pack your order in one to three days because it is small batch, not sitting in a warehouse. Then it ships by tracked courier and usually lands within two weeks.
+
+    One thing to check before you buy: duties. Some brands prepay them so you see one price at checkout. Many do not, which means you may owe a customs fee on delivery. It varies by brand, so read the shipping page first.
+
+    No mystery, just logistics.
+
+    Discover brands on Mela, link in bio
+
+    📍 Shipping from India, explained
+    #ShippingFromIndia #ShopIndian #Mela #IndianBrands
+
+  # Education Visual System (trust_service): navy + marigold worn openly, no product.
+  # Both slides produced via the Canva-free HTML kit. Sources in log/_education/ship-01/renders/.
+  image_url:
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/94055182-080e-469b-aada-ed77d2175a7d.png  # slide 1: order-to-delivery timeline (shipping-timeline.html)
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/92661c81-5be4-4dff-9aa4-e2861523de7a.png  # slide 2: myth-vs-fact, duties honesty (myth-vs-fact.html)
+
+  alt_text:
+    - Timeline infographic explaining shipping from India from order to delivery on a cream Mela card.
+    - Myth versus fact card saying most orders from India arrive within two weeks and duties vary by brand.
+
+ux_review:
+  checks:
+    claim_verification:
+      result: pass
+      note: >
+        Affiliate framing correct (order from the brand, discovered on Mela — Mela is not the
+        shipper). Timeline uses typical courier ranges framed as "most orders", not guarantees.
+        Duties handled honestly per trust-customs-duties note: "some brands prepay, many do not,
+        varies by brand" — NO blanket duty-free promise.
+  observations: []
+
+notes:
+  type_alternation: >
+    trust_service, alternating correctly from the previous education post (craft-blockprint,
+    cultural_education, Ankid week 2). Per meta.cadence the NEXT education pick should be
+    cultural_education.
+  reddit_pending: trust_service also routes to Reddit — not yet posted; manual step.
+  verify_note: ship-01 is not verify:true, but day ranges were kept as typical courier windows and paired with a "check the brand's shipping page" caveat rather than asserted as universal facts.

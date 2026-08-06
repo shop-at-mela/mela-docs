@@ -64,7 +64,15 @@ topics:
     platforms: [instagram, reddit]
     personas: [neha, sarah]
     source_brands: [any]
-    status: backlog
+    status: used
+    week_used: 3
+    note: >
+      Used 2026-08-06 (/social-launch week-3 batch), IG scheduled for 2026-08-11 (Neha).
+      2-slide carousel: order-to-delivery timeline (shipping-timeline.html) + honest
+      myth-vs-fact on duties (myth-vs-fact.html). Duties framed as "varies by brand,
+      some prepay, many don't" — no blanket duty-free promise. Reddit leg still pending
+      (manual). See log/_education/ship-01-w1-campaign.yaml. NEXT education pick should
+      alternate to cultural_education per meta.cadence.
 
   - id: pay-01
     type: trust_service

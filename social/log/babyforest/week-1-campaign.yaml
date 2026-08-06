@@ -1,0 +1,94 @@
+---
+# Mela Social Campaign — Baby Forest Week 1 (product post)
+# Batched via /social-launch on 2026-08-06. Grid DEFERRED, standalone post.
+
+brand: Baby Forest
+brand_slug: babyforest
+week: 1
+date_posted: 2026-08-07   # scheduled to Instagram via Blotato (alternate-day slot)
+status: scheduled
+platforms:
+  - instagram
+  - pinterest   # manual_pending — Pinterest warmup block (see pinterest section)
+persona: Sarah
+category: baby_and_kids
+content_type: product
+format: product_carousel
+
+# INSTAGRAM
+instagram:
+  submission_id: 77abeed4-4724-49e9-b574-47da9e35698e
+  scheduled_time: 2026-08-07T15:00:00Z
+  destination: https://shopatmela.com/brands/baby-forest?utm_source=instagram&utm_medium=social&utm_campaign=babyforest_w1&utm_content=cold_pressed_oils
+  caption: |
+    Two ingredients. One press. Nothing else.
+
+    Baby Forest makes cold pressed baby oils the slow way. Narial Tailam is 100% organic cold pressed coconut oil. Badami Sneh is organic cold pressed almond oil, wood pressed so the oil stays close to the nut it came from.
+
+    Free from parabens, sulfates, and artificial fragrance. Formulated for a newborn's skin from the very first bath. Ayurvedic ingredient logic, made to hold up on a modern label.
+
+    Ships from India to all 50 US states.
+
+    Discover Baby Forest on Mela, link in bio
+
+    📍 Made in India
+    #BabyForest #ColdPressed #BabyCare #Ayurveda #MadeInIndia
+
+  # Real Baby Forest product photography (clean, legible labels) watermarked via
+  # templates/photo-watermark.html. Blotato Product Scene Placement was tried but
+  # GARBLED the bottle labels (diffusion text failure — "AYUVVVEDA", "Eesence of
+  # Cacenuts"), unpublishable for a trust-sensitive baby product, so the brand's own
+  # clean photos were used instead. Sources in log/babyforest/renders/.
+  image_url:
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/a50a2d28-0fab-4feb-9d7e-7a16f4febafe.png  # slide 1: Badami Sneh almond oil (warm shot, watermarked)
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/76f3167e-1c26-42d1-8b89-90b3092ffa5c.png  # slide 2: Narial Tailam coconut oil (watermarked)
+
+  alt_text:
+    - Baby Forest Badami Sneh organic cold pressed almond baby oil bottle and box on a warm blush background.
+    - Baby Forest Narial Tailam organic cold pressed coconut baby oil bottle beside fresh coconuts.
+
+  products:
+    - name: Narial Tailam - Organic Cold Pressed Coconut Oil for Baby 200ml
+      dev_listing_id: 68e47a73-d735-4256-94c4-acde5796bc79
+      shopatmela_url: https://shopatmela.com/l/68e47a73-d735-4256-94c4-acde5796bc79
+      price_usd: 10
+      verified: true   # live listing confirmed open 2026-08-06; label reads "Fragrance-Free Formula"
+    - name: Badami Sneh - Organic Cold Pressed Almond Oil for Baby 0-6M 200ml
+      dev_listing_id: 69f8ad55-3171-4921-b888-b484c0f98dd9
+      shopatmela_url: https://shopatmela.com/l/69f8ad55-3171-4921-b888-b484c0f98dd9
+      price_usd: 23
+      verified: true   # live listing confirmed open 2026-08-06
+
+# PINTEREST — manual draft (Blotato Pinterest warmup block, as of 2026-07-24)
+pinterest:
+  posting_mode: manual_pending
+  board: baby_and_kids theme board (resolve via category-routing.yaml pinterest_boards before posting)
+  link: https://shopatmela.com/brands/baby-forest?utm_source=pinterest&utm_medium=social&utm_campaign=babyforest_w1&utm_content=cold_pressed_oils
+  title: Baby Forest Cold Pressed Baby Oils
+  description: >
+    Organic cold pressed coconut and almond baby oils from Baby Forest. Free from parabens,
+    sulfates, and artificial fragrance. Ayurvedic baby care, made in India. Baby Forest on Mela.
+  alt_text: Baby Forest organic cold pressed almond and coconut baby oil bottles on warm neutral backgrounds.
+  image_url:
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/a50a2d28-0fab-4feb-9d7e-7a16f4febafe.png
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/baby-forest
+  checks:
+    brand_story:
+      result: pass
+      note: Brand page loads; "Ships to all 50 US states, US cards accepted". Verified 2026-08-06.
+    claim_verification:
+      result: pass
+      note: >
+        Both oils confirmed live + open on shopatmela.com/l/. Coconut label reads
+        "Fragrance-Free Formula"; brand_story (shopify_brands.py) states "Free from parabens,
+        sulfates, and artificial fragrance" — the free-from claim is brand-stated, not a CSV mistag.
+  observations: []
+
+notes:
+  phase_7b_skipped: >
+    No clean un-watermarked scene to attach as listing lead — the Blotato scenes garbled the
+    labels and the real photos are the brand's own (already the listing imagery). Skipped.
+  persona_note: Sarah — led with the ingredient/formulation (cold pressed, free-from list) per her cert-first guardrail; named the specific free-from claim rather than a vague "natural".

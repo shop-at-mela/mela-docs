@@ -1,0 +1,73 @@
+---
+# Mela Social Campaign — Nicobar Week 1 (brand spotlight)
+# Batched via /social-launch on 2026-08-06. Grid is DEFERRED
+# (category-routing.yaml grid.enabled: false), so this is a standalone post,
+# not a grid row.
+
+brand: Nicobar
+brand_slug: nicobar
+week: 1
+date_posted: 2026-08-09   # scheduled to Instagram via Blotato (alternate-day slot)
+status: scheduled
+platforms:
+  - instagram
+persona: Arun
+category: home_and_kitchen   # framed as home/lifestyle per user pick; Nicobar spans fashion + home
+content_type: brand_spotlight
+format: brand_story_carousel
+
+# INSTAGRAM
+instagram:
+  submission_id: 980703ae-01ff-4ef5-b443-904d36102767
+  scheduled_time: 2026-08-09T15:00:00Z
+  destination: https://shopatmela.com/brands/nicobar?utm_source=instagram&utm_medium=social&utm_campaign=nicobar_w1&utm_content=brand_spotlight
+  caption: |
+    Some brands make a shirt. Nicobar makes a world.
+
+    Named for the islands off India's coast, it designs linen shirts and cotton dresses alongside ceramic tableware, cushions, and candles. One coherent modern Indian sensibility, made for easy living.
+
+    The idea is simple. Good design should be livable. A glass teapot and hand painted kulhars you actually use on a Sunday. Not craft kept behind glass, craft you set the table with.
+
+    Designed in India. Ships to the US.
+
+    Discover Nicobar on Mela, link in bio
+
+    📍 Modern Indian design, made in India
+    #Nicobar #ModernIndianDesign #IndianHome #Ceramics #MadeInIndia
+
+  # Slide 1 = Aaranya tea-set (real Nicobar product photo NBI047746_2) run through
+  # Blotato Product Scene Placement into a warm modern-Indian home scene, then
+  # watermarked via templates/photo-watermark.html. Slide 2 = brand spotlight card
+  # (templates/spotlight-card.html). Sources in log/nicobar/renders/.
+  image_url:
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/35707c89-753c-4c26-a06b-818064d31b6d.png  # slide 1: tea-set home scene (watermarked)
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/4ff7a466-4df1-4d31-ad65-5c8d19c453d9.png  # slide 2: Nicobar spotlight card
+
+  alt_text:
+    - Nicobar glass teapot and two painted ceramic cups on a linen runner in a warm sunlit modern Indian living room.
+    - Brand spotlight card reading Nicobar, modern Indian design in linen and ceramic, discover on Mela.
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/nicobar
+  checks:
+    brand_story:
+      result: pass
+      note: Brand page loads with story + 500 products; states "ships to all 50 US states". Verified 2026-08-06.
+  observations: []
+
+# NOTES
+notes:
+  brand_story_not_product: >
+    Chosen as a BRAND-STORY post rather than a specific-product post because Nicobar's
+    individual listings on Mela are unreliable right now: every home listing checked
+    (Aaranya vase, teapot set, breakfast set, serving bowl, cushion cover — 5/5) resolved
+    to "this listing has been closed", and the classified CSV's Dev_Listing_IDs are drifted
+    (id 6a412a37, labelled "A-line Short Dress", resolves live to an "Akshar Bracelet").
+    Nicobar's CSV is NOT reconciled the way Ankid's was. So the post links to the live
+    brand page (which shows the live catalog) and makes no specific-product promise. The
+    tea-set photo is used as authentic illustrative brand imagery, not as a shoppable SKU.
+  data_followup: >
+    Nicobar needs a SKU-keyed listing-ID reconcile (like scripts/reconcile-listing-ids.js
+    did for Ankid) before it can carry a specific-product post. Flag to dev/product.
+  phase_7b_skipped: Brand-story post, no single product listing to attach a scene to.
