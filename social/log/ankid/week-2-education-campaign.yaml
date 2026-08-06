@@ -9,8 +9,8 @@
 brand: Ankid
 brand_slug: ankid
 week: 2
-date_posted: null
-status: on_hold  # HELD 2026-08-01 per user decision — see slide_count_decision note below
+date_posted: 2026-08-05
+status: posted  # PUBLISHED 2026-08-05 as a 4-slide carousel rebuilt under the Education Visual System (see resolution_2026_08_05)
 platforms:
   - instagram
 format: educational_carousel
@@ -21,29 +21,39 @@ topic_id: craft-blockprint
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: efcf20ca-84b2-4822-9a84-2f8eb10fc999
+  live_url: https://www.instagram.com/p/DbrxR-VET7Y/
   schedule_id: null
   destination: https://shopatmela.com/brands/ankid?utm_source=instagram&utm_medium=social&utm_campaign=ankid_w2&utm_content=cultural_education
   caption: |
-    Hand block printing starts with a block of wood, carved by hand into a pattern, then dipped in dye and pressed onto cotton one stamp at a time. No screen, no machine. Every repeat is placed by a printer's eye and hand, which is why two pieces from the same run are never perfectly identical.
+    Block printing is not a museum piece. It is a living craft. Carved wooden blocks are still stamping cotton by hand in working print houses across Rajasthan and Gujarat, this season, for contemporary kidswear like Ankid. Not nostalgia. Now.
 
-    Ankid uses this technique across its festival wear for children, printing directly onto cotton with wooden blocks before a single seam is sewn.
+    Here is how it works. A pattern is carved by hand into a block of wood, dipped in dye, and pressed onto cotton one stamp at a time. No screen, no machine. Every repeat is placed by a printer's eye and hand, which is why two pieces from the same run are never perfectly identical.
 
-    It is slower than digital printing and it shows: slightly uneven lines, a print that breathes with the fabric instead of sitting on top of it.
+    Ankid prints directly onto cotton with wooden blocks before a single seam is sewn. It is slower than digital printing and it shows. Slightly uneven lines. A print that breathes with the fabric instead of sitting on top of it.
 
     Look closely at your next block printed piece. The small variations are the proof it was made by hand, not a flaw to overlook.
 
-    Discover @ankid.in on Mela, link in bio
+    Discover Ankid on Mela, link in bio
 
     📍 Block printed by hand in India
     #HandBlockPrint #IndianCraft #BlockPrinting #MadeInIndia #Ankid
 
-  # Blotato render outputs for the educational carousel, in slide order.
-  # 2 slides rendered 2026-08-01 (block-print macro + printed set on linen). Post is HELD,
-  # not scheduled — these are kept for reuse if/when the slide-count decision is resolved.
+  # REBUILT 2026-08-05 under the Education Visual System (slide 1 = hook, not a product;
+  # single product photo demoted to the final payoff slide). The two 2026-08-01 product-macro
+  # renders were retired. Slides produced via the templates/ HTML kit (1, 3, 4) + Blotato
+  # image-gen (2, illustrative block/dye still). Sources kept in log/ankid/renders/.
   image_url:
-    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-86bb166e-63f3-40c6-9916-8207538e46e4.jpg  # slide 1: rust gingham block-print macro, raking light
-    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e2dbf7dc-d3f8-4528-9e0c-4988f2f82a25.jpg  # slide 2: printed top + pant set flat on linen
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/4435080e-c399-4945-9813-847689b50cc9.png  # slide 1 HOOK: "No two are ever identical. Here's why." (hook-card.html)
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-33c758f9-e5b8-4afc-ae93-0705ba0cef86.jpg  # slide 2 ILLUSTRATIVE: carved wooden block + indigo dye tray + stamped cotton (Blotato image-gen, generic)
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/0d51244a-c9d8-40ec-9319-169c8401bc63.png  # slide 3 TEACHING: "Block printing, one stamp at a time" (teaching-card.html)
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b3203702-fa4d-4867-9930-4825b015d746.png  # slide 4 PAYOFF: real Ankid printed set, "Made this way by Ankid" (payoff-card.html)
+
+  alt_text:
+    - Typographic card on cream reading "No two are ever identical, here's why" under a Block Printing label.
+    - Hand carved wooden block printing stamp beside an indigo dye tray and hand stamped floral motifs on natural cotton.
+    - Numbered guide card explaining how hand block printing works, one wooden stamp pressed onto cotton at a time.
+    - Ankid hand block printed pink cotton top and gingham check pant set for toddlers laid flat on natural linen.
 
   anchor_products:
     - name: Hand Block Printed Bandana in Pink
