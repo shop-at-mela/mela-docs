@@ -84,6 +84,25 @@ ux_review:
 
 # NOTES
 notes:
+  resolution_2026_08_05: >
+    UNBLOCKED by the new Education Visual System (visual-style-guide.md + /social-review
+    Phase 3d, added 2026-08-05). Two changes resolve the paralysis below:
+    (1) Slide 1 must be a HOOK, not a product — so the two product photos currently in
+        image_url are demoted to at most ONE optional payoff slide at the END, not the lead.
+    (2) Illustrative-imagery license: a representative carved wooden block / indigo dye still
+        is legitimate teaching imagery (it illustrates the technique generically, and is never
+        captioned as Ankid's own workshop) — it does NOT violate the "don't fabricate the
+        product" rule, which is scoped to product posts only.
+    Rebuild recipe (living-culture framing, lead with craft-blockprint.contemporary_angle):
+      slide 1 — typographic hook card "No two are ever identical. Here's why." (HTML card system)
+      slide 2 — illustrative carved wooden block + dye still (Blotato image-gen, NOT Product
+                Scene Placement; generic, not "Ankid's block")
+      slide 3 — teaching card: how block printing works, one stamp at a time (HTML)
+      slide 4 — PAYOFF: the Ankid printed set (existing product photo), "block printed by hand,
+                by Ankid on Mela"
+    Produce slides 1 + 3 via the Canva-free HTML/CSS toolchain once mela-docs/social/templates/
+    exists (Canva MCP is expensive — HTML render is the primary tool). Caption already leads with
+    the technique; retune its opening line to the contemporary_angle before shipping.
   slide_count_decision: >
     HELD 2026-08-01. The runbook's education prompt described 4 slides (print macro, carved wooden
     printing blocks, printed set flat, print-meets-seam detail). But Blotato's Product Scene
