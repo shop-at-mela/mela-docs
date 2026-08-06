@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mela — Brand Spotlight</title>
+<link rel="stylesheet" href="mela-kit.css">
+<style>
+  /* Brand spotlight card: a story slide for a brand post. Large serif brand
+     name, a one-line what-it-is, a short living-culture story, and a
+     "Discover on Mela" close. Pairs with a real lifestyle photo slide. */
+  .card { justify-content: center; }
+  .brand { font-size: 11vmin; line-height: 1; color: var(--ink); margin: 0; }
+  .brand .accent { color: var(--navy); font-style: italic; }
+  .what {
+    font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.4vmin;
+    font-size: 2.5vmin; font-weight: 600; color: var(--navy); margin-top: 3vmin;
+  }
+  .story { font-size: 4.2vmin; line-height: 1.36; color: var(--ink); margin: 4.5vmin 0 0; max-width: 94%; }
+  .cta {
+    font-family: var(--sans); font-weight: 700; font-size: 2.7vmin; letter-spacing: 0.1vmin;
+    color: var(--navy); margin-top: 5vmin;
+  }
+  .cta .dot { color: var(--marigold); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <!-- EDIT: kicker -->
+    <div class="kicker">Brand spotlight</div>
+    <div class="rule"></div>
+    <!-- EDIT: brand name -->
+    <h1 class="brand">Nico<span class="accent">bar</span></h1>
+    <!-- EDIT: one-line what-it-is -->
+    <div class="what">Modern Indian design, in linen &amp; ceramic</div>
+    <!-- EDIT: short living-culture story (made now, not a relic) -->
+    <p class="story">Named for the islands off India's coast. Linen shirts, cotton dresses, ceramic tableware, cushions, candles. One coherent world, designed in India for easy living.</p>
+    <!-- EDIT: CTA -->
+    <div class="cta">Discover Nicobar on Mela <span class="dot">&rarr;</span></div>
+    <div class="watermark">Discovered on <b>Mela</b></div>
+  </div>
+</body>
+</html>

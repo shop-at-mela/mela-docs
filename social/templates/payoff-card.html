@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mela — Payoff Card</title>
+<link rel="stylesheet" href="mela-kit.css">
+<style>
+  /* Payoff card: the LAST slide of a cultural_education post (optional).
+     A real product photo, framed as "made this way, by [brand] on Mela."
+     Never slide 1. The photo is a real product shot (never AI-generated);
+     only the caption band + watermark are laid on top in HTML.
+     See visual-style-guide.md -> Education Visual System -> Payoff slide. */
+  .card { padding: 0; }
+  .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* Bottom scrim: solid enough for AA-legible white text at the tallest
+     stack (kicker + headline). Deep navy, near-opaque at the base. */
+  .scrim {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 46%;
+    background: linear-gradient(to top,
+      rgba(32,32,79,0.94) 0%, rgba(32,32,79,0.88) 30%,
+      rgba(32,32,79,0.55) 68%, rgba(32,32,79,0) 100%);
+  }
+  .caption { position: absolute; left: 8.5vmin; right: 8.5vmin; bottom: 9vmin; }
+  .caption .kicker { color: var(--marigold); }
+  .caption .headline {
+    font-family: var(--serif); color: #fff; margin: 2.4vmin 0 0;
+    font-size: 6vmin; line-height: 1.12;
+  }
+  .caption .headline .accent { color: var(--marigold); font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <!-- EDIT: product image (a REAL product photo — never AI-generated). -->
+    <img class="photo" src="PRODUCT_IMAGE" alt="">
+    <div class="scrim"></div>
+    <div class="caption">
+      <!-- EDIT: kicker + payoff line. Keep the brand + "on Mela" framing. -->
+      <div class="kicker">Block printed by hand</div>
+      <h2 class="headline">Made this way by <span class="accent">Ankid</span>.</h2>
+    </div>
+    <div class="watermark watermark--light">Discovered on <b>Mela</b></div>
+  </div>
+</body>
+</html>

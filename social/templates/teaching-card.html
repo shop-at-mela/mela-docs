@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mela — Teaching Card</title>
+<link rel="stylesheet" href="mela-kit.css">
+<style>
+  /* Teaching card: a middle slide for a cultural_education post. Explains
+     "how it's made" as a short numbered sequence. Never slide 1 (that's a
+     hook) and never a product. See visual-style-guide.md -> Education
+     Visual System -> Middle slides. */
+  .card { justify-content: flex-start; }
+  .headline {
+    font-size: 6.4vmin; line-height: 1.08; color: var(--ink);
+    margin: 0 0 5vmin; max-width: 92%;
+  }
+  .headline .accent { color: var(--navy); font-style: italic; }
+  .steps { display: flex; flex-direction: column; gap: 3.4vmin; margin-top: 0.5vmin; }
+  .step { display: flex; align-items: flex-start; gap: 3vmin; }
+  .num {
+    font-family: var(--sans); font-weight: 700; font-size: 2.9vmin;
+    color: var(--navy); background: var(--marigold);
+    width: 6.4vmin; height: 6.4vmin; min-width: 6.4vmin; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0.4vmin;
+  }
+  .step p { font-size: 4vmin; line-height: 1.32; color: var(--ink); margin: 0; }
+  .step p b { color: var(--navy); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <!-- EDIT: topic label -->
+    <div class="kicker">How it's made</div>
+    <div class="rule"></div>
+    <!-- EDIT: headline -->
+    <h1 class="headline">Block printing, <span class="accent">one stamp at a time</span></h1>
+    <!-- EDIT: 3–4 steps. Keep each to one short line or two. Bold a key phrase with <b>. -->
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <p>A pattern is <b>carved by hand</b> into a block of wood.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <p>The block is dipped in dye and <b>pressed onto cotton</b> — one stamp at a time.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <p>The printer lines up each repeat <b>by eye</b>, moving across the cloth by hand.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <p>No screen, no machine. The tiny shifts in the repeat are <b>the signature of the hand</b>.</p>
+      </div>
+    </div>
+    <div class="watermark">Discovered on <b>Mela</b></div>
+  </div>
+</body>
+</html>

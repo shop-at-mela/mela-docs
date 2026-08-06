@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mela — Photo + Watermark</title>
+<link rel="stylesheet" href="mela-kit.css">
+<style>
+  /* Full-bleed REAL photo (product or lifestyle) with the subtle
+     "Discovered on Mela" watermark baked in bottom-right. For product/brand
+     posts that use authentic photography (never AI-garbled labels). A soft
+     corner scrim guarantees the watermark stays legible on any image.
+     See feedback: mela-watermark-spec + blotato-scene-watermark-gap. */
+  .card { padding: 0; }
+  .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .wm-scrim {
+    position: absolute; right: 0; bottom: 0; width: 62%; height: 22%;
+    background: radial-gradient(120% 140% at 100% 100%,
+      rgba(20,20,40,0.42) 0%, rgba(20,20,40,0.16) 45%, rgba(20,20,40,0) 72%);
+  }
+  .watermark { color: var(--cream); opacity: 0.92; font-size: 2.3vmin; }
+  .watermark b { font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <!-- EDIT: real photograph (never an AI image with a garbled label). -->
+    <img class="photo" src="PRODUCT_IMAGE" alt="">
+    <div class="wm-scrim"></div>
+    <div class="watermark">Discovered on <b>Mela</b></div>
+  </div>
+</body>
+</html>
