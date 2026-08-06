@@ -445,6 +445,8 @@ None of our four personas think in L0 category taxonomy. They think in **occasio
 
 Category page copy must **describe the products** (cultural origin, craft, certification), never **describe the user** ("your Indian finds"). See `UXR/buyer-personas.md` Cross-Cutting Insight for full guidance.
 
+**Living culture, not heritage (added 2026-08-05).** Editorial category copy frames craft as **alive and made now**, not as an ancient "500-year-old tradition" or a museum relic. Lead with what contemporary Indian brands make today and who makes a living from it. Prefer present-tense, current framing ("block printed by hand in Rajasthan today") over antique framing ("an age-old art passed down through generations"). Reasons: it's AEO-stronger (specific + current beats vague + old), it matches Mela's actual catalog of contemporary brands reinterpreting craft, and it avoids the exoticizing/othering trap. This is the same reframe applied to brand storefront copy (`shopify_brands.py` brand-voice house rule) and to social education content (`mela-docs/social/education-topics.yaml` → `meta.framing`); keep the three surfaces consistent.
+
 ---
 
 ### 8B — `/categories` Root Page Layout
