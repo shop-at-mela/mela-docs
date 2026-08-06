@@ -153,6 +153,24 @@ grid:
 # board — never the brand board alone.
 pinterest_boards:
   brand_board_threshold: 8  # min live pins before a brand earns its own supplementary board
+  # Board-type policy (panel decision 2026-08-06; full rationale in
+  # mela-docs/social/pinterest-playbook.md -> Board architecture). Pinterest is search-first,
+  # so a board earns its place only by (a) ranking on its name/description and (b) giving pins
+  # topical context. Judged that way:
+  #   category -> KEEP (primary spine; highest evergreen search volume)
+  #   occasion -> KEEP (highest Pinterest-native ROI; seasonal planning intent)
+  #   gift     -> MERGED into occasion (diaspora gifting is occasion-anchored); the combined
+  #               "Gifting and Occasions" board already reflects this. Keep at most ONE evergreen
+  #               gift board; do not split into person/occasion gift boards yet.
+  #   brand    -> SKIP at cold start (weakest discovery; nobody browses a marketplace's brand
+  #               boards). Revisit only after a brand clears brand_board_threshold AND the profile
+  #               has real visitor traffic. Pinterest-only reasoning: brands stay a first-class
+  #               axis on Instagram (see pinterest-playbook.md -> "does this affect IG").
+  # Cold-start target (~6 boards): Home and Kitchen, Artisan Footwear, one MERGED Baby and Kids,
+  # Beauty Ritual, Diwali Gifting (seasonal), plus the evergreen Gifting and Occasions board.
+  # The two baby boards below are thin -> merge into one "Baby and Kids" until per-category pin
+  # volume justifies splitting again.
+  board_type_policy: "category + occasion primary; gift merged into occasion; brand boards skipped at cold start (see pinterest-playbook.md)"
   # Resolution rule for /social-review Phase 2/6: look up the category's `boards.pinterest`
   # placeholder(s) (in the `categories` table below) in this map to get the real Pinterest
   # board_id — pass that id directly to blotato_create_post's boardId, no name lookup needed.
@@ -168,11 +186,12 @@ pinterest_boards:
     wellness:                    { board_name: "Beauty Ritual",           board_id: "1103593152379723631", status: live }  # same board as `beauty`
     brand:                       { board_name: "Artisan Footwear",        board_id: "1103593152379641541", status: live }  # fashion/footwear theme board — already existed
   existing_brand_boards:
-    # Per-brand boards created before this policy existed. Kept as optional secondary
-    # destinations (a fashion/footwear pin can go to both "Artisan Footwear" AND the
-    # brand's own board) — never used as a pin's only board going forward.
-    - "Fizzy Goblet"
-    - "The Alternate"
+    # ARCHIVED 2026-08-06 per board_type_policy above. Both per-brand boards were consolidated
+    # into their theme boards (Fizzy Goblet's footwear pins -> "Artisan Footwear") and archived
+    # in the Pinterest app — no longer live secondary destinations, do not route pins here. The
+    # brand-board IDEA is deferred (reversible archive), not deleted; revisit post-traction.
+    - "Fizzy Goblet"    # archived 2026-08-06
+    - "The Alternate"   # archived 2026-08-06
   fallback_board: "Brands from India"  # use ONLY when no theme board exists yet for a category and same-day manual board creation isn't practical; flag the gap to the user regardless
   seasonal_boards:
     # Per accounts.md → Seasonal Calendar. Created ahead of the lead time listed there,
