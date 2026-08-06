@@ -15,9 +15,24 @@
 # it would confuse the weekly picker's trust_service/cultural_education rotation.
 
 meta:
-  version: 1
-  last_updated: "2026-07-31"
+  version: 2
+  last_updated: "2026-08-05"
   cadence: "1 topic per week; alternate trust_service <-> cultural_education"
+  framing: >
+    LIVING CULTURE, NOT HERITAGE (added 2026-08-05). Frame every cultural_education
+    topic as craft that is alive and made NOW — who makes a living from it today, why a
+    contemporary brand still does it by hand in 2026 — not as an ancient "500-year-old
+    tradition" or museum relic. This matches Mela's actual catalog (contemporary brands
+    reinterpreting craft: Nicobar, Kaunteya, Isharya), earns AEO value, and avoids the
+    exoticizing/othering trap. Every cultural_education topic carries a `contemporary_angle`;
+    the caption and slide 1 LEAD with it, not with "handed down through generations."
+    Same reframe governs website brand/category copy — see shopify_brands.py brand-voice
+    house rule and seo-aeo-category-brand-pages-prd.md.
+  visual_system: >
+    Education posts do NOT use the product-visual pipeline. Slide 1 is a HOOK, never a
+    product; the product (if any) is the last "payoff" slide. See visual-style-guide.md ->
+    Education Visual System and /social-review Phase 3d. Produce with the Canva-free toolchain
+    (HTML/CSS -> PNG first, Blotato illustrative stills, Canva last).
   selection: >
     Pick a status:backlog topic; prefer a brand that is live or in-QA on Mela (see brand_pool).
     On use, set status:used and record week_used. Verify any `verify:true` claim first.
@@ -98,6 +113,7 @@ topics:
   - id: craft-juttis
     type: cultural_education
     angle: "The jutti & kolhapuri — handcrafted Indian footwear heritage"
+    contemporary_angle: "Young labels like Fizzy Goblet keep jutti and kolhapuri artisans in steady work today, updating centuries-old shapes into shoes people wear to work and weddings now."
     platforms: [instagram]
     personas: [arun]
     source_brands: [fizzy-goblet, needledust]
@@ -107,6 +123,7 @@ topics:
   - id: craft-handloom
     type: cultural_education
     angle: "Handloom weaving and the weavers behind the cloth"
+    contemporary_angle: "Handloom weavers earn a living now because contemporary brands commission them directly. The cloth is woven this season, not preserved in a museum."
     platforms: [instagram]
     personas: [arun, sarah]
     source_brands: [suta, chidiyaa]
@@ -116,6 +133,7 @@ topics:
   - id: craft-jewelry
     type: cultural_education
     angle: "Contemporary Indian jewelry — technique, materials & motifs"
+    contemporary_angle: "Indian jewelry design is having a global moment. Contemporary houses reinterpret temple and Mughal motifs for everyday and modern occasion wear made now."
     platforms: [instagram]
     personas: [priya, arun]
     source_brands: [isharya, tarinika, curio-cottage]
@@ -125,6 +143,7 @@ topics:
   - id: craft-ayurveda-baby
     type: cultural_education
     angle: "Ayurvedic / natural traditions in baby care"
+    contemporary_angle: "Not folklore. Today's parents choose these because the ingredient logic holds up, and modern baby brands formulate around it now."
     platforms: [instagram]
     personas: [sarah, priya]
     source_brands: [baby-forest, choosekind]
@@ -134,6 +153,7 @@ topics:
   - id: craft-ayurveda-beauty
     type: cultural_education
     angle: "Ayurveda in modern skincare"
+    contemporary_angle: "Ayurveda as a living formulation science used by modern skincare brands now, not an ancient secret. Lead with how it shows up in a product on the shelf today."
     platforms: [instagram]
     personas: [sarah]
     source_brands: [bipha-ayurveda]
@@ -150,6 +170,7 @@ topics:
   - id: craft-modern-indian
     type: cultural_education
     angle: "Modern Indian design — heritage reinterpreted for today's home & wardrobe"
+    contemporary_angle: "This IS the living-culture story. Lead with the reinterpretation by contemporary studios (Nicobar, Kaunteya), not the origin. Craft as a design language in use today."
     platforms: [instagram]
     personas: [arun, priya]
     source_brands: [nicobar, kaunteya]
@@ -162,6 +183,7 @@ topics:
   - id: craft-farm-to-bottle-beauty
     type: cultural_education
     angle: "One farm, one bottle — what 'grown on our own farm' means for skincare"
+    contemporary_angle: "A working farm in Tamil Nadu supplying its own skincare line today. Single-origin and traceable, a modern sourcing story, not a heritage claim."
     platforms: [instagram]
     personas: [sarah, neha]
     source_brands: [vilvah]
@@ -172,6 +194,7 @@ topics:
   - id: craft-chikankari
     type: cultural_education
     angle: "Chikankari — Lucknow's shadow-work embroidery, and how to spot the real thing"
+    contemporary_angle: "Lucknow's chikankari ateliers employ thousands of women now. Contemporary labels keep the shadow-work embroidery in demand well beyond bridalwear."
     platforms: [instagram]
     personas: [arun, sarah]
     source_brands: [house-of-chikankari]
@@ -181,6 +204,7 @@ topics:
   - id: craft-kantha
     type: cultural_education
     angle: "Kantha — how worn-out sarees become running-stitch textile art"
+    contemporary_angle: "Kantha was upcycling before it was a trend, and makers still do it today, turning worn cloth into new textile art that sells globally now."
     platforms: [instagram]
     personas: [arun]
     source_brands: [banjaaran-studio]
@@ -190,6 +214,7 @@ topics:
   - id: craft-blockprint
     type: cultural_education
     angle: "Hand block printing — the carved wood stamps behind everyday cotton prints"
+    contemporary_angle: "Block printing supports working print-houses in Rajasthan and Gujarat right now. Contemporary kidswear like Ankid prints by hand this season, not as nostalgia."
     platforms: [instagram]
     personas: [priya, arun]
     source_brands: [ankid, banjaaran-studio]
@@ -217,6 +242,7 @@ topics:
   - id: craft-goldsmithing-isharya
     type: cultural_education
     angle: "Beyond filigree — the metal, stone, and enamel work behind statement jewelry"
+    contemporary_angle: "Isharya and peers run contemporary studios where goldsmiths apply traditional metal and enamel skills to modern statement pieces made now."
     platforms: [instagram]
     personas: [priya, arun]
     source_brands: [isharya]
@@ -226,6 +252,7 @@ topics:
   - id: craft-knitwear
     type: cultural_education
     angle: "Hand-finished knitwear — what separates machine knit from hand finished"
+    contemporary_angle: "Hand-finished knitwear is a current craft economy. Contemporary brands like Pluchi employ finishers whose hand-work you can feel in this season's pieces."
     platforms: [instagram]
     personas: [sarah, priya]
     source_brands: [pluchi]
@@ -249,6 +276,12 @@ topics:
     source_brands: [any]
     verify: true  # high-stakes claim, must confirm actual duty/customs facts, not assume
     status: backlog
+    note: >
+      DUTIES VARY BY BRAND (clarified 2026-08-05). Some brands prepay duties (DDP,
+      landed cost at checkout), MANY do not — buyer may owe duties on delivery. NEVER
+      state "duties handled up front" as a blanket Mela promise. The honest post explains
+      "it depends: some brands prepay, some don't — check the brand's shipping policy."
+      Per-brand DDP status must be confirmed before naming any brand as duty-free.
 
   - id: trust-small-batch-01
     type: trust_service
@@ -266,6 +299,21 @@ topics:
     source_brands: [any]
     verify: true
     status: backlog
+
+# PARKED IDEAS — NOT in the weekly consumer rotation (different audience/channel).
+# The weekly picker only alternates trust_service <-> cultural_education for CONSUMERS;
+# these are captured so they aren't lost, but are executed separately, not auto-selected.
+parked_ideas:
+  - id: brand-ddp-advocacy-01
+    audience: brands            # brand-facing, NOT the buyer personas
+    angle: "Prepay duties (DDP) so US shoppers see one landed price at checkout — why it lifts conversion"
+    rationale: >
+      Idea from user 2026-08-05. Many Indian brands ship without prepaid duties, so US
+      buyers hit surprise fees on delivery — a major drop-off. A brand-facing message
+      (partnerships/outreach, e.g. LinkedIn or the brand outreach flow, NOT consumer IG)
+      encouraging brands to adopt DDP makes Mela-discovered shopping frictionless.
+    channel: partnerships_outreach  # see outreach-templates.md, not the consumer feed
+    status: idea
 
 # Brands closest to live on Mela (in-QA / production-leaning per pipeline sheet, July 2026).
 # Prefer these when choosing a weekly topic so education ties to shoppable brands.
