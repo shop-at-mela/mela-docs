@@ -12,40 +12,30 @@ docs below on each run.
 - **Visual system + tool decision procedure:** `visual-style-guide.md` → Education Visual System.
 - **Skills:** `/social-review` (single post) and `/social-launch` (weekly batch) — both already
   route education away from the product pipeline (Phase 3d).
-- **Templates (built, rendering):** `templates/` — `hook-card.html`, `shipping-timeline.html`,
-  `myth-vs-fact.html`, shared `mela-kit.css`, `render.sh`, `README.md`.
+- **Templates (built, rendering):** `templates/` — `hook-card.html`, `teaching-card.html`,
+  `payoff-card.html` (cultural_education); `shipping-timeline.html`, `myth-vs-fact.html`
+  (trust_service); `spotlight-card.html` (brand story); `photo-watermark.html` (watermark a
+  real product/lifestyle photo); shared `mela-kit.css`, `render.sh`, `README.md`.
 - **Topics:** `education-topics.yaml` — every cultural topic has a `contemporary_angle`;
-  customs duties nuance + parked brand-DDP idea captured.
-- **First education post, scoped + held:** `log/ankid/week-2-education-campaign.yaml` — has a
-  full rebuild recipe under `notes.resolution_2026_08_05`.
+  customs duties nuance + parked brand-DDP idea captured. Used so far: craft-blockprint
+  (cultural_education, wk2), ship-01 (trust_service, wk3). NEXT should be cultural_education.
+- **First education post — SHIPPED 2026-08-05:** `log/ankid/week-2-education-campaign.yaml`
+  (Ankid block-print, live at instagram.com/p/DbrxR-VET7Y). The rebuild recipe under
+  `notes.resolution_2026_08_05` is the worked example for future cultural_education posts.
 
-## Current task (one-time — prune when done, see Housekeeping)
+## Data-quality watch (learned 2026-08-06)
 
-> **Decided order (2026-08-05): do A first, then B.** Ship the held Ankid education post end to
-> end, then run the next batch. First education post = held Ankid block-print.
-
-**Housekeeping (do this when A + B are complete):** mark the Ankid campaign `status: posted` in
-its log, then delete THIS "Current task" section only. Do **not** delete the file — the rest is
-the durable resume guide, and `MEMORY.md` + the skills point to it.
-
-## Kickoff prompts (paste one into the new session)
-
-**A) Build the FIRST education post (held Ankid block-print):**
-> Build the held Ankid Week 2 education post. Follow the rebuild recipe in
-> `mela-docs/social/log/ankid/week-2-education-campaign.yaml` → `notes.resolution_2026_08_05`
-> and the Education Visual System in `visual-style-guide.md`. Use the `templates/` HTML kit for
-> the hook + teaching cards (render via `render.sh`), Blotato for the illustrative block/dye
-> still, and the existing Ankid product photo as the final payoff slide. Retune the caption to
-> lead with the topic's `contemporary_angle`. Then run the `/social-review` UX + publish phases.
-
-**B) Kick off the NEXT batch:**
-> Run `/social-launch` for the next weekly batch. Score `education-topics.yaml` for the next
-> education topic (alternate type from the last used), pick 2 brands in different categories,
-> and produce all tiles. Education tiles use the Education Visual System + `templates/` kit,
-> not the product pipeline.
-
-(Do A first if you want the single post shipped before batching; or go straight to B — social-launch
-will include an education tile either way.)
+- **Verify every product listing live before a product post.** The classified CSV "In Stock"
+  flag does NOT mean the Mela listing is open. In the wk3 batch, Baby Forest's + Nicobar's
+  onboarding hero listing IDs were **closed**, and **Nicobar's Dev_Listing_IDs are drifted**
+  (a "dress" ID resolved to a live "bracelet"). Ankid + Baby Forest are reconciled/verified;
+  **Nicobar is NOT** — it needs a SKU-keyed reconcile before any specific-product post.
+- **Blotato Product Scene Placement garbles product labels** (diffusion text failure). For
+  label-forward products (skincare, baby), use the brand's own real photo + `photo-watermark.html`,
+  not a Blotato scene. Scenes are fine for motif-only products (e.g. Nicobar ceramics).
+- **The IG grid is DEFERRED** (`category-routing.yaml` grid.enabled: false) — batches are
+  standalone posts (product + brand-story + education), NOT 9-tile rows, until profile-visit
+  volume justifies wayfinding.
 
 ## Live rules to honor (already in the docs, flagged here so they're not missed)
 
