@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mela — Myth vs Fact</title>
+<link rel="stylesheet" href="mela-kit.css">
+<style>
+  /* Trust/service. Full-bleed split: muted MYTH over affirmative FACT.
+     High save/share format — the correction is the payoff. */
+  .card { padding: 0; }
+  .panel {
+    flex: 1;
+    padding: 7.5vmin 8.5vmin;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .panel.myth { background: var(--cream-deep); }
+  .panel.fact { background: var(--navy); }
+  .tag {
+    font-family: var(--sans); font-weight: 700; letter-spacing: 0.4vmin;
+    font-size: 2.3vmin; text-transform: uppercase;
+    padding: 1vmin 2.6vmin; border-radius: 0.9vmin;
+    width: max-content; margin-bottom: 3.5vmin;
+  }
+  .myth .tag { background: #D9CDB8; color: var(--muted); }
+  .fact .tag { background: var(--marigold); color: var(--navy-deep); }
+  .statement { font-size: 5vmin; line-height: 1.2; margin: 0; }
+  .myth .statement { color: var(--muted); }
+  .fact .statement { color: var(--cream); }
+  .fact .statement .accent { color: var(--marigold); font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <!-- DO NOT use "duties handled up front" as a blanket fact. Duties/customs vary
+         by brand and order value: SOME brands prepay (DDP), MANY do not. A customs
+         myth/fact must be brand-specific and verified, never a universal Mela promise.
+         Default below avoids the duties claim entirely. -->
+    <div class="panel myth">
+      <span class="tag">Myth</span>
+      <!-- EDIT: the misconception -->
+      <p class="statement">Ordering from India means weeks of waiting and surprise fees at the door.</p>
+    </div>
+    <div class="panel fact">
+      <span class="tag">Fact</span>
+      <!-- EDIT: the correction. Wrap a phrase in <span class="accent"> for the marigold pop. -->
+      <p class="statement">Most orders land <span class="accent">within two weeks</span>, tracked door to door. Duties vary by brand, so check its shipping page before you buy.</p>
+      <div class="watermark watermark--light">Discovered on <b>Mela</b></div>
+    </div>
+  </div>
+</body>
+</html>
