@@ -1,8 +1,75 @@
-# Pinterest Keyword Bank (starter)
+# Pinterest Playbook
 
-**Purpose:** seed keywords per Mela category for Pinterest SEO — board names/descriptions,
-pin titles, pin descriptions, alt text. Pinterest is a *search engine*; these terms are
-distribution, not decoration.
+Mela's single reference for Pinterest cold-start growth (no ads). Pinterest is a **search +
+planning engine**, not a feed — pins surface via search and related-pins, almost never by anyone
+browsing your boards. Everything here follows from that.
+
+**Contents:** 1 · Foundation · 2 · Board architecture · 3 · Tags · 4 · Keyword bank · 5 · Board copy
+
+Board decisions are also encoded in `category-routing.yaml → pinterest_boards` (executable source
+of truth that the `/social-review` + `/social-launch` skills read). This doc holds the rationale.
+
+---
+
+## 1 · Foundation
+
+Three foundations gate distribution. Do them before optimizing content.
+
+| Pillar | Status | Notes |
+|---|---|---|
+| **Domain claim** | ✅ done 2026-08-03 | `<meta name="p:domain_verify">` in `web-client/public/index.html` (SSR head), deployed; `shopatmela.com` claimed in Pinterest. Unlocks pin attribution + "More from this site". |
+| **Rich Pins** | ✅ live | Listing pages already emit server-rendered schema.org `Product` JSON-LD (price, currency, availability, brand) via `ListingPageCarousel.js`. Validated + applied → price/stock render on every pin. |
+| **Keyword SEO** | 🔄 ongoing | This doc (§4–5). Keywords, not hashtags, are Pinterest's real ranking surface. |
+
+Why it matters: at cold start, 15–30 impressions with 0 clicks is *expected math* (0.2–2% CTR on
+30 views ≈ 0 clicks). The bottleneck is **distribution (impressions)**, not CTR — which is what
+the foundation + keywords fix. Give pins 30–90 days; Pinterest content has a long search tail.
+
+## 2 · Board architecture
+
+**Panel decision (2026-08-06).** A board earns its place only if (a) its name/description rank in
+search and (b) it gives pins topical context. Judged that way, of the four candidate board types:
+
+| Type | Verdict | Why |
+|---|---|---|
+| **Category** | ✅ Keep — the spine | Highest evergreen search volume; maps to catalog |
+| **Occasion** | ✅ Keep — highest Pinterest ROI | Pinterest is a planning engine; diaspora searches occasions early |
+| **Gift** | 🔀 Merge into occasion | Diaspora gifting is occasion-anchored; keep ONE evergreen gift board, not a family of them |
+| **Brand name** | ⏸️ Skip at cold start | Weakest discovery — nobody browses a marketplace's brand boards. Revisit post-traction. **Pinterest-only** — brands stay first-class on Instagram |
+
+**Cold-start target set (~6 boards):** Home and Kitchen · Handmade Indian Juttis & Artisan Footwear ·
+one **merged** Baby & Kids (the two thin nursery/organic boards collapse until volume justifies a
+split) · Ayurvedic Skincare & Natural Beauty · Diwali Gifting (seasonal) · Indian Gift Ideas &
+Festive Occasions (the evergreen gift/occasion board). Add jewelry/food category + more occasion
+boards as pin volume arrives. Fewer, fuller boards beat more, thinner ones at ~10 total pins.
+
+**Brand boards:** *Fizzy Goblet* and *The Alternate* were consolidated into theme boards and
+**archived** (reversible) 2026-08-06 — do not route pins to them. Supersedes the earlier "keep as
+optional secondary destination" stance.
+
+## 3 · Tags on Pinterest
+
+"Tags" means four different things — and the instinct imported from Instagram (hashtags) is the
+one that doesn't work:
+
+1. **Hashtags → effectively dead. Skip them.** Deprecated years ago; not clickable, ~zero ranking
+   weight. Put the energy into **keywords** (title, description, board name/description, alt text) —
+   that *is* Pinterest's tagging mechanism. 1–2 hashtags max if you must.
+2. **Interest/topic tags at pin creation → use them.** On Idea/video pins Pinterest lets you add
+   relevant topic tags; pick the genuinely relevant ones, don't stuff.
+3. **Tagged products (shoppable pins) → later goal.** Once the catalog/Rich Pins mature, tag
+   products on Idea/video pins for shoppability. Ties to the Catalog Feed target in `cadence`.
+4. **The "Pinterest Tag" → a different thing: a conversion-tracking pixel** for shopatmela.com.
+   Not discovery. Worth installing once outbound clicks exist (pairs with the GA4/UTM tracking).
+
+**Bottom line:** keywords, not hashtags.
+
+---
+
+## 4 · Keyword bank (starter)
+
+Seed keywords per Mela category — for board names/descriptions, pin titles, pin descriptions, and
+alt text. These terms are distribution, not decoration.
 
 **Audience lens:** Mela's schema declares "Indian Diaspora Shoppers in USA." Diaspora search
 intent blends three axes — **craft/heritage** (block print, Pattachitra), **occasion**
