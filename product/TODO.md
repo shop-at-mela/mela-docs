@@ -4,6 +4,18 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ---
 
+## 2026-08-06
+
+### Shipped
+- `feat(pricing)` — `web-client` now computes the displayed USD price from `publicData.priceInINR` (when present) using a live INR→USD rate fetched client-side (`src/util/liveInrRate.js`, Frankfurter API, 12h localStorage cache, static `1/83` fallback on any failure), instead of the frozen rate baked in at CSV ingestion (`product-listing-integration/scripts/lib/utils/price-utils.js`, hardcoded `1 USD = 83 INR`). Wired into `ListingCard`, `ListingCardMini`, and `OrderPanel` (product page) via a shared `useDisplayPrice` hook. Listings sourced already in USD (no `priceInINR`) are unaffected.
+- `fix(listing-card-mini)` — `ListingCardMini`'s `showPrice` now defaults to `false` (was `true`); compact brand-grid cards (`BrandCard`, `BrandCardHome` on the homepage) no longer show price chrome at all. Opt in explicitly where price is wanted.
+
+### Next
+- [ ] **Important (pre-checkout gap):** the live-rate price above is render-only and was explicitly scoped that way because Mela has no checkout yet — nothing is actually charged against `price.amount` today. Before checkout ships, this needs a real end-to-end fix: either (a) a scheduled job re-prices `price.amount` in Sharetribe from `priceInINR` × live rate on a cadence, so the checkout amount always matches what was displayed, or (b) checkout is built to charge off a freshly-computed INR-based amount rather than the stored `price.amount`. Do not ship checkout against the current frozen `price.amount` while the display price has diverged from it via live-rate computation — that's a real bait-and-switch risk (see 2026-08-06 conversation with founder).
+- [ ] Also worth resolving then: `OrderPanel`'s `priceConvertedDisclaimer` copy ("US brand price includes shipping & import costs") implies the USD figure has markup beyond a straight FX conversion, but neither the ingestion-time `1/83` conversion nor the new live-rate conversion add any margin — confirm with whoever owns CSV sourcing whether markup is baked into the source INR number upstream, or fix the copy.
+
+---
+
 ## 2026-07-31
 
 ### Shipped
