@@ -47,6 +47,30 @@ boards as pin volume arrives. Fewer, fuller boards beat more, thinner ones at ~1
 **archived** (reversible) 2026-08-06 — do not route pins to them. Supersedes the earlier "keep as
 optional secondary destination" stance.
 
+### 2b · Format experiment: education carousels (test, not a committed lane)
+
+**Decision (2026-08-06).** Pinterest's native composer now offers multi-image collages (up to 5)
+and carousel/video formats. This does **not** change the plan for **product** pins — a single-image
+pin linking to one listing URL is what carries Rich Pins (foundation §1) and the Phase 7b
+scent-match (pin click lands on that listing's exact lead image). A collage has no single source
+listing, so native collages/carousels for product pins would forfeit both. **Do not use them for
+product pins.**
+
+The one opening: **education content**, which is IG-only today and has neither Rich Pin product
+metadata to lose nor a scent-match to break. Pinterest is a search + planning engine, and
+how-to/explainer carousels ("How to style a Diwali table," "What is Pattachitra") are exactly what
+users search and save there. Run this as a **manual, in-composer test** (not Blotato — the API flow
+never opens the composer):
+
+- **Scope:** 1–2 education carousels/month, posted by hand to the relevant category or occasion board.
+- **Source:** reuse an existing `education-topics.yaml` topic + its Education Visual System slides
+  (slide 1 = hook, not product). No product tagging.
+- **Kill/keep at 30–60 days:** keep only if carousels earn materially more saves/impressions than
+  single-image education pins would; otherwise drop and stay single-image. Judge on Pinterest's
+  long search tail, not week-1 numbers.
+- **Everything else in that composer** (native text/logo/font tools, batch, crop) is redundant with
+  the HTML→PNG + watermark toolchain and the Blotato batch — no reason to move off-pipeline for it.
+
 ## 3 · Tags on Pinterest
 
 "Tags" means four different things — and the instinct imported from Instagram (hashtags) is the
