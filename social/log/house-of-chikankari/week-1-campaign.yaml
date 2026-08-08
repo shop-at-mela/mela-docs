@@ -1,0 +1,133 @@
+---
+# Mela Social Campaign — YAML Format
+# House of Chikankari Week 1 — batched via /social-launch 2026-08-07
+# Grid row 1 (top) of the week: [story] . [anchor REEL] . [product]
+
+brand: House of Chikankari
+brand_slug: house-of-chikankari
+week: 1
+date_posted: 2026-08-17  # first HoC tile publishes 2026-08-17; row completes 2026-08-21
+status: scheduled  # 5 of 6 tiles auto-scheduled via Blotato; anchor reel is manual (see anchor.posting_mode)
+platforms:
+  - instagram
+  - pinterest
+format: brand_row  # 3 IG tiles: craft story + anchor reel + product; product also -> Pinterest
+persona: Arun  # craft origin + cultural context
+category: fashion
+
+# INSTAGRAM (3 tiles in the brand row)
+instagram:
+  # --- Tile: craft/brand STORY (IG only) ---
+  story_tile:
+    submission_id: 87c5b5bd-abef-4b71-a45e-bd0700e1891e
+    scheduled_time: 2026-08-21T15:00:00Z
+    grid_position: row1-left
+    destination: https://shopatmela.com/brands/house-of-chikankari?utm_source=instagram&utm_medium=social&utm_campaign=houseofchikankari_w1&utm_content=craft_story
+    image_render: log/house-of-chikankari/renders/hoc-story.png  # HTML spotlight-card
+    image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/fec1fe55-4ecd-4ab2-bd39-65976bb19d3d.png
+    alt_text: House of Chikankari brand story card on cream, navy serif wordmark, Lucknow shadow work.
+    caption: |
+      Chikankari is Lucknow's shadow work. Fine white thread worked by hand across cotton and georgette, so light it seems to float under the surface of the cloth.
+
+      House of Chikankari works straight with the artisans who embroider it, in the city where the craft has lived for generations. Real hand work, priced so the karigar is still paid fairly.
+
+      Discover House of Chikankari on Mela, link in bio
+
+      📍 Hand embroidered in Lucknow | Ships to the US from @houseofchikankari.in
+      #Chikankari #Lucknow #HandEmbroidered #IndianCraft #SlowFashion
+
+  # --- Tile: ANCHOR reel (IG only) — MANUAL publish ---
+  anchor_tile:
+    posting_mode: manual  # Blotato builds the silent motion collage; trending audio + final publish are a manual in-Instagram step. NOT auto-scheduled.
+    target_publish: 2026-08-19T15:00:00Z  # user publishes manually to hold grid order (between HoC product 08-17 and HoC story 08-21)
+    grid_position: row1-center
+    status: manual_pending
+    visual_id: c9001b0a-6733-4936-9be4-8748ae0c9729  # Blotato image-slideshow rendered as video
+    video_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-9548e352-c3cd-4b74-8ce3-9efce23c1dd8.mp4
+    local_file: log/house-of-chikankari/renders/hoc-reel.mp4
+    alt_text: Black chikankari kurta with white hand embroidery, motion collage of shadow work detail.
+    caption: |
+      Look closely. Every white vine here was stitched by hand. House of Chikankari, now on Mela.
+
+      Discover House of Chikankari on Mela, link in bio
+
+      #Chikankari #Lucknow #HandEmbroidered #IndianCraft #Reels
+    manual_steps: >
+      First reel for this account. In Instagram: New reel -> upload hoc-reel.mp4 -> pick a
+      trending Sufi/folk audio track (low volume, it is a teaser) -> paste caption -> share.
+      Publish ~2026-08-19 to sit between the HoC product (08-17) and HoC story (08-21) tiles.
+
+  # --- Tile: PRODUCT (IG + Pinterest) ---
+  product_tile:
+    submission_id: f5875c1d-ca1a-46a6-8a24-1a14c575fc37
+    scheduled_time: 2026-08-17T15:00:00Z
+    grid_position: row1-right
+    destination: https://www.shopatmela.com/l/6a60a183-bd4a-4876-8016-6d5dd9746f1a?utm_source=instagram&utm_medium=social&utm_campaign=houseofchikankari_w1&utm_content=chandni-chikankari-shirt
+    image_render: log/house-of-chikankari/renders/hoc-product-ig.png  # Blotato Product Scene Placement + HTML watermark overlay
+    image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/e47a0155-f562-47c2-8ce2-db82851ca587.png
+    alt_text: Black mulmul shirt with white hand embroidered chikankari paisley, folded on linen with thread spools.
+    product:
+      name: Chandni Chikankari Mulmul Straight Shirt
+      sku: chandni-chikankari-mulmul-straight-shirt-black
+      dev_listing_id: 6a60a183-bd4a-4876-8016-6d5dd9746f1a
+      price_usd: 20
+      verified: true  # live listing confirmed 2026-08-07, "Craft Chikankari, Fabric Mulmul", hand shadow work
+    caption: |
+      The Chandni shirt in black mulmul, hand embroidered in white chikankari. Shadow work vines and paisley boota run down the front, worked stitch by stitch in Lucknow.
+
+      Soft breathable mulmul cotton. Made for daily wear, work, and everything in between.
+
+      $20. Discover House of Chikankari on Mela, link in bio
+
+      📍 Hand embroidered in Lucknow | Ships to the US from @houseofchikankari.in
+      #Chikankari #Lucknow #MulmulShirt #HandEmbroidered #IndianCraft
+
+# PINTEREST (product tile only)
+pinterest:
+  posting_mode: auto  # warmup cleared 2026-08-08
+  pins:
+    - name: Chandni Chikankari Mulmul Shirt
+      submission_id: fdc3b29a-58b1-406c-b7bd-59850468deba
+      scheduled_time: 2026-08-17T15:30:00Z
+      status: scheduled
+      board: Indian Ethnic Wear & Hand-Embroidered Fashion
+      board_id: "1103593152379779116"
+      board_note: >
+        User created this board 2026-08-08 (https://www.pinterest.com/shopatmela/indian-ethnic-wear-hand-embroidered-fashion/)
+        to fill the apparel gap flagged at campaign time. Originally scheduled to the "Brands from
+        India" fallback board (submission fdc3b29a); reassigned via blotato_update_schedule before
+        publish once the new board existed. category-routing.yaml -> pinterest_boards.boards now
+        carries this as the `apparel` key, separate from `brand` (which stays footwear-only).
+      title: Black Chikankari Mulmul Shirt | Hand Embroidered
+      description: A black mulmul shirt hand embroidered with white chikankari shadow work in Lucknow. Soft breathable cotton for daily and work wear. House of Chikankari on Mela.
+      alt_text: Black mulmul shirt with white hand embroidered chikankari paisley on warm linen.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/d294d608-254f-4d04-a7b6-842b64a34fa2.png
+      link: https://www.shopatmela.com/l/6a60a183-bd4a-4876-8016-6d5dd9746f1a?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w1&utm_content=chandni-chikankari-shirt
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/house-of-chikankari
+  checks:
+    product_findability:
+      result: pass
+      note: Product name in caption; live listing verified 2026-08-07.
+    aesthetic_match:
+      result: pass
+      note: Product scene + payoff use real brand imagery; earthy Mela baseline.
+  observations:
+    - theme: collection_not_surfaced
+      severity: low
+      status: resolved
+      description: No Pinterest board exists for women's ethnic wear / Indian fashion apparel. HoC chikankari kurtas fit none of the existing theme boards well.
+      mitigation: >
+        Resolved 2026-08-08 — user created "Indian Ethnic Wear & Hand-Embroidered Fashion"
+        (id 1103593152379779116). HoC's pin reassigned before publish. category-routing.yaml
+        updated: fashion.boards.pinterest now [brand, apparel], with `brand` reserved for footwear.
+
+# NOTES
+notes:
+  batch_note: Week batched with Vilvah (beauty) + craft-chikankari education carousel. See vilvah/week-1 and _education/chikankari-01-w1.
+  reel_note: First anchor reel for the account. Semi-automated — see instagram.anchor_tile.manual_steps. Blotato image-slideshow template rendered as a real .mp4 (the plain image-slideshow returned stills; the images-with-text video template produced motion).
+  persona_note: Arun — craft origin + cultural context. Each mention of chikankari carries a sentence of what it is (Lucknow shadow work, hand embroidery).
+  brand_tagging: Tagged @houseofchikankari.in per shopify_brands.py brand_instagram.
+  verify_note: Education pairing (craft-chikankari) claims fact-checked 2026-08-07 (≈250k Lucknow artisans; hand vs print tells). Sources logged in session.
