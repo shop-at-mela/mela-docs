@@ -1,0 +1,76 @@
+---
+# Mela Social Campaign — Education (cultural_education)
+# craft-chikankari — batched via /social-launch 2026-08-07
+# Grid row 3 of the week. Published as ONE 3-slide IG carousel (hook -> tells -> payoff).
+
+topic_id: craft-chikankari
+brand_slug: _education
+week: 1
+date_posted: 2026-08-09
+status: scheduled
+platforms:
+  - instagram   # IG only (cultural_education); not routed to Pinterest
+content_type: cultural_education
+format: carousel_3_slide
+persona: Arun  # with Sarah (cert/quality) secondary — per education-topics.yaml personas
+source_brand: house-of-chikankari  # payoff ties to the HoC brand row this week
+
+# INSTAGRAM (single carousel post)
+instagram:
+  submission_id: 6944572e-ba64-42ae-b00c-c8d490837668
+  scheduled_time: 2026-08-09T15:00:00Z
+  grid_position: row3 (carousel cover = slide 1 hook)
+  destination: https://shopatmela.com/brands/house-of-chikankari?utm_source=instagram&utm_medium=social&utm_campaign=houseofchikankari_w1&utm_content=education_chikankari
+  caption: |
+    Real chikankari or a printed lookalike? Most people cannot tell at a glance. Here is how to check.
+
+    One. Real hand work feels soft, like part of the fabric. A print sits flat on top.
+    Two. Flip it over. Hand embroidery leaves a clean threaded back. A print leaves nothing.
+    Three. Look for slight irregularity from stitch to stitch. Machine perfect is too perfect.
+    Four. Jali, the fine net stitch, has no machine equivalent. If you see it, it is hand done.
+
+    Chikankari is Lucknow's shadow work embroidery. Around 250,000 artisans keep it alive today, most of them women. The black kurta here is hand embroidered by @houseofchikankari.in in Lucknow.
+
+    Discover House of Chikankari on Mela, link in bio
+
+    #Chikankari #Lucknow #HandEmbroidered #IndianCraft #SlowFashion
+  slides:
+    - role: hook
+      image_render: log/_education/chikankari-01/renders/slide1-hook.png  # HTML hook-card (no product)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/8fa9068e-f602-45e7-934b-1015dac2b7c6.png
+      alt_text: Cream card reading Real or printed, most people cannot tell, chikankari education hook.
+    - role: teaching
+      image_render: log/_education/chikankari-01/renders/slide2-teaching.png  # HTML teaching-card, 4 tells
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/e6c7d7cf-f538-498d-b5b2-812babf94871.png
+      alt_text: Teaching card listing four ways to tell hand embroidered chikankari from a print.
+    - role: payoff
+      image_render: log/_education/chikankari-01/renders/slide3-payoff.png  # real HoC model photo + HTML caption/scrim
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/7fc3f475-8a65-4c41-8f74-927d1b47608a.png
+      alt_text: Woman in a black hand embroidered chikankari kurta against a teal wall, made by House of Chikankari.
+
+# VERIFICATION (verify:true topic)
+verification:
+  status: verified  # 2026-08-07
+  claims:
+    - claim: "~250,000 chikankari artisans in/around Lucknow, most of them women"
+      sources:
+        - https://thebetterindia.com/54150/lucknow-chikankari-embroidery-women-training/
+        - https://www.istitutomarangoni.com/en/maze35/research/discover-the-magic-chikankari-embroidery
+    - claim: "hand vs print tells (feel, back, irregularity, jali)"
+      sources:
+        - https://thehouseofindu.com/blogs/highlights/handmade-vs-machine-made-chikankari-how-to-spot-the-difference
+        - https://thechikanlabel.com/blogs/education/handmade-vs-machine-made-how-to-spot-authentic-lucknowi-chikankari-craft
+
+# UX REVIEW (education content — no product destination review)
+ux_review:
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: Slide 1 is a hook (not a product) per Education Visual System; payoff ties to a live HoC listing.
+
+# NOTES
+notes:
+  toolchain_note: All 3 slides built HTML/CSS -> PNG (hook-card, teaching-card, payoff-card) via templates/, rendered at 2x. Watermark baked into the HTML layer.
+  format_note: Ran as one swipeable carousel (not 3 separate posts) so the hook has its answer beneath it. User approved 2026-08-07; makes the week 7 posts rather than a strict 3x3 grid.
+  type_alternation_note: cultural_education this week; last education post (ankid craft-blockprint, w2) was also cultural. Type did not alternate — chosen for tight thematic pairing with the HoC brand row (brand overlap +2). Set education-topics.yaml craft-chikankari status:used, week_used:1 on next edit.

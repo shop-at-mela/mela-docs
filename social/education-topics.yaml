@@ -207,7 +207,8 @@ topics:
     personas: [arun, sarah]
     source_brands: [house-of-chikankari]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # /social-launch batch 2026-08-07, paired with House of Chikankari brand row
 
   - id: craft-kantha
     type: cultural_education
