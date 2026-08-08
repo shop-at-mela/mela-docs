@@ -1,0 +1,131 @@
+---
+# Mela Social Campaign — YAML Format
+# Vilvah Week 1 — batched via /social-launch 2026-08-07
+# Grid row 2 of the week: [story] . [anchor card] . [product]
+
+brand: Vilvah
+brand_slug: vilvah
+week: 1
+date_posted: 2026-08-11  # first Vilvah tile publishes 2026-08-11; row completes 2026-08-15
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: brand_row  # 3 IG tiles: farm story + anchor card + product; product also -> Pinterest
+persona: Sarah  # ingredient / materials first
+category: beauty_and_wellness
+
+# INSTAGRAM (3 tiles in the brand row)
+instagram:
+  # --- Tile: farm/brand STORY (IG only) ---
+  story_tile:
+    submission_id: 96abb2a7-d08e-4c32-8d56-53fad453f75a
+    scheduled_time: 2026-08-15T15:00:00Z
+    grid_position: row2-left
+    destination: https://shopatmela.com/brands/vilvah?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w1&utm_content=farm_story
+    image_render: log/vilvah/renders/vilvah-story.png  # HTML spotlight-card
+    image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/33a03138-26d8-4178-bf29-90a1d2909db4.png
+    alt_text: Vilvah brand story card on cream, navy serif wordmark, skincare from one farm in Tamil Nadu.
+    caption: |
+      Vilvah makes skincare on a working farm in Coimbatore, Tamil Nadu. Goat milk, cold pressed oils, and botanical extracts, used close to harvest.
+
+      The farm grows the ingredients, presses them, and bottles them. A short path from field to jar.
+
+      Discover Vilvah on Mela, link in bio
+
+      📍 Made in Tamil Nadu | Ships to the US from @vilvahstore
+      #Vilvah #FarmToSkin #GoatMilkSkincare #IndianSkincare #MadeInIndia
+
+  # --- Tile: ANCHOR card (IG only) ---
+  anchor_tile:
+    submission_id: 0647a54f-0bc7-43be-a661-838f0621f944
+    scheduled_time: 2026-08-13T15:00:00Z
+    grid_position: row2-center
+    form: static_card  # not a reel this week (only HoC row got the reel)
+    destination: https://shopatmela.com/brands/vilvah?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w1&utm_content=anchor
+    image_render: log/vilvah/renders/vilvah-anchor.png
+    image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/978a249a-60ba-4357-9d08-41d24a474511.png
+    alt_text: Vilvah wordmark on a cream card, farm fresh skincare Tamil Nadu, now on Mela.
+    caption: |
+      Skincare grown on one farm in Tamil Nadu. Vilvah, now on Mela.
+
+      Discover Vilvah on Mela, link in bio
+
+      #Vilvah #FarmToSkin #IndianSkincare #MadeInIndia
+
+  # --- Tile: PRODUCT (IG + Pinterest) ---
+  product_tile:
+    submission_id: e543afdb-4dbd-4850-a5ae-440c41e4489c
+    scheduled_time: 2026-08-11T15:00:00Z
+    grid_position: row2-right
+    destination: https://www.shopatmela.com/l/6a13d74e-2dc0-488e-b6ef-50bbd464c5b1?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w1&utm_content=milk-mud-mask
+    image_render: log/vilvah/renders/vilvah-product-ig.png  # REAL photo + HTML watermark (NOT Blotato scene — label-garble avoidance)
+    image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/ef101248-ef9d-4262-be93-811407aa8b7a.png
+    alt_text: White jar of Vilvah Milk Mud Mask with oat milk and saffron on a milk splash background.
+    product:
+      name: Milk Mud Mask (Immediate Brightness)
+      sku: milk-mud-facial-mask
+      dev_listing_id: 6a13d74e-2dc0-488e-b6ef-50bbd464c5b1
+      price_usd: 23
+      bestseller: true
+      verified: true  # live listing confirmed 2026-08-07; oat milk extract + saffron + clay
+    caption: |
+      Milk Mud Mask from Vilvah. Oat milk extract and saffron in a clay base, made to brighten, even skin tone, and unclog pores.
+
+      Oat milk to support the skin barrier. Saffron for glow. For all skin types.
+
+      $23. Discover Vilvah on Mela, link in bio
+
+      📍 Made in Tamil Nadu | Ships to the US from @vilvahstore
+      #Vilvah #MilkMudMask #OatMilkSkincare #SaffronSkincare #IndianSkincare
+
+# PINTEREST (product tile only)
+pinterest:
+  posting_mode: auto  # warmup cleared 2026-08-08
+  pins:
+    - name: Milk Mud Mask
+      submission_id: 66357522-0b3a-4dcb-9710-514996001feb
+      scheduled_time: 2026-08-11T15:30:00Z
+      status: scheduled
+      board: Ayurvedic Skincare & Natural Beauty
+      board_id: "1103593152379723631"
+      title: Oat Milk and Saffron Face Mask | Vilvah
+      description: Vilvah Milk Mud Mask with oat milk extract and saffron in a clay base. Made to brighten, even skin tone, and unclog for all skin types. Farm fresh skincare from Tamil Nadu. Vilvah on Mela.
+      alt_text: White jar of Vilvah Milk Mud Mask on a milk splash, oat milk and saffron face mask.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/237e7b52-a72d-473d-8f67-9184d6578e2f.png
+      link: https://www.shopatmela.com/l/6a13d74e-2dc0-488e-b6ef-50bbd464c5b1?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w1&utm_content=milk-mud-mask
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/vilvah
+  checks:
+    certification_visibility:
+      result: pass
+      note: Ingredient-led caption (oat milk, saffron) cites specifics per Sarah guardrail.
+    claim_verification:
+      result: pass
+      note: See observations — corrected an unverifiable "no synthetic chemicals" claim before publish.
+  observations:
+    - theme: claim_unverifiable
+      severity: high
+      status: resolved
+      description: >
+        Draft Vilvah story card asserted "No synthetic chemicals" (from shopify_brands.py brand_story).
+        The featured product's own live label lists synthetic cosmetic ingredients (potassium sorbate,
+        caprylic/capric triglyceride, etc.), so the absolute is false. Same class of unverifiable-claim
+        risk that got Vilvah dropped from an earlier batch (its Ayurveda claim).
+      mitigation: >
+        Removed "No synthetic chemicals" from the story card and re-rendered. Kept only verifiable
+        sourcing (farm grown, goat milk, cold pressed, bottled on-site). Captions also avoid the
+        "Ayurvedic" tag (a Mela-side classifier label, not Vilvah's own positioning).
+
+# NOTES
+notes:
+  batch_note: Week batched with House of Chikankari (fashion) + craft-chikankari education carousel.
+  category_note: First beauty_and_wellness campaign — breaks the recent baby/fashion concentration.
+  visual_pipeline_note: >
+    Product tile uses the REAL product photo + templates/photo-watermark.html overlay, NOT Blotato
+    Product Scene Placement — Milk Mud Mask is label-forward and Blotato garbles labels
+    (see verify_listing_and_blotato_label_garble memory).
+  persona_note: Sarah — ingredient/materials first; specific ingredients named, vague "natural"/"chemical-free" avoided.
+  brand_tagging: Tagged @vilvahstore per shopify_brands.py brand_instagram.
