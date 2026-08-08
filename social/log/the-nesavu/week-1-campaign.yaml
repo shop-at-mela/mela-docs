@@ -6,7 +6,7 @@ brand: The Nesavu
 brand_slug: the-nesavu
 week: 1
 date_posted: "2026-07-28"
-status: live_ig_pinterest_pending  # Instagram confirmed live 2026-07-31 (user report). Pinterest still manual_pending — see pinterest.posting_mode.
+status: live_ig_pinterest_partial  # Instagram live 2026-07-31. 2026-08-08: warmup cleared; 2 of 4 Pinterest pins auto-scheduled for 2026-08-09. Other 2 (Festivals, Temple) drift-blocked — their live listings no longer match the pin's pavadai copy (see pins).
 platforms:
   - instagram
   - pinterest
@@ -63,7 +63,7 @@ instagram:
 
 # PINTEREST
 pinterest:
-  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  posting_mode: auto  # UPDATED 2026-08-08: Blotato warmup block cleared. 2 pins auto-scheduled for 2026-08-09; 2 drift-blocked (see per-pin status). Blotato cap: 10 Pinterest posts/24h.
   boards:
     - name: Modern Indian Nursery
       board_id: "1103593152379723629"
@@ -71,28 +71,28 @@ pinterest:
 
   pins:
     - name: Baby Girl Pattu Pavadai for First Birthday and Pooja
-      status: manual_pending
+      status: scheduled  # auto-scheduled via Blotato for 2026-08-09T20:00Z (submission 942b7735-efa0-47d4-a057-8ab824a8b8f0). Listing verified live 2026-08-08: "Semi Banaras Silk Pattu Pavadai for Baby Girl 18-24M for First Birthday" — matches.
       title: Silk Pattu Pavadai for Baby's First Birthday
       description: South Indian silk pavadai woven in the Kanchipuram and Salem style, sized for baby girls. Perfect for first-birthday photoshoots and pooja ceremonies. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7387352e-4e40-4231-bca7-e57676a7c5a0.jpg
       link: https://www.shopatmela.com/l/6a598f34-b298-48a9-bd82-56339821b117?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-first-birthday
 
     - name: Toddler Pattu Pavadai for Navratri and Festive Pooja
-      status: manual_pending
+      status: scheduled  # auto-scheduled via Blotato for 2026-08-09T21:30Z (submission dd72f764-9f59-4e13-9708-0251b7c37bb1). Listing verified live 2026-08-08: "Semi Banaras Silk Pattu Pavadai for Toddlers 18-24M for Navratri" — matches.
       title: Silk Pattu Pavadai for Navratri | Toddler Wear
       description: Toddler silk pavadai in the Kanchipuram silk-weaving style, made for Navratri golu visits and festive pooja days. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6433aedd-29b3-4384-8639-2236afc780c0.jpg
       link: https://www.shopatmela.com/l/6a598f45-5816-4bc4-bd5d-977f1f645a2a?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-navratri
 
     - name: Girls Pattu Pavadai for Festivals and Traditional Occasions
-      status: manual_pending
+      status: drift_blocked  # DO NOT POST as-is. 2026-08-08: listing 6a59a10b now renders "Handcrafted Girls Lehenga Choli 2-8Y for Wedding" ($31), not a South Indian pattu pavadai. Pin copy (silk pavadai, South Indian weave) contradicts the live product. Needs a correct pavadai listing or copy rewrite before posting.
       title: Girls Silk Pattu Pavadai | South Indian Weave
       description: Silk pavadai for girls, woven using South Indian silk techniques and finished for festival wear. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e5ffcc3b-09a8-42da-88d9-125995ad651e.jpg
       link: https://www.shopatmela.com/l/6a59a10b-4abd-4c7e-ad73-3f976ab7c0c8?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-festivals
 
     - name: Baby Girl Jacquard Pattu Pavadai for Temple Wear
-      status: manual_pending
+      status: drift_blocked  # DO NOT POST as-is. 2026-08-08: listing 6a59c4aa now renders "Silk Party Frock for Baby Girls 2-6Y for Birthdays" ($22), not a jacquard pattu pavadai. Pin copy contradicts the live product. Needs a correct pavadai listing or copy rewrite before posting.
       title: Jacquard Silk Pavadai for Temple Wear
       description: Jacquard silk pavadai set, woven for temple visits and festive family occasions. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-09ae64f7-3efb-42c5-a21e-dccb5566ebb7.jpg

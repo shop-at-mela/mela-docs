@@ -6,7 +6,7 @@ brand: Gully Labs
 brand_slug: gullylabs
 week: 1
 date_posted: "2026-07-30"
-status: live_ig_pinterest_pending  # Instagram confirmed live 2026-07-31 (user report). Pinterest still manual_pending — see pinterest.posting_mode.
+status: live  # Instagram live 2026-07-31; all 6 Pinterest pins auto-posted via Blotato 2026-08-08 (warmup cleared after account reconnect + 609 monthly views).
 platforms:
   - instagram
   - pinterest
@@ -78,49 +78,55 @@ instagram:
 
 # PINTEREST
 pinterest:
-  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  posting_mode: auto  # UPDATED 2026-08-08: Blotato warmup block cleared. All 6 pins auto-posted this date. Note: Blotato enforces max 10 Pinterest posts / 24h per account.
   boards:
     - name: Artisan Footwear
       board_id: "1103593152379641541"
 
   pins:
     - name: GL001 Buransh Red
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717504769
       title: Kullu Weave Sneakers | Handcrafted in India
       description: Sneakers featuring handwoven Kullu fabric from Himachal Pradesh, a regional shawl-weaving craft reworked into streetwear. Collab with Aryan Katoch. Gully Labs on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6847bc96-84fe-48d4-bd82-4b901238a7a4.jpg
       link: https://www.shopatmela.com/l/69fa0b94-0e86-4e55-9cef-e1e0dc4c1706?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=buransh-red
 
     - name: Gully Number 001 – Baaz Leila Navy
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717504984
       title: Navy Embroidered Sneakers | Gully Labs
       description: Embroidered navy sneakers made for dancers, skaters, and everyday movement. Gully Labs on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-749e3311-9b6d-4ed4-8831-4d5ea3291086.jpg
       link: https://www.shopatmela.com/l/69fa0ce9-3a28-4c5c-856c-d0daa078fa8f?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=baaz-leila-navy
 
     - name: Gully Number 001 – Baaz Indrani Edition
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717504987
       title: Dance-Inspired Embroidered Sneakers
       description: Sneakers stylized with PRXKHXR, embroidery inspired by the grace and rhythm of Indian classical dance. Gully Labs on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e854f05e-f9b5-4c90-8445-9f51c8ccc23b.jpg
       link: https://www.shopatmela.com/l/69fa0d8c-d047-4b90-ac33-e3c93a2d5735?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=baaz-indrani-edition
 
     - name: Gully Number 001 – Barfi Burgundy
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717504994
       title: Burgundy Suede Sneakers | Gully Labs
       description: Premium suede sneakers in burgundy, a tribute to the holiday season. Gully Labs on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b3ba3126-da44-42cf-a0c6-863adf4a9db3.jpg
       link: https://www.shopatmela.com/l/69fa0e7c-62cc-40fd-a11b-f17ac62b9511?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=barfi-burgundy
 
     - name: Gully Number 001 X RAGA – Aandhi Kobicha
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717505002
       title: Raw Jute Sneakers | Gully Labs x RAGA
       description: Sneakers crafted from raw jute with RAGA, built as a symbol of resilience and street culture. Gully Labs on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-dd3f8ffe-ae1e-4ad7-8af3-9e3e5918e970.jpg
       link: https://www.shopatmela.com/l/69fa0f2c-740c-4711-a16d-8b40d6e771d7?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w1&utm_content=aandhi-kobicha
 
     - name: Gully Number 002 – 1928 Turf Olive
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717505009
       title: Phulkari Embroidered Sneakers
       description: Vintage runner silhouette with gold-embroidered Phulkari patterns — Punjab's floral embroidery craft — on olive suede. Gully Labs on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3e6c70e6-f3ab-4c46-9c9c-72125a5665c8.jpg

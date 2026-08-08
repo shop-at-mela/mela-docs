@@ -89,7 +89,7 @@ instagram:
 
 # PINTEREST
 pinterest:
-  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  posting_mode: auto  # UPDATED 2026-08-08: Blotato warmup block cleared. 3 pins auto-scheduled for 2026-08-09 (deferred off the same-day run because Blotato caps Pinterest at 10 posts/24h and the cap was hit by Gully+Ankid). Garuda pin remains blocked (no live listing).
   boards:
     - name: Home and Kitchen
       board_id: "1103593152379723626"
@@ -106,7 +106,7 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-garuda
 
     - name: Airavata Coffee Mug – Owl
-      status: manual_pending  # ready once Instagram post is scheduled
+      status: scheduled  # auto-scheduled via Blotato for 2026-08-09T14:00Z (submission 707c5535-df4b-4760-8141-290622a22bbe)
       title: Hand-Painted Owl Motif Coffee Mug | Kaunteya
       description: Fine bone china mug hand-painted with Pattachitra-inspired owl motifs, wheel-thrown and finished by trained Indian artisans. A distinctive piece for your morning coffee or a thoughtful housewarming gift. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg
@@ -114,7 +114,7 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=airavata-mug-owl
 
     - name: Byah Jug
-      status: manual_pending  # ready once Instagram post is scheduled
+      status: scheduled  # auto-scheduled via Blotato for 2026-08-09T15:30Z (submission 8798b101-d905-4601-96af-02733a7dd865)
       title: Hand-Painted Ceramic Jug | Phad Art Tableware
       description: Fine bone china jug hand-decorated with black-and-gold motifs inspired by the Bappuji ki Phad folk-art tradition of Rajasthan. A striking serveware piece for festive gatherings or everyday table styling. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-520833c6-65e9-446e-be6a-81df37f73fd5.jpg
@@ -122,7 +122,7 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5cd6b3-7f0b-4bfb-96c3-36cc3648e94f?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w1&utm_content=byah-jug
 
     - name: Byah Coffee Mug
-      status: manual_pending  # ready once Instagram post is scheduled
+      status: scheduled  # auto-scheduled via Blotato for 2026-08-09T17:00Z (submission e157aabf-ec90-4f90-88e3-fb6e57eb5a93)
       title: Phad Art Coffee Mug | Hand-Painted Ceramic
       description: Fine bone china coffee mug hand-decorated in black and gold, inspired by the Bappuji ki Phad folk-painting tradition of Rajasthan. Wheel-thrown, hand-finished, and made for daily rituals. Kaunteya on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d461c194-5f2a-4870-9b18-cb406148928a.jpg

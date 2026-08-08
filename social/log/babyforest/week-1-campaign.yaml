@@ -61,7 +61,7 @@ instagram:
 
 # PINTEREST — manual draft (Blotato Pinterest warmup block, as of 2026-07-24)
 pinterest:
-  posting_mode: manual_pending
+  posting_mode: scheduled  # UPDATED 2026-08-08: Blotato warmup block cleared. Pin auto-scheduled via Blotato for 2026-08-09T18:30Z (submission 6d9df733-5ec5-4d99-943a-d96749784f8e). Deferred off same-day run due to Blotato 10-posts/24h Pinterest cap.
   board: baby_and_kids theme board (resolve via category-routing.yaml pinterest_boards before posting)
   link: https://shopatmela.com/brands/baby-forest?utm_source=pinterest&utm_medium=social&utm_campaign=babyforest_w1&utm_content=cold_pressed_oils
   title: Baby Forest Cold Pressed Baby Oils

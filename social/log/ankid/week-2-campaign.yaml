@@ -96,7 +96,7 @@ instagram:
 
 # PINTEREST
 pinterest:
-  posting_mode: manual  # Blotato hard-blocked: account needs 2wk/1-pin-day warmup + 100 views/mo. See category-routing.yaml -> cadence.
+  posting_mode: auto  # UPDATED 2026-08-08: Blotato warmup block cleared. All 4 pins auto-posted this date, using the IG Product Scene Placement renders (image_url in instagram.products). Blotato cap: 10 Pinterest posts / 24h per account.
   boards:
     - name: Gifting and Occasions
       board_id: "1103593152379723628"
@@ -104,7 +104,8 @@ pinterest:
 
   pins:
     - name: Hand Block Printed Bandana in Pink
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717505020
       title: Hand Block Printed Bandana for Kids | Ankid
       description: A hand block printed cotton bandana in rust gingham checks, printed with carved wooden blocks and finished with ruffle detailing. Made in India by Ankid.
       image_url: null
@@ -112,7 +113,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5ffd2f-a99f-4fce-87d1-9d8361b2d03c?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w2&utm_content=bandana-pink
 
     - name: Hand Block Printed Top and Pants Set for Toddlers
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717505028
       title: Hand Block Printed Top and Pants Set | Ankid
       description: A soft cotton top paired with hand block printed gingham pants, finished with a floral applique. Printed with carved wooden blocks and made in India. Ankid on Mela.
       image_url: null
@@ -120,7 +122,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6a60024b-6d51-41e1-84cd-ec35f5f5b8b4?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w2&utm_content=top-pants-set
 
     - name: Silk Bandhgala Set for Boys
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717505040
       title: Silk Bandhgala Set for Baby Boys | Ankid
       description: A classic bandhgala reimagined in silk chanderi with hand embroidered floral detail, paired with soft cotton pyjamas. Made in India by Ankid, for festive family occasions.
       image_url: null
@@ -128,7 +131,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5ffeee-70a0-40ee-bb55-16a6f473cc5f?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w2&utm_content=silk-bandhgala-set
 
     - name: Hand Appliqued Gathered Top for Toddlers
-      status: manual_pending
+      status: posted  # auto-posted via Blotato 2026-08-08
+      pin_url: https://www.pinterest.com/pin/1103593083717505046
       title: Hand Appliqued Top for Toddlers | Ankid
       description: A mustard gathered top in breathable linen blend, hand appliqued and embroidered with Colombo inspired motifs. Made in India by Ankid.
       image_url: null
