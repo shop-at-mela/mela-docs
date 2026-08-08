@@ -184,7 +184,8 @@ pinterest_boards:
     "Organic Baby Essentials":   { board_name: "Organic Baby Essentials", board_id: "1103593152379723630", status: live }
     beauty:                      { board_name: "Beauty Ritual",           board_id: "1103593152379723631", status: live }
     wellness:                    { board_name: "Beauty Ritual",           board_id: "1103593152379723631", status: live }  # same board as `beauty`
-    brand:                       { board_name: "Artisan Footwear",        board_id: "1103593152379641541", status: live }  # fashion/footwear theme board — already existed
+    brand:                       { board_name: "Artisan Footwear",        board_id: "1103593152379641541", status: live }  # FOOTWEAR ONLY (juttis, sneakers, sandals) — do not use for apparel
+    apparel:                     { board_name: "Indian Ethnic Wear & Hand-Embroidered Fashion", board_id: "1103593152379779116", status: live }  # created 2026-08-08; non-footwear fashion (kurtas, sarees, embroidery, handloom)
   existing_brand_boards:
     # ARCHIVED 2026-08-06 per board_type_policy above. Both per-brand boards were consolidated
     # into their theme boards (Fizzy Goblet's footwear pins -> "Artisan Footwear") and archived
@@ -268,10 +269,12 @@ categories:
     platform_lead: instagram
     personas: [arun, sarah]
     boards:
-      # `[brand]` = board THEMED around the brand's craft (e.g. "Artisan Footwear"),
-      # never the bare brand slug as the board's name/URL — see visual-style-guide.md
-      # → Pinterest Pins → Board naming. A brand-slug board can exist in addition.
-      pinterest: [brand]
+      # `fashion` splits by product type, not one blanket board — footwear (juttis,
+      # sneakers, sandals) -> `brand` (Artisan Footwear); everything else (kurtas,
+      # sarees, embroidered/handloom apparel) -> `apparel` (Indian Ethnic Wear &
+      # Hand-Embroidered Fashion, added 2026-08-08). Pick per-product at campaign
+      # time — see visual-style-guide.md → Pinterest Pins → Board naming.
+      pinterest: [brand, apparel]
       instagram: brand_spotlight
     format: brand_spotlight_carousel
     visual_accent: "embroidery / weave closeups; drape"
