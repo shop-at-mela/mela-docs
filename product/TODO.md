@@ -2,6 +2,15 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-08
+
+### Shipped
+- `feat(brands)` — Fixed Sharetribe Dev 429 rate limits (support-confirmed: 847 listings.query / 428 users.show over 7 days). Bestsellers now batch-fetch by cached `configBrands.bestsellerProductIds` pools in one chunked `listings.query({ ids })` (brands without a pool fall back to the live `author_id + pub_isBestseller` query — production path preserved); brand profiles share a TTL(15m) promise cache; `mapWithConcurrency` caps the `users.show` fan-out at 5. Wired into `fetchBrands`/`fetchFeaturedBrands`/`fetchHeroBrands`. 20 new tests, full suite (2351) green.
+
+### Next
+- [ ] Run `web-client/scripts/harvest-bestseller-ids.js` against the Dev env to populate the `bestsellerProductIds` pools (until then all brands use the throttled `author_id` fallback — correct, just not yet reduced).
+- [ ] (Optional, long tail) Apply the same `brandProfileCache` + `mapWithConcurrency` to `CategoryPage.duck.js`'s carousel and the `BrandSpotlight`/`NewFromIndia` local-state re-fetchers.
+
 ---
 
 ## 2026-08-06
