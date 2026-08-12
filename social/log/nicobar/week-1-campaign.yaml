@@ -39,9 +39,15 @@ instagram:
   # Blotato Product Scene Placement into a warm modern-Indian home scene, then
   # watermarked via templates/photo-watermark.html. Slide 2 = brand spotlight card
   # (templates/spotlight-card.html). Sources in log/nicobar/renders/.
+  # NOTE 2026-08-11: original auto-generated submission had this order reversed
+  # (spotlight card first, tea-set scene second). User manually swapped the slide
+  # order before publish so the lifestyle photo leads as slide 1 — see
+  # slide_order_correction observation below. Blotato re-hosts media on submit, so
+  # the URLs below are the actual as-published ones (differ from the pre-swap
+  # renders in log/nicobar/renders/); confirmed against blotato_list_posts id 6001899.
   image_url:
-    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/35707c89-753c-4c26-a06b-818064d31b6d.png  # slide 1: tea-set home scene (watermarked)
-    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/4ff7a466-4df1-4d31-ad65-5c8d19c453d9.png  # slide 2: Nicobar spotlight card
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cd548970-7a64-4e32-902d-a4c06ddd9929.png  # slide 1: tea-set home scene (watermarked)
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b77a3a52-f254-4706-991e-e180e59f6fb5.png  # slide 2: Nicobar spotlight card
 
   alt_text:
     - Nicobar glass teapot and two painted ceramic cups on a linen runner in a warm sunlit modern Indian living room.
@@ -54,7 +60,46 @@ ux_review:
     brand_story:
       result: pass
       note: Brand page loads with story + 500 products; states "ships to all 50 US states". Verified 2026-08-06.
-  observations: []
+  observations:
+    - theme: slide_order_correction
+      severity: low
+      status: resolved
+      description: >
+        Auto-generated submission had the spotlight/text card as slide 1 and the tea-set
+        lifestyle scene as slide 2. User manually swapped this before publish so the
+        photo leads. No documented spec mandates spotlight-card-first order (checked
+        social-content-strategy-prd.md and category-routing.yaml — neither specifies
+        slide order, only slide content). Every other published Mela carousel
+        (Ankid, Kaunteya, Gully Labs, ChooseKind) leads with product/lifestyle
+        photography, not a text/logo card, consistent with the cover-slide being the
+        scroll-stopper. Reviewed against general IG carousel practice: a branded
+        text card performs better as a closing/CTA slide than as the cover.
+      mitigation: >
+        Keep the corrected order. Recommend the pipeline default to photo-first,
+        spotlight-card-last for future brand_spotlight_carousel posts, so this doesn't
+        need a manual fix each time.
+    - theme: carousel_length_below_spec
+      severity: medium
+      status: open
+      description: >
+        social-content-strategy-prd.md (line 90) specs Brand Spotlight Carousels at
+        6-8 slides: "brand origin story, 3+ product highlights, link to Mela brand
+        page." This post shipped with 2 slides total (1 lifestyle photo + 1 spotlight
+        card) — zero dedicated product-highlight slides, well under both the spec and
+        the 4-6 image norm seen across every other Mela IG carousel this batch. The
+        caption itself claims a multi-category "world" (linen shirts, cotton dresses,
+        ceramic tableware, cushions, candles) that the 1-photo visual doesn't back up.
+        The stated reason for going product-post-light (Nicobar's individual listings
+        resolving to "closed"/drifted, see brand_story_not_product note above) only
+        blocks *linking* a specific SKU — it doesn't block using additional real
+        Nicobar lifestyle photos as illustrative imagery, since the whole post already
+        routes to the general brand page, not per-slide listing links.
+      mitigation: >
+        Not fixed retroactively (post already published 2026-08-09). For the next
+        Nicobar post or any brand_spotlight_carousel: pull 3-5 more real lifestyle/
+        product photos spanning the brand's category range (apparel + home, in
+        Nicobar's case) to fill out the spec's 6-8 slides, ending on the spotlight/
+        CTA card per the slide_order_correction note above.
 
 # NOTES
 notes:

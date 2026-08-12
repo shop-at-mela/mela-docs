@@ -127,6 +127,25 @@ ux_review:
       status: open
       description: No Pinterest board exists yet for festive/occasion baby & kids wear — the two configured baby_and_kids boards ("Modern Indian Nursery", "Organic Baby Essentials") are both framed around nursery goods and organic-materials essentials, not festive occasion wear like pattu pavadais.
       mitigation: Used "Modern Indian Nursery" as the closer fit for this batch. Consider a dedicated "Festive Kids Wear" or occasion-themed board if The Nesavu / similar festive-wear brands become a recurring category.
+    - theme: duplicate_publish_manual_vs_auto
+      severity: medium
+      status: open
+      description: >
+        Both Nesavu pins (Baby Girl First Birthday pavadai, Toddler Navratri pavadai) now exist
+        twice on Pinterest — once posted manually by the user a few days before 2026-08-08 while
+        the account was still in Blotato's Pinterest warmup block, and again auto-posted by
+        Blotato on 2026-08-09 (submissions 942b7735-efa0-47d4-a057-8ab824a8b8f0 and
+        dd72f764-9f59-4e13-9708-0251b7c37bb1) once the block cleared. The campaign log had these
+        pins queued as `status: scheduled` and had no record of the manual post, so Blotato had
+        no way to know they'd already gone up. Root cause: the Phase 2 freshness check only reads
+        campaign YAML history, which doesn't capture out-of-band manual posts made directly on a
+        platform.
+      mitigation: >
+        User to manually delete one copy of each duplicated pin on Pinterest (the Blotato-side
+        pin can stay since it's the one tracked in this log). Process fix for future warmup-block
+        clears: before auto-posting a backlog of queued pins, check the live Pinterest board via
+        blotato_list_pinterest_boards (or a manual look) for content already posted, not just
+        this log's `status` field.
 
 # NOTES
 notes:
