@@ -1,6 +1,6 @@
 # Mela Social Visual Style Guide
 
-**Last updated:** June 28, 2026  
+**Last updated:** August 11, 2026  
 **Inspired by:** Amala Earth aesthetic (@amala.earth, Pinterest: @amalaearth)
 
 ---
@@ -148,57 +148,23 @@ Frame craft as **alive and being made now**, not as a museum relic. Mela sells c
 
 ### Producing education visuals (Canva-free)
 
-Canva MCP is expensive. Reach for it last. In cost order:
+Cost order (the Tool decision procedure below applies it per-asset): **HTML/CSS → PNG** primary (free; hook/teaching cards, timelines, myth-vs-fact, sizing tables, maps — from the Mela templates, rendered at the target ratio via `claude-in-chrome`/headless Chrome) → **Blotato** for photographic stills HTML can't make → **SVG → PNG** for pure-vector infographics → **Canva** last (uncodeable one-offs only).
 
-1. **HTML/CSS → PNG (PRIMARY, zero marginal cost).** Hook cards, teaching cards, timelines, myth-vs-fact cards, sizing tables, and maps are all text + shape layouts — exactly what HTML/CSS does best. Author them from the reusable Mela card templates (brand kit encoded once: navy #2D2D7B, marigold #F0A030, earthy palette, serif display), fill in per-post text, and render to PNG at the exact aspect ratio (IG 1:1 or 4:5, Story 9:16, Pinterest 2:3) via headless Chrome / the `claude-in-chrome` browser. Version-controlled, repeatable, on-brand, free. Covers ~90% of what Canva was used for.
-2. **Blotato (already paid for) for photographic stills.** Process/material/place imagery HTML can't produce (carved block, dye, loom, dyer's hands). Use Blotato's image generation, **not** Product Scene Placement, under the illustrative license above.
-3. **SVG → PNG** for pure-vector infographics (diagrams, maps) — even lighter than HTML, no browser needed.
-4. **Canva** — reserved for one-off compositions the above genuinely can't do, only when the payoff justifies the cost.
+> Templates: `mela-docs/social/templates/` (built + rendering; see its README). `hook-card.html`, `shipping-timeline.html`, `myth-vs-fact.html`, shared tokens in `mela-kit.css`. Render: `./render.sh <file.html> <out.png> [square|story|pin]`. Copy a template, edit inside `<!-- EDIT -->` markers, render, post.
 
-> Template location: `mela-docs/social/templates/` — HTML card kit, **built and rendering** (see its README). Cards: `hook-card.html` (cultural slide-1 hook), `shipping-timeline.html` + `myth-vs-fact.html` (trust/service), shared brand tokens in `mela-kit.css`. Render: `./render.sh <file.html> <out.png> [square|story|pin]`. Copy a template, edit inside the `<!-- EDIT -->` markers, render, post. Add new card types here as they recur.
+### Tool decision procedure (run this, don't re-reason it)
 
-### Tool decision procedure (run this, don't re-reason it every time)
+Three gates in order. Rendered imagery forces Blotato; anything graphic goes to code; Canva is only the uncodeable one-off.
 
-Four tools, decided by two questions. Rendered imagery forces Blotato; anything graphic goes to code; Canva is only the uncodeable one-off. Run the gates in order.
+- **Gate 0 — motion?** Reel/video (e.g. a row-anchor teaser) → **Blotato motion collage**; audio + publish are a manual in-IG step (`category-routing.yaml` → `grid.reel_production_note`). Else it's static frames.
+- **Gate 1 — needs rendered imagery** (photographic or illustrative) that type+shapes can't make? Actual product → **real product photo** (never AI-generate a product). Craft material/process/place → **Blotato** (illustrative license: generic technique, never a specific brand's workshop). No such layer → Gate 2.
+- **Gate 2 — graphic/text layer.** Pure vector (map, diagram) → **SVG**. Text flow / tables / mixed → **HTML**. Needs freeform composition or stock art → **Canva**. (Judgment call: describable as boxes/lines/text/chart/table/photo = codeable; "an illustration of…" = Canva.)
 
-**Gate 0 — static or motion?**
-- **Motion** (reel / video, e.g. a row-anchor teaser) → **Blotato motion collage**; trending audio + final publish are a **manual in-Instagram step** (see `category-routing.yaml` → `grid.reel_production_note`). The rest of this procedure is for **static frames** (including each frame of a slideshow).
-
-**Gate 1 — does any layer need *rendered imagery* (photographic OR illustrative/painterly) that can't be built from type + shapes?**
-- Layer is an **actual product** → **real product photo** (never AI-generate a product).
-- Layer is **craft material / process / place, or a deliberately illustrated style** → **Blotato** image-gen (illustrative license: illustrates the technique generically, never labeled as a specific brand's workshop/artisan).
-- **No such layer** → skip to Gate 2.
-
-**Gate 2 — the graphic / text layer: expressible as text + shapes + lines + charts + tables + a photo?**
-- **Yes, pure vector** (map, diagram, icon set) → **SVG**.
-- **Yes, with text flow / tables / mixed content** → **HTML**.
-- **No** (needs freeform manual composition or stock art) → **Canva**.
-
-```python
-def choose_tool(asset):
-    if asset.is_motion:
-        return "Blotato collage (+ manual audio/publish in IG)"
-    img = None
-    if asset.needs_rendered_imagery:            # photographic OR illustrative
-        img = "real product photo" if asset.is_actual_product else "Blotato"
-        if not asset.has_text_or_graphic_overlay:
-            return img
-    if asset.expressible_in_code:               # type, shapes, charts, tables, maps
-        layer = "SVG" if asset.is_pure_vector else "HTML"
-    else:
-        layer = "Canva"
-    return layer if img is None else f"{img} + {layer} composited on top"
-```
-
-**The one judgment call — `expressible_in_code`:** if you can describe the slide as boxes, lines, text, a chart, a table, or a photo → codeable (HTML/SVG). If describing it needs "an illustration of…" or "a hand-arranged collage of…" → Canva.
-
-**Non-negotiable guardrails (these are *why* the branches are what they are):**
-- **Exact / factual text NEVER goes inside a Blotato-generated layer.** Diffusion models garble text — shipping days, sizes, prices, claims come out as gibberish. The picture comes from Blotato; the words are composited on top via HTML/SVG. This is why "photo + headline" is **always a hybrid**, never Blotato-with-text.
-- **Watermark via the HTML/SVG layer, not a Blotato prompt.** Blotato watermark text is an unsolved gap (see campaign notes) — bake "Discovered on Mela" into the composited layer for reliability. Another reason to composite over a Blotato still rather than prompt for text.
-- **Multi-aspect-ratio → weight toward HTML/SVG.** One asset usually ships IG 1:1 + Story 9:16 + Pinterest 2:3; a responsive HTML/SVG file re-renders all three for free, while Canva/Blotato triples the work.
-- **Real charts → load the `dataviz` skill first**, not ad-hoc chart HTML (keeps palette + accessibility consistent). A simple timeline or table is fine in plain HTML.
-
-**Why Canva is genuinely last, not just "expensive":** the usual "Canva is faster for a one-off" logic assumes a *human* hand-codes the HTML. Here the agent writes the HTML in seconds, so HTML's per-asset effort ≈ 0 even for one-offs. Canva only wins when Gate 2 is a hard "no" (truly uncodeable).
+**Non-negotiable guardrails:**
+- **Exact/factual text NEVER goes inside a Blotato layer** (diffusion garbles it). Blotato makes the picture; HTML/SVG composites the words on top — "photo + headline" is always a hybrid.
+- **Watermark via the HTML/SVG layer**, not a Blotato prompt (Blotato watermark text is an unsolved gap).
+- **Multi-aspect-ratio → prefer HTML/SVG** (one responsive file re-renders IG 1:1 + Story 9:16 + Pinterest 2:3 for free).
+- **Real charts → load the `dataviz` skill first** (a simple timeline/table is fine in plain HTML).
 
 **Cheat sheet:**
 
@@ -215,6 +181,64 @@ def choose_tool(asset):
 | Photo with a headline / factual text over it | 1 + 2 | Blotato photo + HTML text composited |
 | Row-anchor teaser | 0 (motion) | Blotato collage + manual audio/publish |
 | Freeform collage needing stock art | 2 = no | Canva |
+
+---
+
+## Diaspora Anchoring (Audience Principle)
+
+> Added Aug 2026, after a persona-panel review found the batch was correctly *Indian-anchored* but not *diaspora-anchored*. Sibling to the **"Indian" Anchoring Principle** in `@mela-docs/UXR/buyer-personas.md` — read both together.
+
+Our posts already get **Indian Anchoring** right: cultural origin lives at the *product* layer ("hand embroidered in Lucknow," "made in Tamil Nadu"), never labeling the *user* by ethnicity. Keep doing that. The gap this section closes is different: a caption can be flawlessly Indian-anchored and still read as **generic** — it could run verbatim on the brand's own India Instagram, with a "Ships to the US" line bolted on as the only US signal. That post is not written *for the US shopper*; it is written *about the product* with US shipping as a footnote.
+
+### The rule
+
+> **Anchor the US shopper's *situation*, never their *identity*.**
+
+There are three layers, and the same discipline as the Indian-Anchoring table applies — the third one is the trap:
+
+| Layer | Example | Effect |
+|---|---|---|
+| **Product origin** (Indian Anchoring) | "Hand embroidered in Lucknow" | ✅ Always. Trust + provenance. |
+| **Shopper situation** (Diaspora Anchoring) | "The good Diwali china never survives the suitcase from India." | ✅ This is the missing layer. Makes the US shopper feel *seen* without naming their ethnicity. |
+| **Shopper identity** | "For Indian families in the US" / "your Indian finds" | ❌ Never. Reduces the user to their ethnicity — harms all four personas (see buyer-personas.md). |
+
+The situation layer draws on the *lived reality* of buying Indian goods in the US — none of which requires labeling anyone:
+- **The suitcase economy** — relying on family visits to bring things over, planning two months ahead.
+- **Discovery difficulty** — the local Indian store is 40 minutes away, understocked, or sells machine-made lookalikes. (This is Mela's whole "hard to find" wedge — foreground it.)
+- **Occasion-in-America** — hosting Diwali / a first birthday / Navratri far from where the goods are made.
+- **Restocking friction** — the thing you love isn't on the US shelf and doesn't ship easily on its own.
+
+### Before / after (situation, not identity)
+
+| Generic (current) | Diaspora-anchored |
+|---|---|
+| "Set your festive table with a story this Diwali." | "The good Diwali china never survives the suitcase from India. Kaunteya's is hand painted in Jaipur and ships straight to your door." |
+| "Two ingredients. One press. Baby Forest makes cold pressed baby oils." | "You used to wait for your mom's next visit to restock the good baby oil. Baby Forest ships it from India in about two weeks." |
+| "Real chikankari or a printed lookalike?" | "Your local Indian store's chikankari is usually machine printed. Here is how to spot the real hand embroidered piece before you buy." |
+
+Note what did **not** change: origin stays at the product layer, and no caption names the reader's ethnicity. Only the *opening hook* moved from product-fact to shopper-situation.
+
+### Where the anchor must live (most people never read the caption body)
+
+Reality check: on Instagram the caption truncates at ~125 chars and most people never tap "more"; on Reels the audio + on-screen text carry the message; on Pinterest humans scan the image + title while the description is mostly SEO the algorithm reads. **A situation hook buried in caption paragraph two reaches almost no one.** So Diaspora Anchoring is a *visual-first* principle — carry it in the layers people actually consume, in priority order:
+
+1. **The visual / scene (primary — ~90% of the impression).** Stage the **US context**: a Diwali table in an American home, the product in a modern US kitchen or nursery. The Mela baseline (earthy, warm) is correct but reads as "could be Jaipur"; one subtle US-context cue anchors the audience before a word is read. Product-photo posts can't carry text overlays, so for those **the scene *is* the anchor.**
+2. **The hook frame / on-image text** (reels + education/hook cards — these are allowed text; product photos are not). Reels: first 3 seconds + on-screen line + audio choice. Hook cards: slide 1. Put the situation line here.
+3. **The first caption line (~125 chars, pre-truncation).** The one caption element everyone sees. Lead with the situation hook, never bury it in paragraph two. The before/after rewrites above are *this line*.
+4. **Caption body + Pinterest description + alt text (reinforcement + SEO).** Read by the high-intent minority who expand and save (also the likeliest to click through) and by the search algorithm. Still anchor here — just not the primary carrier.
+
+Steps 1–2 are what reach the ~80% who never read the caption; step 3 is the sliver of caption everyone sees. Don't let the anchor live only in step 4.
+
+### Per-persona quick reference (situation hooks that land)
+
+| Persona | Situation that resonates | Do NOT |
+|---|---|---|
+| **Neha** (first-gen) | Suitcase economy, restocking, fair price vs. what she'd pay in India | Debut only brands she's never heard of; skip all price/value framing |
+| **Priya** (mixed heritage) | Hosting the occasion in the US, will it fit a US-sized kid, dignified not costume-y | Assume she knows the brand; omit US sizing |
+| **Arun** (second-gen) | "Never had this growing up," craft explained as a safe entry point | Gatekeep or assume cultural knowledge |
+| **Sarah** (conscious American parent) | Genuine sustainability she can't find on Etsy, **certifications** | Lead with Indian heritage — it's her anti-signal; she isn't shopping her identity |
+
+**Coverage watch-out (from the Aug 2026 panel):** the batch over-indexed on craft-heritage hooks (Arun's lane) and under-served Sarah (certifications-first) and Neha (familiar brands + price). Vary the situation hook across a batch so all four personas get served, not just the heritage reclaimer.
 
 ---
 
@@ -236,22 +260,20 @@ Applies to every caption, pin description, and Story text:
 
 **Caption approach:**
 - **Lead is persona-led** — the selected persona sets the opening (Sarah → certification, Priya → occasion, Arun → craft origin, Neha → regional specificity). Persona is chosen per post in `/social-review` Phase 2; see the caption table in `social-content-strategy-prd.md` for the leads + guardrails (not restated here).
+- **Anchor the shopper's situation, not just the product** — before finalizing the hook, check it against [Diaspora Anchoring](#diaspora-anchoring-audience-principle). A caption that could run verbatim on the brand's own India feed (product-fact hook + "Ships to the US" footnote) is under-anchored; open on the US shopper's situation instead.
 - Then: brief occasion/use → craft detail → CTA "Discover [Brand] on Mela →"
 - **Include product list** — "Featured in this carousel: [product 1, product 2, ...]" (aids discoverability on destination page)
 - NO price in caption; NO text overlays on images
 
 ### Instagram Grid Row Anchors (Theme Cards & Teaser Reels)
 
-The Instagram **feed** is laid out as **theme-rows of 3**. A weekly `/social-launch` batch = **3 rows (9 tiles): 2 brand-themed rows + 1 education row.** Each row shares one brand or one education theme, with a navigation **anchor** in the **center** tile. Across weeks the center column forms a vertical "spine" of anchors that lets profile visitors (esp. Arun, Priya) navigate. Row planning lives in `/social-launch`; routing config in `category-routing.yaml` → `grid`.
+Row mechanics (row = 3 tiles, weekly batch = 3 rows, composition, planning, ordering) are canonical in `category-routing.yaml` → `grid`; this section covers the anchor's **visual** design. The anchor is the center tile of a brand row.
 
-- **Brand-themed row composition:** a brand row is `[craft-story / founder / artisan tile] · [center ANCHOR] · [product tile]` — story + product, **not** a product catalog (inspiration-first). Only the product tile cross-posts to Pinterest.
-- **3:4 grid crop (critical):** The IG profile grid crops feed posts to **3:4 portrait**. Design the anchor at the post's native ratio but keep the **theme title / wordmark / logo inside the centered 3:4 safe zone** — anything near the top/bottom edge clips on the grid. This is the one spec that most often breaks an anchor.
-- **Anchor forms (reels-first):**
-  - **Teaser reel** (DEFAULT — reels carry the reach): motion photo-collage — cut-out craft elements (jewelry, textiles, dried flowers, brass vessels, motifs tied to the theme) drift and layer over a textured ground, then **converge into the brand/theme wordmark**. Trending Sufi/folk audio; one-line curiosity caption that builds intrigue, doesn't explain. **Show no product directly.** Semi-automated: Blotato can build the collage, but **audio + final publish are a manual step natively in Instagram** (Blotato templates are silent). ~2 anchor reels/week.
-  - **Theme card** (FALLBACK — when a reel can't be produced that week): static Canva graphic — Mela brand kit (navy #2D2D7B + marigold #F0A030), the brand/category/theme name as the legible focal element, earthy baseline. Cheap to produce.
-- **Converge-line gating:** the wordmark reveal may read **"coming soon"** ONLY for a brand genuinely not-yet-live on Mela. For a live brand it must read **"Now on Mela" / "Discover on Mela"** — never imply unavailability.
-- **Side tiles:** the flanking posts (craft/founder story on one side, product on the other) follow the normal category styling below, tuned to sit tonally with the anchor.
-- **Watermark:** anchors still carry the "Discovered on [Mela Logo]" watermark, but subordinate to the theme wordmark.
+- **3:4 grid crop (critical):** the IG profile grid crops feed posts to **3:4 portrait**. Design at native ratio but keep the theme title/wordmark/logo inside the centered 3:4 safe zone — text near the top/bottom edge clips. This is what most often breaks an anchor.
+- **Teaser reel (default):** motion photo-collage — cut-out craft elements (jewelry, textiles, brass, motifs) drift over a textured ground, then converge into the brand/theme wordmark. Trending Sufi/folk audio; one-line curiosity caption; show no product directly. Semi-automated (audio + publish are manual in IG).
+- **Theme card (fallback):** static graphic in the Mela brand kit (navy #2D2D7B + marigold #F0A030), theme name as the legible focal element.
+- **Converge-line gating:** "coming soon" ONLY for a not-yet-live brand; live brands read "Now on Mela / Discover on Mela."
+- **Watermark:** anchors carry the "Discovered on [Mela Logo]" watermark, subordinate to the wordmark.
 
 ### Instagram Stories
 - Quick product feature: "[Product] · Handcrafted in [region]"
@@ -265,9 +287,9 @@ The Instagram **feed** is laid out as **theme-rows of 3**. A weekly `/social-lau
 - **Style:** Lifestyle scene with product prominent
 - **Text on pin (title):** Keyword-led, not a bare SKU name. ✓ "Gold Wedding Wedges | Handcrafted in India" ✗ "24K Magic Criss Cross Wedge" — the product's own name can appear, but lead with what someone would actually search
 - **Description:** Keyword-rich, 2–3 sentences, no price
-- **Board naming:** craft/occasion-descriptive, never a bare brand slug as the sole board (e.g. `artisan-footwear`, `Heritage Gifting` — not `fizzy-goblet`). A brand-specific board can exist *in addition*, never instead of a discoverable one — nobody searches Pinterest for a brand slug they've never heard of
-- **Strategy:** manual warmup can run 3–5 pins/day, not capped at 1/day — Pinterest volume isn't gated by the same "warmup" concept as Instagram's algorithm; cadence is canonical in `category-routing.yaml` → `cadence`
-- **Link strategy:** Use specific product URLs, not brand page — `https://www.shopatmela.com/l/{Dev_Listing_ID}` (extract from classified CSV) — with UTM params per `category-routing.yaml` → `tracking`
+- **Board naming:** craft/occasion-descriptive, never a bare brand slug as the sole board (e.g. `artisan-footwear`, `Heritage Gifting` — not `fizzy-goblet`). A brand-specific board can exist *in addition*, never instead of a discoverable one. Full policy: `category-routing.yaml` → `pinterest_boards`
+- **Cadence + cap:** canonical in `category-routing.yaml` → `cadence` (posts via Blotato, cap 10/24h per account)
+- **Link strategy:** specific product URL, not brand page — `https://www.shopatmela.com/l/{Dev_Listing_ID}` (from classified CSV) + UTM per `category-routing.yaml` → `tracking`
 
 **Pin description template:**
 > [Brand Name] Handcrafted [Product Type] | [Craft Technique] [Regional Origin] | Sustainable artisan goods from India, shipped to the US.

@@ -49,44 +49,20 @@ optional secondary destination" stance.
 
 ### 2b · Format experiment: education carousels (test, not a committed lane)
 
-**Decision (2026-08-06).** Pinterest's native composer now offers multi-image collages (up to 5)
-and carousel/video formats. This does **not** change the plan for **product** pins — a single-image
-pin linking to one listing URL is what carries Rich Pins (foundation §1) and the Phase 7b
-scent-match (pin click lands on that listing's exact lead image). A collage has no single source
-listing, so native collages/carousels for product pins would forfeit both. **Do not use them for
-product pins.**
+**Decision (2026-08-06).** Pinterest's native composer offers multi-image collages/carousels. **Never for product pins** — a single-image pin linking to one listing is what carries Rich Pins (§1) and the Phase 7b scent-match; a collage has no single source listing and forfeits both.
 
-The one opening: **education content**, which is IG-only today and has neither Rich Pin product
-metadata to lose nor a scent-match to break. Pinterest is a search + planning engine, and
-how-to/explainer carousels ("How to style a Diwali table," "What is Pattachitra") are exactly what
-users search and save there. Run this as a **manual, in-composer test** (not Blotato — the API flow
-never opens the composer):
-
-- **Scope:** 1–2 education carousels/month, posted by hand to the relevant category or occasion board.
-- **Source:** reuse an existing `education-topics.yaml` topic + its Education Visual System slides
-  (slide 1 = hook, not product). No product tagging.
-- **Kill/keep at 30–60 days:** keep only if carousels earn materially more saves/impressions than
-  single-image education pins would; otherwise drop and stay single-image. Judge on Pinterest's
-  long search tail, not week-1 numbers.
-- **Everything else in that composer** (native text/logo/font tools, batch, crop) is redundant with
-  the HTML→PNG + watermark toolchain and the Blotato batch — no reason to move off-pipeline for it.
+The one opening: **education content** (IG-only today, no Rich Pin metadata or scent-match to lose). How-to/explainer carousels ("How to style a Diwali table," "What is Pattachitra") are what users search and save. Run as a **manual, in-composer test** (not Blotato):
+- **Scope:** 1–2/month, posted by hand to the relevant category/occasion board.
+- **Source:** an existing `education-topics.yaml` topic + its Education Visual System slides (slide 1 = hook). No product tagging.
+- **Kill/keep at 30–60 days:** keep only if carousels beat single-image education pins on saves/impressions (long-tail, not week-1).
 
 ## 3 · Tags on Pinterest
 
-"Tags" means four different things — and the instinct imported from Instagram (hashtags) is the
-one that doesn't work:
-
-1. **Hashtags → effectively dead. Skip them.** Deprecated years ago; not clickable, ~zero ranking
-   weight. Put the energy into **keywords** (title, description, board name/description, alt text) —
-   that *is* Pinterest's tagging mechanism. 1–2 hashtags max if you must.
-2. **Interest/topic tags at pin creation → use them.** On Idea/video pins Pinterest lets you add
-   relevant topic tags; pick the genuinely relevant ones, don't stuff.
-3. **Tagged products (shoppable pins) → later goal.** Once the catalog/Rich Pins mature, tag
-   products on Idea/video pins for shoppability. Ties to the Catalog Feed target in `cadence`.
-4. **The "Pinterest Tag" → a different thing: a conversion-tracking pixel** for shopatmela.com.
-   Not discovery. Worth installing once outbound clicks exist (pairs with the GA4/UTM tracking).
-
-**Bottom line:** keywords, not hashtags.
+**Keywords, not hashtags.** "Tags" means four things:
+1. **Hashtags → dead, skip.** ~Zero ranking weight. Keywords (title, description, board name/description, alt text) are Pinterest's real tagging mechanism. 1–2 hashtags max if you must.
+2. **Interest/topic tags at pin creation → use** the genuinely relevant ones (don't stuff).
+3. **Tagged products (shoppable) → later**, once catalog/Rich Pins mature (ties to the Catalog Feed target in `cadence`).
+4. **"Pinterest Tag" → a conversion pixel** for shopatmela.com, not discovery. Install once outbound clicks exist (pairs with GA4/UTM).
 
 ---
 
@@ -157,7 +133,7 @@ Board ids from `category-routing.yaml → pinterest_boards.boards`.
 - **Craft/ingredient:** ubtan · turmeric skincare · cold pressed oil
 - **Intent:** self-care ritual · Ayurvedic beauty routine · Indian skincare brands
 
-### fashion → *Artisan Footwear* (`…1541`) + existing brand boards (Fizzy Goblet, The Alternate)
+### fashion → *Artisan Footwear* (`…1541`, footwear) · *Indian Ethnic Wear & Hand-Embroidered Fashion* (`…9116`, apparel)
 - **Primary:** Indian ethnic wear · handloom saree · block print dress · embroidered juttis
 - **Footwear (Artisan Footwear board):** handmade juttis · embroidered flats · Indian wedding shoes
 - **Craft:** Chikankari · Bandhani · Ikat · handloom
@@ -200,9 +176,7 @@ Pinterest board descriptions cap at 500 chars; these run ~250–350.
 | …3631 | Beauty Ritual | **Ayurvedic Skincare & Natural Beauty** | Ayurvedic skincare and natural beauty from independent Indian brands — herbal hair oils, ubtan, turmeric and cold-pressed formulations. Clean beauty rituals rooted in Indian tradition, discovered on Mela. |
 | …1541 | Artisan Footwear | **Handmade Indian Juttis & Artisan Footwear** | Handmade Indian juttis and artisan footwear — embroidered flats, wedding shoes, and festive footwear crafted by Indian artisans. Ethnic wear footwear and gifting from independent Indian brands on Mela. |
 
-**Secondary brand boards** (keep as-is; still give a keyword-rich description, never leave blank):
-- *Fizzy Goblet* — `Hand-embroidered juttis and statement Indian footwear from Fizzy Goblet — colorful, handcrafted shoes for weddings and festive occasions.`
-- *The Alternate* — `[fill brand craft + category], handmade in India by The Alternate.` *(need the brand's actual category to keyword this properly)*
+**Brand boards** *Fizzy Goblet* and *The Alternate* were **archived 2026-08-06** (consolidated into theme boards) — do not route pins to them. Brand boards are deferred until post-traction (see §2).
 
 **Fallback board** *Brands from India* — `Independent Indian brands — handmade fashion, jewelry, home decor, and gifts from across India, curated and shipped to the US. Discover on Mela.`
 
