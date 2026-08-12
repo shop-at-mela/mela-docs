@@ -16,6 +16,8 @@
 
 ---
 
+> **Build note (2026-08-12):** `add-to-cart-restoration-prd.md` extends this feature — the PDP's "Add to Cart" CTA (restored, replacing "Shop from {brand}" for in-stock listings) now writes to this same `savedListings` mechanism (tagged `source: 'add_to_cart_button'` vs. the heart icon's `source: 'heart_icon'`), and `SavedPage` gains a per-item "Shop on {brand}" CTA plus an early-access-framed sign-up push. `/saved` is **not** renamed "Cart" — see that PRD §3 for the naming decision. The "Saved" identity, copy system (§3 below), and Redux architecture (§4 below) are unchanged by that work.
+
 ## Build Status Summary *(updated 2026-05-25)*
 
 | Item | Component / File | Status |

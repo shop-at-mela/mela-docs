@@ -6,6 +6,8 @@
 **Owner:** Developer + PM
 
 > **Build note (2026-05-25):** The pre-redirect modal was shipped as `RedirectTrustSheet` + `SentimentSheet` (in `src/components/`) rather than the `ShopifyRedirectModal` name specified here. The implementation was absorbed into `trust-conversion-signals-prd.md`, which is the authoritative tracking document for this feature. ACs below are updated to reflect actual shipping status.
+>
+> **Build note (2026-08-12):** The trigger point described below (PDP "Shop from {brand}" CTA opens `RedirectTrustSheet` directly) is being relocated per `add-to-cart-restoration-prd.md` — in-stock PDP listings now show "Add to Cart" instead, and `RedirectTrustSheet` fires from `/saved` when the shopper clicks a per-item "Shop on {brand}" CTA. Out-of-stock PDP listings keep the original direct-trigger behavior unchanged. `RedirectTrustSheet`'s content, session-dedupe, and feedback mechanics are unchanged — only the trigger point moves for the in-stock case.
 
 ---
 
