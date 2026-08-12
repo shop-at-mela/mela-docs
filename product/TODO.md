@@ -2,6 +2,21 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-12
+
+### Shipped
+- `feat(saved-listings)` — `toggleSaveListing` now tags every save/unsave with a `source` (`add_to_cart_button` | `heart_icon`) and fires a new `saved_listing_toggle` analytics event; anonymous `SavedItemsBanner` toast suppressed for Add-to-Cart-sourced saves.
+- `feat(pdp)` — Restored "Add to Cart" CTA on all three PDP order-form surfaces (`ProductOrderForm`, `OrderPanel` mobile sticky bar, `InquiryWithoutPaymentForm`) for in-stock brand+productUrl listings, replacing the direct "Shop from {brand}" redirect. New `SavedListingButton` `variant="cta"`. Out-of-stock path unchanged.
+- `feat(saved-page)` — Relocated the brand redirect + `RedirectTrustSheet` trust/feedback modal from the PDP to `/saved`, triggered per-item via a new opt-in `onShopNow` prop on `ListingCard`. Added `SavedPageSignupPush` (early-access copy, swappable) and an item-count line.
+- `docs(prd)` — Added `add-to-cart-restoration-prd.md`, marked ✅ Shipped in `PRD_TRACKER.md`, cross-referenced in `pre-redirect-sentiment-prd.md` / `saved-items-pasand-prd.md`, and documented `saved_listing_toggle` in `crossshop-tracking.md`.
+
+### Next
+- [ ] Live browser QA of the Add-to-Cart/SavedPage flow was not done this session (only unit tests) — founder has follow-up implementation feedback to work through.
+- [ ] `SavedPageSignupPush`'s traffic-split mechanism (PRD §8) is still an open PMM question — no A/B framework exists yet, ships as a simple `copyVariant` prop only.
+- [ ] Unrelated bug found while testing: two independent Sharetribe SDK client instances (`src/index.js`, `src/util/homepageSdk.js`) defaulted to the same cookie-backed token store, racing on concurrent anonymous-token refreshes and throwing "Unknown token type: undefined" on homepage/`/brands` public queries. Fix drafted (`index.js` now imports the single shared instance from `homepageSdk.js`) but **left uncommitted** — still being verified in-browser, not yet confirmed fully resolved.
+
+---
+
 ## 2026-08-08
 
 ### Shipped

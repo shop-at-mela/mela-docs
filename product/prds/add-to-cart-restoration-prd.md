@@ -141,20 +141,24 @@ See `mela-docs/technical/analytics/crossshop-tracking.md` for the full event sch
 
 ## 9. Acceptance Criteria
 
-- [ ] In-stock brand+productUrl PDP listings show "Add to Cart," not "Shop from {brand}"
-- [ ] Clicking Add to Cart does not open `RedirectTrustSheet` and does not open a new tab
-- [ ] Clicking Add to Cart fires `saved_listing_toggle` with `source: 'add_to_cart_button'`
-- [ ] Out-of-stock brand+productUrl PDP listings are unchanged (still "View on {brand}," direct redirect + trust sheet)
-- [ ] All three PDP CTA surfaces (`ProductOrderForm`, `OrderPanel` mobile bar, `InquiryWithoutPaymentForm`) reflect the change consistently
-- [ ] `/saved` shows a "Shop on {brand} →" CTA on each saved item with `brand` + `productUrl` (stock-aware copy)
-- [ ] Clicking that CTA opens `RedirectTrustSheet` on the first click of the session (any item, any brand) and redirects directly on subsequent clicks
-- [ ] `RedirectTrustSheet`'s trust/disclosure copy is unmodified from its current PDP version
-- [ ] `brand_clickout` fires (unchanged schema) when the shopper actually continues from `/saved`
-- [ ] Heart-icon saves still fire `saved_listing_toggle` with `source: 'heart_icon'` and still trigger the anonymous `SavedItemsBanner` toast
-- [ ] Add-to-Cart saves (anon) do NOT trigger the `SavedItemsBanner` toast
-- [ ] `/saved` route, component, and translation identity remain "Saved" — no "Cart" naming introduced in code, URL, or page heading
-- [ ] `SavedPageSignupPush` renders only for `!isAuthenticated` users with ≥1 anon-saved item, using the `earlyAccess` copy by default
-- [ ] 200-item saved cap: Add-to-Cart button renders disabled + tooltip, not a silent no-op
+> Checked items are implemented in code and covered by unit tests (`OrderPanel.test.js`, full suite green). Browser/manual QA is still in progress — see build note below.
+
+- [x] In-stock brand+productUrl PDP listings show "Add to Cart," not "Shop from {brand}"
+- [x] Clicking Add to Cart does not open `RedirectTrustSheet` and does not open a new tab
+- [x] Clicking Add to Cart fires `saved_listing_toggle` with `source: 'add_to_cart_button'`
+- [x] Out-of-stock brand+productUrl PDP listings are unchanged (still "View on {brand}," direct redirect + trust sheet)
+- [x] All three PDP CTA surfaces (`ProductOrderForm`, `OrderPanel` mobile bar, `InquiryWithoutPaymentForm`) reflect the change consistently
+- [x] `/saved` shows a "Shop on {brand} →" CTA on each saved item with `brand` + `productUrl` (stock-aware copy)
+- [x] Clicking that CTA opens `RedirectTrustSheet` on the first click of the session (any item, any brand) and redirects directly on subsequent clicks
+- [x] `RedirectTrustSheet`'s trust/disclosure copy is unmodified from its current PDP version
+- [x] `brand_clickout` fires (unchanged schema) when the shopper actually continues from `/saved`
+- [x] Heart-icon saves still fire `saved_listing_toggle` with `source: 'heart_icon'` and still trigger the anonymous `SavedItemsBanner` toast
+- [x] Add-to-Cart saves (anon) do NOT trigger the `SavedItemsBanner` toast
+- [x] `/saved` route, component, and translation identity remain "Saved" — no "Cart" naming introduced in code, URL, or page heading
+- [x] `SavedPageSignupPush` renders only for `!isAuthenticated` users with ≥1 anon-saved item, using the `earlyAccess` copy by default
+- [x] 200-item saved cap: Add-to-Cart button renders disabled + tooltip, not a silent no-op
+
+> **Build note (2026-08-12):** Implementation shipped across three commits in `web-client` (`339d022b3`, `f9d502237`, `332def44f`). Founder has follow-up feedback on the implementation to work through in a follow-up session — treat this AC list as "code-complete," not "final."
 
 ---
 

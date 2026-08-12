@@ -109,11 +109,11 @@ This means the event fires exactly once per actual outbound redirect, regardless
 
 **"Brand card CTAs" (P0.6 wording) does not correspond to a real surface.** `BrandCard.js`, `BrandCardHome.js`, and `BrandHeroCard.js` (the homepage hero carousel, `/brands` directory grid, and featured-partners row) all link to the brand's **Mela** page via `NamedLink` — none of them has an outbound Shopify link today, so none fires (or should fire) `brand_clickout`. The only outbound-capable brand-level surface is the brand page's own CTA (above). If a future design adds an outbound "shop now" action directly on a brand card, it should route through the same `openBrandStorefront` helper.
 
-### Planned (not yet built): Add-to-Cart relocation moves in-stock PDP surfaces off `brand_clickout`
+### Add-to-Cart relocation moves in-stock PDP surfaces off `brand_clickout`
 
-**Status**: 📋 Planned per `add-to-cart-restoration-prd.md` (2026-08-12) — not implemented, not live-verified. The rest of this document describes what's currently shipped; this subsection is the exception, flagged explicitly so it isn't mistaken for current behavior.
+**Status**: ✅ Shipped per `add-to-cart-restoration-prd.md` (code-complete 2026-08-12, unit-tested; not yet live-verified in a running browser session — founder has follow-up implementation feedback pending).
 
-Once built, the three PDP surfaces listed in the table above (`OrderPanel.js`, `ProductOrderForm.js`, `InquiryWithoutPaymentForm.js`) stop firing `brand_clickout` for **in-stock** brand+productUrl listings — those show "Add to Cart" instead, which fires a new `saved_listing_toggle` event (schema below) and does not redirect or open `RedirectTrustSheet`. The **out-of-stock** path on all three surfaces is unchanged (still fires `brand_clickout` via `RedirectTrustSheet`/`openBrandStorefront` directly, same as today).
+The three PDP surfaces listed in the table above (`OrderPanel.js`, `ProductOrderForm.js`, `InquiryWithoutPaymentForm.js`) now stop firing `brand_clickout` for **in-stock** brand+productUrl listings — those show "Add to Cart" instead, which fires the new `saved_listing_toggle` event (schema below) and does not redirect or open `RedirectTrustSheet`. The **out-of-stock** path on all three surfaces is unchanged (still fires `brand_clickout` via `RedirectTrustSheet`/`openBrandStorefront` directly, same as before).
 
 `brand_clickout`'s schema and `openBrandStorefront` mechanics (§3 above) are otherwise unchanged — a **fifth surface** is added: `SavedPage` (`/saved`), where each saved item with `brand`+`productUrl` gets a "Shop on {brand} →" CTA that routes through the same `handleShopNow` → `RedirectTrustSheet` (first click of session, session-global dedupe, not per-brand) → `openBrandStorefront` pipeline the PDP uses today. So for in-stock items, `brand_clickout` now fires later and from a different page than the original Add-to-Cart click — the click that adds the item and the click that actually leaves Mela are no longer the same event.
 
@@ -128,7 +128,7 @@ Once built, the three PDP surfaces listed in the table above (`OrderPanel.js`, `
 ```
 Fired from `toggleSaveListing` in `src/ducks/savedListings.duck.js` (new `pushSaveToggle()` helper, `src/util/analytics/savedListings.js`, following the same minimal `window.dataLayer.push(...)` pattern as `brandClickout.js`), covering both the anonymous (localStorage) and authenticated (`sdk.currentUser.updateProfile`) write paths identically. The existing heart icon (`SavedListingButton`, `variant="icon"`/`"button"`) defaults to `source: 'heart_icon'` and is otherwise unchanged; the new PDP Add-to-Cart control (a new `SavedListingButton` `variant="cta"`) passes `source: 'add_to_cart_button'` explicitly.
 
-**Verification checklist addition (once built)**: confirm Add to Cart fires `saved_listing_toggle` and does **not** fire `brand_clickout`; confirm `SavedPage`'s Shop CTA fires `brand_clickout` with the same schema as today's PDP click; confirm heart-icon clicks still tag `source: 'heart_icon'`.
+**Verification checklist (still open — live browser QA, not yet done)**: confirm Add to Cart fires `saved_listing_toggle` and does **not** fire `brand_clickout`; confirm `SavedPage`'s Shop CTA fires `brand_clickout` with the same schema as the PDP click it replaced; confirm heart-icon clicks still tag `source: 'heart_icon'`.
 
 ### `brand_id` caveat
 

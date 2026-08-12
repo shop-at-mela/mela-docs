@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-08-05  
+**Last updated:** 2026-08-12  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 **Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
@@ -27,7 +27,7 @@
 | [trust-conversion-signals-prd.md](prds/trust-conversion-signals-prd.md) | 🟡 Partial | P0 | `isBestseller` needs pipeline | "Ships to US · US cards · Sold by [Brand]" static line on ListingPage (~30 min); `isBestseller` tagger script (field + filter now built) |
 | [pre-redirect-sentiment-prd.md](prds/pre-redirect-sentiment-prd.md) | ✅ Shipped | P0 | — | Hotjar script; zero-results text prompt (P1) |
 | [saved-items-pasand-prd.md](prds/saved-items-pasand-prd.md) | 🟡 Partial | P1 | — | Verify auth gate tiers; verify Topbar "❤ Saved" nav link; verify localStorage migration on login |
-| [add-to-cart-restoration-prd.md](prds/add-to-cart-restoration-prd.md) | 📋 Draft | P1 | Depends on `pre-redirect-sentiment-prd.md` (trust sheet) + `saved-items-pasand-prd.md` (SavedPage) | Not started — restore PDP "Add to Cart," relocate redirect+trust modal to `/saved`, add early-access sign-up push |
+| [add-to-cart-restoration-prd.md](prds/add-to-cart-restoration-prd.md) | ✅ Shipped | P1 | — | Code-complete, unit-tested; founder has follow-up implementation feedback pending next session |
 | [footer-legalese-prd.md](prds/footer-legalese-prd.md) | ⛔ Blocked | P0 | Legal copy not written | Write ToS + Privacy Policy copy |
 | [brands-page-prd.md](prds/brands-page-prd.md) | 🟡 Partial | P1 | — | Brand tenure signal; Mela Verified badge; brand storefront SEO (see seo-aeo PRD) |
 | [brand-storefront-prd.md](prds/brand-storefront-prd.md) | 🔲 Ready | P1 | Depends on `brands-page-prd.md` | Full brand storefront at `/brands/:brandSlug` — Organization JSON-LD, brand story, certifications |
