@@ -2,6 +2,18 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-13
+
+### Shipped
+- `feat/fix(add-to-cart-restoration)` — §12+§13 follow-up round (9 scoped fixes, 6 commits): CTA text centering; header "Saved" link + numeric count badge visible for anonymous shoppers too; inline Add-to-Cart confirmation (new `AddToCartConfirmation` component, `aria-live="polite"`, ~4s auto-dismiss, shares `SavedItemsBanner`'s `AUTO_DISMISS_MS`); `SavedPage` content reordered (item-count + grid above `SavedPageSignupPush`) with a combined total-saved/ready-to-shop count; keyboard focus returns to the triggering Shop button when `RedirectTrustSheet` closes (WCAG 2.4.3); `RedirectTrustSheet`'s 1.5s Continue-button delay announced via `aria-live`; fallback affordance for saved cards with no qualifying Shop CTA.
+- `fix(saved-listings)` — Two additional blocking bugs found via manual browser QA and fixed in the same round: `/saved` route was `auth: true`, silently bouncing anonymous shoppers to `/login` before any of the above fixes could ever reach them; `SavedPage` only ever fetched/rendered the grid from the authenticated `savedListingIds` list, so anonymous shoppers saw "Nothing saved yet" with real saved items and a correct header badge count. Fixed via new `selectEffectiveSavedListingIds` selector (`savedListings.duck.js`) unifying both auth states as the grid's data source.
+- `docs(prd)` — `add-to-cart-restoration-prd.md` §12.4/§13.3 acceptance criteria checked off, status marked ✅ Shipped in `PRD_TRACKER.md`; §13.5 build note documents the two additional bugs and how they were found.
+
+### Next
+- None — closes out the "live browser QA not done this session" gap logged 2026-08-12.
+
+---
+
 ## 2026-08-12
 
 ### Shipped
