@@ -1,6 +1,6 @@
 # Add to Cart Restoration + SavedPage Shop CTA PRD
 
-**Status:** ✅ Shipped (2026-08-12) — all P0 acceptance criteria in §9 implemented as specified. `SavedPageSignupPush`'s traffic-split mechanism (§8) remains an open PMM follow-up, unchanged from the PRD.
+**Status:** ✅ Shipped (2026-08-13) — §12+§13's nine follow-up fixes are code-complete, tested, and browser-verified (see §13.5 build note for two additional bugs found and fixed during that verification). `SavedPageSignupPush`'s traffic-split mechanism (§8) remains a separate open PMM follow-up.
 
 ## Executive Summary
 **Feature**: Restore an "Add to Cart" CTA on the product page (PDP), replacing the current "Shop from {brand}" direct-redirect button for in-stock brand listings. Adding an item no longer sends the shopper to Shopify immediately — it saves the listing (reusing the existing Saved/wishlist mechanism) and the actual brand redirect + trust/feedback modal move to `/saved`, where each saved item gets its own "Shop on {brand} →" CTA. `/saved` also gets a new early-access sign-up push.
@@ -187,6 +187,124 @@ See `mela-docs/technical/analytics/crossshop-tracking.md` for the full event sch
 
 ---
 
+## 12. Follow-Up: Post-Ship UX Fixes (Founder Review, 2026-08-13)
+
+Founder's first in-browser pass on the shipped flow (§9's build note flagged this was still pending) surfaced two issues, both confirmed against the actual code — not hypothesized:
+
+1. **No way back to the cart from the PDP.** The header's only entry point to `/saved` (`savedLinkMaybe` in `TopbarDesktop.js` / `TopbarMobileMenu.js`) is gated behind `authenticatedOnClientSide`. Combined with `SavedItemsBanner`'s toast being deliberately suppressed for `add_to_cart_button`-sourced saves (§6 edge cases, correct as designed), **anonymous shoppers get zero feedback and zero navigation path after clicking Add to Cart** — the banner-suppression comment's claim that "this flow already routes the shopper through /saved" is not true for anon users. Even authenticated shoppers get only a static text link with no count, unlike the adjacent `InboxLink`, which already has a badge precedent (`.notificationDot`).
+2. **CTA content renders left-aligned, not centered.** `SavedListingButton.module.css`'s `.buttonContent` is `display: flex` with no `justify-content`, silently overriding the `text-align: center` inherited from the composed `.buttonPrimary` global class. Affects both the `cta` and `button` variants.
+
+A `/ux-design panel` + `/uxr` review (transcript: this session) ran against the fix set below. Their additions are folded into the acceptance criteria and analytics requirements here so a fresh implementation session doesn't have to re-derive them.
+
+### 12.1 Root Causes (confirmed in code, not inferred)
+
+| Issue | File | Root cause |
+|---|---|---|
+| No path back to cart | `TopbarDesktop.js:182`, `TopbarMobileMenu.js:265` | `SavedPage` header link conditioned on `authenticatedOnClientSide` |
+| No confirmation feedback | `SavedItemsBanner.js:22-24` | Toast suppressed for `add_to_cart_button` source with no replacement feedback mechanism, so anon users get nothing |
+| Left-aligned CTA text | `SavedListingButton.module.css` `.buttonContent` | `display: flex` with no `justify-content: center`, overrides inherited `text-align: center` from `.buttonPrimary` |
+
+### 12.2 Fixes to Implement
+
+| # | Fix | Files touched |
+|---|---|---|
+| 1 | Add `justify-content: center;` to `.buttonContent` | `SavedListingButton.module.css` |
+| 2 | Un-gate the header "Saved" link — visible whenever `savedCount + anonSavedItems.length > 0`, not just when authenticated | `TopbarDesktop.js`, `TopbarMobileMenu.js` |
+| 3 | Add a numeric count badge to the header Saved link, sourced from the same `selectSavedListingIds` / `selectAnonSavedItems` selectors `SavedListingButton` already uses | `TopbarDesktop.js` + its CSS module |
+| 4 | On Add to Cart click, show an inline "✓ Added · View Saved (n) →" confirmation under the CTA, auto-dismissing after ~4s (reuse `SavedItemsBanner`'s existing `AUTO_DISMISS_MS` convention) — **must render for anonymous users**, since that's the segment with zero feedback today | `ProductOrderForm.js`, `OrderPanel.js`, `InquiryWithoutPaymentForm.js` |
+
+### 12.3 Panel Additions (from `/ux-design panel` + `/uxr`, folded into scope)
+
+- **P0, non-negotiable**: fix #4's confirmation must be `aria-live="polite"` — the existing "Added to Cart ✓" button-text swap is currently silent to screen readers, which is worse than what sighted anon users get today (Chidinma Okafor, accessibility panel).
+- **Build note, not a new AC**: back the header badge count, the fix #4 confirmation text, and `SavedPage.itemsReadyToShop` with one shared count-format function, not three hand-rolled pluralizations that will drift (David Kessler, design-systems panel).
+- **New analytics requirement**: no event today connects "clicked Add to Cart" to "returned to /saved" to "clicked Shop" — without a funnel-linking event, this fix round can't be measured post-launch (Priya Ramanathan, growth-PM panel). Add a lightweight `source` tag (e.g. `saved_page_view` with `entry: 'add_to_cart_confirmation' | 'header_badge' | 'direct'`) alongside the existing `saved_listing_toggle` / `brand_clickout` events — same minimal `dataLayer.push` pattern, no new event bus.
+- **Accepted as known trade-off, not actioned this round**: this fix set makes the flow legible but doesn't shorten it — a shopper who already knows and trusts the brand (Neha's fulfillment-mode behavior, `buyer-personas.md`) still takes the same number of clicks to reach the brand's checkout. No fast-path is being built here.
+- **Escalate later, not now**: whether `/saved` should support a no-navigation "quick check" (e.g., a hover/tap preview off the header badge) instead of always requiring a full page visit is a legitimate information-architecture question (Kavya Subramaniam) but out of scope for this fix round — added to §11 Out of Scope.
+
+### 12.4 Updated Acceptance Criteria (additive to §9)
+
+- [x] CTA button content (`cta` and `button` variants) renders horizontally centered
+- [x] Header "Saved" link is visible for any user (authenticated or anonymous) with ≥1 saved item, not just authenticated users
+- [x] Header "Saved" link shows a numeric count reflecting `savedListingIds.length` (authenticated) or `anonSavedItems.length` (anonymous)
+- [x] Clicking Add to Cart shows an inline confirmation with a direct link to `/saved`, for both authenticated and anonymous users
+- [x] That confirmation is announced via `aria-live="polite"` for screen-reader users
+- [x] Confirmation auto-dismisses after ~4s, consistent with `SavedItemsBanner`'s existing timing
+- [x] A new analytics event (or tagged `source` on an existing one) connects Add-to-Cart-confirmation clicks to `/saved` page views
+
+### 12.5 Out of Scope (additive to §11)
+
+- A fast-path checkout flow for shoppers who already recognize and trust the brand (Neha's fulfillment-mode case) — friction is reduced via legibility, not step-count, in this round.
+- A no-navigation "quick check" preview off the header badge (hover/tap mini-list) instead of a full `/saved` page visit — real IA question, deferred to a future PRD cycle.
+
+---
+
+## 13. Follow-Up: SavedPage Full-Page UX Review (2026-08-13)
+
+§12 scoped the add-to-cart confirmation slice only. A second `/ux-design panel` + `/uxr` pass reviewed the rest of `/saved` as a page — header/subheading, `SavedPageSignupPush`, empty state, item-count line, the `ListingCard` grid, and `RedirectTrustSheet` — and surfaced additional, distinct issues, all grounded in the current code (`SavedPage.js`, `ListingCard.js`, `RedirectTrustSheet.js`).
+
+### 13.1 Fixes to Implement
+
+| # | Fix | Priority | Files touched |
+|---|---|---|---|
+| 5 | Render the item-count line (and ideally the grid) above `SavedPageSignupPush`, not below it — an anon shopper arriving to confirm a save should see their item before a sign-up pitch | P0 | `SavedPage.js` |
+| 6 | Add a total-saved count alongside the existing "ready to shop" count (e.g. "5 saved · 3 ready to shop") — today `itemsReadyToShop` silently counts only `brand && productUrl` listings with no explanation for the rest | P0 | `SavedPage.js`, `en.json` (new/updated translation key) |
+| 7 | Return focus to the triggering "Shop on {brand}" button when `RedirectTrustSheet` closes (`onClose` / `handleContinue`) — currently drops keyboard/screen-reader focus with no defined landing spot (WCAG 2.4.3) | P0 | `RedirectTrustSheet.js`, `SavedPage.js` (needs a ref back to the clicked card's button) |
+| 8 | Announce the Continue button's 1.5s activation delay via `aria-live`, not just a visual `disabled` state — a screen-reader user currently gets no indication the button will become interactive shortly | P0 | `RedirectTrustSheet.js` |
+| 9 | Give cards that lack a qualifying `brand`+`productUrl` (so they render no Shop CTA) a small affordance instead of just looking incomplete next to cards that do have one | P2 | `ListingCard.js` |
+
+### 13.2 Explicitly Not Actioned (documented trade-offs, not gaps)
+
+- `RedirectTrustSheet` doing double duty as trust disclosure *and* sentiment-collection survey at the highest-intent moment in the flow — valuable as a research instrument; flagged so a future session doesn't "simplify" it without knowing why it's shaped this way.
+- No sort/filter/grouping on the saved-items grid — real information-architecture question once usage grows toward the 200-item cap, but no current usage data justifies building it now. Added to §11/§12.5 Out of Scope.
+
+### 13.3 Updated Acceptance Criteria (additive to §9 and §12.4)
+
+- [x] `SavedPage`'s item-count line (and grid) renders above `SavedPageSignupPush` in visual order
+- [x] `SavedPage` shows both a total-saved count and the existing "ready to shop" count
+- [x] Closing `RedirectTrustSheet` (via Continue or dismiss) returns keyboard focus to the button that opened it
+- [x] `RedirectTrustSheet`'s 1.5s Continue-button activation delay is announced via `aria-live="polite"`
+- [x] Cards without a qualifying Shop CTA render a defined fallback state rather than an unexplained gap (P2 — nice to have, not blocking)
+
+### 13.4 Out of Scope (additive to §12.5)
+
+- Sort, filter, or grouping controls on the saved-items grid.
+- Any redesign of `RedirectTrustSheet`'s sentiment-survey content or flow — its dual-purpose shape is intentional, not a defect.
+
+### 13.5 Build Note (2026-08-13) — Two Additional Bugs Found in Browser QA
+
+§12/§13's nine fixes shipped 2026-08-13, full test suite green (unit tests updated in
+`OrderPanel.test.js`, `SavedPage.test.js`, `RedirectTrustSheet.test.js`,
+`TopbarMobileMenu.test.js`). Manual browser verification of the anonymous path — done
+specifically because §9's original round shipped on unit tests alone and missed the bugs
+that led to this follow-up — surfaced two further blocking bugs, neither hypothesized,
+both confirmed live and fixed:
+
+1. **`/saved` route was auth-gated** (`routeConfiguration.js`, `auth: true` /
+   `authPage: 'LoginPage'` on the `SavedPage` route). Every fix in §12 that gives an
+   anonymous shopper a link to `/saved` (header badge, Add-to-Cart confirmation) was
+   silently routing them to `/login` instead — the route guard predates this PRD and was
+   never revisited when `SavedPage.js` grew its own anonymous-shopper rendering path.
+   Fixed by removing the guard; `SavedPage.js` already branches correctly on
+   `isAuthenticated`.
+2. **`SavedPage` never fetched or rendered listings for anonymous shoppers.**
+   `mapStateToProps` derived the grid exclusively from `selectSavedListingIds` (the
+   authenticated-only list from `privateData`), never from `anonSavedItems`. An anonymous
+   shopper who added an item saw "Nothing saved yet" on `/saved` even with a real saved
+   item and a correct header badge count. Fixed by adding
+   `selectEffectiveSavedListingIds` to `savedListings.duck.js` (auth → `savedListingIds`,
+   anon → `anonSavedItems.map(id)`) and using it for both the fetch trigger and the grid
+   in `SavedPage.js`; `selectSavedItemsCount` now derives from the same selector instead
+   of duplicating the branch.
+
+Both fixes are covered by new tests (`SavedPage.test.js`: anonymous-grid regression test;
+`routing` suite unaffected). Verified live: anonymous Add-to-Cart → header badge → `/saved`
+→ item renders → Shop CTA → `RedirectTrustSheet` → aria-live delay/ready announcement →
+dismiss → focus returned to the triggering button. Authenticated path verified via the
+existing/updated unit tests (component logic is shared, only the data source selector
+branches on `isAuthenticated`) — not re-verified live in-browser in this session.
+
+---
+
 ## Superseded Approach (for reference)
 
 Prior to this PRD, `pre-redirect-sentiment-prd.md` shipped the trust/feedback modal (`RedirectTrustSheet`) triggered directly from the PDP's "Shop from {brand}" CTA, with no intermediate cart-like step — i.e. "Add" and "go to brand" were the same click. That approach is not wrong on its own terms (it shipped, and the trust-sheet mechanics are fully preserved here); it's being changed specifically because F-004 identified the missing intermediate step as making the PDP feel incomplete for purchase-flow testing, and because splitting "add" from "go to brand" creates a natural, non-generic-sounding surface (`/saved`) to host a sign-up ask. The trust-sheet component, its copy, and its session-dedupe logic are carried forward unchanged — only the trigger point moves.
@@ -194,4 +312,5 @@ Prior to this PRD, `pre-redirect-sentiment-prd.md` shipped the trust/feedback mo
 ---
 
 *Created: 2026-08-12*
+*Updated: 2026-08-13 — added §12 (add-to-cart confirmation follow-up: founder browser-testing feedback + `/ux-design panel` + `/uxr` review) and §13 (full-page SavedPage review: second `/ux-design panel` + `/uxr` pass); §12+§13 fixes shipped and browser-verified same day, see §13.5 build note*
 *Related PRDs: `pre-redirect-sentiment-prd.md` (trust-sheet origin, superseded trigger point — see build note added there), `saved-items-pasand-prd.md` (SavedPage origin, extended with Shop CTA — see build note added there), `mela-docs/technical/analytics/crossshop-tracking.md` (event schema, updated alongside this PRD)*
