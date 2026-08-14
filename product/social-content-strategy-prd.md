@@ -36,7 +36,7 @@ Amazon/eBay are retrieval tools — you go knowing what you want. Mela's differe
 
 1. Generate social content primarily from Mela's existing product and brand data (product CSVs, brand pages) — not manually written from scratch.
 2. Give each platform a defined job (top-of-funnel vs. trust vs. community) and content type.
-3. Run a repeatable, skill-driven production loop (`/social-launch`, `/social-review`) that a single operator can sustain in ≤3 hours/week.
+3. Run a repeatable, skill-driven production loop (`/social-launch`, `/social-review`) that a single operator can sustain in **≤3 hours/week** — a hard constraint held even under short-form-primary (4–5 reels/week) by leaning entirely on Blotato semi-automation and accepting rough-but-fast over hand-polished (see Cadence).
 4. Establish Pinterest as the highest-ROI channel given the home/lifestyle/gifting category fit.
 5. Keep a machine-readable record of every campaign (YAML logs) so the system avoids repeats, rotates categories/personas, and learns from UX observations.
 
@@ -48,7 +48,7 @@ Amazon/eBay are retrieval tools — you go knowing what you want. Mela's differe
 - Automating Reddit (requires authentic human participation — automation is harmful there).
 - TikTok in Phase 1 (requires video production infrastructure not yet in place).
 - Social commerce checkout integration (Pinterest "Buy" button, Instagram Shopping catalog checkout) — complex, deferred.
-- Music/audio on visuals — Blotato's image-slideshow and product-scene templates are silent by design; add trending audio natively in-app if/when Reels launch (see [visual-style-guide.md](../social/visual-style-guide.md)).
+- Automating music/audio on reels — Blotato's image-slideshow and product-scene templates are silent by design; trending audio + final publish stay a **manual in-IG step** per reel (this is the main residual manual cost now that short-form is primary — see Cadence). Not automating this is a deliberate non-goal until Blotato (or the app) supports native audio.
 
 ---
 
@@ -86,11 +86,14 @@ Amazon/eBay are retrieval tools — you go knowing what you want. Mela's differe
 
 **Why:** Priya already discovers Indian items on Instagram. Arun follows Indian-American parenting accounts. Instagram is the trust-building layer — it tells the brand story behind the product that converts a browser to a buyer. Instagram engagement ≠ direct purchase; it builds the brand recognition that makes Mela web app visits convert.
 
+**Short-form video is the primary reach format (4–5 reels/week)** as of 2026-08-14 — carousels and stills are supporting. Reels carry cold-start distribution, so hook engineering is applied hardest there; every reel must land a payoff beat (a payoff-less wordmark teaser is a defect). See [`hook-engineering.md`](../social/hook-engineering.md) §1/§4 and [`category-routing.yaml`](../social/category-routing.yaml) → `cadence`. The ≤3 hr/week budget is held by leaning entirely on Blotato semi-automation (see Cadence + Automation).
+
 **Content types:**
+- **Product Reels** (primary): a real product moving through a scene, resolving on the detail/finished-look payoff. Never AI-generate the product. Semi-automated — Blotato scene + skill-drafted caption; trending audio + publish are a manual in-IG step.
+- **How-it's-made / Cultural Education Reels**: process → reveal, e.g. block printing shown made *now* (not "500 years old, museum relic"). Weekly topic drawn from [`education-topics.yaml`](../social/education-topics.yaml) (one education row/week). Slide-1 / first frame is a hook, never a product.
+- **Anchor Teaser Reels**: the center-tile anchor of each brand-themed row — a motion photo-collage that **lands a payoff beat** (reveal / finished-scene / one product detail) before converging into the brand/theme wordmark. ~2/week (a subset of the 4–5 short-form total). Semi-automated; audio + publish manual in-IG. See [`visual-style-guide.md`](../social/visual-style-guide.md) → Instagram Grid Row Anchors.
 - **Brand Spotlight Carousels** (6–8 slides): brand origin story, 3+ product highlights, link to Mela brand page. Semi-automated — Blotato visuals + skill-drafted caption.
-- **Collection Carousels** (4–7 slides): 3+ products from one brand or occasion, lifestyle-staged. Current default format.
-- **Cultural Education Reels**: e.g. "Block printing: 500 years old, still made this way." Weekly topic drawn from [`education-topics.yaml`](../social/education-topics.yaml) (one education row/week).
-- **Anchor Teaser Reels**: the reels-first center-tile anchor of each brand-themed row — a motion photo-collage that converges into the brand/theme wordmark (no product shown). ~2/week. Semi-automated: Blotato builds the collage, but trending audio + final publish are a manual in-Instagram step (Blotato templates are silent); fall back to a static theme card when a reel can't be produced. See [`visual-style-guide.md`](../social/visual-style-guide.md) → Instagram Grid Row Anchors.
+- **Collection Carousels** (4–7 slides): 3+ products from one brand or occasion, lifestyle-staged. Supporting format alongside reels.
 - **Trust/Service posts** (feed + Stories): international shipping (realistic 5–7+ day timelines from India), product quality/materials, customer service, returns, USD payment, sizing. Addresses the purchase objections that block conversion — **Neha** (shipping reliability, fair price), **Sarah** (quality, safety). Weekly topic drawn from [`education-topics.yaml`](../social/education-topics.yaml). **Instagram + Reddit only — never Pinterest** (Pinterest is discovery mode; nobody browses pins to evaluate shipping).
 - **New Arrivals Stories**: template card — product image + "Now on Mela."
 - **Occasion/seasonal posts**: Diwali countdown, Holi, New Year. Scheduled 4–6 weeks in advance.
@@ -250,7 +253,7 @@ Every week is the same **structure** — 3 IG theme-rows (2 brand-themed + 1 edu
 | W3 | Product pins / catalog | 2 brand rows + 1 education row | AMA prep or Q&A |
 | W4 | Product pins / catalog | 2 brand rows + 1 education row (seasonal overlay if event ≤6 wks out) | 1–2 community answers |
 
-**Weekly manual effort target:** creation ≤3 hrs (one `/social-launch` batch) + ~30 min/day engagement + Reddit 30–45 min. *Reels-first anchors push creation time up; default to static theme cards to stay within budget.* Canonical cadence: `category-routing.yaml`.
+**Weekly manual effort target:** creation ≤3 hrs (one `/social-launch` batch) + ~30 min/day engagement + Reddit 30–45 min. Short-form-primary (4–5 reels/week) is held inside the ≤3 hr cap by leaning **entirely on Blotato semi-automation** — Blotato builds every reel/scene, and creation stays rough-but-fast rather than hand-polished. The residual manual cost is the per-reel audio + publish step in IG (Blotato templates are silent); this is the main pressure on the budget, so **watch it — if 4–5 reels/week can't fit 3 hrs in practice, the fix is more automation (Phase B Trigger Watcher), not dropping back to static cards** (a payoff-less static anchor is now a defect). Canonical cadence: `category-routing.yaml`.
 
 ---
 
@@ -311,7 +314,7 @@ Monthly cron checking the hardcoded seasonal calendar; if an event is 4 weeks ou
 **Months 6–12 (validation):**
 - Social referral sessions have higher avg. time-on-site than direct/organic
 - At least one non-Neha persona (Sarah or Arun) converting through social referral
-- Manual content production time confirmed ≤3 hours/week
+- Manual content production time confirmed ≤3 hours/week **even under short-form-primary** (4–5 reels/week) — i.e. Blotato automation is genuinely absorbing the reel volume; if not, that's the trigger to build Phase B
 
 ---
 
