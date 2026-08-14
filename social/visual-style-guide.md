@@ -1,7 +1,9 @@
 # Mela Social Visual Style Guide
 
-**Last updated:** August 11, 2026  
+**Last updated:** August 13, 2026  
 **Inspired by:** Amala Earth aesthetic (@amala.earth, Pinterest: @amalaearth)
+
+> **Hooks live next door.** This guide owns the *visual* and *caption* rules. The **hook** — the engineered first 2–3 seconds / first caption line / slide 1, the emotional-trigger taxonomy, the short-form script skeleton, the monthly top-performer teardown, and Mela's 5 content angles — is canonical in **`hook-engineering.md`**. The Diaspora Anchoring "situation hook" below is the belonging row of that taxonomy; reach for `hook-engineering.md` when writing any opening line or reel script.
 
 ---
 
@@ -214,7 +216,7 @@ The situation layer draws on the *lived reality* of buying Indian goods in the U
 |---|---|
 | "Set your festive table with a story this Diwali." | "The good Diwali china never survives the suitcase from India. Kaunteya's is hand painted in Jaipur and ships straight to your door." |
 | "Two ingredients. One press. Baby Forest makes cold pressed baby oils." | "You used to wait for your mom's next visit to restock the good baby oil. Baby Forest ships it from India in about two weeks." |
-| "Real chikankari or a printed lookalike?" | "Your local Indian store's chikankari is usually machine printed. Here is how to spot the real hand embroidered piece before you buy." |
+| "Real chikankari or a printed lookalike?" | "Here is how to spot true hand embroidered chikankari before you buy. Three tells most people miss." |
 
 Note what did **not** change: origin stays at the product layer, and no caption names the reader's ethnicity. Only the *opening hook* moved from product-fact to shopper-situation.
 
@@ -256,11 +258,11 @@ Applies to every caption, pin description, and Story text:
 - **Format:** 4–7 slides per carousel
 - **Text:** Minimal on images, save context for caption
 - **Style:** Vary between product detail + styled scene shots
-- **Cadence:** 9 feed posts/week (= three theme-rows: 2 brand-themed + 1 education); overflow → Stories. Feed posts stay a multiple of 3 to keep row alignment.
+- **Cadence:** short-form video is the **primary reach format at 4–5 reels/week** (`hook-engineering.md` §1, `category-routing.yaml` → `cadence`); carousels/stills support it. When the grid is active, the feed is planned as three theme-rows (2 brand-themed + 1 education, 9 tiles) with several of those tiles shipping as reels; overflow → Stories, feed posts stay a multiple of 3 to keep row alignment.
 
 **Caption approach:**
 - **Lead is persona-led** — the selected persona sets the opening (Sarah → certification, Priya → occasion, Arun → craft origin, Neha → regional specificity). Persona is chosen per post in `/social-review` Phase 2; see the caption table in `social-content-strategy-prd.md` for the leads + guardrails (not restated here).
-- **Anchor the shopper's situation, not just the product** — before finalizing the hook, check it against [Diaspora Anchoring](#diaspora-anchoring-audience-principle). A caption that could run verbatim on the brand's own India feed (product-fact hook + "Ships to the US" footnote) is under-anchored; open on the US shopper's situation instead.
+- **Engineer the first line, don't just describe** — the opening ~125 chars is the whole hook (see `hook-engineering.md` §2–3 for the trigger taxonomy + swipe file). Anchor the shopper's *situation*, not just the product ([Diaspora Anchoring](#diaspora-anchoring-audience-principle)): a caption that could run verbatim on the brand's own India feed (product-fact hook + "Ships to the US" footnote) is under-anchored.
 - Then: brief occasion/use → craft detail → CTA "Discover [Brand] on Mela →"
 - **Include product list** — "Featured in this carousel: [product 1, product 2, ...]" (aids discoverability on destination page)
 - NO price in caption; NO text overlays on images
@@ -270,7 +272,8 @@ Applies to every caption, pin description, and Story text:
 Row mechanics (row = 3 tiles, weekly batch = 3 rows, composition, planning, ordering) are canonical in `category-routing.yaml` → `grid`; this section covers the anchor's **visual** design. The anchor is the center tile of a brand row.
 
 - **3:4 grid crop (critical):** the IG profile grid crops feed posts to **3:4 portrait**. Design at native ratio but keep the theme title/wordmark/logo inside the centered 3:4 safe zone — text near the top/bottom edge clips. This is what most often breaks an anchor.
-- **Teaser reel (default):** motion photo-collage — cut-out craft elements (jewelry, textiles, brass, motifs) drift over a textured ground, then converge into the brand/theme wordmark. Trending Sufi/folk audio; one-line curiosity caption; show no product directly. Semi-automated (audio + publish are manual in IG).
+- **Short-form is no longer anchor-only.** Product reels and how-it's-made / education reels are first-class formats too (target 4–5 short-form/week total; the anchor teaser is a subset — `hook-engineering.md` §4). All reels obey the hook script.
+- **Teaser reel (anchor):** motion photo-collage — cut-out craft elements (jewelry, textiles, brass, motifs) drift over a textured ground toward the brand/theme wordmark. **It must land a payoff beat first** — a reveal, a finished-scene, or one product detail — *not* just converge into the wordmark (a payoff-less teaser is a defect; it violates the §4 skeleton and won't retain past 2s). Trending Sufi/folk audio; semi-automated (audio + publish are manual in IG). **First 2s frame + one-line caption follow the hook script** — `hook-engineering.md` §3–4 (pattern-break → open loop → fast payoff → subtle discovery CTA, under 30s).
 - **Theme card (fallback):** static graphic in the Mela brand kit (navy #2D2D7B + marigold #F0A030), theme name as the legible focal element.
 - **Converge-line gating:** "coming soon" ONLY for a not-yet-live brand; live brands read "Now on Mela / Discover on Mela."
 - **Watermark:** anchors carry the "Discovered on [Mela Logo]" watermark, subordinate to the wordmark.

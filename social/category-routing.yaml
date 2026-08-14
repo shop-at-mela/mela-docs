@@ -35,15 +35,15 @@ tracking:
 # Posting cadence. Every-other-day spacing is the hard rule; the per-channel lines are current volume.
 # IG feed cadence is a multiple of 3 (theme-rows); Stories are grid-neutral and absorb overflow.
 cadence:
-  # No Blotato queue slots (useNextFreeSlot errors), so pass each post scheduledTime = prev + 48h explicitly.
-  posting_interval: every_other_day   # 48h between posts; source of truth for both skills' scheduling
+  # No Blotato queue slots (useNextFreeSlot errors), so pass each post scheduledTime = prev + 24h explicitly.
+  posting_interval: daily   # 24h between posts (changed from every_other_day 2026-08-12); source of truth for both skills' scheduling
   # CURRENT (cold-start) — what both skills follow now:
   pinterest: "Posts via Blotato like Instagram; cap 10/24h per account, schedule overflow past the cap"  # warmup cleared 2026-08-08 (memory project_mela_social_status)
-  instagram: "3-4 standalone posts/week (no grid while grid.enabled=false); ≥2 product-forward Reels/motion for reach"
+  instagram: "SHORT-FORM PRIMARY (updated 2026-08-14): 4-5 short-form Reels/week as the primary reach format (product / how-it's-made / anchor — see hook-engineering.md §4) + supporting carousels/stills; no grid while grid.enabled=false. Every reel lands a payoff (not a payoff-less wordmark teaser). Runs above the PRD's ≤3hr/week budget — lean on Blotato semi-automation, accept rough-but-fast."
   # FUTURE (aspirational, NOT active) — adopt when grid.enabled flips on (grid.activation_gate) + Pinterest Catalog Feed ships:
   target:
     pinterest: "5-10 pins/day, Catalog Feed auto"
-    instagram: "9 feed posts/week (3 grid rows: 2 brand + 1 education) + daily Stories"
+    instagram: "9 feed posts/week (3 grid rows: 2 brand + 1 education), several shipping as short-form reels (4-5/week primary reach) + daily Stories"
 
 # Rotation guardrails — enforced against campaign logs (social/log/[brand-slug]/week-*.yaml)
 rotation:
@@ -69,7 +69,7 @@ grid:
   anchor:
     tile: center                 # navigation label sits in the middle tile
     forms: [teaser_reel, theme_card]
-    default: teaser_reel          # reel-first — reels carry the reach; ~2/week. Semi-automated (see reel_production_note)
+    default: teaser_reel          # anchor form. Anchor teasers are ~2/week — a SUBSET of the 4-5 short-form/week total (the rest are product/education reels, see cadence.instagram + hook-engineering.md §4). Anchor teaser MUST land a payoff beat, not just converge to the wordmark. Semi-automated (see reel_production_note)
     fallback: theme_card          # when a reel can't be produced that week. Note: IG grid-reorder (June 2026) can retrofit a static card into a row later, but not a Reel (reels can't be repositioned; see ordering_rule)
     role: "Names the row's brand/category/theme so visitors can navigate; the center column forms a vertical spine across weeks."
     flanks: "Two side tiles are supporting posts (craft/founder story + product), styled to sit with the anchor."
@@ -88,7 +88,7 @@ grid:
   teaser_gating:  # guards the copy-positioning rule + Neha's availability dealbreaker
     coming_soon_ok_if: "brand genuinely NOT yet live on Mela (in-QA per education-topics brand_pool)"
     live_brand_wordmark: "'Now on Mela' / 'Discover on Mela' — NEVER 'coming soon' for a live brand"
-  reel_production_note: "Semi-automated: Blotato builds the motion collage, but trending audio + final publish are a manual in-IG step. ~2/week; fall back to a static theme_card if a reel can't be made."
+  reel_production_note: "Semi-automated: Blotato builds the motion collage, but trending audio + final publish are a manual in-IG step. Anchor teasers ~2/week (subset of 4-5 short-form/week total). Every reel — anchor, product, or how-it's-made — must land a payoff beat (hook-engineering.md §4); fall back to a static theme_card only if a reel truly can't be made."
   asset_spec:
     grid_crop: "3:4 portrait — IG grid crops to portrait; keep anchor text in the safe zone (see visual-style-guide.md)"
 
