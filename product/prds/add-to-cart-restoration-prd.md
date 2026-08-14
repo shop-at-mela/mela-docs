@@ -184,6 +184,7 @@ See `mela-docs/technical/analytics/crossshop-tracking.md` for the full event sch
 - Renaming `/saved` to "Cart" (see §3) — revisit only alongside a real, committed "full marketplace" roadmap and its own comms plan, not as a byproduct of this change.
 - A real experimentation framework for the sign-up copy variant (§8).
 - `brand_id` as a confirmed schema field (pre-existing open item, see `crossshop-tracking.md` §3 "brand_id caveat" — unaffected by this PRD).
+- Sort / filter controls, explicit Remove+Undo, a sold-out "Saved for later" section, and price-drop / back-in-stock alerts on `/saved` — all acknowledged competitor patterns, deferred out of §14 (see §14.4).
 
 ---
 
@@ -305,6 +306,72 @@ branches on `isAuthenticated`) — not re-verified live in-browser in this sessi
 
 ---
 
+## 14. Follow-Up: Multi-Brand Cart Grouping + Inspiration-First Recommendations (Planned, 2026-08-13)
+
+§12/§13 fixed the *legibility* of `/saved` (nav paths, counts, focus, anon parity). A
+marketplace-UX competitor review (Etsy, Amazon "Saved for later", ASOS Saved Items, Depop,
+Wayfair, Pinterest boards) then looked at the *shopping model* itself and surfaced two
+distinct improvements, both grounded in current code — not the sort/filter question §13.4
+deferred, which stays deferred.
+
+### 14.0 Why
+
+1. **`/saved` is structurally a *multi-brand* cart, not a single basket.** Every exit is a
+   per-brand Shopify redirect (Mela never runs a unified checkout — §2, §11). The correct
+   competitor analog is therefore **Etsy's cart** (grouped by shop, per-shop checkout),
+   *not* Amazon's single basket. The current flat `ListingCard` grid (`SavedPage.js:172-185`)
+   hides this: "3 items ready to shop" should read "2 on Nicobar · 1 on Nesavu." Grouping
+   by brand makes the page's structure match how buying actually works here.
+2. **A saved page is a discovery surface, not a dead end.** Amazon/Wayfair seed empty and
+   thin carts with recommendations — which *is* Mela's stated identity (inspiration-first,
+   not fulfillment). Today the empty state is a bare "Nothing saved yet" + one Browse link
+   (`SavedPage.js:145-157`), and a populated page ends abruptly after the grid.
+
+### 14.1 Fixes to Implement
+
+| # | Fix | Priority | Files touched |
+|---|---|---|---|
+| 10 | Group `savedListings` by `publicData.brand` into per-brand groups, each rendered via a new presentational `SavedBrandGroup` component (header: brand name · item count · soft subtotal · optional group CTA, then the existing responsive grid of that brand's cards). Preserve recency order (`getListingsById` at `SavedPage.js:214` already returns entities in `savedListingIds` insertion order). | P0 | `SavedPage.js`, new `components/SavedBrandGroup/*`, `SavedPage.module.css`, `components/index.js`, `en.json` |
+| 11 | Listings with no `brand` collect into a trailing **"More saved"** group so nothing is dropped — these are the same cards that already render the §13.1 #9 fallback link. | P0 | `SavedPage.js` |
+| 12 | Group **"Shop {brand} →"** CTA routes through the **existing** `handleShopNow` → `RedirectTrustSheet` → `openBrandStorefront` pipeline (`SavedPage.js:87-99`) using the **first in-stock item's `productUrl`**. ⚠️ There is **no brand-storefront root URL** in `publicData` — only per-product `productUrl` (`ListingCard.js:341`) — so the CTA lands on the brand's store via a representative product and is framed "Shop {brand} →", *not* "Shop all N" (which would over-promise a brand landing page we don't have). Omit the group CTA when a group has no shoppable item; per-card CTAs still cover those. Pass `triggerElement` so §13.1 #7 focus-return keeps working. | P0 | `SavedBrandGroup`, `SavedPage.js` |
+| 13 | Soft per-brand subtotal via `formatMoney` (`util/currency.js`) — rendered only when every item in the group has a price in the **same** currency; otherwise show count only. Never invent a total across mixed/missing currencies. | P1 | `SavedBrandGroup`, `en.json` |
+| 14 | Inspiration-first recommendations: new `SavedPageRecommendations` reusing the `NewFromIndia.js` pattern (`util/homepageSdk` query → `updatedEntities`/`denormalisedEntities` → `ProductCarousel`, capped per brand with `capPerBrand`). **Exclude already-saved ids** and self-hide when empty. Render in the empty state (as a "Popular on Mela" entry point) and once at page bottom for populated pages. | P0 | new `components/SavedPageRecommendations/*` (or co-located), `SavedPage.js`, `en.json` |
+
+### 14.2 Panel Additions (from `/ux-design panel` + `/uxr`, folded into scope)
+
+- **P0, a11y (Chidinma Okafor):** each brand group's header must be a real heading
+  (`<h2>` inside a `<section aria-label="{brand}">`), not styled text, so screen-reader
+  users get the same "cart is grouped by brand" structure sighted users get; the recs
+  `ProductCarousel` must stay keyboard-reachable and not trap focus.
+- **Build note, design-systems (David Kessler):** reuse the shared count-format helper
+  introduced for the §12.3 header badge / `itemsSummary` for the per-group counts — don't
+  hand-roll a fourth pluralization that will drift.
+- **New analytics requirement (Priya Ramanathan):** the group CTA and the recs rail need
+  their own surface tags so the funnel can distinguish "shopped the whole brand" from
+  "shopped one item," and can measure whether recs drive discovery — see
+  `insights/crossshop-tracking-prd.md` §14.
+- **Accepted trade-off, not actioned:** grouping adds vertical length on large carts;
+  acceptable for legibility. This round still adds **no fast-path checkout** (§12.5 stands).
+
+### 14.3 Acceptance Criteria (additive to §9, §12.4, §13.3 — Planned, not yet built)
+
+- [ ] Saved items render in per-brand groups, each with brand name, an accurate item count, and (when derivable) a soft subtotal
+- [ ] Listings without a `brand` render in a trailing "More saved" group; nothing is dropped
+- [ ] Subtotal is suppressed when a group's items span multiple currencies or any item lacks a price
+- [ ] Group "Shop {brand} →" CTA routes through `RedirectTrustSheet` (first session click), returns focus to the group CTA on close, and is omitted when the group has no shoppable item
+- [ ] Recommendations render in the empty state and once at the bottom of a populated page, never echo already-saved items, and self-hide when the query returns nothing
+- [ ] Group headers are real `<h2>`s within labelled sections; the recs carousel is keyboard-navigable
+- [ ] New analytics surfaces are emitted per `insights/crossshop-tracking-prd.md` §14
+
+### 14.4 Out of Scope (additive to §11, §12.5, §13.4)
+
+- Sort / filter controls on the saved grid (still deferred per §13.4).
+- Explicit Remove + Undo affordance (today removal is the heart toggle only).
+- Stock-state separation — a distinct sold-out "Saved for later" section — and price-drop
+  / back-in-stock alerts (the latter needs backend not built here).
+
+---
+
 ## Superseded Approach (for reference)
 
 Prior to this PRD, `pre-redirect-sentiment-prd.md` shipped the trust/feedback modal (`RedirectTrustSheet`) triggered directly from the PDP's "Shop from {brand}" CTA, with no intermediate cart-like step — i.e. "Add" and "go to brand" were the same click. That approach is not wrong on its own terms (it shipped, and the trust-sheet mechanics are fully preserved here); it's being changed specifically because F-004 identified the missing intermediate step as making the PDP feel incomplete for purchase-flow testing, and because splitting "add" from "go to brand" creates a natural, non-generic-sounding surface (`/saved`) to host a sign-up ask. The trust-sheet component, its copy, and its session-dedupe logic are carried forward unchanged — only the trigger point moves.
@@ -313,4 +380,5 @@ Prior to this PRD, `pre-redirect-sentiment-prd.md` shipped the trust/feedback mo
 
 *Created: 2026-08-12*
 *Updated: 2026-08-13 — added §12 (add-to-cart confirmation follow-up: founder browser-testing feedback + `/ux-design panel` + `/uxr` review) and §13 (full-page SavedPage review: second `/ux-design panel` + `/uxr` pass); §12+§13 fixes shipped and browser-verified same day, see §13.5 build note*
+*Updated: 2026-08-13 — added §14 (Planned: multi-brand cart grouping + inspiration-first recommendations, from a marketplace-UX competitor review; instrumentation in `insights/crossshop-tracking-prd.md` §14; execution handoff in `scratchpad/saved-multibrand-recs-handoff-prompt.md`). Not yet built.*
 *Related PRDs: `pre-redirect-sentiment-prd.md` (trust-sheet origin, superseded trigger point — see build note added there), `saved-items-pasand-prd.md` (SavedPage origin, extended with Shop CTA — see build note added there), `mela-docs/technical/analytics/crossshop-tracking.md` (event schema, updated alongside this PRD)*

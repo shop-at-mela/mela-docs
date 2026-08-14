@@ -261,3 +261,64 @@ Better for a single glanceable page, or for sharing a view-only link with someon
 **What not to build here**: don't attempt "% of sessions with 2+ distinct brands" as a Looker Studio calculated field against the standard GA4 connector — it aggregates at the query level, not the session level, so a distinct-count-per-session metric will silently compute wrong (counting distinct brands across the whole date range, not per session). That metric stays in the GA4 Exploration from Tier 1. If it's ever needed in Looker Studio too, the real path is enabling BigQuery export on the GA4 property (free at Mela's current volume) and writing the metric in SQL — revisit only if the simpler dashboard proves useful enough to justify it (see `mela-docs/technical/analytics/crossshop-tracking.md` → "Future roadmap").
 
 **Sharing**: **Share → Manage access** — view-only, no GA4 login required for the recipient.
+
+---
+
+## 14. Multi-Brand Grouping + Recommendations Instrumentation (added 2026-08-13)
+
+`add-to-cart-restoration-prd.md` §14 (Planned) restructures `/saved` from a flat grid into
+per-brand groups and adds an inspiration-first recommendations rail. Both add new outbound/
+engagement surfaces this PRD's `brand_clickout` model doesn't yet distinguish. This section
+states the measurement intent and acceptance criteria only — **field names, `dataLayer`
+shapes, and GA4 Console/custom-dimension setup are the source of truth in
+`mela-docs/technical/analytics/crossshop-tracking.md` and must be added there during
+implementation** (per the insights folder README: PRDs state the ask, technical docs win on
+field names).
+
+### 14.1 Problem
+
+- §5a established there are three PDP "Shop from Brand" surfaces; `add-to-cart-restoration`
+  made `/saved` a fourth, where every item already fires `brand_clickout` via
+  `openBrandStorefront`. §14's grouping adds a **fifth** surface — a group-level
+  "Shop {brand} →" CTA — that fires the **same** `brand_clickout` event with no way, today,
+  to tell it apart from a per-card click. Without disambiguation the funnel can't separate
+  "shopped the whole brand" from "shopped one item," which is the entire point of grouping.
+- The recommendations rail has **no instrumentation at all** — we can't tell whether the
+  inspiration-first surface is seen or whether it drives discovery/saves.
+
+### 14.2 Goal
+
+Measure (a) group-level vs item-level shop intent on `/saved`, and (b) whether the recs
+rail earns its place — with **no new event bus**, reusing the existing `dataLayer.push`
+pattern, `entry_source` mechanism, and `mela_session_id` session key (§13.0).
+
+### 14.3 Instrumentation
+
+- **Surface disambiguation on `brand_clickout`:** the group "Shop {brand} →" CTA passes a
+  surface tag through the existing tracking-params path so `brand_clickout` carries
+  `saved_surface: 'saved_brand_group'`, while per-card `/saved` CTAs carry
+  `saved_surface: 'saved_item_card'`. (PDP surfaces keep their existing `entry_source`
+  values unchanged.) This is a single added param on an existing event, not a new event.
+- **Recommendations funnel:** a lightweight `saved_recommendation_click`
+  (model on `pushNewFromIndiaClick` in `web-client/src/util/analytics/homepageEditorial.js`)
+  carrying the clicked listing/brand id and `mela_session_id`, plus an impression signal
+  folded onto the existing `saved_page_view` event: `recs_shown: true|false` and
+  `brand_group_count: <n>`. Together these answer "was the rail seen, and did it convert to
+  a click/save."
+
+### 14.4 Acceptance Criteria (Planned)
+
+- [ ] `brand_clickout` fired from `/saved` carries `saved_surface` distinguishing
+      `saved_brand_group` from `saved_item_card`
+- [ ] `saved_recommendation_click` fires on recs-rail item clicks with listing + brand ids
+      and `mela_session_id`
+- [ ] `saved_page_view` carries `recs_shown` and `brand_group_count`
+- [ ] Field names, custom-dimension registration, and verification steps are added to
+      `mela-docs/technical/analytics/crossshop-tracking.md`
+- [ ] `shopper-visibility-reporting-prd.md`'s funnel is updated to consume the new
+      `saved_surface` split and the recs events
+
+> Reporting note: once shipped, add the `saved_surface` split and `saved_recommendation_click`
+> to `shopper-visibility-reporting-prd.md` so the potential-shopper funnel and cross-shop
+> explorations pick them up (this PRD is the instrumentation layer; that one is the reporting
+> layer on top).
