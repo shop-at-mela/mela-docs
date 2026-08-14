@@ -68,6 +68,7 @@ All three are documented with comments in `.env-template`. **Do not** also set t
   product_id:   string,          // listing.id.uuid — the Sharetribe listing UUID; always present when the event fires
   entry_source: string,          // sessionStorage['mela_entry_source'] at the moment of click — see §2
   destination:  string,          // the outbound Shopify URL (publicData.productUrl)
+  saved_surface: string | null,  // 'saved_brand_group' | 'saved_item_card' from /saved, null everywhere else — added 2026-08-13, §14 below
   mela_session_id: string,       // getOrCreateSessionId() from sentimentCapture.js — see "Mela Session ID" note below
 }
 ```
@@ -134,6 +135,39 @@ Fired from `toggleSaveListing` in `src/ducks/savedListings.duck.js` (new `pushSa
 
 No stable `brand_id` field exists in the listing schema today — brand is a free-text name only (`publicData.brand`). This implementation uses the listing **author's Sharetribe user UUID** (`ensuredAuthor.id.uuid` / `listing.author.id.uuid`) as `brand_id`, because that UUID is already the canonical brand key used internally in `src/config/configBrands.js` (`getBrandConfiguration(brandId)` etc.). **This is a working proposal, not a confirmed schema field** — if it's rejected, cross-brand analysis falls back to `brand_name` string matching, which works but isn't collision-proof against near-duplicate brand names.
 
+### Multi-brand cart grouping + recs rail instrumentation (added 2026-08-13, §14)
+
+**Status**: ✅ Shipped per `add-to-cart-restoration-prd.md` §14 / `insights/crossshop-tracking-prd.md` §14 — code-complete, unit-tested; see that PRD's §14.5 build note for live-verification status.
+
+`/saved` was restructured from a flat `ListingCard` grid into per-brand `SavedBrandGroup` sections (a fifth `brand_clickout` surface becomes two, disambiguated) plus an inspiration-first `SavedPageRecommendations` rail (a brand-new surface with no prior instrumentation at all).
+
+**`saved_surface` on `brand_clickout`** (schema above): populated only for the two `/saved` CTA surfaces, both routed through the same `trackingParams` object already carrying `brandName`/`brandId`/`category`/`productId` into `openBrandStorefront` → `pushBrandClickout` (`src/util/analytics/brandClickout.js`):
+- `'saved_item_card'` — a single card's own "Shop on {brand} →" CTA, tagged in `src/components/ListingCard/ListingCard.js`'s `handleShopClick`. `onShopNow` on `ListingCard` is only ever wired up from `/saved`, so this is hardcoded rather than threaded through as a prop.
+- `'saved_brand_group'` — the group-level "Shop {brand} →" CTA, tagged in `src/components/SavedBrandGroup/SavedBrandGroup.js`'s `handleGroupShopClick`, which routes through the exact same `SavedPage.js` `handleShopNow` → `RedirectTrustSheet` → `openBrandStorefront` pipeline as the per-card CTA (first click of session, session-global dedupe — unchanged). The group CTA's target is the **first in-stock item's `productUrl`** in that brand's group (there is no brand-storefront root URL in `publicData`), and the CTA is omitted entirely when no item in the group is shoppable.
+- Every other `brand_clickout` surface (PDP, brand-page About tab) pushes `saved_surface: null` — unchanged behavior, just an explicit null per this doc's "missing fields are pushed as null" convention (§3).
+
+**New event**: `saved_recommendation_click`
+```js
+{
+  event: 'saved_recommendation_click',
+  brand_id:   string | null,   // clicked recommendation's author UUID
+  product_id: string | null,   // clicked recommendation's listing.id.uuid
+  mela_session_id: string,     // getOrCreateSessionId() — same session key as brand_clickout
+}
+```
+Fired from `pushSavedRecommendationClick()` (`src/util/analytics/savedRecommendations.js`, modeled on `pushNewFromIndiaClick` in `homepageEditorial.js`), wired to `SavedPageRecommendations`'s `ProductCarousel` `onItemClick`. The rail itself (`src/components/SavedPageRecommendations/SavedPageRecommendations.js`) queries via the shared `homepageSdk` instance the same way `NewFromIndia.js` does — recency-sorted, capped at 2 per brand, capped at 8 total — filtered to exclude every currently-saved listing id, and self-hides (renders `null`) whenever the filtered result is empty or the query fails, so this event can only ever fire on a real, non-empty rail.
+
+**`saved_page_view` — event schema** (fired from `SavedPage.js`, not previously documented in this file):
+```js
+{
+  event: 'saved_page_view',
+  entry: string,               // 'add_to_cart_confirmation' | 'header_badge' | 'direct' — see add-to-cart-restoration-prd.md §12.3
+  recs_shown: boolean,         // added 2026-08-13 — whether SavedPageRecommendations rendered a non-empty rail this visit
+  brand_group_count: number,   // added 2026-08-13 — number of SavedBrandGroup sections rendered (0 for an empty cart)
+}
+```
+Unlike the original `entry`-only version, this push is now **deliberately delayed** past the initial mount: `SavedPage.js` waits for the saved-listings fetch to settle (`!fetchInProgress`) *and* for `SavedPageRecommendations` to report back via its `onLoaded(hasItems)` callback before firing, so `recs_shown`/`brand_group_count` reflect real data instead of always-false placeholder values. It still fires exactly once per page visit (guarded by a ref), and the recs rail is deliberately mounted whenever the cart is non-empty (not gated on the grid's own fetch having *succeeded*), so a saved-listings fetch failure can't leave this event permanently unfired.
+
 ### `vetting_strip_view` / `vetting_strip_click` (added 2026-07-26, P0.1)
 
 No-parameter events (`{ event: 'vetting_strip_view' }` / `{ event: 'vetting_strip_click' }`), fired from `src/util/analytics/vettingStrip.js`, consumed by `src/containers/MelaHomePage/sections/VettingStrip/VettingStrip.js`. `view` fires once per mount via an `IntersectionObserver` (threshold 0.5, disconnects after first fire — never double-counts within a page view); `click` fires on the "How we vet →" link, which also `scrollIntoView({ behavior: 'smooth' })`s to the `#how-we-vet` anchor on `TrustAssurance`. Secondary metric target (PRD §7): ≥15% of homepage sessions view, ≥4% click. Live-verified 2026-07-26: both events fire correctly against the running dev homepage. **Not independently verified in this session**: whether the smooth-scroll animation actually plays (the browser-automation tooling used to verify this couldn't drive `requestAnimationFrame`-based scroll in this pass — same limitation noted for viewport resizing elsewhere; the click firing and `preventDefault`-blocking-the-native-hash-jump were both confirmed, just not the animation itself).
@@ -155,6 +189,14 @@ GA4 does **not** auto-create custom dimensions from arbitrary event params — a
 3. `brand_id` and `destination` are intentionally **not** registered as custom dimensions in this MVP — they're carried in the raw event for BigQuery/debugging use, but the two reports below only need the four above. Add `brand_id` later if/when it's confirmed as a real schema field (see §3 caveat).
 4. In GTM, the GA4 Event tag for `brand_clickout` must map each `dataLayer` key to the matching GA4 event parameter (GTM does this via "Event Parameters" on the tag — set parameter name = GA4 param name = same string as the dataLayer key, e.g. `brand_name` → `brand_name`).
 5. Custom dimensions take up to 24–48 hours to start populating in standard reports after registration — use **DebugView** or **Realtime** to verify immediately instead of waiting on standard reports.
+
+### §14 additions (added 2026-08-13) — `saved_surface`, `saved_recommendation_click`, `saved_page_view`
+
+Same one-time-per-property registration flow as above, after each event/param has fired at least once in DebugView:
+
+1. **`brand_clickout`**: add a fifth custom dimension, scope Event — **Saved Surface**, event parameter `saved_surface`. Add it to the existing `brand_clickout` GA4 Event tag's Event Parameters mapping in GTM (`saved_surface` → `saved_surface`), same as step 4 above.
+2. **`saved_recommendation_click`**: new GA4 Event tag in GTM, trigger on `event = saved_recommendation_click`. Register two custom dimensions, scope Event: **Recs Brand ID** (`brand_id`) and **Recs Product ID** (`product_id`). `mela_session_id` reuses the already-registered `Mela Session ID` dimension — no new registration needed, just map it in this tag's Event Parameters too.
+3. **`saved_page_view`**: new GA4 Event tag in GTM, trigger on `event = saved_page_view`. Register three custom dimensions, scope Event: **Saved Entry** (`entry`), **Recs Shown** (`recs_shown`), **Brand Group Count** (`brand_group_count`) — the latter is a numeric dimension but GA4 custom dimensions don't have a numeric-vs-string mode distinction at registration time, so create it the same way as the others; use it as a metric in Explore reports via a calculated field if aggregation (avg/sum) is ever needed, since custom *dimensions* only support grouping, not summing, natively.
 
 ---
 
@@ -208,6 +250,10 @@ Confirm end-to-end before trusting any number from this system:
 - [x] **`mela_session_id` present and stable across clicks**: verified 2026-07-27 via direct `window.dataLayer` inspection (not just Tag Assistant) — two "Shop from Brand" clicks in the same browser session produced two `brand_clickout` events sharing one identical `mela_session_id` value, confirming the field both fires and persists correctly for session-scoped GA4 grouping. `Mela Session ID` GA4 custom dimension registered and confirmed reaching GA4 in DebugView. See §3 "Mela Session ID" note and PRD §13.0.
 - [ ] **Clarity records a session**: open the Clarity project dashboard, confirm a new recording appears within a few minutes of a test visit.
 - [ ] **CSP does not block anything**: with `REACT_APP_CSP=report`, check the browser console / CSP report endpoint for any `clarity.ms` or `googletagmanager.com` violations after install — there should be none, given the allowlist changes in `server/csp.js`.
+- [ ] **§14 — `saved_surface` disambiguates `/saved` clickouts**: on `/saved` with 2+ items from the same brand, click a per-card "Shop on {brand} →" CTA — confirm `brand_clickout` fires with `saved_surface: 'saved_item_card'`. Reload, click the brand group's "Shop {brand} →" CTA instead — confirm `saved_surface: 'saved_brand_group'`. Click any other `brand_clickout` surface (PDP, brand page) and confirm `saved_surface: null`.
+- [ ] **§14 — `saved_recommendation_click` fires from the recs rail**: on `/saved` with the bottom recs carousel visible, click a card — confirm `saved_recommendation_click` fires with non-null `product_id` and `mela_session_id`. Repeat on an empty cart (`/saved` with nothing saved) via the "Popular on Mela" rail.
+- [ ] **§14 — recs rail excludes saved items and self-hides**: save 2+ items from a brand also present in "New from India"/recent listings, confirm those exact listing ids never appear in the `/saved` recs rail. With every listing saved (or in a fresh dev environment with no other listings), confirm the rail renders nothing rather than an empty carousel shell.
+- [ ] **§14 — `saved_page_view` carries `recs_shown`/`brand_group_count`**: on a populated `/saved` with 2 brands, confirm the (single) `saved_page_view` event fires with `brand_group_count: 2` and `recs_shown` matching whether the bottom rail actually rendered. On an empty cart, confirm `brand_group_count: 0`.
 
 ---
 

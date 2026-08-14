@@ -106,6 +106,8 @@ N/A for end users. The internal pain is that every weekly metrics review is curr
 - `Cross-Shop: Entry vs Exit` Free Form exploration per `crossshop-tracking-prd.md` §13.1 Step 2, which is buildable as written.
 - All explorations plus the Phase 2 funnel pinned into a GA4 **Library** collection named `Cross-Shop Tracking`.
 
+**Follow-up (added 2026-08-13, not yet built into these Explorations):** `crossshop-tracking-prd.md` §14 shipped a `saved_surface` param on `brand_clickout` (`'saved_brand_group' | 'saved_item_card' | null`) and a new `saved_recommendation_click` event — see `crossshop-tracking.md`'s §14 addition for the field names and GA4 custom-dimension setup. When Phase 3 is next revisited: add `Saved Surface` as a breakdown dimension on `Cross-Shop: Multi-Brand Clickout Rate` to separate "shopped the whole brand" from "shopped one item" clicks originating from `/saved`, and consider a small `saved_recommendation_click`-based exploration (event count, `Recs Brand ID` breakdown) to answer whether the `/saved` recs rail drives discovery.
+
 ### Should Have (P1)
 
 **Phase 4 — Looker Studio dashboard**

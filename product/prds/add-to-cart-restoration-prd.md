@@ -306,7 +306,7 @@ branches on `isAuthenticated`) — not re-verified live in-browser in this sessi
 
 ---
 
-## 14. Follow-Up: Multi-Brand Cart Grouping + Inspiration-First Recommendations (Planned, 2026-08-13)
+## 14. Follow-Up: Multi-Brand Cart Grouping + Inspiration-First Recommendations (✅ Shipped, 2026-08-13)
 
 §12/§13 fixed the *legibility* of `/saved` (nav paths, counts, focus, anon parity). A
 marketplace-UX competitor review (Etsy, Amazon "Saved for later", ASOS Saved Items, Depop,
@@ -353,15 +353,54 @@ deferred, which stays deferred.
 - **Accepted trade-off, not actioned:** grouping adds vertical length on large carts;
   acceptable for legibility. This round still adds **no fast-path checkout** (§12.5 stands).
 
-### 14.3 Acceptance Criteria (additive to §9, §12.4, §13.3 — Planned, not yet built)
+### 14.3 Acceptance Criteria (additive to §9, §12.4, §13.3 — ✅ Shipped, code-complete + browser-verified)
 
-- [ ] Saved items render in per-brand groups, each with brand name, an accurate item count, and (when derivable) a soft subtotal
-- [ ] Listings without a `brand` render in a trailing "More saved" group; nothing is dropped
-- [ ] Subtotal is suppressed when a group's items span multiple currencies or any item lacks a price
-- [ ] Group "Shop {brand} →" CTA routes through `RedirectTrustSheet` (first session click), returns focus to the group CTA on close, and is omitted when the group has no shoppable item
-- [ ] Recommendations render in the empty state and once at the bottom of a populated page, never echo already-saved items, and self-hide when the query returns nothing
-- [ ] Group headers are real `<h2>`s within labelled sections; the recs carousel is keyboard-navigable
-- [ ] New analytics surfaces are emitted per `insights/crossshop-tracking-prd.md` §14
+- [x] Saved items render in per-brand groups, each with brand name, an accurate item count, and (when derivable) a soft subtotal
+- [x] Listings without a `brand` render in a trailing "More saved" group; nothing is dropped
+- [x] Subtotal is suppressed when a group's items span multiple currencies or any item lacks a price
+- [x] Group "Shop {brand} →" CTA routes through `RedirectTrustSheet` (first session click), returns focus to the group CTA on close, and is omitted when the group has no shoppable item
+- [x] Recommendations render in the empty state and once at the bottom of a populated page, never echo already-saved items, and self-hide when the query returns nothing
+- [x] Group headers are real `<h2>`s within labelled sections; the recs carousel is keyboard-navigable
+- [x] New analytics surfaces are emitted per `insights/crossshop-tracking-prd.md` §14
+
+### 14.5 Build Note (2026-08-13)
+
+Implemented as specified: `SavedPage.js` groups `savedListings` by `publicData.brand`
+(first-seen order preserved), trailing brand-less items into a `{ brandName: null }`
+"More saved" group; new `SavedBrandGroup` (header `<h2>` in a labelled `<section>`, item
+count, `formatMoney`-based subtotal via `Decimal` summation gated on same-currency +
+every-item-priced, group CTA using the first in-stock shoppable listing) and new
+`SavedPageRecommendations` (recency query via `util/homepageSdk`, `capPerBrand` at 2/8,
+excludes saved ids, self-hides when empty, reports back via `onLoaded` so the page's
+`saved_page_view` push can carry real `recs_shown`/`brand_group_count`).
+
+One implementation issue found and fixed during this pass, not in the original spec: a
+naive `!fetchInProgress` gate on the bottom recs rail and the delayed `saved_page_view`
+push caused a one-render flash (recs mounting then immediately unmounting) whenever
+listing entities were already in the Redux store before the fetch thunk's
+`fetchInProgress` flag had settled, and could leave `saved_page_view` permanently unfired
+if a fetch never resolved. Fixed with a `dataSettled = hasListings || !fetchInProgress`
+condition used consistently for both. Covered by a dedicated unit test
+(`SavedPage.test.js`, "fires the delayed saved_page_view...").
+
+**Live-verified 2026-08-13, anonymous path** (localhost dev, real dev Sharetribe
+backend — House of Chikankari + Tarinika listings): saved 1 + 2 items across two brands →
+`/saved` rendered two real `<h2>` brand groups ("House Of Chikankari" · 1 item · $48,
+"Tarinika" · 2 items · $265, subtotal summed correctly); clicked group "Shop Tarinika →" →
+`RedirectTrustSheet` opened (first click) → dismissed → focus returned to the group CTA
+button (confirmed via `document.activeElement`); clicked it again → `brand_clickout` fired
+with `saved_surface: 'saved_brand_group'`, correct `destination` (first in-stock item's
+`productUrl`), real outbound redirect to tarinika.com in a new tab; a per-card CTA on the
+same page fired `brand_clickout` with `saved_surface: 'saved_item_card'` and its own
+product's URL. `saved_page_view` observed via `window.dataLayer` with
+`recs_shown: true, brand_group_count: 2` on the populated page and
+`recs_shown: true, brand_group_count: 0` on an emptied cart. Emptied the cart and
+confirmed the "Popular on Mela" empty-state recs entry point rendered with its own copy.
+No console errors attributable to this change (only a pre-existing, unrelated Mapbox
+token warning). Not verified live in this pass: the authenticated path (logic is shared
+with the anon path per `selectEffectiveSavedListingIds`, and is covered by
+`isAuthenticated: true` unit tests) and the "no shoppable item" / "every item out of
+stock" group-CTA-omission edge cases (covered by `SavedBrandGroup.test.js` only).
 
 ### 14.4 Out of Scope (additive to §11, §12.5, §13.4)
 

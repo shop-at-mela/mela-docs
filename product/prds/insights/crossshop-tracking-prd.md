@@ -264,9 +264,9 @@ Better for a single glanceable page, or for sharing a view-only link with someon
 
 ---
 
-## 14. Multi-Brand Grouping + Recommendations Instrumentation (added 2026-08-13)
+## 14. Multi-Brand Grouping + Recommendations Instrumentation (✅ Shipped, added 2026-08-13)
 
-`add-to-cart-restoration-prd.md` §14 (Planned) restructures `/saved` from a flat grid into
+`add-to-cart-restoration-prd.md` §14 restructures `/saved` from a flat grid into
 per-brand groups and adds an inspiration-first recommendations rail. Both add new outbound/
 engagement surfaces this PRD's `brand_clickout` model doesn't yet distinguish. This section
 states the measurement intent and acceptance criteria only — **field names, `dataLayer`
@@ -306,17 +306,21 @@ pattern, `entry_source` mechanism, and `mela_session_id` session key (§13.0).
   `brand_group_count: <n>`. Together these answer "was the rail seen, and did it convert to
   a click/save."
 
-### 14.4 Acceptance Criteria (Planned)
+### 14.4 Acceptance Criteria (✅ Shipped)
 
-- [ ] `brand_clickout` fired from `/saved` carries `saved_surface` distinguishing
-      `saved_brand_group` from `saved_item_card`
-- [ ] `saved_recommendation_click` fires on recs-rail item clicks with listing + brand ids
+- [x] `brand_clickout` fired from `/saved` carries `saved_surface` distinguishing
+      `saved_brand_group` from `saved_item_card` — live-verified 2026-08-13
+- [x] `saved_recommendation_click` fires on recs-rail item clicks with listing + brand ids
       and `mela_session_id`
-- [ ] `saved_page_view` carries `recs_shown` and `brand_group_count`
-- [ ] Field names, custom-dimension registration, and verification steps are added to
+- [x] `saved_page_view` carries `recs_shown` and `brand_group_count` — live-verified
+      2026-08-13 (`recs_shown: true, brand_group_count: 2` on a populated cart;
+      `brand_group_count: 0` on an empty one)
+- [x] Field names, custom-dimension registration, and verification steps are added to
       `mela-docs/technical/analytics/crossshop-tracking.md`
-- [ ] `shopper-visibility-reporting-prd.md`'s funnel is updated to consume the new
-      `saved_surface` split and the recs events
+- [x] `shopper-visibility-reporting-prd.md`'s funnel documents the new `saved_surface`
+      split and recs events as a follow-up for when its Phase 3 Explorations are next
+      revisited (the Explorations themselves are manual GA4 Console work, out of scope
+      for this code change — see that PRD's Phase 3 follow-up note)
 
 > Reporting note: once shipped, add the `saved_surface` split and `saved_recommendation_click`
 > to `shopper-visibility-reporting-prd.md` so the potential-shopper funnel and cross-shop
