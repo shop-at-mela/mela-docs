@@ -2,6 +2,15 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-14
+
+### Shipped
+- `feat(home)` — Hero headline reframed from story-led ("The makers and stories behind India's best brands") to product/brand-led ("Modern brands, rooted in India's rich, regional culture"); subheadline updated to keep a maker/craft mention while leading with shoppability. Decided via `/ux-design panel` + `/uxr personas` review (both consensus, no dissent) rather than the PMF-survey route originally planned. `HeroSection.test.js` updated to match; `web-client` commit `7cc46fdf2`.
+- `docs(prd)` — `PRD_TRACKER.md` UXR/Copy Debt row for "Hero headline reframe" marked done, noting the panel/UXR-consensus path taken instead of PMF-survey gating.
+
+### Next
+- [ ] None new from this change — the 3 mockup variants in `homepage-redesign.html` (Story-led/Discovery-led/Heritage-led) are now superseded; no action needed unless a future redesign revisits them.
+
 ## 2026-08-13
 
 ### Shipped

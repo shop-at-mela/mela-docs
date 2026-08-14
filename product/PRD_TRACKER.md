@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-08-13  
+**Last updated:** 2026-08-14  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 **Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
@@ -97,7 +97,7 @@ Items flagged during the 2026-05-25 UXR + UX design content analysis that need a
 
 | Item | Flagged In | Effort | Priority |
 |------|-----------|--------|----------|
-| Hero headline reframe (value-first vs origin-first). **Update 2026-07-30:** the v1 mockup's belonging line ("Bring a little of home…") reads as US-centric for US-raised shoppers; 3 replacement variants (Story-led / Discovery-led / Heritage-led, leading with craft + makers + sustainability) are rendered in `mockups/homepage-redesign.html`. Route the choice through the PMF survey / browse-alongs. | `homepage-redesign-prd.md` §6 note; homepage-redesign mockup | Copy-only | After analytics baseline |
+| ~~Hero headline reframe (value-first vs origin-first)~~. **Update 2026-08-14:** shipped directly via `/ux-design panel` + `/uxr personas` consensus instead of waiting on the PMF-survey route — headline moved from story-led ("The makers and stories behind India's best brands") to product/brand-led ("Modern brands, rooted in India's rich, regional culture"), answering Priya's/Arun's "not costume-y / too traditional" trust need and applying the already-decided "living culture, not heritage" voice. The 3 mockup variants (Story-led/Discovery-led/Heritage-led) in `mockups/homepage-redesign.html` were superseded, not chosen from. | `homepage-redesign-prd.md` §6 note; homepage-redesign mockup | Copy-only | ✅ Done 2026-08-14 |
 | Dedicated Gifting / occasion landing page (occasion is only a filter/module today — `brand-storefront-occasion-module-prd.md`; `/occasions/*` deferred in `homepage-redesign-prd.md` §10). Likely warrants its own small PRD. Interim nav link tracked in `TODO.md` 2026-07-30. | homepage-redesign mockup (pt 1) | New PRD + page | Med — validation wedge |
 | BrandCardHome redesign: big primary photo + thumbnail filmstrip, **hover-to-swap desktop / tap mobile** (no swipe → no gesture conflict with the horizontal brand row; watch perf — card renders many times per row). Demonstrated in mockup. | homepage-redesign mockup (pt 7); `brand-hero-card-webclient-prd.md` | Component + spec | Med |
 | Homepage certification education: keep condensed chips but teach on demand (tap/hover definitions — `CertificationBadge` already supports `showTooltip`); move deep education to a "How we vet" / sustainability surface. | homepage-redesign mockup (pt 8); `TrustAssurance` | Copy + progressive-disclosure | Low–Med |
