@@ -31,7 +31,7 @@
 ### Our Solution
 **AI-powered discovery platform** that curates Indian brands and drives traffic to their sites via:
 - **Easy brand onboarding**: LLMs optimize product titles, extract standardized item aspects and assocaite category for SEO/conversion; 
-- **Smart discovery**: AI recommendations for similar products (same brand + category)
+- **Mela Discovery Engine**: Results ranked by curation quality (certifications, craft, purchasability, brand diversity) — not recency or paid placement — plus diaspora-native search that bridges US ↔ Indian vocabulary (kurta ↔ tunic, jhula ↔ swing), and AI "similar products" recommendations
 - SEO (ranking for "Indian baby clothes USA")
 - Content marketing (brand stories, festival campaigns)
 - Targeted diaspora social media
@@ -113,6 +113,7 @@ Post-validation → US fulfillment + integrated checkout + AI marketing (persona
 
 ### Differentiation
 - **Export-first focus**: Built for cross-border Indian brands
+- **Diaspora-native discovery engine**: Curation-quality ranking + bilingual/transliteration search — a discovery moat English-only, recency/paid-ranked marketplaces can't replicate
 - **Performance-based**: 2-5% vs. Amazon 15% / eBay 12-15%
 - **Category expertise**: Baby fashion depth, not broad/shallow
 - **Partnership model**: Co-build vs. extract value

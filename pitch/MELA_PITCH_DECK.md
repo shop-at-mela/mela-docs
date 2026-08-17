@@ -89,7 +89,7 @@ Western consumers (starting with Indian diaspora) prefer a curated marketplace o
 - **Pure discovery platform**: SEO-driven traffic for "Indian baby clothes", festival searches
 - **Performance-based model**: Zero listing fees, pay per qualified visit during MVP validation (moving to conversion-based commission post-validation)
 - **Brand storytelling**: Dedicated pages showcasing heritage and craftsmanship
-- **Smart product discovery**: AI-driven similar products (same brand + category) to increase basket size
+- **The Mela Discovery Engine**: Results ranked by *curation quality* — certifications, craftsmanship, purchasability, brand diversity — not upload-recency or paid placement like generic marketplaces. Plus AI-driven "similar products" (same brand + category) to increase basket size
 - **Collaborative marketing**: Co-created content, festival campaigns, social media
 - **Simple integration**: Product photos + descriptions, links to your Shopify
 - **Zero fulfillment burden**: You keep using your existing operations
@@ -99,6 +99,7 @@ Western consumers (starting with Indian diaspora) prefer a curated marketplace o
 - **Tariff-friendly access**: Brands ship directly; customers avoid high import duties (India has 28% standard tax rate, 0% de minimis threshold)
 - **Trust signals**: GOTS certified, organic materials, safety certifications
 - **Cultural authenticity**: Real Indian design and craftsmanship
+- **Search that speaks your language**: Diaspora-native search bridges US and Indian/regional vocabulary (kurta ↔ tunic, jhula ↔ swing, romper ↔ onesie) — so families find products even when they don't know the "American" word
 - **Unified discovery**: All brands in one trusted platform (shopping across multiple sites)
 - **Premium positioning**: Quality over mass-market alternatives
 
@@ -217,6 +218,7 @@ Once supply and demand validated, build full marketplace capabilities:
 **Differentiation:**
 - **Export-first focus**: Built specifically for cross-border Indian brands
 - **Cultural curation**: Deep understanding of diaspora preferences
+- **Diaspora-native discovery engine**: Curation-quality ranking + bilingual/transliteration search — a defensible discovery moat generic marketplaces (recency/price/paid-placement, English-only) structurally can't replicate
 - **Performance-based**: Zero risk vs. fixed marketing costs
 - **Category expertise**: Baby fashion depth vs. broad/shallow
 - **Partnership approach**: Co-building vs. transactional vendor relationships

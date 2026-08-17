@@ -71,6 +71,7 @@
 
 ### 🚀 Marketing & Technology We Handle
 - **AI optimization**: Product titles optimized for discovery/conversion using LLMs
+- **Merit-based ranking**: Your products surface on *quality* — certifications, craftsmanship, in-stock — not ad spend or pay-to-play. Great products win, even without a big marketing budget
 - **Smart discovery**: Similar products (brand + category) shown to increase sales
 - **SEO**: Ranking for "Indian baby clothes USA"
 - **Content**: Brand stories, festival campaigns

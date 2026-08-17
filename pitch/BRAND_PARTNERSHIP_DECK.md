@@ -110,6 +110,8 @@ We're not extracting value from you. We're building an export business **togethe
 
 ### 3. 🚀 Marketing & Technology We Handle
 - **AI-optimized listings**: Product titles optimized for SEO and conversion using LLMs
+- **Merit-based ranking**: Products surface on *quality* — certifications, craftsmanship, in-stock, brand diversity — not ad spend or pay-to-play placement. A strong product wins on merit, even without a big marketing budget
+- **Diaspora-native search**: Search bridges US and Indian/regional vocabulary (kurta ↔ tunic, jhula ↔ swing), so customers find your products even when they don't know the "American" word
 - **Smart product discovery**: Automatic similar product recommendations increase basket size
 - **SEO-driven traffic**: Ranking for "Indian baby clothes USA", festival searches
 - **Content marketing**: Brand stories, buying guides, festival campaigns
