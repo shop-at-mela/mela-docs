@@ -60,6 +60,7 @@ grid:
   enabled: false                 # DEFERRED (2026-07-13) — reach (Pinterest SEO, standalone IG) is higher-ROI
                                   # until the profile has visitors. See activation_gate.
   activation_gate: "Re-enable once IG Insights shows a steady count of profile visits/website taps from non-followers per week (metrics sheet; cold-start-checklist.md → Sunday). Before that, no audience is on the profile to navigate."
+  while_off: "While enabled=false: PRODUCT-FORWARD grid face on every brand/product post (reel frame 1 / carousel cover = the hero product); text-card covers for EDUCATION posts only; do NOT produce anchor wordmark cards or force the 3-tile brand-row structure (both are grid-navigation devices with no payoff until the grid is on). See visual-style-guide.md → 'Grid face: product-forward while the grid is off'. Diagnosis: 2026-08-16 grid review (wall-of-text-cards)."
   platform: instagram            # never applies to Pinterest
   row_size: 3                    # feed posts per row; keep feed cadence a multiple of this
   rows_per_week: 3               # weekly batch = 3 rows = 9 feed posts

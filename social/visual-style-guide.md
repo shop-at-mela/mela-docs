@@ -267,7 +267,19 @@ Applies to every caption, pin description, and Story text:
 - **Include product list** — "Featured in this carousel: [product 1, product 2, ...]" (aids discoverability on destination page)
 - NO price in caption; NO text overlays on images
 
+### Grid face: product-forward while the grid is off (added 2026-08-16)
+
+> The profile grid shows only **slide 1** — a carousel's cover, a reel's first frame. While `category-routing.yaml → grid.enabled` is `false`, **every brand and product post must lead with a PRODUCT grid face** (the hero/bestseller product shot per the visual baseline), never a typographic text card.
+
+- **Brand-spotlight is product-forward, never a lone text card.** A brand-spotlight *reel* opens on the hero product in motion; a brand-spotlight *carousel* uses the bestseller as its cover (a small text overlay is fine) and includes actual bestseller product slides. A single typographic "brand story" card with no product shown is a **defect** — on a visual platform the product *is* the hook for brand discovery.
+- **Typographic text-card covers are for EDUCATION only** (`trust_service` / `cultural_education`), where "slide 1 is a hook, never a product" earns saves (see [Education Visual System](#education-visual-system)). Do **not** apply that rule to brand/product posts.
+- **No anchor wordmark cards while the grid is off.** The "Now on Mela / {wordmark}" anchor tile is a *grid-navigation device* (the center spine of a 3-tile brand row) — it only pays off when a profile visitor scans the grid. With `grid.enabled=false` there is no row to anchor, so a wordmark card is just text with no payoff. Don't produce it; anchor cards return only when the grid is switched back on (`grid.activation_gate`).
+
+> **Why this rule exists:** an Aug 2026 grid review found the newest two rows were a wall of cream text cards (brand-spotlight covers + vestigial anchor tiles + education cards), with shoppable products buried inside carousels or pushed down-grid. The feed read as an editorial blog, not a shoppable brand feed. Root cause: the 3-tile brand-row *structure* (story + anchor + product) was still being produced even though the grid feature it serves is disabled.
+
 ### Instagram Grid Row Anchors (Theme Cards & Teaser Reels)
+
+> **Applies only when `grid.enabled=true`.** While the grid is off, follow [Grid face: product-forward](#grid-face-product-forward-while-the-grid-is-off-added-2026-08-16) above — do **not** ship anchor wordmark cards.
 
 Row mechanics (row = 3 tiles, weekly batch = 3 rows, composition, planning, ordering) are canonical in `category-routing.yaml` → `grid`; this section covers the anchor's **visual** design. The anchor is the center tile of a brand row.
 
