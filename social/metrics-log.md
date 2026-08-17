@@ -17,7 +17,7 @@ The monthly hook/format teardown (`hook-engineering.md` §6). `/social-launch` P
 
 | Date | Niche surfaces scanned | Refreshed 5 angles? | Promote / kill decisions (hooks + angles) |
 |------|------------------------|---------------------|-------------------------------------------|
-| _(none yet — first teardown pending)_ | | | |
+| 2026-08-16 | Directional niche scan (no own-account baseline yet): IG Reels + web + Reddit — Indian craft/D2C hooks, r/ABCDesis diaspora/suitcase threads, conscious-parenting + sustainable-fashion "how to tell" reels, "first Diwali" hosting demand. | Angles unchanged (§5's 5 hold); belonging #1 + certs #4 + occasion #5 all confirmed live in-niche. | **Promote/kill: none** (no baseline — directional only per §6). **Seeded 5 new §2-safe hook hypotheses** into §7 (suitcase-economy, GOTS/OEKO-TEX cert decode, inside-out seam teardown, discovery wedge, first-Diwali hosting). Format signal: "here's why" open loop + specific number in first ~1.5s + seam-teardown reel skeleton. |
 
 ### Hook & angle scoring (promote / kill thresholds)
 

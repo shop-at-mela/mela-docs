@@ -144,6 +144,15 @@ Seed hypotheses:
 - *(Surprise — angle 3)* "No two are ever identical. Here's why."
 - *(Desire / urgency — angle 5)* "Hosting your first Diwali away from home? Start with the table."
 
+Niche-seeded hypotheses (2026-08-16 directional scan — grounded in current top-performing niche reels; still untested, promote nothing until a real teardown clears §6):
+- *(Belonging / loss — angle 1, Neha)* "The things worth suitcase space are the ones you can't buy here. Here's one you don't have to pack anymore." *(from the diaspora "emotional suitcase" reels + r/ABCDesis "what do you bring from India" threads)*
+- *(Certifications / taste — angle 4, Sarah)* "'Organic' on a baby label means almost nothing on its own. Here are the two certifications that actually do." *(from the in-niche "organic means nothing without GOTS/OEKO-TEX" pattern — name the cert, verify per brand first)*
+- *(Empowerment / craft teardown — angle 3/4, Sarah + Arun)* "Turn it inside out. The back of the stitching tells you a human made it. Here's what to look for." *(the winning "start at the seams / check the stitch count" reel format, reframed as empowering — never "your store sells fakes")*
+- *(Discovery / curiosity — angle 2, Neha)* "The brand your cousin in India swears by probably doesn't ship here. A few now do." *(discovery-difficulty wedge + the "I tried 12 Indian D2C…" specificity pattern)*
+- *(Occasion-in-America — angle 5, Priya)* "Hosting your first Diwali in the US and don't know where to start? Begin with the table, not the sweets." *(from "First Diwali, American, looking for advice" search demand)*
+
+Format note from the same scan: the dominant winning structure is a **"here's why" open loop + a specific number in the first ~1.5s** ("3 tells," "two certifications"), and the **inside-out / seam-teardown** reel skeleton. Favor these when scripting reels this batch.
+
 Every entry must survive the §2 "Never" column (including the no-disparaging-desi-retail rule) and the `visual-style-guide.md` What-NOT-to-Do list.
 
 ---
@@ -185,3 +194,5 @@ Before 2026-08-13, hook discipline lived implicitly inside `visual-style-guide.m
 - **Swipe file "tested well" → untested hypotheses + measurement layer.** *Why:* nothing has been tested pre-launch; §6 now carries promote/kill criteria so the teardown is data-driven, not editorial.
 
 Deliberate stances **kept** (not overridden): calm non-exoticizing voice, skill-triggered (not daily-automated) production, verify-before-caption, belonging as the moat. Deferred to backlog: a community/engagement layer (in-voice replies, save/share prompts, UGC/creator seeding) — raised by the panel, not yet built.
+
+**Reel audio strategy (done 2026-08-16 → `reel-audio-strategy.md`).** Best-practices pass on how brands use reel audio for awareness: audio as a ranking + discovery-feed lever, the **Business-account music constraint** (`@shopatmela` is Business → Meta Sound Collection ~14k cleared tracks only; full trending library = Personal/Creator, and copyright follows the *use* not the account label, so the Creator loophole isn't recommended), Mela's recommended stack (Meta Sound Collection + licensed library + original signature sound), trending-sound timing (~5k–30k-use sweet spot, ↗ arrow, 24–48h, cross-platform arbitrage), and logging the sound per post for the §6 teardown. Open founder decisions live in that doc §7.
