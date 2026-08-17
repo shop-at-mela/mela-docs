@@ -99,6 +99,8 @@ Prompts #1 and #3 in one loop. Run **monthly** (not daily — daily trend-chasin
 
 **Inputs.** The highest-performing **Instagram Reels, TikToks, and Reddit posts** from the last 30 days in Mela's niche — Indian craft, diaspora shopping, festival hosting, ethical/handmade goods, the adjacent creators. Use `firecrawl_search` / web search + manual scan; Reddit surface = `reddit-strategy.md` subreddits.
 
+**Also mine our own search data (new input, 2026-08-17).** The ingestion pipeline's **diaspora synonym map** (`search_synonyms`) and the on-site **zero-result query logs** (`search-ranking-relevance-prd.md` §4B/§7) are a first-party demand + language signal the niche scan can't give you: the *actual* US↔Indian words shoppers use, and the things they searched for and didn't find. The vocabulary gap itself is a belonging hook (see §7); the unmet searches are angle-#2 (discovery) and angle-#5 (occasion) fuel. This is the same loop `reddit-strategy.md` feeds — one demand signal, three surfaces.
+
 **Extract (the prompt #1 teardown):**
 - Repeating **hooks** — the exact first lines / first frames that recur.
 - **Visual styles & formats** — carousel vs. reel, talking-head vs. b-roll, text-on-screen conventions.
@@ -151,7 +153,12 @@ Niche-seeded hypotheses (2026-08-16 directional scan — grounded in current top
 - *(Discovery / curiosity — angle 2, Neha)* "The brand your cousin in India swears by probably doesn't ship here. A few now do." *(discovery-difficulty wedge + the "I tried 12 Indian D2C…" specificity pattern)*
 - *(Occasion-in-America — angle 5, Priya)* "Hosting your first Diwali in the US and don't know where to start? Begin with the table, not the sweets." *(from "First Diwali, American, looking for advice" search demand)*
 
-Format note from the same scan: the dominant winning structure is a **"here's why" open loop + a specific number in the first ~1.5s** ("3 tells," "two certifications"), and the **inside-out / seam-teardown** reel skeleton. Favor these when scripting reels this batch.
+Vocabulary-bridge hypotheses (2026-08-17 — sourced from the search pipeline's diaspora synonym map; belonging is the moat, §2. Untested; promote nothing until §6 clears):
+- *(Belonging / recognition — angle 1, Neha/Priya)* "You call it a tunic. Your naani calls it a kurta. It's the same thing you've been missing." *(from the US↔Indian synonym pairs the search index now carries)*
+- *(Belonging / memory — angle 1, Neha)* "The word you forgot but the thing you remember: a jhula. Yes, it ships here." *(transliteration pair jhula↔swing)*
+- *(Discovery / relief — angle 2, Neha)* "You've been searching the wrong word. Type 'kurta,' not 'tunic' — here's everything that shows up." *(demonstrates the diaspora-native search itself as the payoff)*
+
+Format note from the same scan: the dominant winning structure is a **"here's why" open loop + a specific number in the first ~1.5s** ("3 tells," "two certifications"), and the **inside-out / seam-teardown** reel skeleton. Favor these when scripting reels this batch. The **vocabulary-bridge** lines above are a *distinct* structure — recognition/naming, not a numbered loop — and are the one hook family that doubles as an ad for the diaspora search itself.
 
 Every entry must survive the §2 "Never" column (including the no-disparaging-desi-retail rule) and the `visual-style-guide.md` What-NOT-to-Do list.
 

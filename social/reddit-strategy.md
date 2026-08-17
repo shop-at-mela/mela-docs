@@ -13,6 +13,16 @@
 
 These two goals pull in the same direction (be genuinely useful) so they don't create conflicting incentives, but keep them distinct in your head: goal 1 succeeds even with zero SEO benefit, goal 2 is a bonus, not the reason to post.
 
+### A third, quieter use: demand-sensing (Reddit → search pipeline)
+
+Reddit is a **listening surface**, not just a posting one — and this is arguably its safest, highest-value use during warmup. Diaspora threads ("what do you bring back from India?", "what's this garment actually called?", "where do I find X in the US?") are a free feed of **real language and real demand** that flows *into* the search pipeline:
+
+- **Language → search vocabulary.** The exact US↔Indian terms people use in threads are the synonym pairs the search pipeline should carry (`search_synonyms` / `searchKeywords` — see `search-ranking-relevance-prd.md` §4B and `pinterest-playbook.md` §6). Harvest them; feed them back.
+- **Unmet asks → the zero-result loop.** A recurring "does anyone make X" thread is a demand signal — cross-check it against on-site zero-result logs (search PRD §7). If Mela can't answer it, that's a supply/content gap, not a posting opportunity.
+- **The payoff:** on-site search now *genuinely answers* "where do I find authentic Indian X in the US" — which makes the occasional honest, disclosed answer (mode 1 below) credible rather than a plug.
+
+**This is demand-sensing, not a distribution feed.** Do not turn Reddit into a product-posting channel — the modes below still govern all *posting*; this section only governs *listening*.
+
 ---
 
 ## Non-negotiable ground rules
