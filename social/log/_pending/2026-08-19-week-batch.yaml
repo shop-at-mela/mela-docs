@@ -1,0 +1,185 @@
+---
+# PENDING WEEK BATCH — ready to render, waiting on Blotato monthly credit refresh (2026-08-19).
+# Built + verified 2026-08-16 via /social-launch. Resume on/after 2026-08-19: credits refresh,
+# then generate visuals -> wife review -> schedule -> log (move into per-brand log/ files at Phase 7).
+# Blocker was 43 credits remaining (insufficient for 4 reels); user chose to wait for the new month.
+
+meta:
+  created: "2026-08-16"
+  resume_on: "2026-08-19"   # Blotato new-month credit refresh
+  status: pending_credits
+  built_via: /social-launch
+  week_numbers: { isharya: 1, the-alternate: 2, polite-society: 1, certdecode: 1 }
+
+# --- Decisions locked in this planning session (do not re-litigate on resume) ---
+decisions:
+  shape: "ALL-REELS IG feed this week (4 reels); 3 supporting product stills live on Pinterest only. grid.enabled=false, so product-forward faces, no anchor wordmark cards."
+  watermark: "Mela-only ('Discovered on Mela'), bottom-right subtle. NOT '{brand} discovered on Mela' (revisit if tags un-pause)."
+  on_screen_text: "Kept OUT of the Blotato layer (Blotato text = off-brand blue-box/shadow, see feedback_blotato_reel_production). User adds ONE hook line manually in IG/CapCut at publish (clean font, navy #2D2D7B / marigold, no shadow, no box)."
+  brand_tags: "PAUSED — no @brand handles in captions."
+  personas: "Neha x2 (Isharya, Polite Society) + Sarah x2 (Alternate, cert-decode). Zero Arun (deliberate rebalance off heritage)."
+  us_visual_test: "Stage reel scenes in a US context vs. the earthy baseline; log which tiles carry the cue to read the test later."
+  hoc_reel: "DEFERRED — do not force into this week. Needs rework (strip Blotato text, re-caption, add stitch-macro payoff). Ship when right; spec on request."
+
+# --- Phase 0b teardown (done 2026-08-16) ---
+teardown: "Directional niche scan logged in metrics-log.md; 5 niche-seeded hook hypotheses added to hook-engineering.md §7. No promote/kill (no baseline)."
+
+# --- Tiles (all listings live-verified 2026-08-16) ---
+tiles:
+  - id: 1
+    brand: Isharya
+    slug: isharya
+    format: reel
+    platform: instagram
+    type: product
+    persona: Neha
+    angle: discovery_2
+    utm_campaign: isharya_w1
+    dev_listing_id: 6a54b62c-b9a9-4e99-acb1-480e1c3042e4
+    product_live_title: "Drop Earrings with Handcrafted Mirror & Pearl for Women 3.2X2.7cm Isharya"
+    verified: "live 2026-08-16; materials: hand-cut mirror, shell pearl, 18Kt gold plating, Mughal motifs"
+    csv_note: "Reconcile dry-run 2026-08-16 found Isharya CSV CLEAN for live products: 550 rows matched to live SKUs, 0 rewritten, 0 wrong-product. No --apply needed. The earlier apparent 'drift' was an OUT-OF-STOCK stale-ID row (2105 out-of-stock rows carry old IDs, expected) picked up by an unfiltered lookup-by-LID. LESSON: pull hero images from IN-STOCK rows or the live listing, not a bare LID lookup. This earrings image is from the LIVE listing = correct."
+    image_url: "https://sharetribe.imgix.net/68ab648b-6d39-4b2b-bd2c-f99295eeb366/6a54b62c-1cc5-425c-989e-69e46f237a7b?auto=format&crop=edges&fit=crop&h=1602&w=2400"
+    hook_line: "The jewelry your cousin in India tags on every wedding post. It ships to your door now."
+    caption: |
+      The jewelry your cousin in India tags on every wedding post. It ships to your door now.
+
+      These drop earrings catch the light with hand cut mirrors and shell pearls, set on 18 karat gold plating. The motifs echo Mughal miniature painting. Made to be the boldest thing you wear all season.
+
+      Discover Isharya on Mela, link in bio.
+
+      📍 Handcrafted in India | Ships to the US
+      #IndianJewelry #StatementEarrings #MirrorWork #FestiveJewelry #WeddingGuestStyle #ShopIndian #DiscoverOnMela
+    alt_text: "Isharya drop earrings with hand cut mirrors and shell pearls on gold plating, on a vanity in soft light."
+    visual: "Real product photo (never AI-gen jewelry) -> Blotato Product Scene, silent/text-free. US-context test: modern US bedroom vanity/mirror, warm evening light. Payoff: macro reveal of hand-cut mirror catching light."
+
+  - id: 2
+    brand: Isharya
+    slug: isharya
+    format: pin
+    platform: pinterest
+    type: product
+    utm_campaign: isharya_w1
+    dev_listing_id: 6a54b62c-b9a9-4e99-acb1-480e1c3042e4
+    board: { name: "Gifting and Occasions", id: "1103593152379723628" }
+    pin_title: "Indian Mirror Work Drop Earrings | Handcrafted Statement Jewelry"
+    pin_description: "Handcrafted drop earrings with hand cut mirrors and shell pearls on 18 karat gold plating, inspired by Mughal miniature motifs. Statement Indian jewelry for weddings and festive occasions, shipped to the US. Isharya on Mela."
+    link: "https://www.shopatmela.com/l/6a54b62c-b9a9-4e99-acb1-480e1c3042e4?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w1&utm_content=mirror_pearl_drop_earrings"
+
+  - id: 3
+    brand: The Alternate
+    slug: the-alternate
+    format: reel
+    platform: instagram
+    type: product
+    persona: Sarah
+    angle: trust_taste_4
+    utm_campaign: thealternate_w2
+    dev_listing_id: 6a14b1db-ce13-43b1-b0a5-5e218d4e1499
+    product_live_title: "Abstract Embroidery Slip-Ons 5-13 The Alternate India"
+    verified: "live 2026-08-16; velvet embroidered upper, 100% vegan, handmade PU outsole"
+    image_url: "https://cdn.shopify.com/s/files/1/0986/7726/files/AMP00579_090f4412-7617-466e-a18b-a1d7d618d18b.jpg?v=1729080913"
+    hook_line: "'Vegan leather' is usually just plastic. These aren't leather at all."
+    caption: |
+      'Vegan leather' is usually just plastic with a nicer name. These skip the leather idea entirely.
+
+      The upper is real velvet, embroidered by hand, on a handmade sole. 100% vegan, and made in India. Soft enough for a long day, dressy enough that it never looks like you tried too hard.
+
+      Discover The Alternate on Mela, link in bio.
+
+      📍 Handcrafted in India | Ships to the US
+      #VeganFootwear #HandcraftedShoes #EmbroideredShoes #EthicalFashion #SlowFashion #MadeInIndia #DiscoverOnMela
+    alt_text: "Beige velvet slip on shoes with hand embroidery, on a wooden floor in warm light."
+    visual: "Real product photo -> scene, silent/text-free. US-context test: US hardwood entryway with cropped denim, morning light. Payoff: macro on the velvet hand-embroidery (the 'what these are actually made of' reveal)."
+
+  - id: 4
+    brand: The Alternate
+    slug: the-alternate
+    format: pin
+    platform: pinterest
+    type: product
+    utm_campaign: thealternate_w2
+    dev_listing_id: 6a14b1db-ce13-43b1-b0a5-5e218d4e1499
+    board: { name: "Handmade Indian Juttis & Artisan Footwear", id: "1103593152379641541" }
+    pin_title: "Vegan Velvet Embroidered Slip Ons | Handcrafted Indian Footwear"
+    pin_description: "Handcrafted slip on shoes with a velvet embroidered upper, 100 percent vegan, made in India. Comfortable dressy flats for everyday and occasion wear, shipped to the US. The Alternate on Mela."
+    link: "https://www.shopatmela.com/l/6a14b1db-ce13-43b1-b0a5-5e218d4e1499?utm_source=pinterest&utm_medium=social&utm_campaign=thealternate_w2&utm_content=abstract_embroidery_slipons_beige"
+
+  - id: 5
+    brand: Polite Society
+    slug: polite-society
+    format: reel
+    platform: instagram
+    type: product
+    persona: Neha
+    angle: belonging_discovery_1_2
+    utm_campaign: politesociety_w1
+    dev_listing_id: 6a135c68-19a3-411a-9469-47e0fd97ad53
+    product_live_title: "Cotton Draped Top for Women S-XXL Polite Society (Amrita Draped Top)"
+    verified: "live 2026-08-16; 100% cotton, botanical print, semi-sheer, back tie"
+    image_url: "https://cdn.shopify.com/s/files/1/0366/7211/0731/files/430627-1774961014802..png?v=1775032273"
+    hook_line: "The kind of Indian label that fills your feed but never seems to ship to you. This one does."
+    caption: |
+      The kind of Indian label that fills your feed but never seems to ship to you. This one does.
+
+      A draped cotton top in a botanical print, cut to be noticed. Semi sheer, with a back tie and a bralette you can wear or skip. It reads festive with earrings, easy with denim.
+
+      Discover Polite Society on Mela, link in bio.
+
+      📍 Made in India | Ships to the US
+      #IndianFashion #PrintedTop #ContemporaryIndian #SummerStyle #MadeInIndia #ShopIndian #DiscoverOnMela
+    alt_text: "Botanical print cotton draped top with a back tie, styled in soft window light."
+    visual: "Real product photo -> scene, silent/text-free. US-context test: bright US apartment, window light, drape movement. Payoff: fabric flow / back-tie reveal on movement."
+
+  - id: 6
+    brand: Polite Society
+    slug: polite-society
+    format: pin
+    platform: pinterest
+    type: product
+    utm_campaign: politesociety_w1
+    dev_listing_id: 6a135c68-19a3-411a-9469-47e0fd97ad53
+    board: { name: "Indian Ethnic Wear & Hand-Embroidered Fashion", id: "1103593152379779116" }
+    pin_title: "Botanical Print Cotton Draped Top | Contemporary Indian Womenswear"
+    pin_description: "Draped cotton top in a botanical print with a back tie and semi sheer finish. Contemporary Indian womenswear made in India, for festive and everyday wear, shipped to the US. Polite Society on Mela."
+    link: "https://www.shopatmela.com/l/6a135c68-19a3-411a-9469-47e0fd97ad53?utm_source=pinterest&utm_medium=social&utm_campaign=politesociety_w1&utm_content=amrita_botanical_draped_top"
+
+  - id: 7
+    brand: null
+    slug: _education
+    format: reel
+    platform: instagram
+    type: trust_service
+    persona: Sarah
+    angle: certs_4
+    utm_campaign: certdecode_w1
+    topic: "Claims decode — 'sustainable / vegan / ethical' on a clothing tag"
+    visual_system: "Education (HTML cards, navy+marigold worn openly). Slide 1 = hook card, NOT a product. Seam/label-teardown skeleton. Assembled as a reel; audio manual in IG."
+    hook_line: "'Sustainable,' 'vegan,' and 'ethical' are unregulated words on a clothing tag."
+    cards: "Hook card -> 3-checks card (1: named material + %, not 'eco fabric'; 2: a real certification you can look up, like GOTS or OEKO-TEX for textiles; 3: where + how it's made, stated plainly) -> payoff card 'Check the tag, not the tagline.'"
+    cards_rendered: "DONE 2026-08-16 (no Blotato credits). Story-ratio PNGs in log/_education/certdecode-01/renders/: slide1-hook.png, slide2-checks.png, slide3-payoff.png (+ .html sources + mela-kit.css). Assemble into a reel + add audio at manual IG publish."
+    caption: |
+      'Sustainable,' 'vegan,' and 'ethical' are unregulated words. Anyone can print them on a tag.
+
+      Here are three things that actually tell you something. One, a named material and its percentage, not a vibe like 'eco fabric.' Two, a real certification you can look up, like GOTS or OEKO-TEX for textiles. Three, where and how it was made, stated plainly, not implied by a leaf icon.
+
+      None of this makes a brand good or bad on its own. It just moves you from trusting a word to checking a fact.
+
+      Every brand on Mela lists its materials and origin on the product page, so you can do exactly this before you buy.
+
+      Discover brands on Mela, link in bio.
+
+      #ConsciousShopping #SustainableFashion #EthicalFashion #KnowYourClothes #SlowFashion #ShopSmarter #DiscoverOnMela
+    alt_text: "Text slide: Sustainable, vegan and ethical are unregulated words. Three things to actually check before you buy."
+    note: "Brand-agnostic (no brand claimed certified). Optional soft example: The Alternate 'velvet upper, 100% vegan, made in India' (verified) if a payoff example is wanted."
+
+# --- Resume checklist (on/after 2026-08-19) ---
+resume_checklist:
+  - "Confirm Blotato credits refreshed (blotato_get_credits)."
+  - "Re-verify the 3 listings are still OPEN live (drift guardrail) before rendering."
+  - "Generate 4 reel scenes (silent/text-free) + 3 pins; composite Mela watermark via HTML layer."
+  - "Wife review: Review Sheet + product-forward feed-shape preview -> sign-off (mandatory before scheduling)."
+  - "Schedule daily 24h apart (shift start to ~Aug 21+ depending on render/review day); UTM per tile; Pinterest under 10/24h cap."
+  - "Phase 7: move each tile into per-brand log/[slug]/week-N.yaml."
+  - "Phase 7b (attach-social-scene.js, per PRODUCT tile only — skip cert-decode): prepend each product's CLEAN un-watermarked scene as the listing's index-0 lead image (Pinterest scent-match). --dev, dry-run then --confirm, .bak backup, idempotent. ISHARYA: match by --sku (stable), NOT --listing-id — out-of-stock rows carry duplicate/stale Dev_Listing_IDs so a bare LID match could write the CSV back to the wrong row. Verify dry-run prints 'earrings', not a choker, before --confirm."
+  - "Optionally: publish deferred HoC reel once reworked (strip Blotato text, add stitch-macro payoff)."
