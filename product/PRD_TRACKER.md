@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-08-14  
+**Last updated:** 2026-08-19  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 **Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
@@ -33,6 +33,7 @@
 | [brand-storefront-prd.md](prds/brand-storefront-prd.md) | 🔲 Ready | P1 | Depends on `brands-page-prd.md` | Full brand storefront at `/brands/:brandSlug` — Organization JSON-LD, brand story, certifications |
 | [seo-aeo-category-brand-pages-prd.md](prds/seo-aeo-category-brand-pages-prd.md) | 🟡 Partial | P0 | — | Category pages ✅; canonical URLs + `/u/:id` redirect ✅; JSON-LD (Org, BreadcrumbList, ItemList), sitemap, 404 for bad slugs still needed |
 | [search-page-optimization-prd.md](prds/search-page-optimization-prd.md) | 🟡 Partial | P1 | — | Scroll position preservation; analytics instrumentation; image lazy loading |
+| [search-ranking-relevance-prd.md](prds/search-ranking-relevance-prd.md) | 🟡 Partial | P1 | analytics instrumentation (gates metrics) | Keyword/diaspora groundwork landing (`searchKeywords`/synonym `text` fields + schemas; classifier model split → enrichment on gpt-5.6-luna); **core not started**: `melaScore`/`boostTier` scorer + default-sort flip + backfill |
 | [newsletter-login-nudge-prd.md](prds/newsletter-login-nudge-prd.md) | 🔲 Ready | P1 | Requires Beehiiv account | Newsletter email capture; save nudge redesign; Beehiiv integration |
 | [enrichment-pipeline-stage2-update-prd.md](prds/enrichment-pipeline-stage2-update-prd.md) | 🟡 Partial | P1 | — | Web-client ✅ done; verify pipeline (`prompt_engine.py`) and ingestion outputs `metaDescription` + `searchSynonyms` |
 | [shopify-api-ingestion-prd.md](prds/shopify-api-ingestion-prd.md) | 🔲 Ready | P1 | — | Replace per-brand HTML scrapers with generic Shopify JSON API ingester |
