@@ -23,6 +23,15 @@ format: carousel
 persona: Arun
 category: fashion
 
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast                 # fast | full  (fast = vetted brand + real photo + verified-OPEN listing; full = education / craft-cert-material claim / brand's first-ever post)
+hypothesis: ""             # one line: which angle / hook / persona this post is testing (cheap learning instrument; replaces per-post 13-dim scoring during warmup)
+gate_verdict: ship         # ship | block  (single pre-publish-gate.md pass; no REVISE during warmup)
+coaching_notes: ""         # logged, non-blocking: diaspora anchor (the loud one), hook, first-frame, motion — notes only, never halted this ship
+northstar_metric:          # fill in AFTER publish; builds the baseline the deferred scoring will use. Roll into metrics-log.md at the Sunday review.
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
 # INSTAGRAM
 instagram:
   submission_id: 9ed3801a-9b10-4945-8e4a-172b1d60b5ae

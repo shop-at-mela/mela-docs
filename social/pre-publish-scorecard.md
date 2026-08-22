@@ -1,6 +1,8 @@
 # Mela Pre-Publish Scorecard
 
-**Last updated:** August 20, 2026
+> **⚠️ During warmup, run the single pass in `pre-publish-gate.md`, not this doc directly.** The gate merges this (caption) with `visual-scorecard.md` (visual) into one lane-routed checklist so you open one doc per post. This file is now the **detailed caption diagnostic bank** the gate points to — full content retained. Warmup rules the gate applies: the **Step 1 hard-fail gate here is BLOCKING**; the **Step 2 diagnostic 1–10 scoring is DEFERRED** (capture the raw metric per `metrics-log.md`, defer scoring until a baseline exists); hook/voice checks are **coaching notes that never halt a ship**. The full SHIP/REVISE/BLOCK banding below **re-arms when warmup ends** (`pre-publish-gate.md` → "When warmup ends").
+
+**Last updated:** August 22, 2026
 **Canonical home for:** the pre-publish quality gate — the harsh SHIP / REVISE / BLOCK band a post must clear *before* it publishes.
 **Adapted from:** Blotato's `post-grader` skeleton (hook-weighted scoring, first-3-words test, top-3-fixes format), re-tuned for Mela's voice and guardrails. Their numeric composite is **replaced with a three-band verdict** (SHIP / REVISE / BLOCK) — the old "≥8.0" weighted-sum math produced false-precision and magnitude bugs (a −0.5-per-fail penalty stacking arbitrarily against a 40%-weighted hook). The 7 diagnostic dimensions and their 1–10 scores are **kept**, but as a logged, non-gating record for future score→performance correlation — they no longer decide the verdict. Their generic "polarity/virality" dimension stays **removed** — it pushes toward the manufactured controversy `hook-engineering.md` §2 forbids — and stays replaced with **situational relevance** (our moat) plus the **hard-fail gate** built from our real defects.
 

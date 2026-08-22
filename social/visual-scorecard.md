@@ -1,6 +1,8 @@
 # Mela Visual Scorecard
 
-**Last updated:** August 20, 2026
+> **⚠️ During warmup, run the single pass in `pre-publish-gate.md`, not this doc directly.** The gate merges this (visual) with `pre-publish-scorecard.md` (caption) into one lane-routed checklist. This file is now the **detailed visual diagnostic bank** the gate points to — full content retained (hard-fail gate, First-Frame Test, band logic). Warmup rules the gate applies: the **hard-fail gate here is BLOCKING**; the **diagnostic 1–10 scoring is DEFERRED** until a baseline exists; first-frame/save-reason/motion checks are **coaching notes that never halt a ship**. If a render vendor is down, use the **tool-outage fallback lane** (`pre-publish-gate.md` → Step 4: real photo + HTML-composited watermark + manual schedule). The full SHIP/REVISE/BLOCK banding **re-arms when warmup ends**.
+
+**Last updated:** August 22, 2026
 **Canonical home for:** the pre-publish **visual** quality gate — the harsh SHIP / REVISE / BLOCK band a post's image or reel must clear *before* it publishes. Sibling to `pre-publish-scorecard.md` (the caption gate) — same banded structure, same hard-fail-first discipline, same voice. The visual is **~90% of the impression** (`hook-engineering.md` §3), so this gate is at least as important as the caption gate, not a lesser add-on.
 
 **Points at, does not restate:** the aesthetic rules, Blotato templates, watermark spec, education visual system, and the tool-decision procedure all live in `visual-style-guide.md`. This doc grades *against* those rules; it does not re-describe them. If this and `visual-style-guide.md` disagree, `visual-style-guide.md` wins and this file is stale.
