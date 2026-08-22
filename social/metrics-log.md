@@ -8,8 +8,10 @@ The Sunday tracking sheet referenced by `cold-start-checklist.md` — didn't exi
 
 ## Log
 
-| Date | Post | Platform | Category | Saves | Clicks | Comments | GA4 sessions (UTM) | Notes |
-|------|------|----------|----------|-------|--------|----------|---------------------|-------|
+**Warmup capture discipline (`pre-publish-gate.md` Step 3):** the 13-dimension pre-publish *scoring* is deferred until a baseline exists — but the raw **north-star metric is captured from post #1** so the baseline actually accumulates. IG = **saves**, Pinterest = **outbound clicks**. Log each post's **hypothesis** (the one line it was testing) here too, so the eventual score→performance correlation has something to read. You cannot retroactively score posts whose metrics were never captured — that's why capture starts now even though scoring doesn't.
+
+| Date | Post | Platform | Category | Hypothesis (angle/hook/persona) | Saves | Clicks | Comments | GA4 sessions (UTM) | Notes |
+|------|------|----------|----------|----------------------------------|-------|--------|----------|---------------------|-------|
 
 ## Monthly top-performer teardown
 

@@ -2,6 +2,22 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-19
+
+### Shipped
+- `docs(prd)` — New `search-ranking-relevance-prd.md` (rev 2, search-engineering panel): native stored **tiered `melaScore`** + `boostTier` to replace age-based default sort; keyword/diaspora vocabulary via `text`-schema fields; pipeline integration + A–E rollout. Added to `PRD_TRACKER.md`.
+- `feat(pipeline)` — `searchKeywords` `text` field in `listing-model.js` (joined brand+category+synonyms; arrays can't be ES-indexed as text). `searchKeywords` + `metaDescription` `text` search schemas registered via CLI.
+- `feat(classifier)` — Split classify/enrich OpenAI models (`CLASSIFY_MODEL`/`ENRICH_MODEL`, env-overridable). Enrichment now on **`gpt-5.6-luna`** (probe-confirmed working); `LLMClient` adapts GPT-5.x param contract (`max_completion_tokens`, drops non-default `temperature`). Classification stays on `gpt-4o-mini`.
+- `feat(classifier)` — Enrichment prompt now requires a real US↔Indian synonym/transliteration pair (kurta/tunic, jhula/swing) in `search_synonyms`.
+
+### Next
+- [ ] **Populate + verify `searchKeywords`** — run `create-listings.js --batch` to write the field to live listings, then confirm a diaspora query (`kurta`, `jhula`) returns the expected English-labeled listings. Until this runs, the registered schemas index nothing new.
+- [ ] **`melaScore`/`boostTier` scorer (search PRD Phase A)** — catalog-aware pass in `create-listings.js` + `--rescore` mode + backfill-before-flip. Not started.
+- [ ] **Enrichment quality check on Luna** — verify `gpt-5.6-luna` output quality vs. `gpt-4o-mini` on a sample (extraction runs at default temperature now, not 0.1 — watch for less-consistent "extract only what's stated" behavior); run `evals/title_eval.py`.
+- [ ] **Tariff / landed-cost transparency (from UXR F-013)** — A first-gen diaspora survey respondent found a product she'd realistically buy (House of Chikankari kurti) and the *only* thing stopping her was not knowing whether tariff/duty is included; she's been burned by surprise duties on another site ("the loom site"). This is a conversion blocker, not a discovery one, and maps to Neha's total-cost-clarity trust need. Backlog: show duty/tariff-inclusive (DDP) pricing, or an explicit "tariff included / not included" line at the price + (future) checkout, so there's no surprise at the border.
+  - **Vendor to evaluate: Xportel (xportel.com, contact@xportel.com)** — cross-border logistics + customs-clearance for Indian D2C brands (India→US), advertises duty optimization / customs documentation / compliance across Textiles, Handicrafts, Jewelry, Beauty. Not a confirmed shopper-facing landed-cost/DDP product — evaluate whether they (or a brand's own logistics) can enable duty-paid shipping or a reliable landed-cost quote Mela could surface. First-check done 2026-08-19; not yet contacted.
+  - **Cross-ref:** ties directly to the still-open 2026-08-06 items below — `OrderPanel`'s `priceConvertedDisclaimer` copy ("US brand price includes shipping & import costs") may overclaim, since neither the ingestion-time nor live-rate FX conversion adds import/duty margin. Resolve the copy-accuracy question and this tariff-transparency question together. Relevant PRD: `trust-conversion-signals-prd.md`.
+
 ## 2026-08-14
 
 ### Shipped

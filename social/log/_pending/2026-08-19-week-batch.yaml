@@ -10,6 +10,13 @@ meta:
   status: pending_credits
   built_via: /social-launch
   week_numbers: { isharya: 1, the-alternate: 2, polite-society: 1, certdecode: 1 }
+  resume_attempt_2026-08-19: >
+    Credits still 43 (refresh had NOT landed on 08-19). User chose to WAIT again — no spend.
+    Listing drift re-verified this day: all 3 OPEN live w/ Add to Cart —
+    Isharya 6a54b62c ($61), The Alternate 6a14b1db ($96), Polite Society 6a135c68 ($102);
+    titles still match spec. On next resume: listing re-verify is FRESH (only re-check if >a few days pass),
+    so start at credit check -> generate 3 reel scenes -> wife review -> schedule -> log.
+    Purchase option if desired: $6/1000 credits on shopatmela@gmail.com (min 1000).
 
 # --- Decisions locked in this planning session (do not re-litigate on resume) ---
 decisions:
@@ -79,9 +86,10 @@ tiles:
     product_live_title: "Abstract Embroidery Slip-Ons 5-13 The Alternate India"
     verified: "live 2026-08-16; velvet embroidered upper, 100% vegan, handmade PU outsole"
     image_url: "https://cdn.shopify.com/s/files/1/0986/7726/files/AMP00579_090f4412-7617-466e-a18b-a1d7d618d18b.jpg?v=1729080913"
-    hook_line: "'Vegan leather' is usually just plastic. These aren't leather at all."
+    hook_line: "You reach for 'vegan leather' thinking it's ethical. It's usually just plastic."
+    revised: "2026-08-20 hook re-cut to add a situational anchor (shopper's 'ethical pick' moment) -> clears pre-publish-scorecard REVISE(b), now SHIP."
     caption: |
-      'Vegan leather' is usually just plastic with a nicer name. These skip the leather idea entirely.
+      You reach for 'vegan leather' thinking it's the ethical pick. It's usually just plastic with a nicer name. These skip the leather idea entirely.
 
       The upper is real velvet, embroidered by hand, on a handmade sole. 100% vegan, and made in India. Soft enough for a long day, dressy enough that it never looks like you tried too hard.
 
@@ -118,9 +126,10 @@ tiles:
     product_live_title: "Cotton Draped Top for Women S-XXL Polite Society (Amrita Draped Top)"
     verified: "live 2026-08-16; 100% cotton, botanical print, semi-sheer, back tie"
     image_url: "https://cdn.shopify.com/s/files/1/0366/7211/0731/files/430627-1774961014802..png?v=1775032273"
-    hook_line: "The kind of Indian label that fills your feed but never seems to ship to you. This one does."
+    hook_line: "This Indian label fills your feed but never seems to ship to you. Now it does."
+    revised: "2026-08-20 hook reordered so the situation leads the first 3 words (was 'The kind of...') -> clears pre-publish-scorecard REVISE(a), now SHIP."
     caption: |
-      The kind of Indian label that fills your feed but never seems to ship to you. This one does.
+      This Indian label fills your feed but never seems to ship to you. Now it does.
 
       A draped cotton top in a botanical print, cut to be noticed. Semi sheer, with a back tie and a bralette you can wear or skip. It reads festive with earrings, easy with denim.
 
