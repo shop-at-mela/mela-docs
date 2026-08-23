@@ -13,6 +13,31 @@ The Sunday tracking sheet referenced by `cold-start-checklist.md` — didn't exi
 | Date | Post | Platform | Category | Hypothesis (angle/hook/persona) | Saves | Clicks | Comments | GA4 sessions (UTM) | Notes |
 |------|------|----------|----------|----------------------------------|-------|--------|----------|---------------------|-------|
 
+### Pinterest snapshot — organic Top Pins
+
+Aggregate Pinterest analytics exports (Top Pins view), not per-scheduled-post. **North-star for Pinterest = outbound clicks** (line 11). Each source screenshot is a truncated top-N sorted by one metric, so blank cells mean "not in that screenshot's visible rows," not zero. **Pin clicks** = expanded the pin on Pinterest; **Outbound clicks** = clicked through to Mela.
+
+**Window 2026-07-24 → 2026-08-23:**
+
+| Pin | Impressions | Pin clicks (rate) | Outbound clicks (rate) | Saves (rate) |
+|---|---|---|---|---|
+| Hand Block Printed Top & Pants Set | 1,904 | 37 (1.9%) | 1 (0.1%) | 1 (<0.1%) |
+| 24K Magic Criss Cross Wedge | 859 | 21 (2.5%) | 1 (0.1%) | 1 (0.1%) |
+| Silk Pattu Pavadai — Baby's First Birthday | 504 | — | — | — |
+| Girls Silk Pattu Pavadai — South Indian | 500 | — | — | — |
+| Silk Pattu Pavadai — Navratri (toddler) | 333 | — | — | — |
+| Jacquard Silk Pavadai — Temple Wedding | 152 | — | — | — |
+| Discover Independent Indian Brands (text card) | 97 | — | — | — |
+| Hand Appliqued Top for Toddlers | 86 | 2 (2.3%) | — | — |
+| Burgundy Suede Sneakers — Gully Labs | — | 3 (5.0%) | — | 1 (6.7%) |
+| Navy Embroidered Sneakers — Gully Labs | — | — | — | 1 (2.6%) |
+| Dance-Inspired Embroidered Sneakers | — | 2 (5.9%) | — | — |
+| Hand-Painted Owl Motif Coffee Mug | — | 2 (6.9%) | — | — |
+| Baby Forest Cold Pressed Baby Oils | — | 2 (3.3%) | — | — |
+| Hand-Painted Ceramic Jug — Phad Art | — | 0 (<0.1%) | 0 (<0.1%) | 0 (<0.1%) |
+
+**Read:** Content resonates on-platform (pin-click rates 1.9–6.9%) but the pin→Mela step barely fires — **top pins drove 1, 1, 0 outbound clicks**, so the north-star is essentially flat. Diagnosis points at destination-link setup, not creative. Sneakers over-index on engagement rate off low impressions; text card underperformed product pins. Next step: verify pin destination URLs are specific SKU listings (see `feedback_pinterest_product_links`).
+
 ## Monthly top-performer teardown
 
 The monthly hook/format teardown (`hook-engineering.md` §6). `/social-launch` Phase 0b flags this if the latest entry is >30 days old. Each row: the date run, the 5 refreshed content angles (or "unchanged"), and the winning hooks added to the swipe file.
