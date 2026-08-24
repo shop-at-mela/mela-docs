@@ -1,6 +1,6 @@
 # Cross-Shop & Entry/Exit Attribution Tracking
 
-**Status**: MVP implemented and live-verified — GTM/GA4/Clarity install, entry-source capture, `brand_clickout` event (now 7 params, `mela_session_id` added 2026-07-27; GA4 custom dimension `Mela Session ID` registered).
+**Status**: MVP implemented and live-verified — GTM/GA4/Clarity install, entry-source capture, `brand_clickout` event (now 7 params + `saved_surface`, `mela_session_id` added 2026-07-27; 13 GA4 custom dimensions registered total). 2026-08-23: closed a gap where `saved_listing_toggle`/`saved_page_view`/`saved_recommendation_click` were pushing to `dataLayer` correctly but had no GTM tags at all and never reached GA4 — GTM `GTM-5JSJ54C2` published as Version 6 with the missing triggers/tags; not yet live-verified end-to-end (see §3, §4). `Saved Surface` breakdown added to the `Cross-Shop: Multi-Brand Clickout Rate` Exploration; `Mela Cross-Shop Dashboard` (Looker Studio) got 4 new tiles for the add-to-cart funnel.
 **PRD**: `mela-docs/product/prds/insights/crossshop-tracking-prd.md` (problem statement, goals, ACs — this file is the technical/operational source of truth for the event schema and GA4 setup).
 **Code**: `web-client/src/util/analytics/entrySource.js`, `web-client/src/util/analytics/brandClickout.js`, `web-client/src/util/sentimentCapture.js` (session ID source), `web-client/src/util/includeScripts.js`, `web-client/src/index.js`, `web-client/server/csp.js`.
 
@@ -131,6 +131,14 @@ Fired from `toggleSaveListing` in `src/ducks/savedListings.duck.js` (new `pushSa
 
 **Verification checklist (still open — live browser QA, not yet done)**: confirm Add to Cart fires `saved_listing_toggle` and does **not** fire `brand_clickout`; confirm `SavedPage`'s Shop CTA fires `brand_clickout` with the same schema as the PDP click it replaced; confirm heart-icon clicks still tag `source: 'heart_icon'`.
 
+**Gap found and fixed 2026-08-23**: none of `saved_listing_toggle`, `saved_page_view`, or `saved_recommendation_click` had any GTM wiring — the app was pushing all three correctly to `window.dataLayer` (per the "live-verified" notes above and in §14), but with no GTM Custom Event trigger and no GA4 Event tag for any of them, **none of the three events was ever actually reaching GA4**. The earlier "live-verified" language in this doc and in `add-to-cart-restoration-prd.md` was accurate about the dataLayer push (confirmed via direct `window.dataLayer` inspection) but did not establish GA4 receipt — GTM Preview / DebugView was never checked for these three events. Fixed by adding, in GTM (`GTM-5JSJ54C2`, published as **Version 6**, 2026-08-23):
+- 7 new Data Layer Variables: `DLV - source`, `DLV - listing_id`, `DLV - is_saved`, `DLV - saved_surface`, `DLV - entry`, `DLV - recs_shown`, `DLV - brand_group_count`.
+- 3 new Custom Event triggers: `CE - saved_listing_toggle`, `CE - saved_page_view`, `CE - saved_recommendation_click` (same pattern as `CE - brand_clickout`).
+- 3 new GA4 Event tags: `GA4 - saved_listing_toggle` (params `source`, `listing_id`, `is_saved`), `GA4 - saved_page_view` (params `entry`, `recs_shown`, `brand_group_count`), `GA4 - saved_recommendation_click` (params `brand_id`, `product_id`, `mela_session_id` — reusing the existing `DLV - brand_id`/`DLV - product_id`/`DLV - mela_session_id` variables since those keys are shared with `brand_clickout`).
+- The existing `GA4 - brand_clickout` tag's Event Parameters were missing `saved_surface` entirely — added `saved_surface` → `{{DLV - saved_surface}}`.
+
+**Still open**: none of this has been live-verified end-to-end (real click → GTM Preview → GA4 DebugView) — only that the tags/triggers/variables are correctly configured and published. Do that verification pass before trusting any live numbers on the four events below.
+
 ### `brand_id` caveat
 
 No stable `brand_id` field exists in the listing schema today — brand is a free-text name only (`publicData.brand`). This implementation uses the listing **author's Sharetribe user UUID** (`ensuredAuthor.id.uuid` / `listing.author.id.uuid`) as `brand_id`, because that UUID is already the canonical brand key used internally in `src/config/configBrands.js` (`getBrandConfiguration(brandId)` etc.). **This is a working proposal, not a confirmed schema field** — if it's rejected, cross-brand analysis falls back to `brand_name` string matching, which works but isn't collision-proof against near-duplicate brand names.
@@ -198,6 +206,20 @@ Same one-time-per-property registration flow as above, after each event/param ha
 2. **`saved_recommendation_click`**: new GA4 Event tag in GTM, trigger on `event = saved_recommendation_click`. Register two custom dimensions, scope Event: **Recs Brand ID** (`brand_id`) and **Recs Product ID** (`product_id`). `mela_session_id` reuses the already-registered `Mela Session ID` dimension — no new registration needed, just map it in this tag's Event Parameters too.
 3. **`saved_page_view`**: new GA4 Event tag in GTM, trigger on `event = saved_page_view`. Register three custom dimensions, scope Event: **Saved Entry** (`entry`), **Recs Shown** (`recs_shown`), **Brand Group Count** (`brand_group_count`) — the latter is a numeric dimension but GA4 custom dimensions don't have a numeric-vs-string mode distinction at registration time, so create it the same way as the others; use it as a metric in Explore reports via a calculated field if aggregation (avg/sum) is ever needed, since custom *dimensions* only support grouping, not summing, natively.
 
+**Actually done, 2026-08-23** (this section previously described the intended setup only — none of it existed in GTM or GA4 until now, see the "Gap found and fixed" note in §3 above): registered as **Saved Surface** (`saved_surface`) and **Recs Brand ID** (`brand_id`). **Recs Product ID** was deliberately *not* created as a separate dimension — `product_id` was already registered as the existing **Product ID** dimension (§4 step 2, from `brand_clickout`), and GA4 custom dimensions map by parameter name across every event that carries it, not per-event, so a second dimension on the same parameter would just be a redundant quota-consuming duplicate showing identical data. Use the existing **Product ID** dimension for `saved_recommendation_click` breakdowns too. **Saved Entry** (`entry`), **Recs Shown** (`recs_shown`), and **Brand Group Count** (`brand_group_count`) registered as named. The GTM Event tags this section assumed already existed did not — see §3's "Gap found and fixed" note for what was actually built.
+
+### `saved_listing_toggle` GA4 custom dimension setup (gap found and fixed 2026-08-23)
+
+This event (§3 above) shipped with `add-to-cart-restoration-prd.md` on 2026-08-12 but was never given GA4 custom-dimension setup instructions in this doc — an oversight, not a deferral. Registered three custom dimensions, scope Event, same flow as above:
+
+| Dimension name | Event parameter |
+|---|---|
+| Save Toggle Source | `source` |
+| Saved Listing ID | `listing_id` |
+| Is Saved | `is_saved` |
+
+Named **Save Toggle Source** rather than plain "Source" to avoid ambiguity with GA4's own traffic-acquisition "Source" dimension family — same string typed into the picker resolves to this custom parameter regardless of the display name chosen.
+
 ---
 
 ## 5. Building the two hypothesis reports
@@ -214,6 +236,8 @@ Both are GA4 **Explore** reports (Explore → Blank), not standard reports, beca
 4. Rows: `Mela Session ID`, with `Brand Name` as a nested row. Values: Event count. Set **Show rows** to 500.
 5. **Correction 2026-08-04**: steps 4 and 5 previously described a **Count distinct** metric on Brand Name and a segment condition "Brand Name count distinct ≥ 2". **Neither exists in GA4.** The Explore metric picker has no count-distinct aggregation over an arbitrary dimension, and the segment builder offers condition matching and sequences only. Compute the rate outside GA4 instead: export the table (**Export as CSV** or Google Sheets, top right of the canvas), pivot with rows `Mela Session ID` and value `COUNTA` of `Brand Name`.
 6. Multi-brand-clickout rate = `COUNTIF(counts, ">=2") / COUNTA(counts)` — i.e. `sessions_with_2plus_brands / all_sessions_with_at_least_1_brand_clickout`. Exact, and about five minutes a week at current volume. The durable fix is BigQuery export (free at Mela's volume); SQL in `product/prds/insights/shopper-visibility-reporting-prd.md`.
+
+**Status correction, 2026-08-23**: this Exploration (and `Cross-Shop: Entry vs Exit`, §5b, and a `Potential Shoppers Funnel`) already exist in GA4 under `Mela | Brands from India`, owned by Sanjot Sawhney — `shopper-visibility-reporting-prd.md`'s Phase 2/3 status ("not started") is stale and needs correcting there. Added **Saved Surface** as a third nested row (after `Mela Session ID` → `Brand Name`) to `Cross-Shop: Multi-Brand Clickout Rate` on 2026-08-23, per that PRD's Phase 3 follow-up note — separates "shopped the whole brand" (`saved_brand_group`) from "shopped one item" (`saved_item_card`) clicks originating from `/saved`, `(not set)` everywhere else until real traffic exercises the newly-wired tag (§3).
 
 ### 5b. Entry ≠ exit (mutualization signal)
 

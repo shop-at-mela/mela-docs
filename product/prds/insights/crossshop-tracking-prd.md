@@ -315,12 +315,17 @@ pattern, `entry_source` mechanism, and `mela_session_id` session key (§13.0).
 - [x] `saved_page_view` carries `recs_shown` and `brand_group_count` — live-verified
       2026-08-13 (`recs_shown: true, brand_group_count: 2` on a populated cart;
       `brand_group_count: 0` on an empty one)
-- [x] Field names, custom-dimension registration, and verification steps are added to
-      `mela-docs/technical/analytics/crossshop-tracking.md`
+- [x] Field names and verification steps are added to
+      `mela-docs/technical/analytics/crossshop-tracking.md` — but **custom-dimension
+      registration itself was not actually done at the time this was checked**; corrected
+      2026-08-23, see that doc's §4 §14-additions correction and §3's "Gap found and
+      fixed" note (no GTM tags existed for any of `saved_listing_toggle`/`saved_page_view`/
+      `saved_recommendation_click` either, so none of the three events reached GA4 until
+      2026-08-23)
 - [x] `shopper-visibility-reporting-prd.md`'s funnel documents the new `saved_surface`
       split and recs events as a follow-up for when its Phase 3 Explorations are next
       revisited (the Explorations themselves are manual GA4 Console work, out of scope
-      for this code change — see that PRD's Phase 3 follow-up note)
+      for this code change — see that PRD's Phase 3 follow-up note, done 2026-08-23)
 
 > Reporting note: once shipped, add the `saved_surface` split and `saved_recommendation_click`
 > to `shopper-visibility-reporting-prd.md` so the potential-shopper funnel and cross-shop
