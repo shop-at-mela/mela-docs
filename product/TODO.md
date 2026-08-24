@@ -2,6 +2,18 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-23
+
+### Shipped
+- `docs(analytics)` — Found and fixed a real gap while wiring up `add-to-cart-restoration-prd.md`'s GA4 reporting: `saved_listing_toggle`/`saved_page_view`/`saved_recommendation_click` were pushing to `dataLayer` correctly but had zero GTM wiring, so none ever reached GA4 despite prior "live-verified" notes (which only confirmed the dataLayer push). GTM `GTM-5JSJ54C2` published as Version 6 with the missing Data Layer Variables, Custom Event triggers, and GA4 Event tags; also added the missing `saved_surface` param mapping to the existing `brand_clickout` tag.
+- Registered 8 new GA4 custom dimensions (Save Toggle Source, Saved Listing ID, Is Saved, Saved Surface, Recs Brand ID, Saved Entry, Recs Shown, Brand Group Count) under `Mela | Brands from India`; deliberately skipped a duplicate "Recs Product ID" dimension since `Product ID` already covers that parameter.
+- Discovered `Cross-Shop: Multi-Brand Clickout Rate`, `Cross-Shop: Entry vs Exit`, and `Potential Shoppers Funnel` GA4 Explorations, plus the `Mela Cross-Shop Dashboard` in Looker Studio, already existed and were undocumented — corrected the stale "not started" status in `shopper-visibility-reporting-prd.md` and `PRD_TRACKER.md`. Added `Saved Surface` as a breakdown dimension to the clickout-rate Exploration, and 4 new tiles to the dashboard for the add-to-cart funnel.
+- `docs(prd)` — Updated `crossshop-tracking.md`, `crossshop-tracking-prd.md`, `shopper-visibility-reporting-prd.md`, and `PRD_TRACKER.md` to record the gap, the fix, and the corrected status.
+
+### Next
+- [ ] **Live-verify the newly-wired GA4 tags end-to-end** — real click → GTM Preview → GA4 DebugView, for all four events (`saved_listing_toggle`, `saved_page_view`, `saved_recommendation_click`, `brand_clickout`'s `saved_surface`). Everything shipped 2026-08-23 is configured and published but unverified against real traffic; all 4 new Looker Studio tiles currently show "No data" as a result.
+- [ ] **`saved_recommendation_click` Exploration** — small event-count breakdown by `Product ID` (reuse existing dimension) to answer whether the `/saved` recs rail drives discovery. Not built yet, blocked on real traffic per the item above.
+
 ## 2026-08-19
 
 ### Shipped
