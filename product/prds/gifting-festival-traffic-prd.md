@@ -1,6 +1,6 @@
 # Gifting & Festival Social-Traffic Engine — PRD (day-split execution)
 
-**Status:** 🔲 Ready — spec complete, not started
+**Status:** 🟡 Partial — Day 1+2 shipped (code + tests); Console listing-fields sync and `flex-cli search set` for gift_occasion/recipient still pending; Day 3 not started
 **Priority:** P0 (gifting is the near-term social-traffic wedge)
 **Created:** 2026-08-23
 **Owner:** PM + Developer
@@ -183,8 +183,16 @@ Without backfill, festival-specific pages are empty. After enrichment, re-run `p
 ### Day 2 acceptance
 - [ ] `entry_source` on `page_view` (incl. first landing) in GA4 DebugView; `utm_*` stripped; canonical clean.
 - [ ] `/gifts` + `/occasions/:slug` render curated products with correct OG/canonical (SSR-verified via `curl` + FB/Pinterest validators).
-- [ ] Price + recipient + occasion chips route/render correctly (both tag formats).
-- [ ] Gifting-context sort bestseller-aware; general `/s` still newest (no regression). `yarn test` green for SearchPage/ListingCard/CategoryShowcase/SearchResultsPanel.
+- [x] Price + recipient + occasion chips route/render correctly (both tag formats).
+- [x] Gifting-context sort bestseller-aware; general `/s` still newest (no regression). `yarn test` green for SearchPage/ListingCard/CategoryShowcase/SearchResultsPanel.
+
+**Verification notes (2026-08-25):** Code implemented and unit-tested for all four Day 2 phases (151/151 suites, 2406 tests green repo-wide). Live-verified in a browser: `entry_source`/session id land in `sessionStorage`, `utm_*` strips correctly, canonical stays query-less on `/occasions/diwali` even with a chip filter applied, price/occasion chips route correctly, and the bestseller badge leads the `/gifts` grid (confirming the merchandised sort). Left unchecked above because not literally verified as specified:
+  - Box 1: GA4 DebugView itself wasn't viewed (no Console access in this session) — code + sessionStorage behavior confirmed instead.
+  - Box 2: OG/canonical confirmed via live browser (client-rendered), not via `curl` against true SSR (this app's dev server on :3000 is client-only; `yarn dev-server` builds the real SSR path on :4000) or actual FB/Pinterest validators (need a public URL).
+
+**New gaps found during verification (not on the original checklist):**
+- Console-hosted `listingFields` asset needs the new `occasion` enum values (`raksha_bandhan`, `diwali`, `navratri`, `karva_chauth`, `bhai_dooj`, `wedding`, etc.) and the new `gift_occasion`/`recipient` fields added — this app's runtime merges only Console-hosted listing fields (`configHelpers.js`'s `mergeListingConfig`, `shouldMerge` hardcoded `false`), not local `configListing.js` edits, unless a field is `localOnly`. Confirmed live: Raksha Bandhan's OccasionStrip panel had 4 matching API results but rendered 0 cards — `sanitizeMultiEnum` (`src/util/sanitize.js`) silently strips enum values Console doesn't recognize. This is separate from and in addition to the `flex-cli search set` gap below.
+- `flex-cli search set` for `gift_occasion` and `recipient` still not run in dev or QA/prod (pre-existing known gap, restated here for visibility).
 
 ---
 

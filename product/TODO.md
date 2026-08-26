@@ -2,6 +2,21 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-25
+
+### Shipped
+- `feat(analytics)` — `entry_source` (+ session id) attached to every `page_view`, including the first automatic gtag one; `utm_*` stripped from the visible URL post-capture. gifting-festival-traffic-prd.md Day 2 Phase 0.
+- `feat(gifting)` — New `/gifts` + `/occasions/:slug` landing pages (one `GiftingPage` container, delegates to `SearchPage.duck`'s `loadData`, no new reducer), with price-band and recipient filter chips, and opt-in occasion chips on `ListingCard`. Day 2 Phase 1.
+- `refactor(occasion-strip)` — `isDiwaliSeason()` → `getActiveSeasonOccasion(date)`: OccasionStrip now selects 2-3 relevant panels from the full near-term festival sequence (Raksha Bandhan → Navratri → Karva Chauth → Diwali → Bhai Dooj → wedding season) instead of always showing the same 2. `BrandOccasionModule` updated to match (still shows every occasion with qualifying inventory, unlike OccasionStrip, since it has no extra fetch cost). Day 2 Phase 2.
+- `feat(search)` — Gifting/occasion-context searches default to a bestseller-aware sort (`pub_isBestseller,createdAt`, centralized in one `GIFTING_DEFAULT_SORT` constant) instead of `createdAt`; general search and explicit user sorts unaffected. Day 2 Phase 3.
+- All 4 commits unit-tested (151/151 suites, 2406 tests green repo-wide) and live-verified in a browser (entry_source in sessionStorage, clean canonical under a chip filter, chip routing, bestseller-first grid ordering).
+
+### Next
+- [ ] **Console listing-fields sync** — the app's runtime only reads Console-hosted `listingFields` (`configHelpers.js` `mergeListingConfig`, `shouldMerge` hardcoded `false`), not local `configListing.js` edits, unless a field is `localOnly`. New `occasion` enum values (`raksha_bandhan`, `diwali`, `navratri`, `karva_chauth`, `bhai_dooj`, `wedding`, etc.) and the new `gift_occasion`/`recipient` fields need adding in Console, or they're silently stripped client-side by `sanitizeMultiEnum` even when the backend already returns them — confirmed live (Raksha Bandhan's OccasionStrip panel had 4 matching API results, rendered 0 cards).
+- [ ] `flex-cli search set` for `gift_occasion` and `recipient` still not run in dev or QA/prod (pre-existing gap, restated for visibility now that Day 2 code depends on it).
+- [ ] Day 3 (gifting-festival-traffic-prd.md) — social calendar/boards, brand sourcing, ads-readiness gate. Not started.
+- [ ] Live-verify `/gifts`/`/occasions/:slug` OG tags via `curl` against true SSR (`yarn dev-server`, port 4000 — the :3000 dev server used for this verification is client-rendered only) and real FB/Pinterest validators once a public URL exists.
+
 ## 2026-08-23
 
 ### Shipped
