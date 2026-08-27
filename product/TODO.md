@@ -2,6 +2,18 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-27
+
+### Shipped
+- `fix(config)` — `configHelpers.js` now force-overrides `filterConfig.searchMode` to `has_any` for `occasion`/`gift_occasion`/`recipient`. Confirmed with Sharetribe's Developer Advocate team that has_any vs has_all is an API-call-time choice with no Console UI control, so any Console-managed multi-enum field defaults to `has_all` (AND) via `validSearchMode` — without this fix, the generic SearchPage filter panel would build wrong-semantics queries for these 3 fields (GiftingPage/OccasionStrip's own hand-built `has_any:` links were already unaffected). `applyHasAnySearchModeOverride` extracted + unit-tested (6 tests, `configHelpers.applyHasAnySearchModeOverride.test.js`). 154/154 suites green.
+- `gift_occasion` listing field created in Sharetribe Console (2 placeholder options); search schema auto-registered on creation (confirmed via `flex-cli search -m mela-dev`).
+
+### Next
+- [ ] Confirm `recipient` field saved correctly in Console (Public scope) — not showing in `flex-cli search` output yet, unlike `gift_occasion`.
+- [ ] Add remaining `gift_occasion` options in Console (16 more, full list at `configListing.js:601-620`) and `recipient`'s (full list at `configListing.js:638-649`) — currently just the 2 placeholders each.
+- [ ] Add the 18 new `occasion` enum values in Console (`configListing.js:562-583`) — this is the one that actually strips silently (`sanitizeMultiEnum`) if skipped, unlike gift_occasion/recipient which pass through unsanitized as entirely-unknown keys until they're Console-registered.
+- [ ] Run Day 1's inventory backfill (`single_file_classifier.py --enrich-only`, PRD §1H) so listings actually carry the new tag values — schema/Console config alone doesn't create data.
+
 ## 2026-08-25
 
 ### Shipped
