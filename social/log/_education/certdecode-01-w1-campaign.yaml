@@ -1,0 +1,76 @@
+---
+# Cert-decode education carousel Week 1 — resumed via /social-review 2026-08-26 from
+# log/_pending/2026-08-19-week-batch.yaml. Brand-agnostic, so filed under log/_education/ rather
+# than a brand folder. Cards rendered 2026-08-16 (HTML/CSS -> PNG, no Blotato credits), uploaded to
+# Blotato storage 2026-08-26. Format changed from planned reel -> static 3-slide IG carousel
+# (Blotato reel-video path confirmed dead end, see memory feedback_blotato_reel_production).
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: "2026-08-29"
+status: scheduled
+platforms:
+  - instagram
+format: carousel
+persona: Sarah
+category: trust_service
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education content
+hypothesis: "Does an educational claims-decode carousel (angle: certs_4) earn more saves than a product-led post, as a trust-building instrument for Sarah?"
+gate_verdict: ship
+coaching_notes: "Slide 1 is a hook (not a product), navy+marigold worn openly per Education Visual System. Brand-agnostic: no brand claimed certified; GOTS/OEKO-TEX are real, checkable, industry-standard certs, not a specific-brand claim, so verify-claims requirement is satisfied without naming a brand."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: 6073e654-5a23-43fa-a9ee-be8a4e9b4527
+  scheduled_time: 2026-08-29T15:00:00Z
+  destination: https://shopatmela.com/?utm_source=instagram&utm_medium=social&utm_campaign=certdecode_w1&utm_content=education_certdecode
+  topic: "Claims decode — 'sustainable / vegan / ethical' on a clothing tag"
+  visual_system: "Education (HTML cards, navy+marigold worn openly). Slide 1 = hook card, not a product. Seam/label-teardown skeleton."
+  slides:
+    - name: hook
+      image_render: log/_education/certdecode-01/renders/slide1-hook.png
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/22b2bde7-b42e-429b-93c6-bf35825ca20f.png
+    - name: checks
+      image_render: log/_education/certdecode-01/renders/slide2-checks.png
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/5ef41448-41ab-415b-b47a-fbade89f0003.png
+    - name: payoff
+      image_render: log/_education/certdecode-01/renders/slide3-payoff.png
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/e8e644dc-4e1f-4f90-b36d-1a693b331507.png
+  alt_text: "Text slide: Sustainable, vegan and ethical are unregulated words. Three things to actually check before you buy."
+  caption: |
+    'Sustainable,' 'vegan,' and 'ethical' are unregulated words. Anyone can print them on a tag.
+
+    Here are three things that actually tell you something. One, a named material and its percentage, not a vibe like 'eco fabric.' Two, a real certification you can look up, like GOTS or OEKO-TEX for textiles. Three, where and how it was made, stated plainly, not implied by a leaf icon.
+
+    None of this makes a brand good or bad on its own. It just moves you from trusting a word to checking a fact.
+
+    Every brand on Mela lists its materials and origin on the product page, so you can do exactly this before you buy.
+
+    Discover brands on Mela, link in bio.
+
+    #ConsciousShopping #SustainableFashion #KnowYourClothes #ShopSmarter #DiscoverOnMela
+
+# UX REVIEW (education content — no single product destination)
+ux_review:
+  destination_url: https://shopatmela.com/
+  checks:
+    cultural_context:
+      result: pass
+      note: Brand-agnostic teaching content, no exoticizing framing.
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: No open issues this post.
+      mitigation: ""
+
+# NOTES
+notes:
+  verify_note: "GOTS and OEKO-TEX named as real, lookup-able textile certifications (verify:true satisfied — these are standard industry certs, not a brand-specific claim). Optional soft example considered (The Alternate '100% vegan') but caption shipped brand-agnostic per file note."
+  wife_signoff: Confirmed by founder before scheduling 2026-08-26/27.

@@ -1,4 +1,11 @@
 ---
+# RESOLVED 2026-08-27 — all 4 tiles rendered, gated, wife-approved, and scheduled. See per-brand logs:
+# log/isharya/week-1-campaign.yaml, log/the-alternate/week-2-campaign.yaml,
+# log/polite-society/week-1-campaign.yaml, log/_education/certdecode-01-w1-campaign.yaml.
+# Isharya + Polite Society needed fresh/re-renders this session (see resume_checklist_2026-08-26
+# below for what was wrong and how it was fixed). This pending file is now historical — nothing
+# left to resume.
+#
 # PENDING WEEK BATCH — all 4 tiles back in scope, shipping as STATIC posts (not reels).
 # Built + verified 2026-08-16 via /social-launch. Resumed 2026-08-26 via /social-review: credits were
 # fine (2193). Initially dropped isharya + polite-society on a suspected listing-photo mismatch, but

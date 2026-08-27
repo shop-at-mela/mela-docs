@@ -1,0 +1,101 @@
+---
+# Isharya Week 1 — resumed via /social-review 2026-08-26 from log/_pending/2026-08-19-week-batch.yaml
+# Format changed from planned reel -> static image (Blotato reel-video path confirmed dead end, see
+# memory feedback_blotato_reel_production). Fresh Product Scene Placement render this session
+# (prior 08-26 attempt, visual id 42e31866, never resolved).
+
+brand: Isharya
+brand_slug: isharya
+week: 1
+date_posted: "2026-08-27"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: image
+persona: Neha
+category: jewelry
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast
+hypothesis: "Discovery angle: does the 'your cousin in India tags this' familiar-diaspora-moment hook out-save a generic product caption for Neha on a mirror-work statement earring?"
+gate_verdict: ship
+coaching_notes: "Diaspora anchor strong (situational: cousin in India, wedding posts, not identity-labeled). Jewelry + face in the source photo carried real morph risk (Stage 0); fresh render passed QC on frame-0 (earring geometry + face consistent with source) before shipping."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: 82ce3a0d-266f-4f63-a41a-99e03dc620dd
+  scheduled_time: 2026-08-27T15:00:00Z
+  destination: https://www.shopatmela.com/l/6a54b62c-b9a9-4e99-acb1-480e1c3042e4?utm_source=instagram&utm_medium=social&utm_campaign=isharya_w1&utm_content=mirror_pearl_drop_earrings
+  image_render: log/isharya/renders/isharya-ig.png  # Blotato Product Scene Placement (US bedroom vanity) + HTML watermark overlay
+  image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/fd227c85-c72c-41ee-91c2-5bca9895eb91.png
+  clean_scene_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-9749869f-f5d1-42c8-82b6-468284b89a6b.jpg  # un-watermarked, for Phase 7b
+  blotato_visual_id: 2f2d0c44-45a2-4061-ac43-1b25d5a4c2b4
+  alt_text: Isharya drop earrings with hand cut mirrors and shell pearls on gold plating, on a vanity in soft light.
+  product:
+    name: Drop Earrings with Handcrafted Mirror & Pearl for Women 3.2X2.7cm Isharya
+    dev_listing_id: 6a54b62c-b9a9-4e99-acb1-480e1c3042e4
+    price_usd: 53
+    verified: true  # live 2026-08-16, re-verified live/OPEN via browser 2026-08-26; materials hand-cut mirror, shell pearl, 18Kt gold plating
+  caption: |
+    The jewelry your cousin in India tags on every wedding post. It ships to your door now.
+
+    These drop earrings catch the light with hand cut mirrors and shell pearls, set on 18 karat gold plating. The motifs echo Mughal miniature painting. Made to be the boldest thing you wear all season.
+
+    Discover Isharya on Mela, link in bio.
+
+    📍 Handcrafted in India | Ships to the US
+    #IndianJewelry #StatementEarrings #MirrorWork #FestiveJewelry #DiscoverOnMela
+
+# PINTEREST
+pinterest:
+  posting_mode: auto
+  pins:
+    - name: Isharya Mirror & Pearl Drop Earrings
+      submission_id: 2d25f230-37b9-406c-8b6b-d3732d0a2ce3
+      scheduled_time: 2026-08-27T18:00:00Z
+      board: Gifting and Occasions
+      board_id: "1103593152379723628"
+      title: Indian Mirror Work Drop Earrings | Handcrafted Statement Jewelry
+      description: Handcrafted drop earrings with hand cut mirrors and shell pearls on 18 karat gold plating, inspired by Mughal miniature motifs. Statement Indian jewelry for weddings and festive occasions, shipped to the US. Isharya on Mela.
+      alt_text: Isharya drop earrings with hand cut mirrors and shell pearls on gold plating, on a vanity in soft light.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/8e26f904-8909-46de-9789-304385ce2e11.png
+      link: https://www.shopatmela.com/l/6a54b62c-b9a9-4e99-acb1-480e1c3042e4?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w1&utm_content=mirror_pearl_drop_earrings
+
+# UX REVIEW
+ux_review:
+  destination_url: https://www.shopatmela.com/l/6a54b62c-b9a9-4e99-acb1-480e1c3042e4
+  checks:
+    product_findability:
+      result: pass
+      note: Single product listing, verified OPEN/live via browser 2026-08-26.
+    aesthetic_match:
+      result: pass
+      note: US bedroom vanity scene matches warm Mela baseline + diaspora anchoring cue.
+    price_alignment:
+      result: pass
+      note: "$53 listing price matches no price stated in caption (price omitted, common for jewelry posts)."
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: No open issues this post.
+      mitigation: ""
+
+# NOTES
+notes:
+  render_note: >
+    First attempt (visual id 42e31866, prior session) never resolved. This session ran a fresh
+    Product Scene Placement render with a tighter prompt explicitly instructing the model to keep
+    the earrings and the model's face unchanged and only alter the environment — passed QC (no
+    morph, consistent earring geometry, consistent face) on first try.
+  watermark_note: Blotato does not reliably bake in watermark text (known gap) — composited "Discovered on Mela" via templates/photo-watermark.html + render.sh, then re-inspected for legibility.
+  wife_signoff: Confirmed by founder before scheduling 2026-08-26/27.
+  phase7b_note: >
+    attach-social-scene.js run --dev --confirm 2026-08-27, matched by --sku amara-mirror-pearl-earrings
+    (not --listing-id, to avoid the duplicate/stale Dev_Listing_ID on the Out of Stock "Ada Layered
+    Mirror Choker" row that shares this listing ID). Clean scene now index-0 lead image
+    (Sharetribe image id 6a8f99f2-8e65-4237-8dfa-63e7de8a90fe); CSV backed up to .bak.

@@ -1,0 +1,91 @@
+---
+# The Alternate Week 2 — resumed via /social-review 2026-08-26 from log/_pending/2026-08-19-week-batch.yaml
+# Format changed from planned reel -> static image (Blotato reel-video path confirmed dead end, see
+# memory feedback_blotato_reel_production). Visual already rendered + verified clean prior session;
+# this session added the HTML watermark overlay (was missing) before shipping.
+
+brand: The Alternate
+brand_slug: the-alternate
+week: 2
+date_posted: "2026-08-27"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: image
+persona: Sarah
+category: fashion
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast
+hypothesis: "Trust/taste angle: does a myth-busting hook ('vegan leather is usually just plastic') paired with a named-material claim (real velvet, vegan) drive more saves/clicks for Sarah than a straight product description?"
+gate_verdict: ship
+coaching_notes: "Diaspora anchoring weaker here (claim-correction hook, not a situational anchor) — ships fine under warmup rules, flagged as the coaching note to watch."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: fa02fcbc-0f06-412a-a6cd-9a676239049d
+  scheduled_time: 2026-08-27T21:00:00Z
+  destination: https://www.shopatmela.com/l/6a14b1db-ce13-43b1-b0a5-5e218d4e1499?utm_source=instagram&utm_medium=social&utm_campaign=thealternate_w2&utm_content=abstract_embroidery_slipons_beige
+  image_render: log/the-alternate/renders/alternate-ig.png  # Blotato Product Scene Placement (US hardwood entryway, cropped denim) + HTML watermark overlay
+  image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/7afd16da-6bb8-439d-89b9-a1da0be53e84.png
+  clean_scene_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a271afab-8842-4213-8a0f-e9dc47831f1c.jpg  # un-watermarked, for Phase 7b
+  alt_text: Beige velvet slip on shoes with hand embroidery, on a wooden floor in warm light.
+  product:
+    name: Abstract Embroidery Slip-Ons 5-13 The Alternate India
+    dev_listing_id: 6a14b1db-ce13-43b1-b0a5-5e218d4e1499
+    price_usd: 84
+    verified: true  # live 2026-08-16, re-verified live/OPEN via browser 2026-08-26; 100% vegan velvet, hand embroidery, handmade sole. Price drifted $96 -> $84 (INR estimate recalc, not a data bug)
+  caption: |
+    You reach for 'vegan leather' thinking it's the ethical pick. It's usually just plastic with a nicer name. These skip the leather idea entirely.
+
+    The upper is real velvet, embroidered by hand, on a handmade sole. 100% vegan, and made in India. Soft enough for a long day, dressy enough that it never looks like you tried too hard.
+
+    Discover The Alternate on Mela, link in bio.
+
+    📍 Handcrafted in India | Ships to the US
+    #VeganFootwear #HandcraftedShoes #EmbroideredShoes #MadeInIndia #DiscoverOnMela
+
+# PINTEREST
+pinterest:
+  posting_mode: auto
+  pins:
+    - name: Abstract Embroidery Slip-Ons
+      submission_id: e102136f-b469-4693-be84-80c81480a5ea
+      scheduled_time: 2026-08-28T15:00:00Z
+      board: Handmade Indian Juttis & Artisan Footwear
+      board_id: "1103593152379641541"
+      title: Vegan Velvet Embroidered Slip Ons | Handcrafted Indian Footwear
+      description: Handcrafted slip on shoes with a velvet embroidered upper, 100 percent vegan, made in India. Comfortable dressy flats for everyday and occasion wear, shipped to the US. The Alternate on Mela.
+      alt_text: Beige velvet slip on shoes with hand embroidery, on a wooden floor in warm light.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cfba0b4d-7240-4e4a-a602-05bbdfddc74f.png
+      link: https://www.shopatmela.com/l/6a14b1db-ce13-43b1-b0a5-5e218d4e1499?utm_source=pinterest&utm_medium=social&utm_campaign=thealternate_w2&utm_content=abstract_embroidery_slipons_beige
+
+# UX REVIEW
+ux_review:
+  destination_url: https://www.shopatmela.com/l/6a14b1db-ce13-43b1-b0a5-5e218d4e1499
+  checks:
+    product_findability:
+      result: pass
+      note: Single product listing, verified OPEN/live via browser 2026-08-26.
+    aesthetic_match:
+      result: pass
+      note: US hardwood entryway + denim scene matches warm Mela baseline + diaspora anchoring cue.
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: No open issues this post.
+      mitigation: ""
+
+# NOTES
+notes:
+  watermark_note: Render was clean from prior session but had no watermark baked in (Blotato gap) — composited "Discovered on Mela" via templates/photo-watermark.html + render.sh this session, re-inspected for legibility.
+  wife_signoff: Confirmed by founder before scheduling 2026-08-26/27.
+  phase7b_note: >
+    attach-social-scene.js run --dev --confirm 2026-08-27, matched by --listing-id (no duplicate-ID
+    drift found for this brand). Clean scene now index-0 lead image (Sharetribe image id
+    6a8f9a3d-d7a7-43f0-8b64-40935102433c); CSV backed up to .bak.

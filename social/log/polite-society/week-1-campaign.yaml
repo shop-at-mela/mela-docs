@@ -1,0 +1,98 @@
+---
+# Polite Society Week 1 — resumed via /social-review 2026-08-26 from log/_pending/2026-08-19-week-batch.yaml
+# Format changed from planned reel -> static image (Blotato reel-video path confirmed dead end, see
+# memory feedback_blotato_reel_production). Original render (rendered_visual_url_2026-08-26) was a
+# real defect — abstract floating-fabric shape with no visible wearer, did not read as the product.
+# Re-rendered this session with a tighter, more literal prompt; passed QC.
+
+brand: Polite Society
+brand_slug: polite-society
+week: 1
+date_posted: "2026-08-28"
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: image
+persona: Neha
+category: fashion
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast
+hypothesis: "Belonging + discovery angle: does 'fills your feed but never ships to you, now it does' out-perform an occasion-led caption for Neha on a viral-style drape top?"
+gate_verdict: ship
+coaching_notes: "Diaspora anchor strong (situational: brand you already follow but couldn't get, not identity-labeled). Garment-drape morph risk was real and confirmed (first render failed); re-render passed QC on frame-0 before shipping."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: 4b60fe94-44c1-4b01-9c32-79f96a79d8ef
+  scheduled_time: 2026-08-28T18:00:00Z
+  destination: https://www.shopatmela.com/l/6a135c68-19a3-411a-9469-47e0fd97ad53?utm_source=instagram&utm_medium=social&utm_campaign=politesociety_w1&utm_content=amrita_botanical_draped_top
+  image_render: log/polite-society/renders/politesociety-ig.png  # Blotato Product Scene Placement (bright US apartment, window light) + HTML watermark overlay
+  image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/d417fd9c-3b6d-4d64-9d7d-8369b97bb522.png
+  clean_scene_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-03dfb935-33ef-42ba-9d28-999c65714af3.jpg  # un-watermarked, for Phase 7b
+  blotato_visual_id: cef4e0f0-5314-45ec-8968-8d7f359182d5
+  alt_text: Botanical print cotton draped top with a back tie, styled in soft window light.
+  product:
+    name: "Cotton Draped Top for Women S-XXL Polite Society (Amrita Draped Top)"
+    dev_listing_id: 6a135c68-19a3-411a-9469-47e0fd97ad53
+    price_usd: 89
+    verified: true  # live 2026-08-16, re-verified live/OPEN via browser 2026-08-26; 100% cotton, botanical print, semi-sheer, back tie. Founder confirmed 2026-08-26 the floor-grazing draped silhouette is the correct listing photo (not drift), see memory project_listing_id_drift_bug
+  caption: |
+    This Indian label fills your feed but never seems to ship to you. Now it does.
+
+    A draped cotton top in a botanical print, cut to be noticed. Semi sheer, with a back tie and a bralette you can wear or skip. It reads festive with earrings, easy with denim.
+
+    Discover Polite Society on Mela, link in bio.
+
+    📍 Made in India | Ships to the US
+    #IndianFashion #PrintedTop #ContemporaryIndian #MadeInIndia #DiscoverOnMela
+
+# PINTEREST
+pinterest:
+  posting_mode: auto
+  pins:
+    - name: Amrita Botanical Draped Top
+      submission_id: 912679a8-e178-424e-b05a-cfc7a404bf25
+      scheduled_time: 2026-08-28T21:00:00Z
+      board: Indian Ethnic Wear & Hand-Embroidered Fashion
+      board_id: "1103593152379779116"
+      title: Botanical Print Cotton Draped Top | Contemporary Indian Womenswear
+      description: Draped cotton top in a botanical print with a back tie and semi sheer finish. Contemporary Indian womenswear made in India, for festive and everyday wear, shipped to the US. Polite Society on Mela.
+      alt_text: Botanical print cotton draped top with a back tie, styled in soft window light.
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/1ab102dd-b2c2-4ab0-bc31-5becb2bd3f75.png
+      link: https://www.shopatmela.com/l/6a135c68-19a3-411a-9469-47e0fd97ad53?utm_source=pinterest&utm_medium=social&utm_campaign=politesociety_w1&utm_content=amrita_botanical_draped_top
+
+# UX REVIEW
+ux_review:
+  destination_url: https://www.shopatmela.com/l/6a135c68-19a3-411a-9469-47e0fd97ad53
+  checks:
+    product_findability:
+      result: pass
+      note: Single product listing, verified OPEN/live via browser 2026-08-26.
+    aesthetic_match:
+      result: pass
+      note: Bright US apartment scene matches warm Mela baseline + diaspora anchoring cue.
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: No open issues this post.
+      mitigation: ""
+
+# NOTES
+notes:
+  render_note: >
+    First render (2026-08-26, prior session) was an abstract floating-fabric shape with no visible
+    wearer — a real Stage 2 defect (does not read as the product), not shipped. Re-rendered this
+    session with an explicit "same woman, same pose, do not make it abstract" prompt; passed QC
+    (full garment clearly visible, matches source).
+  watermark_note: Composited "Discovered on Mela" via templates/photo-watermark.html + render.sh, re-inspected for legibility.
+  wife_signoff: Confirmed by founder before scheduling 2026-08-26/27.
+  phase7b_note: >
+    attach-social-scene.js run --dev --confirm 2026-08-27, matched by --listing-id (no duplicate-ID
+    drift found for this brand). Clean scene now index-0 lead image (Sharetribe image id
+    6a8f9a98-065f-4e17-b65e-8dfcde5fffcb); CSV backed up to .bak.
