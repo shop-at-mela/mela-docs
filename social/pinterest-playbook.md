@@ -47,6 +47,32 @@ boards as pin volume arrives. Fewer, fuller boards beat more, thinner ones at ~1
 **archived** (reversible) 2026-08-06 — do not route pins to them. Supersedes the earlier "keep as
 optional secondary destination" stance.
 
+### New theme/attribute board? Run this checklist first
+
+**Proposed generalization (2026-08-30), inferred from the sustainability/vegan case below — not
+yet panel-ratified as formal policy, treat as the working default until it is.** The board-type
+table above only covers category/occasion/gift/brand. When a *new* cross-cutting attribute shows up
+(sustainability, plus-size, a regional-craft micro-niche, a price tier — anything that isn't a
+catalog category, an occasion, or a brand) the instinct is to ask "doesn't this deserve its own
+board?" Answer it with this checklist before creating one:
+
+1. **One category, or several?** Does the attribute map to a single catalog category, or does it
+   cut across two or more (e.g. footwear + apparel)? Cross-category attributes fight the "one
+   keyword cluster ≈ one board" rule (§4) — a board can't cleanly hold a cluster that spans boards.
+2. **One brand, or several?** Check live-pin count against `brand_board_threshold` (8). An attribute
+   carried by a single brand is a brand board wearing a theme costume — exactly the thin-board
+   pattern the 2026-08-06 archival (Fizzy Goblet, The Alternate) rejected.
+3. **Already-ruled-on board type, or a new one?** If this attribute doesn't fit category / occasion
+   / gift / brand, it's a **policy gap**, not a routing-yaml edit. Flag it explicitly rather than
+   deciding unilaterally — it needs the same panel-level review the original four types got.
+4. **Default:** keyword layer within the existing relevant board(s), not a new board. Revisit only
+   once (1) resolves to a single category or a deliberate multi-board keyword set, **and** (2) shows
+   multiple brands at real volume, not one.
+
+Worked example: `sustainability_and_vegan` in §4 below applied this and landed on keyword layer, not
+a board (single brand, 3 pins, spans footwear + apparel, and "attribute board" isn't a ruled-on
+type).
+
 ### 2b · Format experiment: education carousels (test, not a committed lane)
 
 **Decision (2026-08-06).** Pinterest's native composer offers multi-image collages/carousels. **Never for product pins** — a single-image pin linking to one listing is what carries Rich Pins (§1) and the Phase 7b scent-match; a collage has no single source listing and forfeits both.
@@ -139,6 +165,39 @@ Board ids from `category-routing.yaml → pinterest_boards.boards`.
 - **Craft:** Chikankari · Bandhani · Ikat · handloom
 - **Occasion:** festive outfit · Diwali outfit ideas · wedding guest outfit Indian
 - **US-gifting:** sustainable ethnic wear · Indian fashion USA
+
+### sustainability_and_vegan → keyword LAYER within *Handmade Indian Juttis & Artisan Footwear* (`brand`) and *Indian Ethnic Wear & Hand-Embroidered Fashion* (`apparel`) — NOT a standalone board
+
+**Decision (2026-08-30):** sustainability/vegan-ness is applied as a pin-level keyword layer on the
+existing footwear/apparel boards, not a new board. Rationale: only one brand (The Alternate) is
+currently positioned this way and it has 3 live pins, well under even the single-brand
+`brand_board_threshold` (8); the attribute cuts across footwear + apparel rather than mapping to
+one category the way every other live board does; and "attribute board" is a board type the
+2026-08-06 panel never evaluated (only category/occasion/gift/brand were judged — see Board
+architecture §2). A cross-brand "Sustainable Indian Fashion" board becomes a real candidate once a
+brand crosses `brand_board_threshold` **and** a second sustainability-positioned brand has
+comparable volume — that is a new board-type addition to the §2 policy table and needs the same
+panel-level review the original four types got, not a routing-yaml edit.
+
+⚠️ Unverified volume, same caveat as the rest of §4 — validate against Pinterest autocomplete/Trends
+before rotation. Cross-checked against live comparable-brand pin/product copy (Ethical Rani, Ethik
+Footwear, Mulmul — India vegan-footwear brands), not guessed from scratch.
+
+- **Primary:** vegan leather shoes · vegan jutti · cruelty free footwear · plant based leather ·
+  faux leather shoes India
+- **Material fact (verify per listing before use — same discipline as the GOTS caveat in §6):**
+  deadstock fabric · natural dye · faux suede · vegan velvet · pineapple leather · cactus leather ·
+  cork leather · apple leather — only the ones the specific listing/brand page actually states
+- **Craft/heritage crossover (axis 1):** hand embroidered vegan jutti · artisan vegan leather ·
+  handcrafted vegan footwear India
+- **Occasion (axis 2):** sustainable wedding guest outfit · eco conscious festive wear · vegan
+  shoes for Diwali
+- **US-gifting/diaspora (axis 3):** vegan Indian shoes USA · sustainable Indian fashion USA ·
+  ethical Indian brand USA · cruelty free Indian footwear
+- **Certification terms (use ONLY if verified on the listing — do not assume from category):** PETA
+  approved vegan · GOTS certified — neither currently verified for The Alternate; "100% vegan
+  friendly" is the verified claim in rotation today (confirmed against live listing copy
+  2026-08-30)
 
 ### art_and_craft → *Artisan Footwear* / brand theme board
 - **Primary:** Indian handicrafts · handmade home art · handcrafted decor
