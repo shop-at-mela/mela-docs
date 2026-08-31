@@ -2,6 +2,20 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-30
+
+### Shipped
+- `docs/config` — Completed the Sharetribe Console listing-fields sync for gifting-festival-traffic-prd.md §1F/§1G (last open item from Day 1/2). All three multi-enum fields now fully populated in Console (mela-dev) and confirmed via `flex-cli search -m mela-dev` (all three show as `multi-enum`/public in the auto-registered search schema):
+  - `occasion`: 20 options total (2 legacy — `diwali-festivals`, `gifting` — + all 18 new values from `configListing.js:562-583`).
+  - `gift_occasion`: 18 options total, full list from `configListing.js:601-620` (3 were already present: diwali, raksha_bandhan, karva_chauth).
+  - `recipient`: field confirmed correctly saved as Public/multi-enum (resolves the 2026-08-27 open question — Console state had changed since last checked); 10 options total, full list from `configListing.js:638-649` (2 were already present: for_mom, for_dad).
+- All done via manual Console UI entry (no bulk-import API available for listing-field enum options); each option's `Option value` typed to match `configListing.js` exactly so `sanitizeMultiEnum` won't strip anything.
+
+### Next
+- [ ] Run Day 1's inventory backfill (`single_file_classifier.py --enrich-only`, PRD §1H) so listings actually carry the new tag values — schema/Console config alone doesn't create data. This is now the only remaining blocker before `pub_occasion`/`pub_gift_occasion`/`pub_recipient` filters return anything beyond the handful of already-tagged listings.
+- [ ] Manual verification still pending (carried from 2026-08-25): GA4 DebugView shows `entry_source` on real traffic; OG tags via true SSR (`yarn dev-server`, port 4000) + real FB/Pinterest validators once there's a public URL.
+- [ ] Day 3 (gifting-festival-traffic-prd.md) — social calendar/boards, brand sourcing, ads-readiness gate. Not started.
+
 ## 2026-08-27
 
 ### Shipped

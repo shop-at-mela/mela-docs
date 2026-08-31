@@ -1,6 +1,6 @@
 # Gifting & Festival Social-Traffic Engine — PRD (day-split execution)
 
-**Status:** 🟡 Partial — Day 1+2 shipped (code + tests); Console listing-fields sync and `flex-cli search set` for gift_occasion/recipient still pending; Day 3 not started
+**Status:** 🟡 Partial — Day 1+2 shipped (code + tests); Console listing-fields sync complete (all 3 fields fully populated, confirmed via `flex-cli search`); Day 1 inventory backfill still pending; Day 3 not started
 **Priority:** P0 (gifting is the near-term social-traffic wedge)
 **Created:** 2026-08-23
 **Owner:** PM + Developer
@@ -150,9 +150,11 @@ Without backfill, festival-specific pages are empty. After enrichment, re-run `p
 
 ### Day 1 acceptance
 - [ ] 10 sample products → valid JSON; `gift_occasion`/`recipient` present, 1–3 values each, **no over-tagging**; glossing applied ("Kansa (Bronze)…"); existing `item_aspects`/`seo_title`/`meta_description`/`search_synonyms` unchanged.
-- [ ] `configListing.js` declares expanded `occasion` + `gift_occasion` + `recipient`; `flex-cli search set` run dev→QA/prod.
+- [x] `configListing.js` declares expanded `occasion` + `gift_occasion` + `recipient`; `flex-cli search set` run dev (search schema auto-registered on Console field creation — confirmed via `flex-cli search -m mela-dev`, all 3 show `multi-enum`/public). QA/prod still pending (dev-to-production-migration-prd.md scope).
 - [ ] After ingest, `publicData.gift_occasion` / `publicData.recipient` are arrays in Sharetribe Console; `pub_gift_occasion=has_any:diwali` returns tagged listings.
 - [ ] Backfill run; `unmapped-item-aspect-options.json` shows no new occasion/gift/recipient leakage.
+
+**Update (2026-08-30):** Console listing-fields sync (the gap flagged in Day 2's 2026-08-27 update) is now fully closed — all 18 `occasion` values, all 18 `gift_occasion` values, and all 10 `recipient` values are entered in Console (mela-dev) via manual UI, matching `configListing.js` option values exactly. `occasion` now shows 20 options total (18 new + 2 legacy `diwali-festivals`/`gifting`, kept for backward compat). `recipient`'s Console scope was reconfirmed as Public/multi-enum (resolves the prior open question — Console state had changed since last checked on 2026-08-27). Remaining Day 1 gap is purely the inventory backfill (`single_file_classifier.py --enrich-only`) — without it no existing listings carry the new tag values regardless of schema/Console readiness.
 
 ---
 
