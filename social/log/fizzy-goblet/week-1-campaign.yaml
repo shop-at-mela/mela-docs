@@ -116,7 +116,7 @@ pinterest:
       shopatmela_url: https://www.shopatmela.com/l/6a17b5de-247a-45ca-8c50-fc39e590b6f8
 
     - name: All Day Black Boots
-      status: queued
+      status: posted  # corrected 2026-08-30: confirmed live on the shared artisan-footwear board (user check), part of the manual 1-pin/day rollout; date not precisely known, approx. 2026-07-02/03 given queue order. Other `queued` pins below are unverified, not confirmed either way — this log was never updated after initial creation.
       title: All Day Black Boots | Handcrafted Leather Boots from India
       description: Black leather boots handcrafted in India with detachable leather floral charm. 3-inch heel, double cushioning, artisan details. Perfect for everyday elegance. Sizes 36-41. Heritage craftsmanship, modern design. Discovered on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e279a5da-7d25-4343-9e5b-eb9c6bb7e88c.jpg

@@ -85,6 +85,14 @@ ux_review:
 notes:
   watermark_note: Render was clean from prior session but had no watermark baked in (Blotato gap) — composited "Discovered on Mela" via templates/photo-watermark.html + render.sh this session, re-inspected for legibility.
   wife_signoff: Confirmed by founder before scheduling 2026-08-26/27.
+  product_repeat_gap: >
+    CORRECTION (2026-08-30): this post's product (dev_listing_id 6a14b1db-ce13-43b1-b0a5-5e218d4e1499,
+    "Abstract Embroidery Slip-Ons") is the same listing featured in week-1-campaign.yaml's Instagram
+    carousel, posted only 55 days earlier (2026-07-03 -> 2026-08-27) — inside the then-active 60-day
+    product_recency_days cooldown. No cooldown line appears anywhere in this post's Phase 2 record,
+    meaning the check did not run (or its result wasn't surfaced) for this post. Root-caused and fixed:
+    cooldown raised 60 -> 240 days, and the check is now a required visible line in every post's
+    5-line summary (see category-routing.yaml + social-review/social-launch SKILL.md, 2026-08-30).
   phase7b_note: >
     attach-social-scene.js run --dev --confirm 2026-08-27, matched by --listing-id (no duplicate-ID
     drift found for this brand). Clean scene now index-0 lead image (Sharetribe image id
