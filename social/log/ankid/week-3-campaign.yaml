@@ -3,7 +3,10 @@ brand_slug: ankid
 week: 3
 persona: Neha / Priya
 category: baby_and_kids
-date_posted: "2026-09-06"   # scheduled via Blotato (batch built 2026-09-02)
+date_posted: "2026-09-02"   # PUBLISHED IMMEDIATELY 2026-09-02 (original Sep-6 schedule cancelled)
+published:
+  instagram_reel: https://www.instagram.com/reel/Dcz4qdADYCi/
+  pinterest_pin: https://www.pinterest.com/pin/1103593083719523816
 angle: belonging #1 (suitcase economy)
 hypothesis: "Does a belonging/occasion hook ('the festive fit usually comes in a suitcase — not this one') on festive babywear drive saves/outbound-clicks for Neha/Priya into Diwali season?"
 northstar_metric:

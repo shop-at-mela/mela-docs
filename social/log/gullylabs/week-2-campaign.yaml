@@ -3,7 +3,10 @@ brand_slug: gullylabs
 week: 2
 persona: Arun
 category: fashion
-date_posted: "2026-09-04"   # scheduled via Blotato (batch built 2026-09-02)
+date_posted: "2026-09-02"   # PUBLISHED IMMEDIATELY 2026-09-02 (original Sep-4 schedule cancelled)
+published:
+  instagram_reel: https://www.instagram.com/reel/Dcz4hVrgJdu/
+  pinterest_pin: https://www.pinterest.com/pin/1103593083719523808
 angle: discovery
 hypothesis: "Does a discovery hook ('all over India's streets, impossible to find here') on an on-foot lifestyle reel drive saves/outbound-clicks for Arun on a handcrafted sneaker?"
 northstar_metric:            # fill after publish (roll into metrics-log.md at Sunday review)

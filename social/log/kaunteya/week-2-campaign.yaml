@@ -3,7 +3,10 @@ brand_slug: kaunteya
 week: 2
 persona: Priya
 category: home_and_kitchen
-date_posted: "2026-09-05"   # scheduled via Blotato (batch built 2026-09-02)
+date_posted: "2026-09-02"   # PUBLISHED IMMEDIATELY 2026-09-02 (original Sep-5 schedule cancelled)
+published:
+  instagram_reel: https://www.instagram.com/reel/Dcz4mAtkjEZ/
+  pinterest_pin: https://www.pinterest.com/pin/1103593083719523813
 angle: occasion / belonging (suitcase economy)
 hypothesis: "Does a suitcase-economy belonging hook ('the good festive china never survives the suitcase') on a hand-painted festive platter drive saves/outbound-clicks for Priya into Diwali season?"
 northstar_metric:
