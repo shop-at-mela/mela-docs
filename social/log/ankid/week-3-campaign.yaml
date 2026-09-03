@@ -1,0 +1,47 @@
+brand: Ankid
+brand_slug: ankid
+week: 3
+persona: Neha / Priya
+category: baby_and_kids
+date_posted: "2026-09-06"   # scheduled via Blotato (batch built 2026-09-02)
+angle: belonging #1 (suitcase economy)
+hypothesis: "Does a belonging/occasion hook ('the festive fit usually comes in a suitcase — not this one') on festive babywear drive saves/outbound-clicks for Neha/Priya into Diwali season?"
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+product:
+  name: Anar Lehenga, Kurta & Dupatta set
+  sku: anar-lehenga-choli-dupatta-set
+  dev_listing_id: 6a5ffcfc-44c4-484f-affb-1a1c1ddc3117
+  verified_live: true                 # 2026-09-02 WebFetch: OPEN, $73, silk Chanderi + cotton, hand-appliqued pomegranate
+  morph_risk: HIGH (child's face + garment drape) → real photo only, no Blotato
+
+# INSTAGRAM (reel — FFmpeg Ken Burns pan-up on real photo, hook-on-frame, watermark)
+instagram:
+  submission_id: 156b0dba-b4c5-4db1-bc0b-bfd3e70f4c68
+  scheduled_time: 2026-09-06T15:00:00Z
+  media_public_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/32870a44-6c87-451b-b018-74d6dc7b30aa.mp4
+  hook_on_frame: "The festive fit usually comes in a suitcase. Not this one."
+  caption: |
+    The festive outfit for the little one usually comes in someone's suitcase. This one doesn't have to.
+
+    Ankid's Anar set — a red silk-Chanderi-and-cotton kurta with a hand-appliquéd anar (pomegranate) at the chest, over a flowing ivory lehenga and dupatta. Made to order in India, sized newborn through 8 years. Comfortable enough to actually run around in.
+
+    Discover Ankid on Mela, link in bio.
+
+    📍 Made in India | Ships to the US
+    #DiwaliOutfit #IndianWearForKids #KidsEthnic #MadeInIndia #DiscoverOnMela
+
+# PINTEREST (pin → Modern Indian Nursery)
+pinterest:
+  submission_id: ecd36c19-61bb-426a-8ebc-da643264c5ff
+  scheduled_time: 2026-09-06T18:00:00Z
+  board: Modern Indian Nursery (1103593152379723629)
+  pin_image_public_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/e92b3c3f-8c92-46a0-bde9-cde46f39335a.jpg
+  destination: https://www.shopatmela.com/l/lehenga-skirt-set-kurta-dupatta-scarf-set-for-kids-08y-in-ivory-ankid/6a5ffcfc-44c4-484f-affb-1a1c1ddc3117?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w3&utm_content=anar_lehenga_set
+
+notes:
+  - "Pin uses canonical SLUG URL so UTMs survive pre-deploy (redirect fix bd3124c0a awaiting QA deploy)."
+  - "Reel silent Ken Burns (pan-up ends on the smile = payoff); audio + final IG publish manual."
+  - "Part of the 2026-09-02 validation-pivot batch (3 reels only). Persona note: leans Neha (familiar/occasion) + Priya (gifting)."

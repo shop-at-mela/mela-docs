@@ -1,0 +1,47 @@
+brand: Gully Labs
+brand_slug: gullylabs
+week: 2
+persona: Arun
+category: fashion
+date_posted: "2026-09-04"   # scheduled via Blotato (batch built 2026-09-02)
+angle: discovery
+hypothesis: "Does a discovery hook ('all over India's streets, impossible to find here') on an on-foot lifestyle reel drive saves/outbound-clicks for Arun on a handcrafted sneaker?"
+northstar_metric:            # fill after publish (roll into metrics-log.md at Sunday review)
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+product:
+  name: Gully Number 001 - Baaz Noor Yellow for Women
+  sku: gully-number-001-baaz-noor-yellow-women
+  dev_listing_id: 69fa0cf4-8d04-42e5-96b8-87685924693d
+  verified_live: true        # 2026-09-02 WebFetch: OPEN, $60, suede/canvas + Baaz embroidery on back tab
+  source_image: on-foot gallery shot (DSC09496) — chosen over white catalog shot per gated-hybrid source-selection-first
+
+# INSTAGRAM (reel — FFmpeg Ken Burns on real photo, hook-on-frame, watermark; morph-safe)
+instagram:
+  submission_id: b66518c6-7a21-4b92-ba2f-955b84a624cf
+  scheduled_time: 2026-09-04T15:00:00Z
+  media_public_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/f6e76519-c542-4610-931a-a41166316541.mp4
+  hook_on_frame: "All over India's streets. Near impossible to find here."
+  caption: |
+    The everyday sneaker all over India's streets — and near impossible to find in a US store.
+
+    Gully Labs' Baaz Noor Yellow. Hand-finished suede and canvas, the Baaz embroidered on the back tab, magenta laces, a gum sole, and memory-foam under every step. Built for people always moving — dancers, skaters, long city walks. गली means the street it's named for.
+
+    Discover Gully Labs on Mela, link in bio.
+
+    📍 Made in India | Ships to the US
+    #IndianSneakers #Streetwear #MadeInIndia #DesiAbroad #DiscoverOnMela
+
+# PINTEREST (pin → Artisan Footwear)
+pinterest:
+  submission_id: 5c64659b-8b9c-4a79-93f9-b3e23480fa42
+  scheduled_time: 2026-09-04T18:00:00Z
+  board: Artisan Footwear (1103593152379641541)
+  pin_image_public_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/1ed8e844-b555-427f-9c4d-021faee1cda0.jpg
+  destination: https://www.shopatmela.com/l/sneakers-for-women-uk3uk8-gully-labs/69fa0cf4-8d04-42e5-96b8-87685924693d?utm_source=pinterest&utm_medium=social&utm_campaign=gullylabs_w2&utm_content=baaz_noor_yellow
+
+notes:
+  - "Pin uses the canonical SLUG URL (not /l/{id}) so UTMs survive on the LIVE site pre-deploy. The /l/:id UTM-stripping 302 redirect fix is committed+pushed (web-client bd3124c0a) but awaiting QA deploy — see [[project_pinterest_baseline_funnel_leak]]."
+  - "Reel is silent Ken Burns; trending audio + final IG publish are a manual in-IG step (Blotato auto-publishes silent per founder decision this batch)."
+  - "Part of the 2026-09-02 validation-pivot batch (3 reels only; story carousels + education tile dropped)."

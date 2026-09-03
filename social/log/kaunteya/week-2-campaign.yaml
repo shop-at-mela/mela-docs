@@ -1,0 +1,47 @@
+brand: Kaunteya
+brand_slug: kaunteya
+week: 2
+persona: Priya
+category: home_and_kitchen
+date_posted: "2026-09-05"   # scheduled via Blotato (batch built 2026-09-02)
+angle: occasion / belonging (suitcase economy)
+hypothesis: "Does a suitcase-economy belonging hook ('the good festive china never survives the suitcase') on a hand-painted festive platter drive saves/outbound-clicks for Priya into Diwali season?"
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+product:
+  name: Airavata - Oval Platter
+  sku: airavata-oval-platter          # MATCH BY SKU — duplicate Dev_Listing_ID (see notes)
+  dev_listing_id: 6a5cd5f0-9352-4040-80c4-b75caeccc58a
+  verified_live: true                 # 2026-09-02 WebFetch: OPEN, $101, fine bone china, Pattachitra, 24k gold, 3-stage firing
+  morph_risk: HIGH (intricate gold hand-paint) → real photo only, no Blotato
+
+# INSTAGRAM (reel — FFmpeg Ken Burns on real platter photo, hook-on-frame, watermark)
+instagram:
+  submission_id: 5f2f51a3-bc34-4ab1-9748-174c8fd23b33
+  scheduled_time: 2026-09-05T15:00:00Z
+  media_public_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/bba97558-71f2-4396-8391-65b689ee9f3c.mp4
+  hook_on_frame: "The good festive china never survives the suitcase."
+  caption: |
+    The good festive china never survives the suitcase from India.
+
+    Kaunteya's Airavata Oval Platter — fine bone china, hand-painted with Pattachitra-style motifs and finished in 24-karat gold, then fired three times over. The golden mythical creatures are drawn by hand, no two sets quite alike. A centrepiece for the Diwali table you didn't have to fold into someone's luggage.
+
+    Discover Kaunteya on Mela, link in bio.
+
+    📍 Made in India | Ships to the US
+    #DiwaliGifts #IndianHome #Pattachitra #MadeInIndia #DiscoverOnMela
+
+# PINTEREST (pin → Home and Kitchen)
+pinterest:
+  submission_id: c7fd4ef3-b3ec-4061-ae32-7fb3001cd8ab
+  scheduled_time: 2026-09-05T18:00:00Z
+  board: Home and Kitchen (1103593152379723626)
+  pin_image_public_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/f4a4cfe7-250b-42d9-8c1d-8448ee744934.jpg
+  destination: https://www.shopatmela.com/l/oval-platter-with-pattachitra-motifs-kaunteya/6a5cd5f0-9352-4040-80c4-b75caeccc58a?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w2&utm_content=airavata_oval_platter
+
+notes:
+  - "DUPLICATE Dev_Listing_ID: 6a5cd5f0 is shared in the CSV between this In-Stock Oval Platter and an Out-of-Stock 'Airavata - Garuda Mini Tea Mug'. ALWAYS match by --sku airavata-oval-platter, never --listing-id (Phase 7b / any lookup). Live listing for the ID resolves to the Oval Platter (correct)."
+  - "Pin uses canonical SLUG URL so UTMs survive pre-deploy (redirect fix bd3124c0a awaiting QA deploy)."
+  - "Reel silent Ken Burns; audio + final IG publish manual. Part of the 2026-09-02 validation-pivot batch."
