@@ -4,9 +4,13 @@ week: 2
 persona: Priya
 category: home_and_kitchen
 date_posted: "2026-09-02"   # PUBLISHED IMMEDIATELY 2026-09-02 (original Sep-5 schedule cancelled)
-published:
-  instagram_reel: https://www.instagram.com/reel/Dcz4mAtkjEZ/
-  pinterest_pin: https://www.pinterest.com/pin/1103593083719523813
+published:  # v2 imagery — Blotato Product Scene Placement (festive Diwali table scene) → Ken Burns; supersedes v1 plain grey-bg photo (2026-09-05)
+  instagram_reel: https://www.instagram.com/reel/Dc5OGyTDmzx/
+  pinterest_pin: https://www.pinterest.com/pin/1103593083719684706
+  superseded_v1:   # DELETE MANUALLY (Blotato can't delete published posts via API)
+    instagram_reel: https://www.instagram.com/reel/Dcz4mAtkjEZ/
+    pinterest_pin: https://www.pinterest.com/pin/1103593083719523813
+  imagery_note: "High-detail gold Pattachitra → Blotato-staged with tight literal prompt + QC. Founder judged the scene worth it; drift is limited to the flowering tree (simplified/desaturated) + slight gold-line softening; the two signature creatures + rim preserved. Approved 2026-09-05."
 angle: occasion / belonging (suitcase economy)
 hypothesis: "Does a suitcase-economy belonging hook ('the good festive china never survives the suitcase') on a hand-painted festive platter drive saves/outbound-clicks for Priya into Diwali season?"
 northstar_metric:

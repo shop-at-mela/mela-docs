@@ -4,9 +4,13 @@ week: 2
 persona: Arun
 category: fashion
 date_posted: "2026-09-02"   # PUBLISHED IMMEDIATELY 2026-09-02 (original Sep-4 schedule cancelled)
-published:
-  instagram_reel: https://www.instagram.com/reel/Dcz4hVrgJdu/
-  pinterest_pin: https://www.pinterest.com/pin/1103593083719523808
+published:  # v2 imagery — Blotato Product Scene Placement (warm stone-step scene) → Ken Burns; supersedes v1 plain on-foot photo (2026-09-05)
+  instagram_reel: https://www.instagram.com/reel/Dc5OEVGjpec/
+  pinterest_pin: https://www.pinterest.com/pin/1103593083719684696
+  superseded_v1:   # DELETE MANUALLY (Blotato can't delete published posts via API)
+    instagram_reel: https://www.instagram.com/reel/Dcz4hVrgJdu/
+    pinterest_pin: https://www.pinterest.com/pin/1103593083719523808
+  imagery_note: "Low-morph rigid product → Blotato-staged per recalibrated Stage 0. QC: ~90% fidelity, minor side-embroidery drift, founder-approved."
 angle: discovery
 hypothesis: "Does a discovery hook ('all over India's streets, impossible to find here') on an on-foot lifestyle reel drive saves/outbound-clicks for Arun on a handcrafted sneaker?"
 northstar_metric:            # fill after publish (roll into metrics-log.md at Sunday review)

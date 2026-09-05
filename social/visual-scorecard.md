@@ -28,13 +28,18 @@
 
 ## The stages
 
-### Stage 0 — Does this even need Blotato?
+### Stage 0 — Real photo or Blotato scene?
 
 Runs before any grading and before any credit is spent. This is the gate's front door.
 
-- **Prefer the untouched real product photo**, or a real photo + HTML-composited watermark, when the source already meets baseline staging (`visual-style-guide.md` → Backgrounds & Settings). It costs **zero credits** and carries **zero morph risk**.
-- **Route to a Blotato scene only when the source lacks staging** (white/seamless background, no context).
-- **For reels where morph risk is high** (garment drape, jewelry detail, multi-object scenes): render **one still/slide first and diff it** against the source (a cheap probe) before spending credits on full motion.
+**Default (recalibrated 2026-09-05, founder preference): stage products in a Blotato lifestyle scene.** A warm, natural-light staged scene reads far better than a plain white/grey catalog shot and matches the Mela aesthetic — a plain product-on-white reel is under-built. Applies to reels **and** Pinterest lifestyle pins.
+
+**Two exceptions where the untouched real photo wins** (zero credits, zero morph):
+1. **People / faces / garment-drape on a person** (e.g. kidswear on a child) — diffusion warps faces and fabric drape; always real photo. This is the hard line.
+2. The source is **already a strong lifestyle shot** (on-model, styled, in-context) — source-select it, don't regenerate.
+
+**Morph gate for detailed products** (fine gold/hand-paint, jewelry, intricate motif, label-forward): still Blotato-stage, but with a **tight literal prompt** ("keep the product + its exact motif unchanged, only build the environment"), **render one still and diff it against the source** (Stage 2), and **show the founder the render before shipping** — never silently ship a detailed-piece render. The founder makes the fidelity-vs-scene call (ref: Kaunteya 2026-09-05 — tree-foliage drift accepted for the festive-table scene). For rigid/simple products (footwear, homeware, bottles, packaged goods) the diff is a quick sanity check, not a blocker.
+
 - Full tool logic (which template, which gate, when it's HTML vs. Blotato vs. SVG vs. Canva) is `visual-style-guide.md` → **Tool decision procedure**. Run that procedure here; this stage does not re-derive it.
 
 ### Stage 1 — Pre-render (source + brief)
