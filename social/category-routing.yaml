@@ -39,7 +39,7 @@ cadence:
   posting_interval: daily   # 24h between posts (changed from every_other_day 2026-08-12); source of truth for both skills' scheduling
   # CURRENT (cold-start) — what both skills follow now:
   pinterest: "Posts via Blotato like Instagram; cap 10/24h per account, schedule overflow past the cap"  # warmup cleared 2026-08-08 (memory project_mela_social_status)
-  instagram: "SHORT-FORM PRIMARY (updated 2026-08-14): 4-5 short-form Reels/week as the primary reach format (product / how-it's-made / anchor — see hook-engineering.md §4) + supporting carousels/stills; no grid while grid.enabled=false. Every reel lands a payoff (not a payoff-less wordmark teaser). Runs above the PRD's ≤3hr/week budget — lean on Blotato semi-automation, accept rough-but-fast."
+  instagram: "MULTI-PRODUCT CAROUSELS PRIMARY (updated 2026-09-05, founder preference): IG default = a Blotato-improved collection carousel (3+ products/brand, each slide a Product Scene Placement scene — like the early Fizzy Goblet / ChooseKind posts). Reels are DEMOTED to the exception UNTIL a better reel-creation method exists (single-product Ken Burns reels underperformed on taste; founder kept the Blotato-scene reels over the real ones). Keep morph-QC: detail-critical slides (fine gold/jewelry/faces) use a real photo or founder sign-off. No grid while grid.enabled=false. (Supersedes the 2026-08-14 short-form-primary stance.)"
   # FUTURE (aspirational, NOT active) — adopt when grid.enabled flips on (grid.activation_gate) + Pinterest Catalog Feed ships:
   target:
     pinterest: "5-10 pins/day, Catalog Feed auto"
