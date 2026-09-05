@@ -2,6 +2,59 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-08-30
+
+### Shipped
+- `docs/config` — Completed the Sharetribe Console listing-fields sync for gifting-festival-traffic-prd.md §1F/§1G (last open item from Day 1/2). All three multi-enum fields now fully populated in Console (mela-dev) and confirmed via `flex-cli search -m mela-dev` (all three show as `multi-enum`/public in the auto-registered search schema):
+  - `occasion`: 20 options total (2 legacy — `diwali-festivals`, `gifting` — + all 18 new values from `configListing.js:562-583`).
+  - `gift_occasion`: 18 options total, full list from `configListing.js:601-620` (3 were already present: diwali, raksha_bandhan, karva_chauth).
+  - `recipient`: field confirmed correctly saved as Public/multi-enum (resolves the 2026-08-27 open question — Console state had changed since last checked); 10 options total, full list from `configListing.js:638-649` (2 were already present: for_mom, for_dad).
+- All done via manual Console UI entry (no bulk-import API available for listing-field enum options); each option's `Option value` typed to match `configListing.js` exactly so `sanitizeMultiEnum` won't strip anything.
+
+### Next
+- [ ] Run Day 1's inventory backfill (`single_file_classifier.py --enrich-only`, PRD §1H) so listings actually carry the new tag values — schema/Console config alone doesn't create data. This is now the only remaining blocker before `pub_occasion`/`pub_gift_occasion`/`pub_recipient` filters return anything beyond the handful of already-tagged listings.
+- [ ] Manual verification still pending (carried from 2026-08-25): GA4 DebugView shows `entry_source` on real traffic; OG tags via true SSR (`yarn dev-server`, port 4000) + real FB/Pinterest validators once there's a public URL.
+- [ ] Day 3 (gifting-festival-traffic-prd.md) — social calendar/boards, brand sourcing, ads-readiness gate. Not started.
+
+## 2026-08-27
+
+### Shipped
+- `fix(config)` — `configHelpers.js` now force-overrides `filterConfig.searchMode` to `has_any` for `occasion`/`gift_occasion`/`recipient`. Confirmed with Sharetribe's Developer Advocate team that has_any vs has_all is an API-call-time choice with no Console UI control, so any Console-managed multi-enum field defaults to `has_all` (AND) via `validSearchMode` — without this fix, the generic SearchPage filter panel would build wrong-semantics queries for these 3 fields (GiftingPage/OccasionStrip's own hand-built `has_any:` links were already unaffected). `applyHasAnySearchModeOverride` extracted + unit-tested (6 tests, `configHelpers.applyHasAnySearchModeOverride.test.js`). 154/154 suites green.
+- `gift_occasion` listing field created in Sharetribe Console (2 placeholder options); search schema auto-registered on creation (confirmed via `flex-cli search -m mela-dev`).
+
+### Next
+- [ ] Confirm `recipient` field saved correctly in Console (Public scope) — not showing in `flex-cli search` output yet, unlike `gift_occasion`.
+- [ ] Add remaining `gift_occasion` options in Console (16 more, full list at `configListing.js:601-620`) and `recipient`'s (full list at `configListing.js:638-649`) — currently just the 2 placeholders each.
+- [ ] Add the 18 new `occasion` enum values in Console (`configListing.js:562-583`) — this is the one that actually strips silently (`sanitizeMultiEnum`) if skipped, unlike gift_occasion/recipient which pass through unsanitized as entirely-unknown keys until they're Console-registered.
+- [ ] Run Day 1's inventory backfill (`single_file_classifier.py --enrich-only`, PRD §1H) so listings actually carry the new tag values — schema/Console config alone doesn't create data.
+
+## 2026-08-25
+
+### Shipped
+- `feat(analytics)` — `entry_source` (+ session id) attached to every `page_view`, including the first automatic gtag one; `utm_*` stripped from the visible URL post-capture. gifting-festival-traffic-prd.md Day 2 Phase 0.
+- `feat(gifting)` — New `/gifts` + `/occasions/:slug` landing pages (one `GiftingPage` container, delegates to `SearchPage.duck`'s `loadData`, no new reducer), with price-band and recipient filter chips, and opt-in occasion chips on `ListingCard`. Day 2 Phase 1.
+- `refactor(occasion-strip)` — `isDiwaliSeason()` → `getActiveSeasonOccasion(date)`: OccasionStrip now selects 2-3 relevant panels from the full near-term festival sequence (Raksha Bandhan → Navratri → Karva Chauth → Diwali → Bhai Dooj → wedding season) instead of always showing the same 2. `BrandOccasionModule` updated to match (still shows every occasion with qualifying inventory, unlike OccasionStrip, since it has no extra fetch cost). Day 2 Phase 2.
+- `feat(search)` — Gifting/occasion-context searches default to a bestseller-aware sort (`pub_isBestseller,createdAt`, centralized in one `GIFTING_DEFAULT_SORT` constant) instead of `createdAt`; general search and explicit user sorts unaffected. Day 2 Phase 3.
+- All 4 commits unit-tested (151/151 suites, 2406 tests green repo-wide) and live-verified in a browser (entry_source in sessionStorage, clean canonical under a chip filter, chip routing, bestseller-first grid ordering).
+
+### Next
+- [ ] **Console listing-fields sync** — the app's runtime only reads Console-hosted `listingFields` (`configHelpers.js` `mergeListingConfig`, `shouldMerge` hardcoded `false`), not local `configListing.js` edits, unless a field is `localOnly`. New `occasion` enum values (`raksha_bandhan`, `diwali`, `navratri`, `karva_chauth`, `bhai_dooj`, `wedding`, etc.) and the new `gift_occasion`/`recipient` fields need adding in Console, or they're silently stripped client-side by `sanitizeMultiEnum` even when the backend already returns them — confirmed live (Raksha Bandhan's OccasionStrip panel had 4 matching API results, rendered 0 cards).
+- [ ] `flex-cli search set` for `gift_occasion` and `recipient` still not run in dev or QA/prod (pre-existing gap, restated for visibility now that Day 2 code depends on it).
+- [ ] Day 3 (gifting-festival-traffic-prd.md) — social calendar/boards, brand sourcing, ads-readiness gate. Not started.
+- [ ] Live-verify `/gifts`/`/occasions/:slug` OG tags via `curl` against true SSR (`yarn dev-server`, port 4000 — the :3000 dev server used for this verification is client-rendered only) and real FB/Pinterest validators once a public URL exists.
+
+## 2026-08-23
+
+### Shipped
+- `docs(analytics)` — Found and fixed a real gap while wiring up `add-to-cart-restoration-prd.md`'s GA4 reporting: `saved_listing_toggle`/`saved_page_view`/`saved_recommendation_click` were pushing to `dataLayer` correctly but had zero GTM wiring, so none ever reached GA4 despite prior "live-verified" notes (which only confirmed the dataLayer push). GTM `GTM-5JSJ54C2` published as Version 6 with the missing Data Layer Variables, Custom Event triggers, and GA4 Event tags; also added the missing `saved_surface` param mapping to the existing `brand_clickout` tag.
+- Registered 8 new GA4 custom dimensions (Save Toggle Source, Saved Listing ID, Is Saved, Saved Surface, Recs Brand ID, Saved Entry, Recs Shown, Brand Group Count) under `Mela | Brands from India`; deliberately skipped a duplicate "Recs Product ID" dimension since `Product ID` already covers that parameter.
+- Discovered `Cross-Shop: Multi-Brand Clickout Rate`, `Cross-Shop: Entry vs Exit`, and `Potential Shoppers Funnel` GA4 Explorations, plus the `Mela Cross-Shop Dashboard` in Looker Studio, already existed and were undocumented — corrected the stale "not started" status in `shopper-visibility-reporting-prd.md` and `PRD_TRACKER.md`. Added `Saved Surface` as a breakdown dimension to the clickout-rate Exploration, and 4 new tiles to the dashboard for the add-to-cart funnel.
+- `docs(prd)` — Updated `crossshop-tracking.md`, `crossshop-tracking-prd.md`, `shopper-visibility-reporting-prd.md`, and `PRD_TRACKER.md` to record the gap, the fix, and the corrected status.
+
+### Next
+- [ ] **Live-verify the newly-wired GA4 tags end-to-end** — real click → GTM Preview → GA4 DebugView, for all four events (`saved_listing_toggle`, `saved_page_view`, `saved_recommendation_click`, `brand_clickout`'s `saved_surface`). Everything shipped 2026-08-23 is configured and published but unverified against real traffic; all 4 new Looker Studio tiles currently show "No data" as a result.
+- [ ] **`saved_recommendation_click` Exploration** — small event-count breakdown by `Product ID` (reuse existing dimension) to answer whether the `/saved` recs rail drives discovery. Not built yet, blocked on real traffic per the item above.
+
 ## 2026-08-19
 
 ### Shipped

@@ -54,7 +54,7 @@ Score each 1–10 and be specific about the problem whenever you score under 8. 
 | **Payoff delivered** | 10% | Does the post/reel actually deliver the thing the hook promised — the reveal, the finished scene, the "oh, that's why"? A hook that writes a check the body doesn't cash scores low. Applies to **every format**, not just reels. |
 | **Voice match** | 10% | Grade against `brand-brief.md` (the single voice spec): calm, specific, respectful, living-culture, discovery-not-access — or generic AI copy that could sell anything? Named POV, not filler. Folds in the Step 3 density-backstop flag if it fires. |
 | **Discovery framing & affiliate precision** | 10% | "Hard to find," never "unavailable." "Ships from India / discovered on Mela," never "available from Mela." Price skipped where markup is high. Discovery-framed soft CTA, not a hard sell. |
-| **Platform fit** | 5% | IG: hook inside first 125 chars, 5–10 mixed hashtags in caption-end/first-comment, not on image. Pinterest: keyword title ≤60 chars, keywords not hashtags. Format matches the platform's rewarded metric (IG = saves, Pinterest = clicks). |
+| **Platform fit** | 5% | IG: hook inside first 125 chars, max 5 mixed hashtags in caption-end/first-comment (Blotato API hard cap, confirmed 2026-08-27), not on image. Pinterest: keyword title ≤60 chars, keywords not hashtags. Format matches the platform's rewarded metric (IG = saves, Pinterest = clicks). |
 
 ### Situational relevance — what "anchored" means
 
@@ -80,7 +80,7 @@ No penalty math here — the old "−0.5 each, capped −2" scheme is removed; i
 | **Digits** | Targets **hook** numbers only — "3 tells," not "three tells," for scroll-stopping punch. Rhetorical enumeration in the **body** ("One… Two… Three…") reads naturally and is not penalized. Always a note, never a gate. |
 | Dashes | No em dashes or " – " dashes anywhere (`visual-style-guide.md` → Caption Style). Note. |
 | Short sentences | No sentence runs long / comma-spliced; caption reads in short beats. Note. |
-| Hashtag/keyword count | IG 5–10 in caption-end/comment; Pinterest keywords, 0 hashtags. Note. |
+| Hashtag/keyword count | IG max 5 in caption-end/comment (Blotato hard cap); Pinterest keywords, 0 hashtags. Note. |
 
 All rows except the filler-opener row are **body-level polish notes** — they never block the band on their own (see Step 4's SHIP definition).
 

@@ -184,7 +184,7 @@ Prompt #4 asks for a complete AI pipeline: trending topics → high-retention sc
 ## 9. Instagram Reel / feed hashtags (brief)
 
 Pinterest uses **keywords, not hashtags** — see `pinterest-playbook.md` §4. For **Instagram** only:
-- 5–10 hashtags, a mix of **niche + mid + situational**: craft/technique (`#chikankari` `#blockprint`), discovery/occasion (`#diwaligifts` `#indianwedding`), audience-situation (`#desiabroad` `#indianfoodabroad`) — **situation, never an ethnic-identity label on the viewer.**
+- **Max 5 hashtags — Blotato's API hard-rejects a post over 5** (confirmed 2026-08-27: all 4 posts in that batch failed at schedule time with 7). Mix **niche + mid + situational**: craft/technique (`#chikankari` `#blockprint`), discovery/occasion (`#diwaligifts` `#indianwedding`), audience-situation (`#desiabroad` `#indianfoodabroad`) — **situation, never an ethnic-identity label on the viewer.**
 - Put them **in the caption end or first comment**, not on the image.
 - Skip generic mega-tags (`#love` `#instagood`) — zero targeting value.
 - Reuse a small vetted set per angle rather than a fresh 30 each time.

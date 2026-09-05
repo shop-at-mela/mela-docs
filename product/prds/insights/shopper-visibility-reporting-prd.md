@@ -2,7 +2,7 @@
 
 ## Document Information
 - **Created**: 2026-08-04
-- **Status**: 🟡 In progress — Phase 1 (site search tracking) ✅ shipped and live-verified 2026-08-04; Phase 2 (potential shopper funnel) in progress; Phases 3 and 4 not started.
+- **Status**: 🟡 In progress — Phase 1 (site search tracking) ✅ shipped and live-verified 2026-08-04; Phase 2 (potential shopper funnel) in progress. **Status correction, 2026-08-23**: this line previously said Phases 3 and 4 were "not started" — stale. `Cross-Shop: Multi-Brand Clickout Rate`, `Cross-Shop: Entry vs Exit`, and `Potential Shoppers Funnel` already exist in GA4 (owner Sanjot Sawhney); `Mela Cross-Shop Dashboard` already exists in Looker Studio. Neither this PRD nor `crossshop-tracking-prd.md` had been updated to reflect that. Phase 3's follow-up note (below) is now done — `Saved Surface` added as a breakdown dimension. Phase 4 got 4 new tiles for the add-to-cart-restoration-prd.md funnel (§ below); the BigQuery-dependent tiles (P2, multi-brand rate) remain not built.
 - **Owner**: Product / Founder
 - **Related docs**:
   - `product/prds/insights/crossshop-tracking-prd.md` (the instrumentation this PRD reports on; §13 there is superseded by Phase 3 here)
@@ -106,12 +106,18 @@ N/A for end users. The internal pain is that every weekly metrics review is curr
 - `Cross-Shop: Entry vs Exit` Free Form exploration per `crossshop-tracking-prd.md` §13.1 Step 2, which is buildable as written.
 - All explorations plus the Phase 2 funnel pinned into a GA4 **Library** collection named `Cross-Shop Tracking`.
 
-**Follow-up (added 2026-08-13, not yet built into these Explorations):** `crossshop-tracking-prd.md` §14 shipped a `saved_surface` param on `brand_clickout` (`'saved_brand_group' | 'saved_item_card' | null`) and a new `saved_recommendation_click` event — see `crossshop-tracking.md`'s §14 addition for the field names and GA4 custom-dimension setup. When Phase 3 is next revisited: add `Saved Surface` as a breakdown dimension on `Cross-Shop: Multi-Brand Clickout Rate` to separate "shopped the whole brand" from "shopped one item" clicks originating from `/saved`, and consider a small `saved_recommendation_click`-based exploration (event count, `Recs Brand ID` breakdown) to answer whether the `/saved` recs rail drives discovery.
+**Follow-up (added 2026-08-13, done 2026-08-23):** `crossshop-tracking-prd.md` §14 shipped a `saved_surface` param on `brand_clickout` (`'saved_brand_group' | 'saved_item_card' | null`) and a new `saved_recommendation_click` event — see `crossshop-tracking.md`'s §14 addition for the field names and GA4 custom-dimension setup. `Saved Surface` added as a breakdown dimension on `Cross-Shop: Multi-Brand Clickout Rate` on 2026-08-23. Still open: a small `saved_recommendation_click`-based exploration (event count, `Product ID` breakdown — reuse the existing dimension, see `crossshop-tracking.md` §4's §14-additions correction) to answer whether the `/saved` recs rail drives discovery — not built yet, and blocked on real traffic since the event only started reaching GA4 today (§4 gap fix).
 
 ### Should Have (P1)
 
 **Phase 4 — Looker Studio dashboard**
-- Report `Mela Cross-Shop Dashboard` on the standard GA4 connector, with the tiles from `crossshop-tracking.md` §13.2 plus three new ones: potential shoppers scorecard, OCTR scorecard, top search terms table.
+- Report `Mela Cross-Shop Dashboard` on the standard GA4 connector, with the tiles from `crossshop-tracking.md` §13.2 plus three new ones: potential shoppers scorecard, OCTR scorecard, top search terms table. **Status correction, 2026-08-23**: the potential-shoppers/OCTR/search-terms tiles are still not built (they depend on Phase 2's funnel/BigQuery work); what shipped 2026-08-23 instead is a new "Add to Cart" section with 4 tiles for `add-to-cart-restoration-prd.md`'s funnel:
+  - Scorecard — `saved_listing_toggle` event count (all sources)
+  - Bar chart "Add-to-Cart vs Heart-Icon Saves" — `Save Toggle Source` breakdown, filtered to `Event name = saved_listing_toggle`
+  - Table "Saved Entry" — `Saved Entry` (the `entry` param) × Event count, filtered to `Event name = saved_page_view`
+  - Scorecard "Recs Rail Clicks" — `saved_recommendation_click` event count
+  
+  All four show "No data" as of 2026-08-23 — expected, not a bug: the GTM tags for these three events were only wired up and published today (`crossshop-tracking.md` §3 gap fix), so no real traffic has hit them yet.
 - View-only sharing enabled.
 
 ### Nice to Have (P2)

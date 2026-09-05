@@ -6,7 +6,7 @@ brand: The Nesavu
 brand_slug: the-nesavu
 week: 1
 date_posted: "2026-07-28"
-status: live_ig_pinterest_partial  # Instagram live 2026-07-31. 2026-08-08: warmup cleared; 2 of 4 Pinterest pins auto-scheduled for 2026-08-09. Other 2 (Festivals, Temple) drift-blocked — their live listings no longer match the pin's pavadai copy (see pins).
+status: live_ig_pinterest_partial  # Instagram live 2026-07-31. 2 of 4 Pinterest pins (First Birthday, Navratri) confirmed posted via Blotato, duplicates cleaned up 2026-08-31. Other 2 (Festivals, Temple) are ALSO live (posted manually pre-warmup) but with copy that no longer matches their drifted listings — open, see `live_manual_drift_mismatch` observation.
 platforms:
   - instagram
   - pinterest
@@ -71,32 +71,38 @@ pinterest:
 
   pins:
     - name: Baby Girl Pattu Pavadai for First Birthday and Pooja
-      status: scheduled  # auto-scheduled via Blotato for 2026-08-09T20:00Z (submission 942b7735-efa0-47d4-a057-8ab824a8b8f0). Listing verified live 2026-08-08: "Semi Banaras Silk Pattu Pavadai for Baby Girl 18-24M for First Birthday" — matches.
+      status: posted  # CORRECTED 2026-08-31: was `scheduled`. Blotato-tracked pin confirmed published (submission 942b7735-efa0-47d4-a057-8ab824a8b8f0, verified via blotato_get_post_status). Duplicate manual copy (pin/1103593083717050325) deleted by user 2026-08-31 — this Blotato-tracked copy kept, since it's the only one with analytics traceability.
+      pin_url: https://www.pinterest.com/pin/1103593083717637849
       title: Silk Pattu Pavadai for Baby's First Birthday
       description: South Indian silk pavadai woven in the Kanchipuram and Salem style, sized for baby girls. Perfect for first-birthday photoshoots and pooja ceremonies. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7387352e-4e40-4231-bca7-e57676a7c5a0.jpg
       link: https://www.shopatmela.com/l/6a598f34-b298-48a9-bd82-56339821b117?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-first-birthday
 
     - name: Toddler Pattu Pavadai for Navratri and Festive Pooja
-      status: scheduled  # auto-scheduled via Blotato for 2026-08-09T21:30Z (submission dd72f764-9f59-4e13-9708-0251b7c37bb1). Listing verified live 2026-08-08: "Semi Banaras Silk Pattu Pavadai for Toddlers 18-24M for Navratri" — matches.
+      status: posted  # CORRECTED 2026-08-31: was `scheduled`. Blotato-tracked pin confirmed published (submission dd72f764-9f59-4e13-9708-0251b7c37bb1, verified via blotato_get_post_status). Duplicate manual copy (pin/1103593083717050327) deleted by user 2026-08-31 — this Blotato-tracked copy kept.
+      pin_url: https://www.pinterest.com/pin/1103593083717643726
       title: Silk Pattu Pavadai for Navratri | Toddler Wear
       description: Toddler silk pavadai in the Kanchipuram silk-weaving style, made for Navratri golu visits and festive pooja days. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6433aedd-29b3-4384-8639-2236afc780c0.jpg
       link: https://www.shopatmela.com/l/6a598f45-5816-4bc4-bd5d-977f1f645a2a?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-navratri
 
     - name: Girls Pattu Pavadai for Festivals and Traditional Occasions
-      status: drift_blocked  # DO NOT POST as-is. 2026-08-08: listing 6a59a10b now renders "Handcrafted Girls Lehenga Choli 2-8Y for Wedding" ($31), not a South Indian pattu pavadai. Pin copy (silk pavadai, South Indian weave) contradicts the live product. Needs a correct pavadai listing or copy rewrite before posting.
+      status: relinked  # CORRECTED 2026-08-31 by user directly in Pinterest: pin/1103593083717050326 destination changed from the drifted 6a59a10b (now a Lehenga Choli) to 6a59a08d. CAVEAT (not independently verified by me): 6a59a08d's Mela listing title reads "Cotton Dress for Toddlers 3-8Y for Casual Wear" at $12 — doesn't obviously match a silk festival pavadai (other Nesavu pavadais in this batch run $18-32) or thenesavu.com's stated gpp374b product. Flagged to the user before the edit; they proceeded. Re-verify this mapping if performance looks off or if this surfaces again.
+      dev_listing_id: 6a59a08d-0f45-4e4a-97c0-ab30ccf307c7  # was 6a59a10b (drifted)
       title: Girls Silk Pattu Pavadai | South Indian Weave
       description: Silk pavadai for girls, woven using South Indian silk techniques and finished for festival wear. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e5ffcc3b-09a8-42da-88d9-125995ad651e.jpg
-      link: https://www.shopatmela.com/l/6a59a10b-4abd-4c7e-ad73-3f976ab7c0c8?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-festivals
+      link: https://www.shopatmela.com/l/6a59a08d-0f45-4e4a-97c0-ab30ccf307c7  # UTM MISSING — user's manual Pinterest edit used the bare URL (that's what was given to them); add ?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-festivals next time this pin is touched
+      pin_url: https://www.pinterest.com/pin/1103593083717050326
 
     - name: Baby Girl Jacquard Pattu Pavadai for Temple Wear
-      status: drift_blocked  # DO NOT POST as-is. 2026-08-08: listing 6a59c4aa now renders "Silk Party Frock for Baby Girls 2-6Y for Birthdays" ($22), not a jacquard pattu pavadai. Pin copy contradicts the live product. Needs a correct pavadai listing or copy rewrite before posting.
+      status: relinked  # CORRECTED 2026-08-31 by user directly in Pinterest: pin/1103593083717050324 was pointing straight to thenesavu.com (bypassing Mela entirely, no UTM/attribution) — changed to route through the Mela listing first. Confirmed same underlying product, just Sharetribe-generic-retitled (like The Alternate's listings) — copy left as-is.
+      dev_listing_id: 6a59c337-7723-49a3-99ea-b78ce2f71cfa  # was 6a59c4aa (drifted); Mela title now "Silk Blend Frock for Baby Girls 1-2Y for Wedding" — confirmed live/purchasable 2026-08-31
       title: Jacquard Silk Pavadai for Temple Wear
       description: Jacquard silk pavadai set, woven for temple visits and festive family occasions. The Nesavu on Mela.
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-09ae64f7-3efb-42c5-a21e-dccb5566ebb7.jpg
-      link: https://www.shopatmela.com/l/6a59c4aa-0816-41bb-9eeb-76dbb6fc0178?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-temple-wear
+      link: https://www.shopatmela.com/l/silk-blend-frock-for-baby-girls-12y-for-wedding-the-nesavu/6a59c337-7723-49a3-99ea-b78ce2f71cfa  # UTM MISSING — same gap as above, add ?utm_source=pinterest&utm_medium=social&utm_campaign=nesavu_w1&utm_content=pattu-pavadai-temple-wear next time this pin is touched
+      pin_url: https://www.pinterest.com/pin/1103593083717050324
 
 # UX REVIEW
 ux_review:
@@ -129,7 +135,7 @@ ux_review:
       mitigation: Used "Modern Indian Nursery" as the closer fit for this batch. Consider a dedicated "Festive Kids Wear" or occasion-themed board if The Nesavu / similar festive-wear brands become a recurring category.
     - theme: duplicate_publish_manual_vs_auto
       severity: medium
-      status: open
+      status: resolved  # RESOLVED 2026-08-31
       description: >
         Both Nesavu pins (Baby Girl First Birthday pavadai, Toddler Navratri pavadai) now exist
         twice on Pinterest — once posted manually by the user a few days before 2026-08-08 while
@@ -141,11 +147,32 @@ ux_review:
         campaign YAML history, which doesn't capture out-of-band manual posts made directly on a
         platform.
       mitigation: >
-        User to manually delete one copy of each duplicated pin on Pinterest (the Blotato-side
-        pin can stay since it's the one tracked in this log). Process fix for future warmup-block
-        clears: before auto-posting a backlog of queued pins, check the live Pinterest board via
-        blotato_list_pinterest_boards (or a manual look) for content already posted, not just
-        this log's `status` field.
+        RESOLVED 2026-08-31: user deleted both manual duplicate copies (pin/1103593083717050325,
+        pin/1103593083717050327), keeping the Blotato-tracked pins (see per-pin `pin_url` above) since
+        those are the only ones with analytics traceability via blotato_get_post_analytics. Process
+        fix for future warmup-block clears, still open as a process item (not blocking): before
+        auto-posting a backlog of queued pins, check the live Pinterest board via
+        blotato_list_pinterest_boards (or a manual look) for content already posted, not just this
+        log's `status` field.
+    - theme: live_manual_drift_mismatch
+      severity: high
+      status: resolved  # RESOLVED 2026-08-31
+      description: >
+        While resolving the duplicate-pin issue above, discovered the two "drift_blocked" pins
+        (Festivals, Temple Wear) were never actually blocked from posting — they were part of the
+        same manual pre-warmup Pinterest batch as the two duplicated pins, and were live with pavadai
+        copy against listings that had drifted to a different product entirely (lehenga choli, party
+        frock). Separately, the Temple Wear pin (1103593083717050324) was found to link straight to
+        thenesavu.com, bypassing Mela's funnel entirely — no UTM, no attribution.
+      mitigation: >
+        RESOLVED 2026-08-31: user manually re-pointed both pins in Pinterest. Temple Wear pin now
+        routes through Mela listing 6a59c337 (confirmed same product, Sharetribe-retitled) instead of
+        the brand's own site. Festivals pin now routes through 6a59a08d instead of the drifted
+        6a59a10b — CAVEAT: this new listing's title ("Cotton Dress for Toddlers, $12") doesn't
+        obviously match a silk festival pavadai; flagged before the edit, user proceeded anyway, not
+        independently re-verified. Residual gap: both new links are missing UTM tags (the bare
+        listing URLs were what got used in the manual edit) — GA4 won't attribute clicks from these
+        two pins until that's added. See per-pin `link` comments above for the exact UTM to add.
 
 # NOTES
 notes:

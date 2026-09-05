@@ -97,6 +97,15 @@ Products should be **styled in natural scenes**, not isolated on white:
 - No auto-text overlays; let visuals tell the story
 - 4-7 slides max to maintain engagement
 
+### Reel production pipeline (product / how-it's-made reels)
+Short-form reels are the primary reach format — build them **morph-safe**, not with AI video (decided 2026-09-02; see [[project_photo_to_reel_motion]]):
+1. **Source still — pick the best REAL gallery image** from the listing (prefer a lifestyle/on-model/styled shot over a plain white-bg flatlay). Free, zero-morph, no vendor dependency — **solve "unattractive" here first** (e.g. a sneaker's on-foot shot beats its white catalog shot).
+2. **Morph-risk gate** (only if step 1 yields nothing usable): HIGH morph-risk (jewelry-on-model, garment drape, faces, intricate hand-paint/gold, label-forward, fine detail) → use the best real photo as-is, **never Blotato**. LOW morph-risk (rigid object, plain form) → *optionally* Blotato Product Scene Placement with a tight literal prompt ("keep the [product] exactly as shown, change only the environment") + **mandatory source-vs-render QC** (reject on any drift, fall back to the real photo). Same gate applies to Pinterest pins — morph happens at generation, not display.
+3. **Motion — `scripts/product-to-reel.sh`** (FFmpeg Ken Burns, 1080×1920, ~6s, silent). Never AI/diffusion video. Shotstack = hosted fallback if FFmpeg can't run.
+4. **Hook on frame 1** — overlay the engineered first-line hook as a PNG text layer (`ffmpeg overlay` + `enable='between(t,0,~2.6)'`; this ffmpeg build lacks `drawtext`, so use a pre-rendered PNG in the Mela kit font).
+5. **Watermark** — composite "Discovered on Mela" (cream, bottom-right, lifted above the IG caption bar) as a local PNG overlay. Blotato watermark is an unsolved gap.
+6. **Schedule** — upload the MP4 via `blotato_create_presigned_upload_url` (PUT the bytes) → `blotato_create_post` (mediaType reel, explicit `scheduledTime`). Audio + final publish are a manual in-IG step.
+
 ### Blotato Templates & Specs
 | Use case | Template | Aspect Ratio | Notes |
 |---|---|---|---|
@@ -158,7 +167,7 @@ Cost order (the Tool decision procedure below applies it per-asset): **HTML/CSS 
 
 Three gates in order. Rendered imagery forces Blotato; anything graphic goes to code; Canva is only the uncodeable one-off.
 
-- **Gate 0 — motion?** Reel/video (e.g. a row-anchor teaser) → **Blotato motion collage**; audio + publish are a manual in-IG step (`category-routing.yaml` → `grid.reel_production_note`). Else it's static frames.
+- **Gate 0 — motion?** Reel/video → **FFmpeg Ken Burns over the best REAL product photo** (`scripts/product-to-reel.sh`; deterministic pan/zoom = zero morph — see [[project_photo_to_reel_motion]] and the **Reel production pipeline** below). AI/diffusion video is banned (it drifts product detail). Blotato motion collage is allowed ONLY for the abstract row-anchor teaser (cut-out craft elements over a textured ground), never for a real product. Audio + publish are a manual in-IG step (`category-routing.yaml` → `grid.reel_production_note`). Else it's static frames.
 - **Gate 1 — needs rendered imagery** (photographic or illustrative) that type+shapes can't make? Actual product → **real product photo** (never AI-generate a product). Craft material/process/place → **Blotato** (illustrative license: generic technique, never a specific brand's workshop). No such layer → Gate 2.
 - **Gate 2 — graphic/text layer.** Pure vector (map, diagram) → **SVG**. Text flow / tables / mixed → **HTML**. Needs freeform composition or stock art → **Canva**. (Judgment call: describable as boxes/lines/text/chart/table/photo = codeable; "an illustration of…" = Canva.)
 
@@ -181,7 +190,8 @@ Three gates in order. Rendered imagery forces Blotato; anything graphic goes to 
 | Dyer's hands at work | 1 (imagery) | Blotato |
 | Product payoff slide | 1 (actual product) | real product photo |
 | Photo with a headline / factual text over it | 1 + 2 | Blotato photo + HTML text composited |
-| Row-anchor teaser | 0 (motion) | Blotato collage + manual audio/publish |
+| Product / how-it's-made reel | 0 (motion) | FFmpeg Ken Burns on best real photo (`scripts/product-to-reel.sh`) + hook-on-frame + manual audio/publish |
+| Row-anchor teaser (abstract) | 0 (motion) | Blotato collage + manual audio/publish |
 | Freeform collage needing stock art | 2 = no | Canva |
 
 ---

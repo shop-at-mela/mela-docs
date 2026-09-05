@@ -5,7 +5,7 @@
 
 meta:
   version: 1
-  last_updated: "2026-08-12"
+  last_updated: "2026-08-30"
   # `stage` is a human descriptor, NOT a switch. The two things that actually gate behavior moved
   # independently, so there's no single "phase": Pinterest maturity lives in cadence (below); the IG
   # grid gate lives in grid.enabled + grid.activation_gate. (Retired the old active_phase enum 2026-08-12.)
@@ -52,7 +52,15 @@ rotation:
   category_concentration: { window: 3, max_same: 3 }  # 3+ consecutive same category → require different
   # COOLDOWN, not a ban — a finite catalog re-surfacing after the window is fine. Match by
   # dev_listing_id across all campaign logs (instagram.products[] + pinterest.pins[]).
-  product_recency_days: 60  # same product within N days → suggest a different one from the same brand
+  # Only count entries with a confirmed publish (status: posted, or a submission_id whose
+  # blotato_get_post_status came back published/scheduled) — a queued/unconfirmed/no-status
+  # entry is not proof the product went out and must not suppress a real repeat, nor be trusted
+  # as "already covered." Pre-2026-08-08 Pinterest entries (manual-warmup era, Blotato API
+  # blocked) mostly lack this — treat them as unverified, not as posted.
+  # Raised 60 -> 240 (2026-08-30) after The Alternate's "Abstract Embroidery Slip-Ons" repeated
+  # on Instagram after only 55 days (within the old 60-day window, but the Phase 2 check wasn't
+  # run/surfaced for that post — see social-review SKILL.md Phase 2 cooldown-check line).
+  product_recency_days: 240  # ~8 months; same product within N days → suggest a different one from the same brand
 
 # Instagram feed grid — theme-row layout (IG ONLY; Pinterest has no row logic).
 # Feed is planned in rows of 3 sharing one brand OR one education theme. Weekly batch = 3 rows. See /social-launch Phase 2.
@@ -104,6 +112,10 @@ pinterest_boards:
   # "Gifting and Occasions" board); brand SKIP at cold start (revisit after threshold + real traffic;
   # brands stay first-class on IG). Cold-start target ~6 boards.
   board_type_policy: "category + occasion primary; gift merged into occasion; brand boards skipped at cold start (see pinterest-playbook.md)"
+  # New cross-cutting attribute (sustainability, plus-size, a craft micro-niche, etc.) proposing a
+  # board? Run the checklist first: pinterest-playbook.md → "New theme/attribute board? Run this
+  # checklist first" (§2, added 2026-08-30). Default is a keyword layer on an existing board, not a
+  # new board — see the sustainability_and_vegan worked example in §4.
   # Resolution (both skills, Phase 2/6): look up the category's boards.pinterest placeholder here →
   # pass board_id straight to blotato_create_post boardId. Re-verify via blotato_list_pinterest_boards on a 404.
   boards:
@@ -194,6 +206,9 @@ categories:
     boards:
       # Splits by product type: footwear → `brand` (Artisan Footwear); other apparel
       # (kurtas, sarees, embroidered/handloom) → `apparel`. Pick per-product at campaign time.
+      # Sustainability/vegan (e.g. The Alternate) stays on these SAME boards — it's a pin-level
+      # keyword layer, not a separate board. See pinterest-playbook.md → sustainability_and_vegan
+      # (decided 2026-08-30; revisit only once brand_board_threshold + a 2nd brand justify a board).
       pinterest: [brand, apparel]
       instagram: brand_spotlight
     format: brand_spotlight_carousel

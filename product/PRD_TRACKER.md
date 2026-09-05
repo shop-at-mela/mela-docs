@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-08-19  
+**Last updated:** 2026-08-25  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 **Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
@@ -38,10 +38,11 @@
 | [enrichment-pipeline-stage2-update-prd.md](prds/enrichment-pipeline-stage2-update-prd.md) | 🟡 Partial | P1 | — | Web-client ✅ done; verify pipeline (`prompt_engine.py`) and ingestion outputs `metaDescription` + `searchSynonyms` |
 | [shopify-api-ingestion-prd.md](prds/shopify-api-ingestion-prd.md) | 🔲 Ready | P1 | — | Replace per-brand HTML scrapers with generic Shopify JSON API ingester |
 | [ai-ready-product-discovery-prd.md](prds/ai-ready-product-discovery-prd.md) | 📋 Draft | P2 | Depends on enrichment pipeline + SEO foundation | Schema.org entity coverage for AI answer engines |
-| [crossshop-tracking-prd.md](prds/insights/crossshop-tracking-prd.md) | ✅ Shipped | P0 | — | None — §14 `saved_surface`/`saved_recommendation_click`/`saved_page_view` instrumentation shipped and browser-verified 2026-08-13; `InquiryWithoutPaymentForm` CTA is implemented but untestable until an inquiry-type listing exists in the catalog (not a gap in the work) |
-| [shopper-visibility-reporting-prd.md](prds/insights/shopper-visibility-reporting-prd.md) | 🟡 Partial | P0 | Blocks P1 storefront work — OCTR baseline must be captured first (`storefront-validation-readiness-prd.md` §8) | Phase 1 site search ✅; turn Enhanced measurement Site search off; build Potential Shoppers Funnel + record OCTR baseline; two cross-shop Explorations; Looker Studio dashboard |
+| [crossshop-tracking-prd.md](prds/insights/crossshop-tracking-prd.md) | ✅ Shipped | P0 | — | `InquiryWithoutPaymentForm` CTA is implemented but untestable until an inquiry-type listing exists in the catalog (not a gap in the work). 2026-08-23: found and fixed a real gap — `saved_listing_toggle`/`saved_page_view`/`saved_recommendation_click` were pushing to `dataLayer` correctly (as the 2026-08-13 browser verification confirmed) but had no GTM triggers/tags at all, so none of the three ever reached GA4; GTM `GTM-5JSJ54C2` published as Version 6 with the missing wiring, not yet live-verified end-to-end |
+| [shopper-visibility-reporting-prd.md](prds/insights/shopper-visibility-reporting-prd.md) | 🟡 Partial | P0 | Blocks P1 storefront work — OCTR baseline must be captured first (`storefront-validation-readiness-prd.md` §8) | Phase 1 site search ✅. 2026-08-23 correction: the "two cross-shop Explorations" and "Looker Studio dashboard" items previously listed here were stale — both already existed (owner Sanjot Sawhney), just undocumented; `Saved Surface` breakdown added to the clickout-rate Exploration and 4 new add-to-cart tiles added to the dashboard. Still genuinely open: turn Enhanced measurement Site search off; build Potential Shoppers Funnel + record OCTR baseline; BigQuery-dependent tiles (multi-brand rate, potential-shoppers/OCTR/search-terms scorecards) |
 | [brand-hero-card-webclient-prd.md](prds/brand-hero-card-webclient-prd.md) | ✅ Shipped | P1 | — | First-fold coverage shrinks (The Nesavu, Masilo absent from hero) until those brands get `brandHeroImageIds`/`brandHeroImages` |
 | [dev-to-production-migration-prd.md](prds/dev-to-production-migration-prd.md) | 📋 Draft | — | No production Sharetribe environment confirmed provisioned yet | `configBrands.js` production brand-ID map is empty (biggest item); social-share image re-upload; 5 other open questions (see PRD §8) — not started |
+| [gifting-festival-traffic-prd.md](prds/gifting-festival-traffic-prd.md) | 🟡 Partial | P0 | D1+D2 code shipped; Console listing-fields sync complete (occasion/gift_occasion/recipient all populated, confirmed via `flex-cli search`); inventory backfill still needed before new occasion values show on existing listings; D3 not started | Day 1 inventory backfill (`single_file_classifier.py --enrich-only`); D3: social calendar/boards + brand sourcing + ads-readiness gate |
 
 ---
 

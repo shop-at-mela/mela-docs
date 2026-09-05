@@ -1,22 +1,61 @@
 ---
-# PENDING WEEK BATCH — ready to render, waiting on Blotato monthly credit refresh (2026-08-19).
-# Built + verified 2026-08-16 via /social-launch. Resume on/after 2026-08-19: credits refresh,
-# then generate visuals -> wife review -> schedule -> log (move into per-brand log/ files at Phase 7).
-# Blocker was 43 credits remaining (insufficient for 4 reels); user chose to wait for the new month.
+# RESOLVED 2026-08-27 — all 4 tiles rendered, gated, wife-approved, and scheduled. See per-brand logs:
+# log/isharya/week-1-campaign.yaml, log/the-alternate/week-2-campaign.yaml,
+# log/polite-society/week-1-campaign.yaml, log/_education/certdecode-01-w1-campaign.yaml.
+# Isharya + Polite Society needed fresh/re-renders this session (see resume_checklist_2026-08-26
+# below for what was wrong and how it was fixed). This pending file is now historical — nothing
+# left to resume.
+#
+# PENDING WEEK BATCH — all 4 tiles back in scope, shipping as STATIC posts (not reels).
+# Built + verified 2026-08-16 via /social-launch. Resumed 2026-08-26 via /social-review: credits were
+# fine (2193). Initially dropped isharya + polite-society on a suspected listing-photo mismatch, but
+# founder checked both directly and confirmed they're correct — RESTORED same day (see
+# corrected_2026-08-26 below). The reel-video format is a separately confirmed Blotato dead end
+# (see dropped_tiles) — all 4 tiles ship as static image/pin/carousel instead.
+# NEXT SESSION: start at "resume_checklist_2026-08-26" at the bottom.
 
 meta:
   created: "2026-08-16"
-  resume_on: "2026-08-19"   # Blotato new-month credit refresh
-  status: pending_credits
+  status: gate_pending          # was pending_credits; credits resolved 2026-08-26, scope narrowed instead
   built_via: /social-launch
-  week_numbers: { isharya: 1, the-alternate: 2, polite-society: 1, certdecode: 1 }
+  week_numbers: { isharya: 1, the-alternate: 2, polite-society: 1, certdecode: 1 }   # all 4 restored 2026-08-26, see corrected_2026-08-26
   resume_attempt_2026-08-19: >
     Credits still 43 (refresh had NOT landed on 08-19). User chose to WAIT again — no spend.
     Listing drift re-verified this day: all 3 OPEN live w/ Add to Cart —
     Isharya 6a54b62c ($61), The Alternate 6a14b1db ($96), Polite Society 6a135c68 ($102);
-    titles still match spec. On next resume: listing re-verify is FRESH (only re-check if >a few days pass),
-    so start at credit check -> generate 3 reel scenes -> wife review -> schedule -> log.
-    Purchase option if desired: $6/1000 credits on shopatmela@gmail.com (min 1000).
+    titles still match spec. Note: this 08-19 photo re-verify only checked title/price/OPEN status,
+    NOT the actual product photo shown — that gap is why the 08-26 mismatches below weren't caught sooner.
+
+  resume_session_2026-08-26: >
+    Credits were 2193 (non-issue). Re-verified all 3 listings' ACTUAL PHOTOS this time (not just
+    title/price/OPEN), and found 2 real mismatches — see `dropped_tiles` below. Also spent this session
+    conclusively closing out the reel-video question: confirmed via Blotato's own support (3 rounds of
+    Q&A) that NO current Blotato template does "one uploaded photo, silent motion-only, zero caption
+    layer" — full writeup in memory [[feedback_blotato_reel_production]]. Decision: ship the 2 surviving
+    tiles as STATIC posts (matches everything historically published to the account), not reels.
+    Visuals for both are already rendered — see `tiles` below for exact URLs. User asked to stop here,
+    review the plan, and continue in a fresh session rather than proceed straight to gate/schedule.
+
+corrected_2026-08-26: >
+  Isharya (6a54b62c) and Polite Society (6a135c68) were initially flagged below as listing-photo
+  mismatches and dropped from this batch. Founder checked both listings directly and confirmed
+  they're CORRECT, not drift (mirror-work earrings can photograph as a geometric light/dark grid;
+  the "top" is a genuine floor-grazing draped silhouette, not a dress). Both are RESTORED to `tiles`
+  below with their original id:1/2 (Isharya) and id:5/6 (Polite Society) blocks — the `status: DROPPED`
+  markers on those tile blocks are stale, ignore them. Full correction in memory
+  [[project_listing_id_drift_bug]]. They still need the same reel->static format change as tiles 3/7
+  (see dropped_tiles below — that part still stands, video is still a confirmed dead end) before
+  scheduling.
+
+dropped_tiles:
+  - format: reel (video-motion path)
+    reason: >
+      Confirmed dead end via Blotato support: no template produces a silent, motion-only clip from an
+      uploaded photo with zero caption/box layer. images-with-text (3ed4bb92) always renders either a
+      solid color box (blank text) or Blotato's own demo placeholder copy (omitted text) baked over the
+      product. ai-story-video's animateAiImages only animates AI-generated images, not uploads, per
+      Blotato's own docs/support confirmation. Full detail: memory [[feedback_blotato_reel_production]].
+    status: closed_use_stills_instead
 
 # --- Decisions locked in this planning session (do not re-litigate on resume) ---
 decisions:
@@ -34,6 +73,7 @@ teardown: "Directional niche scan logged in metrics-log.md; 5 niche-seeded hook 
 # --- Tiles (all listings live-verified 2026-08-16) ---
 tiles:
   - id: 1
+    status: RESTORED_2026-08-26   # founder-validated correct, see corrected_2026-08-26 above. format: reel -> image (video still dead end). visual: NOT yet rendered — the 08-26 retry (blotato visual id 42e31866) never returned a confirmed status, needs a fresh Product Scene Placement render before this can ship.
     brand: Isharya
     slug: isharya
     format: reel
@@ -61,6 +101,7 @@ tiles:
     visual: "Real product photo (never AI-gen jewelry) -> Blotato Product Scene, silent/text-free. US-context test: modern US bedroom vanity/mirror, warm evening light. Payoff: macro reveal of hand-cut mirror catching light."
 
   - id: 2
+    status: RESTORED_2026-08-26   # tied to id:1, same visual dependency
     brand: Isharya
     slug: isharya
     format: pin
@@ -74,18 +115,19 @@ tiles:
     link: "https://www.shopatmela.com/l/6a54b62c-b9a9-4e99-acb1-480e1c3042e4?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w1&utm_content=mirror_pearl_drop_earrings"
 
   - id: 3
-    brand: The Alternate
-    slug: the-alternate
-    format: reel
+    format: image        # was reel; video path confirmed dead end 2026-08-26, shipping as static IG feed image
     platform: instagram
     type: product
+    brand: The Alternate
+    slug: the-alternate
     persona: Sarah
     angle: trust_taste_4
     utm_campaign: thealternate_w2
     dev_listing_id: 6a14b1db-ce13-43b1-b0a5-5e218d4e1499
     product_live_title: "Abstract Embroidery Slip-Ons 5-13 The Alternate India"
-    verified: "live 2026-08-16; velvet embroidered upper, 100% vegan, handmade PU outsole"
-    image_url: "https://cdn.shopify.com/s/files/1/0986/7726/files/AMP00579_090f4412-7617-466e-a18b-a1d7d618d18b.jpg?v=1729080913"
+    verified: "live 2026-08-16 AND re-verified 2026-08-26 (photo matches spec, correct). Price drifted $96 -> $84 (Sharetribe INR-estimate recalc, not a data bug)."
+    image_url: "https://cdn.shopify.com/s/files/1/0986/7726/files/AMP00579_090f4412-7617-466e-a18b-a1d7d618d18b.jpg?v=1729080913"   # original source photo
+    rendered_visual_url: "https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a271afab-8842-4213-8a0f-e9dc47831f1c.jpg"   # DONE 2026-08-26, Product Scene Placement still, verified clean (no box/text, matches product) — use this for both IG post and Pinterest pin, no re-render needed
     hook_line: "You reach for 'vegan leather' thinking it's ethical. It's usually just plastic."
     revised: "2026-08-20 hook re-cut to add a situational anchor (shopper's 'ethical pick' moment) -> clears pre-publish-scorecard REVISE(b), now SHIP."
     caption: |
@@ -114,6 +156,8 @@ tiles:
     link: "https://www.shopatmela.com/l/6a14b1db-ce13-43b1-b0a5-5e218d4e1499?utm_source=pinterest&utm_medium=social&utm_campaign=thealternate_w2&utm_content=abstract_embroidery_slipons_beige"
 
   - id: 5
+    status: RESTORED_2026-08-26   # founder-validated correct, see corrected_2026-08-26 above. format: reel -> image (video still dead end).
+    rendered_visual_url_2026-08-26: "https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-ded10cf0-5475-43fa-8c8d-cbccac0892c9.jpg"   # Product Scene Placement still exists, but read as abstract/flowing fabric near a window rather than a clearly identifiable garment when reviewed — before shipping, re-check it against pre-publish-gate.md row 17 (product morphed/unclear vs source) and consider a tighter scene prompt or just using the raw source photo (image_url below) instead
     brand: Polite Society
     slug: polite-society
     format: reel
@@ -141,6 +185,7 @@ tiles:
     visual: "Real product photo -> scene, silent/text-free. US-context test: bright US apartment, window light, drape movement. Payoff: fabric flow / back-tie reveal on movement."
 
   - id: 6
+    status: RESTORED_2026-08-26   # tied to id:5, same visual dependency
     brand: Polite Society
     slug: polite-society
     format: pin
@@ -154,19 +199,24 @@ tiles:
     link: "https://www.shopatmela.com/l/6a135c68-19a3-411a-9469-47e0fd97ad53?utm_source=pinterest&utm_medium=social&utm_campaign=politesociety_w1&utm_content=amrita_botanical_draped_top"
 
   - id: 7
-    brand: null
-    slug: _education
-    format: reel
+    format: carousel      # was reel; video path confirmed dead end 2026-08-26, shipping as static 3-slide IG carousel instead
     platform: instagram
     type: trust_service
+    brand: null
+    slug: _education
     persona: Sarah
     angle: certs_4
     utm_campaign: certdecode_w1
     topic: "Claims decode — 'sustainable / vegan / ethical' on a clothing tag"
-    visual_system: "Education (HTML cards, navy+marigold worn openly). Slide 1 = hook card, NOT a product. Seam/label-teardown skeleton. Assembled as a reel; audio manual in IG."
+    visual_system: "Education (HTML cards, navy+marigold worn openly). Slide 1 = hook card, NOT a product. Seam/label-teardown skeleton."
     hook_line: "'Sustainable,' 'vegan,' and 'ethical' are unregulated words on a clothing tag."
     cards: "Hook card -> 3-checks card (1: named material + %, not 'eco fabric'; 2: a real certification you can look up, like GOTS or OEKO-TEX for textiles; 3: where + how it's made, stated plainly) -> payoff card 'Check the tag, not the tagline.'"
-    cards_rendered: "DONE 2026-08-16 (no Blotato credits). Story-ratio PNGs in log/_education/certdecode-01/renders/: slide1-hook.png, slide2-checks.png, slide3-payoff.png (+ .html sources + mela-kit.css). Assemble into a reel + add audio at manual IG publish."
+    cards_rendered: "DONE 2026-08-16 (no Blotato credits). Story-ratio PNGs in log/_education/certdecode-01/renders/: slide1-hook.png, slide2-checks.png, slide3-payoff.png (+ .html sources + mela-kit.css)."
+    hosted_urls_2026-08-26: >
+      Uploaded to Blotato storage this session (only needed if posting via blotato_create_post mediaUrls;
+      the local PNGs also work fine if posted another way): slide1 = https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/22b2bde7-b42e-429b-93c6-bf35825ca20f.png ,
+      slide2 = https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/5ef41448-41ab-415b-b47a-fbade89f0003.png ,
+      slide3 = https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/e8e644dc-4e1f-4f90-b36d-1a693b331507.png
     caption: |
       'Sustainable,' 'vegan,' and 'ethical' are unregulated words. Anyone can print them on a tag.
 
@@ -182,7 +232,7 @@ tiles:
     alt_text: "Text slide: Sustainable, vegan and ethical are unregulated words. Three things to actually check before you buy."
     note: "Brand-agnostic (no brand claimed certified). Optional soft example: The Alternate 'velvet upper, 100% vegan, made in India' (verified) if a payoff example is wanted."
 
-# --- Resume checklist (on/after 2026-08-19) ---
+# --- Resume checklist (historical, on/after 2026-08-19 — superseded by the one below) ---
 resume_checklist:
   - "Confirm Blotato credits refreshed (blotato_get_credits)."
   - "Re-verify the 3 listings are still OPEN live (drift guardrail) before rendering."
@@ -192,3 +242,17 @@ resume_checklist:
   - "Phase 7: move each tile into per-brand log/[slug]/week-N.yaml."
   - "Phase 7b (attach-social-scene.js, per PRODUCT tile only — skip cert-decode): prepend each product's CLEAN un-watermarked scene as the listing's index-0 lead image (Pinterest scent-match). --dev, dry-run then --confirm, .bak backup, idempotent. ISHARYA: match by --sku (stable), NOT --listing-id — out-of-stock rows carry duplicate/stale Dev_Listing_IDs so a bare LID match could write the CSV back to the wrong row. Verify dry-run prints 'earrings', not a choker, before --confirm."
   - "Optionally: publish deferred HoC reel once reworked (strip Blotato text, add stitch-macro payoff)."
+
+# --- Resume checklist 2026-08-26 (CURRENT — start here) ---
+# Scope is all 4 tiles again (isharya + polite-society RESTORED, see corrected_2026-08-26 above).
+# All 4 ship as STATIC (image/pin/carousel) — video reel path is a confirmed dead end, see dropped_tiles.
+resume_checklist_2026-08-26:
+  - "Isharya (id:1/2): needs a FRESH Product Scene Placement render — the 08-26 attempt (visual id 42e31866) never returned a confirmed status. Render, then sanity-check the still against the real photo before using it (same check as tile 3 below)."
+  - "Polite Society (id:5/6): has a rendered still (rendered_visual_url_2026-08-26 on tile 5) but it read as abstract flowing fabric near a window, not clearly the product, when last reviewed — re-check it against the real listing photo; if it still doesn't clearly read as the product, either re-render with a tighter/more literal scene prompt or just use the raw source photo (image_url on tile 5) directly instead of a Blotato scene."
+  - "Tiles 3 (Alternate) and 7 (cert-decode): visuals already done and verified clean, no re-render needed — see rendered_visual_url / hosted_urls_2026-08-26 on those tiles."
+  - "Skill Phase 5b: run pre-publish-gate.md Step 1 blocking checklist on all 4 tiles (FAST lane for isharya/alternate/polite-society — vetted brand, real photo, listing verified; FULL lane for cert-decode — education/claim content)."
+  - "Skill Phase 6: show gate verdict + contact sheet in the publish confirmation for each. Get mandatory wife sign-off before scheduling any tile (never auto-publish)."
+  - "Schedule: tiles 1/3/5 = IG feed image + Pinterest pin each (boards + UTM already drafted on the tiles). Tile 7 = IG carousel only, no Pinterest (trust_service format)."
+  - "Timing: pick explicit near-term times (the old 'next slot = last post + 24h' math is stale — last real publish was 2026-08-16 chikankari). Keep Pinterest under 10/24h cap (3 pins this batch, not a concern)."
+  - "Phase 7: log each tile into its per-brand log/[slug]/week-N-campaign.yaml (isharya week-1, the-alternate week-2, polite-society week-1), cert-decode into a new log/_education/certdecode-01-w1-campaign.yaml (follow the naming pattern of log/_education/chikankari-01-w1-campaign.yaml). Include hypothesis + northstar_metric placeholders per CAMPAIGN_TEMPLATE.yaml."
+  - "Phase 7b (product tiles only — isharya, alternate, polite-society; skip cert-decode, not a product listing): attach-social-scene.js --dev, dry-run then --confirm, prepend each clean un-watermarked scene as that listing's index-0 lead image. ISHARYA: match by --sku not --listing-id (see the original resume_checklist above for why)."

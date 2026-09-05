@@ -86,37 +86,53 @@ instagram:
 # PINTEREST
 pinterest:
   boards:
-    - fizzy-goblet
-    - artisan-footwear
+    - name: Handmade Indian Juttis & Artisan Footwear  # resolve the real name/id via blotato_list_pinterest_boards or category-routing.yaml -> pinterest_boards; never hardcode a brand-slug board name (deprecated 2026-08-06 policy)
+      board_id: "1103593152379641541"
 
   pins:
     - name: Bali Bellini Kolha Flats
+      status: posted  # posted | scheduled | queued | excluded — MUST be set once known; a pin with no status/submission_id is unverifiable for the product-recency cooldown index (see category-routing.yaml -> rotation)
+      submission_id: 9b1f2a3c-0000-0000-0000-000000000000  # from blotato_create_post; required once actually submitted
+      board_id: "1103593152379641541"
       title: Bali Bellini Kolha Flats | Handcrafted Indian Footwear
       description: Kolha flats handcrafted in Maharashtra by Fizzy Goblet artisans. Modern silhouette with double cushioning, vegetable-tanned leather. Perfect for everyday elegance. Sizes available. Discovered on Mela.
       alt_text: Handcrafted tan leather kolha flats with double cushioning on a warm neutral surface  # literal image description; keyword-led
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e4dd02bd-944b-456f-84d3-81fa0361fbb5.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17b614-6e96-4806-a428-18fdb1d8d075
+      link: https://www.shopatmela.com/l/6a17b614-6e96-4806-a428-18fdb1d8d075?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w2&utm_content=bali_bellini_kolha_flats  # UTM required — bare URL = defect
 
     - name: Chrome & Tonic Kolhas
+      status: posted
+      submission_id: 9b1f2a3c-0000-0000-0000-000000000001
+      board_id: "1103593152379641541"
       title: Chrome & Tonic Kolhas | Handcrafted Embroidered Flats
       description: Chrome & Tonic kolhas by Fizzy Goblet. Handcrafted with contemporary styling, double cushioning, artisan-made in Maharashtra. Perfect for festive occasions and everyday elegance. Discovered on Mela.
       alt_text: Embroidered handcrafted kolha flats in chrome and tonic tones on a soft neutral backdrop
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a75dcf07-8675-46c5-8aba-9c4d208a9387.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17bc57-60cc-48d7-ab60-7a2daf82f854
+      link: https://www.shopatmela.com/l/6a17bc57-60cc-48d7-ab60-7a2daf82f854?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w2&utm_content=chrome_tonic_kolhas
 
     - name: Double Espresso Loafers
+      status: posted
+      submission_id: 9b1f2a3c-0000-0000-0000-000000000002
+      board_id: "1103593152379641541"
       title: Double Espresso Loafers | Premium Handcrafted Footwear
       description: Premium handcrafted loafers by Fizzy Goblet. Double cushioning, refined design, versatile for work and leisure. Artisan-made in India, sizes 36-41. Luxury footwear for everyday elegance. Discovered on Mela.
       alt_text: Premium handcrafted espresso brown leather loafers on a warm textured surface
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f84ed864-653b-4d2c-b902-c5ecb4f16f9d.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a1800ff-03a0-4a77-946b-9ecf4e2b8d74
+      link: https://www.shopatmela.com/l/6a1800ff-03a0-4a77-946b-9ecf4e2b8d74?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w2&utm_content=double_espresso_loafers
 
     - name: Belle's Rose Juttis (Ivory, Payal Singhal Collab)
+      status: posted
+      submission_id: 9b1f2a3c-0000-0000-0000-000000000003
+      board_id: "1103593152379641541"
       title: Belle's Rose Juttis | Payal Singhal x Fizzy Goblet Limited Edition
       description: Limited edition juttis from Payal Singhal x Fizzy Goblet collaboration. Handcrafted in ivory with intricate embroidery, double cushioning. Artisan design meets modern style. Sizes 35-41. Discovered on Mela.
       alt_text: Ivory embroidered juttis from the Payal Singhal x Fizzy Goblet collaboration on a soft neutral ground
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-abf15a12-4a4d-4b22-8536-744cda0985cd.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a17b646-8255-496b-b28a-d3f7c5cf6455
+      link: https://www.shopatmela.com/l/6a17b646-8255-496b-b28a-d3f7c5cf6455?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w2&utm_content=belles_rose_juttis
 
 # UX REVIEW
 ux_review:
