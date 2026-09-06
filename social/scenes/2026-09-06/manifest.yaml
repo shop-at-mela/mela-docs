@@ -1,0 +1,111 @@
+# Clean product-scene renders — 2026-09-06 batch (Vilvah / Pluchi / Aagghhoo)
+# =============================================================================
+# WHAT: the CLEAN, un-watermarked Blotato Product-Scene renders used as the social
+#   collection-carousel slides AND (for the 3 pin heroes) attached as the index-0
+#   gallery lead of the DEV listing via scripts/attach-social-scene.js (P1 pin->listing
+#   scent-match). These are the durable source-of-truth copies.
+#
+# WHY THIS FILE EXISTS: the only other copies live on Blotato public storage
+#   (database.blotato.io/.../public_media/) which we do NOT control the retention of,
+#   and in an ephemeral session scratchpad (now gone). Sharetribe image IDs are
+#   env-specific, so the DEV uploads cannot be reused on PROD. If the Blotato URL
+#   expires before the prod migration, the scene would silently drop. These repo
+#   copies remove that dependency.
+#
+# DEV->PROD MIGRATION (how the scene reaches prod, and how to keep it):
+#   create-listings.js --prod reads Prod_Uploaded_Image_IDs (empty) -> no short-circuit
+#   -> it RE-UPLOADS from `Product Image URL` (index-0). Today that index-0 is the
+#   Blotato URL. To be retention-proof, BEFORE the prod run re-point each row's
+#   `Product Image URL[0]` (in the classified_products_prod CSV) at the durable copy
+#   here (host it on a Mela-owned URL, or re-run attach-social-scene.js --prod --image-url
+#   <this file, hosted> after the prod listing exists). attach-social-scene is idempotent
+#   (skips unless --force; keyed off publicData.socialSceneImageId).
+#   NOTE: create-listings.js against the CURRENT dev CSV does NOT remove the dev scene
+#   (Dev_Uploaded_Image_IDs short-circuit returns it at index-0).
+#
+# blotato_clean_url base: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-<id>.jpg
+
+batch_date: "2026-09-06"
+env_note: "DEV listing IDs below (live traffic runs off dev Sharetribe — project_qa_is_pseudo_production). Prod columns empty as of save."
+
+vilvah:
+  - file: vilvah/honeyfix-facewash.jpg
+    sku: honeyfix-facewash
+    dev_listing_id: 6a13d69b-47ba-4714-9595-b9c3836f9b69
+    blotato_id: c37d1adf-f971-482d-b8ea-46acfacbb26e
+    attached_to_dev_listing: true      # index-0 lead; dev scene image id 6a9d8673-89f5-4654-bc63-a5efaf64d9de
+    role: "Vilvah pin hero + carousel slide 1"
+  - file: vilvah/goatmilk-hairmask.jpg
+    sku: goatmilk-hairmask
+    dev_listing_id: 6a13d647-2fa6-4301-8d10-f3eddef278cc
+    blotato_id: c8103c65-c7a6-4437-931c-692e07e96d06
+    attached_to_dev_listing: false
+    role: "Vilvah carousel slide"
+  - file: vilvah/brightening-ritual-kit.jpg
+    sku: brightening-ritual-kit
+    dev_listing_id: 6a13d578-3fa4-461b-82ee-aec8eb60281d
+    blotato_id: 7e6e6894-43e4-46c8-bd30-b79a25aa1f50
+    attached_to_dev_listing: false
+    role: "Vilvah carousel slide (kit contents AI-rendered — do not enumerate in copy)"
+  - file: vilvah/filter-kaapi-lip-balm.jpg
+    sku: filter-kaapi-lip-balm
+    dev_listing_id: 6a13d5fe-260e-4b45-b176-973b31385418
+    blotato_id: 4ecc8aaf-6aaf-4a5f-b986-fb8aa2c59e23
+    attached_to_dev_listing: false
+    role: "Vilvah carousel slide (cluster-of-3 staging)"
+
+pluchi:
+  - file: pluchi/advent-grey-throw.jpg
+    sku: advent-grey-100-cotton-knitted-all-season-ac-throw-blanket
+    dev_listing_id: 69faa5dc-a0ef-4791-8091-f27c8b0fa61c
+    blotato_id: 0303a6ab-dfd3-4d4f-b734-d094dd22fa51
+    attached_to_dev_listing: true      # dev scene image id 6a9d86af-cdb1-43b4-a02c-0692f10727e9
+    role: "Pluchi pin hero + carousel slide 1 (seasonal gnome throw)"
+  - file: pluchi/aarya-bedcover.jpg
+    sku: (match by listing_id — long sku)
+    dev_listing_id: 69faa5c9-53c6-4e9e-b1cd-bcb92e9ae230
+    blotato_id: 80230291-c0d7-4520-954d-f31877d2174b
+    attached_to_dev_listing: false
+    role: "Pluchi carousel slide"
+  - file: pluchi/angel-doll.jpg
+    sku: angel-doll-cotton-knitted-stuffed-soft-toy-baby-pink-gold
+    dev_listing_id: 6a38481f-ab0c-4d1a-9ad7-29d58ede7c08
+    blotato_id: e81d8e74-2ed8-463d-9db9-3122109d9c0d
+    attached_to_dev_listing: false
+    role: "Pluchi carousel slide"
+
+aagghhoo:
+  - file: aagghhoo/leaf-green-flannel-blanket.jpg
+    sku: leaf-green-fuzzy-flannel-blanket
+    dev_listing_id: 68e59029-8a19-4872-aba8-44cb7c37f252
+    blotato_id: fb6a82c9-0436-4fbf-a529-7b2f92ced1cf
+    attached_to_dev_listing: true      # dev scene image id 6a9d86ec-1cf7-42dd-9136-24bb8c149ae4
+    role: "Aagghhoo pin hero + carousel slide 1"
+  - file: aagghhoo/vintage-merino-booties.jpg
+    sku: vintage-baby-booties-merino-wool
+    dev_listing_id: 69faa5c2-7e79-4ee8-a611-d6990775886a
+    blotato_id: d9c9725f-d35a-4b7b-8344-2684bb89f0b2
+    attached_to_dev_listing: false
+    role: "Aagghhoo carousel slide"
+  - file: aagghhoo/mustard-seed-pillow.jpg
+    sku: chubby-mustard-pillow
+    dev_listing_id: 68e59000-0be0-4b52-b283-2eb99a930805
+    blotato_id: fd96acfa-ff1e-4755-a4cf-15d3086a316e
+    attached_to_dev_listing: false
+    role: "Aagghhoo carousel slide"
+  - file: aagghhoo/happy-jingles.jpg
+    sku: happy-jingles-set-of-2
+    dev_listing_id: 68e58fed-5a7b-4938-ad54-b4fc20205c1c
+    blotato_id: 2821d870-be01-4851-adf9-08e2c9557b4e
+    attached_to_dev_listing: false
+    role: "Aagghhoo carousel slide"
+
+tarinika_note: >
+  Tarinika used REAL Shopify product photos (jewelry = detail-critical, no Blotato scene),
+  so there is nothing AI-generated to preserve — those images are always re-fetchable from
+  the brand's own CDN (cdn.shopify.com/s/files/1/2026/1561/...). Not scene-attached.
+
+watermarked_post_assets_note: >
+  The WATERMARKED versions that actually publish to IG/Pinterest are NOT stored here (they
+  live only on Blotato public storage, uploaded for the scheduled posts). If you want an
+  archive of exactly what posted, save the final/ PNGs too before the scratchpad is cleared.
