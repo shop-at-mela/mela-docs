@@ -1,0 +1,23 @@
+topic_id: craft-knitwear
+type: cultural_education         # alternated from certdecode (trust_service, 2026-08-29)
+week: 1
+date_scheduled: "2026-09-07"    # IG 2026-09-07 09:00 PDT (2026-09-07T16:00Z)
+status: scheduled
+format: teaching_carousel (Education Visual System, HTML->PNG)  # slide1 = HOOK, not product
+platforms: [instagram]          # IG only
+persona: Sarah / Priya
+source_brand: pluchi            # paired with the Pluchi brand row this batch
+hook: "Machine-knit vs hand-finished: how to tell the difference."
+hypothesis: "'How to tell' teardown hook drives saves / shares (belonging/education angle)."
+northstar_metric: { platform: instagram, metric: saves, value: null }
+verify: "SATISFIED — 'hand-finished' is Pluchi's own stated claim (shopify_brands.py brand_craft 'fine yarn knitwear finished by hand' + brand_story). Payoff slide frames it as the brand's claim, not an independent lab test."
+instagram:
+  submission_id: d86825a3-cb2d-4585-a70e-d4b7e1a49283
+  scheduled_utc: "2026-09-07T16:00:00Z"
+slides:
+  - "1 HOOK (hook-card): 'Machine-knit or hand-finished? Here's how to tell.'"
+  - "2 TEACHING (teaching-card): 4 signs — turned/closed edges; no loose machine tails/serged seam; weight & give (natural yarn); stitch irregularities = signature of the hand."
+  - "3 PAYOFF (payoff-card): real Pluchi Angel Doll photo, 'Made this way by Pluchi.'"
+visuals:
+  method: "Canva-free HTML->PNG toolchain (templates/*.html + render.sh via headless Chrome), 4:5, watermark baked."
+mark_topic_used: "education-topics.yaml craft-knitwear -> set status:used, week_used:1 at Sunday review"

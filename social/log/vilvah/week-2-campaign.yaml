@@ -1,0 +1,55 @@
+brand: Vilvah Store
+brand_slug: vilvah
+week: 2
+date_scheduled: "2026-09-08"   # IG carousel scheduled 2026-09-08 18:00 PDT (2026-09-09T01:00Z)
+status: scheduled
+format: collection_carousel     # IG default per 2026-09-05 decision (Blotato Product Scene per slide)
+persona: Sarah                  # ingredient / single-origin (certs lane, the persona gap this batch)
+category: beauty_and_wellness
+angle: certs / single-origin ingredient proof
+hook: "Goat milk, raw honey, cold-pressed oils — bottled straight off one working farm in Tamil Nadu."
+hypothesis: "Single-origin / ingredient-proof hook drives Sarah saves (vs vague clean-beauty claims)."
+northstar_metric: { platform: instagram, metric: saves, value: null }  # fill at Sunday review
+instagram:
+  submission_id: a2d4afd4-1571-4b8b-b335-1c111cc95d4b
+  scheduled_utc: "2026-09-09T01:00:00Z"
+  link_target: https://shopatmela.com/brands/vilvah?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w2
+  products:
+    - name: Honey Fix Facewash (10% Raw Honey)
+      sku: honeyfix-facewash
+      dev_listing_id: 6a13d69b-47ba-4714-9595-b9c3836f9b69
+      cooldown_check: "CLEAR — never featured (w1 used milk-mud-mask 6a13d74e only)"
+      live_verified: "OPEN/InStock USD $17.99 (2026-09-06, social-crawler)"
+    - name: Goat Milk Hair Mask
+      sku: goatmilk-hairmask
+      dev_listing_id: 6a13d647-2fa6-4301-8d10-f3eddef278cc
+      cooldown_check: "CLEAR — never featured"
+      live_verified: "OPEN/InStock USD $44.99 (2026-09-06)"
+    - name: Brightening Ritual Kit
+      sku: brightening-ritual-kit
+      dev_listing_id: 6a13d578-3fa4-461b-82ee-aec8eb60281d
+      cooldown_check: "CLEAR — never featured"
+      live_verified: "OPEN/InStock USD $77.38 (2026-09-06)"
+      note: "Blotato-rendered kit contents are illustrative; caption kept generic (does not enumerate components)."
+    - name: Filter Kaapi Lip Balm
+      sku: filter-kaapi-lip-balm
+      dev_listing_id: 6a13d5fe-260e-4b45-b176-973b31385418
+      cooldown_check: "CLEAR — never featured"
+      live_verified: "OPEN/InStock USD $12.99 (2026-09-06)"
+      note: "Rendered as cluster-of-3 (founder flagged single tube too small)."
+pinterest:
+  pins:
+    - product: Honey Fix Facewash
+      submission_id: 0dd32ef9-7bdb-4c03-8de7-446717ec178e
+      scheduled_utc: "2026-09-08T22:00:00Z"
+      board: Beauty Ritual (1103593152379723631)
+      link: https://www.shopatmela.com/l/6a13d69b-47ba-4714-9595-b9c3836f9b69?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w2&utm_content=honey_fix_facewash
+      note: "Short /l/{id}?utm form — redirect fix (web-client bd3124c0a) verified LIVE on prod 2026-09-06, preserves UTMs."
+visuals:
+  method: "Blotato Product Scene Placement (template f524614b), v2 tighter/product-forward; 4:5; Discovered-on-Mela watermark baked via photo-watermark.html."
+  morph_qc: "Label-forward — fine print garbles but improves at larger scale; wordmark reads; founder approved v2 scenes over real photos."
+phase_7b_scene_attach:
+  done: "2026-09-06 (--dev --confirm)"
+  listing: 6a13d69b-47ba-4714-9595-b9c3836f9b69
+  social_scene_image_id: 6a9d8673-89f5-4654-bc63-a5efaf64d9de
+  note: "Clean un-watermarked Honey Fix scene prepended as index-0 gallery lead (Pinterest scent-match). CSV backed up .bak."

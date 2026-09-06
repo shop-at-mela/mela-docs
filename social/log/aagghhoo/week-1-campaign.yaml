@@ -1,0 +1,52 @@
+brand: Aagghhoo
+brand_slug: aagghhoo
+week: 1
+date_scheduled: "2026-09-07"   # IG carousel 2026-09-07 21:00 PDT (2026-09-08T04:00Z)
+status: scheduled
+format: collection_carousel
+persona: Priya                  # design-forward natural-fiber baby (also serves Sarah on materials)
+category: baby_and_kids
+angle: discovery / design + natural materials
+hook: "The baby brand that treats a onesie like a design object."
+hypothesis: "'Design object' discovery framing for natural-fiber baby drives saves."
+northstar_metric: { platform: instagram, metric: saves, value: null }
+instagram:
+  submission_id: d1d21388-e308-43e7-9ec0-4aa8631db803
+  scheduled_utc: "2026-09-08T04:00:00Z"
+  link_target: https://shopatmela.com/brands/aagghhoo?utm_source=instagram&utm_medium=social&utm_campaign=aagghhoo_w1
+  products:
+    - name: Leaf Green Cotton Flannel Baby/Toddler Blanket
+      sku: leaf-green-fuzzy-flannel-blanket
+      dev_listing_id: 68e59029-8a19-4872-aba8-44cb7c37f252
+      cooldown_check: "CLEAR — first Aagghhoo campaign"
+      live_verified: "OPEN/InStock USD $24.08 (2026-09-06)"
+    - name: Vintage Baby Booties — Merino Wool (handknitted)
+      sku: vintage-baby-booties-merino-wool
+      dev_listing_id: 69faa5c2-7e79-4ee8-a611-d6990775886a
+      cooldown_check: "CLEAR — first Aagghhoo campaign"
+      live_verified: "OPEN/InStock USD $12.04 (2026-09-06)"
+    - name: Chubby Mustard Seed Newborn Baby Pillow
+      sku: chubby-mustard-pillow
+      dev_listing_id: 68e59000-0be0-4b52-b283-2eb99a930805
+      cooldown_check: "CLEAR — first Aagghhoo campaign"
+      live_verified: "OPEN/InStock USD $24.08 (2026-09-06)"
+    - name: Happy Jingles — Zero-Waste Herbal-Dyed Sensory Toys
+      sku: happy-jingles-set-of-2
+      dev_listing_id: 68e58fed-5a7b-4938-ad54-b4fc20205c1c
+      cooldown_check: "CLEAR — first Aagghhoo campaign"
+      live_verified: "OPEN/InStock USD $30.11 (2026-09-06); 'zero-waste / herbal-dyed / handmade' are the product's own live-listing claims (not vague)"
+pinterest:
+  pins:
+    - product: Leaf Green Cotton Flannel Blanket
+      submission_id: 87beb37e-4c80-4e15-8d26-4dcb2394e071
+      scheduled_utc: "2026-09-08T01:00:00Z"
+      board: Modern Indian Nursery (1103593152379723629)
+      link: https://www.shopatmela.com/l/68e59029-8a19-4872-aba8-44cb7c37f252?utm_source=pinterest&utm_medium=social&utm_campaign=aagghhoo_w1&utm_content=cotton_flannel_baby_blanket
+visuals:
+  method: "Blotato Product Scene Placement (f524614b), 4:5, watermark baked; flat-lay/product-only (no faces) per morph-QC."
+  morph_qc: "All 4 diffed vs source — faithful; tiny garbled woven label on blanket, negligible."
+phase_7b_scene_attach:
+  done: "2026-09-06 (--dev --confirm)"
+  listing: 68e59029-8a19-4872-aba8-44cb7c37f252
+  social_scene_image_id: 6a9d86ec-1cf7-42dd-9136-24bb8c149ae4
+  note: "Clean un-watermarked blanket scene prepended as index-0 gallery lead. CSV backed up .bak."

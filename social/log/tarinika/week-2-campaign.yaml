@@ -1,0 +1,49 @@
+brand: Tarinika
+brand_slug: tarinika
+week: 2
+date_scheduled: "2026-09-07"   # IG carousel 2026-09-07 15:00 PDT (2026-09-07T22:00Z)
+status: scheduled
+format: collection_carousel     # REAL PHOTOS (jewelry = detail-critical, no Blotato morph)
+persona: Priya                  # occasion/gifting (angled to Priya, NOT Neha who is at 3/5 fatigue cap)
+category: jewelry_and_accessories
+angle: occasion / gifting + price & ships-from-India transparency
+hook: "Festive-season jewelry that ships from India, priced in dollars — from $35."
+hypothesis: "Occasion + price/ships-from-India transparency lifts Pinterest outbound + saves."
+northstar_metric: { platform: instagram, metric: saves, value: null }
+instagram:
+  submission_id: e603a6a0-4029-407d-a118-624844858ffe
+  scheduled_utc: "2026-09-07T22:00:00Z"
+  link_target: https://shopatmela.com/brands/tarinika?utm_source=instagram&utm_medium=social&utm_campaign=tarinika_w2
+  products:  # w1 (2026-07-24) used 6a585596 / 6a5855bf / 6a5855ae / 6a5855f7 — all AVOIDED (inside 240d cooldown)
+    - name: Aaida Antique Necklace Set
+      sku: aaida-antique-necklace-set
+      dev_listing_id: 6a5855a4-24df-4ede-a16c-0bc49889461b
+      cooldown_check: "CLEAR — not in w1 set; 240d window respected"
+      live_verified: "OPEN/InStock USD $49.99 (2026-09-06)"
+    - name: Aaloka Kundan Necklace Set
+      sku: aaloka-kundan-necklace-set
+      dev_listing_id: 6a5855ab-5f3c-4689-b9a5-e39cf8a9aff9
+      cooldown_check: "CLEAR — not in w1 set"
+      live_verified: "OPEN/InStock USD $89.99 (2026-09-06)"
+    - name: Aaradhya Antique Necklace Set (Red & Green)
+      sku: aaradhya-antique-necklace-set
+      dev_listing_id: 6a5855b9-5547-47f1-9fa1-0e79014a51a1
+      cooldown_check: "CLEAR — not in w1 set"
+      live_verified: "OPEN/InStock USD $124.99 (2026-09-06)"
+    - name: Aashi Antique Gold Chandbali Earrings
+      sku: aashi-antique-earrings
+      dev_listing_id: 6a58560c-875b-4e28-8d5b-26cf956a59b3
+      cooldown_check: "CLEAR — not in w1 set"
+      live_verified: "OPEN/InStock USD $34.99 (2026-09-06)"
+pinterest:
+  pins:
+    - product: Aaloka Kundan Necklace Set
+      submission_id: bb24de16-c924-4c1c-8aa8-3ed5e676aa3a
+      scheduled_utc: "2026-09-07T19:00:00Z"
+      board: Gifting and Occasions (1103593152379723628)
+      keyword_layer: "Diwali gifting / kundan (routes to a dedicated 'Diwali Gifting' board once founder creates it — Blotato can't create boards)"
+      link: https://www.shopatmela.com/l/6a5855ab-5f3c-4689-b9a5-e39cf8a9aff9?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w2&utm_content=aaloka_kundan_necklace_set
+visuals:
+  method: "REAL Shopify product photos (jewelry detail-critical, no Blotato), square padded to 4:5 on white + watermark via photo-watermark.html."
+notes:
+  - "Shipping-day-count deliberately OMITTED (no verified figure; a wrong '2-4 weeks' is a Neha dealbreaker). Price transparency carried the trust signal instead."

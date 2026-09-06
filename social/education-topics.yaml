@@ -266,7 +266,8 @@ topics:
     personas: [sarah, priya]
     source_brands: [pluchi]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # /social-launch batch 2026-09-06, paired with Pluchi brand row; IG scheduled 2026-09-07
 
   - id: trust-vetting-01
     type: trust_service

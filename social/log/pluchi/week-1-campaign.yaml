@@ -1,0 +1,50 @@
+brand: Pluchi
+brand_slug: pluchi
+week: 1
+date_scheduled: "2026-09-08"   # IG carousel 2026-09-08 12:00 PDT (2026-09-08T19:00Z)
+status: scheduled
+format: collection_carousel
+persona: Priya / Sarah          # hand-finished knit for home & nursery
+category: home_and_kitchen      # knit throws/bedcovers/nursery textiles
+angle: how-it's-made (hand-finished)
+hook: "You can feel the difference between machine-knit and hand-finished — here's what to look for."
+hypothesis: "How-it's-made hand-finished hook + home/nursery crossover drives saves."
+northstar_metric: { platform: instagram, metric: saves, value: null }
+instagram:
+  submission_id: 832bec52-9587-4a52-9840-504cfc3253bc
+  scheduled_utc: "2026-09-08T19:00:00Z"
+  link_target: https://shopatmela.com/brands/pluchi?utm_source=instagram&utm_medium=social&utm_campaign=pluchi_w1
+  products:
+    - name: Cotton-Knit All-Season Throw (Advent Grey — gnome motif)
+      sku: advent-grey-100-cotton-knitted-all-season-ac-throw-blanket
+      dev_listing_id: 69faa5dc-a0ef-4791-8091-f27c8b0fa61c
+      cooldown_check: "CLEAR — first Pluchi campaign"
+      live_verified: "OPEN/InStock USD $37.95 (2026-09-06)"
+      note: "Seasonal Christmas-gnome novelty; founder chose to KEEP (off the timeless-knit theme but faithful + eye-catching). Doubles as Pinterest holiday keyword-layer play."
+    - name: Aarya Embroidered Cotton-Knit Bedcover (set)
+      sku: aarya-embroidered-bedcover-...  # match by name/sku, not listing-id
+      dev_listing_id: 69faa5c9-53c6-4e9e-b1cd-bcb92e9ae230
+      cooldown_check: "CLEAR — first Pluchi campaign"
+      live_verified: "OPEN/InStock USD $253.01 (2026-09-06)"
+    - name: Angel Doll Cotton-Knitted Soft Toy (Baby Pink Gold)
+      sku: angel-doll-cotton-knitted-stuffed-soft-toy-baby-pink-gold
+      dev_listing_id: 6a38481f-ab0c-4d1a-9ad7-29d58ede7c08
+      cooldown_check: "CLEAR — first Pluchi campaign"
+      live_verified: "OPEN/InStock USD $15.06 (2026-09-06)"
+pinterest:
+  pins:
+    - product: Cotton-Knit Throw (gnome)
+      submission_id: 601c231d-54d9-479e-a89a-1ecb488f10aa
+      scheduled_utc: "2026-09-08T16:00:00Z"
+      board: Home and Kitchen (1103593152379723626)
+      keyword_layer: "cozy Christmas throw / holiday gift (seasonal keyword layer, not a new board)"
+      link: https://www.shopatmela.com/l/69faa5dc-a0ef-4791-8091-f27c8b0fa61c?utm_source=pinterest&utm_medium=social&utm_campaign=pluchi_w1&utm_content=cotton_knit_throw
+visuals:
+  method: "Blotato Product Scene Placement (f524614b), 4:5, watermark baked."
+  morph_qc: "All 3 diffed vs source — faithful (incl. the real gnome throw); knit texture preserved."
+education_pairing: "Paired with the craft-knitwear education post (see log/_education/craftknitwear-01-w1)."
+phase_7b_scene_attach:
+  done: "2026-09-06 (--dev --confirm)"
+  listing: 69faa5dc-a0ef-4791-8091-f27c8b0fa61c
+  social_scene_image_id: 6a9d86af-cdb1-43b4-a02c-0692f10727e9
+  note: "Clean un-watermarked throw scene prepended as index-0 gallery lead. CSV backed up .bak."
