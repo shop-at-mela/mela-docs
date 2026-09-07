@@ -36,7 +36,7 @@ instagram:
       dev_listing_id: 6a13d5fe-260e-4b45-b176-973b31385418
       cooldown_check: "CLEAR — never featured"
       live_verified: "OPEN/InStock USD $12.99 (2026-09-06)"
-      note: "Rendered as cluster-of-3 (founder flagged single tube too small)."
+      note: "Cluster-of-3 render (blotato 4ecc8aaf) was REJECTED — it morphed the packaging (real product is a squeeze tube; cluster showed rounded balm sticks + garbled 'Anna Purna'). Shipped the faithful single-tube v2 render instead (blotato 187c1644 → carousel slide 4); smaller in frame but accurate. Swapped in scheduled IG post 4177651 on 2026-09-07."
 pinterest:
   pins:
     - product: Honey Fix Facewash
