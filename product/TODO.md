@@ -2,6 +2,18 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-09-23
+
+### Shipped
+- `docs(gifting-prd)` — Checked off gifting-festival-traffic-prd.md line 154 Day 1 acceptance criterion: `publicData.gift_occasion`/`publicData.recipient` are arrays in Sharetribe Console and `pub_gift_occasion=has_any:diwali` returns tagged listings — verified via a live WebFetch check in a prior session.
+- `fix(product-listing-integration)` — Added a manual alias map (`MANUAL_OPTION_ALIASES` in `scripts/lib/models/listing-model.js`) so raw `gift_occasion`/`recipient` values that don't clear the fuzzy-match threshold but are semantically clear now resolve correctly: `"Suitable for gifting"` (Fizzy Goblet) → `general_gifting`, `"for personal use"` (Nicobar) → `for_self`.
+- `fix(classifier)` — Tightened `prompt_engine.py`'s `gift_occasion`/`recipient` rules and examples so the LLM emits the exact enum codes (`general_gifting`, `for_self`) instead of paraphrasing generic/non-committal source text as new ad-hoc values, preventing recurrence of the two unmapped entries above.
+
+### Next
+- [ ] Still open: the 10-sample-product spot-check from Day 1 acceptance, and confirming `occasion`'s 69 pre-existing unmapped values (`daily wear`, `casual_wear`, etc. — out of scope for this PRD) get their own follow-up to tighten `prompt_engine.py`'s bounded-enum instruction for `occasion`.
+- [ ] 9 non-priority brands (malabarbaby, myfirstcrayons, saphed_kids, skillmatics, tibertaber, comet, pastelsandpop, saphed, chidiyaa) still not backfilled — deferred separately.
+- [ ] Day 3 (social calendar/boards, brand sourcing, ads-readiness gate) — not started.
+
 ## 2026-08-30
 
 ### Shipped
