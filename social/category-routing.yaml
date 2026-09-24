@@ -83,7 +83,7 @@ grid:
     role: "Names the row's brand/category/theme so visitors can navigate; the center column forms a vertical spine across weeks."
     flanks: "Two side tiles are supporting posts (craft/founder story + product), styled to sit with the anchor."
   row_composition:
-    brand_row: "3 posts for ONE in-QA/live brand: center anchor + 1 product tile + 1 craft-story/founder tile. Only the product tile cross-posts to Pinterest."
+    brand_row: "3 posts for ONE in-QA/live brand: center anchor + 1 product tile + 1 craft-story/founder tile. (GRID-ERA) only the product tile cross-posted to Pinterest. GRID-OFF / collection-carousel era: pin EVERY product in the carousel, one pin each (see content_types.product note)."
     theme_row: "1 education-topics.yaml topic — IG-only (trust_service or cultural_education)"
   brand_row_rotation: "the 2 brand rows in a week MUST be two different Mela categories (see rotation.category_concentration)"
   ordering_rule: >
@@ -145,7 +145,7 @@ pinterest_boards:
 content_types:
   product:            # single / collection / brand-spotlight posts + pins
     platforms: [instagram, pinterest]
-    note: "All categories cross-post. Instagram = 1 carousel; Pinterest = 1 pin per product."
+    note: "All categories cross-post. Instagram = 1 collection carousel; Pinterest = ONE pin per product IN that carousel (each pin links to that product's own listing URL + UTM), NOT a single hero pin per brand. Founder-confirmed default 2026-09-23 (respect the 10 pins/24h Blotato cap — schedule overflow to later days)."
   trust_service:      # 5-7 day shipping, product quality, customer service, returns
     platforms: [instagram, reddit]
     note: "Purchase-objection content. Pinterest is discovery mode — not where people evaluate shipping/CS."
