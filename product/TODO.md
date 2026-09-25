@@ -2,6 +2,17 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-09-25
+
+### Shipped
+- `feat(category-page)` — Expanded `CATEGORY_CONTENT` to self-contained 40-60 word per-category descriptions + question-form FAQ, rendered as a collapsed-by-default accordion after the product grid; added last-reviewed date and Organization-byline schema attribution. Closes the GEO/AEO gaps a Zavi audit found (no quotable passage, no question-form heading, no date, no authorship signal).
+- `feat(homepage)` — Promoted the previously-hidden `FAQPage` JSON-LD into a visible `FAQSection` component (same data source, so JSON-LD and visible copy can't drift); added last-reviewed date and Organization-byline attribution; corrected an outdated $800 US customs de minimis claim before making it visible.
+- `docs(prds)` — Updated `seo-aeo-category-brand-pages-prd.md` (shipped status + a same-day correction note: FAQ was initially stacked in the page header instead of the accordion the PRD already specified, caught by a design/research review before it pushed products below the fold on mobile) and added `homepage-faq-geo-signals-prd.md`.
+
+### Next
+- [ ] Quarterly scheduled review (`trig_01DSghwC4tntP5eFdKqKhDGZ`, Jan/Apr/Jul/Oct) checks `CATEGORY_CONTENT` for two known drift risks: category copy claiming live inventory that's since gone empty (or vice versa), and stale time-sensitive facts (customs rules, shipping timelines, certifications).
+- [ ] Homepage's `FAQSection` (5 Q&As, always expanded, placed after `VettingStrip`) carries a similar below-the-fold risk to what category pages had — flagged but not confirmed as a problem; not fixed without evidence.
+
 ## 2026-09-23
 
 ### Shipped

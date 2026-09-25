@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-08-25  
+**Last updated:** 2026-09-25  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 **Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
@@ -31,7 +31,8 @@
 | [footer-legalese-prd.md](prds/footer-legalese-prd.md) | ⛔ Blocked | P0 | Legal copy not written | Write ToS + Privacy Policy copy |
 | [brands-page-prd.md](prds/brands-page-prd.md) | 🟡 Partial | P1 | — | Brand tenure signal; Mela Verified badge; brand storefront SEO (see seo-aeo PRD) |
 | [brand-storefront-prd.md](prds/brand-storefront-prd.md) | 🔲 Ready | P1 | Depends on `brands-page-prd.md` | Full brand storefront at `/brands/:brandSlug` — Organization JSON-LD, brand story, certifications |
-| [seo-aeo-category-brand-pages-prd.md](prds/seo-aeo-category-brand-pages-prd.md) | 🟡 Partial | P0 | — | Category pages ✅; canonical URLs + `/u/:id` redirect ✅; JSON-LD (Org, BreadcrumbList, ItemList), sitemap, 404 for bad slugs still needed |
+| [seo-aeo-category-brand-pages-prd.md](prds/seo-aeo-category-brand-pages-prd.md) | 🟡 Partial | P0 | — | Category pages ✅ incl. editorial description/FAQ accordion, last-reviewed date, Organization byline (2026-09-25); canonical URLs + `/u/:id` redirect ✅; brand storefront JSON-LD (Org, BreadcrumbList, ItemList), sitemap, 404 for bad slugs still needed |
+| [homepage-faq-geo-signals-prd.md](prds/homepage-faq-geo-signals-prd.md) | ✅ Shipped | P1 | — | Visible FAQ section, last-reviewed date, Organization byline shipped 2026-09-25 |
 | [search-page-optimization-prd.md](prds/search-page-optimization-prd.md) | 🟡 Partial | P1 | — | Scroll position preservation; analytics instrumentation; image lazy loading |
 | [search-ranking-relevance-prd.md](prds/search-ranking-relevance-prd.md) | 🟡 Partial | P1 | analytics instrumentation (gates metrics) | Keyword/diaspora groundwork landing (`searchKeywords`/synonym `text` fields + schemas; classifier model split → enrichment on gpt-5.6-luna); **core not started**: `melaScore`/`boostTier` scorer + default-sort flip + backfill |
 | [newsletter-login-nudge-prd.md](prds/newsletter-login-nudge-prd.md) | 🔲 Ready | P1 | Requires Beehiiv account | Newsletter email capture; save nudge redesign; Beehiiv integration |
