@@ -1,12 +1,12 @@
 # SEO & AEO — Category Pages + Brand Storefront Pages PRD
 
 **Document Owner:** Product / SEO Team  
-**Last Updated:** 2026-05-25  
+**Last Updated:** 2026-09-25  
 **Status:** Partial — Category pages shipped with SEO schema; brand storefront SEO not yet built  
 **Priority:** High — Organic acquisition foundation  
 **Related PRDs:** `brand-storefront-prd.md`, `brands-page-prd.md`, `technical/sitemap-prd.md`
 
-## Build Status Summary *(updated 2026-05-25)*
+## Build Status Summary *(updated 2026-09-25)*
 
 | Requirement | Status | Notes |
 |-------------|--------|-------|
@@ -24,8 +24,14 @@
 | Brand slug canonical → `/brands/:brandSlug` | ❌ Not built | `/u/:id` does not redirect to or canonicalize to slug |
 | Category pages in `sitemap-default.xml` | ⚠️ Verify | Sitemap PRD covers this; verify after CategoryPage ship |
 | Brand slugs in `sitemap-brands.xml` | ⚠️ Verify | Requires slug registry in `configBrands.js` |
-| Editorial description + FAQ on category pages | ⚠️ Partial | Category descriptions exist in config; FAQ block not confirmed |
+| Editorial description + FAQ on category pages | ✅ Shipped | `CATEGORY_CONTENT` in `CategoryPage.js` expanded to self-contained 40–60 word paragraphs (rendered in the page header, satisfying the "first third" requirement); each category also gets one question-form `<h2>` + answer paragraph, mirrored as a `Question`/`Answer` JSON-LD node — rendered inside a **collapsed-by-default `<details>`/`<summary>` accordion after the product grid**, per this PRD's own §5A/§8C spec ("visible to user, not hidden," positioned near the bottom), not stacked in the header |
+| Last-reviewed date (published/updated) on category pages | ✅ Shipped | Manually maintained "content last reviewed" date per category (`CATEGORY_CONTENT_LAST_UPDATED`), stored next to its copy and bumped by hand only when that copy changes (never derived from listing data). Passed to `Page`'s existing `published`/`updated` props → `article:published_time` / `article:modified_time`, plus a small visible "Last reviewed {date}" line in the header |
+| Author/Organization byline on category pages | ✅ Shipped | Visible "Curated by the Mela team" byline (in the FAQ accordion, not the header — see note below) + `author`/`publisher` reference to the global Organization entity `Page.js` already injects (`@id: ${marketplaceRootURL}#organization`). No named author persona, no new entity |
 | Google Rich Results Test passing | ⚠️ Not verified | Run after verifying schema output |
+
+> **2026-09-25 update:** A GEO (AI-answer-engine) audit of `/` and the `/categories/*` pages found gaps this PRD never specified: no published/last-updated date anywhere in the HTML and no authorship signal (byline or Person/Organization attribution). Added the two rows above, matching §7 checklist rows, and §9 acceptance criteria. The homepage's equivalent work is in `homepage-faq-geo-signals-prd.md`, which follows the date/authorship convention set here.
+>
+> **2026-09-25 correction:** the first implementation pass stacked the FAQ question/answer/byline directly in the page `<header>`, above the subcategory pills and product grid — a real deviation from this PRD's own §5A/§8C spec (FAQ as a collapsible accordion, positioned after the product grid) that a design/research review caught: on mobile, the stacked header roughly tripled in height (~130px → ~380px), pushing the first product off-screen on first load. Corrected to match the original spec: the description paragraph + a minimal "Last reviewed" line stay in the header (needed there for the first-third requirement); the FAQ question/answer and "Curated by the Mela team" byline moved into a `<details>`/`<summary>` accordion after the product grid, collapsed by default, with the question/answer text still present in the DOM at all times so it stays crawlable regardless of expand state.
 
 **Overall:** Category page SEO is substantially built. Brand storefront SEO (Organization schema, canonical slugs, rich meta) is the remaining gap — blocked on the brand storefront PRD (`brand-storefront-prd.md`).
 
@@ -404,6 +410,8 @@ Target queries where Mela should appear as the authoritative answer:
 |--------|-------|-------------|----------|
 | FAQ blocks — certification explainers | Category pages (L0) | `FAQPage` | P1 |
 | FAQ blocks — brand credibility Q&A | Brand storefront pages | `FAQPage` | P1 |
+| Last-reviewed date — hand-maintained, bumped only on copy change (not derived from listing data) | Category pages (L0 + L1) | `article:published_time` / `article:modified_time` meta via `Page` `published`/`updated` props | P1 |
+| Author/Organization byline — visible "Curated by the Mela team" + attribution reference (no named persona) | Category pages (L0 + L1) | `author` / `publisher` → existing `Organization` (`@id: {rootURL}#organization`) | P1 |
 | Organization entity with credentials | Brand storefront | `Organization` + `hasCredential` | P0 |
 | BreadcrumbList on all category + brand pages | Category + Brand | `BreadcrumbList` | P0 |
 | ItemList for products | Category + Brand | `ItemList` | P0 |
@@ -593,7 +601,12 @@ The layout is fully specified in `brand-storefront-prd.md`. SEO/AEO additions:
 - [ ] Subcategory pills render on L0 pages with correct links to L1 URLs.
 - [ ] All L0 and L1 category paths appear in `sitemap-default.xml`.
 - [ ] Category pages return HTTP 200 (not a redirect to `/s?pub_categoryLevel1=...`).
-- [ ] FAQ block renders (P1): at least 3 Q&As per L0 category, marked up as `FAQPage` JSON-LD.
+- [x] FAQ block renders (P1): one question-form Q&A per L0 category, marked up as `FAQPage`/`Question`/`Answer` JSON-LD. Rendered as a collapsed-by-default `<details>`/`<summary>` accordion after the product grid (not inline/hidden — text stays in the DOM regardless of expand state).
+- [x] Each category's description is a self-contained 40–60 word paragraph, rendered in the header (first third of the page).
+- [x] Each category renders one question-form `<h2>` (inside the FAQ accordion) with a visible answer paragraph, and the same question/answer text appears as a `Question`/`Answer` node in the page's JSON-LD.
+- [x] Each category page emits `article:published_time` and `article:modified_time` meta tags from a hand-maintained last-reviewed date stored with that category's copy (not computed from listing data or build time), plus a visible "Last reviewed {date}" line in the header.
+- [x] A visible "Curated by the Mela team" byline renders on every category page (inside the FAQ accordion).
+- [x] Category page JSON-LD includes `author` and `publisher` references to `{marketplaceRootURL}#organization`, and no new Person or Organization entity is added to the `@graph`.
 - [ ] Google Rich Results Test passes for BreadcrumbList on at least one category page.
 - [ ] Mobile: breadcrumb navigation is functional and touch-friendly at 375px viewport.
 
