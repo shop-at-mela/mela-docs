@@ -107,6 +107,37 @@ Good pins combine one term from at least two axes.
 > into Pinterest search, record the autocomplete tail, and sanity-check seasonality in Pinterest
 > Trends (trends.pinterest.com). Keep/expand the winners; drop terms that autocomplete doesn't echo.
 
+### Panel decision (2026-09-29) — three specific-over-generic post themes
+
+**Source data (this run):** Mela's top-saving pin is Ankid's *Hand Block Printed Top and Pants
+Set* (4 saves). Separately, an Indian-home-decor Pinterest search shows inspiration/no-link pins
+dominating at 56–82 saves while product pins cap at 6 — the gap is a content-gap opportunity, not
+proof product pins can't work. An artisan-Indian-jewelry search shows a video pin (alacouture, 65
+saves) leading the category. Panel (UXR cultural-framing + persona pass, this run) evaluated three
+proposed specific-term pivots against these signals:
+
+| Theme | Pivot | Verdict | Why |
+|---|---|---|---|
+| Baby/kids | general "Indian block print fashion" → **baby-specific phrasing** ("Indian baby block print clothes") | ✅ sound | Product-identity layer, not user-identity — passes the "Indian" cultural-framing test (see `uxr` skill). Narrower phrase matches actual search intent for the top-saving pin. |
+| Home decor | generic "Indian home decor" → **Pattachitra** as the primary term | ✅ sound | Real, verifiable Odisha craft term (not misapplied); already a listed Craft/AEO keyword below, now promoted to primary. Kaunteya's Airavata Oval Platter backs it with an independently verified listing (`kaunteya/week-2-campaign.yaml` — live_verified 2026-09-02: bone china, Pattachitra, 24k gold). "Hard to find in the US" is a defensible scarcity/authenticity claim, not a certification claim — doesn't trip the sustainability-claim guardrail. |
+| Jewelry | generic "artisan Indian jewelry" → **chandbali** as its own term | ✅ sound, with a fix | Chandbali originated in Hyderabad/Deccan courts, not generically "South Indian temple jewelry" (§4 jewelry cluster corrected below to list it as its own craft term, not folded into "temple jewelry"). Karva Chauth + chandbali pairing is fine — it's occasion-anchored jewelry shopping, not a claim that chandbali is Karva-Chauth-specific. **Brand-name correction:** the confirmed pin data is **Tarinika's** "Aashi Antique Gold Chandbali Earrings" (`tarinika/week-2-campaign.yaml`) — not "Karinika," which isn't a brand in the pipeline. |
+
+**Two guardrails this panel enforced before either theme reaches `/social-review`:**
+1. **Board-fit, baby/kids:** don't route the block-print top-and-pants pin to *Organic Indian Baby
+   Clothes & Essentials* — the listing is verified "hand block-printed cotton," not organic, and
+   §2's nursery/organic-≠-festive rule already routes festive kidswear to *Gifting and Occasions*
+   (where this exact pin already lives, posted 2026-08-08). The board-copy description below stays
+   paste-ready for a genuinely organic Ankid SKU, not this one.
+2. **Cooldown, baby/kids:** that same dev_listing_id was pinned 2026-08-08 — a same-day repost
+   sits well inside `rotation.product_recency_days` (240 days, `category-routing.yaml`). Run the
+   cooldown check before scheduling; if it's not clear, pin a different Ankid design instead of the
+   identical listing.
+
+**Open item — not resolved by this panel:** the brief for all three themes says "Diwali on October
+20"; `accounts.md` → Seasonal Calendar has Diwali canonically at **October 1** (board live by
+mid-August, IG queue from Sept 1). That's a 19-day gap that touches lead-time math for all three
+themes — reconcile which date is correct before treating "post today for Diwali" as final timing.
+
 ---
 
 ## How to use the bank (placement priority)
@@ -131,23 +162,39 @@ high-volume terms that have no pin yet (content-gap filling).
 Board ids from `category-routing.yaml → pinterest_boards.boards`.
 
 ### home_and_kitchen → *Home and Kitchen* (`…3626`) · *Gifting and Occasions* (`…3628`)
-- **Primary:** hand painted ceramics · Indian dinnerware · bone china mug · artisan tableware
+- **Primary:** Pattachitra bone china · hand painted ceramics · Indian dinnerware · bone china mug · artisan tableware
 - **Occasion:** Diwali table setting · festive tablescape · housewarming gift · Diwali home decor
 - **Craft/AEO:** Pattachitra art · Phad painting · hand-painted pottery
 - **US-gifting:** Indian home decor USA · ethnic home decor · Indian housewarming gift
+- *Panel note (2026-09-29):* Pattachitra promoted to primary — Indian home decor search is
+  dominated by no-link inspiration pins (56–82 saves) vs. product pins capping at 6; Pattachitra is
+  specific enough to own outright and is independently verified on Kaunteya's Airavata Oval Platter
+  (fine bone china, 24k gold, hard to find in the US). See §4 Panel decision above.
 
 ### baby_and_kids → *Modern Indian Nursery* (`…3629`) · *Organic Baby Essentials* (`…3630`) · festive → *Gifting and Occasions* (`…3628`)
-- **Primary:** Indian baby clothes · ethnic baby outfit · organic cotton baby clothes
+- **Primary:** Indian baby block print clothes · Indian baby clothes · ethnic baby outfit · organic cotton baby clothes
 - **Craft:** hand block print kids clothing · hand embroidered baby outfit
 - **Occasion:** festive kids wear · Diwali outfit for toddler · baby boy bandhgala · first birthday Indian outfit
 - **US-gifting:** baby shower gift Indian · newborn gift Indian · toddler ethnic wear USA
 - *Note:* nursery/organic boards ≠ festive wear — route festive kidswear to *Gifting and Occasions* (per The Nesavu/Ankid board-fit decisions).
+- *Panel note (2026-09-29):* baby-specific phrasing ("Indian baby block print clothes") promoted to
+  primary — more ownable than the general "block print fashion" phrase and matches Mela's
+  top-saving pin (Ankid's Hand Block Printed Top and Pants Set, 4 saves). Still routes to *Gifting
+  and Occasions*, not the Organic board — that pin isn't a verified-organic listing. Check the
+  240-day cooldown (`category-routing.yaml → rotation.product_recency_days`) before reposting the
+  same dev_listing_id; it last went out 2026-08-08. See §4 Panel decision above.
 
 ### jewelry_and_accessories → *Gifting and Occasions* (`…3628`)
-- **Primary:** Indian jewelry · temple jewelry · kundan jewelry · oxidized silver earrings
+- **Primary:** chandbali earrings · Indian jewelry · temple jewelry · kundan jewelry · oxidized silver earrings
 - **Craft:** handmade earrings · meenakari · jadau
-- **Occasion:** bridal jewelry Indian · wedding guest jewelry · Diwali jewelry · Raksha Bandhan gift
+- **Occasion:** bridal jewelry Indian · wedding guest jewelry · Diwali jewelry · Karva Chauth jewelry · Raksha Bandhan gift
 - **US-gifting:** Indian jewelry USA · gift for her Indian
+- *Panel note (2026-09-29):* chandbali added as its own primary term, not folded into "temple
+  jewelry" — it's a distinct Hyderabadi/Deccan style, and specific enough (with a diaspora audience
+  that searches it by name) to own outright, unlike the broad "artisan Indian jewelry" search
+  currently dominated by video pins. Backed by Tarinika's Aashi Antique Gold Chandbali Earrings
+  (`tarinika/week-2-campaign.yaml` — confirmed live, $34.99). Note the brand is **Tarinika**, not
+  "Karinika." See §4 Panel decision above.
 
 ### food_and_gourmet → *Gifting and Occasions* (`…3628`)
 - **Primary:** Indian sweets · mithai · artisanal Indian snacks · masala chai
@@ -216,7 +263,7 @@ Per `pinterest_boards.seasonal_boards`. Pin 30–45 days before the moment.
 | Holi Colors | mid-December | Holi outfit · Holi party ideas · colorful decor |
 | Mother's Day Edit | mid-February | gift for mom · Indian gift for her · thoughtful gift |
 
-Also worth seasonal boards: **Raksha Bandhan** (gift for brother/sister, ~June), **Wedding Guest** (year-round, peaks fall).
+Also worth seasonal boards: **Raksha Bandhan** (gift for brother/sister, ~June), **Wedding Guest** (year-round, peaks fall), **Karva Chauth** (jewelry/gifting keyword anchor within the existing *Gifting and Occasions* board, not yet a standalone board — added 2026-09-29 per the chandbali panel decision above).
 
 ---
 
