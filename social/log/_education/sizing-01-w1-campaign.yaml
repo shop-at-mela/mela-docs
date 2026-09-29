@@ -1,0 +1,67 @@
+# Mela Social Campaign — Education post — staged by automated weekly cloud routine
+# NOT YET SCHEDULED OR PUBLISHED. status: staged means this is a proposal awaiting founder approval.
+
+---
+topic_id: sizing-01
+brand: null   # brand-agnostic trust_service topic
+brand_slug: null
+week: 1   # first use of this topic
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  # reddit: not produced — no Reddit account connected via Blotato; founder/team-only per accounts.md
+format: single_image_infographic
+persona: Arun
+category: null
+content_type: trust_service
+
+lane: full   # education content type is always FULL lane
+hypothesis: "Trust_service sizing topic + Arun persona + loss-aversion hook: does naming a concrete shopper mistake ('got a size that didn't fit') outperform ship-01's neutral 'how it works' framing for saves?"
+gate_verdict: ship
+coaching_notes: |
+  Diaspora anchor: loss-aversion framed around a real shopper mistake (size mismatch), never identity. This is the loud coaching note to double check every post — clear here, no ethnicity naming.
+  Hook: loss-aversion trigger in its Mela-safe form ("here's why, and how to get it right"), not fear-baiting or fake urgency. Matches hook-engineering.md taxonomy.
+  Topic selection: sizing-01 scored the same baseline (3) as the runner-up quality-fizzy since this week's fashion pick (Banjaaran Studio) isn't in either topic's source_brands list, so neither got the scoring overlap bonus. Chose sizing-01 for direct thematic fit with this week's footwear brand row. Presenting both per social-launch Phase 1's "top 2, never auto-take #1" rule — founder can swap.
+  Visual system downgrade: guide's HTML/CSS→PNG toolchain for education visuals isn't available in this cloud session; fell to the toolchain's documented second choice (Blotato illustrative-stills infographic template), producing a single image rather than the full hook-then-payoff multi-slide Education Visual System. Non-blocking, flagged for founder awareness.
+  Destination: no product/brand tie for this brand-agnostic topic and no documented URL pattern for a general trust-topic page, so this defaults to the Mela homepage rather than guessing a page that may not exist. Founder should override if a better destination (e.g. a sizing help page) exists.
+northstar_metric:
+  instagram_saves: null
+
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/?utm_source=instagram&utm_medium=social&utm_campaign=education_w1&utm_content=sizing_guide"
+  caption: |
+    Ordered Indian footwear and got a size that didn't fit? Here's why, and how to get it right the first time.
+
+    Indian shoe sizing runs on a different scale than US sizing, so a size 8 on one site is not a size 8 on another. The gap is usually one to one and a half sizes.
+
+    Before you order, check the brand's own size chart on their Mela listing instead of guessing from the number alone. Most Indian brands list a US equivalent right on the product page.
+
+    Save this for your next order.
+
+  visual:
+    image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f1ba88f2-431c-46bd-9695-78620ce2c1c2.jpg
+    blotato_visual_id: 9de89847-edc6-4ce4-96ec-ed850cb7038e
+    alt_text: "Whiteboard-style infographic comparing Indian and US footwear sizing scales with a size conversion example"
+
+ux_review:
+  destination_url: https://shopatmela.com/
+  checks:
+    brand_story: { result: "n/a", note: "Brand-agnostic education topic, no single brand destination." }
+    artisan_details: { result: "n/a", note: "" }
+    cultural_context: { result: "n/a", note: "" }
+    aesthetic_match: { result: tbd, note: "Not checked live in this session (egress to shopatmela.com blocked)." }
+    product_findability: { result: "n/a", note: "" }
+    mobile_responsive: { result: tbd, note: "Needs verification." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+notes:
+  copy_quality: "No dashes used to join clauses, no @tags, no brand named, no specific numeric claim stated as universal fact."
+  verification: "n/a — no product/craft claim requiring live-listing verification; sizing-gap framing kept to 'usually' and told the shopper to verify on the brand's own chart rather than asserting an exact universal conversion."
+  teardown_flag: "Last top-performer teardown was 2026-08-16 (44 days ago), 14 days overdue on the 30-day threshold. Flagging per /social-launch Phase 0b; did not block this batch."

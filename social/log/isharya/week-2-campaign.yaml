@@ -1,0 +1,131 @@
+# Mela Social Campaign — staged by automated weekly cloud routine (see social-automation-strategy.md)
+# NOT YET SCHEDULED OR PUBLISHED. status: staged means this is a proposal awaiting founder approval.
+
+---
+brand: Isharya
+brand_slug: isharya
+week: 2
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Neha
+category: jewelry_and_accessories
+
+lane: full   # material/plating claims (18K gold plated, CZ stones) in copy
+hypothesis: "Angle 2 (discovery — 'brands you can't find') with Neha persona: does a scarcity/access hook lift saves for a jewelry collection carousel more than a straightforward product intro?"
+gate_verdict: ship
+coaching_notes: |
+  Diaspora anchor: situational framing ("the brand ... probably doesn't ship to the US. This one does"), never identity-naming. Clear.
+  Hook: discovery/curiosity angle (angle 2), structurally close to hook-engineering.md swipe-file example #2 — adapted, not verbatim, but flagging the similarity.
+  First-frame: bolo bracelet leads the carousel, product-forward per grid.enabled=false rule. Clear.
+  DATA-QUALITY FLAG: Isharya's classified_products_prod CSV reuses the same Dev_Listing_ID across an out-of-stock row and an in-stock row for several products (e.g. 6a54b5ea... is tagged to both OOS "Abakka Statement Earrings" and in-stock "Abstract Mirror Bolo Bracelet"). Same class of bug as [[project_listing_id_drift_bug]]. All 3 IDs used here were individually verified live via blotato_create_source and confirmed to resolve to the correct in-stock product — but this CSV should be reconciled SKU-keyed the way Ankid's was in August (see ankid/week-2-campaign.yaml for precedent).
+  Visual QA limitation: this cloud session's network egress blocks direct access to shopatmela.com and to the rendered image host (database.blotato.io); post-render diff could not be performed by viewing pixels directly. Founder should eyeball the rendered URLs before scheduling.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/isharya?utm_source=instagram&utm_medium=social&utm_campaign=isharya_w2&utm_content=brand_spotlight"
+  caption: |
+    The brand behind your favorite statement earrings probably doesn't ship to the US. This one does.
+
+    Isharya makes 18K gold plated jewelry in brass, hand finished with CZ stones and mirror work. A bolo bracelet, cocktail earrings, and a dainty diamond stationed choker, three ways to wear the same modern Indian design language.
+
+    Hard to find outside India until now.
+
+    Ships to the US from Isharya.
+
+    Discover Isharya on Mela →
+
+  products:
+    - name: Abstract Mirror Bolo Bracelet
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-34e1d21f-5bda-443c-b1e0-b253177a760b.jpg
+      blotato_visual_id: 93a839e2-806c-4858-82a8-4684cb20ea46
+      alt_text: "18K gold plated brass bolo bracelet with mirror work detail, studio product shot on plain background"
+      price_usd: 76
+      dev_listing_id: 6a54b5ea-c551-45ce-b9b2-44fa90c5452c
+      shopatmela_url: https://www.shopatmela.com/l/6a54b5ea-c551-45ce-b9b2-44fa90c5452c
+
+    - name: Ada CZ Cocktail Earrings
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6bd9f6c2-a9e2-48c9-809f-39cd83128976.jpg
+      blotato_visual_id: 93a839e2-806c-4858-82a8-4684cb20ea46
+      alt_text: "18K gold plated brass cocktail earrings with clear CZ stones, studio product shot on plain background"
+      price_usd: 76
+      dev_listing_id: 6a54b5f3-0627-496b-86f8-1bb89330c313
+      shopatmela_url: https://www.shopatmela.com/l/6a54b5f3-0627-496b-86f8-1bb89330c313
+
+    - name: Aditi Rao Dainty Diamonds Stationed Choker
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7ddf0611-b82d-4aed-921f-b7c4abb805f4.jpg
+      blotato_visual_id: 93a839e2-806c-4858-82a8-4684cb20ea46
+      alt_text: "18K gold plated choker necklace with dainty CZ stone stations, studio product shot on plain background"
+      price_usd: 151
+      dev_listing_id: 6a54b5f9-5286-4910-9b88-aa5d7d23cff8
+      shopatmela_url: https://www.shopatmela.com/l/6a54b5f9-5286-4910-9b88-aa5d7d23cff8
+
+pinterest:
+  boards:
+    - name: Gifting and Occasions
+      board_id: "1103593152379723628"
+
+  pins:
+    - name: Abstract Mirror Bolo Bracelet
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: "Abstract Mirror Bolo Bracelet | Modern Indian Jewelry"
+      description: "18K gold plated bolo bracelet with handcrafted mirror detailing by Isharya. Adjustable fit, modern Indian design. Isharya on Mela."
+      alt_text: "18K gold plated brass bolo bracelet with mirror work detail, studio product shot on plain background"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-c76fbe68-3b98-4bf6-b888-8704a9ffa881.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a54b5ea-c551-45ce-b9b2-44fa90c5452c
+      link: "https://www.shopatmela.com/l/6a54b5ea-c551-45ce-b9b2-44fa90c5452c?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=abstract_mirror_bolo_bracelet"
+
+    - name: Ada CZ Cocktail Earrings
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: "Ada CZ Cocktail Earrings | Statement Jewelry"
+      description: "18K gold plated cocktail earrings with CZ stones by Isharya. Handcrafted statement piece for everyday or occasion wear. Isharya on Mela."
+      alt_text: "18K gold plated brass cocktail earrings with clear CZ stones, studio product shot on plain background"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a781b052-65e5-4ed8-ade6-3ce4f9c985d9.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a54b5f3-0627-496b-86f8-1bb89330c313
+      link: "https://www.shopatmela.com/l/6a54b5f3-0627-496b-86f8-1bb89330c313?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=ada_cz_cocktail_earrings"
+
+    - name: Aditi Rao Dainty Diamonds Stationed Choker
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: "Aditi Rao Diamonds Stationed Choker | Isharya"
+      description: "18K gold plated choker with dainty CZ stone stations by Isharya. Rhodium plated, handcrafted detail. Isharya on Mela."
+      alt_text: "18K gold plated choker necklace with dainty CZ stone stations, studio product shot on plain background"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7a250966-0c19-4518-afb6-b3a99dd5e8e0.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a54b5f9-5286-4910-9b88-aa5d7d23cff8
+      link: "https://www.shopatmela.com/l/6a54b5f9-5286-4910-9b88-aa5d7d23cff8?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=aditi_rao_choker"
+
+ux_review:
+  destination_url: https://shopatmela.com/brands/isharya
+  checks:
+    brand_story: { result: tbd, note: "Not checked live in this session (direct egress to shopatmela.com blocked); blotato_create_source confirmed the 3 product listing pages are live and open, brand page itself not separately checked." }
+    artisan_details: { result: tbd, note: "Same limitation as above." }
+    cultural_context: { result: tbd, note: "Same limitation as above." }
+    aesthetic_match: { result: tbd, note: "Same limitation as above." }
+    product_findability: { result: pass, note: "Product names included in caption." }
+    mobile_responsive: { result: tbd, note: "Needs verification." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+notes:
+  category_note: "Second Isharya campaign (W1 was 2026-08-27, different product). No overlap with W1's featured dev_listing_id."
+  copy_quality: "No dashes used to join clauses, no @tags, no 'Mela ships', brand named as the shipping actor."
+  shipping_clarity: "Ships to the US from Isharya."
+  cooldown: "clear — none of the 3 dev_listing_ids appear in any prior campaign log (checked 2026-09-29)."
+  verification: "All 3 listing URLs confirmed live/open AND confirmed to resolve to the correct in-stock product (not the OOS duplicate ID) via blotato_create_source fetch of shopatmela.com/l/{id}."
+  data_quality: "Isharya CSV has duplicate Dev_Listing_IDs across OOS/in-stock rows — see coaching_notes. Recommend a SKU-keyed reconciliation pass on this brand's CSV before the next campaign."
+  7b_attach_scene: "SKIPPED — needs Sharetribe credentials not available in this cloud session. Founder to run locally: node product-listing-integration/scripts/attach-social-scene.js --dev --csv isharya_products_classified.csv --listing-id <id> --image-url <clean-scene-url> --dry-run"

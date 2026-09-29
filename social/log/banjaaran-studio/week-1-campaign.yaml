@@ -1,0 +1,130 @@
+# Mela Social Campaign — staged by automated weekly cloud routine (see social-automation-strategy.md)
+# NOT YET SCHEDULED OR PUBLISHED. status: staged means this is a proposal awaiting founder approval.
+
+---
+brand: Banjaaran Studio
+brand_slug: banjaaran-studio
+week: 1
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Arun
+category: fashion
+
+lane: full   # brand's first-ever Mela social post; caption makes material claims
+hypothesis: "Angle 3 (how-it's-made / craft origin) with Arun persona on a first-time brand: does a construction-detail hook (hand-set brass rivet) outperform a generic 'new brand' intro for a footwear collection carousel?"
+gate_verdict: ship
+coaching_notes: |
+  Diaspora anchor: caption anchors the shopper's situation (building a rotation from one release) rather than naming ethnicity/identity; no exoticizing language, no "500-year-old" framing. Complies.
+  Hook: leads with a construction-detail curiosity hook (angle 3), not a generic brand intro; untested (hook-engineering.md swipe-file adjacent, not copied verbatim).
+  First-frame: hero product (Bageecha Brogues, front 3/4 studio shot) is the IG cover slide, product-forward per grid.enabled=false rule.
+  Persona rotation note: Sarah and Priya are both fatigue-flagged this week (3/5 and 4/5 of last 5 posts); Arun used here and again on the education tile since sizing-01's topic-level persona list is [sarah, arun] and Sarah is fatigued.
+  Visual QA limitation: this cloud session's network egress blocks direct access to shopatmela.com and to the rendered image host (database.blotato.io), so the post-render diff (morph/garble/color-drift check) could not be performed by viewing pixels directly in this session. Source images are real, unmodified studio photos confirmed live via blotato_create_source; the Image Slideshow template only composites a text watermark, it does not AI-regenerate the product. Founder should eyeball the rendered URLs before scheduling.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/banjaaran-studio?utm_source=instagram&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=brand_spotlight"
+  caption: |
+    Here's the tell that a shoe was actually finished by hand, not just labeled that way.
+
+    Banjaaran Studio's Bageecha collection pairs illustrated faux leather with genuine coal black leather panels. Every pair carries an engraved brass rivet, the studio's signature mark, set by hand at the finishing bench.
+
+    Brogues, sneakers, and loafers, all cut from the same coal colorway, so you can build a whole rotation from one release.
+
+    Handmade in India. Ships to the US from Banjaaran Studio.
+
+    Discover Banjaaran Studio on Mela →
+
+  products:
+    - name: Bageecha Brogues Men – Coal
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-95f8c444-b709-4024-ad5d-3e9b47aaadaf.jpg
+      blotato_visual_id: b44da5ad-7bce-46f8-afd8-db093cca06fe
+      alt_text: "Coal black leather brogue shoe with illustrated faux leather panel and brass rivet detail, studio product shot"
+      price_usd: 90
+      dev_listing_id: 6a128386-2760-4843-ac38-ad8453f5a260
+      shopatmela_url: https://www.shopatmela.com/l/6a128386-2760-4843-ac38-ad8453f5a260
+
+    - name: Bageecha Core Sneaker – Coal
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-1b241538-87f1-4bb1-9efc-7e340c6e91c1.jpg
+      blotato_visual_id: b44da5ad-7bce-46f8-afd8-db093cca06fe
+      alt_text: "Coal black leather sneaker with illustrated faux leather panel and white sole, studio product shot"
+      price_usd: 90
+      dev_listing_id: 69faae4f-42cb-4835-a2eb-6450286ce83b
+      shopatmela_url: https://www.shopatmela.com/l/69faae4f-42cb-4835-a2eb-6450286ce83b
+
+    - name: Bageecha Loafers Men – Coal
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bac9e7ce-ad8f-4656-916a-a8cc3b9f46d2.jpg
+      blotato_visual_id: b44da5ad-7bce-46f8-afd8-db093cca06fe
+      alt_text: "Coal black leather loafer with illustrated faux leather panel and brass rivet, studio product shot"
+      price_usd: 90
+      dev_listing_id: 6a12839f-12ae-45e6-b351-95522e54c11e
+      shopatmela_url: https://www.shopatmela.com/l/6a12839f-12ae-45e6-b351-95522e54c11e
+
+pinterest:
+  boards:
+    - name: Artisan Footwear
+      board_id: "1103593152379641541"
+
+  pins:
+    - name: Bageecha Brogues Men – Coal
+      status: staged   # staged | posted | scheduled | queued | excluded
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: "Bageecha Brogues | Handmade Indian Footwear"
+      description: "Coal black leather brogues with illustrated faux leather detailing, handmade by Banjaaran Studio in India. Engraved brass rivet, cushioned interior. Banjaaran Studio on Mela."
+      alt_text: "Coal black leather brogue shoe with illustrated faux leather panel and brass rivet detail, studio product shot"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-906a6d38-cd95-411c-8c0d-f4dad835eaf5.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a128386-2760-4843-ac38-ad8453f5a260
+      link: "https://www.shopatmela.com/l/6a128386-2760-4843-ac38-ad8453f5a260?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=bageecha_brogues_coal"
+
+    - name: Bageecha Core Sneaker – Coal
+      status: staged
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: "Bageecha Core Sneaker | Handmade Leather Sneaker"
+      description: "Coal black leather sneaker with illustrated faux leather panel, handmade by Banjaaran Studio in India. Comfortable everyday style. Banjaaran Studio on Mela."
+      alt_text: "Coal black leather sneaker with illustrated faux leather panel and white sole, studio product shot"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-23323b93-e673-4ec6-90d3-351222cbc47e.jpg
+      shopatmela_url: https://www.shopatmela.com/l/69faae4f-42cb-4835-a2eb-6450286ce83b
+      link: "https://www.shopatmela.com/l/69faae4f-42cb-4835-a2eb-6450286ce83b?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=bageecha_core_sneaker_coal"
+
+    - name: Bageecha Loafers Men – Coal
+      status: staged
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: "Bageecha Loafers | Handmade Indian Leather Loafers"
+      description: "Coal black leather loafers with illustrated faux leather detailing, handmade by Banjaaran Studio in India. Versatile for work or weekend. Banjaaran Studio on Mela."
+      alt_text: "Coal black leather loafer with illustrated faux leather panel and brass rivet, studio product shot"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0ab29940-7bf6-497c-a91a-d3b1ba4df73c.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a12839f-12ae-45e6-b351-95522e54c11e
+      link: "https://www.shopatmela.com/l/6a12839f-12ae-45e6-b351-95522e54c11e?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=bageecha_loafers_coal"
+
+ux_review:
+  destination_url: https://shopatmela.com/brands/banjaaran-studio
+  checks:
+    brand_story: { result: tbd, note: "Not checked live in this session (direct egress to shopatmela.com blocked); blotato_create_source confirmed the 3 product listing pages are live and open, brand page itself not separately checked." }
+    artisan_details: { result: tbd, note: "Same limitation as above." }
+    cultural_context: { result: tbd, note: "Same limitation as above." }
+    aesthetic_match: { result: tbd, note: "Same limitation as above." }
+    product_findability: { result: pass, note: "Product names included in caption." }
+    mobile_responsive: { result: tbd, note: "Needs verification." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+notes:
+  category_note: "First-ever Banjaaran Studio post; all-footwear coal colorway carousel."
+  copy_quality: "No dashes used to join clauses, no @tags, no 'Mela ships', brand named as the shipping actor."
+  shipping_clarity: "Ships to the US from Banjaaran Studio."
+  cooldown: "clear — none of the 3 dev_listing_ids appear in any prior campaign log across all 16 brand folders (checked 2026-09-29)."
+  verification: "All 3 listing URLs confirmed live/open via blotato_create_source fetch of shopatmela.com/l/{id} (direct browser fetch blocked by this session's network egress policy)."
+  7b_attach_scene: "SKIPPED — needs Sharetribe credentials not available in this cloud session. Founder to run locally: node product-listing-integration/scripts/attach-social-scene.js --dev --csv banjaaranstudio_products_classified.csv --listing-id <id> --image-url <clean-scene-url> --dry-run"
