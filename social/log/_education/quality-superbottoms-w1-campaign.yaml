@@ -1,0 +1,104 @@
+---
+# quality-superbottoms education carousel — staged 2026-09-30 weekly staging run.
+# Topic id: quality-superbottoms (education-topics.yaml, trust_service, verify:true).
+# Paired thematically with this week's SuperBottoms brand row (log/superbottoms/week-1-campaign.yaml)
+# per social-launch SKILL.md Phase 1 replenishment step 4 ("favor brands already in this week's
+# product-post lineup"). Cards rendered 2026-09-30 via HTML/CSS -> PNG (headless Chromium, no
+# Blotato credits) per visual-style-guide.md Tool decision procedure.
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: null
+status: staged   # staged | scheduled | published — NOT scheduled by this automated run
+platforms:
+  - instagram
+format: carousel
+persona: Sarah
+category: trust_service
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education content (trust_service) is always Full lane
+hypothesis: "Angle 4 (claim-decoded: GOTS certification) with Sarah lead, using the exact hook-engineering.md §7 swipe-file line — does naming a specific certification outperform a generic 'natural/eco-friendly' baby-product claim?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps below — NOT a clean ship
+coaching_notes: >
+  Diaspora anchor: not applicable / not the primary lever for this tile by design — angle 4
+  (claim-decoded) leads with certification specificity for Sarah, not a diaspora situation.
+  This is expected, not a defect (see hook-engineering.md angle table). Slide 1 is a hook
+  card (not a product), navy+marigold not needed here (uses the cream/navy hook-card style
+  consistent with the existing cert-decode carousel). Visual system correctly kept
+  brand-agnostic-capable content brand-SPECIFIC this time (names SuperBottoms + GOTS)
+  because the claim is directly verifiable against that brand's own product copy — see
+  verify_note below.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  listing_live_check: >
+    NOT PERFORMED. shopatmela.com is blocked by this cloud session's network egress proxy.
+    The GOTS-certified organic cotton claim below is sourced from SuperBottoms' own Shopify
+    product description (scraped CSV: "Dry Feel Magic Pad consists of 12 layers... of GOTS
+    Certified 100% Organic Cotton") plus shopify_brands.py's brand_story, per the
+    verify-before-caption rule and education-topics.yaml's verify:true requirement — but
+    this is the brand's OWN site copy, not the live shopatmela.com listing. Founder should
+    re-confirm the GOTS claim reads the same on the live listing before approving.
+  render_qc_check: >
+    Rendered locally via headless Chromium (not Blotato — no vendor dependency for this
+    text-only education asset), so there is no "cannot view the render" gap here the way
+    there is for the Blotato product visuals. Renders are checked into
+    log/_education/quality-superbottoms/renders/*.png and were visually reviewed at
+    generation time (legible, watermark present, no overflow/clipping at 1080x1080).
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: https://shopatmela.com/brands/superbottoms?utm_source=instagram&utm_medium=social&utm_campaign=quality-superbottoms_w1&utm_content=education_materials_safety
+  topic: "quality-superbottoms — Materials & safety behind reusable baby products"
+  visual_system: "Education (HTML cards, cream/navy hook-card style). Slide 1 = hook card, not a product. Myth-vs-fact close doubles as the CTA slide (trust_service payoff = no product, per Education Visual System)."
+  slides:
+    - name: hook
+      image_render: log/_education/quality-superbottoms/renders/slide1-hook.png
+      image_url: null   # not uploaded to Blotato storage this run — staged as local PNG only
+    - name: teaching
+      image_render: log/_education/quality-superbottoms/renders/slide2-teaching.png
+      image_url: null
+    - name: myth_vs_fact_cta
+      image_render: log/_education/quality-superbottoms/renders/slide3-payoff.png
+      image_url: null
+  alt_text: "Text slide: Organic on a baby label means almost nothing on its own. Here's the certification that actually does."
+  caption: |
+    "Organic" on a baby label means almost nothing on its own. Here is the certification that actually does.
+
+    GOTS certified means no harmful synthetic dyes or bleach touch the cotton fiber, and every stage from farm to fabric is independently audited, not self declared. SuperBottoms' Dry Feel Magic Pads use GOTS certified 100% organic cotton for the layer that actually sits against your baby's skin.
+
+    That is the difference between a marketing word and a fact you can check.
+
+    Discover SuperBottoms on Mela →
+
+    #ClothDiapering #GOTSCertified #OrganicCotton #BabySafety #ConsciousParenting
+
+# UX REVIEW (education content, brand-anchored this time — points at the brand page)
+ux_review:
+  destination_url: https://shopatmela.com/brands/superbottoms
+  checks:
+    cultural_context: { result: tbd, note: "Not checked — shopatmela.com unreachable from cloud sandbox this run." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  verify_note: >
+    GOTS (Global Organic Textile Standard) is a real, independently-audited, lookup-able
+    certification. The specific claim "SuperBottoms' Dry Feel Magic Pads use GOTS certified
+    100% organic cotton" is sourced verbatim in substance from that product's own Shopify
+    description (Mela-scrapper-integrations classified CSV) and is consistent with
+    shopify_brands.py's brand_story. NOT confirmed against the live shopatmela.com listing
+    (see verification_gaps.listing_live_check) — founder must do this before approving,
+    per education-topics.yaml's verify:true requirement for this topic.
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (this is an automated staging run)."
