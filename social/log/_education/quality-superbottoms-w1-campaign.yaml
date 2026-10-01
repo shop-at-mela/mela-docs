@@ -9,8 +9,8 @@
 brand: null
 brand_slug: _education
 week: 1
-date_posted: null
-status: staged   # staged | scheduled | published — NOT scheduled by this automated run
+date_posted: 2026-10-06   # first scheduled post (all times UTC); scheduled 2026-10-01 from a local founder session
+status: scheduled   # staged | scheduled | published — scheduled in Blotato 2026-10-01; flip to published after go-live
 platforms:
   - instagram
 format: carousel
@@ -20,7 +20,24 @@ category: trust_service
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: full   # education content (trust_service) is always Full lane
 hypothesis: "Angle 4 (claim-decoded: GOTS certification) with Sarah lead, using the exact hook-engineering.md §7 swipe-file line — does naming a specific certification outperform a generic 'natural/eco-friendly' baby-product claim?"
-gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps below — NOT a clean ship
+gate_verdict: SHIP-VERIFIED-LOCALLY   # listing-live + render QC done 2026-10-01 — see shipped.verification (supersedes verification_gaps below)
+
+# SHIPPED — what was actually scheduled (2026-10-01). Fields below this block are AS STAGED by the cloud
+# run; where they differ, this block wins.
+shipped:
+  scheduled_by: founder local session (Claude Code) via Blotato; nothing auto-published
+  verification:
+    listing_live: "GOTS 100% organic cotton claim confirmed on the live Dry Feel Magic Pads listing (6a129358…) 2026-10-01."
+    render_qc: "Slide 3 had a ~90px white strip at the bottom (old headless render); slide 2's last line collided with the watermark; slide 1 headline wrapped badly. All three re-rendered 2026-10-01 (renders/ updated in this PR)."
+  instagram:
+    schedule_id: "5041948"
+    submission_id: 2a1eba0c-9079-4ec8-9eb9-aad2c9533d8e
+    scheduled_at: 2026-10-06T17:00:00Z
+  reddit: not built (IG only)
+  slide_urls:
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/400bd5fa-f4f1-4e76-92a1-6c3d432fe3a5.png
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/3f7cac7d-13e7-4bca-9382-ec62639d399d.png
+    - https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/6f8204b5-3b6f-425b-8f45-5368f41a7a37.png
 coaching_notes: >
   Diaspora anchor: not applicable / not the primary lever for this tile by design — angle 4
   (claim-decoded) leads with certification specificity for Sarah, not a diaspora situation.

@@ -4,8 +4,8 @@
 brand: SuperBottoms
 brand_slug: superbottoms
 week: 1
-date_posted: null   # not yet scheduled — STAGED for founder approval, 2026-09-30 weekly staging run
-status: staged       # staged | scheduled | published (NOT scheduled or published by this automated run)
+date_posted: 2026-10-04   # first scheduled post (all times UTC); scheduled 2026-10-01 from a local founder session
+status: scheduled   # staged | scheduled | published — scheduled in Blotato 2026-10-01; flip to published after go-live
 platforms:
   - instagram
   - pinterest
@@ -16,7 +16,30 @@ category: baby_and_kids
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: full   # brand's first-ever post on Mela + a material/safety claim (GOTS certified) -> FULL lane per pre-publish-gate.md Step 0
 hypothesis: "Angle 5 (occasion-in-America: family flying in for a newborn) with Priya lead on a first-time trust/materials brand — does situational relief outperform a generic 'safe for baby' claim?"
-gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps below — NOT a clean ship
+gate_verdict: SHIP-VERIFIED-LOCALLY   # listing-live + render QC done 2026-10-01 — see shipped.verification (supersedes verification_gaps below)
+
+# SHIPPED — what was actually scheduled (2026-10-01). Fields below this block are AS STAGED by the cloud
+# run; where they differ, this block wins.
+shipped:
+  scheduled_by: founder local session (Claude Code) via Blotato; nothing auto-published
+  verification:
+    listing_live: "Checked 2026-10-01 via blotato_create_source (server-side fetch of shopatmela.com). Langot, Magic Pads: live. Baby Hearts Newborn UNO Diaper (697c1d47…): CLOSED ('Sorry, this listing has been closed') — founder chose to post it anyway; mark out-of-stock with product-listing-integration scripts/mark-out-of-stock.js."
+    render_qc: "6 Blotato renders downloaded and inspected: no morph/garble. Watermark was absent, so 'Discovered on Mela' was composited locally (templates/photo-watermark.html, Chromium) onto all 6."
+    open_item: "Langot render shows a bunny-print tie langot; caption/pin name it 'Bummy World' — print name not confirmed against the listing."
+  instagram:
+    schedule_id: "5041947"
+    submission_id: 1fcf09c1-950b-484f-aa31-8e96cccc228d
+    scheduled_at: 2026-10-04T17:00:00Z
+    slides: 3   # diaper (initially dropped, re-added at founder request), langot, pads
+    caption_change: "Hook rewritten from the 'mother flying in' newborn anchor to 'The layer that touches your baby's skin is the one worth checking' (GOTS pads); user-identity/Indian labels avoided."
+  pinterest_pins:
+    - {name: Dry Feel Magic Pads, scheduled_at: 2026-10-03T18:00:00Z, schedule_id: "5041968", submission_id: d1cdafb8-6841-4483-bff4-02cb715a7ce9}
+    - {name: DryFeel Langot, scheduled_at: 2026-10-04T18:00:00Z, schedule_id: "5041971", submission_id: 3fef4ac6-fcc1-4e14-9783-5a0aa864cdbd}
+    - {name: Baby Hearts Newborn UNO Diaper, scheduled_at: 2026-10-07T18:00:00Z, submission_id: e80d58e8-bd46-421e-bd83-92172bbcee41, note: "links to a CLOSED listing"}
+  watermarked_images:
+    diaper: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/4fe0480a-f1bf-4078-aa7a-f5d3f44971a9.png
+    langot: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/fcd6276b-358c-4fb4-8f54-d08dbc429271.png
+    pads: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/4d5b464d-4be4-4454-8931-ab0caa307ddd.png
 coaching_notes: >
   Diaspora anchor (the loud one): strong — hook stages a specific diaspora situation (a
   parent's mother flying in from India for the newborn's early weeks), not just a product

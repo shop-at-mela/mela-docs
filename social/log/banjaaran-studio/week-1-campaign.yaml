@@ -4,8 +4,8 @@
 brand: Banjaaran Studio
 brand_slug: banjaaran-studio
 week: 1
-date_posted: null
-status: staged       # staged | scheduled | published (NOT scheduled or published by this automated run)
+date_posted: 2026-10-02   # first scheduled post (all times UTC); scheduled 2026-10-01 from a local founder session
+status: scheduled   # staged | scheduled | published — scheduled in Blotato 2026-10-01; flip to published after go-live
 platforms:
   - instagram
   - pinterest
@@ -16,7 +16,30 @@ category: fashion
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: full   # brand's first-ever post on Mela + a handloom textile craft claim (Ikat Mules) -> FULL lane per pre-publish-gate.md Step 0
 hypothesis: "Angle 3 (how it's actually made: ikat handloom textile applied to footwear, a novel combination) with Arun lead — does a craft-surprise hook outperform a generic artisan-footwear hook?"
-gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps below — NOT a clean ship
+gate_verdict: SHIP-VERIFIED-LOCALLY   # listing-live + render QC done 2026-10-01 — see shipped.verification (supersedes verification_gaps below)
+
+# SHIPPED — what was actually scheduled (2026-10-01). Fields below this block are AS STAGED by the cloud
+# run; where they differ, this block wins.
+shipped:
+  scheduled_by: founder local session (Claude Code) via Blotato; nothing auto-published
+  verification:
+    listing_live: "All 3 live on 2026-10-01 (blotato_create_source). Ikat handloom + black genuine leather confirmed for the Mules. Callidus is 'illustrated FAUX leather' on the listing."
+    render_qc: "3 Blotato renders inspected: no morph/garble. Watermark composited locally onto all 3."
+  caption_changes:
+    - "Callidus described as 'hand-illustrated' (not 'illustrated leather') — listing says illustrated faux leather."
+    - "Removed 'finished by hand at the studio in Jaipur' and the brand-story kantha/block-print list — not supported by the listings."
+  instagram:
+    schedule_id: "5041940"
+    submission_id: 77aab577-8c68-4e43-9f5d-e891d64fcb1a
+    scheduled_at: 2026-10-02T17:00:00Z
+  pinterest_pins:
+    - {name: Ikat Mules Coal, scheduled_at: 2026-10-02T18:00:00Z, schedule_id: "5041950", submission_id: df692627-32bd-4956-8a4a-bcb505930fb9}
+    - {name: Callidus Loafers, scheduled_at: 2026-10-05T18:00:00Z, schedule_id: "5041974", submission_id: d593497f-92e2-4cb2-9b04-ecae07b277e2}
+    - {name: Leon Loafers Olive, scheduled_at: 2026-10-06T18:00:00Z, schedule_id: "5041977", submission_id: f4a63f7f-10a7-408a-b85c-b126b10a6381}
+  watermarked_images:
+    ikat_mules: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/622f9925-ed35-49ab-b86d-8b6989024d05.png
+    callidus: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/0b5b69f6-0259-4871-92c7-41bb1cccb6f0.png
+    leon: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cd73fbbf-b553-4a37-91cc-645aafc87f07.png
 coaching_notes: >
   Diaspora anchor (the loud one): WEAK on this tile — the hook is craft-surprise/curiosity
   led (angle 3), not a diaspora-situation hook. Flagging explicitly per
