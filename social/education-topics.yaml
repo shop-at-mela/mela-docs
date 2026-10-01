@@ -106,7 +106,19 @@ topics:
     personas: [sarah]
     source_brands: [superbottoms]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # SuperBottoms' own week-1 batch; staged 2026-09-30 weekly staging run, paired
+                  # with the SuperBottoms brand row. NOTE: this file's week_used numbering is
+                  # inconsistent across entries (e.g. ship-01 says "week-3" on 2026-08-06 while
+                  # craftknitwear-01 says "week 1" on the later 2026-09-06 batch) — treat as a
+                  # per-pairing label, not a reliable global counter, until reconciled.
+    note: >
+      Selected 2026-09-30 automated staging run. GOTS certified organic cotton claim
+      verified against SuperBottoms' own Shopify product description (classified CSV) +
+      shopify_brands.py brand_story, NOT against the live shopatmela.com listing
+      (shopatmela.com was unreachable from the cloud sandbox this run — see
+      social/log/_education/quality-superbottoms-w1-campaign.yaml verification_gaps).
+      Reddit leg not built this run (IG only).
 
   - id: quality-fizzy
     type: trust_service

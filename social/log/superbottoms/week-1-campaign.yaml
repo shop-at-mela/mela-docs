@@ -1,0 +1,172 @@
+# Mela Social Campaign — YAML Format (see CAMPAIGN_TEMPLATE.yaml)
+---
+# METADATA
+brand: SuperBottoms
+brand_slug: superbottoms
+week: 1
+date_posted: null   # not yet scheduled — STAGED for founder approval, 2026-09-30 weekly staging run
+status: staged       # staged | scheduled | published (NOT scheduled or published by this automated run)
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Priya
+category: baby_and_kids
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # brand's first-ever post on Mela + a material/safety claim (GOTS certified) -> FULL lane per pre-publish-gate.md Step 0
+hypothesis: "Angle 5 (occasion-in-America: family flying in for a newborn) with Priya lead on a first-time trust/materials brand — does situational relief outperform a generic 'safe for baby' claim?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps below — NOT a clean ship
+coaching_notes: >
+  Diaspora anchor (the loud one): strong — hook stages a specific diaspora situation (a
+  parent's mother flying in from India for the newborn's early weeks), not just a product
+  fact or the shopper's identity. First-frame/hook: carousel cover leads with the Baby
+  Hearts Newborn UNO Diaper (product-forward per grid.enabled=false rule). Motion: N/A
+  (static carousel, no reel per this routine's carousels-only guardrail).
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving (see staging/week-of-2026-09-30.md banner for full detail)
+verification_gaps:
+  listing_live_check: >
+    NOT PERFORMED. shopatmela.com is blocked by this cloud session's network egress proxy
+    (confirmed via WebFetch + curl, both apex and www host — EGRESS_BLOCKED). Could not open
+    https://shopatmela.com/l/{dev_listing_id} for any of the 3 products below to confirm the
+    live text. Founder must open each listing URL below and confirm it is live/open before
+    approving. Everything else (in-stock status, dev_listing_id, images, material claims) is
+    sourced from Mela-scrapper-integrations classified CSV (In Stock rows only) + the
+    authoritative shopify_brands.py brand_story, per social-launch SKILL.md Phase 1's
+    verify-before-caption rule — but that is not a substitute for the live-listing check.
+  render_qc_check: >
+    NOT PERFORMED. database.blotato.io (where Blotato hosts rendered visuals) is also
+    blocked by the same network egress proxy, so the rendered Product Scene Placement
+    images below could not be visually inspected for morphing, color drift, garbled text,
+    or watermark presence/contrast (pre-publish-gate.md Step 1, rows 16-21). Source product
+    photos are real (scraped from the brand's own Shopify CDN, not AI-generated) and the
+    scene prompts included an explicit "keep the product's exact shape/print/color
+    unchanged" instruction, but the actual rendered output is unverified. Founder must
+    open each blotato_visual image_url below before scheduling.
+  brand_slug_url: >
+    https://shopatmela.com/brands/superbottoms is derived from the brand name via the
+    kebab-case convention observed in every prior campaign log (never independently
+    confirmed — shopatmela.com unreachable this run). Verify it resolves before scheduling.
+
+# INSTAGRAM
+instagram:
+  submission_id: null   # not submitted — staged only
+  destination: https://shopatmela.com/brands/superbottoms?utm_source=instagram&utm_medium=social&utm_campaign=superbottoms_w1&utm_content=brand_carousel
+  caption: |
+    Your mother is flying in for the baby's first weeks. Skip the guesswork on what actually touches this newborn's skin.
+
+    SuperBottoms designs reusable cloth diapers and langots in India, built for leak proof comfort from day one. The Dry Feel pads use GOTS certified organic cotton against your baby's skin. The waterproof outer handles the mess without the guesswork.
+
+    Featured in this carousel:
+    • Baby Hearts Newborn UNO Cloth Diaper
+    • DryFeel Langot, Bummy World
+    • Dry Feel Magic Pads (Pack of 2)
+
+    Discover SuperBottoms on Mela →
+
+    Ships to the US from SuperBottoms.
+    #ClothDiapering #IndianBabyBrands #ReusableDiapers #DesiParents #NewbornEssentials
+
+  products:
+    - name: Baby Hearts Newborn UNO Cloth Diaper
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-842fcd03-5b34-4763-9dc0-ee81d64a47b0.jpg
+      blotato_visual_id: 9fe331ec-3398-40a0-a661-c2c859914be5
+      source_image_url: https://cdn.shopify.com/s/files/1/0402/7370/7171/files/with_pad_4dc380f0-b4fa-418a-a0ed-6d030f8ca1aa.webp?v=1753251344
+      alt_text: Folded reusable cloth diaper with heart print on warm neutral linen beside a newborn waterproof outer
+      price_usd: 5.64   # INR 468 / 83
+      dev_listing_id: 697c1d47-56ae-4875-94ba-3ffb464d135e
+      shopatmela_url: https://www.shopatmela.com/l/697c1d47-56ae-4875-94ba-3ffb464d135e
+      listing_live_verified: false   # see verification_gaps.listing_live_check
+
+    - name: DryFeel Langot, Bummy World
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5cd1ec37-15d9-4db5-9c21-5868f4cb0f30.jpg
+      blotato_visual_id: 171e4779-e7dc-4edc-a634-d37914f19cac
+      source_image_url: https://cdn.shopify.com/s/files/1/0402/7370/7171/files/1_17e6bc93-47d1-408d-a624-e04d69548cea.jpg?v=1772614923
+      alt_text: Cotton padded baby langot with playful Bummy World print laid flat on warm linen with a woven basket nearby
+      price_usd: 12.40   # INR 1029 / 83
+      dev_listing_id: 6a1293a7-eb86-4693-a443-1747ab378dc6
+      shopatmela_url: https://www.shopatmela.com/l/6a1293a7-eb86-4693-a443-1747ab378dc6
+      listing_live_verified: false
+
+    - name: Dry Feel Magic Pads (Pack of 2)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6c49d22c-4586-42c6-991f-3bd3147bac34.jpg
+      blotato_visual_id: dbf7ee6b-0c6b-43da-b555-7bf62f39c863
+      source_image_url: https://cdn.shopify.com/s/files/1/0402/7370/7171/files/soaker-9.jpg?v=1692601404
+      alt_text: Folded organic cotton cloth diaper insert pads stacked on warm linen beside a small ceramic dish
+      price_usd: 5.57   # INR 462 / 83
+      dev_listing_id: 6a129358-a7e7-4508-bfea-a6b2f4a8ab9e
+      shopatmela_url: https://www.shopatmela.com/l/6a129358-a7e7-4508-bfea-a6b2f4a8ab9e
+      listing_live_verified: false
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Modern Indian Nursery
+      board_id: "1103593152379723629"
+    - name: Organic Indian Baby Clothes & Essentials
+      board_id: "1103593152379723630"
+
+  pins:
+    - name: Baby Hearts Newborn UNO Cloth Diaper
+      status: excluded   # staged only — not submitted this run
+      submission_id: null
+      board_id: "1103593152379723629"
+      title: Reusable Cloth Diaper for Newborns | SuperBottoms Dry Feel
+      description: Reusable, washable cloth diaper for newborns. All cloth, no harmful chemicals against baby's skin. Designed in India by SuperBottoms. Discover on Mela.
+      alt_text: Folded reusable cloth diaper with heart print on warm neutral linen beside a newborn waterproof outer
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-842fcd03-5b34-4763-9dc0-ee81d64a47b0.jpg
+      shopatmela_url: https://www.shopatmela.com/l/697c1d47-56ae-4875-94ba-3ffb464d135e
+      link: https://www.shopatmela.com/l/697c1d47-56ae-4875-94ba-3ffb464d135e?utm_source=pinterest&utm_medium=social&utm_campaign=superbottoms_w1&utm_content=baby_hearts_newborn_uno_diaper
+
+    - name: DryFeel Langot, Bummy World
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723629"
+      title: Cotton Padded Baby Langot | Bummy World Print, SuperBottoms
+      description: Breathable cotton padded langot for babies, gentle on delicate skin with a playful Bummy World print. Designed in India by SuperBottoms. Discover on Mela.
+      alt_text: Cotton padded baby langot with playful Bummy World print laid flat on warm linen with a woven basket nearby
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5cd1ec37-15d9-4db5-9c21-5868f4cb0f30.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a1293a7-eb86-4693-a443-1747ab378dc6
+      link: https://www.shopatmela.com/l/6a1293a7-eb86-4693-a443-1747ab378dc6?utm_source=pinterest&utm_medium=social&utm_campaign=superbottoms_w1&utm_content=dryfeel_langot_bummy_world
+
+    - name: Dry Feel Magic Pads (Pack of 2)
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723630"
+      title: GOTS Certified Organic Cotton Diaper Pads | SuperBottoms
+      description: GOTS certified 100% organic cotton Dry Feel Magic Pads for the SuperBottoms UNO diaper system. Foldable and quick drying. Discover on Mela.
+      alt_text: Folded organic cotton cloth diaper insert pads stacked on warm linen beside a small ceramic dish
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6c49d22c-4586-42c6-991f-3bd3147bac34.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a129358-a7e7-4508-bfea-a6b2f4a8ab9e
+      link: https://www.shopatmela.com/l/6a129358-a7e7-4508-bfea-a6b2f4a8ab9e?utm_source=pinterest&utm_medium=social&utm_campaign=superbottoms_w1&utm_content=dry_feel_magic_pads
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/superbottoms
+  checks:
+    brand_story: { result: tbd, note: "Not checked — shopatmela.com unreachable from cloud sandbox this run." }
+    artisan_details: { result: tbd, note: "Not checked (see above)." }
+    cultural_context: { result: tbd, note: "Not checked (see above)." }
+    aesthetic_match: { result: tbd, note: "Not checked (see above)." }
+    product_findability: { result: tbd, note: "Not checked (see above)." }
+    mobile_responsive: { result: tbd, note: "Not checked (see above)." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  brand_first_post: true
+  category_note: "SuperBottoms is a brand-new addition (baby_and_kids); never previously featured. First product row this batch."
+  copy_quality: "GOTS certification claim sourced from the brand's own Shopify product description (scraped CSV), cross-checked against shopify_brands.py brand_story (reusable cloth diaper movement, stay-dry tech). Not confirmed against the live shopatmela.com listing text — see verification_gaps."
+  cooldown_check: "CLEAR — none of the 3 dev_listing_ids above appear in any existing campaign log (grepped social/log/**/*.yaml)."
+  category_concentration_check: "CLEAR — most recent confirmed batch (2026-09-06/07) featured home_and_kitchen (Pluchi) + education; this batch's baby_and_kids + fashion rows do not repeat 3x same category."
+  persona_fatigue_check: "UNABLE TO FULLY RECONSTRUCT exact last-5-posts order from logs (dates are inconsistent/missing across some entries). Sarah appears 3x in nearby history (Vilvah w1, Vilvah w2, The Alternate w2) plus this batch's education tile — flagged for founder spot-check, not blocking."
+  team_feedback: "STAGED — awaiting founder approval + wife grid-shape sign-off."

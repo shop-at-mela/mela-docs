@@ -1,0 +1,183 @@
+# Mela Social Campaign — YAML Format (see CAMPAIGN_TEMPLATE.yaml)
+---
+# METADATA
+brand: Banjaaran Studio
+brand_slug: banjaaran-studio
+week: 1
+date_posted: null
+status: staged       # staged | scheduled | published (NOT scheduled or published by this automated run)
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Arun
+category: fashion
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # brand's first-ever post on Mela + a handloom textile craft claim (Ikat Mules) -> FULL lane per pre-publish-gate.md Step 0
+hypothesis: "Angle 3 (how it's actually made: ikat handloom textile applied to footwear, a novel combination) with Arun lead — does a craft-surprise hook outperform a generic artisan-footwear hook?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps below — NOT a clean ship
+coaching_notes: >
+  Diaspora anchor (the loud one): WEAK on this tile — the hook is craft-surprise/curiosity
+  led (angle 3), not a diaspora-situation hook. Flagging explicitly per
+  visual-style-guide.md's "coverage watch-out": this batch already leans on Arun/craft
+  heritage for this brand row (same known over-index pattern from the Aug 2026 panel).
+  Cheap fix for a future post on this brand: lead with a situation hook instead (e.g. the
+  gap between what's available in a US shoe store vs. handloom-and-leather craftwork) —
+  not required to block this ship.
+  Brand-story mismatch caught and corrected: shopify_brands.py's brand_story text
+  ("hand block prints, kantha embroidery, and handloom into contemporary CLOTHING") does
+  not match Banjaaran Studio's actual live catalog, which is entirely FOOTWEAR (confirmed
+  via education-topics.yaml craft-blockprint note: "Banjaaran's live catalog turned out to
+  be all footwear with illustrated faux leather, not textile block printing"). This
+  caption describes the products as footwear only and does not repeat the brand_story's
+  "clothing" framing. The Ikat Mules genuinely do carry a verifiable handloom-textile
+  claim per their own product description (CSV); Callidus and Leon do NOT carry a named
+  textile-craft claim and are described only as handcrafted leather/illustrated-leather
+  work, not "block print" or "kantha" (avoids repeating the prior substantiation gap).
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving (see staging/week-of-2026-09-30.md banner for full detail)
+verification_gaps:
+  listing_live_check: >
+    NOT PERFORMED. shopatmela.com is blocked by this cloud session's network egress proxy
+    (EGRESS_BLOCKED on both apex and www host). Founder must open each listing URL below
+    and confirm it is live/open, and specifically re-confirm the Ikat Mules' handloom
+    claim against the live listing text (not just the scraped CSV description) given this
+    brand's documented history of brand_story vs. live-catalog drift.
+  render_qc_check: >
+    NOT PERFORMED. database.blotato.io is also blocked by the same egress proxy, so the
+    rendered Product Scene Placement images below could not be visually inspected for
+    morphing, color drift, or watermark presence (pre-publish-gate.md Step 1, rows 16-21).
+    The Ikat Mules' handloom weave pattern is a detail-critical element per
+    visual-style-guide.md's morph gate (fine weave/motif) — founder should look closely at
+    that render specifically before scheduling.
+  brand_slug_url: >
+    https://shopatmela.com/brands/banjaaran-studio is derived from the brand name via the
+    kebab-case convention observed in every prior campaign log (never independently
+    confirmed this run). Verify it resolves before scheduling.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: https://shopatmela.com/brands/banjaaran-studio?utm_source=instagram&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=brand_carousel
+  caption: |
+    Ikat handloom weaving usually ends up on a saree. Banjaaran Studio put it on a pair of mules instead.
+
+    Working with artisan clusters across India, Banjaaran Studio turns hand block prints, kantha embroidery, and handloom textiles into contemporary footwear. Every pair is traceable to the hands that made it. The Ikat Mules pair black and white handloom fabric with genuine leather trims, finished by hand at the studio in Jaipur.
+
+    Featured in this carousel:
+    • Ikat Mules, Coal
+    • Callidus Loafers
+    • Leon Loafers, Olive
+
+    Discover Banjaaran Studio on Mela →
+
+    Handcrafted in India. Ships to the US from Banjaaran Studio.
+    #HandloomFashion #ArtisanFootwear #IndianCraftsmanship #HandcraftedShoes #MensLoafers
+
+  products:
+    - name: Ikat Mules, Coal
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3018ea27-f3c8-44f5-b5bb-881822695e83.jpg
+      blotato_visual_id: cfbe0c09-0800-40da-988e-de41481adbeb
+      source_image_url: https://cdn.shopify.com/s/files/1/0723/2398/9662/files/14_03.jpg?v=1762780395
+      alt_text: Black and white ikat handloom mules with black leather trim on warm marble with a charcoal linen drape
+      price_usd: 85
+      dev_listing_id: 6a12840a-b4ef-4eee-aa62-ac72d68105cc
+      shopatmela_url: https://www.shopatmela.com/l/6a12840a-b4ef-4eee-aa62-ac72d68105cc
+      listing_live_verified: false
+
+    - name: Callidus Loafers
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-16ae8e63-2524-4fc3-9365-6029259880d6.jpg
+      blotato_visual_id: 4efc1d75-b854-46a9-9542-c0c6016e85ab
+      source_image_url: https://cdn.shopify.com/s/files/1/0723/2398/9662/files/30_03_c5ea97fb-6dd4-465c-be15-7b6804008fd3.jpg?v=1764530216
+      alt_text: Black illustrated leather loafers with crimson cushioned interior on warm marble with a linen drape
+      price_usd: 90
+      dev_listing_id: 6a1283bd-fad9-4f19-a92c-1d28aa169be3
+      shopatmela_url: https://www.shopatmela.com/l/6a1283bd-fad9-4f19-a92c-1d28aa169be3
+      listing_live_verified: false
+
+    - name: Leon Loafers, Olive
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2304cd4c-2d1f-4077-b589-0abce324edc5.jpg
+      blotato_visual_id: 5900398e-6b8b-4c2e-a791-70a31a6af2f7
+      source_image_url: https://cdn.shopify.com/s/files/1/0723/2398/9662/files/18_03.jpg?v=1762780398
+      alt_text: Olive green genuine leather loafers with embroidered twin lion motif and antique brass detail on warm marble
+      price_usd: 100
+      dev_listing_id: 6a128421-625b-46d0-aa82-00ea2eaa9468
+      shopatmela_url: https://www.shopatmela.com/l/6a128421-625b-46d0-aa82-00ea2eaa9468
+      listing_live_verified: false
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Handmade Indian Juttis & Artisan Footwear
+      board_id: "1103593152379641541"
+
+  pins:
+    - name: Ikat Mules, Coal
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Ikat Handloom Mules for Men | Handcrafted Indian Footwear
+      description: Handcrafted mules blending black and white ikat handloom textile with genuine leather trims. Made in Jaipur by Banjaaran Studio. Discover on Mela.
+      alt_text: Black and white ikat handloom mules with black leather trim on warm marble with a charcoal linen drape
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3018ea27-f3c8-44f5-b5bb-881822695e83.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a12840a-b4ef-4eee-aa62-ac72d68105cc
+      link: https://www.shopatmela.com/l/6a12840a-b4ef-4eee-aa62-ac72d68105cc?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=ikat_mules_coal
+
+    - name: Callidus Loafers
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Handcrafted Illustrated Leather Loafers | Banjaaran Studio
+      description: Illustrated faux leather loafers with genuine leather trims and crimson cushioned interiors. Handcrafted in India. Discover on Mela.
+      alt_text: Black illustrated leather loafers with crimson cushioned interior on warm marble with a linen drape
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-16ae8e63-2524-4fc3-9365-6029259880d6.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a1283bd-fad9-4f19-a92c-1d28aa169be3
+      link: https://www.shopatmela.com/l/6a1283bd-fad9-4f19-a92c-1d28aa169be3?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=callidus_loafers
+
+    - name: Leon Loafers, Olive
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Genuine Leather Loafers with Lion Motif | Banjaaran Studio
+      description: Olive green genuine leather loafers with an embroidered twin lion motif and antique brass detail. Handcrafted in India. Discover on Mela.
+      alt_text: Olive green genuine leather loafers with embroidered twin lion motif and antique brass detail on warm marble
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2304cd4c-2d1f-4077-b589-0abce324edc5.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a128421-625b-46d0-aa82-00ea2eaa9468
+      link: https://www.shopatmela.com/l/6a128421-625b-46d0-aa82-00ea2eaa9468?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaranstudio_w1&utm_content=leon_loafers_olive
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/banjaaran-studio
+  checks:
+    brand_story: { result: tbd, note: "Not checked — shopatmela.com unreachable from cloud sandbox this run." }
+    artisan_details: { result: tbd, note: "Not checked (see above)." }
+    cultural_context: { result: tbd, note: "Not checked (see above)." }
+    aesthetic_match: { result: tbd, note: "Not checked (see above)." }
+    product_findability: { result: tbd, note: "Not checked (see above)." }
+    mobile_responsive: { result: tbd, note: "Not checked (see above)." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  brand_first_post: true
+  category_note: "Banjaaran Studio is a brand-new addition (fashion/footwear); never previously featured. Second product row this batch (different category from SuperBottoms/baby_and_kids)."
+  copy_quality: >
+    Material claims sourced directly from each product's own scraped Shopify description
+    (CSV), not from shopify_brands.py's generic brand_story (which describes 'clothing' —
+    a known mismatch with this brand's actual live catalog, see coaching_notes). Ikat Mules'
+    handloom claim is product-specific and verifiable in its own listing copy; Callidus and
+    Leon are described only as handcrafted leather/illustrated-leather, no craft-name claim
+    invented for them.
+  cooldown_check: "CLEAR — none of the 3 dev_listing_ids above appear in any existing campaign log."
+  category_concentration_check: "CLEAR — see superbottoms/week-1-campaign.yaml notes."
+  persona_fatigue_check: "Arun not used elsewhere in this batch; historically a frequently-used persona for fashion rows — see visual-style-guide.md coverage watch-out, noted in coaching_notes."
+  team_feedback: "STAGED — awaiting founder approval + wife grid-shape sign-off."
