@@ -22,7 +22,9 @@ A PRD belongs in this folder if its deliverable is **knowledge rather than a sho
 | [crossshop-tracking-prd.md](crossshop-tracking-prd.md) | The `brand_clickout` event, `entry_source` capture, GTM/GA4/Clarity install. The instrumentation layer. |
 | [shopper-visibility-reporting-prd.md](shopper-visibility-reporting-prd.md) | Site search tracking, the potential shopper funnel, cross-shop explorations, Looker Studio. The reporting layer on top. |
 
-Read them in that order. The first defines what is captured, the second defines what is asked of it.
+| [basic-dashboards-prd.md](basic-dashboards-prd.md) | The "basics" dashboard: visitors, journey map, search terms, top products/brands, add-to-cart, shop-brand clickouts. Closes the product-view and brand-view event gaps. |
+
+Read the first two in that order. The first defines what is captured, the second defines what is asked of it. The third extends both with the everyday traffic and behavior view.
 
 ## Companion technical docs
 
