@@ -24,6 +24,8 @@ A PRD belongs in this folder if its deliverable is **knowledge rather than a sho
 
 | [basic-dashboards-prd.md](basic-dashboards-prd.md) | The "basics" dashboard: visitors, journey map, search terms, top products/brands, add-to-cart, shop-brand clickouts. Closes the product-view and brand-view event gaps. |
 
+| [utm-attribution-restoration-prd.md](utm-attribution-restoration-prd.md) | Stop stripping UTMs on the client and fix the canonical, so GA4's native source / medium / campaign attribution works for tagged social links. |
+
 Read the first two in that order. The first defines what is captured, the second defines what is asked of it. The third extends both with the everyday traffic and behavior view.
 
 ## Companion technical docs
