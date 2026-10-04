@@ -1,0 +1,163 @@
+---
+# House of Chikankari Week 2 — staged via automated cloud weekly run 2026-10-04
+# (social-staging/week-of-2026-10-04). Brand reused from week 1 (last posted 2026-08-17, >7 days
+# clear of brand_recency_days=7); all 3 products below are NEW dev_listing_ids never featured in
+# any prior campaign log (cooldown CLEAR). STATUS: staged for founder approval. No
+# blotato_create_post call was made.
+
+brand: House of Chikankari
+brand_slug: house-of-chikankari
+week: 2
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Arun
+category: fashion
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 2); hand-embroidery claim confirmed via SEO title + live listing for all 3 products
+hypothesis: "Angle 3 (how it's actually made) with Arun lead, varying product type within one brand (men's kurta + a kurta set + a simple short kurta) — does showing chikankari across a range of garments (not just one hero piece) out-save a single-product craft post?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps — copy + listing-live clear; watermark compositing genuinely not performed (blocked by infra)
+coaching_notes: >
+  Diaspora anchor: present but secondary — this tile leans on angle 3 (craft-surprise/curiosity:
+  "it's not a print, it's hand stitching") rather than a situation hook. Matches the brand's
+  craft-origin positioning from week 1. Flagged per the standing "coverage watch-out" note
+  (hook-engineering.md) that this account over-indexes on Arun/craft-heritage — this batch
+  balances it with Neha leading the Isharya tile and Sarah leading the education tile.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  listing_live_check: >
+    PERFORMED via blotato_create_source fallback (shopatmela.com direct fetch returns
+    EGRESS_BLOCKED 403 from this cloud sandbox). All 3 listings resolved to real, matching
+    product pages; SEO titles explicitly confirm "Shadow Hand-Embroidery" / "Features Chikankari
+    Craft" for all 3 (not just the brand-level claim). Treat as LISTING LIVE / OPEN — same
+    "No products available in this category" related-items caveat as isharya/week-2 applies and
+    was cross-validated the same way.
+  real_photo_not_blotato: >
+    All 3 source photos show the garment as worn (the Aryan kurta's own description states "Our
+    model is wearing size S and he is 6 feet tall") — per visual-style-guide.md Stage 0, garment-
+    drape-on-a-person is the hard real-photo line (diffusion warps faces + drape), so these were
+    NOT routed through Blotato Product Scene Placement. The CSV's own product photo is the
+    intended final visual, composited with the HTML watermark only.
+  watermark_compositing_not_performed: >
+    NOT PERFORMED. cdn.shopify.com returns EGRESS_BLOCKED (403) from this cloud sandbox via curl,
+    WebFetch, AND local headless Chromium (confirmed by test-rendering an <img> tag pointed at a
+    Shopify CDN URL — blank output, SSL handshake failure) — the real product photo cannot be
+    fetched into templates/photo-watermark.html for local compositing. The image_url values below
+    are the RAW, UNWATERMARKED source_image_url straight from the classified CSV. A local session
+    with network access must download each source photo, run
+    `./render.sh photo-watermark.html out.png square` (with PRODUCT_IMAGE set to a local copy of
+    the photo) to composite the "Discovered on Mela" watermark, host the result, and swap the
+    URLs below before scheduling. This is a genuine gap, not just an unconfirmed one — no
+    watermark exists on these images yet.
+  alt_text_basis: >
+    Alt text below is written from verified CSV fields (color, fabric, craft) and the live-listing
+    SEO title, NOT from direct visual inspection of the photo (same CDN block). Reasonably
+    reliable but flagged — re-confirm against the actual image in the local approval session.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/house-of-chikankari?utm_source=instagram&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=brand_carousel"
+  caption: |
+    Chikankari isn't a print. It's thousands of tiny hand stitches you can feel from the back of the cloth.
+
+    House of Chikankari works directly with the artisans in Lucknow who hand embroider this shadow work stitch, on cotton, rayon, and chanderi. Real chikankari, at prices that still pay the artisan fairly.
+
+    Featured in this carousel:
+    • Aryan Rayon Men's Kurta with Sequin
+    • Aafna Chanderi Kurta Set
+    • Cotton Chikankari Short Kurta
+
+    Discover House of Chikankari on Mela →
+
+    Hand embroidered in Lucknow. Ships to the US from House of Chikankari.
+    #Chikankari #Lucknow #HandEmbroidered #IndianCraft #SlowFashion
+  products:
+    - name: Aryan Chikankari Rayon Men's Kurta with Sequin
+      sku: aryan-rayon-straight-mens-kurta-with-sequin
+      dev_listing_id: 6a601959-99b1-45e6-a585-c839147a06c8
+      shopatmela_url: https://www.shopatmela.com/l/6a601959-99b1-45e6-a585-c839147a06c8
+      price_usd: 48
+      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png?v=1742192727  # RAW, UNWATERMARKED real photo — see verification_gaps
+      alt_text: Yellow rayon men's kurta with chikankari hand embroidery and sequin detail, modeled
+      verified: true  # live listing resolved 2026-10-04; SEO title "Rayon Chikankari (Shadow Hand-Embroidery) Straight Kurta for Men"
+      cooldown: clear — never featured in any prior campaign log
+    - name: HOC Aafna Chikankari Chanderi Straight Kurta Set
+      sku: aafna-chikankari-chanderi-straight-kurta-set-magenta
+      dev_listing_id: 6a6019a6-b352-4753-92fa-34dbec9ec82e
+      shopatmela_url: https://www.shopatmela.com/l/6a6019a6-b352-4753-92fa-34dbec9ec82e
+      price_usd: 46
+      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg?v=1755519809  # RAW, UNWATERMARKED
+      alt_text: Magenta chanderi kurta set with chikankari hand embroidery, straight fit with inner
+      verified: true  # live listing resolved 2026-10-04; SEO title "Chanderi Chikankari (Shadow Hand-Embroidery) Kurta Set for Women"
+      cooldown: clear — never featured in any prior campaign log
+    - name: Cotton Chikankari Short Kurta (White)
+      sku: cotton-chikankari-solid-womens-short-kurta-white-hc45624wsks0391
+      dev_listing_id: 6a60198c-5cf1-4d70-89cc-c478161d446a
+      shopatmela_url: https://www.shopatmela.com/l/6a60198c-5cf1-4d70-89cc-c478161d446a
+      price_usd: 16
+      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House_of_Chikankari_Cotton_Chikankari_Solid_Womens_Short_Kurta_-_White_1_d5183b27-4944-45a3-aa0d-aa957ce6b789.jpg?v=1756823585  # RAW, UNWATERMARKED
+      alt_text: White cotton short kurta with chikankari hand embroidery, round neck, three quarter sleeves
+      verified: true  # live listing resolved 2026-10-04; "Features Chikankari Craft" confirmed verbatim
+      cooldown: clear — never featured in any prior campaign log
+
+# PINTEREST (apparel, not footwear -> `apparel` board per category-routing.yaml)
+pinterest:
+  boards:
+    - name: Indian Ethnic Wear & Hand-Embroidered Fashion
+      board_id: "1103593152379779116"
+  pins:
+    - name: Aryan Chikankari Rayon Men's Kurta with Sequin
+      status: staged
+      board_id: "1103593152379779116"
+      title: Yellow Chikankari Men's Kurta with Sequin | Hand Embroidered
+      description: Men's rayon kurta hand embroidered with chikankari shadow work and sequin detail. Crafted by artisans in Lucknow. House of Chikankari on Mela.
+      alt_text: Yellow rayon men's kurta with chikankari hand embroidery and sequin detail, modeled
+      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png?v=1742192727
+      link: https://www.shopatmela.com/l/6a601959-99b1-45e6-a585-c839147a06c8?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aryan_mens_kurta_sequin
+    - name: HOC Aafna Chikankari Chanderi Straight Kurta Set
+      status: staged
+      board_id: "1103593152379779116"
+      title: Magenta Chanderi Chikankari Kurta Set | Hand Embroidered
+      description: Chanderi kurta set hand embroidered with chikankari shadow work in Lucknow, includes matching inner. House of Chikankari on Mela.
+      alt_text: Magenta chanderi kurta set with chikankari hand embroidery, straight fit with inner
+      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg?v=1755519809
+      link: https://www.shopatmela.com/l/6a6019a6-b352-4753-92fa-34dbec9ec82e?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aafna_chanderi_kurta_set
+    - name: Cotton Chikankari Short Kurta (White)
+      status: staged
+      board_id: "1103593152379779116"
+      title: White Cotton Chikankari Short Kurta | Hand Embroidered
+      description: Cotton short kurta hand embroidered with chikankari shadow work in Lucknow, soft and breathable for daily wear. House of Chikankari on Mela.
+      alt_text: White cotton short kurta with chikankari hand embroidery, round neck, three quarter sleeves
+      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House_of_Chikankari_Cotton_Chikankari_Solid_Womens_Short_Kurta_-_White_1_d5183b27-4944-45a3-aa0d-aa957ce6b789.jpg?v=1756823585
+      link: https://www.shopatmela.com/l/6a60198c-5cf1-4d70-89cc-c478161d446a?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=cotton_chikankari_short_kurta_white
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/house-of-chikankari
+  checks:
+    brand_story: { result: pass, note: "Tagline 'Authentic Lucknow chikankari, made by the artisans behind the craft' confirmed live via blotato_create_source 2026-10-04, matches shopify_brands.py." }
+    product_findability: { result: tbd, note: "Not checked beyond listing resolution this run." }
+    mobile_responsive: { result: tbd, note: "Not checked this run." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  persona_fatigue_context: >
+    This batch avoids Priya entirely (4 of last 5-6 confirmed posts, see isharya/week-2 notes)
+    and spreads Neha (Isharya) / Arun (this tile) / Sarah (education tile) across the 3 tiles.
+  brand_tagging: Not tagged — paused during warmup.
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."

@@ -1,0 +1,103 @@
+---
+# craft-goldsmithing-isharya education carousel — staged 2026-10-04 weekly staging run
+# (social-staging/week-of-2026-10-04). Topic id: craft-goldsmithing-isharya
+# (education-topics.yaml, cultural_education, verify:true, source_brands: [isharya]).
+# Paired thematically with this week's Isharya brand row (log/isharya/week-2-campaign.yaml) per
+# social-launch SKILL.md Phase 1 replenishment step 4. Cards rendered 2026-10-04 via HTML/CSS ->
+# PNG (local headless Chromium, no Blotato credits, no external network dependency) per
+# visual-style-guide.md Tool decision procedure. This is the ONE tile this run that could be
+# fully rendered AND visually inspected end to end (no blocked external fetch involved).
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: null
+status: staged
+platforms:
+  - instagram
+format: carousel
+persona: Sarah
+category: cultural_education
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education content is always Full lane
+hypothesis: "Angle 4 (claim-decoded) with Sarah lead: does naming the specific hand-finishing steps behind 'handcrafted' jewelry (hand-set stones, hand-finished enamel, hand-layered plating) out-save a generic 'handcrafted' claim, the same pattern that worked for quality-superbottoms' GOTS framing?"
+gate_verdict: SHIP   # fully rendered + visually inspected locally; no blocked dependency for this tile
+coaching_notes: >
+  Diaspora anchor: not the primary lever by design (angle 4, claim-decoded, same treatment as
+  the quality-superbottoms education tile two weeks ago) — expected, not a gap. Slide 1 is a
+  hook card, never a product, per the hard rule. No payoff/product slide this run (optional per
+  Education Visual System) — closes on a CTA card instead, matching the quality-superbottoms
+  precedent, specifically because the actual Isharya product photos needed for a real payoff
+  slide are unreachable from this sandbox this run (same cdn.shopify.com block as the product
+  tiles) — a local session could add a 4th payoff slide using one of the week-2 Isharya product
+  photos once watermarking is sorted.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION
+verification:
+  render_qc: >
+    All 3 slides rendered locally via headless Chromium at 1080x1080 and visually reviewed
+    (Read tool) this run: legible at full size, watermark present and subtle (bottom right,
+    navy, consistent with mela-kit.css), no overflow/clipping, slide 1 is a typographic hook
+    (no product). No external image fetch was needed for any of the 3 slides.
+  claim_verification: >
+    The teaching-card's 4 steps (hand-set stones, hand-finished enamel, hand-layered gold
+    plating, resulting small variations) are GENERIC goldsmithing/enamel-work technique
+    description under the Education Visual System's illustrative-imagery license (same license
+    covering a carved printing block or a dye vat) — framed as "Isharya and other contemporary
+    studios" per education-topics.yaml's own contemporary_angle text, not as an unverified claim
+    about Isharya's specific internal process. No brand-specific material claim beyond what
+    shopify_brands.py's brand_craft ("bold jewelry in metal, stone, and enamel") already states.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/isharya?utm_source=instagram&utm_medium=social&utm_campaign=craft-goldsmithing-isharya_w1&utm_content=education_goldsmithing"
+  topic: "craft-goldsmithing-isharya — Beyond filigree: the metal, stone, and enamel work behind statement jewelry"
+  visual_system: "Education (HTML cards, cream/navy documentary style, no navy+marigold utility branding — that's reserved for trust_service). Slide 1 = hook card, not a product."
+  slides:
+    - name: hook
+      image_render: log/_education/craft-goldsmithing-isharya/renders/slide1-hook.png
+      image_url: null   # local PNG only, not uploaded to Blotato storage this run
+    - name: teaching
+      image_render: log/_education/craft-goldsmithing-isharya/renders/slide2-teaching.png
+      image_url: null
+    - name: close_cta
+      image_render: log/_education/craft-goldsmithing-isharya/renders/slide3-close.png
+      image_url: null
+  alt_text: "Text slide: Everyone says handcrafted. Here's how to actually tell."
+  caption: |
+    Everyone says handcrafted. Here's how to actually tell.
+
+    A goldsmith hand sets each mirror or stone before plating, hand finishes enamel color by eye, and layers gold plating over the metal base by hand, not by stamping machine. That hand finishing is why no two pieces turn out exactly identical.
+
+    Isharya and other contemporary studios still make statement jewelry this way today, pairing traditional metal and enamel skills with modern designs.
+
+    Discover Isharya on Mela →
+
+    #HandcraftedJewelry #IndianJewelry #Goldsmithing #StatementJewelry #ConsciousShopping
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/isharya
+  checks:
+    cultural_context: { result: pass, note: "Brand page confirmed live 2026-10-04 via blotato_create_source; tagline matches the metal/stone/enamel craft framing used in this tile." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  verify_note: >
+    See verification.claim_verification above. No `verify:true` claim beyond generic,
+    brand-agnostic goldsmithing/enamel-work technique, which carries the same editorial license
+    as the carved-block/dye-vat illustrative imagery already used for other cultural_education
+    topics.
+  dual_platform_note: "This topic is cultural_education (platforms: [instagram] only per education-topics.yaml) — no Reddit leg applicable, unlike trust_service topics."
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."
