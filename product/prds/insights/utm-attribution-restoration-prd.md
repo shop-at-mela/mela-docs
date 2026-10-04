@@ -2,7 +2,7 @@
 
 ## Document Information
 - **Created**: 2026-10-03
-- **Status**: ✅ P0 shipped and live 2026-10-03 (web-client `29770e2b6`). Verified live on a clean tab: first GA4 request carries `utm_*` in `dl=`; canonical and `og:url` clean. **Still open**: 24 to 48 hour check that a QA campaign appears under Session campaign, GA4 annotation, referral exclusions, internal-traffic filter to Active, GTM cleanup, `stripUtmParams` was deleted (answer to Open Question 1). Not yet checked live: SPA route-change `dl=`, and a Google-search reload sending no campaign.
+- **Status**: ✅ P0 shipped and live 2026-10-03 (web-client `29770e2b6`). Verified live on a clean tab: first GA4 request carries `utm_*` in `dl=`; canonical and `og:url` clean. **Still open**: 24 to 48 hour check that a QA campaign appears under Session campaign, GA4 annotation, referral exclusions (`tagassistant.google.com`). **Done 2026-10-04:** Internal Traffic filter set to Active (verified in Testing first: labeled hits were New York / Chrome only; data before this date includes team visits), unused `JS - entry_source` deleted from the GTM workspace. `stripUtmParams` was deleted (answer to Open Question 1). Not yet checked live: SPA route-change `dl=`, and a Google-search reload sending no campaign.
 - **Owner**: Product / Dev
 - **Related docs**:
   - `product/prds/insights/crossshop-tracking-prd.md` (introduced `entry_source`; §12 ties UTMs to the social schema)
