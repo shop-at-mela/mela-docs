@@ -2,7 +2,7 @@
 
 ## Document Information
 - **Created**: 2026-10-02
-- **Status**: 📝 Draft — for review. No code, GTM, GA4, or Looker work has started.
+- **Status**: 📝 Draft — for review. Partly built: `listing_view` / `brand_page_view` shipped 2026-10-02/03; a separate Looker report ("Mela Traffic & Engagement Overview", standalone, not a page on the Cross-Shop report) was started 2026-10-03 with Overview, Search and AI sources and Behavior pages. Tile corrections in §4.3 / §4.4 applied 2026-10-03.
 - **Owner**: Product / Founder
 - **Related docs**:
   - `product/prds/insights/crossshop-tracking-prd.md` (the instrumentation layer: `brand_clickout`, `entry_source`, `mela_session_id`, and the `saved_*` events in §14)
@@ -108,7 +108,7 @@ The OCTR baseline has an external deadline (`storefront-validation-readiness-prd
 - Live-verify `saved_listing_toggle`, `saved_page_view`, and `saved_recommendation_click` reach GA4 (flagged open in `crossshop-tracking.md` §3, 2026-08-23).
 
 **4.3 GA4: journey map**
-- Saved Path exploration `Journey Map`, using `Page path and screen class` (never page title, which is stale on SPA navigation). Views from the landing page forward, with `Entry Source` as a breakdown where the tool allows.
+- Saved Path exploration `Journey Map`, using `Page path and screen class` for the path steps (never page title, which is stale on SPA navigation). Starts from the landing page, with native **Session source / medium** as the breakdown where the tool allows (corrected 2026-10-03 from the custom `Entry Source`, which was mostly "(not set)"; see `utm-attribution-restoration-prd.md`).
 - Added to the existing `Cross-Shop Tracking` Library collection.
 - Path exploration is not available in Looker Studio. The dashboard links to it.
 
@@ -119,19 +119,19 @@ The OCTR baseline has an external deadline (`storefront-validation-readiness-prd
 | Users, Sessions | Scorecards with prior-period comparison | GA4 native |
 | Potential-shopper sessions | Scorecard | Sessions reaching a listing or brand page |
 | Visitors over time | Time series, by day | GA4 native |
-| Top landing pages | Table | `Page path and screen class` × sessions (never Page title) |
-| Sessions by entry source | Bar/table | `Entry Source` |
+| Top landing pages | Table | **`Landing page`** × sessions (corrected 2026-10-03: `Page path and screen class` counts every page view, not entry pages. Never Page title) |
+| Sessions by source | Bar/table | **Session source / medium** and **Session campaign** (corrected 2026-10-03: native GA4 attribution, now that `utm_*` reaches GA4. The custom `Entry Source` stays for `brand_clickout` joins only) |
 | Top search terms | Table | `view_search_results` count by `search_term` |
 | Top viewed products | Table | `listing_view` count by Product ID / brand |
 | Top viewed brands | Table | `brand_page_view` count by Brand Name |
-| Add to Cart count | Scorecard | `saved_listing_toggle`, `Save Toggle Source` = `add_to_cart_button`, `Is Saved` = true |
-| Shop-brand clickouts | Scorecard + by brand + by surface | `brand_clickout` (existing tiles reused where present) |
+| Add to Cart count | Scorecard | `saved_listing_toggle`, `Save Toggle Source` = `add_to_cart_button`, `Is Saved` = true. **Check first (2026-10-03):** confirm the value format GA4 stores for `Is Saved` (`true`, `1` or `"true"`) before writing the filter. Not yet verified. Also see the `source` parameter issue below |
+| Shop-brand clickouts | Scorecard + by brand + by surface | `brand_clickout`. Decision 2026-10-04: the clickout step is the `/saved` page "Shop on {brand}" CTA (`saved_surface` = `saved_item_card` or `saved_brand_group`); count and break down on `Saved Surface`. Out-of-stock PDP clickouts (`saved_surface` null) are the only other source and are shown separately. |
 | Funnel comparison | Bar of three event counts | `listing_view` → add-to-cart → `brand_clickout` (event counts, not session-scoped, labeled as such) |
 | Link to `Journey Map` | Link/text | GA4 Exploration |
 
 ### Should Have (P1)
 - Search result count carried on the search event, so zero-result searches can be listed. Needs a code-side push once results settle, or a decision to skip (see §9).
-- Visitors and clickouts broken down by `Entry Source` for the social ritual.
+- Visitors and clickouts broken down by Session source / medium and campaign for the social ritual (was `Entry Source`; corrected 2026-10-03).
 - Clickouts split by `saved_surface` (existing param).
 
 ### Nice to Have (P2)
@@ -176,7 +176,7 @@ None for shoppers. For the internal dashboard: one page, tiles ordered traffic �
 | Visitors | GA4 Users, date range stated on the tile | GA4 native |
 | Potential shopper rate | Sessions reaching `/l/:slug/:id` or `/brands/:brandSlug` ÷ all sessions | Existing funnel definition |
 | Listing view → add-to-cart rate | `saved_listing_toggle` (add_to_cart_button, saved) ÷ `listing_view`, event counts | New + existing event |
-| Add-to-cart → clickout rate | `brand_clickout` ÷ add-to-cart events, event counts. Note clickouts can also come from brand pages and out-of-stock listings | Existing |
+| Add-to-cart → clickout rate | `brand_clickout` ÷ add-to-cart events, event counts. Clickouts come from `/saved` (the intended path, `saved_surface` set) and, rarely, out-of-stock listings; the brand-page link was removed 2026-07-26 | Existing |
 | OCTR | Sessions with `brand_clickout` ÷ all sessions, owned by `shopper-visibility-reporting-prd.md` | Existing, referenced only |
 | Search → listing view | `listing_view` events following a `view_search_results`, tracked in the Path exploration, not a tile | GA4 Explorations |
 
@@ -188,7 +188,9 @@ Event-count ratios are an approximation of the true session funnel. They are goo
 
 - **GTM SPA page_view is unverified.** See §4.2. If it is not firing, the journey map and landing-page tiles are blocked until GTM is fixed. This is the highest-priority check.
 - **Add to Cart is a save, not a real cart.** `saved_listing_toggle` records a save from the Add to Cart button. Label tiles "Add to Cart (saves)" so the number is not read as checkout intent.
-- **Page title is stale on SPA navigation.** All reports group by Page path.
+- **Page title is stale on SPA navigation.** Path-based reports group by Page path; entry-page tiles use `Landing page`.
+- **`source` event parameter may be read as traffic source (found 2026-10-03, unconfirmed).** Session source / medium shows `heart_icon` and `add_to_cart_button` rows, which match the `source` parameter on `saved_listing_toggle`. Investigation pending; a rename (e.g. `save_source`) is the likely fix.
+- **Data-quality fixes 2026-10-04.** `view_search_results` was firing on every page and on filter changes (fixed in GTM Version 8; counts before ~2026-10-04 are inflated, so annotate that date on the search tiles). The `saved_listing_toggle` `source` parameter was polluting Session source / medium (now `save_source` in GTM Version 9; use the new `Save Source` dimension, and combine it with `Save Toggle Source` for history). `brand_clickout` and `brand_page_view` read zero for structural reasons: the brand-page outbound link was removed 2026-07-26 and in-stock Add to Cart replaced the PDP Shop button, so the Funnel tile's clickout step will stay near zero. Details in `crossshop-tracking.md` and `shopper-visibility-reporting-prd.md`.
 - **Owner browser GA4 hits return HTTP 503** (`shopper-visibility-reporting-prd.md` §8). Absence of an event in DebugView from that browser is not evidence of a broken tag. Verify from a clean profile or phone.
 - **SPA events arrive with about a 6 second delay.** Wait about 10 seconds before concluding an event did not fire.
 - **Ad-blocker undercount (typically 10–30%).** Absolute counts are understated. Ratios hold up better.

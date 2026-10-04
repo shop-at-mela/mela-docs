@@ -34,6 +34,16 @@ All three are documented with comments in `.env-template`. **Do not** also set t
 
 **Storage key**: `sessionStorage['mela_entry_source']` (tab-lifetime; cleared when the tab closes — this is intentional, matching the existing `mela_session_id` / `mela_redirect_trust_shown` pattern in `src/util/sentimentCapture.js`).
 
+### UTMs are no longer stripped (changed 2026-10-03)
+
+`stripUtmParams()` was removed from `src/index.js` (web-client commit `29770e2b6`, branch `feat/utm-attribution-restoration`, live 2026-10-03). `utm_*` now stays in the address bar, so GA4's native Session source / medium / campaign sees it on the first hit. Verified live 2026-10-03: the first `g/collect` request carried all four `utm_*` params in `dl=`, and the server HTML canonical and `og:url` had none.
+
+- `captureEntrySource()` still runs before render and is unchanged. `entry_source` remains tab-scoped (sessionStorage) and is for `brand_clickout` joins, not for acquisition reporting. Use native Session source / medium / campaign for acquisition.
+- **Canonical rule:** `canonicalRoutePath` (`src/util/routes.js`) drops `utm_*`, `fbclid`, `gclid`, `igshid` and `ttclid` and keeps all other query params. Canonical and `og:url` are therefore clean in server and client renders (tests: `routes.test.js`, `Page.canonical.test.js`).
+- Not retroactive: UTM visits before 2026-10-03 stay "direct". Annotate the cutover when comparing.
+- Known gap: the listing page JSON-LD `url` (`productURL` in `ListingPage.shared.js`) still includes `location.search`, so UTMs can appear there. Not fixed.
+- Open (2026-10-03, unconfirmed): GA4 Session source / medium shows `heart_icon` and `add_to_cart_button` rows, matching the `source` parameter on `saved_listing_toggle`. See `basic-dashboards-prd.md` §8.
+
 ### Normalization rules (in priority order)
 
 1. **`utm_source` is present, medium looks paid** (`utm_medium` is `paid_social` or `cpc`) **and `utm_campaign` is present** → `brand_ad:{brand_slug}`, where `{brand_slug}` is `utm_campaign` split on `_w` (matches the existing campaign-naming schema in `mela-docs/social/category-routing.yaml`: `{brand_slug}_w{week}`).
@@ -101,7 +111,9 @@ All three ultimately call `onShopNow`, which is `handleShopNow` defined in `List
 
 This means the event fires exactly once per actual outbound redirect, regardless of which of the three CTA surfaces was clicked, and regardless of whether the trust sheet was shown.
 
-**A fourth surface was added 2026-07-26** (`storefront-validation-readiness-prd.md` P1.1/P0.6): a **"Brand website" link** in the brand page's About & Story tab, `src/containers/ProfilePage/BrandStorefront.js` (`handleVisitStoreClick`). Same `shouldShowRedirectTrust`/`RedirectTrustSheet`/`openBrandStorefront` pattern as the three listing-page surfaces above, but the tracking params are brand-level, not listing-level: `category` and `product_id` are always pushed as `null` here (there is no single listing in play on a brand page) — only `brand_name`/`brand_id`/`destination`/`entry_source` are populated. This `category === null && product_id === null` shape is what distinguishes brand-level clickout from the product-level (listing) clickout above for OCTR reporting (§5c) — no separate "surface" tag was added, since after the 2026-07-26 rework there is exactly one brand-level outbound trigger to disambiguate.
+> **Superseded 2026-07-26 (web-client `f321e749e`, found stale 2026-10-03):** the brand-page "Brand website" link described in this paragraph and the "Revision" below was removed entirely, along with the `BrandSpotlight` "Visit Store" CTA. Production `/brands/:slug/about` shows only Instagram and Facebook; `BrandStorefront.js` has no outbound-link code. Brand-level `brand_clickout` (null `category`/`product_id`) therefore no longer fires from anywhere. Remaining surfaces: out-of-stock PDP and the two `/saved` CTAs. GA4 shows 0 `brand_clickout` for Sep 5 - Oct 2, 2026, which is expected given 3 `saved_listing_toggle` and 2 `saved_page_view` events in the same window.
+
+**A fourth surface was added 2026-07-26 (since removed, see note above)** (`storefront-validation-readiness-prd.md` P1.1/P0.6): a **"Brand website" link** in the brand page's About & Story tab, `src/containers/ProfilePage/BrandStorefront.js` (`handleVisitStoreClick`). Same `shouldShowRedirectTrust`/`RedirectTrustSheet`/`openBrandStorefront` pattern as the three listing-page surfaces above, but the tracking params are brand-level, not listing-level: `category` and `product_id` are always pushed as `null` here (there is no single listing in play on a brand page) — only `brand_name`/`brand_id`/`destination`/`entry_source` are populated. This `category === null && product_id === null` shape is what distinguishes brand-level clickout from the product-level (listing) clickout above for OCTR reporting (§5c) — no separate "surface" tag was added, since after the 2026-07-26 rework there is exactly one brand-level outbound trigger to disambiguate.
 
 **Revision 2026-07-26 (same day, later pass):** the CTA originally shipped as a primary button in the hero band, above the product grid. That was reworked before this doc's first commit — a brand-page exit door above the grid trains shoppers to bypass Mela entirely, which is fatal with no affiliate tracking. The hero band's only CTA is now the on-Mela "Browse {N} Products" anchor; the outbound link moved to the About tab as a plain, secondary-weight link (no icon-button styling, no trust-sheet ceremony implied by its visual weight) — a curious click from someone reading the full story, not a purchase-intent action. The event shape above is unchanged by the relocation. Live-verified on `/brands/fizzy-goblet` against fully-seeded dev data: clicking "Brand website" in the About tab fires
 ```js
@@ -138,6 +150,12 @@ Fired from `toggleSaveListing` in `src/ducks/savedListings.duck.js` (new `pushSa
 - The existing `GA4 - brand_clickout` tag's Event Parameters were missing `saved_surface` entirely — added `saved_surface` → `{{DLV - saved_surface}}`.
 
 **Still open**: none of this has been live-verified end-to-end (real click → GTM Preview → GA4 DebugView) — only that the tags/triggers/variables are correctly configured and published. Do that verification pass before trusting any live numbers on the four events below.
+
+### `source` param pollutes GA4 traffic source (found 2026-10-03, GTM fix published as Version 9, 2026-10-04)
+
+`GA4 - saved_listing_toggle` sends an event parameter literally named `source`. GA4 Session source / medium shows `add_to_cart_button / (not set)` and `heart_icon / (not set)`. The 28-day Events report has only 3 `saved_listing_toggle` events from 1 user, so the 2 polluted sessions are roughly every toggle session, not a rare race. GA4's exact override behavior is inferred, not proven. Planned fix, GTM first: register a new Event-scoped custom dimension for `save_source`, change the tag parameter name from `source` to `save_source` (value stays `{{DLV - source}}`), publish, then rename the dataLayer key in `savedListings.js:25` in a later release and update this schema. Keep the old `Save Toggle Source` dimension for history; bridge in Looker with `COALESCE`.
+
+**Applied 2026-10-04:** GA4 Event-scoped custom dimension **Save Source** (`save_source`) registered; GTM `GA4 - saved_listing_toggle` now sends `save_source` = `{{DLV - source}}` and no longer sends `source` (GTM Version 9, confirmed served by a fresh `gtm.js` fetch). The dataLayer key is still `source`, so `DLV - source` is unchanged and no `DLV - save_source` exists. Passed in GTM Preview; live save test from the automated browser was not completed, and GA4 receipt is unverified. Still to do: rename the dataLayer key in `savedListings.js:25` (and add a test) together with the matching GTM variable change; repoint Looker with a field combining Save Source and Save Toggle Source; after 24-48h confirm no new `heart_icon` / `add_to_cart_button` Session source rows. Old rows cannot be removed.
 
 ### `brand_id` caveat
 
