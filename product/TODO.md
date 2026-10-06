@@ -2,6 +2,16 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-10-06
+
+### Next
+- [ ] 🔴 **CRITICAL: repoint Isharya from isharya.com to isharya.co.** All 2,674 live Isharya listings (`classified_products_prod/isharya_products_classified.csv`) link out to `www.isharya.com`, the India store, which returns no US shipping rates and prices in INR. Isharya's own policy says "For international orders, please visit www.isharya.co". isharya.co is a separate Shopify store: USD pricing, ships to the US, 2,938 published products (checked 2026-10-06). Every Isharya clickout from Mela currently lands on a store a US shopper can't buy from, which also corrupts OCTR for a live brand. Steps:
+  1. In `shopify_brands.py`, set the Isharya `base_url` to `https://isharya.co` and re-check `bestseller_collection` against isharya.co's `/collections.json`.
+  2. Check whether product handles match between the two stores (not verified: the store rate-limited the comparison). If they match, rewriting each listing's outbound URL is enough. If not, rescrape from isharya.co and reconcile listing IDs (`product-listing-integration/scripts/reconcile-listing-ids.js`).
+  3. Update the live listings' outbound product URLs, then rerun `export_brand_content.py` + `seed-brand-profiles.js` so `brandStoreUrl` points to isharya.co.
+  4. Verify live: open an Isharya listing on shopatmela.com, click through the trust sheet, and confirm Isharya's store accepts a US address and checks out in USD.
+  - Supersedes the Isharya line under 2026-10-04 Blockers.
+
 ## 2026-10-04
 
 ### Shipped
