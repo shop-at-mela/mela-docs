@@ -8,6 +8,8 @@ The Sunday tracking sheet referenced by `cold-start-checklist.md` — didn't exi
 
 ## Log
 
+> **2026-10-03 attribution cutover:** the site stopped stripping `utm_*` before GA4 reads it. From this date GA4 Session source / medium / campaign (`utm_campaign` such as `banjaaranstudio_w1`) is measurable. Tagged visits before this date were recorded as "direct", so don't compare the "GA4 sessions (UTM)" column across the cutover. See `product/prds/insights/utm-attribution-restoration-prd.md`.
+
 **Warmup capture discipline (`pre-publish-gate.md` Step 3):** the 13-dimension pre-publish *scoring* is deferred until a baseline exists — but the raw **north-star metric is captured from post #1** so the baseline actually accumulates. IG = **saves**, Pinterest = **outbound clicks**. Log each post's **hypothesis** (the one line it was testing) here too, so the eventual score→performance correlation has something to read. You cannot retroactively score posts whose metrics were never captured — that's why capture starts now even though scoring doesn't.
 
 | Date | Post | Platform | Category | Hypothesis (angle/hook/persona) | Saves | Clicks | Comments | GA4 sessions (UTM) | Notes |
