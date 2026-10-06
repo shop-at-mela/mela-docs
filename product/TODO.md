@@ -2,6 +2,19 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-10-04
+
+### Shipped
+- `feat(brands)` — Next-wave brands for MVP validation in `shopify_brands.py`: Suta, Little Muffet, Needledust, Saphed, Daughters of India get craft chips + refreshed copy; Hemant & Nandita added. Added `us_duties` (DDP/DDU) and `us_shipping` / `us_free_shipping_over_usd` / `us_shipping_note` for the 19 live + 6 new brands, from store policies + a cart rate test to a US address. Not yet activated or seeded. `Mela-scrapper-integrations` commit `6fcec40`.
+
+### Next
+- [ ] **Wire `us_*` fields into the exporter/seeder** so the F-013 tariff/landed-cost line (2026-09 entry below) and `priceConvertedDisclaimer` can use per-brand data. Of 25 brands: 6 are DDP, 12 are DDU (incl. House of Chikankari, the F-013 respondent's brand), 7 don't say. The disclaimer's "includes shipping & import costs" is false for the DDU brands.
+- [ ] **Daughters of India fit decision** — the label is based in Tweed Heads, Australia (made in India); decide whether it fits the "grown in India's domestic market" positioning before activation.
+
+### Blockers
+- **Pluchi (live) does not ship internationally** — its policy says so and the cart returns no US rates; clickouts can't convert and conflict with the "Ship to all 50 states" vetting strip.
+- **Isharya (live) `base_url` is isharya.com, which has no US rates** — its international store is isharya.co; listings likely send US shoppers to the wrong store.
+
 ## 2026-09-25
 
 ### Shipped
