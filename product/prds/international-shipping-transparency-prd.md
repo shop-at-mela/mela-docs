@@ -451,6 +451,7 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 - [ ] P1-14: Copy comprehension test done before P1 ships, chosen wordings recorded in this PRD.
 - [ ] P1-15: Outreach emails sent to the 7 unknown-duty brands; replies folded into `shopify_brands.py`.
 - [ ] P1-16: Every AC above verified mobile first at 375px, then 1440px, in a real browser (state which device or emulator).
+- [ ] P1-17: SEO/AEO baselines captured before P1 ships: the answer-engine check logged in §7 (18 answers), and the Search Console `/brands/*` 28-day baseline recorded (or noted as unavailable if Search Console isn't verified).
 
 **P2**
 - [ ] P2-1: Unblock conditions met and documented; `shippingDetails` only on eligible brands; Rich Results Test clean.
@@ -468,6 +469,28 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 | RedirectTrustSheet "helpful" share, DDP vs DDU | Secondary, directional | Current thumbs-up share | No target; report only. **Caveat:** the sheet's question is "Did you find what you were looking for?", which measures finding, not shipping clarity | Existing sentiment webhook + `duties_type` join |
 | Clickout rate on DDU brands | Guardrail | 4-week baseline starting at P0 ship (post internal-traffic filter) | Does not drop more than **20%** relative to baseline. Evaluate only once each segment (DDP, DDU) has ≥100 product-page sessions with a save or clickout; until then report "insufficient volume" | `listing_view` → `saved_listing_toggle` → `brand_clickout`, split by `duties_type` |
 | Shipping data freshness | Health | n/a | 100% of live brands with `checkedAt` within 120 days | Quarterly review |
+
+### SEO and AEO measurement *(added 2026-10-06)*
+
+P1.7, P1.8, P1.9 and P1.12 exist to make Mela the quoted source for "does {brand} ship to the US / will I pay duties" questions. None of the metrics above measures that, so these are tracked separately. All are directional: brand-page search volume is low and answer-engine output varies run to run.
+
+| Metric | Type | Baseline | Target | Instrument |
+|--------|------|----------|--------|------------|
+| Answer-engine citation and accuracy | AEO, directional | Run once before P1 ships | No citation target. **Every answer that cites Mela must match the brand's current terms (100%)**; a wrong answer that cites Mela is a data-freshness bug | Manual check, logged below |
+| Brand-page search impressions and clicks | SEO, directional | 28 days before P1 ships | Report the trend; no target. Watch queries containing "ship", "shipping", "duty", "duties", "tariff" | Google Search Console, pages matching `/brands/*` (**unverified**: whether Search Console is verified for shopatmela.com; `dev-to-production-migration-prd.md` §3f) |
+| Structured data health | SEO, health | n/a | 0 errors on Product and FAQ structured data across sampled pages | Rich Results Test or Schema Markup Validator on 3 product pages and 3 brand pages; Search Console enhancement reports where they exist (FAQ reporting may not appear, since Google limits FAQ rich results) |
+
+**Answer-engine check (manual).**
+- **Queries:** "Does {brand} ship to the US?" and "Will I pay import duties on {brand} orders?" for House of Chikankari (DDU), Nicobar (DDP) and Ankid (unknown). That's 6 queries.
+- **Engines:** ChatGPT with search, Perplexity, and Google AI Overviews. That's 18 answers per run.
+- **Record per answer:** whether Mela is cited (yes or no), and whether the answer matches the brand's terms in `shopify_brands.py` (yes or no).
+- **When:** a baseline before P1 ships, again at 4 and 12 weeks after, then as part of the existing quarterly review (`trig_01DSghwC4tntP5eFdKqKhDGZ`), so no new cadence is added.
+- **Owner:** the same person who owns data freshness (P1.10).
+- **Log:** add a dated row per run to the table below.
+
+| Date | Run | Mela cited (of 18) | Mela-cited answers correct | Notes |
+|------|-----|--------------------|----------------------------|-------|
+| | Baseline (pre P1) | | | |
 
 **Segmenting:** every metric above is split by `duties_type` (DDP, DDU, unknown). A lower clickout rate on DDU brands after honest disclosure is acceptable and expected; a drop on DDP brands would be a signal that the new block itself hurts.
 
