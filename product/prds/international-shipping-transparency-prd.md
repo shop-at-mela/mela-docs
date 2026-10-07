@@ -2,7 +2,7 @@
 
 ## Document Information
 - **Created**: 2026-10-06
-- **Status**: 📋 Draft, reviewed 2026-10-06 by /dev-lead, /ux-design, /uxr (feedback folded in; see §11)
+- **Status**: 📋 Draft, reviewed 2026-10-06 by /dev-lead, /ux-design, /uxr, and the `/ux-design panel` P1 gate (all folded in; see §11)
 - **Owner**: Product Team
 - **Source**: UXR F-013, F-015, F-022, F-030, F-036 (`UXR/feedback-log.md`); per-brand US shipping audit in `shopify_brands.py` (Mela-scrapper-integrations `6fcec40`, checked 2026-10-04); code read of web-client on 2026-10-06
 - **Related Docs**:
@@ -50,7 +50,7 @@
 | P1 data additions (fee, currency, checked date, ships from) | P1 dependency | ❌ Not started | Filled from notes + one re-check; 9 brands need a re-check (§4 P1.1) |
 | Brand outreach (7 unknown duty terms) | P1 dependency | ❌ Not started | Send before P1 ships; do not wait for replies to ship |
 | Copy comprehension test (5 people) | P1 gate | ❌ Not started | 3 recruits named in UXR; 2 more needed |
-| Mockup (mobile first) + `/ux-design panel` | P1 gate | 🟡 Mockup drafted, panel not run | `nimbalyst-local/mockups/international-shipping-transparency-mobile.mockup.html` (2026-10-06): product page (6 states + longest name), tooltip, trust sheet, brand page DDU + DDP. Found 4 gaps, folded into P1.2, P1.5, P1.7 and copy rules. Desktop 1440px and loading states not drawn |
+| Mockup (mobile first) + `/ux-design panel` | P1 gate | 🟡 Panel run 2026-10-06; two device checks left | `nimbalyst-local/mockups/international-shipping-transparency-mobile.mockup.html`: product page (6 states + longest name), tooltip, trust sheet collapsed + expanded, brand page DDU + DDP. Panel decisions in §11. Still open before build: live product page fold check at 375 × 667 (P1.2) and trust sheet with the on-screen keyboard on a real phone (P1.5). Desktop 1440px and loading states not drawn |
 | P1 per-brand display, brand page section, analytics, SEO fixes | P1 | ❌ Not started | |
 | P2 `offers.shippingDetails` | P2 | ⛔ Blocked | On P1.9 seller decision shipping + price-accuracy gate |
 
@@ -87,7 +87,9 @@ Related, lower severity (handled in P0.6 and P1.9):
 - Product JSON-LD names Mela as `offers.seller` (`ListingPageCarousel.js:413`), which asserts Mela sells the product.
 - The unused `coverPhoto` listing layout (`ListingPageCoverPhoto.js:453`) emits a blanket US `shippingDetails` for every brand. `configLayout.js` selects `carousel`; whether the hosted layout config overrides that is **unverified**.
 
-**Where the price context actually renders (verified in code, not in a browser):** below 1024px the OrderPanel's full price block (USD, INR line, disclaimer) sits inside `ModalInMobile`, which stays closed for brand listings because their CTA is Add to Cart, not the order modal. The mobile sticky bar shows only the USD price (`PriceMaybe` with `showCurrencyMismatch`). So on phones, shoppers see no INR line, no disclaimer, and no shipping information of any kind. Claim #1 only reaches desktop users. Any mobile shipping line in this PRD is a new in-page element, not an edit to an existing one.
+**Where the price context actually renders (verified in code, not in a browser):** below 1024px the OrderPanel's full price block (USD, INR line, disclaimer) sits inside `ModalInMobile`, which stays closed for brand listings because their CTA is Add to Cart, not the order modal. The mobile sticky bar shows only the USD price (`PriceMaybe` with `showCurrencyMismatch`). So on phones, shoppers see no INR line, no disclaimer, and no shipping information of any kind on the product page. Claim #1 only reaches desktop users. Any mobile shipping line in this PRD is a new in-page element, not an edit to an existing one.
+
+*Correction (`/ux-design panel`, 2026-10-06):* phones do already see an INR figure before the product page. Brand and search grid cards show "~₹3,600" under the USD price (`ListingCard` `showInrPrice` defaults to true; homepage modules pass false). Verified in code, not in a browser. The INR line is new on the mobile **product page** only.
 
 **The trust sheet reaches few shoppers (verified in code + analytics docs):** `RedirectTrustSheet` opens only on the first outbound click per session (`shouldShowRedirectTrust`). In-stock product pages no longer link out (Add to Cart saves instead, since 2026-08-12), so the sheet appears on `/saved` "Shop on" clicks and out-of-stock product pages only. GA4 had 0 `brand_clickout` events from Sep 5 to Oct 2 and 3 `saved_listing_toggle` events in 28 days (`analytics-fixes-handoff-2026-10-04.md`). **The product page is the surface that has to carry the shipping and duty facts.** The trust sheet is a second chance, not the main one.
 
@@ -260,20 +262,25 @@ One shared component (working name `ListingShippingTerms`) renders in two places
 375px, DDU brand, INR store, flat rate:
 
   $41.00
-  Estimated from the ₹3,600 India price ⓘ                 ← line 1
-  House of Chikankari ships to the US for about $34.       ← line 2 (may wrap
-  Import duties are extra, paid on delivery ⓘ                to a 2nd visual line)
+  House of Chikankari ships to the US for about $34.       ← shipping line (may
+  Import duties are extra, paid on delivery ⓘ                wrap to a 2nd visual line)
+  Estimated from the ₹3,600 India price ⓘ                 ← estimate line
 
 375px, DDP brand, USD store, threshold:
 
   $180.00
-  Nicobar ships to the US for $30, free on orders over $150.   ← line 2 only
+  Nicobar ships to the US for $30, free on orders over $150.   ← shipping line only
   [✓ Duties included]   ← positive chip, in ListingTrustChips under the H1
 ```
 
-- **Line 1 (estimate):** "Estimated from the {inrPrice} India price ⓘ". Shown only when the price was converted from INR (`formattedINRPrice`), as today. Tooltip: "{brand} sets the final US price at its own checkout, and it can differ from this estimate." This merges today's INR line and the P0.1 disclaimer into one line.
-- **Line 2 (shipping, then duties):** one sentence for shipping, then one short sentence for duties unless duties are shown as a chip. May wrap to two visual lines; never three at 375px with the longest live brand name (Hemant & Nandita, House of Chikankari). If it would, the duty sentence moves to its own line and line 1's tooltip is the only one shown. (Validate in the mockup.)
-- Order is fixed: price, estimate, shipping, duties.
+**Order (decided at the `/ux-design panel`, 2026-10-06): price, then shipping and duties, then the estimate.** The shipping line comes directly after the price on every breakpoint (one component, one order). Why: in the mockup at 375 × 667, the block starts about 550px down and the sticky bar starts at 595px, so with the estimate first, the shipping and duty facts loaded under the sticky bar while the India price was visible. Even with the new order, the shipping line's second visual line can still sit under the bar on a 667px phone; the live check below decides whether more is needed.
+
+- **Shipping line (shipping, then duties):** one sentence for shipping, then one short sentence for duties unless duties are shown as a chip. May wrap to two visual lines; never three at 375px.
+- **Estimate line:** "Estimated from the {inrPrice} India price ⓘ". Shown only when the price was converted from INR (`formattedINRPrice`), as today. Tooltip: "{brand} sets the final US price at its own checkout, and it can differ from this estimate." This merges today's INR line and the P0.1 disclaimer into one line. Kept on mobile (panel decision): grid cards already show the INR figure (§1 correction), so hiding it here would make it disappear between the card and the product page. The label "India price" is tested with a non-diaspora reader (§7).
+- **Line limit is a build check, not a runtime fallback** (panel). The component can't measure wraps during server rendering. Measured in Chrome at 375px (327px text width, 13px/18px Hanken Grotesk), the shipping line wraps to a third visual line at 108 to 116 characters depending on the words. A unit test over every seeded brand asserts the shipping line is **at most 100 characters**, leaving room for device font differences. Over budget, the product page drops the threshold clause (e.g. "Fizzy Goblet ships to the US for $15. Import duties are extra, paid on delivery"); the threshold stays on the brand page and the trust sheet. Fizzy Goblet's full sentence is 105 characters, so it already uses the fallback.
+- **Tooltip near the sticky bar:** the ⓘ popover opens upward when there isn't room above the sticky bar, and the page scrolls the trigger into view before opening.
+- **Live check before build:** open a live product page at 375 × 667 and record where the shipping line lands on first load. The mobile gallery has no fixed height and is sized by the photo (`ListingImageGallery.module.css`, verified in code), so portrait photos may push the block lower than the mockup's 380px placeholder.
+- Order is fixed: price, shipping, duties, estimate.
 - **DDP on desktop (ux-design review):** the chip sits in the left column, away from the OrderPanel price, so on desktop only line 2 also ends with "Duties included." On mobile the block sits directly above the chip row, so no extra text is needed.
 - Styling: existing `marketplaceTinyFontStyles`, `--colorGrey500`. Duties-not-included uses the same grey as everything else. No warning color, icon, or weight change.
 
@@ -305,34 +312,44 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 
 > UXR note for the test: the brief's unknown copy was "Check duties at [brand]'s checkout". If the brand is actually DDU, its checkout will not show duties at all, so that wording can reassure falsely. The candidates above state the gap and drop "check at checkout". Test the brief's wording against them.
 >
-> Line counts measured in the mockup (Chrome, 375px, 24px gutters, 13px Hanken Grotesk, 2026-10-06): every state is at or under 3 visual lines once the two fixes above are applied. Not checked on a real iOS or Android device.
+> Line counts measured in the mockup (Chrome, 375px, 24px gutters, 13px Hanken Grotesk, 2026-10-06): every state is at or under 3 visual lines once the two fixes above are applied. Not checked on a real iOS or Android device. Character budget and fallback: see the line limit rule above.
 
 **P1.3: ListingTrustChips**
 - Accept a new optional prop (e.g. `usShipping`) and render the DDP chip before certification chips. Same `certChip` styling (positive). No chip for any other state.
+- **Guardrails (panel, 2026-10-06):** the chip states a real difference in what the shopper pays, so it stays, but it is not a ranking signal. It appears on the product page and brand page only, never on grid cards, and it is never used as a sort, filter or ranking input without a new review. The DDP vs DDU split is read through `duties_type` (P1.11). The brand outreach email tells brands how duty terms are displayed. Whether the chip makes brands without it look worse is a copy test question (§7).
 
 **P1.4: Tooltip pattern**
 - Follow `CertificationBadge`'s `showTooltip` content pattern (bold label + one short paragraph), **but** CertificationBadge's tooltip is CSS `:hover` on a non-focusable `div` (verified in code), so it does not work on touch or keyboard. The new ⓘ must be a `<button>` with an accessible name, open on tap and focus, close on outside tap and Escape, and connect via `aria-describedby`. Fixing CertificationBadge itself is out of scope but should reuse this.
 
 **P1.5: RedirectTrustSheet with full data**
 - Same two items as P0.2, now with fee and threshold. The sheet heading already names the brand ("You're visiting {brand}'s official store"), so items drop the repeated name (ux-design review): "Ships to the US for $15, free on orders over $100", "US import duties are paid on delivery", "Duties are included in the price" (DDP `in_price`; no chip in the sheet). The brand-as-subject rule is met by the heading.
-- At 375 × 667px, with 4 items and the sentiment row expanded, Continue must stay visible without scrolling. The mockup measured the **collapsed** state (fits). The **expanded** state (textarea + email open after a thumbs tap) was not drawn or measured; check it in a browser before build.
+- At 375 × 667px, with 4 items and the sentiment row expanded, Continue must stay visible without scrolling. **Measured (mockup frame H, built from `RedirectTrustSheet.module.css`, Chrome 2026-10-06):** the expanded sheet's natural height is 569px against the 85% cap of 567px, so the feedback area gives up 2px and scrolls inside itself, and Continue stays fully visible. There is no spare room: a fifth item or a shorter viewport makes the feedback area scroll (Continue still stays visible). **Not checked:** the on-screen keyboard (the textarea takes focus on expand, and a fixed bottom sheet can end up behind the keyboard on iOS Safari) and Safari's visible height with toolbars showing. Check both on a real phone before build.
+- **"US cards accepted"** (panel): shown on the checkout item only for brands whose payment page was checked in the P1.1 re-check pass. Brands not checked by P1 ship show "Secure checkout on {brand}'s store" without it. Richer card and payment signal: separate TODO (2026-10-06).
 - Item order: checkout + cards, shipping, duties, returns ("Returns handled by {brand}" unchanged pending §8).
 - Hosts: `ListingPageCarousel.js`, `ListingPageCoverPhoto.js`, `SavedPage.js`. Each passes the brand's `brandUsShipping`.
 
 **P1.6: Brand page hero meta line** (`BrandStorefront.js` `heroMetaStatic`)
-- `{N} products · Ships to the US · Duties included · US cards accepted · Shipping details ↓` (the last item is an anchor link to P1.7)
+- `{N} products · Ships to the US · Duties included · Shipping details ↓` (the last item is an anchor link to P1.7)
+- **"US cards accepted" is removed from the hero** (panel, 2026-10-06): it was never checked per brand, and the meta row is the densest row on the page. With it removed, the row still wraps to 2 lines at 375px for a DDP brand (measured in the mockup).
 - "Duties included" for DDP (either collection mode) only. No duty item for DDU or unknown (the section below carries it). No fee or threshold in the hero.
 
 **P1.7: Brand page "Shipping to the US" section**
-- Placement: on the Products tab (the canonical `/brands/:brandSlug` URL), **between the Featured / occasion rows and All Products**. Not after the grid: All Products loads 12 at a time on scroll (`loadMoreRef` in `BrandStorefront.js`, verified), so for a 308-product brand like Fizzy Goblet anything after the grid can't be reached (ux-design review). This deviates from the category-page "after main content" rule for that reason. Not on the About tab, which is a separate route.
+- Placement: on the Products tab (the canonical `/brands/:brandSlug` URL), **after the Featured row and `BrandOccasionModule`, before All Products** (confirmed at the panel; matches the render order in `BrandStorefront.js`). Not after the grid: All Products loads 12 at a time on scroll (`loadMoreRef` in `BrandStorefront.js`, verified), so for a 308-product brand like Fizzy Goblet anything after the grid can't be reached (ux-design review). This deviates from the category-page "after main content" rule for that reason. Not on the About tab, which is a separate route.
 - The hero meta line gets a "Shipping details" anchor link to this section (P1.6).
-- **Open question for the `/ux-design panel` (found in the mockup):** the section measures about **440px** at 375px with the first FAQ item open, which pushes All Products down by most of a screen. Options: (a) keep the full passage visible (best for answer engines, costs product discovery); (b) show the first sentence plus "Read more" with the rest still in the server-rendered HTML (keeps it quotable, but hidden text is weighted less by some engines); (c) collapse all FAQ items by default (saves about 60px). Recommendation: (c) now, and decide (a) vs (b) at the panel.
+- **Height (decided at the panel, 2026-10-06): passage always visible, every FAQ item collapsed by default.** Measured at 375px: 382px for a DDU brand with 2 FAQ items (down from 438px with the first item open), 407px for a DDP brand with 3 items, and 502px if the duty answer is opened. "Read more" is rejected because the cut would fall before the duty sentence, the fact most likely to change the purchase. About 382px before All Products is accepted as a known tradeoff. Alternatives considered: the About tab (separate route, rarely opened) and a hero disclosure (the hero is already the densest block). Escalated, not blocking: a single cross-brand shipping page for "which brands include duties" queries.
 - Content, in order:
   1. `<h2>` "Shipping to the US"
   2. **Passage**: 40 to 60 words, self-contained (names the brand, says it ships to US addresses, the cost, the duty terms, that checkout happens on the brand's store), always visible. Built from the same templates as P1.2 plus fixed connective sentences, never hand-written per brand. Examples in Appendix A.
   3. **FAQ**: collapsed-by-default `<details>` items reusing the category page's accordion markup and styles (`CategoryPage.js:439`, `css.faqAccordion`). **Correction to the brief:** the homepage `FAQSection` is not an accordion; it renders always-open cards under a hard-coded "Shipping, Payment & Returns for US Shoppers" heading (verified in code). Use the category pattern, or generalize `FAQSection` to take a heading and an accordion option.
      - "Does {brand} ship to the US?" → shipping sentence + ships-from sentence when `shipsFrom` is set (see §8 open question) 
-     - "Will I pay import duties on {brand} orders?" → duty sentence in full (tooltip text included, since there's no tooltip in an answer)
+     - "Will I pay import duties on {brand} orders?" → duty sentence in full (tooltip text included, since there's no tooltip in an answer). Openers by state (panel; the earlier "Yes, usually." put the hedge on whether you pay, when the real uncertainty is how much):
+
+       | State | Answer |
+       |-------|--------|
+       | DDP `in_price` | "No. {brand} includes US import duties in its prices, so nothing is due when your order arrives." |
+       | DDP `at_checkout` | "Yes, at checkout. {brand} adds US import duties to its order total, so nothing is due on delivery." ("No." would be false: the shopper pays them.) |
+       | DDU | "Yes. {brand}'s prices don't include US import duties, so the courier collects any duty owed before delivery. Since August 2025 this can apply to orders of any value. Mela can't estimate the amount." |
+       | Unknown | "{brand} hasn't confirmed whether its prices include US import duties. Since August 2025, US duties can apply to orders of any value." No yes or no opener. Wording is a copy test candidate (§7). |
      - "Does {brand} offer free shipping to the US?" → only when a threshold or `free` is known
   4. **Byline**: "Shipping details checked {Month D, YYYY} · Curated by the Mela team". The date is `checkedAt`, shown here only, never on product pages. No date shown → no section (fall back to the neutral passage without a date).
 - Brands with no data: the section shows the neutral passage ("{brand} sets its own US shipping costs and duty terms, shown at its checkout...") and only the first FAQ item.
@@ -354,12 +371,14 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 - **Cadence**: every quarter, as part of the existing quarterly review trigger (`trig_01DSghwC4tntP5eFdKqKhDGZ`, Jan/Apr/Jul/Oct, TODO 2026-09-25). Extend its checklist: re-run the policy + cart test for any brand whose `us_shipping_checked` is older than 90 days, then export + seed.
 - **Event triggers**: a shopper or brand reports a mismatch; a brand is onboarded; a brand changes store domain (Isharya).
 - **Fail closed**: if `checkedAt` is older than 180 days or missing, every surface shows the "no data" copy. Stale facts are never shown as current.
+- **Legal claim in copy** (panel): "Since August 2025 this can apply to orders of any value" describes US de minimis policy, not brand data. Add it to the quarterly checklist: confirm it still holds before the review closes. Its current status was not checked for this PRD (**unverified**).
 
 **P1.11: Analytics**
 - Add `duties_type` (`'ddp' | 'ddu' | 'unknown' | 'none'`) to `brand_clickout` (`util/analytics/brandClickout.js`), set from the brand's `brandUsShipping`. `'unknown'` means the brand profile loaded and duties aren't stated (or data is stale). Send `null` when the event's surface has no brand profile at all (e.g. a heart icon on a search grid card), so missing data is not counted as unknown duties.
 - **Also add it to `listing_view` and `saved_listing_toggle`.** With in-stock product pages no longer firing `brand_clickout`, those two events carry nearly all product-page intent. (Extends the brief, which named `brand_clickout` only.)
 - GTM: new `DLV - duties_type`, add the parameter to the three GA4 tags, publish a new version; GA4: register Event-scoped custom dimension **Duties Type**. `duties_type` is not a reserved name (checked against the `session_id` lesson in `crossshop-tracking.md` §3); confirm in DebugView anyway.
 - Update `crossshop-tracking.md` §3 schema and the handoff doc's open items.
+- **Optional (panel):** a `brand_shipping_faq_open` event (`brand`, `question`) when a brand-page FAQ item is expanded. It's the only way to learn whether the collapsed FAQ is ever opened; cheap, and not a P1 blocker.
 
 **P1.12: UTM leak in product JSON-LD**
 - `productURL` in `ListingPage.shared.js:259` includes `location.search` and `location.hash` (verified), so `offers.url` carries UTM parameters into structured data. Use the canonical path only. Coordinate with `utm-attribution-restoration-prd.md`, which is changing how UTMs are handled.
@@ -385,7 +404,8 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 - **Process gate:** a mobile-first mockup (375px primary, 1440px adaptation) and a `/ux-design panel` review before any P1 build. P0 copy changes go through a lighter `/ux-design` copy check only.
 - **Mockup must show all six display states** on the product page at 375px: DDP in-price (chip), DDP at-checkout (Vilvah), DDU flat INR (House of Chikankari), DDU threshold USD (Fizzy Goblet), unknown calculated (Masilo), no data / stale. Plus the brand page section for DDP, DDU, unknown.
 - **Longest-string check:** "Hemant & Nandita" and "House of Chikankari" in line 2 at 375px.
-- **Two grey lines max** under the price (§4 P1.2). Anything else the design needs goes in a tooltip or on the brand page.
+- **Two grey lines max** under the price (§4 P1.2): the shipping line (at most two visual lines, enforced by the 100-character test) then the estimate line, so at most three visual lines at 375px. Anything else the design needs goes in a tooltip or on the brand page.
+- **Order:** price, shipping and duties, estimate (§4 P1.2).
 - **Neutral tone for DDU:** same grey, same weight, no icon other than ⓘ. Never warning color.
 - **Positive tone for DDP:** chip only, in the existing trust-chip row.
 - **Unknown never implies an answer:** no "probably", no "usually", no default to DDP or DDU.
@@ -414,13 +434,14 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 
 **P1**
 - [ ] P1-1: `shopify_brands.py` has the six P1.1 fields documented in the docstring and filled for all 25 brands where known; the 10 re-checks in P1.1 are done and dated.
-- [ ] P1-2: All six display states render per the approved mockup at 375px and 1440px; at most two logical / three visual grey lines under the price at 375px with "House of Chikankari" and "Hemant & Nandita"; ⓘ hit area ≥24 × 24px.
+- [ ] P1-2: All six display states render per the approved mockup at 375px and 1440px, in the order price, shipping and duties, estimate; at most two logical / three visual grey lines under the price at 375px with "House of Chikankari" and "Hemant & Nandita"; a unit test asserts every seeded brand's shipping line is at most 100 characters (threshold clause dropped when over); ⓘ hit area ≥24 × 24px; the popover opens upward near the sticky bar.
+- [ ] P1-2b: Live product page checked at 375 × 667 before build, with where the shipping line lands on first load recorded here.
 - [ ] P1-3: Desktop and mobile use the same component; a unit test renders each `method` × `duties` combination and asserts the exact string, including the fee-unknown fallback (Vilvah) and the merged unknown sentence (Masilo).
 - [ ] P1-4: No template ever reads `us_shipping_note` or `brand_content.json` free text (grep).
 - [ ] P1-5: INR-sourced fees and thresholds display with "about"; USD-sourced do not. Server-rendered HTML and the hydrated page show the same dollar amounts (no client-side conversion).
 - [ ] P1-6: No string compares a threshold to an item or cart value (code review + grep for threshold math).
 - [ ] P1-7: A brand with `checkedAt` older than 180 days (test fixture) shows the "no data" copy on every surface.
-- [ ] P1-8a: The brand page section renders between Featured/occasion rows and All Products, and the hero "Shipping details" link scrolls to it.
+- [ ] P1-8a: The brand page section renders after the Featured row and `BrandOccasionModule`, before All Products, with every FAQ item collapsed by default; the hero "Shipping details" link scrolls to it; the hero has no "US cards accepted".
 - [ ] P1-8: Brand page "Shipping to the US" passage is 40 to 60 words for every live brand (unit test over all seeded brands' data), names the brand, and appears in server-rendered HTML (view-source, not just DOM).
 - [ ] P1-9: Brand page FAQPage JSON-LD equals the visible FAQ text exactly (test asserts equality from the shared builder).
 - [ ] P1-10: "Last checked" date appears on brand pages and does not appear on product pages.
@@ -463,6 +484,8 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 - **Vocabulary variants to include:** "duties" vs "tariffs" (F-013 said "tariff", F-030 "duty"; US news since 2025 says "tariffs"); "courier" vs "delivery company" ("courier" is Indian English usage; a Sarah-type reader says "carrier").
 - **Unknown variant to add:** "{brand} hasn't confirmed whether its prices include US duties." "Doesn't say" can read as blaming the brand (supply-side respect).
 - **Line 1 check:** ask a non-diaspora participant what "Estimated from the ₹3,600 India price" means to them. It is new on mobile and may read as "this is sold in India, not here".
+- **Duties chip (panel):** show one brand with the "Duties included" chip next to one without and ask which they'd rather buy from and why. Only users can tell whether the chip reads as "the other brand is worse".
+- **FAQ opener (panel, low priority):** does "Yes." followed by "any duty owed" read as more certain than it should?
 - **Ask, don't claim:** whether participants have paid a carrier processing or brokerage fee on top of duties. Plausible for DDU shipments but **unverified**, so it stays out of copy unless confirmed.
 - **Sample rule:** at least one participant who is non-diaspora and has never ordered from India (the Sarah gap: none of the 3 named recruits fits). Screen every participant for prior duty experience and record it next to their results.
 
@@ -500,7 +523,7 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 1. **International returns.** Per the brief, Nicobar, Polite Society, Needledust and Saphed don't accept returns from abroad. This is not in `shopify_brands.py` and is **unverified**. Should a `us_returns` field be collected in the same re-check pass, and shown in the trust sheet in place of "Returns handled by {brand}"? Recommendation: collect it now (cheap during the re-check), decide display after the comprehension test.
 2. **Ships-from.** Surface `shipsFrom` to shoppers? It answers F-036's "straight from India" assumption, but "ships from a US warehouse" may read as less authentic to some shoppers. Recommendation: include it only in the brand-page FAQ answer for v1 (no product-page line), and add a ships-from question to the comprehension test.
 3. **Daughters of India** fit decision (TODO 2026-10-04) and its state sales tax: if activated, does the passage mention sales tax? Recommendation: yes, one clause, since it changes the total.
-4. **"US cards accepted"** is kept but was never tested per brand. Verify during the re-check pass or drop it.
+4. ~~**"US cards accepted"** is kept but was never tested per brand.~~ **Resolved at the panel (2026-10-06):** removed from the brand hero; on the trust sheet only for brands checked in the re-check pass (P1.5). A richer card and payment signal, plus the homepage "US cards verified" claim, is a separate TODO (2026-10-06).
 
 ---
 
@@ -560,7 +583,19 @@ All three reviews ran on the draft and are folded in above.
 - Brand named once per block, second sentence uses "It" (copy rules).
 - Brand page section is about 440px tall → options and recommendation for the panel (P1.7). Expanded trust sheet not measured (P1.5).
 
-**Not yet done (required before build):** a full `/ux-design panel` on the mockup (P1 gate), plus the desktop 1440px adaptation and loading states.
+**/ux-design panel** (P1 gate, 2026-10-06; mockup updated and measured in Chrome at 375px).
+1. Brand page section height: passage always visible, FAQ collapsed (382px, down from 438); no "Read more" (P1.7).
+2. Placement kept, after Featured and `BrandOccasionModule`; cross-brand shipping page escalated (P1.7).
+3. "US cards accepted" removed from the brand hero; on the trust sheet only where checked (P1.5, P1.6, §8 Q4).
+4. "Duties included" chip kept with guardrails: no grid cards, no sort or filter input, `duties_type` split, brands told in outreach (P1.3).
+5. Mobile estimate line kept: grid cards already show the INR figure (§1 correction).
+6. Line and pronoun rules kept; the line limit becomes a 100-character unit test with a drop-the-threshold fallback (P1.2).
+7. Duty FAQ openers per state; "usually" dropped; "Yes, at checkout." for Vilvah-type brands (P1.7).
+8. Expanded trust sheet measured: Continue stays visible, no spare room; keyboard not checked (P1.5).
+- New finding: at 375 × 667 the shipping line loaded under the sticky bar while the estimate line was visible. **Owner decision (2026-10-06): shipping and duties come directly after the price, then the estimate** (P1.2). Live page check still required.
+- Copy fixes: Appendix A Nicobar ("Shipping is" broke the brand-as-subject rule) and Ankid ("check the total at checkout", flagged by /uxr) passages.
+
+**Not yet done (required before build):** the live product page fold check (P1-2b), the trust sheet with the on-screen keyboard on a real phone (P1.5), the desktop 1440px adaptation, and loading states.
 
 ---
 
@@ -568,14 +603,14 @@ All three reviews ran on the draft and are folded in above.
 
 Generated from templates; shown here to size the copy and check tone. Origin ("from India", "from a US warehouse") appears only when `shipsFrom` is set; it is known for 3 brands only (uxr review caught an earlier draft stating "from India" without data). Numbers come from the 2026-10-04 notes and must be re-checked where P1.1 says so.
 
-**Nicobar (DDP, USD, threshold; threshold pending re-check)** (44 words)
-> Nicobar ships to US addresses. Shipping is $30, and free on orders over $150. Nicobar includes US import duties in its prices, so nothing is due when your order arrives. You pay on Nicobar's own store, which sets the final price and shipping cost.
+**Nicobar (DDP, USD, threshold; threshold pending re-check)** (43 words)
+> Nicobar ships to US addresses for $30 per order, free on orders over $150. Nicobar includes US import duties in its prices, so nothing is due when your order arrives. You pay on Nicobar's own store, which sets the final price and shipping cost.
 
 **House of Chikankari (DDU, INR, flat)** (50 words)
 > House of Chikankari ships to US addresses for about $34 per order. Its prices don't include US import duties: the courier collects them before delivery, and since August 2025 that can apply to orders of any value. You pay on House of Chikankari's own store, which sets the final cost.
 
-**Ankid (unknown, INR, flat)** (45 words)
-> Ankid ships to US addresses for about $28 per order. Ankid doesn't say whether its prices include US import duties, so check the total at Ankid's checkout. Since August 2025, US duties can apply to orders of any value. You pay on Ankid's own store.
+**Ankid (unknown, INR, flat)** (42 words)
+> Ankid ships to US addresses for about $28 per order. Ankid hasn't confirmed whether its prices include US import duties. Since August 2025, US duties can apply to orders of any value. You pay on Ankid's own store, which sets the final cost.
 
 ## Appendix B: Brand data snapshot (from `shopify_brands.py`, checked 2026-10-04)
 
