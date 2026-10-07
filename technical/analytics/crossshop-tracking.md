@@ -1,6 +1,6 @@
 # Cross-Shop & Entry/Exit Attribution Tracking
 
-**Status**: MVP implemented and live-verified — GTM/GA4/Clarity install, entry-source capture, `brand_clickout` event (now 7 params + `saved_surface`, `mela_session_id` added 2026-07-27; 13 GA4 custom dimensions registered total). 2026-08-23: closed a gap where `saved_listing_toggle`/`saved_page_view`/`saved_recommendation_click` were pushing to `dataLayer` correctly but had no GTM tags at all and never reached GA4 — GTM `GTM-5JSJ54C2` published as Version 6 with the missing triggers/tags; not yet live-verified end-to-end (see §3, §4). `Saved Surface` breakdown added to the `Cross-Shop: Multi-Brand Clickout Rate` Exploration; `Mela Cross-Shop Dashboard` (Looker Studio) got 4 new tiles for the add-to-cart funnel.
+**Status**: MVP implemented and live-verified — GTM/GA4/Clarity install, entry-source capture, `brand_clickout` event (now 7 params + `saved_surface`, `mela_session_id` added 2026-07-27; 13 GA4 custom dimensions registered total). 2026-08-23: closed a gap where `saved_listing_toggle`/`saved_page_view`/`saved_recommendation_click` were pushing to `dataLayer` correctly but had no GTM tags at all and never reached GA4 — GTM `GTM-5JSJ54C2` published as Version 6 with the missing triggers/tags; not yet live-verified end-to-end (see §3, §4). `Saved Surface` breakdown added to the `Cross-Shop: Multi-Brand Clickout Rate` Exploration; `Mela Cross-Shop Dashboard` (Looker Studio) got 4 new tiles for the add-to-cart funnel. 2026-10-07: `duties_type` added to `brand_clickout`, `listing_view` and `saved_listing_toggle` in web-client (`72fb90b6a`); GTM and GA4 setup not done yet (see §3, "`duties_type`").
 **PRD**: `mela-docs/product/prds/insights/crossshop-tracking-prd.md` (problem statement, goals, ACs — this file is the technical/operational source of truth for the event schema and GA4 setup).
 **Code**: `web-client/src/util/analytics/entrySource.js`, `web-client/src/util/analytics/brandClickout.js`, `web-client/src/util/sentimentCapture.js` (session ID source), `web-client/src/util/includeScripts.js`, `web-client/src/index.js`, `web-client/server/csp.js`.
 
@@ -79,6 +79,7 @@ All three are documented with comments in `.env-template`. **Do not** also set t
   entry_source: string,          // sessionStorage['mela_entry_source'] at the moment of click — see §2
   destination:  string,          // the outbound Shopify URL (publicData.productUrl)
   saved_surface: string | null,  // 'saved_brand_group' | 'saved_item_card' from /saved, null everywhere else — added 2026-08-13, §14 below
+  duties_type:  'ddp' | 'ddu' | 'unknown' | 'none' | null,  // the brand's US duty terms — added 2026-10-07, see "`duties_type`" below
   mela_session_id: string,       // getOrCreateSessionId() from sentimentCapture.js — see "Mela Session ID" note below
 }
 ```
@@ -137,6 +138,7 @@ The three PDP surfaces listed in the table above (`OrderPanel.js`, `ProductOrder
   save_source: 'add_to_cart_button' | 'heart_icon',  // which control triggered the save (renamed from `source` 2026-10-04: GA4 reads an event param named `source` as traffic source)
   listing_id: string,
   is_saved: boolean,                             // true = saved, false = unsaved (toggle off)
+  duties_type: 'ddp' | 'ddu' | 'unknown' | 'none' | null,  // the brand's US duty terms, null when the surface has no brand profile — added 2026-10-07
 }
 ```
 Fired from `toggleSaveListing` in `src/ducks/savedListings.duck.js` (new `pushSaveToggle()` helper, `src/util/analytics/savedListings.js`, following the same minimal `window.dataLayer.push(...)` pattern as `brandClickout.js`), covering both the anonymous (localStorage) and authenticated (`sdk.currentUser.updateProfile`) write paths identically. The existing heart icon (`SavedListingButton`, `variant="icon"`/`"button"`) defaults to `source: 'heart_icon'` and is otherwise unchanged; the new PDP Add-to-Cart control (a new `SavedListingButton` `variant="cta"`) passes `source: 'add_to_cart_button'` explicitly.
@@ -150,6 +152,47 @@ Fired from `toggleSaveListing` in `src/ducks/savedListings.duck.js` (new `pushSa
 - The existing `GA4 - brand_clickout` tag's Event Parameters were missing `saved_surface` entirely — added `saved_surface` → `{{DLV - saved_surface}}`.
 
 **Still open**: none of this has been live-verified end-to-end (real click → GTM Preview → GA4 DebugView) — only that the tags/triggers/variables are correctly configured and published. Do that verification pass before trusting any live numbers on the four events below.
+
+### `duties_type` — the brand's US duty terms on three events (added 2026-10-07)
+
+Source: `international-shipping-transparency-prd.md` P1.11. Lets DDP vs DDU brands be compared on `listing_view` → `saved_listing_toggle` → `brand_clickout`, which is the guardrail in that PRD's §7 (clickout rate on DDU brands must not drop more than 20% against its pre-launch baseline, evaluated only once each segment has at least 100 product-page sessions).
+
+**Added to**: `brand_clickout`, `listing_view` and `saved_listing_toggle`. In-stock product pages no longer fire `brand_clickout` (Add to Cart saves instead), so `listing_view` and `saved_listing_toggle` carry almost all product-page intent.
+
+**Values** (a string, or `null`):
+
+| Value | Meaning |
+|-------|---------|
+| `ddp` | The brand includes US import duties in its prices, or adds them at checkout (`brandUsShipping.duties = 'ddp'`) |
+| `ddu` | Duties are paid on delivery (`'ddu'`) |
+| `none` | The brand does not ship to the US (`method = 'none'`) |
+| `unknown` | The brand profile loaded, but duties are not stated, or the data is stale (`checkedAt` missing or older than 180 days; the fail-closed rule, PRD P1.10) |
+| `null` | No brand profile was available at all, for example a heart icon on a grid card whose author entity carries no `publicData`. Missing data is deliberately **not** counted as `unknown` |
+
+As observed on dev on 2026-10-06 (an anonymous SDK scan found 8 brand profiles with listings; the other seeded brands were not found by that scan): 6 carry a `checkedAt` and can read `ddp`, `ddu` or `none`; Nicobar has no `checkedAt` and Isharya has no data, so both read `unknown` until their re-check. Brands whose re-check left `checkedAt` out will read `unknown` the same way.
+
+```js
+{                                     // listing_view (src/util/analytics/pageViews.js) — schema first documented here
+  event: 'listing_view',
+  listing_id:   string | null,       // listing.id.uuid
+  brand_id:     string | null,       // listing author UUID
+  brand_name:   string | null,       // publicData.brand
+  category:     string | null,       // most specific of categoryLevel3 / 2 / 1
+  duties_type:  'ddp' | 'ddu' | 'unknown' | 'none' | null,
+  mela_session_id: string,
+}
+```
+
+**Code**: `getDutiesTypeForAnalytics(author)` in `web-client/src/util/brandShipping.js` computes the value from `author.attributes.profile.publicData.brandUsShipping`. It is passed by `OrderPanel`, `ListingPageCarousel`, `ListingPageCoverPhoto`, `ListingCard`, `SavedBrandGroup` (trackingParams / `dutiesType` prop on `SavedListingButton`) and read inside `useListingView`. web-client `72fb90b6a` (Stage 2). Unit tests assert the value on all three events, including `null`.
+
+**Open (not done as of 2026-10-07): GTM and GA4 setup**, a manual step in the owner's accounts. The dataLayer key exists but nothing reads it yet:
+1. GTM (`GTM-5JSJ54C2`): create Data Layer Variable `DLV - duties_type` (dataLayer key `duties_type`).
+2. Add the event parameter `duties_type` → `{{DLV - duties_type}}` to the three GA4 Event tags: `GA4 - brand_clickout`, the tag that sends `listing_view`, and `GA4 - saved_listing_toggle`.
+3. Publish a new GTM version.
+4. GA4 Admin → Custom definitions: register an Event-scoped custom dimension **Duties Type** (parameter `duties_type`). It must have fired once to appear in the picker.
+5. Confirm in DebugView: one event from a DDP brand and one from a DDU brand on each of the three events. `duties_type` is not a reserved GA4 parameter name (checked against the `session_id` lesson under "Mela Session ID" above), but DebugView is the proof.
+
+Segment every report by this dimension (DDP, DDU, unknown). A lower clickout rate on DDU brands after honest disclosure is expected and acceptable; a drop on DDP brands would be a signal that the new shipping block itself hurts.
 
 ### `source` param pollutes GA4 traffic source (found 2026-10-03, GTM fix published as Version 9, 2026-10-04)
 
