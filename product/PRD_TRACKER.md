@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-09-25  
+**Last updated:** 2026-10-06  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 **Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
@@ -46,6 +46,7 @@
 | [brand-hero-card-webclient-prd.md](prds/brand-hero-card-webclient-prd.md) | ✅ Shipped | P1 | — | First-fold coverage shrinks (The Nesavu, Masilo absent from hero) until those brands get `brandHeroImageIds`/`brandHeroImages` |
 | [dev-to-production-migration-prd.md](prds/dev-to-production-migration-prd.md) | 📋 Draft | — | No production Sharetribe environment confirmed provisioned yet | `configBrands.js` production brand-ID map is empty (biggest item); social-share image re-upload; 5 other open questions (see PRD §8) — not started |
 | [gifting-festival-traffic-prd.md](prds/gifting-festival-traffic-prd.md) | 🟡 Partial | P0 | D1+D2 code shipped; Console listing-fields sync complete (occasion/gift_occasion/recipient all populated, confirmed via `flex-cli search`); inventory backfill still needed before new occasion values show on existing listings; D3 not started | Day 1 inventory backfill (`single_file_classifier.py --enrich-only`); D3: social calendar/boards + brand sourcing + ads-readiness gate |
+| [international-shipping-transparency-prd.md](prds/international-shipping-transparency-prd.md) | 📋 Draft | P0 | Blocked by Isharya repoint (TODO 2026-10-06) for Isharya data only; P1 gated on mockup + `/ux-design panel` + 5-person copy test; P2 blocked on seller + price-accuracy gate. **Supersedes** `trust-conversion-signals-prd.md` §3.3a static "Ships to US" line | P0: remove 7 false shipping/duty claims (OrderPanel disclaimer, trust sheet, vetting strip, brand hero, homepage FAQ Q1/Q3, meta description); delist Pluchi (needs owner OK); export + seed `brandUsShipping` to dev (= live site) |
 
 ---
 
@@ -76,7 +77,7 @@ newsletter-login-nudge ←── [BLOCKED: Beehiiv account]
 Based on current state, ROI per effort, and dependencies:
 
 ### Now (unblocked, high ROI, short effort)
-1. **Trust signals — "Ships to US" static line** (`trust-conversion-signals-prd.md` §3.3a) — ~30 min, completes the last P0 gap on ListingPage
+1. ~~**Trust signals — "Ships to US" static line** (`trust-conversion-signals-prd.md` §3.3a)~~ **Superseded 2026-10-06** by `international-shipping-transparency-prd.md` P0.7: a static line would be false for Pluchi and Isharya. Do the P0 false-claim removal there instead
 2. **Saved items verification** (`saved-items-pasand-prd.md`) — audit auth gate tiers + Topbar link; close out any gaps before it's treated as shipped
 3. **Enrichment pipeline verification** (`enrichment-pipeline-stage2-update-prd.md`) — run a test product through `prompt_engine.py`, confirm output fields; web-client is ready
 
