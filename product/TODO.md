@@ -4,6 +4,9 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ## 2026-10-06
 
+### Shipped
+- `feat(brands)`, `feat(export)`, `chore(brands)` (Mela-scrapper-integrations, branch `feat/brand-us-shipping-export`) and `feat(seed)` (product-listing-integration, branch `feat/seed-brand-us-shipping`): `usShipping` exported and seeded to dev as `publicData.brandUsShipping` for the 19 live brands (P0.9, part of P1.1). Isharya was not seeded. Branches are not merged.
+
 ### Next
 - [ ] 🔴 **CRITICAL: repoint Isharya from isharya.com to isharya.co.** All 2,674 live Isharya listings (`classified_products_prod/isharya_products_classified.csv`) link out to `www.isharya.com`, the India store, which returns no US shipping rates and prices in INR. Isharya's own policy says "For international orders, please visit www.isharya.co". isharya.co is a separate Shopify store: USD pricing, ships to the US, 2,938 published products (checked 2026-10-06). Every Isharya clickout from Mela currently lands on a store a US shopper can't buy from, which also corrupts OCTR for a live brand. Steps:
   1. In `shopify_brands.py`, set the Isharya `base_url` to `https://isharya.co` and re-check `bestseller_collection` against isharya.co's `/collections.json`.
@@ -11,6 +14,13 @@ Running log of shipped work and next actions. Newest entry at top.
   3. Update the live listings' outbound product URLs, then rerun `export_brand_content.py` + `seed-brand-profiles.js` so `brandStoreUrl` points to isharya.co.
   4. Verify live: open an Isharya listing on shopatmela.com, click through the trust sheet, and confirm Isharya's store accepts a US address and checks out in USD.
   - Supersedes the Isharya line under 2026-10-04 Blockers.
+- [ ] 🔴 **CRITICAL: check and fix Isharya after the `base_url` change (do not seed Isharya's shipping terms until listings are repointed).** On 2026-10-06 `shopify_brands.py` `base_url` was set to `https://isharya.co` (uncommitted, branch `feat/brand-us-shipping-export`; this is step 1 of the item above). That lifts the exporter's Isharya guard, so `brand_content.json` now carries Isharya's `usShipping` (DDU, $20 flat, free over $250). Sharetribe was **not** reseeded for Isharya: its profile has no `brandUsShipping` and `brandStoreUrl` is still isharya.com. The 2,674 live listings still link to isharya.com, so seeding now would show .co terms on products that send shoppers to .com.
+  1. Compare the isharya.co and isharya.com catalogs (handles and product IDs) and re-check `bestseller_collection` against isharya.co `/collections.json`. Not verified: the first products returned by each store's `products.json` differ.
+  2. Repoint the listings (rewrite outbound URLs, or rescrape and reconcile listing IDs). Not verified: whether a rescrape with the new `base_url` updates existing listings or creates duplicates.
+  3. Only then run `seed-brand-profiles.js` for Isharya, and check `brandUsShipping` and `brandStoreUrl` via the Integration API.
+  4. Resolve the fee conflict: the policy says $20 below $250, the 2026-10-04 cart test on isharya.co returned $25 at a $100 cart.
+  5. Set `us_shipping_checked` after the re-check; without a date the web-client fails closed (PRD P1.10).
+  - Related: `international-shipping-transparency-prd.md` P0.9 Isharya guard and P1.1 re-check list.
 - [ ] **Give the "US cards" signal more detail, and stop claiming it's verified.** The homepage `VettingStrip.cards` says "US cards verified" (en.json:637), but card acceptance has never been checked for any brand. The same blanket claim appears in `BrandStorefront.metaCards` (now dropped from the brand hero by the shipping PRD panel), `RedirectTrustSheet` ("US cards accepted") and `BrandsPage.description` ("accepts US cards"). Raised at the `/ux-design panel` on `international-shipping-transparency-prd.md` (2026-10-06). Steps:
   1. During the P1.1 shipping re-check pass, go as far as each brand's payment step with a US address and record what it actually accepts (Visa/Mastercard/Amex, PayPal, Shop Pay, Apple Pay) and the checkout currency. Store it as a structured field in `shopify_brands.py` next to the `us_*` fields.
   2. Decide what the richer signal says per brand (e.g. "Pay with US cards or PayPal"), where it shows (trust sheet checkout item first), and the fallback for unchecked brands (say nothing).
