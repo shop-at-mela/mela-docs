@@ -11,6 +11,11 @@ Running log of shipped work and next actions. Newest entry at top.
   3. Update the live listings' outbound product URLs, then rerun `export_brand_content.py` + `seed-brand-profiles.js` so `brandStoreUrl` points to isharya.co.
   4. Verify live: open an Isharya listing on shopatmela.com, click through the trust sheet, and confirm Isharya's store accepts a US address and checks out in USD.
   - Supersedes the Isharya line under 2026-10-04 Blockers.
+- [ ] **Give the "US cards" signal more detail, and stop claiming it's verified.** The homepage `VettingStrip.cards` says "US cards verified" (en.json:637), but card acceptance has never been checked for any brand. The same blanket claim appears in `BrandStorefront.metaCards` (now dropped from the brand hero by the shipping PRD panel), `RedirectTrustSheet` ("US cards accepted") and `BrandsPage.description` ("accepts US cards"). Raised at the `/ux-design panel` on `international-shipping-transparency-prd.md` (2026-10-06). Steps:
+  1. During the P1.1 shipping re-check pass, go as far as each brand's payment step with a US address and record what it actually accepts (Visa/Mastercard/Amex, PayPal, Shop Pay, Apple Pay) and the checkout currency. Store it as a structured field in `shopify_brands.py` next to the `us_*` fields.
+  2. Decide what the richer signal says per brand (e.g. "Pay with US cards or PayPal"), where it shows (trust sheet checkout item first), and the fallback for unchecked brands (say nothing).
+  3. Until step 1 is done, change `VettingStrip.cards` so it doesn't claim verification, and make `BrandsPage.description` match. Put both through `/ux-design` copy check with P0.
+  4. Make all four strings come from one source so they can't drift.
 
 ## 2026-10-04
 
