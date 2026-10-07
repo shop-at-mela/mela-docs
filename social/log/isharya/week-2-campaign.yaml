@@ -1,0 +1,174 @@
+---
+# Isharya Week 2 — staged via automated cloud weekly run 2026-10-04 (social-staging/week-of-2026-10-04).
+# Brand reused from week 1 (last posted 2026-08-27, >7 days clear of brand_recency_days=7); all 3
+# products below are NEW dev_listing_ids never featured in any prior campaign log (cooldown CLEAR).
+# STATUS: staged for founder approval. No blotato_create_post call was made.
+
+brand: Isharya
+brand_slug: isharya
+week: 2
+date_posted: null   # not scheduled yet — staged only
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Neha
+category: jewelry_and_accessories
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 2) + real product photos + all 3 listings verified OPEN this run
+hypothesis: "Angle 1 (belonging / suitcase economy) with Neha lead on statement jewelry — does a restock-relief situation hook (no longer needing family to carry pieces over) out-save Isharya's prior discovery-angle hook ('your cousin tags this')?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps below — copy + listing-live clear; watermark compositing + render QC blocked by infra this run
+coaching_notes: >
+  Diaspora anchor: strong and situational (restock-from-India relief), not identity-labeled —
+  matches hook-engineering.md angle 1. Jewelry pieces (mirror/enamel/crystal work) are
+  detail-critical per visual-scorecard.md Stage 0 morph gate — scene prompts used a tight,
+  literal "keep the exact [feature] unchanged, only build the environment" instruction for all
+  3, but the resulting renders could NOT be visually diffed against source this run (see
+  verification_gaps) — flagging all 3 for founder eyeball before shipping per standing
+  instruction, not just the usual Stage-0 default.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving (same infra class as week-of-2026-09-30's gap, now worse)
+verification_gaps:
+  listing_live_check: >
+    PERFORMED via blotato_create_source fallback (direct shopatmela.com fetch returns
+    EGRESS_BLOCKED 403 from this cloud sandbox, same as last run). All 3 product listings and
+    the /brands/isharya page resolved to real, matching content (title/brand/price extracted
+    correctly) — the page's own "No products available in this category" text is a related-items
+    widget artifact, NOT a closed-listing signal: cross-validated against the brand's own
+    confirmed-live week-1 listing (same phrase, known-good) and against a deliberately invalid
+    listing ID (which instead returned "Loading listing..." / "No product information
+    available" — the real broken-page signature). Treat all 3 as LISTING LIVE / OPEN.
+  dev_listing_id_collision_resolved: >
+    isharya_products_classified.csv has the known Dev_Listing_ID drift bug (see
+    project_listing_id_drift_bug): dev_listing_id 6a54b7ba-75d6-47f0-807d-a4bb4a83859c appears on
+    BOTH "Amara Lattice Swirl Earrings" and "Banger Multi Crystal Cross Necklace" rows; dev_listing_id
+    6a54b85c-b56d-4f72-82fe-1319cc691824 appears on BOTH "Amara Mirror Pearl Duo Drop Earrings" and
+    "Bling Infinity Cut Crystal Studs" rows. blotato_create_source live-page lookups for both IDs
+    returned SEO titles matching "Banger..." and "Bling..." respectively (NOT the Amara products) —
+    live site confirms Banger + Bling are the correct products for these IDs. Used those.
+  render_watermark_and_qc: >
+    NOT PERFORMED. cdn.shopify.com AND database.blotato.io both return EGRESS_BLOCKED (403) from
+    this cloud sandbox (curl, WebFetch, and local headless Chromium all confirmed blocked — this
+    is a step beyond the week-of-2026-09-30 gap, which only hit shopatmela.com +
+    database.blotato.io; this run additionally confirmed the Shopify CDN itself is blocked). This
+    means: (1) the Blotato Product Scene Placement renders below could NOT be downloaded or
+    visually diffed against source for morphing/color drift/garbled text (visual-scorecard.md
+    Stage 2), and (2) the "Discovered on Mela" watermark could NOT be locally composited via
+    templates/photo-watermark.html + render.sh, because that requires fetching the render into
+    headless Chrome, which is blocked the same way. The 3 image_url values below are RAW,
+    UNWATERMARKED Blotato outputs. A local session with network access must: download each
+    render, eyeball it against the source photo (esp. the fine mirror/enamel/crystal detail per
+    the Stage-0 morph gate), run templates/render.sh to composite the watermark, re-upload via
+    blotato_create_presigned_upload_url, and swap the URLs below before scheduling.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/isharya?utm_source=instagram&utm_medium=social&utm_campaign=isharya_w2&utm_content=brand_carousel"
+  caption: |
+    The jewelry you used to ask family to bring back from India. Isharya ships it straight to your door now.
+
+    Isharya designs bold statement jewelry in metal, stone, and enamel. Each piece is finished with 18 karat gold plating, made to be the boldest thing you wear all season.
+
+    Featured in this carousel:
+    • Amina Enamel Mirror Earrings
+    • Banger Multi Crystal Cross Necklace
+    • Bling Infinity Cut Crystal Studs
+
+    Discover Isharya on Mela →
+
+    Ships to the US from Isharya.
+    #IndianJewelry #StatementEarrings #MirrorWork #FestiveJewelry #DiscoverOnMela
+  products:
+    - name: Amina Enamel Mirror Earrings
+      sku: amina-enamel-mirror-earrings
+      dev_listing_id: 6a54b651-a17c-45df-9f5c-3ca0d0336911
+      shopatmela_url: https://www.shopatmela.com/l/6a54b651-a17c-45df-9f5c-3ca0d0336911
+      price_usd: 51
+      source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/products/E2207-20-016_2_6860dcf9-1be9-4a53-bcc7-fd96c8bdeb8d.jpg?v=1758814824
+      blotato_visual_id: b2e201af-4a5a-44a9-aa15-6d5470d8f2a1
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bce06b6b-731a-4ff3-9a0d-e561a0927c5a.jpg  # RAW, UNWATERMARKED — see verification_gaps.render_watermark_and_qc
+      alt_text: Paisley drop earrings with hand cut mirrors and black enamel on a cream jewelry tray on a sunlit bedroom dresser
+      verified: true  # live listing resolved 2026-10-04 via blotato_create_source; "Persian Paisley Mirror Drop Earrings with Black Enamel", $51, mirror + 18Kt gold plating
+      cooldown: clear — never featured in any prior campaign log
+    - name: Banger Multi Crystal Cross Necklace
+      sku: banger-multi-crystal-cross-necklace
+      dev_listing_id: 6a54b7ba-75d6-47f0-807d-a4bb4a83859c
+      shopatmela_url: https://www.shopatmela.com/l/6a54b7ba-75d6-47f0-807d-a4bb4a83859c
+      price_usd: 152
+      source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/files/N1997-20-358_2.jpg?v=1758812714
+      blotato_visual_id: 0010b7b4-955c-41e3-b6a5-32c44718c76d
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6bbd5cb0-46a6-4cb9-b8c0-93634f8b09a4.jpg  # RAW, UNWATERMARKED
+      alt_text: Brass cross pendant necklace with multi colored crystals and gold plating draped on a jewelry stand on a marble vanity
+      verified: true  # live listing resolved 2026-10-04; dev_listing_id collision with "Amara Lattice Swirl Earrings" row resolved in favor of this product (see verification_gaps)
+      cooldown: clear — never featured in any prior campaign log
+    - name: Bling Infinity Cut Crystal Studs
+      sku: bling-infinity-cut-crystal-studs
+      dev_listing_id: 6a54b85c-b56d-4f72-82fe-1319cc691824
+      shopatmela_url: https://www.shopatmela.com/l/6a54b85c-b56d-4f72-82fe-1319cc691824
+      price_usd: 77
+      source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/products/E2237-20-710_2.jpg?v=1758816041
+      blotato_visual_id: a53f6f36-7363-4048-9069-1225a0de136d
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-19dacf07-ba16-44a9-9220-1ab4c9418c09.jpg  # RAW, UNWATERMARKED
+      alt_text: Honey hued crystal stud earrings with gold plating on a ceramic ring dish on a sunlit marble vanity countertop
+      verified: true  # live listing resolved 2026-10-04; dev_listing_id collision with "Amara Mirror Pearl Duo Drop Earrings" row resolved in favor of this product (see verification_gaps)
+      cooldown: clear — never featured in any prior campaign log
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Gifting and Occasions
+      board_id: "1103593152379723628"
+  pins:
+    - name: Amina Enamel Mirror Earrings
+      status: staged
+      board_id: "1103593152379723628"
+      title: Mirror & Enamel Drop Earrings | Handcrafted Indian Jewelry
+      description: Paisley drop earrings with hand cut mirrors and black enamel, set in 18 karat gold plating. Statement jewelry designed in India by Isharya. Discover on Mela.
+      alt_text: Paisley drop earrings with hand cut mirrors and black enamel on a cream jewelry tray on a sunlit bedroom dresser
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bce06b6b-731a-4ff3-9a0d-e561a0927c5a.jpg
+      link: https://www.shopatmela.com/l/6a54b651-a17c-45df-9f5c-3ca0d0336911?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=amina_enamel_mirror_earrings
+    - name: Banger Multi Crystal Cross Necklace
+      status: staged
+      board_id: "1103593152379723628"
+      title: Multi Crystal Cross Pendant Necklace | Indian Statement Jewelry
+      description: Brass cross pendant necklace with multi colored crystals and 18 karat gold plating. Bold statement jewelry designed in India by Isharya. Discover on Mela.
+      alt_text: Brass cross pendant necklace with multi colored crystals and gold plating draped on a jewelry stand on a marble vanity
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6bbd5cb0-46a6-4cb9-b8c0-93634f8b09a4.jpg
+      link: https://www.shopatmela.com/l/6a54b7ba-75d6-47f0-807d-a4bb4a83859c?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=banger_multi_crystal_cross_necklace
+    - name: Bling Infinity Cut Crystal Studs
+      status: staged
+      board_id: "1103593152379723628"
+      title: Crystal Gold Plated Stud Earrings | Indian Jewelry
+      description: Honey hued crystal stud earrings with 18 karat gold plating and enamel detailing. Everyday statement jewelry designed in India by Isharya. Discover on Mela.
+      alt_text: Honey hued crystal stud earrings with gold plating on a ceramic ring dish on a sunlit marble vanity countertop
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-19dacf07-ba16-44a9-9220-1ab4c9418c09.jpg
+      link: https://www.shopatmela.com/l/6a54b85c-b56d-4f72-82fe-1319cc691824?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=bling_infinity_cut_crystal_studs
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/isharya
+  checks:
+    brand_story: { result: pass, note: "Tagline 'Bold statement jewelry, designed in India, worn worldwide' confirmed live via blotato_create_source 2026-10-04, matches shopify_brands.py." }
+    product_findability: { result: tbd, note: "Not checked beyond listing resolution — shopatmela.com direct browse blocked this run." }
+    mobile_responsive: { result: tbd, note: "Not checked this run." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  persona_fatigue_context: >
+    Phase 0 history check (this run) found Priya in 4 of the last 5-6 confirmed posts
+    (superbottoms 10-04, pluchi 09-08, tarinika 09-07, aagghhoo 09-07) with Neha at 0. This
+    batch deliberately leads Isharya with Neha to correct the imbalance.
+  brand_tagging: Not tagged — brand @tagging paused during warmup per visual-style-guide.md / hook-engineering.md.
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."

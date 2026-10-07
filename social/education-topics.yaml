@@ -268,7 +268,8 @@ topics:
     personas: [priya, arun]
     source_brands: [isharya]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-10-04, paired with Isharya week-2 brand row; led by Sarah (persona list says priya/arun, but this batch deliberately used Sarah per the persona-fatigue flag — see social/log/_education/craft-goldsmithing-isharya-w1-campaign.yaml)
 
   - id: craft-knitwear
     type: cultural_education
