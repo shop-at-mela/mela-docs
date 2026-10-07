@@ -312,7 +312,10 @@ topics:
     platforms: [instagram, reddit]
     personas: [sarah, neha]
     source_brands: [any]
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-10-07, paired thematically with Kaunteya (bone china) +
+                  # Vilvah (farm-sourced haircare) week-3 brand rows; led by Neha (see
+                  # social/log/_education/trust-small-batch-01-w1-campaign.yaml)
 
   - id: trust-gifting-international-01
     type: trust_service

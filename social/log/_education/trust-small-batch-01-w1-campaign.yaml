@@ -1,0 +1,136 @@
+---
+# trust-small-batch-01 education carousel — staged 2026-10-07 weekly staging run
+# (social-staging/week-of-2026-10-07). Topic id: trust-small-batch-01 (education-topics.yaml,
+# trust_service, no verify:true flag, source_brands: [any]). Alternates type from last week's
+# cultural_education pick (craft-goldsmithing-isharya, 2026-10-04) per meta.cadence. Thematically
+# ties to both this week's brand rows (Kaunteya hand-decorated bone china, Vilvah small-batch
+# farm-sourced haircare) without being brand-specific. Cards rendered 2026-10-07 via HTML/CSS ->
+# PNG (local headless Chromium, /opt/pw-browsers, no Blotato credits, no external network
+# dependency) per visual-style-guide.md Tool decision procedure. Like craft-goldsmithing-isharya
+# before it, this is the ONE tile this run that could be fully rendered AND visually inspected
+# end to end (no blocked external fetch involved) — see verification.render_qc.
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - reddit
+format: carousel
+persona: Neha
+category: trust_service
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education content is always Full lane
+hypothesis: "Angle 4 (claim-decoded) with Neha lead: does reframing 'why shipping takes longer' as a quality signal (hand-checked, small production runs) rather than a logistics apology out-save a neutral shipping-timeline post, and does it land with Neha's value-for-price lane the way craft-goldsmithing-isharya's claim-decoded framing worked for Sarah two weeks ago?"
+gate_verdict: SHIP   # fully rendered + visually inspected locally; no blocked dependency for this tile
+coaching_notes: >
+  Diaspora anchor: present at the edge, not the primary lever by design (angle 4,
+  claim-decoded, generic trust_service topic with source_brands: any) — this post explains a
+  cross-brand shipping/production reality rather than anchoring one brand's origin story.
+  Neha was chosen over Sarah (both allowed personas) specifically to avoid a 3rd Sarah lead
+  in a short window — see vilvah/week-3-campaign.yaml coaching_notes. Slide 1 is a typographic
+  hook card, never a product, per the hard rule. No payoff/product slide (optional for
+  trust_service; this topic's Education Visual System row says "No product — CTA card only"),
+  so slide 3 (myth-vs-fact) absorbs both the explanation and the CTA close, same structure as
+  the template's own built-in example.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+  reddit_upvotes: null
+  reddit_outbound_clicks: null
+
+# VERIFICATION
+verification:
+  render_qc: >
+    All 3 slides rendered locally via headless Chromium (/opt/pw-browsers/chromium-1194,
+    --no-sandbox) at 1080x1080 and visually reviewed (Read tool) this run: legible at full
+    size, watermark present and subtle (bottom right, navy on slides 1-2, cream on slide 3's
+    navy panel, consistent with mela-kit.css), no overflow/clipping, slide 1 is a typographic
+    hook (no product). No external image fetch was needed for any of the 3 slides — this tile
+    has no verification_gaps, unlike the 2 product tiles this run.
+  claim_verification: >
+    No verify:true claim on this topic (trust-small-batch-01, source_brands: any). The 4
+    teaching-card steps and the myth/fact pair are generic, brand-agnostic statements about how
+    small-batch and made-to-order production generally works (finished after ordering, hand
+    checked, natural run-to-run variation) — not a specific claim about Kaunteya's or Vilvah's
+    internal process, and no shipping day-ranges or customs/duty claims are made (unlike
+    shipping-timeline.html's own template, which the gate flags as verify:true territory this
+    tile deliberately avoids).
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com?utm_source=instagram&utm_medium=social&utm_campaign=trust-small-batch-01_w1&utm_content=education_small_batch"
+  topic: "trust-small-batch-01 — Small batch vs. mass produced: why your order might take longer, and why that's the point"
+  visual_system: "Education (HTML cards, navy + marigold worn openly per the trust_service utility sub-system). Slide 1 = hook/title card, not a product."
+  slides:
+    - name: hook
+      image_render: log/_education/trust-small-batch-01/renders/slide1-hook.png
+      image_url: null   # local PNG only — see notes.upload_gap below
+    - name: teaching
+      image_render: log/_education/trust-small-batch-01/renders/slide2-teaching.png
+      image_url: null
+    - name: myth_vs_fact_close
+      image_render: log/_education/trust-small-batch-01/renders/slide3-mythfact.png
+      image_url: null
+  alt_text: "Text slide: Why your order might take a little longer, and why that's actually the part that's working."
+  caption: |
+    Why your order might take a little longer. That's actually the part that's working.
+
+    Many pieces are finished only after your order comes in, not pulled off a warehouse shelf. Small production runs mean a person checks each piece, not a machine sampling every tenth one. That's also why two pieces from the same run are never perfectly identical.
+
+    A slower ship date usually doesn't mean something went wrong. It means it's being made in small batches, not mass produced.
+
+    Discover independent Indian brands on Mela →
+
+    #SmallBatch #HandFinished #IndianBrands #DiscoveredOnMela #ShopSmall
+
+# REDDIT (draft only — manual, human-posted, per reddit-strategy.md; NOT posted this run)
+reddit:
+  status: draft
+  mode: "original_informational_post (mode 2 per reddit-strategy.md — value-first, no Mela plug baked into the body)"
+  candidate_subreddits:
+    - r/IndiaMoms       # already-active per accounts.md
+    - r/AsianParenting   # already-active per accounts.md
+  note: >
+    Reddit has no Blotato automation support and is human-posted only per reddit-strategy.md
+    ground rules (founder/team voice, always-disclose affiliation). This draft is NOT posted;
+    it is left for manual review and posting in a local/founder session, per reddit-strategy.md
+    mode 2 ("a Mela mention belongs in a reply if someone asks follow-up questions, not baked
+    into the original post"). Verify each candidate subreddit's current self-promotion rules
+    before posting, per the doc's own caveat.
+  title: "PSA: if your order from a small Indian brand is taking longer than Amazon, that's usually a feature, not a bug"
+  body: |
+    Posting this because I see the "why is this taking 2 weeks" question a lot in threads here.
+
+    A lot of small Indian brands (handloom, hand-painted ceramics, small-batch skincare, that kind of thing) don't keep a warehouse of pre-made stock the way a mass retailer does. A bunch of pieces get finished, checked, or even made after you place the order, not pulled off a shelf. That's also why two "identical" pieces from the same brand are sometimes slightly different. A human checked them, not a machine sampling every tenth one off a line.
+
+    None of this is a defense of actually bad communication or a brand that goes dark on you. But if the timeline itself is a little longer than what you're used to from big retailers, it's usually not a red flag by itself, it's often just what small-batch production actually looks like.
+
+    Curious if others have noticed this pattern with brands they've ordered from.
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com
+  checks:
+    cultural_context: { result: pass, note: "Brand-agnostic topic; no single brand page promise to audit. CTA points to the Mela homepage, not a specific listing." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  upload_gap: >
+    The 3 rendered PNGs are local-only this run — database.blotato.io (the presigned-upload
+    host) is blocked by the same egress policy documented in kaunteya/week-3-campaign.yaml and
+    vilvah/week-3-campaign.yaml verification_gaps. A local session must upload these 3 files
+    (via blotato_create_presigned_upload_url, PUT the bytes) and fill in the image_url fields
+    above before scheduling.
+  dual_platform_note: "This topic is trust_service (platforms: [instagram, reddit] per education-topics.yaml) — the Reddit leg is drafted above but NOT posted, per the automated-run guardrails and reddit-strategy.md's human-posted-only rule."
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."

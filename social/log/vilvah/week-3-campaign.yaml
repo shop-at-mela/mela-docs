@@ -1,0 +1,165 @@
+---
+# Vilvah Week 3 — staged via automated cloud weekly run 2026-10-07
+# (social-staging/week-of-2026-10-07). Brand last posted 2026-08-11/15 (well clear of
+# brand_recency_days=7). All 3 products below are NEW dev_listing_ids never featured in any
+# prior campaign log (cooldown CLEAR). STATUS: staged for founder approval. No
+# blotato_create_post call was made.
+
+brand: Vilvah Store
+brand_slug: vilvah
+week: 3
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Sarah
+category: beauty_and_wellness
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 3) + real product photos + all 3 listings verified OPEN this run
+hypothesis: "Angle 4 (claim-decoded) with Sarah lead — does naming the specific named ingredients (goat milk + pea protein, Tucuma butter + broccoli oil, black seed + curry leaf oil) instead of a vague 'natural haircare' claim out-save a generic clean-beauty post, the same pattern that worked for the craft-goldsmithing-isharya education tile two weeks ago?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps — copy + listing-live clear; watermark compositing + render QC blocked by infra this run
+coaching_notes: >
+  Diaspora anchor: present but secondary by design — this tile leans on angle 4
+  (claim-decoded, Sarah's lane: certifications/materials over heritage) rather than a
+  situation hook, matching category-routing.yaml's persona lock for beauty_and_wellness
+  (Sarah is the only listed persona for this category — no alternative exists to rotate to).
+  Flagged per the standing coverage note (hook-engineering.md) since Sarah now leads 2 of the
+  last 6 posts (craft-goldsmithing-isharya 10-04, this tile) — both forced by category/topic
+  persona locks, not a free choice; next batch should avoid a 3rd Sarah lead if avoidable.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  listing_live_check: >
+    PERFORMED directly via blotato_create_source (shopatmela.com direct fetch is blocked by
+    this cloud session's egress policy — same confirmed 403/EGRESS_BLOCKED constraint as
+    kaunteya/week-3-campaign.yaml and the prior two automated runs). All 3 Vilvah listings and
+    the /brands/vilvah-store page resolved to real, matching content: title, brand, price (USD,
+    matching the CSV), and ingredient claims (goat milk + jasmine + pea protein; Tucuma butter +
+    broccoli oil; black seed + curry leaf oil + hibiscus + arnica) all confirmed live and
+    verbatim-matching. The brand's "own farm in Tamil Nadu" claim is also confirmed directly on
+    the live /brands/vilvah-store page text, not just the CSV. Treat all 3 as LISTING LIVE / OPEN.
+  render_watermark_and_qc: >
+    NOT PERFORMED. Same database.blotato.io egress block as kaunteya/week-3-campaign.yaml (see
+    that file's verification_gaps for the full detail — confirmed via curl PUT to the
+    presigned-upload-url host, WebFetch, and direct curl, all EGRESS_BLOCKED / 403). The 3
+    image_url values below are RAW, UNWATERMARKED Blotato Product Scene Placement outputs. A
+    local session with unrestricted network access must download each render, eyeball it
+    against the source photo, composite the watermark via templates/render.sh, re-upload, and
+    swap the URLs below before scheduling. These are rigid bottle products (not detail-critical
+    per visual-scorecard.md Stage 0), so morph risk is low, but this has NOT been visually
+    confirmed.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/vilvah-store?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w3&utm_content=brand_carousel"
+  caption: |
+    "Natural" on a haircare label can mean almost anything. Here's what's actually in Vilvah's bottles.
+
+    Vilvah formulates with ingredients grown on its own farm in Tamil Nadu: goat milk and pea protein in the shampoo, Tucuma butter and broccoli oil in the conditioner, black seed and curry leaf oil in the serum.
+
+    Featured in this carousel:
+    • Goat Milk Shampoo
+    • Cream Conditioner
+    • Anti-Frizz Hair Serum
+
+    Discover Vilvah on Mela →
+
+    Formulated on Vilvah's own farm in Tamil Nadu. Ships to the US from Vilvah.
+    #NaturalHaircare #GoatMilkShampoo #CleanBeauty #IndianSkincare #DiscoveredOnMela
+  products:
+    - name: Goat Milk Shampoo 250ml
+      sku: goat-milk-shampoo-250ml-intense-moisturization
+      dev_listing_id: 6a13d653-cdc1-484f-83ae-7d2f0c23d8c7
+      shopatmela_url: https://www.shopatmela.com/l/6a13d653-cdc1-484f-83ae-7d2f0c23d8c7
+      price_usd: 18
+      source_image_url: https://cdn.shopify.com/s/files/1/0702/1130/5689/files/GMS1.jpg?v=1769859845
+      blotato_visual_id: 22386f33-e0f6-4b65-a9e7-4c9f3e1cd8cb
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-670e56ba-fc99-4126-a433-478751429c68.jpg  # RAW, UNWATERMARKED — see verification_gaps.render_watermark_and_qc
+      alt_text: Vilvah goat milk shampoo bottle with jasmine and pea protein on a marble bathroom counter beside a folded white towel
+      verified: true  # live listing resolved 2026-10-07; "Goat Milk Shampoo...", $18, goat milk + pea protein + jasmine
+      cooldown: clear — never featured in any prior campaign log
+    - name: Cream Conditioner 250ml
+      sku: cream-conditioner-250ml
+      dev_listing_id: 6a13d5ab-4f76-4da1-b3d5-40d3a8b1ac93
+      shopatmela_url: https://www.shopatmela.com/l/6a13d5ab-4f76-4da1-b3d5-40d3a8b1ac93
+      price_usd: 18
+      source_image_url: https://cdn.shopify.com/s/files/1/0702/1130/5689/files/1_1_2b981d55-0e14-4845-8c84-9ec906f5393f.jpg?v=1760619671
+      blotato_visual_id: 11d59e7c-bce8-4709-875a-c4af8e975990
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-55ed1243-470e-42c0-bcbf-4513364c3094.jpg  # RAW, UNWATERMARKED
+      alt_text: Vilvah cream conditioner bottle with Tucuma butter and broccoli oil on a marble bathroom counter beside a folded white towel
+      verified: true  # live listing resolved 2026-10-07; "Cream Conditioner...", $18, Tucuma Butter + Broccoli Oil
+      cooldown: clear — never featured in any prior campaign log
+    - name: Anti-Frizz Hair Serum
+      sku: anti-frizz-hair-serum
+      dev_listing_id: 6a13d53e-bdc6-455a-9f67-3f1a756c5a75
+      shopatmela_url: https://www.shopatmela.com/l/6a13d53e-bdc6-455a-9f67-3f1a756c5a75
+      price_usd: 40
+      source_image_url: https://cdn.shopify.com/s/files/1/0702/1130/5689/files/1_24c25660-8231-4c23-afc7-a9c0f414eb8b.webp?v=1742451071
+      blotato_visual_id: 38333da2-0d78-4673-bd1e-0017fc9b8030
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-8c83c4c4-58f2-4807-af0d-64162b5360c9.jpg  # RAW, UNWATERMARKED
+      alt_text: Vilvah anti-frizz hair serum bottle with black seed and curry leaf oil on a marble bathroom counter beside a wide tooth comb
+      verified: true  # live listing resolved 2026-10-07; "Anti-Frizz Hair Serum...", $40, black seed + curry leaf oil + hibiscus + arnica
+      cooldown: clear — never featured in any prior campaign log
+
+# PINTEREST (beauty_and_wellness -> `beauty` board per category-routing.yaml)
+pinterest:
+  boards:
+    - name: Beauty Ritual
+      board_id: "1103593152379723631"
+  pins:
+    - name: Goat Milk Shampoo 250ml
+      status: staged
+      board_id: "1103593152379723631"
+      title: Goat Milk Shampoo with Jasmine | Natural Indian Haircare
+      description: Goat milk shampoo with jasmine and pea protein, formulated on Vilvah's own farm in Tamil Nadu. Intense moisturization for dry, frizzy hair. Discover on Mela.
+      alt_text: Vilvah goat milk shampoo bottle with jasmine and pea protein on a marble bathroom counter beside a folded white towel
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-670e56ba-fc99-4126-a433-478751429c68.jpg
+      link: https://www.shopatmela.com/l/6a13d653-cdc1-484f-83ae-7d2f0c23d8c7?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=goat_milk_shampoo
+    - name: Cream Conditioner 250ml
+      status: staged
+      board_id: "1103593152379723631"
+      title: Tucuma Butter Cream Conditioner | Natural Indian Haircare
+      description: Cream conditioner with Tucuma butter and broccoli oil, formulated on Vilvah's own farm in Tamil Nadu. For dry, frizzy, damaged hair. Discover on Mela.
+      alt_text: Vilvah cream conditioner bottle with Tucuma butter and broccoli oil on a marble bathroom counter beside a folded white towel
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-55ed1243-470e-42c0-bcbf-4513364c3094.jpg
+      link: https://www.shopatmela.com/l/6a13d5ab-4f76-4da1-b3d5-40d3a8b1ac93?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=cream_conditioner
+    - name: Anti-Frizz Hair Serum
+      status: staged
+      board_id: "1103593152379723631"
+      title: Black Seed Anti-Frizz Hair Serum | Natural Indian Haircare
+      description: Anti-frizz hair serum with black seed and curry leaf oil, formulated on Vilvah's own farm in Tamil Nadu. UV and heat protection with all-day shine. Discover on Mela.
+      alt_text: Vilvah anti-frizz hair serum bottle with black seed and curry leaf oil on a marble bathroom counter beside a wide tooth comb
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-8c83c4c4-58f2-4807-af0d-64162b5360c9.jpg
+      link: https://www.shopatmela.com/l/6a13d53e-bdc6-455a-9f67-3f1a756c5a75?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=anti_frizz_hair_serum
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/vilvah-store
+  checks:
+    brand_story: { result: pass, note: "Tagline 'Farm fresh skincare made from ingredients grown on the brand's own farm in Tamil Nadu Coimbatore, India' confirmed live via blotato_create_source 2026-10-07, matches the farm-sourcing framing used in this tile." }
+    product_findability: { result: tbd, note: "Not checked beyond listing resolution this run." }
+    mobile_responsive: { result: tbd, note: "Not checked this run." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  persona_fatigue_context: >
+    Sarah is forced here by category-routing.yaml (beauty_and_wellness lists only `sarah` as a
+    valid persona) — not a free rotation choice. See coaching_notes above for the running count.
+  category_concentration: >
+    See kaunteya/week-3-campaign.yaml notes — this batch deliberately diversifies into
+    home_and_kitchen + beauty_and_wellness, both untouched in recent posts.
+  brand_tagging: Not tagged — brand @tagging paused during warmup per visual-style-guide.md / hook-engineering.md.
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."
