@@ -52,19 +52,19 @@ verification_gaps:
     returned SEO titles matching "Banger..." and "Bling..." respectively (NOT the Amara products) —
     live site confirms Banger + Bling are the correct products for these IDs. Used those.
   render_watermark_and_qc: >
-    NOT PERFORMED. cdn.shopify.com AND database.blotato.io both return EGRESS_BLOCKED (403) from
-    this cloud sandbox (curl, WebFetch, and local headless Chromium all confirmed blocked — this
-    is a step beyond the week-of-2026-09-30 gap, which only hit shopatmela.com +
-    database.blotato.io; this run additionally confirmed the Shopify CDN itself is blocked). This
-    means: (1) the Blotato Product Scene Placement renders below could NOT be downloaded or
-    visually diffed against source for morphing/color drift/garbled text (visual-scorecard.md
-    Stage 2), and (2) the "Discovered on Mela" watermark could NOT be locally composited via
-    templates/photo-watermark.html + render.sh, because that requires fetching the render into
-    headless Chrome, which is blocked the same way. The 3 image_url values below are RAW,
-    UNWATERMARKED Blotato outputs. A local session with network access must: download each
-    render, eyeball it against the source photo (esp. the fine mirror/enamel/crystal detail per
-    the Stage-0 morph gate), run templates/render.sh to composite the watermark, re-upload via
-    blotato_create_presigned_upload_url, and swap the URLs below before scheduling.
+    DONE 2026-10-08 (local session). All 3 renders downloaded and diffed against source_image_url
+    (visual-scorecard.md Stage 2). Amina: PASS (8 petals/earring, black enamel, clear mirror, gold
+    edge match). Banger: PASS with minor notes (stone order/shapes match; centre emerald reads a
+    darker forest green than the source teal, champagne stones slightly warmer) — founder eyeball
+    still required per the Stage-0 morph gate. Bling: FAIL on first render (black enamel ring
+    between the bezel and crystal missing, crystal facets smudged) — re-rendered via Product Scene
+    Placement with a literal "keep product unchanged" prompt; second render PASSES (enamel ring,
+    lucite frame, gold bezel, faceted champagne crystal all match source). Each render had a ~5px
+    dark band on the top and bottom edges, cropped before compositing. "Discovered on Mela"
+    watermark composited via templates/photo-watermark.html + the render.sh Chrome invocation at
+    each image's native ratio (1080x1340; render.sh only offers square/story/pin presets), then
+    re-hosted via blotato_create_presigned_upload_url. The image_url values below are the
+    WATERMARKED results.
 
 # INSTAGRAM
 instagram:
@@ -92,7 +92,7 @@ instagram:
       price_usd: 51
       source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/products/E2207-20-016_2_6860dcf9-1be9-4a53-bcc7-fd96c8bdeb8d.jpg?v=1758814824
       blotato_visual_id: b2e201af-4a5a-44a9-aa15-6d5470d8f2a1
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bce06b6b-731a-4ff3-9a0d-e561a0927c5a.jpg  # RAW, UNWATERMARKED — see verification_gaps.render_watermark_and_qc
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/db712797-c9e0-49fd-ad55-adf015369a7c.jpg
       alt_text: Paisley drop earrings with hand cut mirrors and black enamel on a cream jewelry tray on a sunlit bedroom dresser
       verified: true  # live listing resolved 2026-10-04 via blotato_create_source; "Persian Paisley Mirror Drop Earrings with Black Enamel", $51, mirror + 18Kt gold plating
       cooldown: clear — never featured in any prior campaign log
@@ -103,7 +103,7 @@ instagram:
       price_usd: 152
       source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/files/N1997-20-358_2.jpg?v=1758812714
       blotato_visual_id: 0010b7b4-955c-41e3-b6a5-32c44718c76d
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6bbd5cb0-46a6-4cb9-b8c0-93634f8b09a4.jpg  # RAW, UNWATERMARKED
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/ff07aac4-b89e-4696-9ab4-4bf686bd3b2c.jpg
       alt_text: Brass cross pendant necklace with multi colored crystals and gold plating draped on a jewelry stand on a marble vanity
       verified: true  # live listing resolved 2026-10-04; dev_listing_id collision with "Amara Lattice Swirl Earrings" row resolved in favor of this product (see verification_gaps)
       cooldown: clear — never featured in any prior campaign log
@@ -113,8 +113,8 @@ instagram:
       shopatmela_url: https://www.shopatmela.com/l/6a54b85c-b56d-4f72-82fe-1319cc691824
       price_usd: 77
       source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/products/E2237-20-710_2.jpg?v=1758816041
-      blotato_visual_id: a53f6f36-7363-4048-9069-1225a0de136d
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-19dacf07-ba16-44a9-9220-1ab4c9418c09.jpg  # RAW, UNWATERMARKED
+      blotato_visual_id: 8da3c695-d234-495d-943f-06ebb5a96505  # re-render 2026-10-08 (original a53f6f36-7363-4048-9069-1225a0de136d lost the black enamel ring + garbled crystal facets vs source)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/61a71eca-626a-43f1-a71a-ca8866b2665e.jpg
       alt_text: Honey hued crystal stud earrings with gold plating on a ceramic ring dish on a sunlit marble vanity countertop
       verified: true  # live listing resolved 2026-10-04; dev_listing_id collision with "Amara Mirror Pearl Duo Drop Earrings" row resolved in favor of this product (see verification_gaps)
       cooldown: clear — never featured in any prior campaign log
@@ -131,7 +131,7 @@ pinterest:
       title: Mirror & Enamel Drop Earrings | Handcrafted Indian Jewelry
       description: Paisley drop earrings with hand cut mirrors and black enamel, set in 18 karat gold plating. Statement jewelry designed in India by Isharya. Discover on Mela.
       alt_text: Paisley drop earrings with hand cut mirrors and black enamel on a cream jewelry tray on a sunlit bedroom dresser
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bce06b6b-731a-4ff3-9a0d-e561a0927c5a.jpg
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/db712797-c9e0-49fd-ad55-adf015369a7c.jpg
       link: https://www.shopatmela.com/l/6a54b651-a17c-45df-9f5c-3ca0d0336911?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=amina_enamel_mirror_earrings
     - name: Banger Multi Crystal Cross Necklace
       status: staged
@@ -139,7 +139,7 @@ pinterest:
       title: Multi Crystal Cross Pendant Necklace | Indian Statement Jewelry
       description: Brass cross pendant necklace with multi colored crystals and 18 karat gold plating. Bold statement jewelry designed in India by Isharya. Discover on Mela.
       alt_text: Brass cross pendant necklace with multi colored crystals and gold plating draped on a jewelry stand on a marble vanity
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6bbd5cb0-46a6-4cb9-b8c0-93634f8b09a4.jpg
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/ff07aac4-b89e-4696-9ab4-4bf686bd3b2c.jpg
       link: https://www.shopatmela.com/l/6a54b7ba-75d6-47f0-807d-a4bb4a83859c?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=banger_multi_crystal_cross_necklace
     - name: Bling Infinity Cut Crystal Studs
       status: staged
@@ -147,7 +147,7 @@ pinterest:
       title: Crystal Gold Plated Stud Earrings | Indian Jewelry
       description: Honey hued crystal stud earrings with 18 karat gold plating and enamel detailing. Everyday statement jewelry designed in India by Isharya. Discover on Mela.
       alt_text: Honey hued crystal stud earrings with gold plating on a ceramic ring dish on a sunlit marble vanity countertop
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-19dacf07-ba16-44a9-9220-1ab4c9418c09.jpg
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/61a71eca-626a-43f1-a71a-ca8866b2665e.jpg
       link: https://www.shopatmela.com/l/6a54b85c-b56d-4f72-82fe-1319cc691824?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=bling_infinity_cut_crystal_studs
 
 # UX REVIEW

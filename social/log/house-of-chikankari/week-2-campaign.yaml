@@ -46,17 +46,12 @@ verification_gaps:
     drape-on-a-person is the hard real-photo line (diffusion warps faces + drape), so these were
     NOT routed through Blotato Product Scene Placement. The CSV's own product photo is the
     intended final visual, composited with the HTML watermark only.
-  watermark_compositing_not_performed: >
-    NOT PERFORMED. cdn.shopify.com returns EGRESS_BLOCKED (403) from this cloud sandbox via curl,
-    WebFetch, AND local headless Chromium (confirmed by test-rendering an <img> tag pointed at a
-    Shopify CDN URL — blank output, SSL handshake failure) — the real product photo cannot be
-    fetched into templates/photo-watermark.html for local compositing. The image_url values below
-    are the RAW, UNWATERMARKED source_image_url straight from the classified CSV. A local session
-    with network access must download each source photo, run
-    `./render.sh photo-watermark.html out.png square` (with PRODUCT_IMAGE set to a local copy of
-    the photo) to composite the "Discovered on Mela" watermark, host the result, and swap the
-    URLs below before scheduling. This is a genuine gap, not just an unconfirmed one — no
-    watermark exists on these images yet.
+  watermark_compositing: >
+    DONE 2026-10-08 (local session). The 3 real photos were downloaded from the Shopify CDN,
+    composited with the "Discovered on Mela" watermark via templates/photo-watermark.html + the
+    render.sh Chrome invocation at native ratio (1080x1530; render.sh only offers
+    square/story/pin presets), and re-hosted via blotato_create_presigned_upload_url. image_url
+    below is the WATERMARKED result; the original Shopify photo is kept as source_image_url.
   alt_text_basis: >
     Alt text below is written from verified CSV fields (color, fabric, craft) and the live-listing
     SEO title, NOT from direct visual inspection of the photo (same CDN block). Reasonably
@@ -86,7 +81,8 @@ instagram:
       dev_listing_id: 6a601959-99b1-45e6-a585-c839147a06c8
       shopatmela_url: https://www.shopatmela.com/l/6a601959-99b1-45e6-a585-c839147a06c8
       price_usd: 48
-      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png?v=1742192727  # RAW, UNWATERMARKED real photo — see verification_gaps
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/a7b2452a-b148-44e9-ac90-c9f298f09797.jpg
+      source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png
       alt_text: Yellow rayon men's kurta with chikankari hand embroidery and sequin detail, modeled
       verified: true  # live listing resolved 2026-10-04; SEO title "Rayon Chikankari (Shadow Hand-Embroidery) Straight Kurta for Men"
       cooldown: clear — never featured in any prior campaign log
@@ -95,7 +91,8 @@ instagram:
       dev_listing_id: 6a6019a6-b352-4753-92fa-34dbec9ec82e
       shopatmela_url: https://www.shopatmela.com/l/6a6019a6-b352-4753-92fa-34dbec9ec82e
       price_usd: 46
-      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg?v=1755519809  # RAW, UNWATERMARKED
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/7b190ef5-df56-4a87-98d0-824a7a27aa6b.jpg
+      source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg
       alt_text: Magenta chanderi kurta set with chikankari hand embroidery, straight fit with inner
       verified: true  # live listing resolved 2026-10-04; SEO title "Chanderi Chikankari (Shadow Hand-Embroidery) Kurta Set for Women"
       cooldown: clear — never featured in any prior campaign log
@@ -104,7 +101,8 @@ instagram:
       dev_listing_id: 6a60198c-5cf1-4d70-89cc-c478161d446a
       shopatmela_url: https://www.shopatmela.com/l/6a60198c-5cf1-4d70-89cc-c478161d446a
       price_usd: 16
-      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House_of_Chikankari_Cotton_Chikankari_Solid_Womens_Short_Kurta_-_White_1_d5183b27-4944-45a3-aa0d-aa957ce6b789.jpg?v=1756823585  # RAW, UNWATERMARKED
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/53166c22-b674-4bce-b040-e1b7966cb14e.jpg
+      source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House_of_Chikankari_Cotton_Chikankari_Solid_Womens_Short_Kurta_-_White_1_d5183b27-4944-45a3-aa0d-aa957ce6b789.jpg
       alt_text: White cotton short kurta with chikankari hand embroidery, round neck, three quarter sleeves
       verified: true  # live listing resolved 2026-10-04; "Features Chikankari Craft" confirmed verbatim
       cooldown: clear — never featured in any prior campaign log
@@ -121,7 +119,8 @@ pinterest:
       title: Yellow Chikankari Men's Kurta with Sequin | Hand Embroidered
       description: Men's rayon kurta hand embroidered with chikankari shadow work and sequin detail. Crafted by artisans in Lucknow. House of Chikankari on Mela.
       alt_text: Yellow rayon men's kurta with chikankari hand embroidery and sequin detail, modeled
-      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png?v=1742192727
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/a7b2452a-b148-44e9-ac90-c9f298f09797.jpg
+      source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png
       link: https://www.shopatmela.com/l/6a601959-99b1-45e6-a585-c839147a06c8?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aryan_mens_kurta_sequin
     - name: HOC Aafna Chikankari Chanderi Straight Kurta Set
       status: staged
@@ -129,7 +128,8 @@ pinterest:
       title: Magenta Chanderi Chikankari Kurta Set | Hand Embroidered
       description: Chanderi kurta set hand embroidered with chikankari shadow work in Lucknow, includes matching inner. House of Chikankari on Mela.
       alt_text: Magenta chanderi kurta set with chikankari hand embroidery, straight fit with inner
-      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg?v=1755519809
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/7b190ef5-df56-4a87-98d0-824a7a27aa6b.jpg
+      source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg
       link: https://www.shopatmela.com/l/6a6019a6-b352-4753-92fa-34dbec9ec82e?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aafna_chanderi_kurta_set
     - name: Cotton Chikankari Short Kurta (White)
       status: staged
@@ -137,7 +137,8 @@ pinterest:
       title: White Cotton Chikankari Short Kurta | Hand Embroidered
       description: Cotton short kurta hand embroidered with chikankari shadow work in Lucknow, soft and breathable for daily wear. House of Chikankari on Mela.
       alt_text: White cotton short kurta with chikankari hand embroidery, round neck, three quarter sleeves
-      image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House_of_Chikankari_Cotton_Chikankari_Solid_Womens_Short_Kurta_-_White_1_d5183b27-4944-45a3-aa0d-aa957ce6b789.jpg?v=1756823585
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/53166c22-b674-4bce-b040-e1b7966cb14e.jpg
+      source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House_of_Chikankari_Cotton_Chikankari_Solid_Womens_Short_Kurta_-_White_1_d5183b27-4944-45a3-aa0d-aa957ce6b789.jpg
       link: https://www.shopatmela.com/l/6a60198c-5cf1-4d70-89cc-c478161d446a?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=cotton_chikankari_short_kurta_white
 
 # UX REVIEW
