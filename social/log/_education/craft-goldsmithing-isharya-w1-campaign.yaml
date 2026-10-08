@@ -12,7 +12,7 @@ brand: null
 brand_slug: _education
 week: 1
 date_posted: null
-status: staged
+status: scheduled
 platforms:
   - instagram
 format: carousel
@@ -54,20 +54,21 @@ verification:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 9585e7ff-4b04-43d5-87ea-4671c7c857be
+  scheduled_time: 2026-10-11T17:00:00Z
   destination: "https://shopatmela.com/brands/isharya?utm_source=instagram&utm_medium=social&utm_campaign=craft-goldsmithing-isharya_w1&utm_content=education_goldsmithing"
   topic: "craft-goldsmithing-isharya — Beyond filigree: the metal, stone, and enamel work behind statement jewelry"
   visual_system: "Education (HTML cards, cream/navy documentary style, no navy+marigold utility branding — that's reserved for trust_service). Slide 1 = hook card, not a product."
   slides:
     - name: hook
       image_render: log/_education/craft-goldsmithing-isharya/renders/slide1-hook.png
-      image_url: null   # local PNG only, not uploaded to Blotato storage this run
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/2d372ebc-46ad-493a-890c-bb5e936cc86e.png
     - name: teaching
       image_render: log/_education/craft-goldsmithing-isharya/renders/slide2-teaching.png
-      image_url: null
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/0351ab5a-fb89-4b28-91aa-1c96d1d6ab0a.png
     - name: close_cta
       image_render: log/_education/craft-goldsmithing-isharya/renders/slide3-close.png
-      image_url: null
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/62b0ce62-9d09-4cb7-a98b-885e9a132d61.png
   alt_text: "Text slide: Everyone says handcrafted. Here's how to actually tell."
   caption: |
     Everyone says handcrafted. Here's how to actually tell.

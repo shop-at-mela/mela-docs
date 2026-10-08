@@ -9,7 +9,7 @@ brand: House of Chikankari
 brand_slug: house-of-chikankari
 week: 2
 date_posted: null
-status: staged
+status: partially_scheduled   # 3 Pinterest pins scheduled 2026-10-08; IG carousel NOT scheduled (call denied) — suggested slot 2026-10-10T17:00:00Z
 platforms:
   - instagram
   - pinterest
@@ -83,6 +83,7 @@ instagram:
       price_usd: 48
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/a7b2452a-b148-44e9-ac90-c9f298f09797.jpg
       source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png
+      ig_image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b5b56e56-e9b0-421e-b744-366f0ccfb523.jpg  # 4:5 crop (1080x1350) of the watermarked photo; Instagram rejects ratios below 4:5, Pinterest keeps image_url
       alt_text: Yellow rayon men's kurta with chikankari hand embroidery and sequin detail, modeled
       verified: true  # live listing resolved 2026-10-04; SEO title "Rayon Chikankari (Shadow Hand-Embroidery) Straight Kurta for Men"
       cooldown: clear — never featured in any prior campaign log
@@ -93,6 +94,7 @@ instagram:
       price_usd: 46
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/7b190ef5-df56-4a87-98d0-824a7a27aa6b.jpg
       source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg
+      ig_image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/0a972abb-6f0f-4d62-820f-fd92c0161e03.jpg  # 4:5 crop (1080x1350) of the watermarked photo; Instagram rejects ratios below 4:5, Pinterest keeps image_url
       alt_text: Magenta chanderi kurta set with chikankari hand embroidery, straight fit with inner
       verified: true  # live listing resolved 2026-10-04; SEO title "Chanderi Chikankari (Shadow Hand-Embroidery) Kurta Set for Women"
       cooldown: clear — never featured in any prior campaign log
@@ -103,6 +105,7 @@ instagram:
       price_usd: 16
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/53166c22-b674-4bce-b040-e1b7966cb14e.jpg
       source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House_of_Chikankari_Cotton_Chikankari_Solid_Womens_Short_Kurta_-_White_1_d5183b27-4944-45a3-aa0d-aa957ce6b789.jpg
+      ig_image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/534713c6-822c-45f8-8734-b8fe229ef43e.jpg  # 4:5 crop (1080x1350) of the watermarked photo; Instagram rejects ratios below 4:5, Pinterest keeps image_url
       alt_text: White cotton short kurta with chikankari hand embroidery, round neck, three quarter sleeves
       verified: true  # live listing resolved 2026-10-04; "Features Chikankari Craft" confirmed verbatim
       cooldown: clear — never featured in any prior campaign log
@@ -114,7 +117,9 @@ pinterest:
       board_id: "1103593152379779116"
   pins:
     - name: Aryan Chikankari Rayon Men's Kurta with Sequin
-      status: staged
+      status: scheduled
+      submission_id: ee2764c3-4be1-4b6f-98f0-10d67f9ff7f0
+      scheduled_time: 2026-10-10T18:00:00Z
       board_id: "1103593152379779116"
       title: Yellow Chikankari Men's Kurta with Sequin | Hand Embroidered
       description: Men's rayon kurta hand embroidered with chikankari shadow work and sequin detail. Crafted by artisans in Lucknow. House of Chikankari on Mela.
@@ -123,7 +128,9 @@ pinterest:
       source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png
       link: https://www.shopatmela.com/l/6a601959-99b1-45e6-a585-c839147a06c8?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aryan_mens_kurta_sequin
     - name: HOC Aafna Chikankari Chanderi Straight Kurta Set
-      status: staged
+      status: scheduled
+      submission_id: 18ddb94e-4564-44d5-97c0-875ba44d6226
+      scheduled_time: 2026-10-12T18:00:00Z
       board_id: "1103593152379779116"
       title: Magenta Chanderi Chikankari Kurta Set | Hand Embroidered
       description: Chanderi kurta set hand embroidered with chikankari shadow work in Lucknow, includes matching inner. House of Chikankari on Mela.
@@ -132,7 +139,9 @@ pinterest:
       source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg
       link: https://www.shopatmela.com/l/6a6019a6-b352-4753-92fa-34dbec9ec82e?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aafna_chanderi_kurta_set
     - name: Cotton Chikankari Short Kurta (White)
-      status: staged
+      status: scheduled
+      submission_id: 66f1c6ae-6be2-4000-a92f-3cebc4a4cd3c
+      scheduled_time: 2026-10-14T18:00:00Z
       board_id: "1103593152379779116"
       title: White Cotton Chikankari Short Kurta | Hand Embroidered
       description: Cotton short kurta hand embroidered with chikankari shadow work in Lucknow, soft and breathable for daily wear. House of Chikankari on Mela.

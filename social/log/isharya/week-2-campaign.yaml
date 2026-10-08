@@ -7,8 +7,8 @@
 brand: Isharya
 brand_slug: isharya
 week: 2
-date_posted: null   # not scheduled yet — staged only
-status: staged
+date_posted: null   # scheduled 2026-10-08, posts 2026-10-09 (IG) / 2026-10-09..13 (Pinterest)
+status: scheduled
 platforms:
   - instagram
   - pinterest
@@ -68,7 +68,8 @@ verification_gaps:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 71a18f90-3692-4d89-9265-5205f04abc36
+  scheduled_time: 2026-10-09T17:00:00Z
   destination: "https://shopatmela.com/brands/isharya?utm_source=instagram&utm_medium=social&utm_campaign=isharya_w2&utm_content=brand_carousel"
   caption: |
     The jewelry you used to ask family to bring back from India. Isharya ships it straight to your door now.
@@ -126,7 +127,9 @@ pinterest:
       board_id: "1103593152379723628"
   pins:
     - name: Amina Enamel Mirror Earrings
-      status: staged
+      status: scheduled
+      submission_id: 581a1d58-5647-4ddf-9d7a-afdefa59d7ba
+      scheduled_time: 2026-10-09T18:00:00Z
       board_id: "1103593152379723628"
       title: Mirror & Enamel Drop Earrings | Handcrafted Indian Jewelry
       description: Paisley drop earrings with hand cut mirrors and black enamel, set in 18 karat gold plating. Statement jewelry designed in India by Isharya. Discover on Mela.
@@ -134,7 +137,9 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/db712797-c9e0-49fd-ad55-adf015369a7c.jpg
       link: https://www.shopatmela.com/l/6a54b651-a17c-45df-9f5c-3ca0d0336911?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=amina_enamel_mirror_earrings
     - name: Banger Multi Crystal Cross Necklace
-      status: staged
+      status: scheduled
+      submission_id: d77d9445-e1b5-4eed-ac18-0f1c79391319
+      scheduled_time: 2026-10-11T18:00:00Z
       board_id: "1103593152379723628"
       title: Multi Crystal Cross Pendant Necklace | Indian Statement Jewelry
       description: Brass cross pendant necklace with multi colored crystals and 18 karat gold plating. Bold statement jewelry designed in India by Isharya. Discover on Mela.
@@ -142,7 +147,9 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/ff07aac4-b89e-4696-9ab4-4bf686bd3b2c.jpg
       link: https://www.shopatmela.com/l/6a54b7ba-75d6-47f0-807d-a4bb4a83859c?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=banger_multi_crystal_cross_necklace
     - name: Bling Infinity Cut Crystal Studs
-      status: staged
+      status: scheduled
+      submission_id: b97cc4cd-818c-46db-879c-55d76e17d3bb
+      scheduled_time: 2026-10-13T18:00:00Z
       board_id: "1103593152379723628"
       title: Crystal Gold Plated Stud Earrings | Indian Jewelry
       description: Honey hued crystal stud earrings with 18 karat gold plating and enamel detailing. Everyday statement jewelry designed in India by Isharya. Discover on Mela.
