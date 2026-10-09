@@ -43,15 +43,15 @@
 | Item | Priority | Status | Notes |
 |------|----------|--------|-------|
 | Per-brand `us_*` data for 25 brands | P0 input | ✅ Exported and seeded to dev (2026-10-06) | `shopify_brands.py` `6fcec40`: 6 DDP, 12 DDU, 7 unknown (verified by loading the module 2026-10-06). Exported as `usShipping` with the six P1.1 fields; Isharya not seeded (see the critical Isharya item in `product/TODO.md`). |
-| Isharya repoint to isharya.co | Prerequisite | ❌ Not started | 🔴 Tracked separately (TODO 2026-10-06). Isharya's `us_*` data describes isharya.co; it must not be shown until listings link there |
+| Isharya repoint to isharya.co | Prerequisite | ✅ Done (verified 2026-10-09) | Sharetribe API read of all 567 Isharya listings: 532 published on isharya.co, 35 closed (handle not on isharya.co), 0 published on www.isharya.com. The prod CSV still has .com rows for products that never became listings; judge by the API, not the CSV. `brandUsShipping` for Isharya not yet seeded (open $20 policy vs $25 checkout mismatch goes to outreach) |
 | P0.1 to P0.7 false-claim removal | P0 | ❌ Not started | Seven false or unverifiable claims found, four more than the brief listed (§4 P0 inventory) |
 | P0.8 Pluchi | P0 | ❌ Decision made, not executed | Delist (see P0.8) |
 | P0.9 exporter + seeder (existing fields) | P0 | 🟡 Done on dev, branches not merged | `export_brand_content.py` (`e5881c1`) and `seed-brand-profiles.js` (`9f769eb`), on branches `feat/brand-us-shipping-export` and `feat/seed-brand-us-shipping`. Seeded to dev 2026-10-06 (19 live brands, 0 failed); Nicobar, House of Chikankari, Ankid and Isharya read back through the Integration API. Contract uses `feeUsd`/`feeApprox`/`freeOverUsd`/`freeOverApprox` (not P1.1's `fee`/`feeCurrency`). Thresholds export only when their source currency is known. Not seeded to production. Not verified: that the web-client reads this shape. |
 | P1 data additions (fee, currency, checked date, ships from) | P1 dependency | 🟡 Partial | Fields added in `d7f047a`. Filled for the brands outside the re-check list; the 10 re-check brands are mostly None, so most have no `checkedAt` and would fail closed (P1.10). Fee and threshold currency now set for Nicobar, ChooseKind and Isharya from policy text pasted 2026-10-06. Still open: Banjaaran `us_duties_collected`, Kaunteya threshold currency, Isharya $20 policy vs $25 cart test. |
 | Brand outreach (7 unknown duty terms) | P1 dependency | ❌ Not started | Send before P1 ships; do not wait for replies to ship |
 | Copy comprehension test (5 people) | P1 gate | ❌ Not started | 3 recruits named in UXR; 2 more needed |
-| Mockup (mobile first) + `/ux-design panel` | P1 gate | 🟡 Panel run 2026-10-06; two device checks left | `nimbalyst-local/mockups/international-shipping-transparency-mobile.mockup.html`: product page (6 states + longest name), tooltip, trust sheet collapsed + expanded, brand page DDU + DDP. Panel decisions in §11. Still open before build: live product page fold check at 375 × 667 (P1.2) and trust sheet with the on-screen keyboard on a real phone (P1.5). Desktop 1440px and loading states not drawn |
-| P1 per-brand display, brand page section, analytics, SEO fixes | P1 | ❌ Not started | |
+| Mockup (mobile first) + `/ux-design panel` | P1 gate | ✅ Panel run 2026-10-06; both device checks passed 2026-10-09 | `nimbalyst-local/mockups/international-shipping-transparency-mobile.mockup.html`. Owner phone checks: Fizzy Goblet duty sentence visible on first load at 375 × 667; trust sheet Continue visible with the keyboard open. Desktop 1440px and loading states not drawn |
+| P1 per-brand display, brand page section, analytics, SEO fixes | P1 | 🟡 Built 2026-10-07 to 2026-10-08, branch `feat/us-shipping-stage3` unmerged | P1.2 to P1.8, P1.9, P1.11 (code) and P1.12 are built; see the §11 Stage 3 entry. ACs not ticked: the real-device checks, the comprehension test and GTM/GA4 are still open |
 | P2 `offers.shippingDetails` | P2 | ⛔ Blocked | On P1.9 seller decision shipping + price-accuracy gate |
 
 ---
@@ -67,7 +67,7 @@ Three of the UXR respondents raised shipping or duties without being asked:
 - **F-022**: "If it's going to be exorbitant that would deter me from buying the item." She never reached a brand checkout, so she never saw a shipping cost.
 - **F-030**: "Pricing compared to cost to purchase in India, duty?"
 
-Since the US ended the $800 de minimis exemption in August 2025, DDU means duties are due on small orders too, so "it's under $800" no longer protects a shopper.
+With the US $800 de minimis exemption suspended, DDU means duties are due on small orders too, so "it's under $800" no longer protects a shopper. (Customer copy does not state this or a date, see §11, 2026-10-08.)
 
 **What Mela tells shoppers today (verified in code 2026-10-06):**
 
@@ -175,7 +175,7 @@ P0 is copy plus the existing three `us_*` fields. It does not wait for the compr
 
 **P0.5: Homepage FAQ (`FAQ_ITEMS` in `MelaHomePage.js`) and meta description**
 - Q1 answer: "Every brand on Mela ships to US addresses from its own store. Shipping costs and delivery times are set by each brand; each brand page shows that brand's US shipping cost and whether its prices include import duties." (Ship this only after P0.8 and the Isharya fix; until then drop the first sentence.)
-- Q3 answer: "It depends on the brand. Some brands include US import duties in their prices. For others, the courier collects duties before delivery, and since August 2025 that can apply to orders of any value. Each brand page and product page says which applies." (Replaces the false "no surprises at your door".)
+- Q3 answer: "It depends on the brand. Some brands include US import duties in their prices. For others, the courier collects duties before delivery. Each brand page and product page says which applies." (Replaces the false "no surprises at your door".)
 - Meta description: drop "Ships to all 50 states."
 - Bump `HOMEPAGE_LAST_UPDATED`. Remove dash characters from all four answers while editing (current Q1 and Q3 contain "7–10", "3–7", and "Possibly —").
 
@@ -279,7 +279,7 @@ One shared component (working name `ListingShippingTerms`) renders in two places
 - **Estimate line:** "Estimated from the {inrPrice} India price ⓘ". Shown only when the price was converted from INR (`formattedINRPrice`), as today. Tooltip: "{brand} sets the final US price at its own checkout, and it can differ from this estimate." This merges today's INR line and the P0.1 disclaimer into one line. Kept on mobile (panel decision): grid cards already show the INR figure (§1 correction), so hiding it here would make it disappear between the card and the product page. The label "India price" is tested with a non-diaspora reader (§7).
 - **Line limit is a build check, not a runtime fallback** (panel). The component can't measure wraps during server rendering. Measured in Chrome at 375px (327px text width, 13px/18px Hanken Grotesk), the shipping line wraps to a third visual line at 108 to 116 characters depending on the words. A unit test over every seeded brand asserts the shipping line is **at most 100 characters**, leaving room for device font differences. Over budget, the product page drops the threshold clause (e.g. "Fizzy Goblet ships to the US for $15. Import duties are extra, paid on delivery"); the threshold stays on the brand page and the trust sheet. Fizzy Goblet's full sentence is 105 characters, so it already uses the fallback.
 - **Tooltip near the sticky bar:** the ⓘ popover opens upward when there isn't room above the sticky bar, and the page scrolls the trigger into view before opening.
-- **Live check before build:** open a live product page at 375 × 667 and record where the shipping line lands on first load. The mobile gallery has no fixed height and is sized by the photo (`ListingImageGallery.module.css`, verified in code), so portrait photos may push the block lower than the mockup's 380px placeholder.
+- **Live check before build:** open a live product page at 375 × 667 and record where the shipping line lands on first load. The mobile gallery has no fixed height and is sized by the photo (`ListingImageGallery.module.css`, verified in code), so portrait photos may push the block lower than the mockup's 380px placeholder. **Result (owner, 2026-10-09): pass.** The Fizzy Goblet duty sentence is visible on first load at 375 × 667. Device not recorded.
 - Order is fixed: price, shipping, duties, estimate.
 - **DDP on desktop (ux-design review):** the chip sits in the left column, away from the OrderPanel price, so on desktop only line 2 also ends with "Duties included." On mobile the block sits directly above the chip row, so no extra text is needed.
 - Styling: existing `marketplaceTinyFontStyles`, `--colorGrey500`. Duties-not-included uses the same grey as everything else. No warning color, icon, or weight change.
@@ -306,7 +306,7 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 |-------|-------------|-------------|
 | DDP, `in_price` | Chip "✓ Duties included" in `ListingTrustChips` (no sentence) | Chip tooltip: "{brand} includes US import duties in its prices, so nothing is due when your order arrives." |
 | DDP, `at_checkout` | Sentence: "It adds US duties at checkout, so nothing is due on delivery." | none |
-| DDU | Sentence: "Import duties are extra, paid on delivery ⓘ" (wording is a test candidate, P1.11) | "{brand}'s prices don't include US import duties. The courier collects them before delivery. Since August 2025 this can apply to orders of any value. Mela can't estimate the amount." |
+| DDU | Sentence: "Import duties are extra, paid on delivery ⓘ" (wording is a test candidate, P1.11) | "{brand}'s prices don't include US import duties. The courier collects them before delivery. Mela can't estimate the amount." |
 | Unknown, shipping cost known | Sentence: "It doesn't say if US duties are included." (test candidate; see UXR note below) | none |
 | Unknown, shipping cost **not** known (`calculated_*` below threshold, or fee unknown) | **Merged with the shipping sentence** (gap found in the mockup: two separate sentences took 4 visual lines for Masilo): "{brand} ships to the US. It doesn't list its shipping cost or say if duties are included." | none |
 
@@ -323,7 +323,7 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 
 **P1.5: RedirectTrustSheet with full data**
 - Same two items as P0.2, now with fee and threshold. The sheet heading already names the brand ("You're visiting {brand}'s official store"), so items drop the repeated name (ux-design review): "Ships to the US for $15, free on orders over $100", "US import duties are paid on delivery", "Duties are included in the price" (DDP `in_price`; no chip in the sheet). The brand-as-subject rule is met by the heading.
-- At 375 × 667px, with 4 items and the sentiment row expanded, Continue must stay visible without scrolling. **Measured (mockup frame H, built from `RedirectTrustSheet.module.css`, Chrome 2026-10-06):** the expanded sheet's natural height is 569px against the 85% cap of 567px, so the feedback area gives up 2px and scrolls inside itself, and Continue stays fully visible. There is no spare room: a fifth item or a shorter viewport makes the feedback area scroll (Continue still stays visible). **Not checked:** the on-screen keyboard (the textarea takes focus on expand, and a fixed bottom sheet can end up behind the keyboard on iOS Safari) and Safari's visible height with toolbars showing. Check both on a real phone before build.
+- At 375 × 667px, with 4 items and the sentiment row expanded, Continue must stay visible without scrolling. **Measured (mockup frame H, built from `RedirectTrustSheet.module.css`, Chrome 2026-10-06):** the expanded sheet's natural height is 569px against the 85% cap of 567px, so the feedback area gives up 2px and scrolls inside itself, and Continue stays fully visible. There is no spare room: a fifth item or a shorter viewport makes the feedback area scroll (Continue still stays visible). **Keyboard check (owner, 2026-10-09): pass.** Continue stays visible with the on-screen keyboard open. Device not recorded.
 - **"US cards accepted"** (panel): shown on the checkout item only for brands whose payment page was checked in the P1.1 re-check pass. Brands not checked by P1 ship show "Secure checkout on {brand}'s store" without it. Richer card and payment signal: separate TODO (2026-10-06).
 - Item order: checkout + cards, shipping, duties, returns ("Returns handled by {brand}" unchanged pending §8).
 - Hosts: `ListingPageCarousel.js`, `ListingPageCoverPhoto.js`, `SavedPage.js`. Each passes the brand's `brandUsShipping`.
@@ -348,8 +348,8 @@ Thresholds are text about the brand's whole order. Never compare them with this 
        |-------|--------|
        | DDP `in_price` | "No. {brand} includes US import duties in its prices, so nothing is due when your order arrives." |
        | DDP `at_checkout` | "Yes, at checkout. {brand} adds US import duties to its order total, so nothing is due on delivery." ("No." would be false: the shopper pays them.) |
-       | DDU | "Yes. {brand}'s prices don't include US import duties, so the courier collects any duty owed before delivery. Since August 2025 this can apply to orders of any value. Mela can't estimate the amount." |
-       | Unknown | "{brand} hasn't confirmed whether its prices include US import duties. Since August 2025, US duties can apply to orders of any value." No yes or no opener. Wording is a copy test candidate (§7). |
+       | DDU | "Yes. {brand}'s prices don't include US import duties, so the courier collects any duty owed before delivery. Mela can't estimate the amount." |
+       | Unknown | "{brand} hasn't confirmed whether its prices include US import duties." No yes or no opener. Wording is a copy test candidate (§7). |
      - "Does {brand} offer free shipping to the US?" → only when a threshold or `free` is known
   4. **Byline**: "Shipping details checked {Month D, YYYY} · Curated by the Mela team". The date is `checkedAt`, shown here only, never on product pages. No date shown → no section (fall back to the neutral passage without a date).
 - Brands with no data: the section shows the neutral passage ("{brand} sets its own US shipping costs and duty terms, shown at its checkout...") and only the first FAQ item.
@@ -374,7 +374,7 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 - **Cadence**: every quarter, as part of the existing quarterly review trigger (`trig_01DSghwC4tntP5eFdKqKhDGZ`, Jan/Apr/Jul/Oct, TODO 2026-09-25). Extend its checklist: re-run the policy + cart test for any brand whose `us_shipping_checked` is older than 90 days, then export + seed.
 - **Event triggers**: a shopper or brand reports a mismatch; a brand is onboarded; a brand changes store domain (Isharya).
 - **Fail closed**: if `checkedAt` is older than 180 days or missing, every surface shows the "no data" copy. Stale facts are never shown as current.
-- **Legal claim in copy** (panel): "Since August 2025 this can apply to orders of any value" describes US de minimis policy, not brand data. Add it to the quarterly checklist: confirm it still holds before the review closes. Its current status was not checked for this PRD (**unverified**).
+- **Legal claim in copy** (panel, superseded 2026-10-08): customer copy no longer states the de minimis suspension or any date ("Since August 2025 ... any value" was removed from the product tooltip, brand passage, brand FAQ and homepage FAQ). DDU copy says only that the courier collects duties before delivery and that Mela cannot estimate the amount. Nothing to re-confirm each quarter. Background checked 2026-10-08: the de minimis suspension for all countries (effective 2025-08-29, still in force per a 2026-06-24 Federal Register notice) and the 2026 US-India framework did not zero duties on Indian goods.
 
 **P1.11: Analytics**
 - Add `duties_type` (`'ddp' | 'ddu' | 'unknown' | 'none'`) to `brand_clickout` (`util/analytics/brandClickout.js`), set from the brand's `brandUsShipping`. `'unknown'` means the brand profile loaded and duties aren't stated (or data is stale). Send `null` when the event's surface has no brand profile at all (e.g. a heart icon on a search grid card), so missing data is not counted as unknown duties.
@@ -441,7 +441,7 @@ Thresholds are text about the brand's whole order. Never compare them with this 
 **P1**
 - [ ] P1-1: `shopify_brands.py` has the six P1.1 fields documented in the docstring and filled for all 25 brands where known; the 10 re-checks in P1.1 are done and dated.
 - [ ] P1-2: All six display states render per the approved mockup at 375px and 1440px, in the order price, shipping and duties, estimate; at most two logical / three visual grey lines under the price at 375px with "House of Chikankari" and "Hemant & Nandita"; a unit test asserts every seeded brand's shipping line is at most 100 characters (threshold clause dropped when over); ⓘ hit area ≥24 × 24px; the popover opens upward near the sticky bar.
-- [ ] P1-2b: Live product page checked at 375 × 667 before build, with where the shipping line lands on first load recorded here.
+- [x] P1-2b: Live product page checked at 375 × 667 before build, with where the shipping line lands on first load recorded here. *(Pass, owner, 2026-10-09: Fizzy Goblet duty sentence visible on first load.)*
 - [ ] P1-3: Desktop and mobile use the same component; a unit test renders each `method` × `duties` combination and asserts the exact string, including the fee-unknown fallback (Vilvah) and the merged unknown sentence (Masilo).
 - [ ] P1-4: No template ever reads `us_shipping_note` or `brand_content.json` free text (grep).
 - [ ] P1-5: INR-sourced fees and thresholds display with "about"; USD-sourced do not. Server-rendered HTML and the hydrated page show the same dollar amounts (no client-side conversion).
@@ -624,7 +624,14 @@ All three reviews ran on the draft and are folded in above.
 - New finding: at 375 × 667 the shipping line loaded under the sticky bar while the estimate line was visible. **Owner decision (2026-10-06): shipping and duties come directly after the price, then the estimate** (P1.2). Live page check still required.
 - Copy fixes: Appendix A Nicobar ("Shipping is" broke the brand-as-subject rule) and Ankid ("check the total at checkout", flagged by /uxr) passages.
 
-**Not yet done (required before build):** the live product page fold check (P1-2b), the trust sheet with the on-screen keyboard on a real phone (P1.5), the desktop 1440px adaptation, and loading states.
+**Stage 3 build and data review (2026-10-07 to 2026-10-08).**
+- Built in web-client `79b74ee0c` (P1.2 to P1.8), `fc2f5de1e` (copy), `b63597074` (possessives), branch `feat/us-shipping-stage3`, unmerged. Real browser checks were desktop 1420px plus a 375px iframe for layout only; the first load fold at 375 x 667 puts the shipping line's second visual line and the info icon partly under the sticky bar for Fizzy Goblet (photo height decides). No real phone, no VoiceOver.
+- Copy decisions: "Since August 2025 ... orders of any value" removed everywhere (owner, 2026-10-08). Duties stay disclosed: the 2026 US-India framework cut the reciprocal rate (18% in Feb 2026), it did not zero duties, so the DDU and unknown wording is unchanged apart from the date clause.
+- Data decisions: a flat fee is exported only when the brand's own policy states it; a rate seen on a few test carts is not (Ankid, Gully Labs, Tarinika, The Alternate India became calculated at checkout; Saphed's empty-cart "free" removed; Ankid duties set to DDU from its delivery page). Where the policy page and checkout disagree, checkout wins and the gap is recorded in `us_policy_mismatch` in `shopify_brands.py` for brand outreach (Daughters of India, Isharya, ChooseKind, Polite Society, Vilvah, Suta). Committed in Mela-scrapper-integrations `9621037`.
+- Seeded to dev (the live site) 2026-10-08: 18 profiles, Isharya held back (listings still link to isharya.com), production not seeded.
+- Still open: flat fees for House of Chikankari, The Nesavu, Kaunteya, Polite Society and Little Muffet rest on cart tests with no stated policy rate (re-test with a one item and a heavy cart); Daughters of India ships from Australia and USA warehouses, outside the `shipsFrom` vocabulary; sales tax at checkout not in the copy; "Supper Bottoms" (profile display name) and "House Of Chikankari" (listing `publicData.brand`) are data typos.
+
+**Not yet done (required before build):** the desktop 1440px adaptation and loading states. *(The fold check and the trust sheet keyboard check both passed on 2026-10-09.)*
 
 ---
 
@@ -632,14 +639,16 @@ All three reviews ran on the draft and are folded in above.
 
 Generated from templates; shown here to size the copy and check tone. Origin ("from India", "from a US warehouse") appears only when `shipsFrom` is set; it is known for 3 brands only (uxr review caught an earlier draft stating "from India" without data). Numbers come from the 2026-10-04 notes and must be re-checked where P1.1 says so.
 
-**Nicobar (DDP, USD, threshold; threshold pending re-check)** (43 words)
-> Nicobar ships to US addresses for $30 per order, free on orders over $150. Nicobar includes US import duties in its prices, so nothing is due when your order arrives. You pay on Nicobar's own store, which sets the final price and shipping cost.
+**Nicobar (DDP, USD, threshold)** (41 words)
+> Nicobar ships to US addresses for $30 per order, free on orders over $150. Nicobar includes US import duties in its prices, so nothing is due when your order arrives. You pay on Nicobar's own store, which sets the final cost.
 
-**House of Chikankari (DDU, INR, flat)** (50 words)
-> House of Chikankari ships to US addresses for about $34 per order. Its prices don't include US import duties: the courier collects them before delivery, and since August 2025 that can apply to orders of any value. You pay on House of Chikankari's own store, which sets the final cost.
+**House of Chikankari (DDU, INR, flat)** (53 words)
+> House of Chikankari ships to US addresses for about $34 per order. Its prices don't include US import duties: the courier collects them before delivery. You pay on House of Chikankari's own store, which sets the final cost. Mela links to House of Chikankari's store and does not sell, ship or collect duties.
 
-**Ankid (unknown, INR, flat)** (42 words)
-> Ankid ships to US addresses for about $28 per order. Ankid hasn't confirmed whether its prices include US import duties. Since August 2025, US duties can apply to orders of any value. You pay on Ankid's own store, which sets the final cost.
+**Masilo (unknown duties, calculated shipping)** (45 words)
+> Masilo ships to US addresses. Its checkout shows the shipping cost. Masilo hasn't confirmed whether its prices include US import duties. You pay on Masilo's own store, which sets the final cost. Mela links to Masilo's store and does not sell, ship or collect duties.
+
+Passages under 40 words get a fixed sentence about Mela's role (a longer one under 27 words), so every state stays at 40 to 60 words. Names ending in "s" take "'" not "'s" (Gully Labs' store).
 
 ## Appendix B: Brand data snapshot (from `shopify_brands.py`, checked 2026-10-04)
 
