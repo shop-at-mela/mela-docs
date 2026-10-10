@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mela — Teaching Card</title>
+<link rel="stylesheet" href="mela-kit.css">
+<style>
+  /* Teaching card: a middle slide for a cultural_education post. Explains
+     "how it's made" as a short numbered sequence. Never slide 1 (that's a
+     hook) and never a product. See visual-style-guide.md -> Education
+     Visual System -> Middle slides. */
+  .card { justify-content: flex-start; }
+  .headline {
+    font-size: 6.4vmin; line-height: 1.08; color: var(--ink);
+    margin: 0 0 5vmin; max-width: 92%;
+  }
+  .headline .accent { color: var(--navy); font-style: italic; }
+  .steps { display: flex; flex-direction: column; gap: 3.4vmin; margin-top: 0.5vmin; }
+  .step { display: flex; align-items: flex-start; gap: 3vmin; }
+  .num {
+    font-family: var(--sans); font-weight: 700; font-size: 2.9vmin;
+    color: var(--navy); background: var(--marigold);
+    width: 6.4vmin; height: 6.4vmin; min-width: 6.4vmin; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0.4vmin;
+  }
+  .step p { font-size: 4vmin; line-height: 1.32; color: var(--ink); margin: 0; }
+  .step p b { color: var(--navy); font-weight: 600; }
+  /* tighter sizing so 4 steps + watermark fit with the kit's real serif fonts */
+  .headline { font-size: 5.2vmin; margin-bottom: 3.4vmin; }
+  .steps { gap: 2.4vmin; }
+  .step p { font-size: 3.3vmin; line-height: 1.28; }
+  .num { width: 5.6vmin; height: 5.6vmin; min-width: 5.6vmin; font-size: 2.6vmin; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="kicker">Small batch, not mass produced</div>
+    <div class="rule"></div>
+    <h1 class="headline">What's actually happening <span class="accent">while you wait</span></h1>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><p>Many pieces are <b>finished only after your order</b> comes in, not pulled off a warehouse shelf.</p></div>
+      <div class="step"><div class="num">2</div><p>Small production runs mean <b>a person checks each piece</b>, not a machine sampling every tenth one.</p></div>
+      <div class="step"><div class="num">3</div><p>That's also why <b>two pieces from the same run are never perfectly identical</b>.</p></div>
+      <div class="step"><div class="num">4</div><p>The wait buys you something mass production can't: <b>someone who actually finished it by hand</b>.</p></div>
+    </div>
+    <div class="watermark">Discovered on <b>Mela</b></div>
+  </div>
+</body>
+</html>

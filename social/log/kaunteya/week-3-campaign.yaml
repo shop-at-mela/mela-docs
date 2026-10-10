@@ -1,0 +1,176 @@
+---
+# Kaunteya Week 3 — staged via automated cloud weekly run 2026-10-07
+# (social-staging/week-of-2026-10-07). Brand last posted 2026-09-02 (35 days clear of
+# brand_recency_days=7). All 3 products below are NEW dev_listing_ids never featured in any
+# prior campaign log (cooldown CLEAR). STATUS: staged for founder approval. No
+# blotato_create_post call was made.
+
+brand: Kaunteya
+brand_slug: kaunteya
+week: 3
+date_posted: null
+status: scheduled
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Priya
+category: home_and_kitchen
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 3) + real product photos + all 3 listings verified OPEN this run
+hypothesis: "Angle 5 (occasion-in-America) with Priya lead on Pattachitra bone china — does an explicit 'hosting your first Diwali away from home' hook out-save a generic tableware carousel, continuing the pinterest-playbook.md panel's promoted Pattachitra keyword bet (2026-09-29, backed by the Airavata Oval Platter)?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps — copy + listing-live clear; watermark compositing + render QC blocked by infra this run
+coaching_notes: >
+  Diaspora anchor: strong and situational (first Diwali away from home / setting a table
+  without the suitcase from India), matches hook-engineering.md angle 5. Kaunteya had a
+  historical Dev_Listing_ID drift issue on some week-1 products (see
+  log/kaunteya/week-1-campaign.yaml) — all 3 IDs here are fresh selections, independently
+  verified live via blotato_create_source this run (title/brand/price/craft-claim all match
+  the classified CSV), not reused from the flagged week-1 rows.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  listing_live_check: >
+    PERFORMED directly via blotato_create_source (shopatmela.com direct fetch is blocked by
+    this cloud session's egress policy — confirmed via curl, WebFetch, and the agent-proxy
+    status endpoint, all returning EGRESS_BLOCKED / 403 CONNECT denial for shopatmela.com,
+    cdn.shopify.com, and database.blotato.io specifically; this matches the same infra
+    constraint the week-of-2026-09-30 and week-of-2026-10-04 runs hit). All 3 Kaunteya
+    listings resolved to real, matching content: title, brand, price (USD, matching the CSV's
+    INR price at ~83:1), and material/craft claims (fine bone china, hand decorated,
+    Pattachitra motifs, 24 karat gold) all confirmed live and verbatim-matching. Treat all 3 as
+    LISTING LIVE / OPEN.
+  render_watermark_and_qc: >
+    DONE 2026-10-09 (local session). All 3 renders downloaded and diffed side by side against
+    source_image_url (visual-scorecard.md Stage 2): Coffee Mug (Swan) PASS, Jug PASS (the two
+    background mugs in the scene are invented), Cookie Plate PASS (elephants, border and gold
+    bamboo motif all present). Each render had a ~5px dark band on the top and bottom edges,
+    cropped before compositing. "Discovered on Mela" watermark composited via
+    templates/photo-watermark.html + the render.sh Chrome invocation at the render's native
+    ratio (1080x1340), then re-hosted via blotato_create_presigned_upload_url. The image_url
+    values below are the WATERMARKED results.
+
+# INSTAGRAM
+instagram:
+  submission_id: 437c2a1a-68ff-4a3d-8d8e-daca41e7bdfc
+  scheduled_time: 2026-10-10T17:00:00Z
+  destination: "https://shopatmela.com/brands/kaunteya?utm_source=instagram&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=brand_carousel"
+  caption: |
+    Hosting your first Diwali away from home? Start with the table.
+
+    Kaunteya hand paints each piece of this fine bone china in Pattachitra inspired motifs, finished with 24 karat gold. Made in India, set for your home in the US.
+
+    Featured in this carousel:
+    • Airavata Coffee Mug (Swan)
+    • Airavata Jug
+    • Airavata Cookie Plate
+
+    Discover Kaunteya on Mela →
+
+    Hand painted in India. Ships to the US from Kaunteya.
+    #Pattachitra #BoneChina #DiwaliTable #IndianHomeDecor #DiscoveredOnMela
+  products:
+    - name: Airavata Coffee Mug (Swan)
+      sku: airavata-coffee-mug-set-of-2
+      dev_listing_id: 6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4
+      price_usd: 29
+      source_image_url: https://cdn.shopify.com/s/files/1/0560/0198/6604/products/AND_8266.jpg?v=1732788616
+      blotato_visual_id: f5ce668d-efbd-4235-8300-d5556b481c14
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/343611db-1144-45f1-8520-6e39db34acdd.jpg
+      alt_text: Hand painted fine bone china coffee mug with yellow and green Pattachitra swan motif and 24 karat gold rim on a wood breakfast table
+      verified: true  # live listing resolved 2026-10-07 via blotato_create_source; "Coffee Mug with Pattachitra Motifs in Yellow", $29, fine bone china, hand decorated, 24kt gold
+      cooldown: clear — never featured in any prior campaign log
+    - name: Airavata Jug
+      sku: airavata-jug
+      dev_listing_id: 6a5cd5ea-f395-44a3-a1fa-5b5f85370f36
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd5ea-f395-44a3-a1fa-5b5f85370f36
+      price_usd: 78
+      source_image_url: https://cdn.shopify.com/s/files/1/0560/0198/6604/products/alf0220.jpg?v=1732788750
+      blotato_visual_id: 78385909-7a8f-4882-9494-e8245ca53354
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/637d30e1-b1ed-4aa1-a1b8-64810fb77717.jpg
+      alt_text: Hand painted fine bone china jug with yellow and green Pattachitra motifs and gold detailing on a wood breakfast table beside matching mugs
+      verified: true  # live listing resolved 2026-10-07; "Jug with Pattachitra Motifs", $78, fine bone china, 24kt gold
+      cooldown: clear — never featured in any prior campaign log
+    - name: Airavata Cookie Plate
+      sku: airavata-cookie-plate
+      dev_listing_id: 6a5cd5ca-5220-4324-8160-83108ae5461e
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd5ca-5220-4324-8160-83108ae5461e
+      price_usd: 48
+      source_image_url: https://cdn.shopify.com/s/files/1/0560/0198/6604/products/DSC_8118.jpg?v=1652773899
+      blotato_visual_id: 7fa1acc8-0277-4d86-979f-34b3951f1887
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/5a804af9-78e9-4232-91e9-4ca68c09efa4.jpg
+      alt_text: Hand painted fine bone china cookie plate with pastel Pattachitra motifs and gold rim on a wood breakfast table with shortbread cookies
+      verified: true  # live listing resolved 2026-10-07; "Cookie Plate with Pattachitra Motifs", $48, fine bone china, 24kt gold, three firing stages
+      cooldown: clear — never featured in any prior campaign log
+
+# PINTEREST (home_and_kitchen -> `home` board per category-routing.yaml)
+pinterest:
+  boards:
+    - name: Home and Kitchen
+      board_id: "1103593152379723626"
+  pins:
+    - name: Airavata Coffee Mug (Swan)
+      status: scheduled
+      submission_id: e1ad8179-61fe-4457-bbfe-4d1fefe09b49
+      scheduled_time: 2026-10-10T16:00:00Z
+      board_id: "1103593152379723626"
+      title: Hand Painted Pattachitra Coffee Mug | Indian Bone China
+      description: Fine bone china coffee mug hand painted with Pattachitra motifs and 24 karat gold by Kaunteya. A meaningful piece for a Diwali chai spread or a housewarming gift. Discover on Mela.
+      alt_text: Hand painted fine bone china coffee mug with yellow and green Pattachitra swan motif and 24 karat gold rim on a wood breakfast table
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/343611db-1144-45f1-8520-6e39db34acdd.jpg
+      link: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=airavata_coffee_mug_swan
+    - name: Airavata Jug
+      status: scheduled
+      submission_id: 24b447ac-7c6a-4b98-b663-4c5c7b0ffc88
+      scheduled_time: 2026-10-10T21:00:00Z
+      board_id: "1103593152379723626"
+      title: Hand Painted Pattachitra Jug | Indian Bone China Tableware
+      description: Fine bone china jug hand painted with Pattachitra motifs and 24 karat gold by Kaunteya. A statement piece for a festive table. Discover on Mela.
+      alt_text: Hand painted fine bone china jug with yellow and green Pattachitra motifs and gold detailing on a wood breakfast table beside matching mugs
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/637d30e1-b1ed-4aa1-a1b8-64810fb77717.jpg
+      link: https://www.shopatmela.com/l/6a5cd5ea-f395-44a3-a1fa-5b5f85370f36?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=airavata_jug
+    - name: Airavata Cookie Plate
+      status: scheduled
+      submission_id: f16509e0-3b04-46a2-8143-2fcfb3dcd6d3
+      scheduled_time: 2026-10-13T16:00:00Z
+      board_id: "1103593152379723626"
+      title: Hand Painted Pattachitra Cookie Plate | Indian Bone China
+      description: Fine bone china cookie plate hand painted with Pattachitra motifs and 24 karat gold by Kaunteya. Ready for a Diwali dessert spread. Discover on Mela.
+      alt_text: Hand painted fine bone china cookie plate with pastel Pattachitra motifs and gold rim on a wood breakfast table with shortbread cookies
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/5a804af9-78e9-4232-91e9-4ca68c09efa4.jpg
+      link: https://www.shopatmela.com/l/6a5cd5ca-5220-4324-8160-83108ae5461e?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=airavata_cookie_plate
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/kaunteya
+  checks:
+    brand_story: { result: pass, note: "Tagline 'Ceramic tableware painted by hand, inspired by Indian manuscript art' confirmed live via blotato_create_source 2026-10-07, matches the Pattachitra framing used in this tile." }
+    product_findability: { result: tbd, note: "Not checked beyond listing resolution this run (shopatmela.com direct browse blocked by egress policy)." }
+    mobile_responsive: { result: tbd, note: "Not checked this run." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  persona_fatigue_context: >
+    Last 5 confirmed/staged leads before this batch: Neha (isharya w2, 10-04), Arun
+    (house-of-chikankari w2, 10-04), Sarah (craft-goldsmithing-isharya edu, 10-04), Priya
+    (superbottoms w1, 09-30), Arun (banjaaran-studio w1, 09-30). No persona at 3+ of 5 yet.
+    This batch uses Priya (here), Sarah (vilvah, category-locked), and Neha (education) —
+    no Arun this round, keeping the account balanced across all four personas.
+  category_concentration: >
+    Last 4 categories (newest first): jewelry_and_accessories, fashion, baby_and_kids, fashion.
+    This batch adds home_and_kitchen (here) + beauty_and_wellness (vilvah) — both untouched in
+    at least the last 4 posts, maximizing category diversity, well clear of the
+    3-consecutive-same-category concentration flag.
+  brand_tagging: Not tagged — paused during warmup.
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."
