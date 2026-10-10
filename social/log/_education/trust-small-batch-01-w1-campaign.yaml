@@ -14,7 +14,7 @@ brand: null
 brand_slug: _education
 week: 1
 date_posted: null
-status: staged
+status: scheduled   # IG scheduled 2026-10-13T17:00:00Z; Reddit draft intentionally NOT posted (human-posted only)
 platforms:
   - instagram
   - reddit
@@ -62,7 +62,8 @@ verification:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: e99820f5-8694-4361-a451-6344a129e3a1
+  scheduled_time: 2026-10-13T17:00:00Z
   destination: "https://shopatmela.com?utm_source=instagram&utm_medium=social&utm_campaign=trust-small-batch-01_w1&utm_content=education_small_batch"
   topic: "trust-small-batch-01 — Small batch vs. mass produced: why your order might take longer, and why that's the point"
   visual_system: "Education (HTML cards, navy + marigold worn openly per the trust_service utility sub-system). Slide 1 = hook/title card, not a product."

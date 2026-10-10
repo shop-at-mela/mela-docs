@@ -9,7 +9,7 @@ brand: Kaunteya
 brand_slug: kaunteya
 week: 3
 date_posted: null
-status: staged
+status: scheduled
 platforms:
   - instagram
   - pinterest
@@ -56,7 +56,8 @@ verification_gaps:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 437c2a1a-68ff-4a3d-8d8e-daca41e7bdfc
+  scheduled_time: 2026-10-10T17:00:00Z
   destination: "https://shopatmela.com/brands/kaunteya?utm_source=instagram&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=brand_carousel"
   caption: |
     Hosting your first Diwali away from home? Start with the table.
@@ -114,7 +115,9 @@ pinterest:
       board_id: "1103593152379723626"
   pins:
     - name: Airavata Coffee Mug (Swan)
-      status: staged
+      status: scheduled
+      submission_id: e1ad8179-61fe-4457-bbfe-4d1fefe09b49
+      scheduled_time: 2026-10-15T18:00:00Z
       board_id: "1103593152379723626"
       title: Hand Painted Pattachitra Coffee Mug | Indian Bone China
       description: Fine bone china coffee mug hand painted with Pattachitra motifs and 24 karat gold by Kaunteya. A meaningful piece for a Diwali chai spread or a housewarming gift. Discover on Mela.
@@ -122,7 +125,9 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/343611db-1144-45f1-8520-6e39db34acdd.jpg
       link: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=airavata_coffee_mug_swan
     - name: Airavata Jug
-      status: staged
+      status: scheduled
+      submission_id: 24b447ac-7c6a-4b98-b663-4c5c7b0ffc88
+      scheduled_time: 2026-10-17T18:00:00Z
       board_id: "1103593152379723626"
       title: Hand Painted Pattachitra Jug | Indian Bone China Tableware
       description: Fine bone china jug hand painted with Pattachitra motifs and 24 karat gold by Kaunteya. A statement piece for a festive table. Discover on Mela.
@@ -130,7 +135,9 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/637d30e1-b1ed-4aa1-a1b8-64810fb77717.jpg
       link: https://www.shopatmela.com/l/6a5cd5ea-f395-44a3-a1fa-5b5f85370f36?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=airavata_jug
     - name: Airavata Cookie Plate
-      status: staged
+      status: scheduled
+      submission_id: f16509e0-3b04-46a2-8143-2fcfb3dcd6d3
+      scheduled_time: 2026-10-19T18:00:00Z
       board_id: "1103593152379723626"
       title: Hand Painted Pattachitra Cookie Plate | Indian Bone China
       description: Fine bone china cookie plate hand painted with Pattachitra motifs and 24 karat gold by Kaunteya. Ready for a Diwali dessert spread. Discover on Mela.

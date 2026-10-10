@@ -9,7 +9,7 @@ brand: Vilvah Store
 brand_slug: vilvah
 week: 3
 date_posted: null
-status: staged
+status: scheduled
 platforms:
   - instagram
   - pinterest
@@ -63,12 +63,13 @@ verification_gaps:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 8129deb5-39b3-4dbc-a2b2-39a118192fb5
+  scheduled_time: 2026-10-12T17:00:00Z
   destination: "https://shopatmela.com/brands/vilvah-store?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w3&utm_content=brand_carousel"
   caption: |
     "Natural" on a haircare label can mean almost anything. Here's what's actually in Vilvah's bottles.
 
-    Vilvah formulates with ingredients grown on its own farm in Tamil Nadu: goat milk and pea protein in the shampoo, Tucuma butter and broccoli oil in the conditioner, black seed and curry leaf oil in the serum.
+    Vilvah formulates around a working farm in Tamil Nadu. In these bottles: goat milk and pea protein in the shampoo, Tucuma butter and broccoli oil in the conditioner, black seed and curry leaf oil in the serum.
 
     Featured in this carousel:
     • Goat Milk Shampoo
@@ -77,7 +78,7 @@ instagram:
 
     Discover Vilvah on Mela →
 
-    Formulated on Vilvah's own farm in Tamil Nadu. Ships to the US from Vilvah.
+    Formulated around Vilvah's own farm in Tamil Nadu. Ships to the US from Vilvah.
     #NaturalHaircare #GoatMilkShampoo #CleanBeauty #IndianSkincare #DiscoveredOnMela
   products:
     - name: Goat Milk Shampoo 250ml
@@ -121,26 +122,32 @@ pinterest:
       board_id: "1103593152379723631"
   pins:
     - name: Goat Milk Shampoo 250ml
-      status: staged
+      status: scheduled
+      submission_id: f31d8257-5cca-4e3d-b57f-d5266589cc07
+      scheduled_time: 2026-10-16T18:00:00Z
       board_id: "1103593152379723631"
       title: Goat Milk Shampoo with Jasmine | Natural Indian Haircare
-      description: Goat milk shampoo with jasmine and pea protein, formulated on Vilvah's own farm in Tamil Nadu. Intense moisturization for dry, frizzy hair. Discover on Mela.
+      description: Goat milk shampoo with jasmine and pea protein, formulated around Vilvah's own farm in Tamil Nadu. Intense moisturization for dry, frizzy hair. Discover on Mela.
       alt_text: Vilvah goat milk shampoo bottle with jasmine and pea protein on a marble bathroom counter beside a folded white towel
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/6704ac85-eab4-4666-af63-8309a83b46bb.jpg
       link: https://www.shopatmela.com/l/6a13d653-cdc1-484f-83ae-7d2f0c23d8c7?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=goat_milk_shampoo
     - name: Cream Conditioner 250ml
-      status: staged
+      status: scheduled
+      submission_id: ecf3d950-8bcf-4a99-a203-2658e8fe388d
+      scheduled_time: 2026-10-18T18:00:00Z
       board_id: "1103593152379723631"
       title: Tucuma Butter Cream Conditioner | Natural Indian Haircare
-      description: Cream conditioner with Tucuma butter and broccoli oil, formulated on Vilvah's own farm in Tamil Nadu. For dry, frizzy, damaged hair. Discover on Mela.
+      description: Cream conditioner with Tucuma butter and broccoli oil, formulated around Vilvah's own farm in Tamil Nadu. For dry, frizzy, damaged hair. Discover on Mela.
       alt_text: Vilvah cream conditioner bottle with Tucuma butter and broccoli oil on a marble bathroom counter beside a folded white towel
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cb71fee2-042c-4546-b97a-ae995d287fd1.jpg
       link: https://www.shopatmela.com/l/6a13d5ab-4f76-4da1-b3d5-40d3a8b1ac93?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=cream_conditioner
     - name: Anti-Frizz Hair Serum
-      status: staged
+      status: scheduled
+      submission_id: 11423b2d-9683-4edc-b871-1b0676fc8c3f
+      scheduled_time: 2026-10-20T18:00:00Z
       board_id: "1103593152379723631"
       title: Black Seed Anti-Frizz Hair Serum | Natural Indian Haircare
-      description: Anti-frizz hair serum with black seed and curry leaf oil, formulated on Vilvah's own farm in Tamil Nadu. UV and heat protection with all-day shine. Discover on Mela.
+      description: Anti-frizz hair serum with black seed and curry leaf oil, formulated around Vilvah's own farm in Tamil Nadu. UV and heat protection with all-day shine. Discover on Mela.
       alt_text: Vilvah anti-frizz hair serum bottle with black seed and curry leaf oil on a marble bathroom counter beside a wide tooth comb
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b42a4c16-5d56-410a-9c29-487850a57be8.jpg
       link: https://www.shopatmela.com/l/6a13d53e-bdc6-455a-9f67-3f1a756c5a75?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=anti_frizz_hair_serum
