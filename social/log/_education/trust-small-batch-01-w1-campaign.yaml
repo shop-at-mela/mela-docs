@@ -69,13 +69,13 @@ instagram:
   slides:
     - name: hook
       image_render: log/_education/trust-small-batch-01/renders/slide1-hook.png
-      image_url: null   # local PNG only — see notes.upload_gap below
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b3dd6948-0487-4c9b-9186-9d83d2954734.png
     - name: teaching
       image_render: log/_education/trust-small-batch-01/renders/slide2-teaching.png
-      image_url: null
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/36ae554d-0a76-4b12-9bef-42cc989201f4.png
     - name: myth_vs_fact_close
       image_render: log/_education/trust-small-batch-01/renders/slide3-mythfact.png
-      image_url: null
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/bb18cce8-a417-4e52-aba3-179072086d3c.png
   alt_text: "Text slide: Why your order might take a little longer, and why that's actually the part that's working."
   caption: |
     Why your order might take a little longer. That's actually the part that's working.
@@ -127,10 +127,10 @@ ux_review:
 # NOTES
 notes:
   upload_gap: >
-    The 3 rendered PNGs are local-only this run — database.blotato.io (the presigned-upload
-    host) is blocked by the same egress policy documented in kaunteya/week-3-campaign.yaml and
-    vilvah/week-3-campaign.yaml verification_gaps. A local session must upload these 3 files
-    (via blotato_create_presigned_upload_url, PUT the bytes) and fill in the image_url fields
-    above before scheduling.
+    RESOLVED 2026-10-09 (local session). The 3 slides were re-rendered locally because the
+    cloud-rendered PNGs had an ~87px transparent strip along the bottom (headless-Chromium
+    viewport bug) and used fallback fonts, then uploaded via blotato_create_presigned_upload_url.
+    Slide 2 was tightened slightly so 4 steps fit with the kit's real serif fonts. The HTML
+    sources are now committed next to the PNGs under renders/.
   dual_platform_note: "This topic is trust_service (platforms: [instagram, reddit] per education-topics.yaml) — the Reddit leg is drafted above but NOT posted, per the automated-run guardrails and reddit-strategy.md's human-posted-only rule."
   wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."

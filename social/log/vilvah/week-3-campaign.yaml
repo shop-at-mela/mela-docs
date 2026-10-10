@@ -45,15 +45,21 @@ verification_gaps:
     verbatim-matching. The brand's "own farm in Tamil Nadu" claim is also confirmed directly on
     the live /brands/vilvah-store page text, not just the CSV. Treat all 3 as LISTING LIVE / OPEN.
   render_watermark_and_qc: >
-    NOT PERFORMED. Same database.blotato.io egress block as kaunteya/week-3-campaign.yaml (see
-    that file's verification_gaps for the full detail — confirmed via curl PUT to the
-    presigned-upload-url host, WebFetch, and direct curl, all EGRESS_BLOCKED / 403). The 3
-    image_url values below are RAW, UNWATERMARKED Blotato Product Scene Placement outputs. A
-    local session with unrestricted network access must download each render, eyeball it
-    against the source photo, composite the watermark via templates/render.sh, re-upload, and
-    swap the URLs below before scheduling. These are rigid bottle products (not detail-critical
-    per visual-scorecard.md Stage 0), so morph risk is low, but this has NOT been visually
-    confirmed.
+    DONE 2026-10-09 (local session). All 3 renders downloaded and diffed side by side against
+    source_image_url (visual-scorecard.md Stage 2). Cream Conditioner PASS. Goat Milk Shampoo
+    PASS WITH FLAG: headline label text and logo are clean, but the small print under the title
+    is garbled ("Essiched with Pae Protein", "Jesmine Oil") and unreadable at feed size.
+    Anti-Frizz Hair Serum FAILED the first render (invented a white pump nozzle and a shorter
+    bottle; the real product is a slim bottle with a tall flat silver cap, no pump) and was
+    re-rendered with a literal "keep the bottle unchanged, no pump" prompt (the first retry
+    failed to load the .webp source, so the source was converted to JPEG and hosted on Blotato).
+    The final serum render matches the product shape and colours, but its fine print (the ring
+    text around the logo, "Curryleaf Oil") is garbled like the shampoo's. FOUNDER DECISION
+    NEEDED on accepting fine-print garble vs. using the real source photo for those two.
+    Each render had a ~5px dark band on the top and bottom edges, cropped before compositing.
+    Watermark composited via templates/photo-watermark.html + the render.sh Chrome invocation at
+    native ratio (1080x1340) and re-hosted via blotato_create_presigned_upload_url. The
+    image_url values below are the WATERMARKED results.
 
 # INSTAGRAM
 instagram:
@@ -81,7 +87,7 @@ instagram:
       price_usd: 18
       source_image_url: https://cdn.shopify.com/s/files/1/0702/1130/5689/files/GMS1.jpg?v=1769859845
       blotato_visual_id: 22386f33-e0f6-4b65-a9e7-4c9f3e1cd8cb
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-670e56ba-fc99-4126-a433-478751429c68.jpg  # RAW, UNWATERMARKED — see verification_gaps.render_watermark_and_qc
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/6704ac85-eab4-4666-af63-8309a83b46bb.jpg
       alt_text: Vilvah goat milk shampoo bottle with jasmine and pea protein on a marble bathroom counter beside a folded white towel
       verified: true  # live listing resolved 2026-10-07; "Goat Milk Shampoo...", $18, goat milk + pea protein + jasmine
       cooldown: clear — never featured in any prior campaign log
@@ -92,7 +98,7 @@ instagram:
       price_usd: 18
       source_image_url: https://cdn.shopify.com/s/files/1/0702/1130/5689/files/1_1_2b981d55-0e14-4845-8c84-9ec906f5393f.jpg?v=1760619671
       blotato_visual_id: 11d59e7c-bce8-4709-875a-c4af8e975990
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-55ed1243-470e-42c0-bcbf-4513364c3094.jpg  # RAW, UNWATERMARKED
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cb71fee2-042c-4546-b97a-ae995d287fd1.jpg
       alt_text: Vilvah cream conditioner bottle with Tucuma butter and broccoli oil on a marble bathroom counter beside a folded white towel
       verified: true  # live listing resolved 2026-10-07; "Cream Conditioner...", $18, Tucuma Butter + Broccoli Oil
       cooldown: clear — never featured in any prior campaign log
@@ -102,8 +108,8 @@ instagram:
       shopatmela_url: https://www.shopatmela.com/l/6a13d53e-bdc6-455a-9f67-3f1a756c5a75
       price_usd: 40
       source_image_url: https://cdn.shopify.com/s/files/1/0702/1130/5689/files/1_24c25660-8231-4c23-afc7-a9c0f414eb8b.webp?v=1742451071
-      blotato_visual_id: 38333da2-0d78-4673-bd1e-0017fc9b8030
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-8c83c4c4-58f2-4807-af0d-64162b5360c9.jpg  # RAW, UNWATERMARKED
+      blotato_visual_id: 41ae6693-223c-4042-998f-7ae2c820c14b  # re-render 2026-10-09 (original 38333da2-0d78-4673-bd1e-0017fc9b8030 invented a pump nozzle)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b42a4c16-5d56-410a-9c29-487850a57be8.jpg
       alt_text: Vilvah anti-frizz hair serum bottle with black seed and curry leaf oil on a marble bathroom counter beside a wide tooth comb
       verified: true  # live listing resolved 2026-10-07; "Anti-Frizz Hair Serum...", $40, black seed + curry leaf oil + hibiscus + arnica
       cooldown: clear — never featured in any prior campaign log
@@ -120,7 +126,7 @@ pinterest:
       title: Goat Milk Shampoo with Jasmine | Natural Indian Haircare
       description: Goat milk shampoo with jasmine and pea protein, formulated on Vilvah's own farm in Tamil Nadu. Intense moisturization for dry, frizzy hair. Discover on Mela.
       alt_text: Vilvah goat milk shampoo bottle with jasmine and pea protein on a marble bathroom counter beside a folded white towel
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-670e56ba-fc99-4126-a433-478751429c68.jpg
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/6704ac85-eab4-4666-af63-8309a83b46bb.jpg
       link: https://www.shopatmela.com/l/6a13d653-cdc1-484f-83ae-7d2f0c23d8c7?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=goat_milk_shampoo
     - name: Cream Conditioner 250ml
       status: staged
@@ -128,7 +134,7 @@ pinterest:
       title: Tucuma Butter Cream Conditioner | Natural Indian Haircare
       description: Cream conditioner with Tucuma butter and broccoli oil, formulated on Vilvah's own farm in Tamil Nadu. For dry, frizzy, damaged hair. Discover on Mela.
       alt_text: Vilvah cream conditioner bottle with Tucuma butter and broccoli oil on a marble bathroom counter beside a folded white towel
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-55ed1243-470e-42c0-bcbf-4513364c3094.jpg
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cb71fee2-042c-4546-b97a-ae995d287fd1.jpg
       link: https://www.shopatmela.com/l/6a13d5ab-4f76-4da1-b3d5-40d3a8b1ac93?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=cream_conditioner
     - name: Anti-Frizz Hair Serum
       status: staged
@@ -136,7 +142,7 @@ pinterest:
       title: Black Seed Anti-Frizz Hair Serum | Natural Indian Haircare
       description: Anti-frizz hair serum with black seed and curry leaf oil, formulated on Vilvah's own farm in Tamil Nadu. UV and heat protection with all-day shine. Discover on Mela.
       alt_text: Vilvah anti-frizz hair serum bottle with black seed and curry leaf oil on a marble bathroom counter beside a wide tooth comb
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-8c83c4c4-58f2-4807-af0d-64162b5360c9.jpg
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b42a4c16-5d56-410a-9c29-487850a57be8.jpg
       link: https://www.shopatmela.com/l/6a13d53e-bdc6-455a-9f67-3f1a756c5a75?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=anti_frizz_hair_serum
 
 # UX REVIEW
