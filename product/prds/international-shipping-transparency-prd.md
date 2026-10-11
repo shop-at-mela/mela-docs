@@ -38,20 +38,20 @@
 
 ---
 
-## Build Status Summary *(updated 2026-10-06)*
+## Build Status Summary *(updated 2026-10-11)*
 
 | Item | Priority | Status | Notes |
 |------|----------|--------|-------|
 | Per-brand `us_*` data for 25 brands | P0 input | ✅ Exported and seeded to dev (2026-10-06) | `shopify_brands.py` `6fcec40`: 6 DDP, 12 DDU, 7 unknown (verified by loading the module 2026-10-06). Exported as `usShipping` with the six P1.1 fields; Isharya not seeded (see the critical Isharya item in `product/TODO.md`). |
 | Isharya repoint to isharya.co | Prerequisite | ✅ Done (verified 2026-10-09) | Sharetribe API read of all 567 Isharya listings: 532 published on isharya.co, 35 closed (handle not on isharya.co), 0 published on www.isharya.com. The prod CSV still has .com rows for products that never became listings; judge by the API, not the CSV. `brandUsShipping` for Isharya seeded to dev (the live site) 2026-10-09: duties paid on delivery, cost calculated at checkout, free over $250. Checkout is the source of truth: the policy page says $20 below $250 and checkout charged $25 on one $100 cart, so no fee is shown. Show $25 only if a second cart test (one cheap item, one near $250) also charges $25 |
-| P0.1 to P0.7 false-claim removal | P0 | ❌ Not started | Seven false or unverifiable claims found, four more than the brief listed (§4 P0 inventory) |
-| P0.8 Pluchi | P0 | ❌ Decision made, not executed | Delist (see P0.8) |
-| P0.9 exporter + seeder (existing fields) | P0 | 🟡 Done on dev, branches not merged | `export_brand_content.py` (`e5881c1`) and `seed-brand-profiles.js` (`9f769eb`), on branches `feat/brand-us-shipping-export` and `feat/seed-brand-us-shipping`. Seeded to dev 2026-10-06 (19 live brands, 0 failed); Nicobar, House of Chikankari, Ankid and Isharya read back through the Integration API. Contract uses `feeUsd`/`feeApprox`/`freeOverUsd`/`freeOverApprox` (not P1.1's `fee`/`feeCurrency`). Thresholds export only when their source currency is known. Not seeded to production. Not verified: that the web-client reads this shape. |
-| P1 data additions (fee, currency, checked date, ships from) | P1 dependency | 🟡 Partial | Fields added in `d7f047a`. Filled for the brands outside the re-check list; the 10 re-check brands are mostly None, so most have no `checkedAt` and would fail closed (P1.10). Fee and threshold currency now set for Nicobar, ChooseKind and Isharya from policy text pasted 2026-10-06. Still open: Banjaaran `us_duties_collected`, Kaunteya threshold currency, Isharya $20 policy vs $25 cart test. |
-| Brand outreach (7 unknown duty terms) | P1 dependency | ❌ Not started | Send before P1 ships; do not wait for replies to ship |
-| Copy comprehension test (5 people) | P1 gate | ❌ Not started | 3 recruits named in UXR; 2 more needed |
+| P0.1 to P0.7 false-claim removal | P0 | ✅ Live | web-client `1459820ab` (P0) and `0f90b0889` (remaining blanket claims) on origin/main. Two claims are still live: "US cards verified" on the homepage vetting strip (§12 Q5) and the hosted JSON-LD description "An online marketplace." (§12 Q4) |
+| P0.8 Pluchi | P0 | ❌ Awaiting delist approval | `/brands/pluchi` is live with 446 products and the fallback "Pluchi doesn't ship to the US yet." (live check 2026-10-09). The 404 depends on fixing `ProfilePage.duck.js:273`, which calls an undefined `showUserError` (§12 Q2, Q3) |
+| P0.9 exporter + seeder (existing fields) | P0 | ✅ Merged, seeded to dev | `feat/brand-us-shipping-export` (Mela-scrapper-integrations) and `feat/seed-brand-us-shipping` (product-listing-integration) are merged to main. Seeded to dev (the live site): 19 brands, plus Isharya on 2026-10-09. Contract uses `feeUsd`/`feeApprox`/`freeOverUsd`/`freeOverApprox` (not P1.1's `fee`/`feeCurrency`). Thresholds export only when their source currency is known. The web-client reader `src/util/brandShipping.js` uses the same keys and method values (checked 2026-10-09). Not seeded to production (§12 Q13) |
+| P1 data additions (fee, currency, checked date, ships from) | P1 dependency | 🟡 Partial | Fields added in `d7f047a`. Filled for the brands outside the re-check list; the 10 re-check brands are mostly None, so most have no `checkedAt` and would fail closed (P1.10). Fee and threshold currency now set for Nicobar, ChooseKind and Isharya from policy text pasted 2026-10-06. Still open: Banjaaran `us_duties_collected`, Kaunteya threshold currency, Isharya $20 policy vs $25 cart test. See §12 Q7 and Q8. |
+| Brand outreach (7 unknown duty terms) | Post-launch | ❌ Not started | Drafts only, never sent (§12 Q11) |
+| Copy comprehension test (5 people) | Post-launch check | ❌ Not started | Run on the live pages (§12 Q12). 3 recruits named in UXR; 2 more needed |
 | Mockup (mobile first) + `/ux-design panel` | P1 gate | ✅ Panel run 2026-10-06; both device checks passed 2026-10-09 | `nimbalyst-local/mockups/international-shipping-transparency-mobile.mockup.html`. Owner phone checks: Fizzy Goblet duty sentence visible on first load at 375 × 667; trust sheet Continue visible with the keyboard open. Desktop 1440px and loading states not drawn |
-| P1 per-brand display, brand page section, analytics, SEO fixes | P1 | 🟡 Built 2026-10-07 to 2026-10-08, branch `feat/us-shipping-stage3` unmerged | P1.2 to P1.8, P1.9, P1.11 (code) and P1.12 are built; see the §11 Stage 3 entry. ACs not ticked: the real-device checks, the comprehension test and GTM/GA4 are still open |
+| P1 per-brand display, brand page section, analytics, SEO fixes | P1 | ✅ Merged and live | web-client `79b74ee0c` (Stage 3), `fc2f5de1e` (copy), `b63597074` (possessives) on origin/main; live check 2026-10-09 (Isharya brand page shows its US shipping section). ACs still open: GTM/GA4 `duties_type` (§12 Q6) and the copy test (§12 Q12) |
 | P2 `offers.shippingDetails` | P2 | ⛔ Blocked | On P1.9 seller decision shipping + price-accuracy gate |
 
 ---
@@ -632,6 +632,28 @@ All three reviews ran on the draft and are folded in above.
 - Still open: flat fees for House of Chikankari, The Nesavu, Kaunteya, Polite Society and Little Muffet rest on cart tests with no stated policy rate (re-test with a one item and a heavy cart); Daughters of India ships from Australia and USA warehouses, outside the `shipsFrom` vocabulary; sales tax at checkout not in the copy; "Supper Bottoms" (profile display name) and "House Of Chikankari" (listing `publicData.brand`) are data typos.
 
 **Not yet done (required before build):** the desktop 1440px adaptation and loading states. *(The fold check and the trust sheet keyboard check both passed on 2026-10-09.)*
+
+---
+
+## 12. Follow-up queue *(added 2026-10-11)*
+
+Work top to bottom, one item open at a time. An item closes only after an API or live check, recorded in its Done when cell. Ask before any live write (seeding dev is the live site) and before Console or GTM changes.
+
+| # | Item | PRD ref | Gate | Done when |
+|---|------|---------|------|-----------|
+| Q1 | Bring the Build Status table, TODO and PRD_TRACKER up to date | Build Status | Owner yes on mela-docs | ✅ Done 2026-10-11 |
+| Q2 | Fix `ProfilePage.duck.js:273`: `showUserError` is called but never defined, so an unknown `/brands/:slug` throws in SSR | P0.8 prerequisite | Code only | An unknown slug returns a 404 in SSR |
+| Q3 | Delist Pluchi: close its listings, remove it from `configBrands.js` (dev block), 404 `/brands/pluchi`, noindex `/u/:id`; add "us_shipping must not be none" to the `shopify_brands.py` ACTIVATION CHECKLIST | P0.8 | Owner approval, live write | API shows 0 published Pluchi listings; curl shows the 404 and the noindex |
+| Q4 | Delete the hosted `Page.schemaDescription` and `LandingPage.schemaDescription` overrides | P1.12 | Owner, in Console | Homepage JSON-LD no longer says "An online marketplace." |
+| Q5 | Replace "US cards verified": `VettingStrip.cards`, `BrandsPage.description`, one source for every card string | P0 copy, TODO 2026-10-06 | Owner approves copy first; check hosted overrides | No verification claim is live |
+| Q6 | GTM/GA4 `duties_type`: DLV, parameter on `brand_clickout`, `listing_view` and `saved_listing_toggle`, event-scoped dimension "Duties Type" | P1.11 | Owner, in GTM/GA4 | DebugView shows the value for one DDP and one DDU brand |
+| Q7 | Data gaps, each from a cited source: `us_shipping_checked` for the P1.1 re-check brands; Banjaaran, Nicobar, Daughters of India and Hemant & Nandita `us_duties_collected`; Kaunteya threshold currency; Isharya `checkedAt` after its policy re-read | P1.1, P1.10 | A source per field, never a guess | Export has no fail-closed brand without a recorded reason |
+| Q8 | Flat-fee re-tests: House of Chikankari, The Nesavu, Kaunteya, Polite Society, Little Muffet, plus Isharya's second cart. Checkout wins: a fee shows only if a one-item cart and a heavy cart charge the same rate, else calculated at checkout and the gap goes in `us_policy_mismatch` | P1.1, §8 | Owner runs the carts | One `shopify_brands.py` edit, one export, one dry run, one seed (with Q7) |
+| Q9 | Isharya prices (stale INR values, e.g. abakka-statement-earrings about $138 on Mela vs $67 on isharya.co). Check first: ingester logs "Store currency: USD", HTTP 429 handling, `--all-updated` syncs rows whose currency changed. Then rescrape, `update_classified_products.py`, `create-listings.js`. The scraper reads only the first variant price | Pipeline | Dry run, then live write | The example listing shows the isharya.co price |
+| Q10 | Merge `data/isharya-repoint-to-isharya-co` after Q9 (may conflict). Confirm the www.isharya.com CSV rows are gone. Reopen the 35 closed listings only if isharya.co now carries their handles | Pipeline | Merge | CSV and API agree |
+| Q11 | Outreach drafts to the brands with unknown duty terms (Masilo, Aagghhoo, Baby Forest, ChooseKind, The Alternate India, Ankid; Pluchi only if not delisted): who pays US duties, US returns, where US orders ship from, how Mela shows duty terms | P1 dependency | Drafts only, never sent | Drafts saved in mela-docs |
+| Q12 | Five-person copy test as a post-launch check: session script and screenshot set from the live pages | §7 Research | None | Script and shot list written |
+| Q13 | Production seed steps in `dev-to-production-migration-prd.md` §3d | P0.9 | Owner yes on mela-docs | Steps documented; nothing seeded |
 
 ---
 
