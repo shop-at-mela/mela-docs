@@ -2,6 +2,16 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-10-13
+
+### Shipped
+- `feat(analytics)` (web-client `768a4c153`, main): Profound Agent Analytics log forwarding (`server/profoundAnalytics.js`). Deployed on Render and data confirmed showing in Profound 2026-10-13. Env vars `PROFOUND_API_KEY` / `PROFOUND_LOG_ENDPOINT` added to `dev-to-production-migration-prd.md` §3b.
+
+### Next
+- [ ] **Decide whether to keep Profound long term.** Owner is unsure. Whichever way it goes:
+  - **If keeping:** stop sending query params for `/api/*` paths. Today the Google/Facebook sign-in callbacks (`/api/auth/google/callback`, `/api/auth/facebook/callback`) and Console "login as user" (`/api/login-as`) send their one-time sign-in `code` to Profound in `query_params`. Low risk (codes are single-use and expire within minutes), but sign-in keys don't belong in an analytics tool. About a 3-line change in `toLogEntry`: send `{}` as `query_params` when `req.path` starts with `/api/`. Shopping pages keep search terms and UTM tags.
+  - **If dropping:** remove `server/profoundAnalytics.js` and its `app.use` in `server/index.js`, delete both env vars from Render, and remove the §3b line from the migration PRD.
+
 ## 2026-10-06
 
 ### Shipped
