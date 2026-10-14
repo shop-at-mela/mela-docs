@@ -1,7 +1,7 @@
 # SEO & AEO — Category Pages + Brand Storefront Pages PRD
 
 **Document Owner:** Product / SEO Team  
-**Last Updated:** 2026-09-25  
+**Last Updated:** 2026-10-13  
 **Status:** Partial — Category pages shipped with SEO schema; brand storefront SEO not yet built  
 **Priority:** High — Organic acquisition foundation  
 **Related PRDs:** `brand-storefront-prd.md`, `brands-page-prd.md`, `technical/sitemap-prd.md`
@@ -591,7 +591,7 @@ The layout is fully specified in `brand-storefront-prd.md`. SEO/AEO additions:
 ### Category Pages
 
 - [ ] `/categories/baby-clothing` renders `CategoryPage` component (not SearchPage).
-- [ ] H1 on category page matches the category display name from config.
+- [ ] H1 on category page matches the category display name from config. (Partial 2026-10-13: the hosted config stores raw slugs as names, so the code now humanizes them, e.g. "Lighting & Outdoor", in `8b8e30e3b`. Proper display names belong in the Console category config.)
 - [ ] Breadcrumb renders as: Home > [L0 name] > [L1 name] for nested categories.
 - [ ] `BreadcrumbList` JSON-LD present in page `<head>` with correct URLs.
 - [ ] `CollectionPage` JSON-LD with nested `ItemList` present in `<head>`.
@@ -599,7 +599,7 @@ The layout is fully specified in `brand-storefront-prd.md`. SEO/AEO additions:
 - [ ] `<title>` tag = `{CategoryName} — Authentic Indian Baby Products | Mela`.
 - [ ] `<meta name="description">` is editorial (config-driven), not auto-generated from URL.
 - [ ] Subcategory pills render on L0 pages with correct links to L1 URLs.
-- [ ] All L0 and L1 category paths appear in `sitemap-default.xml`.
+- [x] All L0 and L1 category paths appear in `sitemap-default.xml`. (web-client `beac3954c`, verified on an SSR build 2026-10-13. Empty categories are listed but render `noindex`.)
 - [ ] Category pages return HTTP 200 (not a redirect to `/s?pub_categoryLevel1=...`).
 - [x] FAQ block renders (P1): one question-form Q&A per L0 category, marked up as `FAQPage`/`Question`/`Answer` JSON-LD. Rendered as a collapsed-by-default `<details>`/`<summary>` accordion after the product grid (not inline/hidden — text stays in the DOM regardless of expand state).
 - [x] Each category's description is a self-contained 40–60 word paragraph, rendered in the header (first third of the page).
@@ -624,7 +624,7 @@ The layout is fully specified in `brand-storefront-prd.md`. SEO/AEO additions:
 - [ ] `<title>` = `{BrandName} — Indian Baby Products | Mela`.
 - [ ] `<meta name="description">` includes brand tagline + top certification + Mela context.
 - [ ] `<meta property="og:image">` set to brand logo or hero image.
-- [ ] All brand slugs appear in `sitemap-brands.xml`.
+- [x] All brand slugs appear in `sitemap-brands.xml`. (Shipped in `sitemap-default.xml` instead of a separate file, web-client `beac3954c`. Pluchi excluded while its delist is pending.)
 - [ ] FAQ block renders (P1): 3 Q&As, marked up as `FAQPage` JSON-LD.
 - [ ] Google Rich Results Test passes for Organization schema on at least one brand page.
 - [ ] Invalid/unknown `brandSlug` returns 404 (not an empty product grid).

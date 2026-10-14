@@ -5,9 +5,25 @@ Running log of shipped work and next actions. Newest entry at top.
 ## 2026-10-13
 
 ### Shipped
+- `fix(seo)` ×4 (web-client `beac3954c`, `8b8e30e3b`, `eae83f9ce`, `8b709f839`, main, **not yet pushed**), from Zavi's SEO audit. Changes:
+  - `/s` is noindex.
+  - Sitemap and robots.txt use https and list the brands and categories.
+  - Category slugs are humanized, with catalog-accurate metas for 4 Home-Kitchen subcategories.
+  - Brand and listing titles are tightened.
+  - Listing pages have one h1.
+  - The `/l/new` FAQ schema matches the visible FAQ.
+  - Empty categories and `/brands/pluchi` are noindex.
+  - Verified on an SSR build.
 - `feat(analytics)` (web-client `768a4c153`, main): Profound Agent Analytics log forwarding (`server/profoundAnalytics.js`). Deployed on Render and data confirmed showing in Profound 2026-10-13. Env vars `PROFOUND_API_KEY` / `PROFOUND_LOG_ENDPOINT` added to `dev-to-production-migration-prd.md` §3b.
 
 ### Next
+- [ ] **Render:** set `REACT_APP_MARKETPLACE_ROOT_URL=https://www.shopatmela.com`, then rebuild and deploy (owner, later). Until then, canonical tags point at the apex, which redirects.
+- [ ] **Sharetribe Console:**
+  - Paste the About page (draft written 2026-10-13, founder Sanjot Sawhney).
+  - Replace the footer copyright ("© 2024 Your marketplace").
+  - Remove the "Post a new listing" footer link.
+- [ ] **Pluchi:** after the delist decision, remove its `noIndex` flag in `configBrands.js` or remove the brand.
+- [ ] **Kaunteya:** its brand description says "ceramic tableware", but it sells handloom silk runners. Fix in brand data.
 - [ ] **Decide whether to keep Profound long term.** Owner is unsure. Whichever way it goes:
   - **If keeping:** stop sending query params for `/api/*` paths. Today the Google/Facebook sign-in callbacks (`/api/auth/google/callback`, `/api/auth/facebook/callback`) and Console "login as user" (`/api/login-as`) send their one-time sign-in `code` to Profound in `query_params`. Low risk (codes are single-use and expire within minutes), but sign-in keys don't belong in an analytics tool. About a 3-line change in `toLogEntry`: send `{}` as `query_params` when `req.path` starts with `/api/`. Shopping pages keep search terms and UTM tags.
   - **If dropping:** remove `server/profoundAnalytics.js` and its `app.use` in `server/index.js`, delete both env vars from Render, and remove the §3b line from the migration PRD.
