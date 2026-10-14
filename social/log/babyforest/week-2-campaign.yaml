@@ -1,0 +1,165 @@
+# Mela Social Campaign — Baby Forest Week 2 (product post)
+# Staged via the automated weekly staging routine on 2026-10-14. STATUS: staged, not scheduled.
+
+---
+brand: Baby Forest
+brand_slug: babyforest
+week: 2
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Priya
+category: baby_and_kids
+content_type: product
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast                 # vetted brand (week 2), real product photos, all 3 listings verified OPEN this run
+hypothesis: "Angle 5 (occasion-in-America) with Priya lead — does framing these three as a US baby-shower gift set out-save a generic 'newborn essentials' post with no occasion anchor?"
+gate_verdict: ship_pending_manual_verification   # copy + listing-live clear; watermark + render QC blocked by infra this run (see notes.infra_gap)
+coaching_notes: >
+  Diaspora anchor is the PRIMARY lever here (angle 5, Priya), not secondary: "hosting a baby shower
+  in the US" is a direct situation hook, not just product fact. IMPORTANT PRECEDENT FLAG: Baby
+  Forest's week-1 log records that Blotato Product Scene Placement previously GARBLED bottle label
+  text for this brand ("AYUVVVEDA", "Eesence of Cacenuts") and the team fell back to the real photo
+  + HTML watermark. The 2 jars/tubes in this batch (face cream, rash cream) carry printed label text
+  and are therefore HIGH morph/garble risk per visual-scorecard.md Stage 0's label-forward morph
+  gate; the feeding bottle (molded plastic, minimal text) is lower risk. Because this run's render
+  QC is blocked (see notes.infra_gap), the founder's local session MUST diff all 3 renders against
+  source especially closely for garbled text before shipping, and fall back to the real product
+  photo + templates/photo-watermark.html composite for any jar/tube that garbles, per
+  pre-publish-gate.md Step 4.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: https://shopatmela.com/brands/baby-forest?utm_source=instagram&utm_medium=social&utm_campaign=babyforest_w2&utm_content=brand_carousel
+  caption: |
+    Hosting a baby shower in the US and want something that isn't off the Target registry?
+
+    Baby Forest makes newborn care rooted in Ayurvedic ingredient logic. Shea butter and saffron in the face cream. Vetiver and geranium oil in the rash cream. FDA-approved food-grade material in the feeding bottle. Free from parabens, sulfates, and artificial fragrance.
+
+    Featured in this carousel:
+    • Laad Pyaar Baby Feeding Bottle
+    • Khilta Mukhra Baby Face Cream
+    • Komal Kawach Baby Rash Healing Cream
+
+    Discover Baby Forest on Mela →
+
+    📍 Made in India. Ships to the US from Baby Forest.
+    #BabyForest #NewbornCare #IndianBabyBrand #BabyShowerGift #DiscoveredOnMela
+
+  products:
+    - name: Laad Pyaar Baby Feeding Bottle (260ml)
+      source_image_url: https://cdn.shopify.com/s/files/1/0612/6206/9949/files/Img077_-_edited.webp?v=1742974986
+      blotato_render_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-302417d2-4b70-43a0-95d9-1ba2f1864084.jpg
+      blotato_visual_id: e372584a-f178-4728-9b43-29c46cdc9f17
+      watermarked: false
+      morph_risk: low   # molded plastic shape, minimal printed text
+      alt_text: "Baby Forest feeding bottle with slow flow nipple on a soft pastel blanket with folded muslin cloth"
+      price_usd: 23
+      dev_listing_id: 68e47aa4-2dd4-493e-b140-b8b8d02bbefb
+      shopatmela_url: https://www.shopatmela.com/l/68e47aa4-2dd4-493e-b140-b8b8d02bbefb
+      listing_live_verified: true
+
+    - name: Khilta Mukhra Baby Face Cream
+      source_image_url: https://cdn.shopify.com/s/files/1/0612/6206/9949/files/1_Khilta_Mukhra_Baby_Face_Cream_01_07.webp?v=1782822778
+      blotato_render_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-8a38aaf8-381d-4044-9d7a-1fd7afb7470d.jpg
+      blotato_visual_id: 9add3ce5-13d2-4abe-a7b8-1a5d839fe9c6
+      watermarked: false
+      morph_risk: high   # label-forward jar — see week-1 garble precedent in coaching_notes
+      alt_text: "Baby Forest face cream jar with shea butter and saffron on a soft pastel blanket with dried chamomile flowers"
+      price_usd: 11
+      dev_listing_id: 69f8ae54-09fd-4301-b4d6-fda390ca01e5
+      shopatmela_url: https://www.shopatmela.com/l/69f8ae54-09fd-4301-b4d6-fda390ca01e5
+      listing_live_verified: true
+
+    - name: Komal Kawach Baby Rash Healing Cream
+      source_image_url: https://cdn.shopify.com/s/files/1/0612/6206/9949/files/3_Komal_Kawach_Baby_Rash_Healing_Cream_02_06.webp?v=1780381619
+      blotato_render_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6422decd-aabb-48db-8300-19244a3fa71c.jpg
+      blotato_visual_id: fdf65148-4770-4323-8f8c-9e8c8b193aac
+      watermarked: false
+      morph_risk: high   # label-forward tube — see week-1 garble precedent in coaching_notes
+      alt_text: "Baby Forest rash healing cream tube with natural ingredients on a soft pastel blanket with a small wooden toy"
+      price_usd: 9
+      dev_listing_id: 69f8ae76-173e-42c7-b4a6-59efe7c486e1
+      shopatmela_url: https://www.shopatmela.com/l/69f8ae76-173e-42c7-b4a6-59efe7c486e1
+      listing_live_verified: true
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Modern Indian Nursery
+      board_id: "1103593152379723629"   # confirmed via blotato_list_pinterest_boards 2026-10-14; chosen over
+      # "Organic Indian Baby Clothes & Essentials" because that board is specifically about organic COTTON
+      # CLOTHING per pinterest-playbook.md, and none of these 3 products carry a verified "organic" claim
+      # (Baby Forest's claim is "Ayurvedic"/"natural ingredients", not organic-certified) — board-fit guardrail.
+
+  pins:
+    - name: Laad Pyaar Baby Feeding Bottle
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723629"
+      title: FDA-Approved Baby Feeding Bottle | Indian Baby Brand
+      description: Laad Pyaar feeding bottle in FDA-approved food-grade material with slow or medium flow nipple, from Baby Forest. A thoughtful baby shower gift from an Indian baby brand shipped to the US. Discovered on Mela.
+      alt_text: "Baby Forest feeding bottle with slow flow nipple on a soft pastel blanket with folded muslin cloth"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-302417d2-4b70-43a0-95d9-1ba2f1864084.jpg
+      shopatmela_url: https://www.shopatmela.com/l/68e47aa4-2dd4-493e-b140-b8b8d02bbefb
+      link: https://www.shopatmela.com/l/68e47aa4-2dd4-493e-b140-b8b8d02bbefb?utm_source=pinterest&utm_medium=social&utm_campaign=babyforest_w2&utm_content=laad_pyaar_feeding_bottle
+
+    - name: Khilta Mukhra Baby Face Cream
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723629"
+      title: Shea Butter Saffron Baby Face Cream | Ayurvedic Baby Skincare
+      description: Khilta Mukhra baby face cream with shea butter, saffron, and almond oil, formulated with Ayurvedic ingredient logic. Baby Forest, discovered on Mela.
+      alt_text: "Baby Forest face cream jar with shea butter and saffron on a soft pastel blanket with dried chamomile flowers"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-8a38aaf8-381d-4044-9d7a-1fd7afb7470d.jpg
+      shopatmela_url: https://www.shopatmela.com/l/69f8ae54-09fd-4301-b4d6-fda390ca01e5
+      link: https://www.shopatmela.com/l/69f8ae54-09fd-4301-b4d6-fda390ca01e5?utm_source=pinterest&utm_medium=social&utm_campaign=babyforest_w2&utm_content=khilta_mukhra_face_cream
+
+    - name: Komal Kawach Baby Rash Healing Cream
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723629"
+      title: Ayurvedic Baby Rash Healing Cream | Natural Diaper Care
+      description: Komal Kawach rash healing cream with vetiver, ylang ylang, and geranium oil, rooted in Ayurvedic wisdom. Baby Forest, discovered on Mela.
+      alt_text: "Baby Forest rash healing cream tube with natural ingredients on a soft pastel blanket with a small wooden toy"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6422decd-aabb-48db-8300-19244a3fa71c.jpg
+      shopatmela_url: https://www.shopatmela.com/l/69f8ae76-173e-42c7-b4a6-59efe7c486e1
+      link: https://www.shopatmela.com/l/69f8ae76-173e-42c7-b4a6-59efe7c486e1?utm_source=pinterest&utm_medium=social&utm_campaign=babyforest_w2&utm_content=komal_kawach_rash_cream
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/baby-forest
+  checks:
+    brand_story: { result: pass, note: "Ayurvedic herbs / cold pressed oils tagline confirmed live via blotato_create_source" }
+    artisan_details: { result: pass, note: "Ingredient claims (shea butter, saffron, vetiver, geranium) verbatim-match CSV + live listing" }
+    cultural_context: { result: pass, note: "Ayurvedic ingredient framing present" }
+    aesthetic_match: { result: tbd, note: "Render QC blocked this run, see notes.infra_gap" }
+    product_findability: { result: pass, note: "Product names listed in caption" }
+    mobile_responsive: { result: tbd, note: "Needs verification locally" }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  cooldown_check: "CLEAR — these 3 dev_listing_ids are new; week-1 used 68e47a73-d735-4256-94c4-acde5796bc79 and 69f8ad55-3171-4921-b888-b484c0f98dd9 only (checked via grep across social/log/babyforest/*.yaml). Brand itself last posted 2026-08-07 (~68 days ago), well clear of the 7-day brand_recency_days window."
+  category_concentration: "CLEAR — last 3 confirmed product-row categories (newest first): beauty_and_wellness (Vilvah, 2026-10-12), home_and_kitchen (Kaunteya, 2026-10-10), jewelry_and_accessories (Isharya, 2026-10-09). Adding baby_and_kids here does not create a 3-in-a-row."
+  persona_fatigue: "Checked — Priya was at 1/5 in the pre-batch window (Kaunteya, 2026-10-10); this tile brings her to 2/5, still clear. Varies from week-1's Sarah lead for this same brand."
+  infra_gap: >
+    Same cloud-sandbox egress gap as the fashion tile this run and the three prior staging runs:
+    database.blotato.io and cdn.shopify.com both return 403 connect_rejected. The 3 renders above
+    are NOT watermarked and have NOT been downloaded/diffed against source. See the fizzy-goblet
+    week-3 log's notes.infra_gap for the full description; the same local-session remediation
+    applies here, with EXTRA scrutiny on the face-cream and rash-cream label text per the garble
+    precedent noted in coaching_notes above.
