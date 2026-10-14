@@ -14,12 +14,13 @@ Running log of shipped work and next actions. Newest entry at top.
   - The `/l/new` FAQ schema matches the visible FAQ.
   - Empty categories and `/brands/pluchi` are noindex.
   - Verified on an SSR build.
+- `feat(about)` (web-client `2a762b079`, main, not yet pushed): the About page now lives in code at `/p/about` (`src/containers/AboutPage`), with claim-checked copy and Sanjot Sawhney named as operator. It is in the default sitemap, so deleting the Console page does not drop it.
 - `feat(analytics)` (web-client `768a4c153`, main): Profound Agent Analytics log forwarding (`server/profoundAnalytics.js`). Deployed on Render and data confirmed showing in Profound 2026-10-13. Env vars `PROFOUND_API_KEY` / `PROFOUND_LOG_ENDPOINT` added to `dev-to-production-migration-prd.md` §3b.
 
 ### Next
 - [ ] **Render:** set `REACT_APP_MARKETPLACE_ROOT_URL=https://www.shopatmela.com`, then rebuild and deploy (owner, later). Until then, canonical tags point at the apex, which redirects.
 - [ ] **Sharetribe Console:**
-  - Paste the About page (draft written 2026-10-13, founder Sanjot Sawhney).
+  - Delete the "about" CMS page. The code page overrides it already.
   - Replace the footer copyright ("© 2024 Your marketplace").
   - Remove the "Post a new listing" footer link.
 - [ ] **Pluchi:** after the delist decision, remove its `noIndex` flag in `configBrands.js` or remove the brand.
