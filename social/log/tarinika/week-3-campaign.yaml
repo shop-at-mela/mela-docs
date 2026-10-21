@@ -1,0 +1,166 @@
+---
+# Mela Social Campaign — YAML Format (see CAMPAIGN_TEMPLATE.yaml)
+# Tarinika Week 3 — STAGED by automated cloud run, week of 2026-10-21
+
+brand: Tarinika
+brand_slug: tarinika
+week: 3
+date_posted: null   # not yet scheduled — staged only, awaiting founder approval
+status: staged   # staged | scheduled | published
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Priya
+category: jewelry_and_accessories
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 3) + real product photo (Blotato Product Scene Placement) + verified-OPEN listing
+hypothesis: "Angle 5 (occasion-in-America, wedding-guest season) with Priya lead — does naming that shelf 'festive jewelry' often reads mass-produced out-save a generic antique-jewelry carousel with no discernment hook?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # copy + listing-live clear; watermark + render QC blocked by infra this run (database.blotato.io egress-blocked, same as all 4 prior staging runs)
+coaching_notes: >
+  Diaspora anchor: present, via the scene (staged US bedroom/dresser context, since product
+  photos carry no caption text) and the caption hook (wedding-guest season in the US, not a
+  generic "festive table" line). Hook: claim-decoded framing ("most festive jewelry on the
+  shelf reads mass-produced") is specific, not generic desire copy. First-frame: cover leads
+  with the Aarna Antique Necklace Set (product-forward per grid.enabled=false rule). Motion:
+  N/A (static carousel only, per this routine's carousels-only guardrail).
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  listing_live_check: >
+    PERFORMED via blotato_create_source (shopatmela.com direct fetch is egress-blocked from
+    this cloud session, same gap as the last 4 runs — confirmed via curl: CONNECT tunnel
+    failed, response 403). All 3 listings + the Tarinika brand page resolved cleanly via the
+    blotato_create_source fallback with matching title/price/material claims — see products[].
+  render_qc_check: >
+    NOT PERFORMED. database.blotato.io (Blotato's render + upload host) is egress-blocked from
+    this cloud session (confirmed via curl PUT to a fresh presigned upload URL: CONNECT tunnel
+    failed, response 403, identical to the shopatmela.com block). The 3 Product Scene Placement
+    renders below could not be downloaded, diffed against source, watermarked, or re-hosted.
+    Founder must open each render URL, diff against source_image_url, composite the watermark
+    (templates/render.sh) and re-host via blotato_create_presigned_upload_url before scheduling.
+  resolution_note: "Same infra gap as week-of-2026-09-30, -10-04, -10-07, -10-14 — recommend allowlisting shopatmela.com, database.blotato.io, and cdn.shopify.com on this environment's egress policy."
+
+# INSTAGRAM
+instagram:
+  submission_id: null   # not submitted — staged only
+  destination: https://shopatmela.com/brands/tarinika?utm_source=instagram&utm_medium=social&utm_campaign=tarinika_w3&utm_content=brand_carousel
+  caption: |
+    Wedding season in the US, and most "festive jewelry" on the shelf reads mass produced from ten feet away.
+
+    Tarinika's goldsmiths hand shape each piece in brass or gold plated alloy, then set the antique finishing and stone work by hand. Temple inspired necklaces, kempu bangles, and CZ drop earrings that pair as easily with a kurta as with a blazer.
+
+    Featured in this carousel:
+    • Aarna Antique Necklace Set
+    • Aariya Nakshatra CZ Earrings
+    • Aarisha Kempu Antique Bangles
+
+    Discover Tarinika on Mela →
+
+    Handcrafted in India. Ships to the US from Tarinika.
+    #TempleJewelry #HandcraftedJewelry #IndianJewelry #WeddingGuestStyle #DiscoveredOnMela
+
+  products:
+    - name: Aarna Antique Necklace Set
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d77dc79f-cbac-47c4-93ca-06824285303a.jpg
+      blotato_visual_id: 59f36536-d4c8-42f3-abc7-6d1acffed3c6
+      source_image_url: https://cdn.shopify.com/s/files/1/2026/1561/files/TNX0379XTY_d2996f60-6728-4217-ad60-52dcf242e11e.jpg?v=1757055323
+      alt_text: Antique gold plated brass necklace set with temple inspired motifs on cream linen in a sunlit US bedroom
+      price_usd: 65
+      dev_listing_id: 6a5855e9-613e-4459-89e1-c97e194b6866
+      shopatmela_url: https://www.shopatmela.com/l/6a5855e9-613e-4459-89e1-c97e194b6866
+      listing_live_verified: true   # blotato_create_source 2026-10-21: "Antique Necklace Set for Women 10.5cm" $65, brass alloy antique gold plating, handcrafted
+      cooldown_check: "CLEAR — not in tarinika week-1 (6a585596/6a5855bf/6a5855ae/6a5855f7) or week-2 (6a5855a4/6a5855ab/6a5855b9/6a58560c) sets"
+
+    - name: Aariya Nakshatra CZ Earrings
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-ee0bc9fc-3e51-4099-99c6-1f50c553370b.jpg
+      blotato_visual_id: 831148ff-d8ab-463b-ae99-828d4e497f38
+      source_image_url: https://cdn.shopify.com/s/files/1/2026/1561/products/3O9A9611_copy_copy_52695ab0-e9a8-4055-ac35-d971ff965e2f.jpg?v=1762533553
+      alt_text: Gold plated cubic zirconia drop earrings on ivory linen beside a dresser mirror tray
+      price_usd: 35
+      dev_listing_id: 6a5855d7-5dbb-465b-afe5-6f0600ce4d01
+      shopatmela_url: https://www.shopatmela.com/l/6a5855d7-5dbb-465b-afe5-6f0600ce4d01
+      listing_live_verified: true   # blotato_create_source 2026-10-21: "CZ Earrings for Women" $35, gold plated alloy, handcrafted
+      cooldown_check: "CLEAR — not in week-1 or week-2 sets"
+
+    - name: Aarisha Kempu Antique Bangles
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-10dac190-2fa5-422f-bf56-07936e4eaeb2.jpg
+      blotato_visual_id: c1d96ed5-7c9e-4a1a-a6d3-0bf2fc031e06
+      source_image_url: https://cdn.shopify.com/s/files/1/2026/1561/files/KBX4463X.jpg?v=1777964366
+      alt_text: Antique gold plated bangles with red and green kempu stones on cream linen with a folded silk scarf
+      price_usd: 35
+      dev_listing_id: 6a5855c5-f055-4651-9377-933cb704421a
+      shopatmela_url: https://www.shopatmela.com/l/6a5855c5-f055-4651-9377-933cb704421a
+      listing_live_verified: true   # blotato_create_source 2026-10-21: "Antique Bangles in Red & Green for Women" $35, brass alloy antique gold plating, handcrafted
+      cooldown_check: "CLEAR — not in week-1 or week-2 sets"
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Indian Gift Ideas & Festive Occasions   # category-routing.yaml -> jewelry_and_accessories.boards.pinterest = [gifting, occasion], same board
+      board_id: "1103593152379723628"
+
+  pins:
+    - name: Aarna Antique Necklace Set
+      status: excluded   # staged only — not submitted this run
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Antique Temple Inspired Necklace Set | Handcrafted Indian Jewelry
+      description: Antique gold plated necklace set handcrafted by Indian goldsmiths with temple inspired detailing. A statement piece for wedding guest season or festive gifting. Tarinika on Mela.
+      alt_text: Antique gold plated brass necklace set with temple inspired motifs on cream linen in a sunlit US bedroom
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d77dc79f-cbac-47c4-93ca-06824285303a.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5855e9-613e-4459-89e1-c97e194b6866
+      link: https://www.shopatmela.com/l/6a5855e9-613e-4459-89e1-c97e194b6866?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w3&utm_content=aarna_antique_necklace_set
+
+    - name: Aariya Nakshatra CZ Earrings
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Gold Plated CZ Drop Earrings | Indian Jewelry USA
+      description: Gold plated cubic zirconia drop earrings handcrafted in India. Lightweight and ready for festive wear or everyday layering. Tarinika on Mela.
+      alt_text: Gold plated cubic zirconia drop earrings on ivory linen beside a dresser mirror tray
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-ee0bc9fc-3e51-4099-99c6-1f50c553370b.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5855d7-5dbb-465b-afe5-6f0600ce4d01
+      link: https://www.shopatmela.com/l/6a5855d7-5dbb-465b-afe5-6f0600ce4d01?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w3&utm_content=aariya_nakshatra_cz_earrings
+
+    - name: Aarisha Kempu Antique Bangles
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Antique Kempu Bangles | Red and Green Stone Indian Jewelry
+      description: Handcrafted antique bangles with red and green kempu stone detailing on a gold plated base, a South Indian goldsmithing technique. Ready for wedding guest season. Tarinika on Mela.
+      alt_text: Antique gold plated bangles with red and green kempu stones on cream linen with a folded silk scarf
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-10dac190-2fa5-422f-bf56-07936e4eaeb2.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5855c5-f055-4651-9377-933cb704421a
+      link: https://www.shopatmela.com/l/6a5855c5-f055-4651-9377-933cb704421a?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w3&utm_content=aarisha_kempu_antique_bangles
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/tarinika
+  checks:
+    brand_story: { result: pass, note: "Confirmed live via blotato_create_source 2026-10-21: tagline 'Contemporary Indian filigree and temple inspired jewelry for the modern woman.'" }
+    artisan_details: { result: pass, note: "Craft claims (goldsmiths, antique finish, temple inspired motifs) match shopify_brands.py brand_story verbatim." }
+    cultural_context: { result: pass, note: "Temple-inspired framing matches the paired education tile this week." }
+    aesthetic_match: { result: tbd, note: "Batched UX audit, not per-post, per pre-publish-gate.md FAST lane." }
+    product_findability: { result: pass, note: "Product names included in caption." }
+    mobile_responsive: { result: tbd, note: "Needs verification locally." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  category_note: "Third Tarinika campaign; jewelry_and_accessories category untouched by the last 3 confirmed posts (fashion/beauty_and_wellness/home_and_kitchen)."
+  brand_recency_check: "Tarinika last posted/scheduled 2026-09-07 (week-2) — 44 days clear of the 7-day brand_recency_days window."
+  category_concentration_check: "CLEAR — last 3 confirmed posts (newest first): fashion (House of Chikankari, 10-14), beauty_and_wellness (Vilvah, 10-12), home_and_kitchen (Kaunteya, 10-10). This batch's jewelry_and_accessories + baby_and_kids rows do not repeat 3x same category."
+  persona_fatigue_check: "Last 5 confirmed/staged leads before this batch (newest first): Arun (House of Chikankari, 10-14), Neha (education trust-small-batch-01, 10-13), Sarah (Vilvah, 10-12), Priya (Kaunteya, 10-10), Neha (Isharya, 10-09). Neha at 2/5, no persona at 3+. This batch uses Priya again (category-routing.yaml lists only priya/neha for jewelry_and_accessories) — deliberate choice over Neha to avoid a 3rd Neha lead in a short window."
+  avoid_open_pr_collision: "Fizzy Goblet, Baby Forest, and the craft-juttis education topic are staged (unmerged) in open PR #6 (week-of-2026-10-14) — none reused this run."
+  copy_quality: "No dashes; no @tagging (brand-tagging paused); 'Ships to the US from Tarinika' names the brand as shipping actor, not 'Mela ships'."
+  team_feedback: "STAGED — awaiting founder approval + wife grid-shape sign-off."
