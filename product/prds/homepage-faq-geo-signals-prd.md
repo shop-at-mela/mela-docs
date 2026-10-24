@@ -1,7 +1,7 @@
 # Homepage FAQ + GEO Signals PRD
 
 **Document Owner:** Product / SEO Team  
-**Last Updated:** 2026-09-25  
+**Last Updated:** 2026-10-24  
 **Status:** In progress — engineering underway in parallel with category-page GEO work  
 **Priority:** Medium — small, well-scoped AI-answer-engine visibility fix  
 **Related PRDs:** `seo-aeo-category-brand-pages-prd.md` (sibling; sets the shared date/authorship convention), `homepage-hero-prd.md`, `homepage-redesign-prd.md`
@@ -114,14 +114,14 @@ If the convention changes, change it in the sibling PRD first, then update both 
 
 ## 6. Acceptance Criteria
 
-- [ ] `FAQSection` exists at `src/containers/MelaHomePage/sections/FAQSection/FAQSection.js` and renders on `/`.
-- [ ] `FAQSection` renders directly after `VettingStrip` and before `SavedItemsModule`/`BrandSpotlight`.
-- [ ] The section has one `<h2>` heading and one question-form `<h3>` per Q&A, with the answer as visible text.
-- [ ] All 5 answers are present in the server-rendered HTML (view-source), including any collapsed accordion items.
-- [ ] Visible Q&A text and `FAQPage` JSON-LD `mainEntity` come from the same data array; a unit test fails if they differ.
+- [x] `FAQSection` exists at `src/containers/MelaHomePage/sections/FAQSection/FAQSection.js` and renders on `/`.
+- [ ] `FAQSection` renders directly after `VettingStrip` and before `SavedItemsModule`/`BrandSpotlight`. **Not met by design (2026-10-24):** the FAQ renders last on the homepage, after the HowWeVet band (homepage declutter v3, `7f8474b3d`).
+- [x] The section has one `<h2>` heading and one question-form `<h3>` per Q&A, with the answer as visible text.
+- [x] All 5 answers are present in the server-rendered HTML (view-source), including any collapsed accordion items. Verified 2026-10-24 on an SSR build after the `<details>` accordion change (web-client `7f8474b3d`): all 4 current answers are in view-source with the first item open.
+- [x] Visible Q&A text and `FAQPage` JSON-LD `mainEntity` come from the same data array; a unit test fails if they differ.
 - [ ] `<head>` contains `article:published_time` and `article:modified_time` from a hand-maintained constant (not computed).
-- [ ] A visible "Curated by the Mela team" byline with the last-reviewed date renders in the section.
-- [ ] Homepage JSON-LD includes `author` and `publisher` references to `{marketplaceRootURL}#organization`, and no new Person/Organization entity is added.
+- [x] A visible "Curated by the Mela team" byline with the last-reviewed date renders in the section.
+- [x] Homepage JSON-LD includes `author` and `publisher` references to `{marketplaceRootURL}#organization`, and no new Person/Organization entity is added.
 - [ ] All 5 answers have been fact-checked against current US import/duty rules before launch (§5).
 - [ ] Google Rich Results Test shows valid `FAQPage` with no errors on `/`.
 - [ ] Mobile: section is readable and doesn't break layout at 375px.
