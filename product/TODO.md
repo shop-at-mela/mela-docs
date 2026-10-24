@@ -14,7 +14,9 @@ Running log of shipped work and next actions. Newest entry at top.
   - `2d3e23f29` learnings.md.
 
 ### Next
-- [ ] Remove Pluchi (does not ship to the US) before deploying: the new answer block says "Brands ship to US addresses". Remove it from `configBrands.js` (owner) and close its listings in Sharetribe.
+- [ ] Remove Pluchi (does not ship to the US) before deploying: the new answer block says "Brands ship to US addresses".
+  - [x] Removed from `configBrands.js` (web-client `a32b50e41`, main, 2026-10-24).
+  - [ ] Close its listings in Sharetribe (they still show in search, category pages and New from India).
 - [ ] Decide on evergreen occasion tiles (Birthday, Housewarming, Baby Shower & Naming) that fill empty slots. Karva Chauth and Bhai Dooj have 0 `pub_occasion` listings; the large pools are in `gift_occasion`, which the mosaic doesn't read.
 - [ ] Confirm HowWeVet point 3 wording: "with a US card" was dropped to match `2339fab21` (no card claims).
 - [ ] Decide on the mockup's "See everything new" link under New from India.
