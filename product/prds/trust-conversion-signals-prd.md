@@ -2,7 +2,7 @@
 
 ## Document Information
 - **Created**: 2026-04-14
-- **Last updated**: 2026-04-17
+- **Last updated**: 2026-10-28
 - **Status**: Active
 - **Owner**: Product Team
 - **Related Docs**:
@@ -334,6 +334,7 @@ const isMelaVerified = publicData.certification?.length > 0
 - [ ] Weekly job sets `publicData.isBestseller = true` on top 20% of listings by orders per L1 category (last 90 days)
 - [ ] Badge cap: no more than 3 listings per L1 tagged `isBestseller` at any time
 - [ ] `ListingCard.ConversionBadges` renders "Bestseller" for those listings
+  - **Switched off 2026-10-28** (web-client `9fe9a9ebc`): `SHOW_BESTSELLER_BADGE = false` in `ListingCard.js` hides the badge on every card, pending an owner decision. `isBestseller` data and sort order are untouched; the three badge tests are skipped, not removed. Set the flag to `true` and un-skip the tests to restore.
 
 ### P1 Items
 

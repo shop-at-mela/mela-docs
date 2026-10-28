@@ -1,6 +1,6 @@
 # PRD Tracker
 
-**Last updated:** 2026-10-06  
+**Last updated:** 2026-10-28  
 **Purpose:** Single-glance status across all active PRDs. Update build status here whenever a PRD's status changes — do not let this drift from the individual files.
 
 **Folders:** PRDs live flat in `prds/`, except measurement and reporting work, which is bucketed in [`prds/insights/`](prds/insights/README.md). This table stays flat and lists everything regardless of folder.
@@ -83,7 +83,7 @@ Based on current state, ROI per effort, and dependencies:
 
 ### Next (medium effort, unlocks downstream)
 4. **Brand storefront** (`brand-storefront-prd.md`) — dedicated `/brands/:brandSlug` component with Organization JSON-LD; unlocks brand SEO and SEO/AEO PRD completion
-5. **isBestseller tagger script** (`trust-conversion-signals-prd.md` §3.2) — ~3 hrs; activates the Bestseller badge that's been dead since launch
+5. **isBestseller tagger script** (`trust-conversion-signals-prd.md` §3.2) — ~3 hrs; activates the Bestseller badge that's been dead since launch. **Note 2026-10-28:** the badge is also switched off in code (`SHOW_BESTSELLER_BADGE = false`, web-client `9fe9a9ebc`); turn it back on along with the tagger
 6. **WhyIndia section** (`homepage-redesign-prd.md` P1) — editorial section; highest conversion value for Sarah and Arun personas
 
 ### When unblocked

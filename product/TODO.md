@@ -2,6 +2,15 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-10-28
+
+### Shipped
+- `9fe9a9ebc` (web-client, main, not pushed): Bestseller badge hidden on all listing cards via `SHOW_BESTSELLER_BADGE = false`; signal and tests kept (tests skipped).
+- `595efde` (product-listing-integration, main, not pushed): `seed-brand-profiles.js --only <slug>` seeds selected brands only. Used to seed Suta's profile to dev.
+
+### Next
+- [ ] Decide whether to turn the Bestseller badge back on (`ListingCard.js` flag + un-skip 3 tests in `ListingCard.test.js`).
+
 ## 2026-10-24
 
 ### Shipped
