@@ -1,0 +1,121 @@
+---
+# craft-juttis education carousel — staged 2026-10-14 weekly staging run
+# (social-staging/week-of-2026-10-14). Topic id: craft-juttis (education-topics.yaml,
+# cultural_education, verify:true, source_brands: [fizzy-goblet, needledust]). Alternates type
+# from last week's trust_service pick (trust-small-batch-01, 2026-10-13) per meta.cadence.
+# Thematically pairs with this week's Fizzy Goblet brand row (same craft, same brand) — the
+# City Palace Juttis featured there is the exact product this topic's claim is grounded in.
+# Cards rendered locally via HTML/CSS -> PNG (headless Chromium, /opt/pw-browsers, no Blotato
+# credits, no external network dependency) per visual-style-guide.md Tool decision procedure.
+# This is the ONE tile this run that could be fully rendered AND visually inspected end to end
+# (no blocked external fetch involved) — see verification.render_qc. Picked over the tied
+# runner-up craft-ayurveda-baby (same score, would have paired with Baby Forest) for the
+# cleaner single-brand thematic pairing and lower verify-risk (brand_craft text is a short,
+# unambiguous claim vs. craft-ayurveda-baby's broader "ingredient logic holds up" claim).
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: null
+status: staged
+platforms:
+  - instagram   # craft-juttis is NOT marked dual-platform in education-topics.yaml (unlike the
+                # trust_service topics) — Instagram only, no Reddit leg for this topic.
+format: carousel
+persona: Arun
+category: cultural_education
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education content is always Full lane; verify:true claim present
+hypothesis: "Angle 3 (how it's actually made) with Arun lead — does the living-culture reframe ('still hand-stitched today, not a museum piece,' paired same-week with the exact Fizzy Goblet product it describes) out-save a generic craft-heritage post with no paired brand row?"
+gate_verdict: ship_pending_manual_eyeball   # fully rendered + visually inspected locally this run; the only
+  # open item is the founder's own aesthetic sign-off (Stage 3 of visual-scorecard.md), not a
+  # blocked dependency — see verification.render_qc.
+coaching_notes: >
+  Diaspora anchor is the PRIMARY lever here (angle 3, Arun's reclaiming-heritage lane): the
+  caption hook directly names growing up in the US and a jutti reading as "something from your
+  grandmother's closet," then resolves it into "people wear these to work and weddings now" —
+  this is the living-culture reframe education-topics.yaml's framing note requires, not
+  "500-year-old relic" language. Arun was chosen to match the topic's own listed persona
+  (education-topics.yaml lists only arun for craft-juttis) and because he was at 1/5 in the
+  pre-batch fatigue window, with headroom. Slide 1 is a typographic hook card, never a product,
+  per the hard rule — no payoff/product slide was built this run (optional for
+  cultural_education) because the payoff-card template needs a real product photo loaded via
+  <img src>, and cdn.shopify.com is blocked from this sandbox (see verification.render_qc); a
+  local session can add slide 3 (payoff-card.html, City Palace Juttis photo, "Made this way by
+  Fizzy Goblet") once it has network access, same pairing already built into this week's
+  fizzy-goblet/week-3-campaign.yaml row.
+northstar_metric:
+  instagram_saves: null
+
+# VERIFICATION
+verification:
+  claim_verification: >
+    verify:true claim ("juttis stitched by hand") confirmed against shopify_brands.py's
+    brand_craft field for Fizzy Goblet — "juttis stitched by hand in Mumbai" — the highest-trust
+    source per education-topics.yaml's replenishment method, not just the CSV. Independently
+    re-confirmed live via blotato_create_source against https://shopatmela.com/brands/fizzy-goblet
+    2026-10-14: "Claim: Hand-stitched juttis. Brand Page Status: live and matches shopify_brands.py."
+    The Kantha-stitch + silver-embellishment detail used in the teaching card is grounded in the
+    City Palace Juttis listing itself (also live-verified 2026-10-14 via blotato_create_source,
+    see fizzy-goblet/week-3-campaign.yaml). No claim about Needledust (the topic's other
+    source_brand) is made in this post — only Fizzy Goblet's claim was used and verified.
+  render_qc: >
+    Both slides rendered locally via headless Chromium (/opt/pw-browsers/chromium-1194,
+    --no-sandbox) at 1080x1080 and visually reviewed (Read tool) this run. Hit and fixed two
+    real defects before shipping: (1) the same ~87px transparent-strip headless-viewport bug
+    documented in trust-small-batch-01-w1-campaign.yaml's notes.upload_gap — worked around this
+    run by rendering 87px taller and cropping with Pillow (see renders/ — no manual re-render
+    needed, unlike last time); (2) slide 2's original 4-step layout had its last line overlapping
+    the watermark — fixed by condensing to 3 steps. Final renders are legible at full size, no
+    overflow/clipping, watermark present and subtle (navy, bottom-right, matches mela-kit.css),
+    slide 1 is a typographic hook with no product. No external image fetch was needed for either
+    slide, so this tile has no network-blocked verification gap, unlike the two product tiles
+    this run (see fizzy-goblet/week-3-campaign.yaml and babyforest/week-2-campaign.yaml).
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/fizzy-goblet?utm_source=instagram&utm_medium=social&utm_campaign=craftjuttis_w1&utm_content=education_juttis"
+  topic: "craft-juttis — The jutti & kolhapuri: handcrafted Indian footwear heritage"
+  visual_system: "Education (HTML cards, cultural_education documentary sub-system). Slide 1 = hook, never a product. No payoff slide this run — see coaching_notes."
+  slides:
+    - name: hook
+      image_render: log/_education/craft-juttis/renders/slide1-hook.png
+      image_url: null   # NOT uploaded — database.blotato.io is blocked from this sandbox this run (blotato_create_presigned_upload_url untested, same host as the failing product-render downloads); local session must upload via blotato_create_presigned_upload_url before scheduling.
+    - name: teaching
+      image_render: log/_education/craft-juttis/renders/slide2-teaching.png
+      image_url: null
+  alt_text: "Text slide: Three days, one pair, by hand. Here's what that actually takes today."
+  caption: |
+    Growing up in the US, a jutti felt like something from your grandmother's closet, not a shoe you'd actually wear.
+
+    Juttis are still hand-stitched today, not preserved behind glass. A karigar in Mumbai cuts and shapes the upper by hand, works Kantha running-stitch and silver embellishment one pass at a time, then hand-stitches the sole to the upper and checks every pair by eye. Labels like Fizzy Goblet keep that work steady today, in shapes you'd wear to work or a wedding.
+
+    Discover Fizzy Goblet on Mela →
+
+    #Juttis #HandcraftedIndia #LivingCraft #IndianHeritage #DiscoveredOnMela
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/fizzy-goblet
+  checks:
+    cultural_context: { result: pass, note: "Living-culture framing (karigars work today, not heritage relic); brand page confirms hand-stitched claim live." }
+    brand_story: { result: pass, note: "Same brand page audited for the fizzy-goblet/week-3 product row this run." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  upload_gap: >
+    The 2 rendered PNGs have no public URL yet — database.blotato.io (the upload host) returns
+    403 connect_rejected from this sandbox, same as the product-render downloads this run (see
+    fizzy-goblet/week-3-campaign.yaml notes.infra_gap). Files are committed to the branch as
+    local PNGs (renders/) with their HTML sources alongside, and need uploading via
+    blotato_create_presigned_upload_url before scheduling.
+  payoff_slide_gap: "Optional payoff slide (real City Palace Juttis photo + 'Made this way by Fizzy Goblet') not built this run because payoff-card.html needs to load the photo from cdn.shopify.com, which is also blocked. Template copied to renders/ dir is NOT included since nothing was rendered from it; a local session can add it using fizzy-goblet/week-3-campaign.yaml's City Palace Juttis source_image_url."
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."
