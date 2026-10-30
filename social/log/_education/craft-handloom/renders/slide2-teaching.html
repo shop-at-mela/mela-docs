@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mela — Teaching Card</title>
+<link rel="stylesheet" href="mela-kit.css">
+<style>
+  .card { justify-content: flex-start; }
+  .headline {
+    font-size: 6vmin; line-height: 1.08; color: var(--ink);
+    margin: 0 0 3.8vmin; max-width: 92%;
+  }
+  .headline .accent { color: var(--navy); font-style: italic; }
+  .steps { display: flex; flex-direction: column; gap: 2.6vmin; margin-top: 0.5vmin; }
+  .step { display: flex; align-items: flex-start; gap: 3vmin; }
+  .num {
+    font-family: var(--sans); font-weight: 700; font-size: 2.7vmin;
+    color: var(--navy); background: var(--marigold);
+    width: 5.8vmin; height: 5.8vmin; min-width: 5.8vmin; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 0.3vmin;
+  }
+  .step p { font-size: 3.4vmin; line-height: 1.28; color: var(--ink); margin: 0; }
+  .step p b { color: var(--navy); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="kicker">How it's made</div>
+    <div class="rule"></div>
+    <h1 class="headline">Handloom cloth, <span class="accent">thread by thread</span></h1>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <p>Warp threads are strung onto the loom <b>one by one</b>, by hand, before weaving starts.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <p>A weaver <b>throws the shuttle</b> back and forth, pressing each thread into place.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <p>A pattern or border is built <b>row by row</b>, no computer guiding the next pass.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <p>One weaver finishes about <b>one yard a day</b>. Small unevenness in the weave is the human hand, not a flaw.</p>
+      </div>
+    </div>
+    <div class="watermark">Discovered on <b>Mela</b></div>
+  </div>
+</body>
+</html>
