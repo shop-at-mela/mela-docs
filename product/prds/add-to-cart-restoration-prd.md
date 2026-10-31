@@ -411,6 +411,16 @@ stock" group-CTA-omission edge cases (covered by `SavedBrandGroup.test.js` only)
 
 ---
 
+## 15. Post-Launch Finding: the funnel works, volume is the problem (2026-10-04)
+
+**Status**: 📝 Observation, no change made. Source: GA4 Events report (Sep 5 - Oct 2, 2026), live checks, and the analytics fixes in `technical/analytics/analytics-fixes-handoff-2026-10-04.md`.
+
+- **Tracking verified:** Add to Cart (`saved_listing_toggle`, now `save_source`) → `/saved` → "Shop on {brand}" → trust sheet → Continue fires `brand_clickout` with `saved_surface` set, on the live site. Nothing is broken in the chain.
+- **Volume is almost nil:** in 28 days GA4 had 3 `saved_listing_toggle` events from 1 user and 2 `saved_page_view` events, so `brand_clickout` was 0. These counts were taken before the Internal Traffic filter went Active (2026-10-04), so they include some team visits.
+- **Hypotheses to test (not yet tested):** (1) leaving takes four steps for an in-stock item (save, find `/saved`, Shop, Continue on the trust sheet); (2) the "View Saved (n) →" confirmation auto-dismisses after ~4s, leaving the header badge as the only route; (3) part of the traffic is non-engaged (about 290 of 318 users sent a search event, partly a search-tracking bug since fixed, and possibly crawlers).
+- **Seen, cause unknown:** a "NO IMAGE" placeholder on a `/saved` item (possibly old saved items without a stored image URL).
+- **Next:** collect 1-2 weeks of real saves per session first. If saves stay near zero, treat it as a product-design question (whether Add to Cart should remain the only in-stock action), not a tracking issue.
+
 ## Superseded Approach (for reference)
 
 Prior to this PRD, `pre-redirect-sentiment-prd.md` shipped the trust/feedback modal (`RedirectTrustSheet`) triggered directly from the PDP's "Shop from {brand}" CTA, with no intermediate cart-like step — i.e. "Add" and "go to brand" were the same click. That approach is not wrong on its own terms (it shipped, and the trust-sheet mechanics are fully preserved here); it's being changed specifically because F-004 identified the missing intermediate step as making the PDP feel incomplete for purchase-flow testing, and because splitting "add" from "go to brand" creates a natural, non-generic-sounding surface (`/saved`) to host a sign-up ask. The trust-sheet component, its copy, and its session-dedupe logic are carried forward unchanged — only the trigger point moves.
