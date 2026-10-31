@@ -158,7 +158,8 @@ topics:
     personas: [priya, arun]
     source_brands: [isharya, tarinika, curio-cottage]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-10-21, paired with Tarinika week-3 brand row; led by Arun. Claim grounded in shopify_brands.py Tarinika brand_story + re-confirmed live via blotato_create_source. See social/log/_education/craft-jewelry-w1-campaign.yaml.
 
   - id: craft-ayurveda-baby
     type: cultural_education
