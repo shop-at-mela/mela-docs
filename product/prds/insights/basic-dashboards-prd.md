@@ -235,3 +235,25 @@ Event-count ratios are an approximation of the true session funnel. They are goo
 | 6 | Add schemas, GTM objects, dimensions and click paths to `crossshop-tracking.md` | ~1 hr | No |
 
 Steps 0 and 1 are the only real blockers. Steps 3 and 6 follow only once this PRD is approved.
+
+---
+
+## 12. Status and Open Items (2026-10-04)
+
+**Fixed and live:**
+- `view_search_results` fires once per real keyword search with `search_term`, not on non-search pages or filter, sort and pagination changes (GTM Version 8). Counts before ~2026-10-04 are inflated.
+- `saved_listing_toggle` sends `save_source` instead of `source`, which GA4 read as traffic source (GTM Versions 9 and 10; GA4 dimension **Save Source**; web-client key renamed and the legacy `source` key removed, both confirmed in the live bundle and container on 2026-10-31). Old `heart_icon` / `add_to_cart_button` rows in Session source / medium stay in history.
+- GA4 Internal Traffic filter set to Active on 2026-10-04. Earlier data includes team visits.
+
+**Open, in priority order:**
+1. **GA4 receipt check** from a clean profile (DebugView): a save shows `save_source` and no `source`; a search plus filter shows one `view_search_results`. Then re-check after 24-48 hours: search events roughly equal real searches, and no new `heart_icon` / `add_to_cart_button` sources.
+2. **Looker tiles** (data source refreshed, `Save Source (combined)` field created: `CASE WHEN Save Source != "(not set)" THEN Save Source ELSE Save Toggle Source END`). Still to build: Add to Cart scorecard (`saved_listing_toggle`, `Is Saved` = true, combined field = `add_to_cart_button`, labeled "Add to Cart (saves)"); retitle the funnel table "Event counts (not the same sessions)"; add a note that search counts before 2026-10-04 are inflated and start the search tile on 2026-10-04; top viewed products (by Product ID, never page title) and brands.
+3. **GA4 chores:** annotations for the internal filter and the GTM v8/v9 fixes, consider the Developer traffic filter, add `tagassistant.google.com` as a referral exclusion.
+4. **Possible duplicate `page_view`** per in-app navigation (2 requests seen in one automated test, unconfirmed). Check in GTM Preview whether two page_view hits fire on one history change.
+5. **OCTR / clickout definition:** the clickout step is the `/saved` "Shop on {brand}" CTA (verified live: `/saved` → Shop → trust sheet → Continue fires `brand_clickout`). Volume is near zero (28 days: 3 saves from 1 user, 2 `saved_page_view`, 0 clickouts), so collect 1-2 weeks of real saves per session before treating it as a product-design question. See `add-to-cart-restoration-prd.md` §15 and `storefront-validation-readiness-prd.md` (P1.1 note).
+6. **Cross-Shop Looker dashboard:** open its data source and date range to see why it reports clickouts.
+7. **Optional:** add `listing_title` to `listing_view` (code, GTM and a GA4 dimension) for readable product names; the page title on `listing_view` is stale on in-app navigation.
+
+**Not verified:** GA4 receipt of the Version 8 to 10 changes beyond one DebugView check; the possible duplicate `page_view`; the meaning of `tt=internal` on collect requests; real traffic quality (about 290 of 318 users sent a search event, partly the since-fixed bug, possibly crawlers).
+
+Operational detail (IDs, GTM versions, rollback): `technical/analytics/analytics-fixes-handoff-2026-10-04.md`.
