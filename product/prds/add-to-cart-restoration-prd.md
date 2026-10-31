@@ -126,7 +126,7 @@ This was resolved via a 5-expert first-principles panel (marketplace PM, design-
 See `mela-docs/technical/analytics/crossshop-tracking.md` for the full event schema (updated alongside this PRD).
 
 - **New event**: `saved_listing_toggle` — `{ event: 'saved_listing_toggle', source: 'add_to_cart_button' | 'heart_icon', listing_id, is_saved }`, fired from `toggleSaveListing` in `savedListings.duck.js`, covering both the anonymous (localStorage) and authenticated (Sharetribe `privateData`) write paths identically.
-- **Existing event, new trigger surface**: `brand_clickout` (schema unchanged, see crossshop-tracking.md §3) now also fires from `SavedPage`'s per-item Shop CTA, in addition to its existing surfaces (PDP out-of-stock path, brand-page "Brand website" link). The in-stock PDP surfaces (`ProductOrderForm.js`, `OrderPanel.js`, `InquiryWithoutPaymentForm.js`) stop firing `brand_clickout` directly for in-stock listings — they now fire `saved_listing_toggle` instead, and `brand_clickout` fires later, from `/saved`, if and when the shopper clicks through.
+- **Existing event, new trigger surface**: `brand_clickout` (schema unchanged, see crossshop-tracking.md §3) now also fires from `SavedPage`'s per-item Shop CTA, in addition to the PDP out-of-stock path. (The brand-page "Brand website" link this line used to list was removed 2026-07-26, web-client `f321e749e`.) **Funnel note (2026-10-31, recommended, not yet decided):** because the exit moved to `/saved`, `brand_clickout` is now the last step of `listing_view` → `saved_listing_toggle` → `saved_page_view` → `brand_clickout`; read zero or low clickouts as funnel volume, and count the click at the trust sheet's Continue. See `crossshop-tracking.md` "Where it fires". The in-stock PDP surfaces (`ProductOrderForm.js`, `OrderPanel.js`, `InquiryWithoutPaymentForm.js`) stop firing `brand_clickout` directly for in-stock listings — they now fire `saved_listing_toggle` instead, and `brand_clickout` fires later, from `/saved`, if and when the shopper clicks through.
 - `pushSaveToggle()` helper: new file `src/util/analytics/savedListings.js`, following the existing minimal `window.dataLayer.push(...)` pattern (no shared event bus) already used by `brandClickout.js` / `vettingStrip.js`.
 
 ---
@@ -420,6 +420,32 @@ stock" group-CTA-omission edge cases (covered by `SavedBrandGroup.test.js` only)
 - **Hypotheses to test (not yet tested):** (1) leaving takes four steps for an in-stock item (save, find `/saved`, Shop, Continue on the trust sheet); (2) the "View Saved (n) →" confirmation auto-dismisses after ~4s, leaving the header badge as the only route; (3) part of the traffic is non-engaged (about 290 of 318 users sent a search event, partly a search-tracking bug since fixed, and possibly crawlers).
 - **Seen, cause unknown:** a "NO IMAGE" placeholder on a `/saved` item (possibly old saved items without a stored image URL).
 - **Next:** collect 1-2 weeks of real saves per session first. If saves stay near zero, treat it as a product-design question (whether Add to Cart should remain the only in-stock action), not a tracking issue.
+
+## 15. Open Decision: `brand_clickout` Funnel Definition (logged 2026-10-31, not yet decided)
+
+**Context.** GA4 shows 0 `brand_clickout` for Sep 5 - Oct 2, 2026. Investigation (read-only, 2026-10-03 and 2026-10-31) found tracking is intact: every exit fires once with the right fields, verified on production (anonymous, dataLayer only). Exits today: out-of-stock PDP (two copies), `/saved` per-card CTA, `/saved` group CTA. The cause is volume: since §5 moved the exit to `/saved`, a shopper needs four steps to leave (save, find `/saved`, Shop, Continue), and only 2 `saved_page_view` events occurred in 28 days. Details: `crossshop-tracking.md` "Where it fires"; `analytics-fixes-handoff-2026-10-04.md`.
+
+**Options (pick one, build later):**
+
+| | Option | What changes | Effort |
+|---|---|---|---|
+| A | Restore tracking on every exit path | Nothing is missing. Only code change would be routing the untracked, unreachable fallback `window.open` in `ProductOrderForm.js:294` through `openBrandStorefront`. | Tiny |
+| B (recommended) | Redefine the funnel around the new flow | Funnel = `listing_view` → `saved_listing_toggle` (`add_to_cart_button`) → `saved_page_view` → `brand_clickout`. `brand_clickout` stays the true outbound click. All events already exist, so this is mostly docs, OCTR definition and Looker/GA4 funnel tiles. If the earlier step needs a clearer name, add a separate event instead of changing `brand_clickout`. | Small, mostly docs and dashboard |
+| C | Leave as is, fix docs and dashboard definitions only | Cheapest, but leaves the funnel undefined and OCTR ambiguous. | Docs only |
+
+**Why B:** the code already does what B describes. A restores nothing, and C leaves the metric undefined. B turns "zero clickouts" into a readable funnel, so the drop-off point is visible.
+
+**Sub-decisions:**
+1. **Where to count a click that goes through the trust sheet.** Current behavior: at the sheet's "Continue to {brand}", so one event per real exit and "Not now" is not counted. Recommended: keep. To measure sheet abandonment, add a separate `redirect_sheet_open` event rather than moving `brand_clickout`.
+2. **Dead fallback** at `ProductOrderForm.js:294` (`window.open` without tracking when `onShopNow` is missing): route through `openBrandStorefront`, or leave.
+
+**Constraints for whichever is chosen:** keep the `brand_clickout` schema and field names (`brand_id` = author UUID, `mela_session_id`, explicit `null` for unavailable fields); fire exactly once per click; unit tests for once-per-click, correct surface, populated or null ids, no fire on re-render, no double fire when the click also navigates; do not touch GTM, GA4 admin or Looker without sign-off.
+
+**Not yet verified:** GA4 receipt (dataLayer only); the out-of-stock PDP on production; authenticated `/saved`; mobile; the Cross-Shop Looker dashboard's data source (all tiles showed "No data" for Sep 26 - Oct 2).
+
+**Possible follow-ups once volume is measured** (hypotheses from the handoff, untested): the PDP offers only Add to Cart; the "View Saved" confirmation auto-dismisses after ~4s; part of the traffic may be bots. Measure real saves per session for 1-2 weeks before changing the flow.
+
+---
 
 ## Superseded Approach (for reference)
 
