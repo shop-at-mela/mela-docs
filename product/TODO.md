@@ -2,6 +2,18 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-10-31
+
+### Shipped
+- `870b0c964` (web-client, main, not pushed): Saphed, Needledust, Hemant & Nandita and Daughters of India added to `configBrands.js` (dev, fashion).
+- `38bc36c`, `bacf712`, `841e278`, `795e71b`, `449e53f` (Mela-scrapper-integrations): `--in-stock-only` ingester flag with stale-row sweep, `run_new_brands.py`, and scraped, classified and listing-ID data for the four brands plus Suta (best-sellers only).
+- `ba5d91f` (product-listing-integration): unmapped item aspect options refreshed after the new-brand import. Brand profiles seeded to dev for the four brands.
+
+### Next
+- [ ] Production UUIDs for the four new brands (and the rest of the dev list) in `configBrands.js`, per `dev-to-production-migration-prd.md` section 3c.
+- [ ] Saphed: about 266 old CSV rows still marked In Stock after the stale-row sweep was skipped by its guard. Compare against the live store.
+- [ ] Hemant & Nandita and Daughters of India: 1 product each has no Item_Aspects.
+
 ## 2026-10-28
 
 ### Shipped
