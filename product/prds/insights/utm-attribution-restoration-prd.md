@@ -45,6 +45,13 @@ Commit `413beb6ee` (2026-08-25, gifting traffic work) added it to (1) keep campa
 - The server renders `req.url` including the query, so **the server-rendered canonical and `og:url` already contain `utm_*`**. The client strip only cleans what the client rewrites after hydration. Crawlers and link-preview scrapers read the server HTML.
 - Side effect of the strip: server and client see different URLs (SSR/CSR parity gap).
 
+### Pre-cutover baseline (28 days to 2026-10-02, UTM stripped)
+Read from the standalone Looker report "Mela Traffic & Engagement Overview" (GA4 property 546144789), not a fresh GA4 pull. Use it as the "before" for the 30-day baseline. Do not compare campaign or direct share across the 2026-10-03 cutover.
+- 358 sessions, 318 users, 144 engaged sessions, engagement rate 40.22%.
+- Session source / medium: `(direct) / (none)` 292 (about 82%), `google / organic` 49, `chatgpt.com / ai-assistant` 7, `(not set)` 4, `pinterest.com / referral` 2, `bing / organic` 1, Facebook referral 1.
+- Google organic mostly landed on the home page (32 of 49 sessions). ChatGPT landed on the home page (6 of 7).
+- Two sessions showed sources `heart_icon` and `add_to_cart_button`: the `source` event parameter on `saved_listing_toggle`, read by GA4 as traffic source (fixed 2026-10-03/04 by renaming it to `save_source`).
+
 ### Business Impact of Inaction
 Per-campaign reporting (the point of UTM-tagging every post, `gifting-festival-traffic-prd.md`) is impossible, the Basics dashboard's source tiles and Journey Map breakdown are unreliable, and the Sunday metrics ritual keeps running on Blotato click counts.
 
@@ -142,6 +149,7 @@ All baseline-only for 30 days.
 - **Crawlers**: they already see UTMs in the server HTML today. The canonical fix addresses this; verify with a server-render test and a live view-source check.
 - **GTM-only page_view path**: `src/analytics/handlers.js` needs `window.gtag`, which the GTM-only setup does not define. A route-change `page_view` was observed leaving the browser on 2026-10-02 (via GTM), but the code path is **unverified**. Check in GTM Preview.
 - **Unwanted referrals / internal traffic**: add `tagassistant.google.com` and any auth or checkout domains to GA4's referral exclusions, and set the internal-traffic filter to Active (it ships in Testing).
+  - Internal-traffic procedure: define the rule under Admin > Data streams > Mela Web > Configure tag settings > Show more > Define internal traffic (traffic_type `internal`, match your public IP; use a range only if the IP is dynamic and you are sure it is yours). Keep the Internal Traffic data filter in Testing first and confirm visits are labelled with the dimension "Test data filter name" in a Free form exploration (rows: Test data filter name; values: Sessions, Event count). A single "(not set)" row means nothing is labelled yet. Only then switch to Active, which is not reversible: excluded events cannot be recovered. Recheck the IP if labelling stops.
 - **Unverified (from the expert panel, not Google docs)**: how GA4 handles a campaign change mid-session; exact `campaign_*` wire parameter names (not needed under this plan); whether link scrapers use `og:url`.
 - **Panel disagreement, recorded**: the GA4 expert recommended keeping the strip and sending `campaign_*` via GTM from a page-load-only variable. They did not evaluate simply dropping the strip. Their cited facts (GA4 derives all source values from UTMs when any are present) support this PRD's approach. That route remains the documented fallback if an SEO audit or a business need requires clean landing URLs.
 - **When to rethink**: GA4 still shows UTM visits as direct after the change (check GTM or consent, not the app), unassigned or self-referral above 20%, or a paid campaign launches (then add `utm_campaign` handling to `entry_source`).

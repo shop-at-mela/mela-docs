@@ -31,13 +31,13 @@ The clickout step is the `/saved` "Shop on {brand}" CTA (`saved_surface` = `save
 
 ## Open items (in priority order)
 
-1. Merge and deploy `chore/remove-legacy-source-key` (web-client). Then confirm in DebugView that `saved_listing_toggle` has `save_source` and no `source`.
+1. DONE (confirmed live 2026-10-31: bundle pushes `save_source` only, GTM Version 10 reads it). Remaining: confirm in DebugView that `saved_listing_toggle` has `save_source` and no `source`.
 2. In 24-48 hours, re-check GA4: `view_search_results` roughly equals real searches and has `search_term`; no new `heart_icon` / `add_to_cart_button` source rows.
 3. Looker tiles still to build: Add to Cart scorecard (`saved_listing_toggle`, `Is Saved` = true, combined field = `add_to_cart_button`); retitle the funnel table "Event counts (not the same sessions)"; text note that search counts before 2026-10-04 are inflated; set the search tile's range to start 2026-10-04; top viewed products (Product ID, not page title) and brands.
 4. GA4 chores: two annotations (internal filter Active; GTM v8/v9 fixes), consider the Developer traffic filter, add `tagassistant.google.com` as a referral exclusion.
 5. Check for duplicate `page_view` per in-app navigation (2 requests seen in one automated test; unconfirmed). In GTM Preview, see whether two page_view hits fire on one history change.
 6. Product decision: what OCTR should measure, given the clickout step is `/saved` and volume is near zero. Measure real saves per session for 1-2 weeks first.
-7. Open the Cross-Shop Looker dashboard to see why it reports clickouts (property and date range not checked).
+7. Cross-Shop Looker dashboard (id `6ec781c0-43ce-475c-9280-423ec04341a1`) opened in view mode 2026-10-31 session: every tile, including clickouts, add-to-cart and saved-entry, showed "No data" for Sep 26 - Oct 2. It does not show clickouts that GA4 lacks. Still unchecked: its data source property and event names (needs edit mode), and any wider date range.
 8. Optional: add `listing_title` to `listing_view` (code plus GTM plus a GA4 dimension) for readable product names.
 9. Commit `social/metrics-log.md` (the attribution cutover note), still uncommitted.
 

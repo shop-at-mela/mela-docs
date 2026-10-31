@@ -127,6 +127,13 @@ The OCTR baseline has an external deadline (`storefront-validation-readiness-prd
 | Add to Cart count | Scorecard | `saved_listing_toggle`, `Save Toggle Source` = `add_to_cart_button`, `Is Saved` = true. **Check first (2026-10-03):** confirm the value format GA4 stores for `Is Saved` (`true`, `1` or `"true"`) before writing the filter. Not yet verified. Also see the `source` parameter issue below |
 | Shop-brand clickouts | Scorecard + by brand + by surface | `brand_clickout`. Decision 2026-10-04: the clickout step is the `/saved` page "Shop on {brand}" CTA (`saved_surface` = `saved_item_card` or `saved_brand_group`); count and break down on `Saved Surface`. Out-of-stock PDP clickouts (`saved_surface` null) are the only other source and are shown separately. |
 | Funnel comparison | Bar of three event counts | `listing_view` → add-to-cart → `brand_clickout` (event counts, not session-scoped, labeled as such) |
+
+**Implementation notes (Looker report built 2026-10-03, "Mela Traffic & Engagement Overview", standalone, private):**
+- Use `Landing page`, not `Landing page + query string`. The latter splits one page into many rows (UUIDs and queries).
+- GA4 connector has no average engagement time metric: use Engagement rate, or a calculated field (total user engagement seconds ÷ active users).
+- Funnel and event tiles are filtered by regex on Event name (`listing_view|brand_page_view|saved_listing_toggle|brand_clickout`) and show event counts, not sessions. Retitle the tile to say so.
+- Pages built: Overview, Search and AI sources (Session source / medium × Landing page, regex `google|bing|chatgpt` on source), Behavior. A page canvas needs custom height (Page > Current page settings > Style) to fit more tiles.
+- "Top search terms" needs `view_search_results` to carry a non-empty `search_term`. Recheck it after the 2026-10-04 trigger fix.
 | Link to `Journey Map` | Link/text | GA4 Exploration |
 
 ### Should Have (P1)

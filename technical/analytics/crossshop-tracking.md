@@ -98,7 +98,20 @@ Live-verified 2026-07-27: two clicks in the same browser session produced two `b
 
 ### Where it fires
 
-There are **three** independent "Shop from Brand" CTA surfaces in the codebase (see PRD §5a for why), all now routed through the shared `openBrandStorefront(url, trackingParams)` helper in `src/util/analytics/brandClickout.js`:
+**Current state (code-read and checked live on production 2026-10-03, updated 2026-10-31).** `pushBrandClickout` (`src/util/analytics/brandClickout.js`) is the only place `brand_clickout` is pushed, and every caller goes through `openBrandStorefront(url, trackingParams)`. There is no server redirect route or interstitial page; `RedirectTrustSheet` is a modal. The surfaces that send a shopper to a brand store today:
+
+| Surface | File | `saved_surface` | Fires |
+|---|---|---|---|
+| Out-of-stock PDP, sticky/mobile bar "View on {brand}" | `OrderPanel.js` | `null` | Yes |
+| Out-of-stock PDP, order form "View on {brand}" | `ProductOrderForm/ProductOrderForm.js` | `null` | Yes |
+| `/saved` per-card "Shop on {brand} →" | `ListingCard.js` → `SavedPage.js` | `saved_item_card` | Yes |
+| `/saved` brand-group "Shop {brand} →" | `SavedBrandGroup.js` → `SavedPage.js` | `saved_brand_group` | Yes |
+
+Not exits, so no `brand_clickout`: in-stock "Add to Cart" on all three PDP forms (fires `saved_listing_toggle`), brand pages (Instagram/Facebook links only), listing and brand cards (link to Mela pages). Notes: `InquiryWithoutPaymentForm.js` has no out-of-stock path and always shows Add to Cart for brand + productUrl listings. `ProductOrderForm.js` has a fallback `window.open(productUrl, ...)` that fires nothing, used only when `onShopNow` is not passed; `OrderPanel` always passes it, so it is unreachable today.
+
+Production check, 2026-10-03 (anonymous, `window.open` stubbed): Add to Cart → `saved_listing_toggle` only; per-card CTA → trust sheet → Continue → one `brand_clickout` (`saved_surface: saved_item_card`, all fields populated); group CTA on the second click (sheet already shown) → one `brand_clickout` (`saved_surface: saved_brand_group`). Not checked on production: the out-of-stock PDP (no out-of-stock listing found), authenticated `/saved`, mobile, GA4 receipt.
+
+The PDP surfaces below describe the original design. For in-stock listings they now show Add to Cart (see "Add-to-Cart relocation" below):
 
 | Surface | File |
 |---|---|
@@ -125,7 +138,7 @@ This means the event fires exactly once per actual outbound redirect, regardless
 
 ### Add-to-Cart relocation moves in-stock PDP surfaces off `brand_clickout`
 
-**Status**: ✅ Shipped per `add-to-cart-restoration-prd.md` (code-complete 2026-08-12, unit-tested; not yet live-verified in a running browser session — founder has follow-up implementation feedback pending).
+**Status**: ✅ Shipped per `add-to-cart-restoration-prd.md` (code-complete 2026-08-12, unit-tested; checked on production 2026-10-03/04, anonymous path, dataLayer only — see "Where it fires"). **Funnel definition (recommended, not yet decided):** `listing_view` → `saved_listing_toggle` (`add_to_cart_button`) → `saved_page_view` → `brand_clickout`. Count `brand_clickout` at the trust sheet's Continue (current behavior), not at the first CTA click. Zero clickouts in Sep 5 - Oct 2 is funnel volume (2 `saved_page_view` in 28 days), not a tracking fault.
 
 The three PDP surfaces listed in the table above (`OrderPanel.js`, `ProductOrderForm.js`, `InquiryWithoutPaymentForm.js`) now stop firing `brand_clickout` for **in-stock** brand+productUrl listings — those show "Add to Cart" instead, which fires the new `saved_listing_toggle` event (schema below) and does not redirect or open `RedirectTrustSheet`. The **out-of-stock** path on all three surfaces is unchanged (still fires `brand_clickout` via `RedirectTrustSheet`/`openBrandStorefront` directly, same as before).
 
@@ -143,7 +156,7 @@ The three PDP surfaces listed in the table above (`OrderPanel.js`, `ProductOrder
 ```
 Fired from `toggleSaveListing` in `src/ducks/savedListings.duck.js` (new `pushSaveToggle()` helper, `src/util/analytics/savedListings.js`, following the same minimal `window.dataLayer.push(...)` pattern as `brandClickout.js`), covering both the anonymous (localStorage) and authenticated (`sdk.currentUser.updateProfile`) write paths identically. The existing heart icon (`SavedListingButton`, `variant="icon"`/`"button"`) defaults to `source: 'heart_icon'` and is otherwise unchanged; the new PDP Add-to-Cart control (a new `SavedListingButton` `variant="cta"`) passes `source: 'add_to_cart_button'` explicitly.
 
-**Verification checklist (still open — live browser QA, not yet done)**: confirm Add to Cart fires `saved_listing_toggle` and does **not** fire `brand_clickout`; confirm `SavedPage`'s Shop CTA fires `brand_clickout` with the same schema as the PDP click it replaced; confirm heart-icon clicks still tag `source: 'heart_icon'`.
+**Verification checklist (done on production 2026-10-03 and 2026-10-04 for the anonymous path, dataLayer only; GA4 receipt not shown)**: confirm Add to Cart fires `saved_listing_toggle` and does **not** fire `brand_clickout`; confirm `SavedPage`'s Shop CTA fires `brand_clickout` with the same schema as the PDP click it replaced; confirm heart-icon clicks still tag `source: 'heart_icon'`.
 
 **Gap found and fixed 2026-08-23**: none of `saved_listing_toggle`, `saved_page_view`, or `saved_recommendation_click` had any GTM wiring — the app was pushing all three correctly to `window.dataLayer` (per the "live-verified" notes above and in §14), but with no GTM Custom Event trigger and no GA4 Event tag for any of them, **none of the three events was ever actually reaching GA4**. The earlier "live-verified" language in this doc and in `add-to-cart-restoration-prd.md` was accurate about the dataLayer push (confirmed via direct `window.dataLayer` inspection) but did not establish GA4 receipt — GTM Preview / DebugView was never checked for these three events. Fixed by adding, in GTM (`GTM-5JSJ54C2`, published as **Version 6**, 2026-08-23):
 - 7 new Data Layer Variables: `DLV - source`, `DLV - listing_id`, `DLV - is_saved`, `DLV - saved_surface`, `DLV - entry`, `DLV - recs_shown`, `DLV - brand_group_count`.
