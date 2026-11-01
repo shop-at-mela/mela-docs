@@ -2,6 +2,24 @@
 
 Running log of shipped work and next actions. Newest entry at top.
 
+## 2026-11-01
+### Shipped
+- Homepage answer block, brand coverage and New from India (web-client branch `homepage/answer-block-and-brand-coverage`, 4 commits `c8acee984` to `66dee271e`, **not merged or pushed**). Hero images pushed to Dev for Suta, Needledust, Saphed, Hemant & Nandita.
+
+### Next
+- [ ] Fix `getISOWeek` in `web-client/src/config/configBrands.js`: it mixes local `getDate()` with UTC setters, so US-timezone clients compute a different ISO week than the UTC server (11-01 gives week 48 in New York, 44 in UTC). It drives the spotlight rotation and the `/brands` ordering. Switch to `getUTC*` and add a timezone test.
+- [ ] Replace the Brand Spotlight hero images before the rotation goes live: Kaunteya (mug on white, a product shot) and House of Chikankari (visible watermarks, head cropped at 375px). Isharya also needs its prices rescraped by Nov 16 (one listing shows $61.07 on Mela vs $74.00 on isharya.co).
+- [ ] Look at the new hero images for Suta, Needledust, Saphed and Hemant & Nandita on Dev. The script scores sharpness and framing, not content, and Suta's top picks are named `rainforest-rumbles-quilt`, `neela-nakab` and `pink-princess-chumki`. Suta is now hero slide 2.
+- [ ] Check at 375px that the new hero sub (19 words) wraps acceptably, and confirm hosted translations in Console don't override `SectionMelaHero.heroSubheadline`.
+- [ ] Re-run `web-client/scripts/harvest-new-from-india-ids.js` after each ingestion batch; listings older than 30 days are dropped and the section hides below 4.
+- [ ] New from India: apply the 4-card minimum to the live fallback too (it only applies to the baked list today).
+- [ ] Daughters of India has 0 listings on Dev, so it has no hero images yet. Re-run `update-brand-hero-image.js` once it has listings, and change its `noData` flag.
+- [ ] The Nesavu and Masilo still have no hero images (watermarked source, no CSV).
+- [ ] Suta (226 of 226) and The Alternate India (289 of 292) have almost every listing flagged `isBestseller`. Check whether that is real before "Bestsellers from X" is used for either.
+- [ ] CraftStories makes 23 unthrottled `users.show` calls and silently drops failures. Switch it to `fetchBrandProfiles`.
+- [ ] Decide whether to soften "hand vetted" in the VettingStrip (SEO wanted it softened; UX wanted to keep it, since it links to the criteria).
+- [ ] Spotlight: all three brands are DDU (duties due at delivery) and shipping exceeds the typical bestseller price for Kaunteya (~$51 vs ~$27) and House of Chikankari (~$34 vs ~$27). Avoid gift copy.
+
 ## 2026-10-31
 
 ### Shipped
@@ -36,6 +54,7 @@ Running log of shipped work and next actions. Newest entry at top.
 
 ### Next
 - [ ] Remove Pluchi (does not ship to the US) before deploying: the new answer block says "Brands ship to US addresses".
+  - [x] The answer block is removed (web-client `c8acee984`, 2026-11-01), so that sentence no longer appears on the homepage. The meta description, hero sub and VettingStrip still say brands ship to the US, so Pluchi should still be closed.
   - [x] Removed from `configBrands.js` (web-client `a32b50e41`, main, 2026-10-24).
   - [ ] Close its listings in Sharetribe (they still show in search, category pages and New from India).
 - [ ] Decide on evergreen occasion tiles (Birthday, Housewarming, Baby Shower & Naming) that fill empty slots. Karva Chauth and Bhai Dooj have 0 `pub_occasion` listings; the large pools are in `gift_occasion`, which the mosaic doesn't read.
