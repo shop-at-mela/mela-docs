@@ -1,0 +1,153 @@
+# Mela Social Campaign — Suta, Week 1
+# Automated weekly staging run (mela-docs/social/social-automation-strategy.md).
+# Status: staged — NOT scheduled, NOT published. Founder approval + wife grid sign-off pending.
+
+---
+# METADATA
+brand: Suta
+brand_slug: suta
+week: 1
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Arun
+category: fashion
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full                 # brand's first-ever Mela post -> FULL lane per pre-publish-gate.md Step 0
+hypothesis: "Angle 3 (how it's actually made) with Arun lead: does framing mul cotton as 'nobody taught you what handloom is supposed to feel like' (craft explained as a safe entry point, no assumed knowledge) out-save a generic craft-fact hook for a brand-new, never-before-posted brand?"
+gate_verdict: ship_pending_manual_verification   # copy + listing-live clear; watermark + render QC blocked by cloud network egress this run (database.blotato.io / cdn.shopify.com both unreachable) — see Review Sheet banner
+coaching_notes: "Diaspora anchor: situation-first ('nobody taught you'), never identity ('your Indian saree') — compliant. Woven-pattern fidelity (Dharani's zari border) is a render detail-risk, flagged for founder eyeball before shipping per visual-scorecard.md Stage 0 morph gate."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: null   # not created — blotato_create_post never called this run
+  destination: https://shopatmela.com/brands/suta
+  caption: |
+    Nobody taught you what a handloom saree is supposed to feel like. Here's what you're actually wearing.
+
+    Suta works with weavers in Bengal to hand weave soft mul cotton, known locally as mul mul. Each saree in this set is woven on the loom, not printed to look that way. Dharani adds a zari border for a dressier occasion. Manjaadi and Aavani stay light enough for every day.
+
+    Featured in this carousel:
+    • Manjaadi
+    • Dharani
+    • Aavani
+
+    Discover Suta on Mela →
+
+    Ships to the US.
+    #HandloomSaree #MulCotton #IndianWeave #DiscoveredOnMela
+
+  products:
+    - name: Manjaadi
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-dfd20edc-c585-4199-b86b-2e58995a77f1.jpg  # Blotato Product Scene Placement render — UNWATERMARKED, UNINSPECTED this run (see banner)
+      blotato_design_id: b19bd4e5-72f8-41be-a037-dee3dc8f617d
+      source_photo: https://cdn.shopify.com/s/files/1/0283/7938/1805/files/manjaadi-361509.jpg?v=1753948113
+      alt_text: Suta handloom mul cotton saree Manjaadi draped on a wood bench with white ranunculus flowers
+      price_usd: 63
+      dev_listing_id: 6ae02528-ec3c-4e37-9857-f953de3b1570
+      shopatmela_url: https://www.shopatmela.com/l/6ae02528-ec3c-4e37-9857-f953de3b1570
+      live_verified: "OPEN/Available, USD $63, mul cotton fabric claim confirmed verbatim on live listing (2026-11-04)"
+
+    - name: Dharani
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-900aa6df-4c68-42f8-97d1-0ea636e7f823.jpg
+      blotato_design_id: 1e8bb324-38af-4506-82da-8ddec7051464
+      source_photo: https://cdn.shopify.com/s/files/1/0283/7938/1805/files/ReginaCassandra.png?v=1753948147
+      alt_text: Suta handloom mul cotton saree with zari border Dharani draped on a cream armchair
+      price_usd: 72
+      dev_listing_id: 6ae02530-cce4-4cc9-b999-c521fefcf04f
+      shopatmela_url: https://www.shopatmela.com/l/6ae02530-cce4-4cc9-b999-c521fefcf04f
+      live_verified: "OPEN/Available, USD $72, mul cotton with zari fabric claim confirmed verbatim on live listing (2026-11-04)"
+
+    - name: Aavani
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-cb6050cf-4c9c-41c4-b8be-3fe19776fa68.jpg
+      blotato_design_id: 6bd22cec-b1bf-421a-b7ca-0c7c5d5429cb
+      source_photo: https://cdn.shopify.com/s/files/1/0283/7938/1805/files/aavani-636620.jpg?v=1742227311
+      alt_text: Suta handloom mul cotton saree Aavani draped on a light oak table with linen napkins
+      price_usd: 72
+      dev_listing_id: 6ae02538-7a66-43b3-ad59-6b657886668a
+      shopatmela_url: https://www.shopatmela.com/l/6ae02538-7a66-43b3-ad59-6b657886668a
+      live_verified: "OPEN/Available, USD $72, mul cotton fabric claim confirmed verbatim on live listing (2026-11-04)"
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Indian Ethnic Wear & Hand-Embroidered Fashion   # category-routing.yaml -> pinterest_boards.boards.apparel (non-footwear fashion)
+      board_id: "1103593152379779116"
+
+  pins:
+    - name: Manjaadi
+      status: excluded   # not submitted — blotato_create_post never called this run
+      submission_id: null
+      board_id: "1103593152379779116"
+      title: Manjaadi | Suta Handloom Mul Cotton Saree
+      description: Handloom mul cotton saree woven by Suta's weavers in Bengal. Soft, breathable drape, light enough to wear often. Discovered on Mela.
+      alt_text: Suta handloom mul cotton saree Manjaadi draped on a wood bench with white ranunculus flowers
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-dfd20edc-c585-4199-b86b-2e58995a77f1.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6ae02528-ec3c-4e37-9857-f953de3b1570
+      link: https://www.shopatmela.com/l/6ae02528-ec3c-4e37-9857-f953de3b1570?utm_source=pinterest&utm_medium=social&utm_campaign=suta_w1&utm_content=manjaadi
+
+    - name: Dharani
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379779116"
+      title: Dharani | Suta Handloom Saree with Zari Border
+      description: Mul cotton saree with a zari border, handwoven by Suta's weavers in Bengal. Dressier drape for weddings and festive occasions. Discovered on Mela.
+      alt_text: Suta handloom mul cotton saree with zari border Dharani draped on a cream armchair
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-900aa6df-4c68-42f8-97d1-0ea636e7f823.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6ae02530-cce4-4cc9-b999-c521fefcf04f
+      link: https://www.shopatmela.com/l/6ae02530-cce4-4cc9-b999-c521fefcf04f?utm_source=pinterest&utm_medium=social&utm_campaign=suta_w1&utm_content=dharani
+
+    - name: Aavani
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379779116"
+      title: Aavani | Suta Handloom Mul Cotton Saree
+      description: Handloom mul cotton saree woven by Suta's weavers in Bengal. Light, breathable drape for everyday wear. Discovered on Mela.
+      alt_text: Suta handloom mul cotton saree Aavani draped on a light oak table with linen napkins
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-cb6050cf-4c9c-41c4-b8be-3fe19776fa68.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6ae02538-7a66-43b3-ad59-6b657886668a
+      link: https://www.shopatmela.com/l/6ae02538-7a66-43b3-ad59-6b657886668a?utm_source=pinterest&utm_medium=social&utm_campaign=suta_w1&utm_content=aavani
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/suta
+  checks:
+    brand_story:
+      result: tbd
+      note: Brand page not reachable from this cloud session (shopatmela.com blocked); verify locally before scheduling
+    artisan_details:
+      result: tbd
+      note: Verify locally
+    cultural_context:
+      result: tbd
+      note: Verify locally
+    aesthetic_match:
+      result: tbd
+      note: Verify locally
+    product_findability:
+      result: tbd
+      note: Verify locally
+    mobile_responsive:
+      result: tbd
+      note: Verify locally
+  observations:
+    - theme: clean
+      severity: low
+      status: open
+      description: "Per-post UX destination audit is batched (FAST-lane rule), but this is Suta's first-ever post, which pre-publish-gate.md Step 0 routes FULL — a per-post brand-page audit is owed before scheduling and could not run this session (shopatmela.com network-blocked)."
+      mitigation: "Open https://shopatmela.com/brands/suta locally before approving; confirm brand story + artisan framing are present and not buried."
+
+# NOTES
+notes:
+  category_note: "First-ever Suta post. Fashion category, paired this week with Kaunteya (home_and_kitchen) for cross-category diversity."
+  copy_quality: "No dashes; short sentences; situation-first hook (Diaspora Anchoring); brand named as shipping actor; no @tagging; no duties claim (Suta is DDU, not DDP)."
+  product_diversity: "3 never-before-featured dev_listing_ids, all mul cotton Malli Pove collection sarees."
+  cooldown_check: "clear — Suta has no prior campaign log; brand never posted before this run."
+  team_feedback: null  # pending founder + wife grid sign-off
