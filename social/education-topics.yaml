@@ -96,7 +96,10 @@ topics:
     platforms: [instagram, reddit]
     personas: [sarah, arun]
     source_brands: [fizzy-goblet, the-alternate, gully-labs]
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-11-04, paired thematically with Suta (fashion) +
+                  # Kaunteya (home_and_kitchen) week batch; led by Sarah (see
+                  # social/log/_education/sizing-01-w1-campaign.yaml). Reddit leg drafted, not posted.
 
   # ---- Trust / service (brand-specific quality / materials — VERIFY on brand page) ----
   - id: quality-superbottoms
