@@ -208,7 +208,8 @@ topics:
     personas: [sarah, neha]
     source_brands: [vilvah]
     verify: true  # confirm "own farm" + no-synthetic-chemicals claim against Vilvah's own site before publishing
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-11-11, Neha lead (belonging/suitcase-economy angle); see social/log/_education/craft-farm-to-bottle-beauty-w1-campaign.yaml
     note: Accurate replacement for Vilvah's angle — single-farm sourcing, cold-pressed oils, no synthetic chemicals, per shopify_brands.py brand_story (not the "Ayurvedic" CSV mistag).
 
   - id: craft-chikankari

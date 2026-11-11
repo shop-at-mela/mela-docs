@@ -1,0 +1,189 @@
+# Banjaaran Studio Week 2 — staged via automated cloud weekly run 2026-11-11 (social-staging/week-of-2026-11-11).
+# Brand reused from week 1 (last posted 2026-10-02/10-06, >7 days clear of brand_recency_days=7); all 3
+# products below are NEW dev_listing_ids never featured in any prior campaign log (cooldown CLEAR —
+# grepped social/log/**/*.yaml).
+# STATUS: staged for founder approval. No blotato_create_post call was made.
+
+brand: Banjaaran Studio
+brand_slug: banjaaran-studio
+week: 2
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Arun
+category: fashion
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 2) + real product photos + all 3 listings verified OPEN this run
+hypothesis: "Angle 3 (how it's actually made) with Arun lead: does naming the specific handloom textile per shoe (ikat, Patola, jute bori sack) out-save a generic 'handcrafted leather' claim, continuing the craft-origin framing from the week-1 Banjaaran post?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # copy + listing-live clear; watermark compositing + post-render QC blocked by sandbox network policy this run — see verification_gaps
+coaching_notes: >
+  Diaspora anchor: situational, not identity-labeled ("you've seen ikat and Patola your whole
+  life" — belonging/curiosity, no ethnicity named) per hook-engineering.md angle 3 + Diaspora
+  Anchoring. First-frame: scene briefs used a tight literal "keep the product's exact print,
+  motif, shape and colour unchanged, only build the environment" instruction for all 3 (ikat
+  weave, Patola weave, jute weave are all texture/pattern-critical per visual-scorecard.md
+  Stage 0 morph gate) — but the resulting renders could NOT be diffed against source this run
+  (see verification_gaps). Flagging all 3 for founder eyeball before shipping, same standing
+  instruction as the isharya week-2 precedent (2026-10-04).
+  NOTE ON TOPIC PAIRING: this brand's own brand_craft text (shopify_brands.py) names "kantha
+  and block prints" at the brand level, but the live catalog (banjaaranstudio_products_classified.csv,
+  54 rows) is confirmed ALL FOOTWEAR with ikat/Patola/jacquard/jute textile uppers — zero kantha-
+  embroidery rows. Same pattern as the prior craft-blockprint/Banjaaran mismatch (see
+  education-topics.yaml craft-blockprint note). Did NOT pair craft-kantha education topic with
+  this brand for that reason; picked craft-farm-to-bottle-beauty (Vilvah) instead this run, which
+  only claims what the actual catalog supports (ikat/Patola/jute weave, all verified per-product
+  against the live listing below).
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  listing_live_check: >
+    PERFORMED via blotato_create_source fallback (direct shopatmela.com fetch returns
+    connect_rejected / 403 from this cloud sandbox's egress proxy — host not allowlisted this
+    session). All 3 product listing pages resolved to real, matching live content (title, price,
+    and material/craft description text all matched the classified CSV row). Treat all 3 as
+    LISTING LIVE / OPEN.
+  render_watermark_and_qc: >
+    NOT DONE this run. This sandbox's egress proxy blocks cdn.shopify.com (source product photos)
+    AND database.blotato.io (Blotato's render + presigned-upload storage) — confirmed via
+    repeated connect_rejected / ENOTFOUND on curl and WebFetch, and via
+    /root/.ccr/__agentproxy/status recentRelayFailures. This means: (1) the Product Scene
+    Placement renders below could NOT be downloaded for the Stage-2 source-vs-render diff
+    (morph/color-drift/garble check) that visual-scorecard.md requires before a SHIP verdict; (2)
+    the "Discovered on Mela" watermark could NOT be composited locally (no local bytes to
+    overlay) nor re-hosted via blotato_create_presigned_upload_url (same blocked host). The
+    image_url values below are therefore the RAW, UNWATERMARKED Blotato scene renders —
+    watermark hard-fail row #20 (pre-publish-gate.md) is currently BLOCKING for all 3 images.
+    ACTION NEEDED before scheduling: a local session (or a cloud session with
+    cdn.shopify.com + database.blotato.io allowlisted) must download each render, diff it against
+    its source_image_url, composite the watermark via templates/photo-watermark.html +
+    render.sh, and re-host via blotato_create_presigned_upload_url, then flip this tile's
+    gate_verdict to SHIP or BLOCK based on what the diff actually shows.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/banjaaran-studio?utm_source=instagram&utm_medium=social&utm_campaign=banjaaran-studio_w2&utm_content=brand_carousel"
+  caption: |
+    You've seen ikat and Patola your whole life. Never once on a pair of shoes.
+
+    Banjaaran Studio works with textile artisans across India to turn handloom weaves, even the humble jute bori sack, into shoes built around the fabric first.
+
+    Featured in this carousel:
+    • Ikat Loafers, Coal
+    • Patola Brogues, Coal
+    • Bori Bomber Sneakers
+
+    Discover Banjaaran Studio on Mela →
+
+    Ships to the US free from Banjaaran Studio, duties included.
+    #HandloomFashion #IndianFootwear #ArtisanMade #IkatTextile #DiscoverOnMela
+  products:
+    - name: Ikat Loafers, Coal
+      sku: ikat-loafers-men-coal
+      dev_listing_id: 6a128402-c072-472d-99e1-abb017edd6ce
+      shopatmela_url: https://www.shopatmela.com/l/6a128402-c072-472d-99e1-abb017edd6ce
+      price_usd: 90
+      source_image_url: https://cdn.shopify.com/s/files/1/0723/2398/9662/files/13_03.jpg?v=1762780394
+      blotato_visual_id: 7b40dac9-0807-4339-9502-1e00c380edcb
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0c11f3a5-1704-4684-8cd0-099de7bb7b04.jpg  # UNWATERMARKED — see verification_gaps
+      alt_text: Black and white ikat handloom loafers with leather trim on a warm wood entryway bench
+      verified: true  # live listing resolved 2026-11-11 via blotato_create_source; title/price/material text matched
+      cooldown: clear — never featured in any prior campaign log
+    - name: Patola Brogues, Coal
+      sku: patola-brogues-men-coal
+      dev_listing_id: 6a128475-6078-40c7-a598-f07d627897f9
+      shopatmela_url: https://www.shopatmela.com/l/6a128475-6078-40c7-a598-f07d627897f9
+      price_usd: 90
+      source_image_url: https://cdn.shopify.com/s/files/1/0723/2398/9662/files/15_03.jpg?v=1762780396
+      blotato_visual_id: cf72f22b-2f07-435b-8448-608fc536ecbb
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6720bb47-c4b9-4343-acc2-73eb6693fb42.jpg  # UNWATERMARKED — see verification_gaps
+      alt_text: Patola weave brogues with brass details on a walnut entryway console table
+      verified: true  # live listing resolved 2026-11-11 via blotato_create_source; title/price/material text matched
+      cooldown: clear — never featured in any prior campaign log
+    - name: Bori Bomber Sneakers
+      sku: bori-bomber-sneakers
+      dev_listing_id: 6a1283b5-21ba-4ab7-91da-edf59acec67f
+      shopatmela_url: https://www.shopatmela.com/l/6a1283b5-21ba-4ab7-91da-edf59acec67f
+      price_usd: 90
+      source_image_url: https://cdn.shopify.com/s/files/1/0723/2398/9662/files/Bori_0033x4_7d6fb063-1d67-4519-9c0d-500c19eb2768.jpg?v=1762780429
+      blotato_visual_id: c9a93693-e7f9-41c5-872b-ccd5783cbebf
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e41fddac-3d03-4700-991f-e7c70fcc4921.jpg  # UNWATERMARKED — see verification_gaps
+      alt_text: Jute weave bomber sneakers with red stitching on a sunlit porch step beside a canvas tote
+      verified: true  # live listing resolved 2026-11-11 via blotato_create_source; title/price/material text matched
+      cooldown: clear — never featured in any prior campaign log
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Artisan Footwear  # footwear-only board per category-routing.yaml -> pinterest_boards.boards.brand
+      board_id: "1103593152379641541"
+
+  pins:
+    - name: Ikat Loafers, Coal
+      status: staged
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Ikat Handloom Loafers | Handcrafted Indian Footwear
+      description: Loafers handcrafted with black and white ikat handloom textile and leather trim. Made by artisans across India for Banjaaran Studio. Versatile for everyday wear. Discovered on Mela.
+      alt_text: Black and white ikat handloom loafers with leather trim on a warm wood entryway bench
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0c11f3a5-1704-4684-8cd0-099de7bb7b04.jpg  # UNWATERMARKED — see verification_gaps
+      shopatmela_url: https://www.shopatmela.com/l/6a128402-c072-472d-99e1-abb017edd6ce
+      link: https://www.shopatmela.com/l/6a128402-c072-472d-99e1-abb017edd6ce?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaran-studio_w2&utm_content=ikat_loafers_coal
+    - name: Patola Brogues, Coal
+      status: staged
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Patola Weave Brogues | Handcrafted with Leather Details
+      description: Brogues made in collaboration with textile artisans from Gujarat, combining traditional Patola fabric with leather and brass details. Statement footwear for weddings and gifting. Discovered on Mela.
+      alt_text: Patola weave brogues with brass details on a walnut entryway console table
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6720bb47-c4b9-4343-acc2-73eb6693fb42.jpg  # UNWATERMARKED — see verification_gaps
+      shopatmela_url: https://www.shopatmela.com/l/6a128475-6078-40c7-a598-f07d627897f9
+      link: https://www.shopatmela.com/l/6a128475-6078-40c7-a598-f07d627897f9?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaran-studio_w2&utm_content=patola_brogues_coal
+    - name: Bori Bomber Sneakers
+      status: staged
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Jute Bomber Sneakers | Handcrafted Indian Footwear
+      description: Sneakers reworking the everyday Indian bori sack into a jute woven upper with contrast stitching. Handcrafted and made to order. Discovered on Mela.
+      alt_text: Jute weave bomber sneakers with red stitching on a sunlit porch step beside a canvas tote
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e41fddac-3d03-4700-991f-e7c70fcc4921.jpg  # UNWATERMARKED — see verification_gaps
+      shopatmela_url: https://www.shopatmela.com/l/6a1283b5-21ba-4ab7-91da-edf59acec67f
+      link: https://www.shopatmela.com/l/6a1283b5-21ba-4ab7-91da-edf59acec67f?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaran-studio_w2&utm_content=bori_bomber_sneakers
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/banjaaran-studio
+  checks:
+    brand_story:
+      result: tbd
+      note: Not audited this run (batched UX destination audit per pre-publish-gate.md FAST lane — brand page not re-crawled this run)
+    artisan_details:
+      result: tbd
+      note: Not audited this run
+    cultural_context:
+      result: tbd
+      note: Not audited this run
+    aesthetic_match:
+      result: tbd
+      note: Not audited this run
+    product_findability:
+      result: pass
+      note: Product names included in caption; individual listing URLs confirmed live via blotato_create_source
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations: []
+
+# NOTES
+notes:
+  category_note: Fashion row this batch; paired category-wise with SuperBottoms (baby_and_kids) for rotation diversity. Home_and_kitchen, beauty_and_wellness, and jewelry_and_accessories were the 3 most recently confirmed categories (kaunteya, vilvah, isharya), so fashion + baby_and_kids were picked to avoid repeating those.
+  infra_gap: Network egress to cdn.shopify.com and database.blotato.io is blocked in this cloud session (agent-proxy policy denial, confirmed via /__agentproxy/status). Watermarking and post-render visual QC must be completed in a session with those hosts allowlisted before this batch is scheduled.
+  copy_quality: No dashes; short sentences; craft claims verified against the live listing text (blotato_create_source), not just the classified CSV.
+  shipping_clarity: Caption names the brand as the shipping actor; "duties included" only stated because shopify_brands.py confirms us_duties DDP for this brand.

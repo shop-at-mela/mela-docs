@@ -1,0 +1,170 @@
+# SuperBottoms Week 2 — staged via automated cloud weekly run 2026-11-11 (social-staging/week-of-2026-11-11).
+# Brand reused from week 1 (last posted 2026-10-03/10-07, >7 days clear of brand_recency_days=7); all 3
+# products below are NEW dev_listing_ids never featured in any prior campaign log (cooldown CLEAR —
+# grepped social/log/**/*.yaml).
+# STATUS: staged for founder approval. No blotato_create_post call was made.
+
+brand: SuperBottoms
+brand_slug: superbottoms
+week: 2
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Sarah
+category: baby_and_kids
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 2) + real product photos + all 3 listings verified OPEN this run
+hypothesis: "Angle 4 (claim-decoded) with Sarah lead: does naming the exact GOTS-certified-organic-cotton layer count (nine layers) out-save a vague 'eco-friendly diapering' claim, continuing the pattern that worked for quality-superbottoms' GOTS framing (2026-09-30 batch)?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # copy + listing-live clear; watermark compositing + post-render QC blocked by sandbox network policy this run — see verification_gaps
+coaching_notes: >
+  Diaspora anchor: present but secondary this tile (angle 4, cert-decoded, matches the
+  quality-superbottoms treatment two batches ago) — Sarah's lead is certifications-first by
+  design, not the primary belonging lever. First-frame: all 3 products are flat textile/garment
+  items (diaper insert, padded underwear, boyshorts), not faces or garment-on-a-person — so the
+  people/faces exception in visual-scorecard.md Stage 0 does NOT apply; Blotato staging was the
+  correct default. Renders could NOT be diffed against source this run (see verification_gaps).
+  Flagging all 3 for founder eyeball before shipping.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  listing_live_check: >
+    PERFORMED via blotato_create_source fallback (direct shopatmela.com fetch returns
+    connect_rejected / 403 from this cloud sandbox's egress proxy — host not allowlisted this
+    session). All 3 product listing pages resolved to real, matching live content (title, price,
+    and material text all matched the classified CSV row). Treat all 3 as LISTING LIVE / OPEN.
+  render_watermark_and_qc: >
+    NOT DONE this run — same infra block as banjaaran-studio/week-2-campaign.yaml this same
+    batch (cdn.shopify.com + database.blotato.io both unreachable from this sandbox; see that
+    file's verification_gaps for the full explanation). The image_url values below are the RAW,
+    UNWATERMARKED Blotato scene renders. Watermark hard-fail row #20 is currently BLOCKING for
+    all 3 images. ACTION NEEDED: a local/unrestricted session must download, diff vs. source,
+    composite the watermark, re-host, and flip this tile's gate_verdict before scheduling.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/superbottoms?utm_source=instagram&utm_medium=social&utm_campaign=superbottoms_w2&utm_content=brand_carousel"
+  caption: |
+    GOTS certified organic cotton, not just a "natural" label. SuperBottoms built reusable diapering around it.
+
+    SuperBottoms pioneered the modern cloth diaper movement in India. The Dry Feel pad is nine layers of GOTS certified organic cotton, under a soft outer layer, designed to grow with your baby from newborn to toddler.
+
+    Featured in this carousel:
+    • Newborn UNO Cloth Diaper, Cherry Blossom
+    • Padded Underwear, Jungle Jam
+    • Boyshorts, Sunkissed
+
+    Discover SuperBottoms on Mela →
+
+    Ships to the US from SuperBottoms.
+    #ClothDiapering #OrganicCottonBaby #ReusableDiapers #GOTSCertified #DiscoverOnMela
+  products:
+    - name: Newborn UNO Cloth Diaper, Cherry Blossom
+      sku: newborn-uno-cloth-diaper-cherry-blossom
+      dev_listing_id: 697c1d20-d0d2-49e0-bc99-dff0d78f4fb2
+      shopatmela_url: https://www.shopatmela.com/l/697c1d20-d0d2-49e0-bc99-dff0d78f4fb2
+      price_usd: 5
+      source_image_url: https://cdn.shopify.com/s/files/1/0402/7370/7171/files/with_pad_c0a468e0-9acc-4889-acb3-95763cb41fb9.webp?v=1753251522
+      blotato_visual_id: 94fa8fbe-7eb3-461e-9a35-0ed33463ee4b
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bbe842a7-0250-4b13-998d-393fc6488375.jpg  # UNWATERMARKED — see verification_gaps
+      alt_text: Cherry blossom print reusable cloth diaper laid on a cream knit blanket in a sunlit nursery
+      verified: true  # live listing resolved 2026-11-11 via blotato_create_source; title/price/material text matched
+      cooldown: clear — never featured in any prior campaign log
+    - name: Padded Underwear, Jungle Jam
+      sku: padded-underwear-jungle-jam
+      dev_listing_id: 6a129f70-2e82-4f1e-9416-bb5a53fb3103
+      shopatmela_url: https://www.shopatmela.com/l/6a129f70-2e82-4f1e-9416-bb5a53fb3103
+      price_usd: 9
+      source_image_url: https://cdn.shopify.com/s/files/1/0402/7370/7171/files/1_f9ea948f-bf58-4f25-b4b1-e08e6350dd60.webp?v=1768309913
+      blotato_visual_id: 319ff858-f7b0-4678-9299-653368b8e049
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b863977a-a5b7-4a17-a84c-e11a295ef1e4.jpg  # UNWATERMARKED — see verification_gaps
+      alt_text: Jungle print cotton padded training underwear on a sage green changing pad with a plush elephant toy
+      verified: true  # live listing resolved 2026-11-11 via blotato_create_source; title/price/material text matched
+      cooldown: clear — never featured in any prior campaign log
+    - name: Boyshorts, Sunkissed
+      sku: supersoft-boyshorts-girls-sunkissed
+      dev_listing_id: 6a129644-0ab5-4aed-ba1d-2b90dc7e2bef
+      shopatmela_url: https://www.shopatmela.com/l/6a129644-0ab5-4aed-ba1d-2b90dc7e2bef
+      price_usd: 3
+      source_image_url: https://cdn.shopify.com/s/files/1/0402/7370/7171/files/1b_fcc6369d-b682-492f-95e0-9fd39ea40f53.webp?v=1715609621
+      blotato_visual_id: dfadde6b-3b7e-453f-b084-a905ce72753d
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-9d9eed10-7d0c-47ee-b77a-715d957d38b6.jpg  # UNWATERMARKED — see verification_gaps
+      alt_text: Sunkissed print bamboo boyshorts laid on cream linen beside a wooden hair clip and yellow towel
+      verified: true  # live listing resolved 2026-11-11 via blotato_create_source; title/price/material text matched
+      cooldown: clear — never featured in any prior campaign log
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Organic Baby Essentials  # category-routing.yaml -> pinterest_boards.boards; best fit for cloth diapering/organic-cotton claims vs. Modern Indian Nursery
+      board_id: "1103593152379723630"
+
+  pins:
+    - name: Newborn UNO Cloth Diaper, Cherry Blossom
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723630"
+      title: GOTS Organic Cotton Cloth Diaper | Reusable Newborn Diaper
+      description: Reusable newborn cloth diaper with a nine layer GOTS certified organic cotton insert. Grows with baby from newborn to toddler. By SuperBottoms. Discovered on Mela.
+      alt_text: Cherry blossom print reusable cloth diaper laid on a cream knit blanket in a sunlit nursery
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bbe842a7-0250-4b13-998d-393fc6488375.jpg  # UNWATERMARKED — see verification_gaps
+      shopatmela_url: https://www.shopatmela.com/l/697c1d20-d0d2-49e0-bc99-dff0d78f4fb2
+      link: https://www.shopatmela.com/l/697c1d20-d0d2-49e0-bc99-dff0d78f4fb2?utm_source=pinterest&utm_medium=social&utm_campaign=superbottoms_w2&utm_content=newborn_uno_cherry_blossom
+    - name: Padded Underwear, Jungle Jam
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723630"
+      title: Cotton Potty Training Underwear | Padded Toddler Underwear
+      description: Three layer cotton padded underwear for potty training, with a semi waterproof outer layer. Jungle print by SuperBottoms. Discovered on Mela.
+      alt_text: Jungle print cotton padded training underwear on a sage green changing pad with a plush elephant toy
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b863977a-a5b7-4a17-a84c-e11a295ef1e4.jpg  # UNWATERMARKED — see verification_gaps
+      shopatmela_url: https://www.shopatmela.com/l/6a129f70-2e82-4f1e-9416-bb5a53fb3103
+      link: https://www.shopatmela.com/l/6a129f70-2e82-4f1e-9416-bb5a53fb3103?utm_source=pinterest&utm_medium=social&utm_campaign=superbottoms_w2&utm_content=padded_underwear_jungle_jam
+    - name: Boyshorts, Sunkissed
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723630"
+      title: Bamboo Kids Boyshorts | Soft Breathable Underwear
+      description: Breathable bamboo boyshorts for kids with a thermoregulating stretch fabric. Sunkissed print by SuperBottoms. Discovered on Mela.
+      alt_text: Sunkissed print bamboo boyshorts laid on cream linen beside a wooden hair clip and yellow towel
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-9d9eed10-7d0c-47ee-b77a-715d957d38b6.jpg  # UNWATERMARKED — see verification_gaps
+      shopatmela_url: https://www.shopatmela.com/l/6a129644-0ab5-4aed-ba1d-2b90dc7e2bef
+      link: https://www.shopatmela.com/l/6a129644-0ab5-4aed-ba1d-2b90dc7e2bef?utm_source=pinterest&utm_medium=social&utm_campaign=superbottoms_w2&utm_content=boyshorts_sunkissed
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/superbottoms
+  checks:
+    brand_story:
+      result: tbd
+      note: Not audited this run (batched UX destination audit per pre-publish-gate.md FAST lane)
+    artisan_details:
+      result: tbd
+      note: Not audited this run
+    cultural_context:
+      result: tbd
+      note: Not audited this run
+    aesthetic_match:
+      result: tbd
+      note: Not audited this run
+    product_findability:
+      result: pass
+      note: Product names included in caption; individual listing URLs confirmed live via blotato_create_source
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations: []
+
+# NOTES
+notes:
+  category_note: baby_and_kids row this batch, paired with Banjaaran Studio (fashion) for category diversity. Avoided the 3 most-recently-confirmed categories (home_and_kitchen/kaunteya, beauty_and_wellness/vilvah, jewelry_and_accessories/isharya).
+  infra_gap: Network egress to cdn.shopify.com and database.blotato.io is blocked in this cloud session (agent-proxy policy denial). Watermarking and post-render visual QC must be completed in a session with those hosts allowlisted before this batch is scheduled.
+  copy_quality: No dashes; short sentences; GOTS cert claim verified against the live listing text (blotato_create_source), not just the classified CSV.
+  shipping_clarity: Caption names the brand as the shipping actor only ("Ships to the US from SuperBottoms") — no "free" or "duties included" claim, since shopify_brands.py shows us_shipping=calculated_at_checkout and us_duties=DDU (duties NOT prepaid) for this brand.
