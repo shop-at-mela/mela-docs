@@ -7,8 +7,8 @@
 brand: Banjaaran Studio
 brand_slug: banjaaran-studio
 week: 2
-date_posted: null
-status: staged
+date_posted: "2026-11-11"
+status: posted
 platforms:
   - instagram
   - pinterest
@@ -19,7 +19,7 @@ category: fashion
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: fast   # vetted brand (week 2) + real product photos + all 3 listings verified OPEN this run
 hypothesis: "Angle 3 (how it's actually made) with Arun lead: does naming the specific handloom textile per shoe (ikat, Patola, jute bori sack) out-save a generic 'handcrafted leather' claim, continuing the craft-origin framing from the week-1 Banjaaran post?"
-gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # copy + listing-live clear; watermark compositing + post-render QC blocked by sandbox network policy this run — see verification_gaps
+gate_verdict: "SHIP-PENDING-MANUAL-VERIFICATION, PUBLISHED ANYWAY 2026-11-11 — founder explicitly overrode the watermark/render-QC hold and the wife grid-shape sign-off via chat instruction ('ignore the watermarking going ahead. Also publish without any wife QC. I can delete it later once it is published if I dont like it.'). Images shipped unwatermarked and un-diffed against source; watermark hard-fail row #20 was knowingly waived, not resolved."
 coaching_notes: >
   Diaspora anchor: situational, not identity-labeled ("you've seen ikat and Patola your whole
   life" — belonging/curiosity, no ethnicity named) per hook-engineering.md angle 3 + Diaspora
@@ -68,7 +68,8 @@ verification_gaps:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 8e5a5067-95e1-43a4-9c06-65ee5693827e
+  published_url: https://www.instagram.com/p/DfmseFInLxN/
   destination: "https://shopatmela.com/brands/banjaaran-studio?utm_source=instagram&utm_medium=social&utm_campaign=banjaaran-studio_w2&utm_content=brand_carousel"
   caption: |
     You've seen ikat and Patola your whole life. Never once on a pair of shoes.
@@ -127,8 +128,9 @@ pinterest:
 
   pins:
     - name: Ikat Loafers, Coal
-      status: staged
-      submission_id: null
+      status: posted
+      submission_id: 7c77eda7-a4b5-45a3-ba26-829029001a1e
+      published_url: https://www.pinterest.com/pin/1103593083725244121
       board_id: "1103593152379641541"
       title: Ikat Handloom Loafers | Handcrafted Indian Footwear
       description: Loafers handcrafted with black and white ikat handloom textile and leather trim. Made by artisans across India for Banjaaran Studio. Versatile for everyday wear. Discovered on Mela.
@@ -137,8 +139,9 @@ pinterest:
       shopatmela_url: https://www.shopatmela.com/l/6a128402-c072-472d-99e1-abb017edd6ce
       link: https://www.shopatmela.com/l/6a128402-c072-472d-99e1-abb017edd6ce?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaran-studio_w2&utm_content=ikat_loafers_coal
     - name: Patola Brogues, Coal
-      status: staged
-      submission_id: null
+      status: posted
+      submission_id: 51e6a3b0-7279-4455-966a-6a02d7c3d9d4
+      published_url: https://www.pinterest.com/pin/1103593083725244138
       board_id: "1103593152379641541"
       title: Patola Weave Brogues | Handcrafted with Leather Details
       description: Brogues made in collaboration with textile artisans from Gujarat, combining traditional Patola fabric with leather and brass details. Statement footwear for weddings and gifting. Discovered on Mela.
@@ -147,8 +150,9 @@ pinterest:
       shopatmela_url: https://www.shopatmela.com/l/6a128475-6078-40c7-a598-f07d627897f9
       link: https://www.shopatmela.com/l/6a128475-6078-40c7-a598-f07d627897f9?utm_source=pinterest&utm_medium=social&utm_campaign=banjaaran-studio_w2&utm_content=patola_brogues_coal
     - name: Bori Bomber Sneakers
-      status: staged
-      submission_id: null
+      status: posted
+      submission_id: be2fc501-6ed1-4fba-965d-72003284b7f9
+      published_url: https://www.pinterest.com/pin/1103593083725244141
       board_id: "1103593152379641541"
       title: Jute Bomber Sneakers | Handcrafted Indian Footwear
       description: Sneakers reworking the everyday Indian bori sack into a jute woven upper with contrast stitching. Handcrafted and made to order. Discovered on Mela.
@@ -183,6 +187,7 @@ ux_review:
 
 # NOTES
 notes:
+  publish_override: "Published 2026-11-11 on explicit founder instruction, skipping the watermark/render-QC hold and the wife grid-shape sign-off this campaign's own gate had flagged as outstanding. Founder accepted the risk directly ('I can delete it later once it is published if I dont like it.'). SuperBottoms was excluded from this same publish instruction; Banjaaran was not."
   category_note: Fashion row this batch; paired category-wise with SuperBottoms (baby_and_kids) for rotation diversity. Home_and_kitchen, beauty_and_wellness, and jewelry_and_accessories were the 3 most recently confirmed categories (kaunteya, vilvah, isharya), so fashion + baby_and_kids were picked to avoid repeating those.
   infra_gap: Network egress to cdn.shopify.com and database.blotato.io is blocked in this cloud session (agent-proxy policy denial, confirmed via /__agentproxy/status). Watermarking and post-render visual QC must be completed in a session with those hosts allowlisted before this batch is scheduled.
   copy_quality: No dashes; short sentences; craft claims verified against the live listing text (blotato_create_source), not just the classified CSV.

@@ -7,8 +7,8 @@
 brand: Kaunteya
 brand_slug: kaunteya
 week: 4
-date_posted: null
-status: staged
+date_posted: "2026-11-11"
+status: posted
 platforms:
   - instagram
   - pinterest
@@ -19,7 +19,7 @@ category: home_and_kitchen
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: fast                 # vetted brand (4th campaign), real product photo staged via Product Scene Placement, all 3 listings verified OPEN this run
 hypothesis: "Angle 1 (belonging / suitcase economy) with Priya lead, on a NEW Dasara collection (never used; prior Kaunteya posts used Airavata/Byah motifs): does 'the bone china you'd wait for a trip to Delhi to bring home now ships to your door' out-save a product-fact-only hook for home_and_kitchen?"
-gate_verdict: ship_pending_manual_verification   # copy + listing-live clear; watermark + render QC blocked by cloud network egress this run (database.blotato.io / cdn.shopify.com both unreachable) — see Review Sheet banner
+gate_verdict: "ship_pending_manual_verification, PUBLISHED ANYWAY 2026-11-11 — founder explicitly overrode the watermark/render-QC hold and the wife grid-shape sign-off via chat instruction ('ignore the watermarking going ahead. Also publish without any wife QC. I can delete it later once it is published if I dont like it.'). IMPORTANT: this tile's own coaching_notes flagged the hand-painted turquoise motif as DETAIL-CRITICAL and said explicitly not to ship on AI QA alone — that founder eyeball did NOT happen before this publish."
 coaching_notes: "Diaspora anchor: situation-first ('wait for a trip to Delhi'), never identity — compliant. Hand-painted turquoise floral motif is a DETAIL-CRITICAL render per visual-scorecard.md Stage 0 morph gate (fine hand-paint) — flag for founder eyeball before shipping, do not ship on AI QA alone even once network access returns."
 northstar_metric:
   instagram_saves: null
@@ -27,7 +27,8 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null   # not created — blotato_create_post never called this run
+  submission_id: 6e8a4a44-476a-480c-aa0b-23d9b22b9857
+  published_url: https://www.instagram.com/p/Dfmsv6hFVOy/
   destination: https://shopatmela.com/brands/kaunteya
   caption: |
     The bone china you'd normally wait for a trip to Delhi to bring home now ships straight to your door.
@@ -83,8 +84,9 @@ pinterest:
 
   pins:
     - name: Dasara Coffee Mug
-      status: excluded   # not submitted — blotato_create_post never called this run
-      submission_id: null
+      status: posted
+      submission_id: 30a75b8d-5264-4dac-92d9-55eddd780ca7
+      published_url: https://www.pinterest.com/pin/1103593083725244239
       board_id: "1103593152379723626"
       title: Dasara Coffee Mug | Kaunteya Hand Painted Bone China
       description: Hand painted bone china coffee mug by Kaunteya, Delhi. Turquoise blue motifs inspired by Mysore Palace interiors. Discovered on Mela.
@@ -94,8 +96,9 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5cd955-4c43-40bb-bba8-ea061d906d30?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w4&utm_content=dasara_coffee_mug
 
     - name: Dasara Jug
-      status: excluded
-      submission_id: null
+      status: posted
+      submission_id: 9e432aa4-7b03-4b46-b0fa-71de1f6e8091
+      published_url: https://www.pinterest.com/pin/1103593083725244244
       board_id: "1103593152379723626"
       title: Dasara Jug | Kaunteya Hand Painted Bone China
       description: Hand painted bone china jug by Kaunteya, Delhi. Turquoise blue motifs inspired by Mysore Palace interiors. Discovered on Mela.
@@ -105,8 +108,9 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5cd986-84be-4d87-bb4b-b1339c791ebf?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w4&utm_content=dasara_jug
 
     - name: Dasara Mini Tea Mug
-      status: excluded
-      submission_id: null
+      status: posted
+      submission_id: 02d30776-1bc8-45b4-9745-38439d8dc36f
+      published_url: https://www.pinterest.com/pin/1103593083725244248
       board_id: "1103593152379723626"
       title: Dasara Mini Tea Mug | Kaunteya Hand Painted Bone China
       description: Hand painted bone china mini tea mug by Kaunteya, Delhi. Turquoise blue motifs inspired by Mysore Palace interiors. Discovered on Mela.
@@ -150,4 +154,5 @@ notes:
   copy_quality: "No dashes; short sentences; situation-first hook (Diaspora Anchoring); brand named as shipping actor; no @tagging; no duties claim (Kaunteya is DDU, not DDP)."
   product_diversity: "3 never-before-featured dev_listing_ids (Dasara collection); distinct from week-1's Airavata/Byah and week-3's Dasara-adjacent Airavata-Swan set."
   cooldown_check: "clear — all 3 dev_listing_ids confirmed never featured in any prior kaunteya/week-*.yaml (checked week-1, week-2, week-3). Brand last posted non-recently (outside the 7-day brand_recency_days window)."
-  team_feedback: null  # pending founder + wife grid sign-off
+  team_feedback: null  # wife grid-shape sign-off explicitly waived by founder for this publish
+  publish_override: "Published 2026-11-11 on explicit founder instruction, skipping the watermark/render-QC hold and the wife grid-shape sign-off. The detail-critical hand-painted motif warning in coaching_notes was not acted on before this publish — worth a founder eyeball now that it's live."

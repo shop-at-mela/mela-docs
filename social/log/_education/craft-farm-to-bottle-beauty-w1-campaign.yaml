@@ -15,8 +15,8 @@
 brand: null
 brand_slug: _education
 week: 1
-date_posted: null
-status: staged
+date_posted: "2026-11-11"
+status: posted
 platforms:
   - instagram
 format: carousel
@@ -63,7 +63,8 @@ verification:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 0a37810e-56bc-43cf-adf4-5111de614a2a
+  published_url: https://www.instagram.com/p/Dfmsl-Llu05/
   destination: "https://shopatmela.com/brands/vilvah?utm_source=instagram&utm_medium=social&utm_campaign=craft-farm-to-bottle-beauty_w1&utm_content=education_farm_to_bottle"
   topic: "craft-farm-to-bottle-beauty — One farm, one bottle: what 'grown on our own farm' means for skincare"
   caption: |
@@ -89,11 +90,9 @@ instagram:
       local_file: social/log/_education/craft-farm-to-bottle-beauty-w1/slide-3-close.png
       alt_text: Vilvah brand close card reading "Farm-direct skincare, from Tamil Nadu" with a Discover Vilvah on Mela call to action
   note: >
-    All 3 image_url values are repo-relative paths, not yet hosted at a public URL (presigned
-    upload to Blotato's database.blotato.io storage is blocked from this sandbox — see
-    banjaaran-studio/week-2-campaign.yaml verification_gaps for the same root cause). Public URLs
-    will resolve once this branch merges, at:
-    https://raw.githubusercontent.com/shop-at-mela/mela-docs/social-staging/week-of-2026-11-11/social/log/_education/craft-farm-to-bottle-beauty-w1/slide-N-*.png
+    Published 2026-11-11 using raw.githubusercontent.com/shop-at-mela/mela-docs/main/... URLs for
+    the 3 slide PNGs (mela-docs is a public repo, so Blotato's own servers could fetch them
+    directly without this sandbox needing presigned-upload access to database.blotato.io).
 
 # UX REVIEW
 ux_review:

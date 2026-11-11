@@ -7,8 +7,8 @@
 brand: null   # brand-agnostic trust_service topic — no single brand attribution
 brand_slug: _education/sizing-01
 week: 1
-date_posted: null
-status: staged
+date_posted: "2026-11-11"
+status: posted
 platforms:
   - instagram
   - reddit   # education-topics.yaml marks sizing-01 dual-platform [instagram, reddit]
@@ -27,7 +27,8 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null   # not created — blotato_create_post never called this run
+  submission_id: 4508ebaa-769b-40c4-a0e7-beed28b78072
+  published_url: https://www.instagram.com/p/Dfms10qnJz0/
   destination: "https://shopatmela.com?utm_source=instagram&utm_medium=social&utm_campaign=sizing-01_w1&utm_content=education_sizing"
   caption: |
     A US Medium isn't an Indian Medium. Here's how the numbers actually convert.
@@ -57,10 +58,9 @@ instagram:
       alt_text: "Text slide: myth that US sizes fit the same in India, fact that UK and US sizes need converting, with a worked shoe-size example"
       visual_qc: "PERFORMED — inspected: legible, watermark present and subtle on the fact panel, no product shown (trust_service payoff is CTA-only, per rule)"
 
-  # These 3 PNGs are LOCAL-ONLY this run. The Blotato upload host (database.blotato.io) is
-  # network-egress-blocked from this cloud sandbox (same gap as the Oct 2026 runs) — see
-  # Review Sheet banner. A local session must run blotato_create_presigned_upload_url + PUT
-  # the bytes to get a public mediaUrls-ready link before this tile can be scheduled.
+  # Published 2026-11-11 using raw.githubusercontent.com/shop-at-mela/mela-docs/main/... URLs for
+  # the 3 slide PNGs (mela-docs is a public repo, so Blotato's own servers fetched them directly;
+  # no presigned-upload to database.blotato.io was needed).
 
 # PINTEREST
 pinterest:
@@ -109,4 +109,5 @@ notes:
   category_note: "Alternates type from last batch (10-28 run used craft-handloom, cultural_education) — this is trust_service, keeping the weekly cadence alternation per education-topics.yaml meta.cadence."
   copy_quality: "No dashes; short sentences; no verify:true claim (none on this topic); no brand named/claimed; no shipping/duties mention (topic doesn't need one)."
   topic_selection: "Scored candidates: pay-01 and returns-01 also scored +3 (type-alternate +2, no-recent-brand-overlap +1 on an 'any' source_brands topic) but both carry verify:true platform-mechanic claims (checkout currency handling; per-brand return policy) that need confirmation this cloud session could not do safely. sizing-01 scored +2 (type-alternate only; its source_brands list includes fizzy-goblet, used in the still-open PR #6) but carries NO verify:true claim and is general public sizing-convention knowledge, not a brand- or platform-specific promise — safer to ship unattended. Presenting sizing-01 as the pick, pay-01 as the runner-up, per social-launch SKILL.md Phase 1's 'never auto-take #1' top-2 framing, resolved here without a human in the loop given this is a scheduled unattended run."
-  team_feedback: null  # pending founder + wife grid sign-off
+  team_feedback: null  # wife grid-shape sign-off explicitly waived by founder for this publish
+  publish_override: "Published 2026-11-11 on explicit founder instruction; this tile was already a genuine SHIP (no watermark/QC gap), so the only thing waived here was the wife grid-shape sign-off. Reddit leg stays draft-only/not posted per reddit-strategy.md's human-posted-only policy — not part of this publish."

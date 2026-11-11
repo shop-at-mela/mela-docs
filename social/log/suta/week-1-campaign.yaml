@@ -7,8 +7,8 @@
 brand: Suta
 brand_slug: suta
 week: 1
-date_posted: null
-status: staged
+date_posted: "2026-11-11"
+status: posted
 platforms:
   - instagram
   - pinterest
@@ -19,7 +19,7 @@ category: fashion
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: full                 # brand's first-ever Mela post -> FULL lane per pre-publish-gate.md Step 0
 hypothesis: "Angle 3 (how it's actually made) with Arun lead: does framing mul cotton as 'nobody taught you what handloom is supposed to feel like' (craft explained as a safe entry point, no assumed knowledge) out-save a generic craft-fact hook for a brand-new, never-before-posted brand?"
-gate_verdict: ship_pending_manual_verification   # copy + listing-live clear; watermark + render QC blocked by cloud network egress this run (database.blotato.io / cdn.shopify.com both unreachable) — see Review Sheet banner
+gate_verdict: "ship_pending_manual_verification, PUBLISHED ANYWAY 2026-11-11 — founder explicitly overrode the watermark/render-QC hold and the FULL-lane brand-page UX audit + wife grid-shape sign-off via chat instruction ('ignore the watermarking going ahead. Also publish without any wife QC. I can delete it later once it is published if I dont like it.'). Images shipped unwatermarked and un-diffed against source; Dharani's zari-border detail risk was not founder-eyeballed before shipping as originally flagged."
 coaching_notes: "Diaspora anchor: situation-first ('nobody taught you'), never identity ('your Indian saree') — compliant. Woven-pattern fidelity (Dharani's zari border) is a render detail-risk, flagged for founder eyeball before shipping per visual-scorecard.md Stage 0 morph gate."
 northstar_metric:
   instagram_saves: null
@@ -27,7 +27,8 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null   # not created — blotato_create_post never called this run
+  submission_id: 1643cdc0-43df-4599-8c4d-e661b6a8caa6
+  published_url: https://www.instagram.com/p/DfmspsDkVJd/
   destination: https://shopatmela.com/brands/suta
   caption: |
     Nobody taught you what a handloom saree is supposed to feel like. Here's what you're actually wearing.
@@ -83,8 +84,9 @@ pinterest:
 
   pins:
     - name: Manjaadi
-      status: excluded   # not submitted — blotato_create_post never called this run
-      submission_id: null
+      status: posted
+      submission_id: b5f0dcb7-16f4-408a-99be-73eb2e9509f4
+      published_url: https://www.pinterest.com/pin/1103593083725244205
       board_id: "1103593152379779116"
       title: Manjaadi | Suta Handloom Mul Cotton Saree
       description: Handloom mul cotton saree woven by Suta's weavers in Bengal. Soft, breathable drape, light enough to wear often. Discovered on Mela.
@@ -94,8 +96,9 @@ pinterest:
       link: https://www.shopatmela.com/l/6ae02528-ec3c-4e37-9857-f953de3b1570?utm_source=pinterest&utm_medium=social&utm_campaign=suta_w1&utm_content=manjaadi
 
     - name: Dharani
-      status: excluded
-      submission_id: null
+      status: posted
+      submission_id: ad2abf5c-08a6-4ba1-9052-cc310d5549b4
+      published_url: https://www.pinterest.com/pin/1103593083725244209
       board_id: "1103593152379779116"
       title: Dharani | Suta Handloom Saree with Zari Border
       description: Mul cotton saree with a zari border, handwoven by Suta's weavers in Bengal. Dressier drape for weddings and festive occasions. Discovered on Mela.
@@ -105,8 +108,9 @@ pinterest:
       link: https://www.shopatmela.com/l/6ae02530-cce4-4cc9-b999-c521fefcf04f?utm_source=pinterest&utm_medium=social&utm_campaign=suta_w1&utm_content=dharani
 
     - name: Aavani
-      status: excluded
-      submission_id: null
+      status: posted
+      submission_id: f63800d0-53b3-45b1-a95e-578a5e67aadf
+      published_url: https://www.pinterest.com/pin/1103593083725244215
       board_id: "1103593152379779116"
       title: Aavani | Suta Handloom Mul Cotton Saree
       description: Handloom mul cotton saree woven by Suta's weavers in Bengal. Light, breathable drape for everyday wear. Discovered on Mela.
@@ -150,4 +154,5 @@ notes:
   copy_quality: "No dashes; short sentences; situation-first hook (Diaspora Anchoring); brand named as shipping actor; no @tagging; no duties claim (Suta is DDU, not DDP)."
   product_diversity: "3 never-before-featured dev_listing_ids, all mul cotton Malli Pove collection sarees."
   cooldown_check: "clear — Suta has no prior campaign log; brand never posted before this run."
-  team_feedback: null  # pending founder + wife grid sign-off
+  team_feedback: null  # wife grid-shape sign-off explicitly waived by founder for this publish
+  publish_override: "Published 2026-11-11 on explicit founder instruction ('publish all posts except Superbottoms from this week and previous week's schedule'), skipping the watermark/render-QC hold, the FULL-lane brand-page UX audit, and the wife grid-shape sign-off."
