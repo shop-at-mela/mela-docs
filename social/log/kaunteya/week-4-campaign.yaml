@@ -1,0 +1,153 @@
+# Mela Social Campaign — Kaunteya, Week 4
+# Automated weekly staging run (mela-docs/social/social-automation-strategy.md).
+# Status: staged — NOT scheduled, NOT published. Founder approval + wife grid sign-off pending.
+
+---
+# METADATA
+brand: Kaunteya
+brand_slug: kaunteya
+week: 4
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Priya
+category: home_and_kitchen
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast                 # vetted brand (4th campaign), real product photo staged via Product Scene Placement, all 3 listings verified OPEN this run
+hypothesis: "Angle 1 (belonging / suitcase economy) with Priya lead, on a NEW Dasara collection (never used; prior Kaunteya posts used Airavata/Byah motifs): does 'the bone china you'd wait for a trip to Delhi to bring home now ships to your door' out-save a product-fact-only hook for home_and_kitchen?"
+gate_verdict: ship_pending_manual_verification   # copy + listing-live clear; watermark + render QC blocked by cloud network egress this run (database.blotato.io / cdn.shopify.com both unreachable) — see Review Sheet banner
+coaching_notes: "Diaspora anchor: situation-first ('wait for a trip to Delhi'), never identity — compliant. Hand-painted turquoise floral motif is a DETAIL-CRITICAL render per visual-scorecard.md Stage 0 morph gate (fine hand-paint) — flag for founder eyeball before shipping, do not ship on AI QA alone even once network access returns."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: null   # not created — blotato_create_post never called this run
+  destination: https://shopatmela.com/brands/kaunteya
+  caption: |
+    The bone china you'd normally wait for a trip to Delhi to bring home now ships straight to your door.
+
+    Kaunteya hand paints every piece in Delhi. The Dasara collection's turquoise blue motifs are inspired by the interiors of Mysore Palace. It's fine bone china, light enough for daily coffee, not just the festival table.
+
+    Featured in this carousel:
+    • Dasara Coffee Mug
+    • Dasara Jug
+    • Dasara Mini Tea Mug
+
+    Discover Kaunteya on Mela →
+
+    Ships to the US.
+    #BoneChina #HandPainted #IndianCeramics #DiscoveredOnMela
+
+  products:
+    - name: Dasara Coffee Mug
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-ef38ae58-bab9-4c83-a1d2-3cd56967913a.jpg  # Blotato Product Scene Placement render — UNWATERMARKED, UNINSPECTED this run (see banner)
+      blotato_design_id: 7d6cfa16-57e6-4ec4-aac7-3307dcd1cb28
+      source_photo: https://cdn.shopify.com/s/files/1/0560/0198/6604/products/01-1_d5e6ce53-3b9c-4adb-a1e9-fbc50326a007.jpg?v=1642073998
+      alt_text: Kaunteya hand painted bone china coffee mug with turquoise blue floral motif on a marble kitchen counter
+      price_usd: 29
+      dev_listing_id: 6a5cd955-4c43-40bb-bba8-ea061d906d30
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd955-4c43-40bb-bba8-ea061d906d30
+      live_verified: "OPEN/Live, USD $29, 'Fine Bone China' claim confirmed verbatim on live listing (2026-11-04)"
+
+    - name: Dasara Jug
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0bd70294-1372-434a-bdbf-e632b724f75f.jpg
+      blotato_design_id: 761d9498-18f2-47a5-8b47-7517f5118b80
+      source_photo: https://cdn.shopify.com/s/files/1/0560/0198/6604/products/alf0482.jpg?v=1732103080
+      alt_text: Kaunteya hand painted bone china jug with turquoise blue floral motif on a wood breakfast table
+      price_usd: 78
+      dev_listing_id: 6a5cd986-84be-4d87-bb4b-b1339c791ebf
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd986-84be-4d87-bb4b-b1339c791ebf
+      live_verified: "OPEN/Available, USD $78, 'Fine Bone China' claim confirmed verbatim on live listing (2026-11-04)"
+
+    - name: Dasara Mini Tea Mug
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-cc071703-acec-4e5c-8dee-737edcfaac82.jpg
+      blotato_design_id: d6aaf0ce-cab9-4035-9b2d-1d9902f3d364
+      source_photo: https://cdn.shopify.com/s/files/1/0560/0198/6604/products/alf0494.jpg?v=1677926586
+      alt_text: Kaunteya hand painted bone china mini tea mug with turquoise blue floral motif on a wooden side table
+      price_usd: 21
+      dev_listing_id: 6a5cd98f-c9eb-4e6f-8bb6-bcd69bd22ec0
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd98f-c9eb-4e6f-8bb6-bcd69bd22ec0
+      live_verified: "OPEN/In stock, USD $21, 'Fine Bone China' claim confirmed verbatim on live listing (2026-11-04)"
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Home and Kitchen   # category-routing.yaml -> pinterest_boards.boards.home
+      board_id: "1103593152379723626"
+
+  pins:
+    - name: Dasara Coffee Mug
+      status: excluded   # not submitted — blotato_create_post never called this run
+      submission_id: null
+      board_id: "1103593152379723626"
+      title: Dasara Coffee Mug | Kaunteya Hand Painted Bone China
+      description: Hand painted bone china coffee mug by Kaunteya, Delhi. Turquoise blue motifs inspired by Mysore Palace interiors. Discovered on Mela.
+      alt_text: Kaunteya hand painted bone china coffee mug with turquoise blue floral motif on a marble kitchen counter
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-ef38ae58-bab9-4c83-a1d2-3cd56967913a.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd955-4c43-40bb-bba8-ea061d906d30
+      link: https://www.shopatmela.com/l/6a5cd955-4c43-40bb-bba8-ea061d906d30?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w4&utm_content=dasara_coffee_mug
+
+    - name: Dasara Jug
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723626"
+      title: Dasara Jug | Kaunteya Hand Painted Bone China
+      description: Hand painted bone china jug by Kaunteya, Delhi. Turquoise blue motifs inspired by Mysore Palace interiors. Discovered on Mela.
+      alt_text: Kaunteya hand painted bone china jug with turquoise blue floral motif on a wood breakfast table
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0bd70294-1372-434a-bdbf-e632b724f75f.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd986-84be-4d87-bb4b-b1339c791ebf
+      link: https://www.shopatmela.com/l/6a5cd986-84be-4d87-bb4b-b1339c791ebf?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w4&utm_content=dasara_jug
+
+    - name: Dasara Mini Tea Mug
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723626"
+      title: Dasara Mini Tea Mug | Kaunteya Hand Painted Bone China
+      description: Hand painted bone china mini tea mug by Kaunteya, Delhi. Turquoise blue motifs inspired by Mysore Palace interiors. Discovered on Mela.
+      alt_text: Kaunteya hand painted bone china mini tea mug with turquoise blue floral motif on a wooden side table
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-cc071703-acec-4e5c-8dee-737edcfaac82.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5cd98f-c9eb-4e6f-8bb6-bcd69bd22ec0
+      link: https://www.shopatmela.com/l/6a5cd98f-c9eb-4e6f-8bb6-bcd69bd22ec0?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w4&utm_content=dasara_mini_tea_mug
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/kaunteya
+  checks:
+    brand_story:
+      result: tbd
+      note: Brand page not reachable from this cloud session (shopatmela.com blocked); batched per FAST lane, verify on next weekly audit
+    artisan_details:
+      result: tbd
+      note: Batched
+    cultural_context:
+      result: tbd
+      note: Batched
+    aesthetic_match:
+      result: tbd
+      note: Batched
+    product_findability:
+      result: tbd
+      note: Batched
+    mobile_responsive:
+      result: tbd
+      note: Batched
+  observations:
+    - theme: clean
+      severity: low
+      status: open
+      description: "FAST lane batches the UX destination audit (weekly, not per-post); no page-specific promise made in this caption that would force a per-post check."
+      mitigation: null
+
+# NOTES
+notes:
+  category_note: "Kaunteya week 4. New Dasara collection (turquoise/Mysore Palace motif) — previous 3 weeks used Airavata and Byah designs, all different dev_listing_ids, no repeat."
+  copy_quality: "No dashes; short sentences; situation-first hook (Diaspora Anchoring); brand named as shipping actor; no @tagging; no duties claim (Kaunteya is DDU, not DDP)."
+  product_diversity: "3 never-before-featured dev_listing_ids (Dasara collection); distinct from week-1's Airavata/Byah and week-3's Dasara-adjacent Airavata-Swan set."
+  cooldown_check: "clear — all 3 dev_listing_ids confirmed never featured in any prior kaunteya/week-*.yaml (checked week-1, week-2, week-3). Brand last posted non-recently (outside the 7-day brand_recency_days window)."
+  team_feedback: null  # pending founder + wife grid sign-off

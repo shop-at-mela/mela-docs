@@ -1,0 +1,72 @@
+/* ============================================================
+   Mela Social — shared brand kit for HTML card templates.
+   Edit brand tokens HERE ONCE; every card inherits them.
+   Cards are sized to the render viewport (100vw x 100vh), so the
+   SAME file renders at any ratio just by changing --window-size:
+     square 1080x1080  |  story 1080x1920  |  pin 1000x1500
+   Type/spacing use vmin (ties to the narrower side = width in all
+   our ratios), so text scales consistently across ratios.
+   ============================================================ */
+
+:root {
+  /* palette */
+  --navy:       #2D2D7B;   /* Mela navy   */
+  --navy-deep:  #20204f;
+  --marigold:   #F0A030;   /* Mela marigold accent */
+  --cream:      #F3EDE3;   /* warm earthy baseline */
+  --cream-deep: #EAE0CF;
+  --ink:        #23233f;
+  --muted:      #6b6450;
+
+  /* type */
+  --serif: "Baskerville", "Didot", Georgia, "Times New Roman", serif; /* display */
+  --sans:  "Helvetica Neue", Arial, sans-serif;                        /* labels  */
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* The card = the post. Fills the render viewport. */
+.card {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding: 9vmin 8.5vmin;
+  font-family: var(--serif);
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- shared components --- */
+.kicker {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.55vmin;
+  font-size: 2.4vmin;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.rule {
+  width: 9vmin;
+  height: 0.75vmin;
+  background: var(--marigold);
+  margin: 3.5vmin 0 4.5vmin;
+}
+
+/* "Discovered on Mela" watermark — baked into the layer (never a
+   Blotato prompt; see visual-style-guide.md guardrails). */
+.watermark {
+  position: absolute;
+  bottom: 5.5vmin;
+  right: 8.5vmin;
+  font-family: var(--sans);
+  font-size: 2.1vmin;
+  letter-spacing: 0.15vmin;
+  color: var(--navy);
+  opacity: 0.75;
+}
+.watermark b { font-weight: 700; }
+.watermark--light { color: var(--cream); opacity: 0.8; }
