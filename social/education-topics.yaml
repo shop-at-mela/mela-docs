@@ -138,7 +138,11 @@ topics:
     personas: [arun]
     source_brands: [fizzy-goblet, needledust]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-10-14, paired with Fizzy Goblet week-3 brand row (same
+                  # brand, same craft — City Palace Juttis is the exact listing the claim is grounded
+                  # in); claim verified against shopify_brands.py brand_craft, not just the CSV. See
+                  # social/log/_education/craft-juttis-w1-campaign.yaml.
 
   - id: craft-handloom
     type: cultural_education
