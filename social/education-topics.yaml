@@ -96,7 +96,10 @@ topics:
     platforms: [instagram, reddit]
     personas: [sarah, arun]
     source_brands: [fizzy-goblet, the-alternate, gully-labs]
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-11-04, paired thematically with Suta (fashion) +
+                  # Kaunteya (home_and_kitchen) week batch; led by Sarah (see
+                  # social/log/_education/sizing-01-w1-campaign.yaml). Reddit leg drafted, not posted.
 
   # ---- Trust / service (brand-specific quality / materials — VERIFY on brand page) ----
   - id: quality-superbottoms
@@ -138,7 +141,11 @@ topics:
     personas: [arun]
     source_brands: [fizzy-goblet, needledust]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-10-14, paired with Fizzy Goblet week-3 brand row (same
+                  # brand, same craft — City Palace Juttis is the exact listing the claim is grounded
+                  # in); claim verified against shopify_brands.py brand_craft, not just the CSV. See
+                  # social/log/_education/craft-juttis-w1-campaign.yaml.
 
   - id: craft-handloom
     type: cultural_education
@@ -158,7 +165,8 @@ topics:
     personas: [priya, arun]
     source_brands: [isharya, tarinika, curio-cottage]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-10-21, paired with Tarinika week-3 brand row; led by Arun. Claim grounded in shopify_brands.py Tarinika brand_story + re-confirmed live via blotato_create_source. See social/log/_education/craft-jewelry-w1-campaign.yaml.
 
   - id: craft-ayurveda-baby
     type: cultural_education
@@ -208,7 +216,8 @@ topics:
     personas: [sarah, neha]
     source_brands: [vilvah]
     verify: true  # confirm "own farm" + no-synthetic-chemicals claim against Vilvah's own site before publishing
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-11-11, Neha lead (belonging/suitcase-economy angle); see social/log/_education/craft-farm-to-bottle-beauty-w1-campaign.yaml
     note: Accurate replacement for Vilvah's angle — single-farm sourcing, cold-pressed oils, no synthetic chemicals, per shopify_brands.py brand_story (not the "Ayurvedic" CSV mistag).
 
   - id: craft-chikankari

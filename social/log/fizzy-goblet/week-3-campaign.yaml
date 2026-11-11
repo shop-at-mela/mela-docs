@@ -1,0 +1,158 @@
+# Mela Social Campaign — Fizzy Goblet Week 3 (product post)
+# Staged via the automated weekly staging routine on 2026-10-14. STATUS: staged, not scheduled.
+
+---
+brand: Fizzy Goblet
+brand_slug: fizzy-goblet
+week: 3
+date_posted: null   # not yet scheduled — staged for founder approval
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Sarah
+category: fashion
+content_type: product
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast                 # vetted brand (week 3), real product photos, all 3 listings verified OPEN this run
+hypothesis: "Angle 4 (claim-decoded) with Sarah lead — does naming the exact hand-worked steps behind 'handcrafted' (Kantha stitch, hand-cut upper, hand-stitched sole) out-save a generic artisan-footwear carousel with no specificity?"
+gate_verdict: ship_pending_manual_verification   # copy + listing-live clear; watermark + render QC blocked by infra this run (see notes.infra_gap)
+coaching_notes: >
+  Diaspora anchor present but secondary by design (angle 4, Sarah's materials/claim-decoded lane,
+  not a situation hook). Scene itself (US home/closet context) is the primary anchor per
+  visual-style-guide.md since product photos carry no caption text. Craft claim ("hand-stitched
+  juttis") verified against shopify_brands.py brand_craft (highest-trust source), not just the CSV.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: null   # not posted — no blotato_create_post call made this run
+  destination: https://shopatmela.com/brands/fizzy-goblet?utm_source=instagram&utm_medium=social&utm_campaign=fizzygoblet_w3&utm_content=brand_carousel
+  caption: |
+    "Handcrafted" shows up on every shoe tag now. Here's what actually took a human hand on these three.
+
+    Fizzy Goblet's karigars in Mumbai hand-stitch each pair. Kantha running-stitch and silver embellishment on the City Palace juttis. Hand-embroidered floral jacquard on the Blackcurrant Granola wedges. Pearl-accented tweed on the Black Swan sliders. Double-density memory foam keeps them wearable all day.
+
+    Featured in this carousel:
+    • City Palace Juttis
+    • Blackcurrant Granola Wedges
+    • Black Swan Bomba Sliders
+
+    Discover Fizzy Goblet on Mela →
+
+    📍 Handcrafted in Mumbai. Ships to the US from Fizzy Goblet.
+    #Juttis #HandcraftedFootwear #IndianCraftsmanship #ArtisanShoes #DiscoveredOnMela
+
+  products:
+    - name: City Palace Juttis
+      source_image_url: https://cdn.shopify.com/s/files/1/0274/8586/4013/files/CityPalaceGlobalcover_11zon.jpg?v=1736745505
+      blotato_render_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-898de1f2-a242-43fc-86ce-97a30c1747c6.jpg
+      blotato_visual_id: 348a65ed-f9fc-4640-904e-7404168e8bd5
+      watermarked: false   # BLOCKED this run — database.blotato.io unreachable for download/diff/re-upload, see notes.infra_gap
+      alt_text: "Beige handcrafted juttis with silver embellishments and Kantha stitching on a warm marble surface with draped gold silk"
+      price_usd: 66
+      dev_listing_id: 6a17bc80-cd00-4ddf-9667-6169baa1a07a
+      shopatmela_url: https://www.shopatmela.com/l/6a17bc80-cd00-4ddf-9667-6169baa1a07a
+      listing_live_verified: true   # via blotato_create_source 2026-10-14 — title/price/craft claims verbatim match
+
+    - name: Blackcurrant Granola Wedges
+      source_image_url: https://cdn.shopify.com/s/files/1/0274/8586/4013/files/BlackcurrantGranolaglobalcover_11zon.jpg?v=1736745385
+      blotato_render_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-87c97c2e-1c53-4c32-84b8-d44debdf9c1a.jpg
+      blotato_visual_id: b64a378a-1b69-4993-a399-24c495ea5952
+      watermarked: false
+      alt_text: "Black floral jacquard wedge sandals with embroidered beaded detail on a warm wood surface with dried flowers"
+      price_usd: 69
+      dev_listing_id: 6a17b67e-5904-4d73-8903-419fae4705c7
+      shopatmela_url: https://www.shopatmela.com/l/6a17b67e-5904-4d73-8903-419fae4705c7
+      listing_live_verified: true
+
+    - name: Black Swan Bomba Sliders
+      source_image_url: https://cdn.shopify.com/s/files/1/0274/8586/4013/files/Black-Swan--Bomba-Sliders-global-cover.jpg?v=1772519246
+      blotato_render_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b1e3b031-5f24-408f-b4b1-54b5fc13cabb.jpg
+      blotato_visual_id: 03ff7739-61ae-4165-81c5-253281b16b73
+      watermarked: false
+      alt_text: "Black tweed sliders with pearl accents on a warm neutral stone surface with draped ivory fabric"
+      price_usd: 60
+      dev_listing_id: 6a17b670-be58-47a6-b1be-32562075c9d0
+      shopatmela_url: https://www.shopatmela.com/l/6a17b670-be58-47a6-b1be-32562075c9d0
+      listing_live_verified: true
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Handmade Indian Juttis & Artisan Footwear
+      board_id: "1103593152379641541"   # confirmed via blotato_list_pinterest_boards 2026-10-14
+
+  pins:
+    - name: City Palace Juttis
+      status: staged   # staged | scheduled | posted — not yet scheduled
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Handcrafted Kantha Stitch Juttis | Silver Embellished Indian Footwear
+      description: City Palace juttis hand-stitched in Mumbai with Kantha running-stitch and silver embellishments. Festive-ready flats with double cushioning. Fizzy Goblet on Mela.
+      alt_text: "Beige handcrafted juttis with silver embellishments and Kantha stitching on a warm marble surface with draped gold silk"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-898de1f2-a242-43fc-86ce-97a30c1747c6.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17bc80-cd00-4ddf-9667-6169baa1a07a
+      link: https://www.shopatmela.com/l/6a17bc80-cd00-4ddf-9667-6169baa1a07a?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w3&utm_content=city_palace_juttis
+
+    - name: Blackcurrant Granola Wedges
+      status: staged
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Embroidered Floral Jacquard Wedges | Handcrafted Indian Footwear
+      description: Blackcurrant Granola wedges in floral jacquard with hand-embroidered beading, a 3 inch heel, and memory foam padding. Handcrafted in Mumbai by Fizzy Goblet. Discovered on Mela.
+      alt_text: "Black floral jacquard wedge sandals with embroidered beaded detail on a warm wood surface with dried flowers"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-87c97c2e-1c53-4c32-84b8-d44debdf9c1a.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b67e-5904-4d73-8903-419fae4705c7
+      link: https://www.shopatmela.com/l/6a17b67e-5904-4d73-8903-419fae4705c7?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w3&utm_content=blackcurrant_granola_wedges
+
+    - name: Black Swan Bomba Sliders
+      status: staged
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Tweed Bomba Sliders with Pearl Accents | Handcrafted Indian Footwear
+      description: Black Swan sliders in tweed with pearl accents and double-density memory foam, handcrafted in Mumbai. Fizzy Goblet on Mela.
+      alt_text: "Black tweed sliders with pearl accents on a warm neutral stone surface with draped ivory fabric"
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b1e3b031-5f24-408f-b4b1-54b5fc13cabb.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a17b670-be58-47a6-b1be-32562075c9d0
+      link: https://www.shopatmela.com/l/6a17b670-be58-47a6-b1be-32562075c9d0?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w3&utm_content=black_swan_bomba_sliders
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/fizzy-goblet
+  checks:
+    brand_story: { result: pass, note: "Craft origin + karigar framing confirmed live via blotato_create_source" }
+    artisan_details: { result: pass, note: "Hand-stitched juttis claim matches shopify_brands.py brand_craft" }
+    cultural_context: { result: pass, note: "Footwear heritage positioning clear" }
+    aesthetic_match: { result: tbd, note: "Render QC blocked this run, see notes.infra_gap" }
+    product_findability: { result: pass, note: "Product names listed in caption" }
+    mobile_responsive: { result: tbd, note: "Needs verification locally" }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  cooldown_check: "CLEAR — none of these 3 dev_listing_ids appear in week-1 or week-2 Fizzy Goblet logs (checked via grep across social/log/fizzy-goblet/*.yaml); brand itself last posted 2026-07-02 (~104 days ago), well clear of the 7-day brand_recency_days window."
+  category_concentration: "CLEAR — last 3 confirmed product-row categories (newest first): beauty_and_wellness (Vilvah, 2026-10-12), home_and_kitchen (Kaunteya, 2026-10-10), jewelry_and_accessories (Isharya, 2026-10-09). Adding fashion here does not create a 3-in-a-row."
+  persona_fatigue: "Checked — last 5 confirmed leads before this batch (newest first): Neha (education, 10-13), Sarah (Vilvah, 10-12), Priya (Kaunteya, 10-10), Neha (Isharya, 10-09), Arun (House of Chikankari, today's Pinterest pins). Sarah was at 1/5; this tile brings her to 2/5, still clear of the 3-of-5 fatigue threshold."
+  infra_gap: >
+    Same class of cloud-sandbox egress gap as the three prior staging runs (week-of-2026-09-30,
+    week-of-2026-10-04, week-of-2026-10-07): database.blotato.io and cdn.shopify.com both return
+    403 connect_rejected from this environment's agent-proxy (confirmed via direct curl + the proxy
+    status endpoint). shopatmela.com direct fetch is also blocked, but blotato_create_source reaches
+    it server-side from Blotato's own infrastructure and worked cleanly for all 6 listings + both
+    brand pages this run. Net effect: the 3 renders above are NOT watermarked and have NOT been
+    downloaded/diffed against source for morph, color drift, or garbled text. A local session with
+    unrestricted network must download each blotato_render_url, diff it against source_image_url,
+    composite the watermark via templates/render.sh (or templates/photo-watermark.html as a
+    real-photo fallback if a render is bad), and re-host via blotato_create_presigned_upload_url
+    before this batch can be scheduled.
+  morph_risk: "LOW — footwear is a rigid/simple product category per visual-scorecard.md Stage 0 (not fine-gold/jewelry/label-forward), so morph risk on these 3 renders is expected to be low, but this is unconfirmed without the pixel diff above."

@@ -1,0 +1,194 @@
+---
+# Isharya Week 3 — staged via automated cloud weekly run 2026-10-28
+# (social-staging/week-of-2026-10-28). Brand last featured week-2, 2026-10-04 (24 days clear of
+# brand_recency_days=7). All 3 products below are NEW dev_listing_ids never featured in any prior
+# campaign log (cooldown CLEAR). STATUS: staged for founder approval. No blotato_create_post call
+# was made.
+
+brand: Isharya
+brand_slug: isharya
+week: 3
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Priya
+category: jewelry_and_accessories
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast   # vetted brand (week 3) + real product photos + all 3 listings verified OPEN this run
+hypothesis: "Angle 5 (occasion-in-America) with Priya lead on mirror/pearl statement jewelry — does an explicit wedding-season-in-the-US hook out-save a generic jewelry carousel, and does varying off Neha (used w1+w2) to Priya change engagement for the same brand?"
+gate_verdict: SHIP-PENDING-MANUAL-VERIFICATION   # see verification_gaps — copy + listing-live clear; watermark compositing + render QC blocked by infra this run; detailed jewelry ALSO needs founder eyeball per visual-scorecard.md Stage 0 morph gate
+coaching_notes: >
+  Diaspora anchor: present via angle 5 occasion framing (wedding season in the US), matches
+  hook-engineering.md angle 5. Priya picked over Neha (jewelry_and_accessories' other allowed
+  persona, used for both of Isharya's prior 2 posts) specifically to rotate personas — Neha was
+  2 of the last 5 confirmed leads before this batch. Priya guardrail observed: avoided
+  "traditional/ethnic/Bollywood/costume" entirely in copy, including in negation form.
+  **MORPH-RISK FLAG (per visual-style-guide.md + visual-scorecard.md Stage 0):** all 3 items are
+  fine mirror/pearl/gold-plated jewelry — detail-critical products. The Stage-0 morph gate
+  requires showing the founder the render before shipping for this product class; combined with
+  this run's inability to even view the renders (see verification_gaps), this tile needs a
+  founder eyeball on render fidelity before it ships, not just a watermark pass.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION GAPS — read before approving
+verification_gaps:
+  dev_listing_id_collision: >
+    isharya_products_classified.csv has the SAME Dev_Listing_ID drift bug documented in
+    log/isharya/week-2-campaign.yaml (see project_listing_id_drift_bug): dev_listing_id
+    6a54b762-e641-4b8d-8d22-479cf22ba6a0 appears on BOTH the "Amara CZ Pearl Statement Cuff" row
+    (Out of Stock, $130ish) AND the "Ayaana Pearl & Surrounded Mirrors Stud" row (In Stock,
+    bestseller, $52); dev_listing_id 6a54b87c-a947-469b-80e2-b33c911928c9 appears on BOTH the
+    "Amara Mirror Pearl Necklace" row (Out of Stock) AND the "Blue Shell Hoops" row (In Stock,
+    bestseller, $42). Resolved both in favor of the IN-STOCK product: blotato_create_source
+    independently confirmed the LIVE shopatmela.com page at each URL actually shows the Ayaana
+    stud and the Blue Shell Hoops respectively (title, price, and claims verbatim-match those
+    rows, NOT the out-of-stock Amara Cuff/Necklace rows). All copy, alt text, and the source image
+    used for rendering below come from the verified-live product (Ayaana stud / Blue Shell Hoops),
+    never from the out-of-stock duplicate-ID row.
+  listing_live_check: >
+    PERFORMED via blotato_create_source (direct shopatmela.com fetch is blocked by this cloud
+    session's egress policy — confirmed via curl, WebFetch, and the agent-proxy status endpoint,
+    same infra constraint every prior automated staging run has hit). All 3 listings resolved to
+    real, matching, IN-STOCK content: title, brand, price (USD, matching CSV INR at ~83:1), and
+    material claims (mirror, pearl, 18K/18Kt gold plating; blue corundum for the hoops) all
+    confirmed live and verbatim-matching. Treat all 3 as LISTING LIVE / OPEN.
+  render_watermark_and_qc: >
+    NOT PERFORMED this run. blotato_create_design (Product Scene Placement template
+    f524614b-ba01-448c-967a-ce518c52a700) succeeded for all 3 products (status: done). But
+    database.blotato.io is blocked for this session (confirmed via curl -o, WebFetch, AND a live
+    blotato_create_presigned_upload_url + curl -X PUT round-trip, all failing with "CONNECT
+    tunnel failed, response 403" / ENOTFOUND). The 3 renders below could NOT be downloaded, diffed
+    against source_image_url, watermarked, or re-hosted. They are shipped here UNWATERMARKED and
+    UNINSPECTED. Combined with the morph-risk flag above (fine detail jewelry), this is the
+    highest-priority tile for the founder to eyeball before scheduling.
+    REQUIRED before scheduling: a local/founder session with unrestricted network access must
+    download each render, diff it against its source_image_url (checking especially that the
+    mirror/pearl/gold-plating detail hasn't drifted or hallucinated), composite the watermark,
+    and re-host, replacing the image_url values below.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com/brands/isharya?utm_source=instagram&utm_medium=social&utm_campaign=isharya_w3&utm_content=brand_carousel"
+  caption: |
+    Got a wedding-season invite and nothing that feels festive enough? Isharya's mirror and pearl jewelry is made for exactly that night.
+
+    Each piece is finished in 18 karat gold plating with mirror and pearl work, designed in India for modern occasion dressing you will reach for again after the wedding too.
+
+    Featured in this carousel:
+    • Amara Mirror Pearl Bracelet
+    • Ayaana Pearl & Surrounded Mirrors Stud
+    • Blue Shell Hoops
+
+    Discover Isharya on Mela →
+
+    Designed in India. Ships to the US from Isharya.
+    #StatementJewelry #IndianJewelry #WeddingGuestStyle #MirrorWork #DiscoveredOnMela
+  products:
+    - name: Mughal-Inspired Pearl & Mirror Bracelet with Adjustable Gold-Tone Fastening (Amara Mirror Pearl Bracelet)
+      sku: amara-mirror-pearl-bracelet
+      dev_listing_id: 6a54b62a-cc30-431e-ad3c-74507336dd4e
+      shopatmela_url: https://www.shopatmela.com/l/6a54b62a-cc30-431e-ad3c-74507336dd4e
+      price_usd: 84
+      source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/products/B1392-20-127_2.jpg?v=1758786504
+      blotato_design_id: 76470662-d735-4cc5-9507-3f5a2b034301
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-32aa5af2-6ac6-412e-bd5f-d2531666599e.jpg  # UNWATERMARKED, UNINSPECTED — see verification_gaps
+      alt_text: Gold-tone mirror and pearl bracelet with adjustable fastening on warm cream linen with marigold petals
+      verified: true  # live listing resolved 2026-10-28; "Mughal-Inspired Pearl & Mirror Bracelet with Adjustable Gold-Tone Fastening", $84, Available/In stock, mirror + pearl + 18Kt gold plating
+      cooldown: clear — never featured in any prior campaign log, no dev_listing_id collision on this one
+    - name: Pearl & Mirror Stud Earrings with 18K Gold Plating (Ayaana Pearl & Surrounded Mirrors Stud)
+      sku: ayaana-pearl-surrounded-mirrors-stud
+      dev_listing_id: 6a54b762-e641-4b8d-8d22-479cf22ba6a0
+      shopatmela_url: https://www.shopatmela.com/l/6a54b762-e641-4b8d-8d22-479cf22ba6a0
+      price_usd: 52
+      source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/files/E1770-20-164_3.jpg?v=1773666255
+      blotato_design_id: 1dde4c72-33ec-431c-b5e5-9d510ec8285b
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-88ed6158-5018-4434-8089-ab51803b98bf.jpg  # UNWATERMARKED, UNINSPECTED — see verification_gaps
+      alt_text: Pearl and mirror stud earrings with 18K gold plating on warm cream linen beside a small vanity mirror
+      verified: true  # live listing resolved 2026-10-28; dev_listing_id collision with the out-of-stock "Amara CZ Pearl Statement Cuff" row resolved in favor of THIS in-stock product — see verification_gaps
+      cooldown: clear — never featured in any prior campaign log
+    - name: Blue Corundum Gold Plated Shell Hoop Earrings (Blue Shell Hoops)
+      sku: blue-shell-hoops
+      dev_listing_id: 6a54b87c-a947-469b-80e2-b33c911928c9
+      shopatmela_url: https://www.shopatmela.com/l/6a54b87c-a947-469b-80e2-b33c911928c9
+      price_usd: 42
+      source_image_url: https://cdn.shopify.com/s/files/1/0640/5167/5359/files/E2472-63-356_2.jpg?v=1758831719
+      blotato_design_id: ea74c55a-d894-46c8-954d-e7f045ba3830
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6474480c-930a-4335-8d4f-32d2e20e42d9.jpg  # UNWATERMARKED, UNINSPECTED — see verification_gaps
+      alt_text: Blue corundum gold plated shell hoop earrings on warm cream linen with marigold petals
+      verified: true  # live listing resolved 2026-10-28; dev_listing_id collision with the out-of-stock "Amara Mirror Pearl Necklace" row resolved in favor of THIS in-stock product — see verification_gaps
+      cooldown: clear — never featured in any prior campaign log
+
+# PINTEREST (jewelry_and_accessories -> "Indian Gift Ideas & Festive Occasions" board, the
+# shared board for both the `gifting` and `occasion` category-routing.yaml aliases)
+pinterest:
+  boards:
+    - name: Indian Gift Ideas & Festive Occasions
+      board_id: "1103593152379723628"
+  pins:
+    - name: Amara Mirror Pearl Bracelet
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Gold-Tone Mirror & Pearl Bracelet | Indian Statement Jewelry
+      description: Mughal-inspired mirror and pearl bracelet with adjustable gold-tone fastening, designed by Isharya. A wedding-guest ready piece you will wear again. Discover on Mela.
+      alt_text: Gold-tone mirror and pearl bracelet with adjustable fastening on warm cream linen with marigold petals
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-32aa5af2-6ac6-412e-bd5f-d2531666599e.jpg
+      link: https://www.shopatmela.com/l/6a54b62a-cc30-431e-ad3c-74507336dd4e?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w3&utm_content=amara_mirror_pearl_bracelet
+    - name: Ayaana Pearl & Surrounded Mirrors Stud
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Pearl & Mirror Stud Earrings | 18K Gold Plated Indian Jewelry
+      description: Pearl and mirror stud earrings with 18K gold plating by Isharya. Statement jewelry designed in India, for wedding season and beyond. Discover on Mela.
+      alt_text: Pearl and mirror stud earrings with 18K gold plating on warm cream linen beside a small vanity mirror
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-88ed6158-5018-4434-8089-ab51803b98bf.jpg
+      link: https://www.shopatmela.com/l/6a54b762-e641-4b8d-8d22-479cf22ba6a0?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w3&utm_content=ayaana_pearl_mirror_stud
+    - name: Blue Shell Hoops
+      status: staged
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Blue Corundum Gold Plated Hoop Earrings | Indian Jewelry
+      description: Blue corundum shell hoop earrings plated in 18 karat gold by Isharya. A statement piece for festive occasions, designed in India. Discover on Mela.
+      alt_text: Blue corundum gold plated shell hoop earrings on warm cream linen with marigold petals
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6474480c-930a-4335-8d4f-32d2e20e42d9.jpg
+      link: https://www.shopatmela.com/l/6a54b87c-a947-469b-80e2-b33c911928c9?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w3&utm_content=blue_shell_hoops
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/isharya
+  checks:
+    brand_story: { result: pass, note: "Brand page tagline confirmed live via blotato_create_source 2026-10-28: 'Bold statement jewelry, designed in India, worn worldwide.'" }
+    product_findability: { result: tbd, note: "Not checked beyond listing resolution this run (shopatmela.com direct browse blocked by egress policy)." }
+    mobile_responsive: { result: tbd, note: "Not checked this run." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  persona_fatigue_context: >
+    Last 5 confirmed/staged leads before this batch (newest first): Neha (trust-small-batch-01
+    edu, 10-07), Sarah (vilvah w3, 10-07), Priya (kaunteya w3, 10-07), Neha (isharya w2, 10-04),
+    Arun (house-of-chikankari w2, 10-04). Priya sits at 1 of last 5; this tile adds a 2nd, both
+    forced/preferred category rotations — Arun appears zero times across this batch's 3 tiles
+    once the craft-handloom education pick lands on Arun (see that log), so a follow-up batch
+    should favor Neha or Sarah for the next non-locked category.
+  category_concentration: >
+    Last 3 confirmed batches (newest first): home_and_kitchen + beauty_and_wellness (10-07),
+    jewelry_and_accessories + fashion (10-04), fashion + baby_and_kids (09-30).
+    jewelry_and_accessories was last touched 10-04 (24 days, 2 batches ago) — not part of the
+    immediate 3-in-a-row window. Clear.
+  brand_recency: "Isharya last featured week-2, 2026-10-04 — 24 days clear of the 7-day window."
+  excluded_this_run: "Fizzy Goblet, Baby Forest, Tarinika, Aagghhoo excluded — staged unmerged in open PR #6 (week-of-2026-10-14) and PR #7 (week-of-2026-10-21) per routine instructions."
+  brand_tagging: Not tagged — paused during warmup.
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."

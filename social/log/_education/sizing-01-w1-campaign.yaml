@@ -1,0 +1,113 @@
+# Mela Social Campaign — Education: sizing-01, Week 1
+# Automated weekly staging run (mela-docs/social/social-automation-strategy.md).
+# Status: staged — NOT scheduled, NOT published. Founder approval + wife grid sign-off pending.
+
+---
+# METADATA
+brand: null   # brand-agnostic trust_service topic — no single brand attribution
+brand_slug: _education/sizing-01
+week: 1
+date_posted: "2026-11-11"
+status: posted
+platforms:
+  - instagram
+  - reddit   # education-topics.yaml marks sizing-01 dual-platform [instagram, reddit]
+format: carousel   # 3 HTML/CSS cards: hook -> teaching -> myth-vs-fact close/CTA
+persona: Sarah
+category: trust_service
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full                 # education is always FULL lane
+hypothesis: "Angle 4 (claim/label decoded) with Sarah lead: does a precise, research-forward sizing-conversion carousel ('check the chart, not the label') out-save a generic shipping-timeline trust post, and does it serve Sarah's certs/precision persona lane better than this batch's craft-origin lane (Suta/Arun)?"
+gate_verdict: ship   # fully rendered locally and visually inspected end to end (no blocked network dependency); no verify:true claim at risk
+coaching_notes: "Diaspora anchor present but secondary by design — this is a brand-agnostic practical guide, not a situation hook; anchored instead in the general 'ordering from India' friction. No product shown at all (trust_service payoff = CTA card only, per visual-style-guide.md Education Visual System table) — compliant."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null   # N/A — this topic does not cross-post to Pinterest (trust_service platforms = [instagram, reddit] only)
+
+# INSTAGRAM
+instagram:
+  submission_id: 4508ebaa-769b-40c4-a0e7-beed28b78072
+  published_url: https://www.instagram.com/p/Dfms10qnJz0/
+  destination: "https://shopatmela.com?utm_source=instagram&utm_medium=social&utm_campaign=sizing-01_w1&utm_content=education_sizing"
+  caption: |
+    A US Medium isn't an Indian Medium. Here's how the numbers actually convert.
+
+    Many Indian brands size to UK or EU numbers, not US. A label that says "Medium" can mean a different measurement depending on the country, and footwear almost always runs in UK sizing, about a full size under the US number.
+
+    The fix is simple. Check the brand's own measurement chart before you order, not just the label name.
+
+    Discover true-to-size Indian brands on Mela →
+
+    #SizingGuide #IndianFashion #ShopSmart #DiscoveredOnMela
+
+  slides:
+    - name: slide1-hook
+      file: social/log/_education/sizing-01/renders/slide1-hook.png
+      source_html: social/log/_education/sizing-01/renders/slide1-hook.html
+      alt_text: "Text slide: A US Medium isn't an Indian Medium, here's how the numbers actually convert"
+      visual_qc: "PERFORMED — rendered locally at 1080x1080 via headless Chromium, inspected: legible at full size, no overflow, watermark subtle bottom-right, no product shown (hook card, per rule)"
+    - name: slide2-teaching
+      file: social/log/_education/sizing-01/renders/slide2-teaching.png
+      source_html: social/log/_education/sizing-01/renders/slide2-teaching.html
+      alt_text: "Text slide: why Indian sizing labels differ from US numbers — four short tips for apparel and footwear conversion"
+      visual_qc: "PERFORMED — first render had a text overflow on step 4 colliding with the watermark; shortened step copy and re-rendered; final version inspected clean, no overflow, no clipping"
+    - name: slide3-mythfact
+      file: social/log/_education/sizing-01/renders/slide3-mythfact.png
+      source_html: social/log/_education/sizing-01/renders/slide3-mythfact.html
+      alt_text: "Text slide: myth that US sizes fit the same in India, fact that UK and US sizes need converting, with a worked shoe-size example"
+      visual_qc: "PERFORMED — inspected: legible, watermark present and subtle on the fact panel, no product shown (trust_service payoff is CTA-only, per rule)"
+
+  # Published 2026-11-11 using raw.githubusercontent.com/shop-at-mela/mela-docs/main/... URLs for
+  # the 3 slide PNGs (mela-docs is a public repo, so Blotato's own servers fetched them directly;
+  # no presigned-upload to database.blotato.io was needed).
+
+# PINTEREST
+pinterest:
+  boards: []   # N/A — trust_service does not cross-post to Pinterest per category-routing.yaml -> content_types.trust_service
+  pins: []
+
+# REDDIT (draft only — NOT posted; reddit-strategy.md is human-posted-only, one real account, no automation)
+reddit:
+  status: draft_not_posted
+  candidate_subreddits:
+    - name: r/femalefashionadvice
+      note: "General fashion-advice community; named directly in reddit-strategy.md's seed-topic list ('US vs India sizing for footwear') — re-verify current self-promotion rules before posting."
+    - name: r/IndiaMoms
+      note: "Already-active per accounts.md; diaspora parents ordering festive/kids apparel from India hit this exact sizing confusion."
+  title: "PSA: Indian clothing and shoe sizes are not the same as US sizes, even when the label says so"
+  body: |
+    If you've ordered clothing or shoes from an Indian brand online and been surprised by the fit, here's why.
+
+    Most Indian apparel brands size to UK or EU numbering, not US. A label that says "Medium" can correspond to a different chest or bust measurement depending on which country's chart the brand uses. It is not the same "Medium" you are used to from a US retailer.
+
+    Footwear is the biggest gap. Indian shoe sizing almost always follows the UK scale, which runs about a full size below the equivalent US number. A UK 6 is close to a US women's 8.5, not a US 6.
+
+    Before you order: find the brand's actual measurement chart in inches or centimeters, not just the size name, and compare it to your own measurements. The label name is the least reliable part of the listing. The numbers are not.
+  mela_mention_policy: "No Mela mention in the post body, per reddit-strategy.md mode 2 (value-first, not a product plug). A brand mention belongs only in a reply if someone asks a follow-up question."
+  posted: false
+
+# UX REVIEW
+ux_review:
+  destination_url: "https://shopatmela.com"
+  checks:
+    brand_story:
+      result: pass
+      note: "N/A — brand-agnostic topic, destination is the Mela homepage, not a brand page"
+    product_findability:
+      result: pass
+      note: "N/A — no specific product promised"
+  observations:
+    - theme: clean
+      severity: low
+      status: open
+      description: "No UX mismatch risk — this post makes no page-specific promise (generic sizing guidance, homepage destination)."
+      mitigation: null
+
+# NOTES
+notes:
+  category_note: "Alternates type from last batch (10-28 run used craft-handloom, cultural_education) — this is trust_service, keeping the weekly cadence alternation per education-topics.yaml meta.cadence."
+  copy_quality: "No dashes; short sentences; no verify:true claim (none on this topic); no brand named/claimed; no shipping/duties mention (topic doesn't need one)."
+  topic_selection: "Scored candidates: pay-01 and returns-01 also scored +3 (type-alternate +2, no-recent-brand-overlap +1 on an 'any' source_brands topic) but both carry verify:true platform-mechanic claims (checkout currency handling; per-brand return policy) that need confirmation this cloud session could not do safely. sizing-01 scored +2 (type-alternate only; its source_brands list includes fizzy-goblet, used in the still-open PR #6) but carries NO verify:true claim and is general public sizing-convention knowledge, not a brand- or platform-specific promise — safer to ship unattended. Presenting sizing-01 as the pick, pay-01 as the runner-up, per social-launch SKILL.md Phase 1's 'never auto-take #1' top-2 framing, resolved here without a human in the loop given this is a scheduled unattended run."
+  team_feedback: null  # wife grid-shape sign-off explicitly waived by founder for this publish
+  publish_override: "Published 2026-11-11 on explicit founder instruction; this tile was already a genuine SHIP (no watermark/QC gap), so the only thing waived here was the wife grid-shape sign-off. Reddit leg stays draft-only/not posted per reddit-strategy.md's human-posted-only policy — not part of this publish."

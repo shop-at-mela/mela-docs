@@ -1,0 +1,137 @@
+---
+# craft-handloom education carousel — staged 2026-10-28 weekly staging run
+# (social-staging/week-of-2026-10-28). Topic id: craft-handloom (education-topics.yaml,
+# cultural_education, source_brands: [suta, chidiyaa], verify: true). Alternates type from last
+# confirmed-used topic (trust-small-batch-01, trust_service, 2026-10-07) per meta.cadence. NOT
+# paired with either of this week's brand rows (ChooseKind, Isharya) — neither makes a handloom
+# claim — so the content stays brand-agnostic and does not name suta or chidiyaa (their listings
+# were not verified this run; naming them without verification would violate the verify:true
+# discipline). Cards rendered 2026-10-28 via HTML/CSS -> PNG (local headless Chromium,
+# /opt/pw-browsers, no Blotato credits, no external network dependency) per
+# visual-style-guide.md Tool decision procedure. This is the ONE tile this run that could be
+# fully rendered AND visually inspected end to end (no blocked external fetch involved) — see
+# verification.render_qc. A layout overflow bug was caught and fixed on slide 2 before shipping
+# (step 4's text clipped under the watermark at the original spacing/font size) — see notes.
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: null
+status: staged
+platforms:
+  - instagram   # craft-handloom is IG-only per education-topics.yaml (not dual-platform)
+format: carousel
+persona: Arun
+category: cultural_education
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education content is always Full lane
+hypothesis: "Angle 3 (how it's actually made) with Arun lead — does a concrete process-mechanics hook (one yard = a full day on the loom) out-save a generic 'ancient craft' framing, and does putting Arun back in the lineup (he was absent from the last 2 confirmed batches) help rebalance persona coverage?"
+gate_verdict: SHIP   # fully rendered + visually inspected locally; no blocked dependency for this tile
+coaching_notes: >
+  Diaspora anchor: present but secondary by design (angle 3, craft-process explainer, no single
+  brand's origin story to anchor to since this topic isn't paired with either of this week's
+  brands). The caption's closing line ("the part a machine cannot do") ties into Arun's
+  craft-origin + cultural-context lead without naming the viewer's identity. Slide 1 is a
+  typographic hook card, never a product, per the hard rule. No payoff/product slide — this
+  topic's source_brands (suta, chidiyaa) are NOT part of this week's featured brands and were
+  not independently listing-verified this run, so no product claim or brand name is made
+  anywhere in this tile's copy, consistent with the verify:true discipline (education-topics.yaml
+  replenishment guardrail: don't claim what you haven't verified). The 4 teaching-card steps are
+  generic, well-established handloom-weaving mechanics (warp stringing, shuttle-throwing, row-by-
+  row pattern building, roughly a yard/day output), not a brand-specific or numeric claim that
+  needs a cited source.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION
+verification:
+  render_qc: >
+    Both slides rendered locally via headless Chromium (/opt/pw-browsers/chromium, --no-sandbox)
+    at 1080x1080 (2x scale) and visually reviewed (Read tool) this run. Slide 1 (hook): clean, no
+    overflow, watermark legible bottom-right. Slide 2 (teaching, 4 steps): FIRST RENDER had an
+    overflow bug — step 4's text ran under/behind the watermark and was clipped off the bottom of
+    the frame at the template's default spacing (headline margin, step gap, and body font size
+    left no room for a 4th two-line step). FIXED by tightening headline margin (5vmin -> 3.8vmin),
+    step gap (3.4vmin -> 2.6vmin), number-badge size, and body font size (3.75vmin -> 3.4vmin),
+    and shortening each step's copy. RE-RENDERED and re-inspected: all 4 steps fully visible,
+    legible, watermark clear of all text, no clipping. No external image fetch was needed for
+    either slide — this tile has no network-dependent verification_gaps, unlike the 2 product
+    tiles this run.
+  claim_verification: >
+    No brand-specific claim made (see coaching_notes — suta/chidiyaa not verified or named this
+    run). The 4 teaching-card steps describe generic, well-established handloom-weaving mechanics
+    (hand-strung warp threads, a hand-thrown shuttle, row-by-row pattern building with no
+    computerized guidance, and an approximate one-yard-per-day output per weaver) — standard,
+    non-brand-specific facts about how a handloom operates, not a claim requiring a cited source
+    or a specific listing to verify against.
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: "https://shopatmela.com?utm_source=instagram&utm_medium=social&utm_campaign=craft-handloom_w1&utm_content=education_handloom"
+  topic: "craft-handloom — Handloom weaving and the weavers behind the cloth"
+  visual_system: "Education (HTML cards, documentary sub-system for cultural_education). Slide 1 = hook/title card, not a product. No payoff/product slide this run (see coaching_notes)."
+  slides:
+    - name: hook
+      image_render: log/_education/craft-handloom/renders/slide1-hook.png
+      image_url: null  # could not be uploaded this run — see notes.upload_gap
+    - name: teaching
+      image_render: log/_education/craft-handloom/renders/slide2-teaching.png
+      image_url: null  # could not be uploaded this run — see notes.upload_gap
+  alt_text: "Text slide: One yard takes a full day, by hand, on a loom. Here's what that means. Handloom weaving education card."
+  caption: |
+    A machine can print a pattern in a second. A handloom weaver spends a full day on one yard of cloth.
+
+    The warp threads go onto the loom one by one, then a weaver throws the shuttle back and forth, row by row, building the pattern as they go. No computer guides the next pass. That is still how many contemporary Indian textile brands make their fabric today, not a process kept behind glass in a museum.
+
+    So the next time a handloom piece looks slightly uneven from one end to the other, that is not a defect. That is the part a machine cannot do.
+
+    Discover more from independent Indian brands on Mela →
+
+    #HandloomWeaving #WovenByHand #IndianTextiles #SlowMade #DiscoveredOnMela
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com
+  checks:
+    cultural_context: { result: pass, note: "Brand-agnostic topic; no single brand page promise to audit. CTA points to the Mela homepage, not a specific listing." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  education_topic_selection: >
+    Last confirmed-used education type was trust_service (trust-small-batch-01, 2026-10-07) —
+    cultural_education alternates per meta.cadence. Two excluded topics this run (craft-juttis,
+    craft-jewelry) are staged unmerged in open PR #6/#7 and were not re-picked. Of the remaining
+    cultural_education backlog, craft-ayurveda-baby scores highest on source_brand overlap
+    (choosekind is this week's own baby_and_kids pick) but was REJECTED: ChooseKind's own verified
+    brand page ("Eco conscious toys and products teaching children that kindness and
+    sustainability go hand in hand," confirmed via blotato_create_source 2026-10-28) makes no
+    Ayurveda/natural-tradition claim — that angle belongs to Baby Forest (now excluded, staged in
+    PR #6), not ChooseKind. Using craft-ayurveda-baby here would also have forced a 2nd Sarah-led
+    tile this batch (its only listed persona), pushing Sarah to 3-of-last-5 and tripping
+    persona_fatigue. craft-handloom was picked instead: alternates type (+2), and while its
+    source_brands (suta, chidiyaa) don't overlap this week's brands, it lets the batch use Arun
+    (absent from the last 2 confirmed batches) without a brand-specific claim to verify.
+    education-topics.yaml craft-handloom status should be set to used, week_used: 1 once this
+    batch is approved and actually scheduled (left as backlog in this PR per the "don't edit
+    education-topics.yaml beyond marking the used topic's status" guardrail, and even that edit is
+    deferred to the approval step so a BLOCKed/reworked tile doesn't falsely burn the topic).
+  upload_gap: >
+    Both slides are fully rendered and inspected locally (see verification.render_qc) but could
+    NOT be uploaded to get public image_url values this run: blotato_create_presigned_upload_url
+    succeeded (it's a Blotato API call, not blocked), but the subsequent `curl -X PUT` of the PNG
+    bytes to the returned presignedUrl failed with "CONNECT tunnel failed, response 403" —
+    database.blotato.io is blocked by this session's egress policy, the same constraint affecting
+    the 2 product tiles' renders. The HTML sources AND the rendered PNGs are committed in this PR
+    under log/_education/craft-handloom/renders/ so the local/founder session can upload them
+    directly via blotato_create_presigned_upload_url without re-rendering.
+  dual_platform_note: "craft-handloom is instagram-only per education-topics.yaml (not dual-platform) — no Reddit draft needed this run."
+  wife_signoff: "Not yet — staged for founder approval + wife grid-shape sign-off (automated staging run)."

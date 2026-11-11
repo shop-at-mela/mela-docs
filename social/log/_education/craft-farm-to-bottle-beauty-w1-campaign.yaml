@@ -1,0 +1,130 @@
+# craft-farm-to-bottle-beauty education carousel — staged 2026-11-11 weekly staging run
+# (social-staging/week-of-2026-11-11). Topic id: craft-farm-to-bottle-beauty
+# (education-topics.yaml, cultural_education, verify:true, source_brands: [vilvah]).
+# Alternates from last confirmed education tile (trust-small-batch-01, trust_service, 2026-10-07)
+# per meta.cadence. Did NOT pick craft-kantha/craft-jewelry/craft-handloom/craft-juttis (all
+# excluded: already staged in open unmerged PRs for other weeks, or the source brand is excluded
+# this run) and did NOT pick craft-ayurveda-beauty/bipha-ayurveda — that brand's shopify_brands.py
+# entry has brand_craft: "" (placeholder) and an explicit "LIVING-CULTURE TODO... fill before
+# activation" comment, meaning it is not yet launch-ready. Cards rendered 2026-11-11 via HTML/CSS
+# -> PNG (local headless Chromium, no Blotato credits, no external network dependency) per
+# visual-style-guide.md Tool decision procedure. This is the ONE tile this run that could be
+# fully rendered AND visually inspected end to end (no blocked external fetch involved) — same
+# as the craft-goldsmithing-isharya precedent (2026-10-04).
+
+brand: null
+brand_slug: _education
+week: 1
+date_posted: "2026-11-11"
+status: posted
+platforms:
+  - instagram
+format: carousel
+persona: Neha
+category: cultural_education
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education content is always Full lane
+hypothesis: "Angle 1 (belonging / suitcase economy) with Neha lead: does a restock-relief hook ('you used to wait for a trip back to India') out-save a generic 'farm fresh ingredients' hook for a single-origin skincare sourcing claim?"
+gate_verdict: SHIP   # fully rendered + visually inspected locally; no blocked dependency for this tile
+coaching_notes: >
+  Diaspora anchor: the primary lever by design (angle 1, belonging/suitcase economy) — "you used
+  to wait for a trip back to India to restock the good face oil" anchors the shopper's situation,
+  never their identity. Slide 1 is a typographic hook card, never a product, per the hard rule.
+  No payoff/product slide this run (optional per Education Visual System) — closed on a text-only
+  brand-naming card (spotlight-card.html) instead, because the real Vilvah product photo needed
+  for a photo payoff slide is unreachable from this sandbox this run (same cdn.shopify.com block
+  as the product tiles this batch). A local session could add a 4th payoff slide using the Aloe
+  Vera Gel render (blotato_visual_id e9d9396b-edf4-4c02-be1c-c63f4a2f9d21, already generated this
+  run, raw/unwatermarked) once watermarking is sorted.
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# VERIFICATION
+verification:
+  render_qc: >
+    All 3 slides rendered locally via headless Chromium (/opt/pw-browsers/chromium-1243) at
+    1080x1080 and visually reviewed (Read tool) this run: legible at full size, watermark present
+    and subtle (bottom right, navy, consistent with mela-kit.css), no overflow/clipping, slide 1
+    is a typographic hook (no product). No external image fetch was needed for any of the 3
+    slides, so this tile has no infra-gap flag.
+  claim_verification: >
+    The farm-to-bottle claim (one working farm in Tamil Nadu; goat milk, cold pressed oils, and
+    botanical extracts; no synthetic chemicals; the same farm presses and bottles its own
+    ingredients) is Vilvah's own verified brand_story text in shopify_brands.py, word-for-word
+    the source for every line in slide 2's steps and slide 3's close. Cross-checked against the
+    live shopatmela.com listing for Vilvah's Aloe Vera Gel (dev_listing_id
+    6a13d515-99d2-401f-aa70-0387591db071, fetched via blotato_create_source 2026-11-11): the live
+    page's own description ("cold stabilization method... preservation of nutrients... organic
+    Aloe Vera") is consistent with, and does not contradict, the brand_story claim. This topic's
+    education-topics.yaml note already marked the underlying claim as the "accurate replacement
+    for Vilvah's angle" (added 2026-07-31), so no new unverified claim was introduced this run.
+
+# INSTAGRAM
+instagram:
+  submission_id: 0a37810e-56bc-43cf-adf4-5111de614a2a
+  published_url: https://www.instagram.com/p/Dfmsl-Llu05/
+  destination: "https://shopatmela.com/brands/vilvah?utm_source=instagram&utm_medium=social&utm_campaign=craft-farm-to-bottle-beauty_w1&utm_content=education_farm_to_bottle"
+  topic: "craft-farm-to-bottle-beauty — One farm, one bottle: what 'grown on our own farm' means for skincare"
+  caption: |
+    You used to wait for a trip back to India to restock the good face oil. Vilvah bottles it from one farm, straight to your door.
+
+    Vilvah formulates its skincare around a single working farm in Tamil Nadu. Goat milk, cold pressed oils, and botanical extracts go in close to harvest, with no synthetic chemicals added along the way.
+
+    Discover Vilvah on Mela →
+
+    Ships to the US from Vilvah, duties included at checkout.
+    #FarmToBottle #CleanSkincare #IndianSkincareBrands #DiscoverOnMela
+  slides:
+    - slide: 1
+      template: hook-card.html
+      local_file: social/log/_education/craft-farm-to-bottle-beauty-w1/slide-1-hook.png
+      alt_text: Hook card reading "One farm grows it. One bottle sells it." on a cream background with the Mela watermark
+    - slide: 2
+      template: teaching-card.html
+      local_file: social/log/_education/craft-farm-to-bottle-beauty-w1/slide-2-teaching.png
+      alt_text: Numbered teaching card explaining how one Tamil Nadu farm grows, cold presses, and bottles its own skincare ingredients
+    - slide: 3
+      template: spotlight-card.html
+      local_file: social/log/_education/craft-farm-to-bottle-beauty-w1/slide-3-close.png
+      alt_text: Vilvah brand close card reading "Farm-direct skincare, from Tamil Nadu" with a Discover Vilvah on Mela call to action
+  note: >
+    Published 2026-11-11 using raw.githubusercontent.com/shop-at-mela/mela-docs/main/... URLs for
+    the 3 slide PNGs (mela-docs is a public repo, so Blotato's own servers could fetch them
+    directly without this sandbox needing presigned-upload access to database.blotato.io).
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/vilvah
+  checks:
+    brand_story:
+      result: tbd
+      note: Not audited this run
+    artisan_details:
+      result: tbd
+      note: Not audited this run
+    cultural_context:
+      result: pass
+      note: Living-culture framing (present-tense farm sourcing, not a heritage/ancient claim) matches education-topics.yaml contemporary_angle requirement
+    aesthetic_match:
+      result: tbd
+      note: Not audited this run
+    product_findability:
+      result: n/a
+      note: Education tile, no product slide this run
+    mobile_responsive:
+      result: tbd
+      note: Needs verification
+  observations: []
+
+# NOTES
+notes:
+  category_note: Education row this batch (cultural_education, alternating from trust_service last confirmed batch). Source brand Vilvah (beauty_and_wellness) was NOT this batch's product brand (those are Banjaaran Studio/fashion and SuperBottoms/baby_and_kids), so no category-concentration interaction with the product rows.
+  topic_selection: >
+    education-topics.yaml marked status:used, week_used:1 for craft-farm-to-bottle-beauty as part
+    of this run (the only edit made to that file, per standing instruction).
+  infra_gap: >
+    This tile has NO infra gap — it's pure HTML/CSS text, rendered and inspected end to end
+    locally. The optional photo payoff slide was skipped (not blocked-and-shipped-anyway) in favor
+    of a text-only close card; see coaching_notes.
