@@ -9,7 +9,7 @@ brand: House of Chikankari
 brand_slug: house-of-chikankari
 week: 2
 date_posted: null
-status: partially_scheduled   # 3 Pinterest pins scheduled 2026-10-08; IG carousel NOT scheduled (call denied) — suggested slot 2026-10-10T17:00:00Z
+status: published   # verified published via Blotato 2026-11-11: 3 pins published 2026-10-14 (rescheduled from 10-10/12/14); IG carousel was never scheduled
 platforms:
   - instagram
   - pinterest
@@ -117,7 +117,7 @@ pinterest:
       board_id: "1103593152379779116"
   pins:
     - name: Aryan Chikankari Rayon Men's Kurta with Sequin
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: ee2764c3-4be1-4b6f-98f0-10d67f9ff7f0
       scheduled_time: 2026-10-10T18:00:00Z
       board_id: "1103593152379779116"
@@ -128,7 +128,7 @@ pinterest:
       source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/products/houseofchikankari-aryanrayonstraightmenskurtawithsequin-yellow3.png
       link: https://www.shopatmela.com/l/6a601959-99b1-45e6-a585-c839147a06c8?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aryan_mens_kurta_sequin
     - name: HOC Aafna Chikankari Chanderi Straight Kurta Set
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: 18ddb94e-4564-44d5-97c0-875ba44d6226
       scheduled_time: 2026-10-12T18:00:00Z
       board_id: "1103593152379779116"
@@ -139,7 +139,7 @@ pinterest:
       source_image_url: https://cdn.shopify.com/s/files/1/0561/7926/1589/files/House-Of-Chikankari-Aafna-Chikankari-Chanderi-Straight-kurta-Set-Magenta-00001.jpg
       link: https://www.shopatmela.com/l/6a6019a6-b352-4753-92fa-34dbec9ec82e?utm_source=pinterest&utm_medium=social&utm_campaign=houseofchikankari_w2&utm_content=aafna_chanderi_kurta_set
     - name: Cotton Chikankari Short Kurta (White)
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: 66f1c6ae-6be2-4000-a92f-3cebc4a4cd3c
       scheduled_time: 2026-10-14T18:00:00Z
       board_id: "1103593152379779116"

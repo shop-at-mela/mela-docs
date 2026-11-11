@@ -2,7 +2,7 @@ brand: Pluchi
 brand_slug: pluchi
 week: 1
 date_scheduled: "2026-09-08"   # IG carousel 2026-09-08 12:00 PDT (2026-09-08T19:00Z)
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG DdCYynDiU6g, pin 1103593083719953069
 format: collection_carousel
 persona: Priya / Sarah          # hand-finished knit for home & nursery
 category: home_and_kitchen      # knit throws/bedcovers/nursery textiles

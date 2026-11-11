@@ -7,7 +7,7 @@ topic_id: craft-chikankari
 brand_slug: _education
 week: 1
 date_posted: 2026-08-09
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG Db0te5zm0gp
 platforms:
   - instagram   # IG only (cultural_education); not routed to Pinterest
 content_type: cultural_education

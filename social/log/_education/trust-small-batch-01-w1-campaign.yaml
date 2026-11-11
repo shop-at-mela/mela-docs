@@ -14,7 +14,7 @@ brand: null
 brand_slug: _education
 week: 1
 date_posted: null
-status: scheduled   # IG scheduled 2026-10-13T17:00:00Z; Reddit draft intentionally NOT posted (human-posted only)
+status: published   # verified published via Blotato 2026-11-11: IG DecS5Fglh0u (status API stuck in-progress; matched in post list)
 platforms:
   - instagram
   - reddit

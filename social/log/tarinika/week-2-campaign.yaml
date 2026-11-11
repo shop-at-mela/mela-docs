@@ -2,7 +2,7 @@ brand: Tarinika
 brand_slug: tarinika
 week: 2
 date_scheduled: "2026-09-07"   # IG carousel 2026-09-07 15:00 PDT (2026-09-07T22:00Z)
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG failed 2026-09-07 (media fetch), republished 2026-09-24 DdpvcHJDbiB; pin 1103593083719890322
 format: collection_carousel     # REAL PHOTOS (jewelry = detail-critical, no Blotato morph)
 persona: Priya                  # occasion/gifting (angled to Priya, NOT Neha who is at 3/5 fatigue cap)
 category: jewelry_and_accessories

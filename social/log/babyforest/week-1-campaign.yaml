@@ -6,7 +6,7 @@ brand: Baby Forest
 brand_slug: babyforest
 week: 1
 date_posted: 2026-08-07   # scheduled to Instagram via Blotato (alternate-day slot)
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG Dbvj43MoEsp
 platforms:
   - instagram
   - pinterest   # manual_pending — Pinterest warmup block (see pinterest section)

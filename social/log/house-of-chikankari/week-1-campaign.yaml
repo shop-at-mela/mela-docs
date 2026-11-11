@@ -7,7 +7,7 @@ brand: House of Chikankari
 brand_slug: house-of-chikankari
 week: 1
 date_posted: 2026-08-17  # first HoC tile publishes 2026-08-17; row completes 2026-08-21
-status: scheduled  # 5 of 6 tiles auto-scheduled via Blotato; anchor reel is manual (see anchor.posting_mode)
+status: published   # verified published via Blotato 2026-11-11: rescheduled earlier: product IG DcEKOaAFNEj + pin 1103593083718067588 (2026-08-15), story IG DcGvBYEFYQg (2026-08-16); anchor reel (manual) not found
 platforms:
   - instagram
   - pinterest
@@ -89,7 +89,7 @@ pinterest:
     - name: Chandni Chikankari Mulmul Shirt
       submission_id: fdc3b29a-58b1-406c-b7bd-59850468deba
       scheduled_time: 2026-08-17T15:30:00Z
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       board: Indian Ethnic Wear & Hand-Embroidered Fashion
       board_id: "1103593152379779116"
       board_note: >

@@ -2,7 +2,7 @@ topic_id: craft-knitwear
 type: cultural_education         # alternated from certdecode (trust_service, 2026-08-29)
 week: 1
 date_scheduled: "2026-09-07"    # IG 2026-09-07 09:00 PDT (2026-09-07T16:00Z)
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG Dc_fZ8eoAzE
 format: teaching_carousel (Education Visual System, HTML->PNG)  # slide1 = HOOK, not product
 platforms: [instagram]          # IG only
 persona: Sarah / Priya

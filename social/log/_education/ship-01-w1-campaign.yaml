@@ -7,7 +7,7 @@ brand: null
 brand_slug: _education
 week: 1
 date_posted: 2026-08-11   # scheduled to Instagram via Blotato (alternate-day slot)
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG Db53DzJFgFm
 platforms:
   - instagram
   # trust_service also routes to Reddit per content_types — separate MANUAL step, not scheduled here.

@@ -10,7 +10,7 @@ brand: null
 brand_slug: _education
 week: 1
 date_posted: 2026-10-06   # first scheduled post (all times UTC); scheduled 2026-10-01 from a local founder session
-status: scheduled   # staged | scheduled | published — scheduled in Blotato 2026-10-01; flip to published after go-live
+status: published   # verified published via Blotato 2026-11-11: IG DeKRbBwkRqK
 platforms:
   - instagram
 format: carousel

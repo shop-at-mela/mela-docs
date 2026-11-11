@@ -9,7 +9,7 @@ brand: null
 brand_slug: _education
 week: 1
 date_posted: "2026-08-29"
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG DcoNYqCIOhW
 platforms:
   - instagram
 format: carousel

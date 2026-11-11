@@ -2,7 +2,7 @@ brand: Vilvah Store
 brand_slug: vilvah
 week: 2
 date_scheduled: "2026-09-08"   # IG carousel scheduled 2026-09-08 18:00 PDT (2026-09-09T01:00Z)
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG DdDCAHpieiV (2026-09-09), pin 1103593083719975982
 format: collection_carousel     # IG default per 2026-09-05 decision (Blotato Product Scene per slide)
 persona: Sarah                  # ingredient / single-origin (certs lane, the persona gap this batch)
 category: beauty_and_wellness

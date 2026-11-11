@@ -8,7 +8,7 @@ brand: Isharya
 brand_slug: isharya
 week: 2
 date_posted: null   # scheduled 2026-10-08, posts 2026-10-09 (IG) / 2026-10-09..13 (Pinterest)
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG DeR_xDMoNpM + 3 pins (cross necklace + studs both went out 2026-10-11, rescheduled)
 platforms:
   - instagram
   - pinterest
@@ -127,7 +127,7 @@ pinterest:
       board_id: "1103593152379723628"
   pins:
     - name: Amina Enamel Mirror Earrings
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: 581a1d58-5647-4ddf-9d7a-afdefa59d7ba
       scheduled_time: 2026-10-09T18:00:00Z
       board_id: "1103593152379723628"
@@ -137,7 +137,7 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/db712797-c9e0-49fd-ad55-adf015369a7c.jpg
       link: https://www.shopatmela.com/l/6a54b651-a17c-45df-9f5c-3ca0d0336911?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=amina_enamel_mirror_earrings
     - name: Banger Multi Crystal Cross Necklace
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: d77d9445-e1b5-4eed-ac18-0f1c79391319
       scheduled_time: 2026-10-11T18:00:00Z
       board_id: "1103593152379723628"
@@ -147,7 +147,7 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/ff07aac4-b89e-4696-9ab4-4bf686bd3b2c.jpg
       link: https://www.shopatmela.com/l/6a54b7ba-75d6-47f0-807d-a4bb4a83859c?utm_source=pinterest&utm_medium=social&utm_campaign=isharya_w2&utm_content=banger_multi_crystal_cross_necklace
     - name: Bling Infinity Cut Crystal Studs
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: b97cc4cd-818c-46db-879c-55d76e17d3bb
       scheduled_time: 2026-10-13T18:00:00Z
       board_id: "1103593152379723628"

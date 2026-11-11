@@ -9,7 +9,7 @@ brand: Kaunteya
 brand_slug: kaunteya
 week: 3
 date_posted: null
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG DeUkh5aFhu6 + 3 pins
 platforms:
   - instagram
   - pinterest
@@ -115,7 +115,7 @@ pinterest:
       board_id: "1103593152379723626"
   pins:
     - name: Airavata Coffee Mug (Swan)
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: e1ad8179-61fe-4457-bbfe-4d1fefe09b49
       scheduled_time: 2026-10-10T16:00:00Z
       board_id: "1103593152379723626"
@@ -125,7 +125,7 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/343611db-1144-45f1-8520-6e39db34acdd.jpg
       link: https://www.shopatmela.com/l/6a5cd5c4-c98d-44bb-9de9-8c2b7349ffb4?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=airavata_coffee_mug_swan
     - name: Airavata Jug
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: 24b447ac-7c6a-4b98-b663-4c5c7b0ffc88
       scheduled_time: 2026-10-10T21:00:00Z
       board_id: "1103593152379723626"
@@ -135,7 +135,7 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/637d30e1-b1ed-4aa1-a1b8-64810fb77717.jpg
       link: https://www.shopatmela.com/l/6a5cd5ea-f395-44a3-a1fa-5b5f85370f36?utm_source=pinterest&utm_medium=social&utm_campaign=kaunteya_w3&utm_content=airavata_jug
     - name: Airavata Cookie Plate
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: f16509e0-3b04-46a2-8143-2fcfb3dcd6d3
       scheduled_time: 2026-10-13T16:00:00Z
       board_id: "1103593152379723626"

@@ -9,7 +9,7 @@ brand: Vilvah Store
 brand_slug: vilvah
 week: 3
 date_posted: null
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG DeZuGjCiQTE + 3 pins
 platforms:
   - instagram
   - pinterest
@@ -122,7 +122,7 @@ pinterest:
       board_id: "1103593152379723631"
   pins:
     - name: Goat Milk Shampoo 250ml
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: f31d8257-5cca-4e3d-b57f-d5266589cc07
       scheduled_time: 2026-10-12T16:00:00Z
       board_id: "1103593152379723631"
@@ -132,7 +132,7 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/6704ac85-eab4-4666-af63-8309a83b46bb.jpg
       link: https://www.shopatmela.com/l/6a13d653-cdc1-484f-83ae-7d2f0c23d8c7?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=goat_milk_shampoo
     - name: Cream Conditioner 250ml
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: ecf3d950-8bcf-4a99-a203-2658e8fe388d
       scheduled_time: 2026-10-12T21:00:00Z
       board_id: "1103593152379723631"
@@ -142,7 +142,7 @@ pinterest:
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cb71fee2-042c-4546-b97a-ae995d287fd1.jpg
       link: https://www.shopatmela.com/l/6a13d5ab-4f76-4da1-b3d5-40d3a8b1ac93?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w3&utm_content=cream_conditioner
     - name: Anti-Frizz Hair Serum
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       submission_id: 11423b2d-9683-4edc-b871-1b0676fc8c3f
       scheduled_time: 2026-10-13T21:00:00Z
       board_id: "1103593152379723631"

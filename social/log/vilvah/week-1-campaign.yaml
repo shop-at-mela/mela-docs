@@ -7,7 +7,7 @@ brand: Vilvah
 brand_slug: vilvah
 week: 1
 date_posted: 2026-08-11  # first Vilvah tile publishes 2026-08-11; row completes 2026-08-15
-status: scheduled
+status: published   # verified published via Blotato 2026-11-11: IG DcBlbufHHW0 / Db_AooKlRzr / Db53C3KIGcw, pin 1103593083717768194
 platforms:
   - instagram
   - pinterest
@@ -86,7 +86,7 @@ pinterest:
     - name: Milk Mud Mask
       submission_id: 66357522-0b3a-4dcb-9710-514996001feb
       scheduled_time: 2026-08-11T15:30:00Z
-      status: scheduled
+      status: posted   # verified published via Blotato 2026-11-11
       board: Ayurvedic Skincare & Natural Beauty
       board_id: "1103593152379723631"
       title: Oat Milk and Saffron Face Mask | Vilvah
