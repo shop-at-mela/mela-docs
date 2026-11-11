@@ -54,8 +54,13 @@ instagram:
       # (or run attach-social-scene.js for it) until this is resolved: either Kaunteya has a
       # newer live Garuda listing under a different SKU (re-search), or this item needs to be
       # dropped/swapped in the post for something actually in stock.
-      dev_listing_id: 6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984  # WRONG — reverted to pre-investigation value, see note above. Do not attach-social-scene against this.
-      shopatmela_url: https://www.shopatmela.com/l/6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984
+      # 2026-11-11: was 6a5cd5bd-44ab-46bd-aee6-a5fa2bc87984 (the Owl listing), kept with only a
+      # comment as the "do not use" marker. Scripts can't read comments — the batch scene-attach
+      # would have put this Garuda render on the Owl listing. No live listing → null + listing_status.
+      dev_listing_id: null
+      listing_status: unavailable   # machine-readable: no live Mela listing for this design
+      listing_status_reason: "Garuda SKU airavata-coffee-mug-garuda Out of Stock; its listing slot 6a5cd5bd now holds the Owl restock (2026-08-03)"
+      shopatmela_url: null
 
     - name: Airavata Coffee Mug – Owl
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg

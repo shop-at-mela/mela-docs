@@ -57,6 +57,11 @@ instagram:
       alt_text: Handcrafted tan leather kolha flats with double cushioning on a warm neutral surface  # literal image description; keyword-led; passed to blotato altText
       price_usd: 80
       dev_listing_id: 6a17b614-6e96-4806-a428-18fdb1d8d075
+      # RULE: dev_listing_id must be THIS product's live listing, or null. If no live listing exists
+      # (out of stock, delisted, never ingested), set dev_listing_id: null, shopatmela_url: null,
+      # listing_status: unavailable, listing_status_reason: "<why>". Never keep a known-wrong ID with
+      # a "don't use" comment — scripts (run-attach-social-scene-batch.js, cooldown index) can't read
+      # comments and will act on it. One dev_listing_id per product per campaign.
       shopatmela_url: https://www.shopatmela.com/l/6a17b614-6e96-4806-a428-18fdb1d8d075
 
     - name: Chrome & Tonic Kolhas
