@@ -156,3 +156,4 @@ notes:
   cooldown_check: "clear — Suta has no prior campaign log; brand never posted before this run."
   team_feedback: null  # wife grid-shape sign-off explicitly waived by founder for this publish
   publish_override: "Published 2026-11-11 on explicit founder instruction ('publish all posts except Superbottoms from this week and previous week's schedule'), skipping the watermark/render-QC hold, the FULL-lane brand-page UX audit, and the wife grid-shape sign-off."
+  phase_7b: "NOT YET RUN — needs Sharetribe Integration API creds unavailable in this cloud session. A local batch runner now exists: shop-at-mela/product-listing-integration scripts/run-attach-social-scene-batch.js (PR #2, merged 2026-11-11). Covers all 3 dev_listing_ids above (Manjaadi 6ae02528-ec3c-4e37-9857-f953de3b1570, Dharani 6ae02530-cce4-4cc9-b999-c521fefcf04f, Aavani 6ae02538-7a66-43b3-ad59-6b657886668a). Run locally: --list-only to preview, --dev to dry-run, --dev --confirm to attach."
