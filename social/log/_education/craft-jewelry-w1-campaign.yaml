@@ -1,0 +1,131 @@
+---
+# Mela Social Campaign — YAML Format (see CAMPAIGN_TEMPLATE.yaml)
+# Education: craft-jewelry — STAGED by automated cloud run, week of 2026-10-21
+
+brand: Education — craft-jewelry
+brand_slug: _education/craft-jewelry
+week: 1
+date_posted: null   # not yet scheduled — staged only, awaiting founder approval
+status: staged   # staged | scheduled | published
+platforms:
+  - instagram
+format: education_carousel   # 2 HTML/CSS cards: hook -> teaching. No payoff slide this run (see notes).
+persona: Arun
+category: cultural_education   # education content type, not a Mela product category
+topic_id: craft-jewelry   # education-topics.yaml
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # education + verify:true claim -> FULL lane per pre-publish-gate.md Step 0
+hypothesis: "Angle 3 (how it's actually made) with Arun lead, paired same-week with the exact Tarinika product row it describes — does the living-culture reframe ('not an heirloom, made this week') out-save a generic craft-heritage post with no paired brand row?"
+gate_verdict: SHIP   # fully rendered and inspected locally this run; no blocked dependency; verify:true claim grounded in shopify_brands.py + re-confirmed live
+coaching_notes: >
+  Diaspora anchor: PRIMARY lever (angle 3, Arun) — the hook names the diaspora situation
+  directly ("growing up in the US, jewelry like this read as something that stayed in a
+  drawer"), then resolves into the living-culture reframe education-topics.yaml requires
+  ("still made by hand today... not frozen behind glass"). First-frame/hook: slide 1 is a
+  typographic hook, no product, per the Education Visual System's hard rule. Motion: N/A
+  (static HTML cards, no reel).
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# CLAIM VERIFICATION (verify:true topic — see education-topics.yaml)
+claim_verification: >
+  The craft-jewelry topic's claim ("goldsmiths working today", temple inspired motifs
+  reworked for modern wear) is grounded in shopify_brands.py's Tarinika brand_story (the
+  highest-trust source per education-topics.yaml -> replenishment): "Tarinika creates silver
+  and gold toned jewelry made by Indian goldsmiths working today: intricate filigree earrings,
+  temple inspired necklaces, and everyday studs." Independently re-confirmed live via
+  blotato_create_source against the Tarinika brand page 2026-10-21: "Contemporary Indian
+  filigree and temple inspired jewelry for the modern woman" + "Handcrafted for Women". The
+  "kempu" stone-setting detail in slide 2 step 2 is grounded in the Aarisha Kempu Antique
+  Bangles listing from this week's Tarinika row (also live-verified). No claim is made about
+  Isharya or Curio Cottage, the topic's other source_brands entries.
+
+# INSTAGRAM
+instagram:
+  submission_id: null   # not submitted — staged only
+  destination: https://shopatmela.com/brands/tarinika?utm_source=instagram&utm_medium=social&utm_campaign=craftjewelry_w1&utm_content=education_jewelry
+  caption: |
+    Growing up in the US, jewelry like this read as something that stayed in a drawer, not something you'd actually wear out.
+
+    It is still made by hand today. A goldsmith shapes the base, sets the antique finish and stones piece by piece, and keeps temple inspired motifs in regular rotation, not frozen behind glass. Labels like Tarinika are the reason a goldsmith's work from this week ends up on a wedding guest in the US.
+
+    Discover Tarinika on Mela →
+
+    #IndianJewelry #HandcraftedIndia #LivingCraft #TempleJewelry #DiscoveredOnMela
+
+  slides:
+    - file: social/log/_education/craft-jewelry/renders/slide1-hook.png
+      source_html: hook-card.html (edited copy, kicker "Contemporary Indian jewelry")
+      alt_text: "Text slide: Not an heirloom, made this week. Here's who's making it."
+      rendered_locally: true
+      visually_inspected: true
+      notes: "Slide 1 — pure typographic hook, no product. Legible at full size, no overflow, watermark subtle bottom-right."
+    - file: social/log/_education/craft-jewelry/renders/slide2-teaching.png
+      source_html: teaching-card.html (edited copy, 3 steps — capped at 3 to avoid the watermark-overlap defect documented in the week-of-2026-10-14 craft-juttis log)
+      alt_text: "Text slide: Temple motifs reworked today, three steps a goldsmith takes by hand."
+      rendered_locally: true
+      visually_inspected: true
+      notes: "Legible at full size, no overflow, no watermark overlap."
+
+  render_method: >
+    HTML/CSS -> PNG via local headless Chromium (/opt/pw-browsers/chromium-1194/chrome-linux/chrome,
+    --headless --no-sandbox), no external network dependency at any step — the one asset type
+    this run could fully render AND inspect. Confirmed and worked around the same ~87px
+    transparent-viewport offset documented in prior runs' logs (headless Chromium's actual
+    rendered content runs ~87px shorter than the requested --window-size): requested
+    --window-size=1080,1167 for a target 1080x1080 square, then cropped the screenshot to the
+    top 1080x1080 with ImageMagick `convert -crop`. Verified the exact offset (87px) with a
+    marker-color pixel test before rendering the real slides.
+  public_url_status: >
+    NOT YET HOSTED. database.blotato.io (the presigned-upload host) is egress-blocked from this
+    cloud session — confirmed via curl PUT to a fresh blotato_create_presigned_upload_url
+    response (CONNECT tunnel failed, response 403), same gap as the product renders. The 2 PNGs
+    are committed to this branch as local files (social/log/_education/craft-jewelry/renders/);
+    a local session must upload them via blotato_create_presigned_upload_url before scheduling.
+  payoff_slide: >
+    SKIPPED this run (optional for cultural_education per the Education Visual System table).
+    payoff-card.html needs a real product photo loaded via <img src>, and cdn.shopify.com is
+    egress-blocked from this cloud session. A local session can add it using this week's Tarinika
+    row's Aarna Antique Necklace Set photo if desired.
+
+# PINTEREST
+pinterest:
+  posted: false
+  note: "craft-jewelry is Instagram-only per education-topics.yaml (not marked dual-platform) — no Reddit/Pinterest leg this topic."
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/tarinika
+  checks:
+    brand_story: { result: pass, note: "See tarinika/week-3-campaign.yaml ux_review — same destination, same verification." }
+    artisan_details: { result: pass, note: "Goldsmith/temple-motif claim independently grounded twice (shopify_brands.py + live brand page fetch)." }
+    cultural_context: { result: pass, note: "Living-culture framing ('not an heirloom, made this week') matches education-topics.yaml meta.framing requirement." }
+    aesthetic_match: { result: pass, note: "Education visual system followed exactly: slide 1 hook, no product; slide 2 teaching card." }
+    product_findability: { result: n/a, note: "Education tile, no product tagged directly; pairs thematically with this week's Tarinika row." }
+    mobile_responsive: { result: tbd, note: "Needs verification locally." }
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  topic_selection: >
+    Last topic used was trust-small-batch-01 (trust_service, 2026-10-13 per education-topics.yaml
+    meta.cadence) -> this week's pick must be cultural_education. craft-juttis (the backlog
+    topic that would otherwise score highest alongside this week's picks) is staged, unmerged,
+    in open PR #6 (week-of-2026-10-14) and was deliberately NOT re-picked. Of the remaining
+    backlog cultural_education topics, craft-jewelry (source_brands: isharya, tarinika,
+    curio-cottage) scores highest against this week's actual picks: +2 type-alternate, +2
+    source_brand overlap with this week's Tarinika row, +1 neither tarinika nor curio-cottage
+    used in education in the last 4 weeks (isharya itself WAS used for education 2026-10-04
+    via craft-goldsmithing-isharya, but that entry is not this week's overlapping brand).
+    Runner-up considered: craft-ayurveda-baby (overlaps Baby Forest) — passed over because Baby
+    Forest is itself avoided this run (staged in the open PR), so the thematic pairing would be
+    lost.
+  avoid_open_pr_collision: "craft-juttis (PR #6, week-of-2026-10-14) was not re-picked for this run."
+  team_feedback: "STAGED — awaiting founder approval."
