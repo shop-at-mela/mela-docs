@@ -1,0 +1,21 @@
+# Corrections applied on top of the generated ledger (rebuild with `import-ledger`).
+# Keyed by post id. Use `add: true` to add a post the logs do not know about.
+posts:
+  # Nov 11, 2026: five Instagram posts went out in about four minutes (reported by the founder).
+  # Exact times were not recorded in the logs, so these are estimates inside that window.
+  banjaaran-studio/week-2-campaign:
+    posted_at: "2026-11-11T14:40:00Z"
+    time_precision: exact
+  _education/craft-farm-to-bottle-beauty-w1-campaign:
+    posted_at: "2026-11-11T14:41:00Z"
+    time_precision: exact
+  suta/week-1-campaign:
+    posted_at: "2026-11-11T14:42:00Z"
+    time_precision: exact
+  kaunteya/week-4-campaign:
+    posted_at: "2026-11-11T14:43:00Z"
+    time_precision: exact
+  _education/sizing-01-w1-campaign:
+    posted_at: "2026-11-11T14:44:00Z"
+    time_precision: exact
+    brands: []   # brand agnostic sizing post, homepage link only

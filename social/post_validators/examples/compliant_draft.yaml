@@ -1,0 +1,26 @@
+# EXAMPLE ONLY. Shows the shape of a batch that passes every rule. Not a real plan:
+# the brand, caption and media are placeholders for a founder led first post.
+# Status is "draft": a person records approval, then it moves to "scheduled" and is rechecked.
+posts:
+  - id: example-saphed-first-look
+    status: draft
+    format: reel
+    scheduled_at: "2026-11-19T11:00:00-05:00"      # Saphed first post: after its Nov 18 DM date
+    brands: [saphed]
+    voice: sana
+    person_speaks: true
+    people_present: true
+    cover_kind: person
+    first_second_face_or_hands: true
+    caption: |
+      I'm Sana. I started Mela to share Indian brands I love.
+      This week I'm trying on a Saphed piece. Here is my first look.
+    media:
+      - {kind: mela_shot, file: sana-saphed-first-look.mp4}    # Sana on camera
+    story_drafts:
+      - brand: saphed
+        format: story
+        scheduled_at: "2026-11-19T17:00:00-05:00"
+        link: "https://shopatmela.com/brands/saphed?utm_source=instagram&utm_medium=story&utm_content=example-saphed-first-look"
+    approval: null
+    auto_publish: false
