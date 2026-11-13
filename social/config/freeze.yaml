@@ -1,0 +1,25 @@
+# Rule 8. Until `until`, no archive, edit or delete of any existing post about these brands.
+# Pinned posts are never touched in code, regardless of date. Pinning stays manual in the app.
+until: "2026-12-03"
+brands:
+  - fizzy-goblet
+  - house-of-chikankari
+  - banjaaran-studio
+  - vilvah
+  - masilo
+  - tarinika
+  - choosekind
+  - polite-society
+  - kaunteya
+  - saphed
+  - babyforest
+  - gullylabs
+  - isharya
+  - ankid
+  - aagghhoo
+  - the-alternate
+  - needledust
+  - hemant-and-nandita
+  - nicobar
+  - superbottoms
+# Outreach cohort is 22 brands. This list has 20. Suta is not on it. Add the missing names here.

@@ -1,0 +1,38 @@
+# Thresholds for the post validators. Edit here, no code change needed.
+# Rule numbers match social/post_validators/README.md.
+timezone: America/New_York
+
+cadence:                      # rule 2
+  max_feed_posts_per_day: 1
+  max_feed_posts_per_rolling_7_days: 4
+  min_hours_between_posts: 6
+  feed_formats: [image, carousel, reel, video]   # story is not a feed post
+  automation_approver_names: [automation, claude, bot, routine, system]
+
+people_quota:                 # rule 3
+  window_posts: 9             # last 8 live posts + the candidate
+  min_people_posts: 3
+
+format_mix:                   # rule 5
+  video_formats: [reel, video]
+  min_video_share: 0.6        # per 10 new posts, at least 6 are video
+
+copy:                         # rule 6
+  max_sentence_words: 18
+  banned_characters: ["—"]   # em dash only
+  voice_required: sana
+  # A shopper may be cited only as a group ("few shoppers"). These catch the singular.
+  singular_buyer_patterns:
+    - '\b(a|one|the|this|that)\s+(shopper|buyer|customer|parent|mom|mum|dad)\b[^.!?]{0,60}\b(would|will|wants?|needs?|buys?|loves?|prefers?)\b'
+    - '\b(Sarah|Priya|Neha|Arun)\b'
+  # Any sentence matching these is a shipping, duties or returns claim.
+  claim_patterns:
+    - '\bship(s|ped|ping)?\b'
+    - '\bduty\b|\bduties\b|\bcustoms\b|\bimport\s+(tax|fees?)\b'
+    - '\breturns?\b|\brefunds?\b|\bexchanges?\b'
+    - '\bdeliver(y|s|ed)?\b'
+  first_person_pattern: "\\b(I|I'm|I've|I'll|I'd|my|me|mine)\\b"
+
+link:                         # rule 7
+  allowed_hosts: [shopatmela.com, www.shopatmela.com]
+  brand_path_prefix: /brands/
