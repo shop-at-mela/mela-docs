@@ -16,7 +16,7 @@ category: jewelry_and_accessories
 lane: fast                 # vetted brand (2 prior confirmed posts) + real photo + verified-OPEN listing
 hypothesis: "Angle 5 (occasion-in-America) with Priya lead: does an 'outfit done, jewelry missing' situation hook out-save a generic festive-jewelry product hook?"
 gate_verdict: ship-pending-manual-verification   # copy + listing-live clear; watermark (gate row #20) not composited due to this cloud session's network block -- see staging/week-of-2026-11-18.md Section 0.2
-coaching_notes: "Priya lead, occasion-first (Diwali), no traditional/ethnic/Bollywood/costume language. Diaspora anchor is the situation (outfit ready, jewelry box empty), not identity."
+coaching_notes: "Priya lead, occasion-first (Diwali), no traditional/ethnic/Bollywood/costume language. Diaspora anchor is the situation (outfit ready, jewelry box empty), not identity. The Aarivya bracelet render failed silently once (blank black frame, Blotato status API still reported 'done') -- caught by founder spot-check, re-rendered once, confirmed good. See products list render_note."
 northstar_metric:
   instagram_saves: null
   pinterest_outbound_clicks: null
@@ -51,13 +51,14 @@ instagram:
       listing_verified: "2026-11-18 via blotato_create_source. Live title/price/material matched; peacock motifs + ruby stones confirmed in live listing text."
 
     - name: Antique Bracelet in Green for Women (Aarivya)
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-93a79aff-b7d7-4436-ab39-adfd5f35b6c6.jpg
-      blotato_visual_id: 7928d218-034b-436a-bf22-df81bd739408
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4198d6a8-409b-46a7-bfe3-670e4ac5500f.jpg
+      blotato_visual_id: 385f746f-c7bb-47af-8e5b-c67399463dd1
       alt_text: Antique gold plated brass bracelet with green stone accents and Krishna inspired motifs on linen
       price_usd: 35
       dev_listing_id: 6a5855c9-8eb1-4306-9331-bbac2cdd964f
       shopatmela_url: https://www.shopatmela.com/l/6a5855c9-8eb1-4306-9331-bbac2cdd964f
       listing_verified: "2026-11-18 via blotato_create_source. Live title/price/material matched; Krishna-inspired motifs confirmed in live listing text."
+      render_note: "First render (blotato_visual_id 7928d218-034b-436a-bf22-df81bd739408) came back a blank black frame per founder check of my.blotato.com on 2026-11-18. Re-rendered once per pre-publish-gate.md ('re-render once, else drop/flag'); this second render was confirmed good by the founder at https://my.blotato.com/videos/385f746f-c7bb-47af-8e5b-c67399463dd1."
 
     - name: Antique Gold Jhumka Earrings in Red for Women (Aashrita)
       image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-178e49cc-631b-4d04-a905-b5b8ce339f8f.jpg
@@ -93,7 +94,7 @@ pinterest:
       title: Aarivya Antique Bracelet | Indian Goldsmith Jewelry
       description: Antique gold plated bracelet with green stone accents and Krishna inspired motifs, handcrafted by Tarinika. Pairs with kurtas or western wear. Discovered on Mela.
       alt_text: Antique gold plated brass bracelet with green stone accents and Krishna inspired motifs on linen
-      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-93a79aff-b7d7-4436-ab39-adfd5f35b6c6.jpg
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4198d6a8-409b-46a7-bfe3-670e4ac5500f.jpg
       shopatmela_url: https://www.shopatmela.com/l/6a5855c9-8eb1-4306-9331-bbac2cdd964f
       link: https://www.shopatmela.com/l/6a5855c9-8eb1-4306-9331-bbac2cdd964f?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w4&utm_content=aarivya_bracelet
 
