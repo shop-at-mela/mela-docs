@@ -80,7 +80,10 @@ topics:
     platforms: [instagram, reddit]
     personas: [neha]
     source_brands: [any]
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-11-18, paired with Needledust (fashion) + Tarinika
+                  # (jewelry_and_accessories) week batch; led by Neha (see
+                  # social/log/_education/pay-01-w1-campaign.yaml). Reddit leg drafted, not posted.
 
   - id: returns-01
     type: trust_service
