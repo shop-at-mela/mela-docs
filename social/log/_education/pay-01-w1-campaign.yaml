@@ -43,10 +43,11 @@ instagram:
       image_path: social/log/_education/pay-01-w1/slide-2-myth-payment-method.png
       alt_text: "Myth vs fact card: buying from an India-based brand needs a special payment method; fact: Mela prices are already in US dollars"
       render_method: local HTML/CSS (myth-vs-fact.html template) -> headless Chromium screenshot, 1080x1080
-    - name: "Slide 3 -- Myth vs fact (checkout / close)"
+    - name: "Slide 3 -- Myth vs fact (payment trust / close)"
       image_path: social/log/_education/pay-01-w1/slide-3-myth-checkout.png
-      alt_text: "Myth vs fact card: Mela charges your card; fact: checkout happens on the brand's own site"
+      alt_text: "Myth vs fact card: an India based checkout can't be as secure or smooth as a US one; fact: India runs some of the most advanced payment infrastructure in the world"
       render_method: local HTML/CSS (myth-vs-fact.html template) -> headless Chromium screenshot, 1080x1080
+      revision_note: "Original close slide ('Mela is the store, so Mela charges your card' / 'You check out on the brand's own site') was changed at founder's request -- didn't want to foreground that Mela isn't the checkout. Replaced with a payment-trust angle (India's payment infrastructure is advanced/secure), kept generic rather than naming a specific processor like Razorpay since no verified data ties either brand's US checkout to one specific gateway."
 
 # REDDIT (draft only -- manual, human-posted; no Blotato automation per reddit-strategy.md)
 reddit:
