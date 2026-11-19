@@ -3,8 +3,8 @@
 brand: Tarinika
 brand_slug: tarinika
 week: 4
-date_posted: null   # not yet scheduled — staged only, awaiting founder approval
-status: staged   # staged | scheduled | published
+date_posted: "2026-11-23"   # scheduled to Instagram via Blotato; carousel posts 2026-11-23T15:00:00Z, pins 2026-11-24..26T15:00:00Z
+status: scheduled   # staged | scheduled | published
 platforms:
   - instagram
   - pinterest
@@ -15,7 +15,7 @@ category: jewelry_and_accessories
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: fast                 # vetted brand (2 prior confirmed posts) + real photo + verified-OPEN listing
 hypothesis: "Angle 5 (occasion-in-America) with Priya lead: does an 'outfit done, jewelry missing' situation hook out-save a generic festive-jewelry product hook?"
-gate_verdict: ship-pending-manual-verification   # copy + listing-live clear; watermark (gate row #20) not composited due to this cloud session's network block -- see staging/week-of-2026-11-18.md Section 0.2
+gate_verdict: ship-override   # copy + listing-live clear; watermark (gate row #20) was NOT composited due to this cloud session's network block. Founder explicitly reviewed this gap and said "skip the watermark and post" on 2026-11-19 -- scheduled without it as a deliberate founder override, not a silent miss. See staging/week-of-2026-11-18.md Section 0.2 and the 2026-11-19 addendum.
 coaching_notes: "Priya lead, occasion-first (Diwali), no traditional/ethnic/Bollywood/costume language. Diaspora anchor is the situation (outfit ready, jewelry box empty), not identity. The Aarivya bracelet render failed silently once (blank black frame, Blotato status API still reported 'done') -- caught by founder spot-check, re-rendered once, confirmed good. See products list render_note."
 northstar_metric:
   instagram_saves: null
@@ -23,7 +23,7 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: eee53ae3-7f36-4c4e-bf8e-eb4ae616e97d   # scheduled 2026-11-23T15:00:00Z
   destination: https://shopatmela.com/brands/tarinika
   caption: |
     The outfit is ready for Diwali. The jewelry box is still empty. Tarinika's goldsmiths build the pieces that finish the look.
@@ -77,8 +77,8 @@ pinterest:
 
   pins:
     - name: Antique Necklace Set for Women (Aadtri)
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: 72efb27e-bbbf-4399-b31f-5d11f2705400   # scheduled 2026-11-24T15:00:00Z
       board_id: "1103593152379723628"
       title: Antique Gold Necklace Set | Indian Goldsmith Jewelry
       description: Antique gold plated necklace set with peacock motifs and ruby red stones, made by Tarinika's Indian goldsmiths. Festive jewelry for Diwali or any occasion. Discovered on Mela.
@@ -88,8 +88,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6a58559c-451e-4074-bb4d-4ec5135231d3?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w4&utm_content=antique_necklace_set
 
     - name: Antique Bracelet in Green for Women (Aarivya)
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: a029b8be-63f3-4e8b-bf06-9899497efcb6   # scheduled 2026-11-25T15:00:00Z
       board_id: "1103593152379723628"
       title: Aarivya Antique Bracelet | Indian Goldsmith Jewelry
       description: Antique gold plated bracelet with green stone accents and Krishna inspired motifs, handcrafted by Tarinika. Pairs with kurtas or western wear. Discovered on Mela.
@@ -99,8 +99,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6a5855c9-8eb1-4306-9331-bbac2cdd964f?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w4&utm_content=aarivya_bracelet
 
     - name: Antique Gold Jhumka Earrings in Red for Women (Aashrita)
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: 6cbd15b6-350b-4269-9563-85ab86a5ff51   # scheduled 2026-11-26T15:00:00Z
       board_id: "1103593152379723628"
       title: Antique Gold Jhumka Earrings | Indian Goldsmith Jewelry
       description: Antique gold jhumka earrings with red stones and Lakshmi motifs, handcrafted by Tarinika's goldsmiths. Festive jewelry for any occasion. Discovered on Mela.

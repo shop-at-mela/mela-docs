@@ -3,8 +3,8 @@
 brand: "(education, brand-agnostic)"
 brand_slug: pay-01
 week: 1
-date_posted: "2026-11-18"
-status: posted   # posted = staged by the automated run this run-date, not yet scheduled/published -- see staging/week-of-2026-11-18.md
+date_posted: "2026-11-27"   # scheduled to Instagram via Blotato, posts 2026-11-27T15:00:00Z
+status: scheduled   # staged | scheduled | published
 platforms:
   - instagram
   - reddit
@@ -23,7 +23,7 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 15c76aef-68db-41ff-8d51-821219be6943   # scheduled 2026-11-27T15:00:00Z; mediaUrls served from raw.githubusercontent.com on the still-open social-staging/week-of-2026-11-18 branch (repo is public, confirmed reachable)
   destination: https://shopatmela.com
   caption: |
     Paying a brand in India, in US dollars. Here's what actually happens at checkout.

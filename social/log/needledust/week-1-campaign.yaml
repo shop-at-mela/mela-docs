@@ -3,8 +3,8 @@
 brand: Needledust
 brand_slug: needledust
 week: 1
-date_posted: null   # not yet scheduled — staged only, awaiting founder approval
-status: staged   # staged | scheduled | published
+date_posted: "2026-11-19"   # scheduled to Instagram via Blotato; carousel posts 2026-11-19T15:00:00Z, pins 2026-11-20..22T15:00:00Z
+status: scheduled   # staged | scheduled | published
 platforms:
   - instagram
   - pinterest
@@ -15,7 +15,7 @@ category: fashion
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: full                 # brand's first-ever post -> FULL lane per pre-publish-gate.md Step 0
 hypothesis: "Angle 3 (how it's actually made) with Arun lead: does naming the specific embroidery techniques (zardozi, resham, mirror work) per shoe out-save a generic 'handcrafted' claim?"
-gate_verdict: ship-pending-manual-verification   # copy + listing-live clear; watermark (gate row #20) not composited due to this cloud session's network block on database.blotato.io/cdn.shopify.com — see staging/week-of-2026-11-18.md Section 0.2
+gate_verdict: ship-override   # copy + listing-live clear; watermark (gate row #20) was NOT composited due to this cloud session's network block on database.blotato.io/cdn.shopify.com. Founder explicitly reviewed this gap and said "skip the watermark and post" on 2026-11-19 -- scheduled without it as a deliberate founder override of the pre-publish-gate hard-fail row, not a silent miss. See staging/week-of-2026-11-18.md Section 0.2 and the 2026-11-19 addendum.
 coaching_notes: "Diaspora anchor present (restock/occasion-frequency situation, not identity-labeled). Category-concentration borderline flag: 2 most recent confirmed posts (2026-11-11) were also fashion/home. No persona-fatigue cap hit, but Arun now 2 of last 5 confirmed."
 northstar_metric:
   instagram_saves: null
@@ -23,7 +23,7 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null   # not yet submitted to Blotato
+  submission_id: 22ad6e90-ed74-48d7-a905-88231fe7173e   # scheduled 2026-11-19T15:00:00Z
   destination: https://shopatmela.com/brands/needledust
   caption: |
     Growing up, juttis only came out for one wedding every few years. Needledust hand embroiders them for every day now.
@@ -76,8 +76,8 @@ pinterest:
 
   pins:
     - name: Hand-Embroidered Jutti 36-41
-      status: excluded   # posted | scheduled | queued | excluded — staged only, not yet submitted
-      submission_id: null
+      status: scheduled   # posted | scheduled | queued | excluded
+      submission_id: 077c92b2-dadf-458f-8052-2cd06b00144f   # scheduled 2026-11-20T15:00:00Z
       board_id: "1103593152379641541"
       title: Hand Embroidered Silk Jutti | Handcrafted Indian Footwear
       description: Hand embroidered silk jutti by Needledust, artisans in Delhi work zardozi and resham thread by hand. Leather lined, double cushioned for everyday wear. Discovered on Mela.
@@ -87,8 +87,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6ae5feb4-98fc-4585-9eb8-43f110967956?utm_source=pinterest&utm_medium=social&utm_campaign=needledust_w1&utm_content=hand_embroidered_jutti
 
     - name: Persian Jaal Jutti 36-41
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: a6dad5e3-0f01-423a-8e4f-a63579cd2317   # scheduled 2026-11-21T15:00:00Z
       board_id: "1103593152379641541"
       title: Persian Jaal Crepe Jutti | Hand Embroidered Indian Footwear
       description: Ivory crepe jutti with Persian jaal embroidery and crystal detail, hand finished by Needledust artisans in Delhi. Leather lined, double cushioned. Discovered on Mela.
@@ -98,8 +98,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6ae5fecc-0e1f-49ab-aea7-4a3472c5c19c?utm_source=pinterest&utm_medium=social&utm_campaign=needledust_w1&utm_content=persian_jaal_jutti
 
     - name: Embroidered Flats Multi Color 36-41
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: 18e00694-0f7e-4d17-be0c-4dad99c63fc2   # scheduled 2026-11-22T15:00:00Z
       board_id: "1103593152379641541"
       title: Velvet Embroidered Flats | Zardozi Indian Footwear
       description: Velvet flats in maroon, emerald, and teal with hand done zardozi and sequin threadwork by Needledust. Leather lined, double cushioned. Discovered on Mela.
