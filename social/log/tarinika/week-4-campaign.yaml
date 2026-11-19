@@ -1,0 +1,148 @@
+---
+# METADATA
+brand: Tarinika
+brand_slug: tarinika
+week: 4
+date_posted: null   # not yet scheduled — staged only, awaiting founder approval
+status: staged   # staged | scheduled | published
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Priya
+category: jewelry_and_accessories
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast                 # vetted brand (2 prior confirmed posts) + real photo + verified-OPEN listing
+hypothesis: "Angle 5 (occasion-in-America) with Priya lead: does an 'outfit done, jewelry missing' situation hook out-save a generic festive-jewelry product hook?"
+gate_verdict: ship-pending-manual-verification   # copy + listing-live clear; watermark (gate row #20) not composited due to this cloud session's network block -- see staging/week-of-2026-11-18.md Section 0.2
+coaching_notes: "Priya lead, occasion-first (Diwali), no traditional/ethnic/Bollywood/costume language. Diaspora anchor is the situation (outfit ready, jewelry box empty), not identity. The Aarivya bracelet render failed silently once (blank black frame, Blotato status API still reported 'done') -- caught by founder spot-check, re-rendered once, confirmed good. See products list render_note."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: https://shopatmela.com/brands/tarinika
+  caption: |
+    The outfit is ready for Diwali. The jewelry box is still empty. Tarinika's goldsmiths build the pieces that finish the look.
+
+    Indian goldsmiths hand finish each piece in antique gold plating, from a peacock motif necklace set to jhumka earrings with Lakshmi motifs, so festive dressing doesn't stop at the outfit.
+
+    Featured in this carousel:
+    • Antique Necklace Set for Women (Aadtri)
+    • Antique Bracelet in Green for Women (Aarivya)
+    • Antique Gold Jhumka Earrings in Red for Women (Aashrita)
+
+    Discover Tarinika on Mela →
+
+    Ships to the US from Tarinika.
+    #FestiveJewelry #AntiqueGoldJewelry #IndianGoldsmithing #DiwaliStyle #DiscoveredOnMela
+
+  products:
+    - name: Antique Necklace Set for Women (Aadtri)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6aea0f15-8015-4d91-8184-e707532ab0f1.jpg
+      blotato_visual_id: 0317dbde-3c38-4f3e-97db-21b9568d204a
+      alt_text: Antique gold plated brass necklace set with peacock motifs and ruby red stones on cream linen
+      price_usd: 43
+      dev_listing_id: 6a58559c-451e-4074-bb4d-4ec5135231d3
+      shopatmela_url: https://www.shopatmela.com/l/6a58559c-451e-4074-bb4d-4ec5135231d3
+      listing_verified: "2026-11-18 via blotato_create_source. Live title/price/material matched; peacock motifs + ruby stones confirmed in live listing text."
+
+    - name: Antique Bracelet in Green for Women (Aarivya)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4198d6a8-409b-46a7-bfe3-670e4ac5500f.jpg
+      blotato_visual_id: 385f746f-c7bb-47af-8e5b-c67399463dd1
+      alt_text: Antique gold plated brass bracelet with green stone accents and Krishna inspired motifs on linen
+      price_usd: 35
+      dev_listing_id: 6a5855c9-8eb1-4306-9331-bbac2cdd964f
+      shopatmela_url: https://www.shopatmela.com/l/6a5855c9-8eb1-4306-9331-bbac2cdd964f
+      listing_verified: "2026-11-18 via blotato_create_source. Live title/price/material matched; Krishna-inspired motifs confirmed in live listing text."
+      render_note: "First render (blotato_visual_id 7928d218-034b-436a-bf22-df81bd739408) came back a blank black frame per founder check of my.blotato.com on 2026-11-18. Re-rendered once per pre-publish-gate.md ('re-render once, else drop/flag'); this second render was confirmed good by the founder at https://my.blotato.com/videos/385f746f-c7bb-47af-8e5b-c67399463dd1."
+
+    - name: Antique Gold Jhumka Earrings in Red for Women (Aashrita)
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-178e49cc-631b-4d04-a905-b5b8ce339f8f.jpg
+      blotato_visual_id: fa8d3f23-3cce-43a2-9987-e1efad2655de
+      alt_text: Antique gold jhumka earrings with red stones and Lakshmi motifs on a velvet jewelry tray
+      price_usd: 55
+      dev_listing_id: 6a58563e-70ff-4fe3-b251-9980f2e230e7
+      shopatmela_url: https://www.shopatmela.com/l/6a58563e-70ff-4fe3-b251-9980f2e230e7
+      listing_verified: "2026-11-18 via blotato_create_source. Live title/price/material matched; Lakshmi motifs confirmed in live listing text."
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Indian Gift Ideas & Festive Occasions   # category-routing.yaml -> jewelry_and_accessories boards; same family as the already-staged tarinika/week-3 board
+      board_id: "1103593152379723628"
+
+  pins:
+    - name: Antique Necklace Set for Women (Aadtri)
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Antique Gold Necklace Set | Indian Goldsmith Jewelry
+      description: Antique gold plated necklace set with peacock motifs and ruby red stones, made by Tarinika's Indian goldsmiths. Festive jewelry for Diwali or any occasion. Discovered on Mela.
+      alt_text: Antique gold plated brass necklace set with peacock motifs and ruby red stones on cream linen
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6aea0f15-8015-4d91-8184-e707532ab0f1.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a58559c-451e-4074-bb4d-4ec5135231d3
+      link: https://www.shopatmela.com/l/6a58559c-451e-4074-bb4d-4ec5135231d3?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w4&utm_content=antique_necklace_set
+
+    - name: Antique Bracelet in Green for Women (Aarivya)
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Aarivya Antique Bracelet | Indian Goldsmith Jewelry
+      description: Antique gold plated bracelet with green stone accents and Krishna inspired motifs, handcrafted by Tarinika. Pairs with kurtas or western wear. Discovered on Mela.
+      alt_text: Antique gold plated brass bracelet with green stone accents and Krishna inspired motifs on linen
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4198d6a8-409b-46a7-bfe3-670e4ac5500f.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5855c9-8eb1-4306-9331-bbac2cdd964f
+      link: https://www.shopatmela.com/l/6a5855c9-8eb1-4306-9331-bbac2cdd964f?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w4&utm_content=aarivya_bracelet
+
+    - name: Antique Gold Jhumka Earrings in Red for Women (Aashrita)
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723628"
+      title: Antique Gold Jhumka Earrings | Indian Goldsmith Jewelry
+      description: Antique gold jhumka earrings with red stones and Lakshmi motifs, handcrafted by Tarinika's goldsmiths. Festive jewelry for any occasion. Discovered on Mela.
+      alt_text: Antique gold jhumka earrings with red stones and Lakshmi motifs on a velvet jewelry tray
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-178e49cc-631b-4d04-a905-b5b8ce339f8f.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a58563e-70ff-4fe3-b251-9980f2e230e7
+      link: https://www.shopatmela.com/l/6a58563e-70ff-4fe3-b251-9980f2e230e7?utm_source=pinterest&utm_medium=social&utm_campaign=tarinika_w4&utm_content=aashrita_jhumka_earrings
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/tarinika
+  checks:
+    brand_story:
+      result: pass
+      note: "Confirmed live via blotato_create_source: brand page shows Tarinika, contemporary Indian filigree and temple-inspired jewelry -- matches caption claims."
+    artisan_details:
+      result: pass
+      note: Goldsmithing craft + specific motifs (peacock, Krishna, Lakshmi) verified against live listing text per product.
+    cultural_context:
+      result: pass
+      note: Occasion framing (Diwali) without traditional/ethnic/costume language.
+    aesthetic_match:
+      result: tbd
+      note: Could not visually inspect brand page or rendered carousel pixels (network block).
+    product_findability:
+      result: pass
+      note: Product names listed in caption.
+    mobile_responsive:
+      result: tbd
+      note: Needs verification; could not render/view the live page in this sandbox.
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  category_note: "jewelry_and_accessories; no fresh-brand option available this week (only Isharya and Tarinika carry Dev_Listing_IDs in this category, and Isharya is already staged-unscheduled at week-3) -- reused Tarinika with 3 products never featured before, including never in the already-staged tarinika/week-3."
+  copy_quality: No dashes used; all craft/material claims verified against the live listing text (not just the classified CSV).
+  shipping_clarity: "us_duties: DDU -- caption deliberately omits any duties-included claim. us_ships_from: 'mixed' (USA or India facilities) -- caption says 'Ships to the US from Tarinika' without an unverified single-country claim, per shopify_brands.py."
+  product_diversity: 3 new products (necklace set, bracelet, earrings) distinct from all 3 prior Tarinika weeks, including the already-staged week-3.
+  team_feedback: ""
+  network_block_note: "This cloud session's egress blocks shopatmela.com, cdn.shopify.com, and database.blotato.io. Product renders are raw Blotato output, not watermarked or diff-QC'd against source. See staging/week-of-2026-11-18.md Section 0.2 for detail and recommended fix."

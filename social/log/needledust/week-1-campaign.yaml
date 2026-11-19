@@ -1,0 +1,147 @@
+---
+# METADATA
+brand: Needledust
+brand_slug: needledust
+week: 1
+date_posted: null   # not yet scheduled — staged only, awaiting founder approval
+status: staged   # staged | scheduled | published
+platforms:
+  - instagram
+  - pinterest
+format: carousel
+persona: Arun
+category: fashion
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full                 # brand's first-ever post -> FULL lane per pre-publish-gate.md Step 0
+hypothesis: "Angle 3 (how it's actually made) with Arun lead: does naming the specific embroidery techniques (zardozi, resham, mirror work) per shoe out-save a generic 'handcrafted' claim?"
+gate_verdict: ship-pending-manual-verification   # copy + listing-live clear; watermark (gate row #20) not composited due to this cloud session's network block on database.blotato.io/cdn.shopify.com — see staging/week-of-2026-11-18.md Section 0.2
+coaching_notes: "Diaspora anchor present (restock/occasion-frequency situation, not identity-labeled). Category-concentration borderline flag: 2 most recent confirmed posts (2026-11-11) were also fashion/home. No persona-fatigue cap hit, but Arun now 2 of last 5 confirmed."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: null   # not yet submitted to Blotato
+  destination: https://shopatmela.com/brands/needledust
+  caption: |
+    Growing up, juttis only came out for one wedding every few years. Needledust hand embroiders them for every day now.
+
+    Their artisans in Delhi work silk, crepe, and velvet by hand, building each pair with zardozi, resham, and mirror work, then line every one in leather with double cushioning for actual wear, not just display.
+
+    Featured in this carousel:
+    • Hand-Embroidered Jutti 36-41
+    • Persian Jaal Jutti 36-41
+    • Embroidered Flats Multi Color 36-41
+
+    Discover Needledust on Mela →
+
+    Ships to the US from Needledust.
+    #HandEmbroidered #JuttiStyle #IndianCraftsmanship #ArtisanFootwear #DiscoveredOnMela
+
+  products:
+    - name: Hand-Embroidered Jutti 36-41
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0b428f92-4f94-4ae1-b1a2-e6a0a214381c.jpg
+      blotato_visual_id: 303b5696-c1ec-43e4-bca9-a48a889c511c
+      alt_text: Hand embroidered silk jutti pair on a warm walnut entryway bench in a sunlit American foyer
+      price_usd: 64
+      dev_listing_id: 6ae5feb4-98fc-4585-9eb8-43f110967956
+      shopatmela_url: https://www.shopatmela.com/l/6ae5feb4-98fc-4585-9eb8-43f110967956
+      listing_verified: "2026-11-18 via blotato_create_source (server-side fetch; direct fetch blocked in this sandbox). Live title/price/material all matched."
+
+    - name: Persian Jaal Jutti 36-41
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-28b4a0ef-3b3a-42d8-872f-b1bea4db7885.jpg
+      blotato_visual_id: d747bea4-4478-4167-b3ce-e4d6ed9205f3
+      alt_text: Ivory crepe jutti pair with Persian jaal embroidery and crystal detail on a marble console table
+      price_usd: 72
+      dev_listing_id: 6ae5fecc-0e1f-49ab-aea7-4a3472c5c19c
+      shopatmela_url: https://www.shopatmela.com/l/6ae5fecc-0e1f-49ab-aea7-4a3472c5c19c
+      listing_verified: "2026-11-18 via blotato_create_source. Live title/price/material all matched."
+
+    - name: Embroidered Flats Multi Color 36-41
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-ffee1f51-9b4e-4e59-b46a-f32b61bc1f86.jpg
+      blotato_visual_id: a32f98f7-c1ec-4465-814b-c5c4ec568366
+      alt_text: Velvet embroidered flat pair in maroon, emerald and teal with gold zardozi threadwork on a dining table
+      price_usd: 82
+      dev_listing_id: 6ae5ff8f-1fca-49ac-ad0e-83f44992a900
+      shopatmela_url: https://www.shopatmela.com/l/6ae5ff8f-1fca-49ac-ad0e-83f44992a900
+      listing_verified: "2026-11-18 via blotato_create_source. Live title/price/material all matched."
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Handmade Indian Juttis & Artisan Footwear
+      board_id: "1103593152379641541"
+
+  pins:
+    - name: Hand-Embroidered Jutti 36-41
+      status: excluded   # posted | scheduled | queued | excluded — staged only, not yet submitted
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Hand Embroidered Silk Jutti | Handcrafted Indian Footwear
+      description: Hand embroidered silk jutti by Needledust, artisans in Delhi work zardozi and resham thread by hand. Leather lined, double cushioned for everyday wear. Discovered on Mela.
+      alt_text: Hand embroidered silk jutti pair on a warm walnut entryway bench in a sunlit American foyer
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0b428f92-4f94-4ae1-b1a2-e6a0a214381c.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6ae5feb4-98fc-4585-9eb8-43f110967956
+      link: https://www.shopatmela.com/l/6ae5feb4-98fc-4585-9eb8-43f110967956?utm_source=pinterest&utm_medium=social&utm_campaign=needledust_w1&utm_content=hand_embroidered_jutti
+
+    - name: Persian Jaal Jutti 36-41
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Persian Jaal Crepe Jutti | Hand Embroidered Indian Footwear
+      description: Ivory crepe jutti with Persian jaal embroidery and crystal detail, hand finished by Needledust artisans in Delhi. Leather lined, double cushioned. Discovered on Mela.
+      alt_text: Ivory crepe jutti pair with Persian jaal embroidery and crystal detail on a marble console table
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-28b4a0ef-3b3a-42d8-872f-b1bea4db7885.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6ae5fecc-0e1f-49ab-aea7-4a3472c5c19c
+      link: https://www.shopatmela.com/l/6ae5fecc-0e1f-49ab-aea7-4a3472c5c19c?utm_source=pinterest&utm_medium=social&utm_campaign=needledust_w1&utm_content=persian_jaal_jutti
+
+    - name: Embroidered Flats Multi Color 36-41
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379641541"
+      title: Velvet Embroidered Flats | Zardozi Indian Footwear
+      description: Velvet flats in maroon, emerald, and teal with hand done zardozi and sequin threadwork by Needledust. Leather lined, double cushioned. Discovered on Mela.
+      alt_text: Velvet embroidered flat pair in maroon, emerald and teal with gold zardozi threadwork on a dining table
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-ffee1f51-9b4e-4e59-b46a-f32b61bc1f86.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6ae5ff8f-1fca-49ac-ad0e-83f44992a900
+      link: https://www.shopatmela.com/l/6ae5ff8f-1fca-49ac-ad0e-83f44992a900?utm_source=pinterest&utm_medium=social&utm_campaign=needledust_w1&utm_content=embroidered_flats_multi
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/needledust
+  checks:
+    brand_story:
+      result: pass
+      note: "Confirmed live via blotato_create_source (direct fetch blocked in this sandbox): brand page shows Needledust, hand embroidered leather juttis/mules/purses, designed in Delhi -- matches caption claims."
+    artisan_details:
+      result: pass
+      note: Craft techniques (zardozi, resham, mirror work) verified against live listing text per product, not just CSV.
+    cultural_context:
+      result: pass
+      note: Craft-origin framing (Arun lead), no exoticizing language.
+    aesthetic_match:
+      result: tbd
+      note: Could not visually inspect brand page or rendered carousel pixels (network block) -- founder should confirm at approval.
+    product_findability:
+      result: pass
+      note: Product names listed in caption; brand carousel destination is the brand page (consistent with Fizzy Goblet / Banjaaran precedent for collection carousels).
+    mobile_responsive:
+      result: tbd
+      note: Needs verification; could not render/view the live page in this sandbox.
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  category_note: "Brand-new brand, fashion category. Flagged as a borderline category-concentration repeat against the 2026-11-11 confirmed batch (Suta, Banjaaran wk2) -- see staging sheet Section 1."
+  copy_quality: No dashes used; all craft/material claims verified against the live listing text (not just the classified CSV); live listing titles differ slightly from CSV internal names and the live titles were used throughout.
+  shipping_clarity: "us_duties: DDU (customer may owe duties at delivery) -- caption deliberately omits any duties-included claim. us_ships_from: None (not specifically 'india') -- caption says 'Ships to the US from Needledust' without an unverified 'from India' add-on, per shopify_brands.py."
+  product_diversity: First-ever Needledust post; 3 products across silk, crepe, and velvet jutti/flat styles.
+  team_feedback: ""
+  network_block_note: "This cloud session's egress blocks shopatmela.com, cdn.shopify.com, and database.blotato.io. Product renders are raw Blotato output, not watermarked or diff-QC'd against source. See staging/week-of-2026-11-18.md Section 0.2 for detail and recommended fix."

@@ -1,0 +1,102 @@
+---
+# METADATA
+brand: "(education, brand-agnostic)"
+brand_slug: pay-01
+week: 1
+date_posted: "2026-11-18"
+status: posted   # posted = staged by the automated run this run-date, not yet scheduled/published -- see staging/week-of-2026-11-18.md
+platforms:
+  - instagram
+  - reddit
+format: carousel
+persona: Neha
+category: trust_service
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full                 # education -> FULL lane
+hypothesis: "Angle 1 variant (belonging/relief) with Neha lead: does busting the 'special international payment' myth out-save a generic 'how shipping works' explainer?"
+gate_verdict: ship
+coaching_notes: "Neha lead (matches pay-01's own personas:[neha] field) -- restocking/price-scrutiny situation reframed as payment-friction relief. Diaspora anchor present (the situational worry), not identity-labeled. Deliberately avoided any duties/customs claim (topic has no verify:true flag; myth-vs-fact.html's own guardrail warns duties vary by brand)."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null   # N/A -- IG only for this topic, no Pinterest leg
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: https://shopatmela.com
+  caption: |
+    Paying a brand in India, in US dollars. Here's what actually happens at checkout.
+
+    The price listed on Mela is already converted to USD, so there's no separate international payment step. You check out directly on the brand's own site, with the card or wallet you already use.
+
+    Discover more brands on Mela →
+
+    #ShoppingIndianBrands #HowItWorks #DiscoveredOnMela
+
+  slides:
+    - name: "Slide 1 -- Hook"
+      image_path: social/log/_education/pay-01-w1/slide-1-hook.png
+      alt_text: Text card reading 'A brand in India, a price in dollars', introducing how USD checkout works on Mela
+      render_method: local HTML/CSS (hook-card.html template) -> headless Chromium screenshot, 1080x1080, no external image fetch
+    - name: "Slide 2 -- Myth vs fact (payment method)"
+      image_path: social/log/_education/pay-01-w1/slide-2-myth-payment-method.png
+      alt_text: "Myth vs fact card: buying from an India-based brand needs a special payment method; fact: Mela prices are already in US dollars"
+      render_method: local HTML/CSS (myth-vs-fact.html template) -> headless Chromium screenshot, 1080x1080
+    - name: "Slide 3 -- Myth vs fact (payment trust / close)"
+      image_path: social/log/_education/pay-01-w1/slide-3-myth-checkout.png
+      alt_text: "Myth vs fact card: an India based checkout can't be as secure or smooth as a US one; fact: India runs some of the most advanced payment infrastructure in the world"
+      render_method: local HTML/CSS (myth-vs-fact.html template) -> headless Chromium screenshot, 1080x1080
+      revision_note: "Original close slide ('Mela is the store, so Mela charges your card' / 'You check out on the brand's own site') was changed at founder's request -- didn't want to foreground that Mela isn't the checkout. Replaced with a payment-trust angle (India's payment infrastructure is advanced/secure), kept generic rather than naming a specific processor like Razorpay since no verified data ties either brand's US checkout to one specific gateway."
+
+# REDDIT (draft only -- manual, human-posted; no Blotato automation per reddit-strategy.md)
+reddit:
+  status: draft   # draft | posted -- Reddit is manual/human-only; this run only prepared the draft
+  suggested_subreddit: r/IndiaMoms
+  title: "PSA for anyone ordering from India-based brands: checkout is usually just normal USD, no special payment method needed"
+  body: |
+    I've seen this question pop up a few times here (and asked it myself before I actually tried it): if a shop is based in India, do you need some special way to pay? Short answer from my own experience: no. Most of these brands run Shopify stores, same as any US small business, and they price listings in US dollars once they ship internationally. You check out with your normal card or digital wallet, no currency conversion step on your end, no special international payment service.
+
+    The one thing that does vary by brand is duties and taxes. Some brands build it into the price (prepaid, nothing extra at delivery). Others don't, so you can owe something when it arrives. That part is genuinely brand specific, so it's worth checking a brand's own shipping policy page before you order, not assuming either way.
+
+    Happy to answer specific brand questions if anyone has one. (Building a discovery site for Indian brands that ship to the US, disclosing that upfront.)
+  notes: "No Mela product link in the body (90/10 rule -- a link belongs in a reply if asked). Affiliation disclosed. Confirm r/IndiaMoms's current self-promo rules before posting; subreddit rules drift."
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com
+  checks:
+    brand_story:
+      result: pass
+      note: "N/A -- brand-agnostic topic; no single brand page promise to audit. CTA points to the Mela homepage, not a specific listing, per established precedent (craft-handloom-w1, sizing-01-w1, trust-small-batch-01-w1)."
+    artisan_details:
+      result: pass
+      note: N/A for a payment/checkout trust_service topic.
+    cultural_context:
+      result: pass
+      note: No duties/customs claim invented; core mechanic (discover on Mela, check out on brand's own site, USD pricing) matches shipping-timeline.html's own affiliate-positioning guardrail and this run's own verified USD listing prices.
+    aesthetic_match:
+      result: pass
+      note: Navy + marigold worn openly per trust_service sub-system (Mela utility, not a product).
+    product_findability:
+      result: pass
+      note: N/A -- no product in this carousel by design (trust_service payoff is CTA-only, never a product).
+    mobile_responsive:
+      result: pass
+      note: Rendered at 1080x1080 (IG feed ratio); visually inspected via Read tool, no overflow or clipped text.
+  observations:
+    - theme: ""
+      severity: ""
+      status: ""
+      description: ""
+      mitigation: ""
+
+# NOTES
+notes:
+  category_note: "trust_service; alternates from last week's cultural_education topic (craft-farm-to-bottle-beauty) per the Phase 1 scoring rule. Scored identically to returns-01 (+2 alternation, +1 no source_brands used in 4wks); picked pay-01 as the sharper diaspora pain point."
+  copy_quality: No dashes used; no duties/customs figure invented (topic has no verify:true claim and none was added).
+  shipping_clarity: "N/A -- no shipping-actor claim made in this carousel; it is strictly about USD pricing/checkout mechanics, not delivery."
+  product_diversity: N/A -- education topic, no product.
+  team_feedback: ""
+  network_block_note: "None -- this tile has zero network dependency (local HTML/CSS render, committed PNGs). Unaffected by the database.blotato.io/cdn.shopify.com/shopatmela.com block noted on the other two tiles this run."
+  data_quality_note: "education-topics.yaml's craft-handloom entry still reads status: backlog despite being used for the week-of-2026-10-28 batch (PR #8) -- flagged again, not corrected here per standing instruction to only mark this run's own topic (pay-01) used."
