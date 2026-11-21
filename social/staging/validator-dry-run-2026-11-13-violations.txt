@@ -1,0 +1,832 @@
+FAIL rule 1 (brand coverage) post=_education/chikankari-01-w1-campaign: First post for 'house-of-chikankari' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=_education/craft-farm-to-bottle-beauty-w1-campaign: 'vilvah' already has 3 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=_education/craft-goldsmithing-isharya-w1-campaign: 'isharya' already has 2 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=_education/quality-superbottoms-w1-campaign: 'superbottoms' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=aagghhoo/week-1-campaign: First post for 'aagghhoo' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=ankid/week-2-campaign: First post for 'ankid' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=ankid/week-2-education-campaign: 'ankid' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, babyforest, banjaaran-studio, house-of-chikankari, isharya, nicobar, polite-society, superbottoms, suta, vilvah.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=ankid/week-3-campaign: 'ankid' already has 2 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, banjaaran-studio, superbottoms, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=babyforest/week-1-campaign: First post for 'babyforest' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=banjaaran-studio/week-1-campaign: First post for 'banjaaran-studio' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=banjaaran-studio/week-2-campaign: 'banjaaran-studio' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=choosekind/week-1-campaign: First post for 'choosekind' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=fizzy-goblet/week-1-campaign: First post for 'fizzy-goblet' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=fizzy-goblet/week-2-campaign: 'fizzy-goblet' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, ankid, babyforest, banjaaran-studio, choosekind, gullylabs, house-of-chikankari, isharya, kaunteya, nicobar, polite-society, superbottoms, suta, tarinika, the-alternate, vilvah.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=gullylabs/week-1-campaign: First post for 'gullylabs' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=gullylabs/week-2-campaign: 'gullylabs' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, banjaaran-studio, superbottoms, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=house-of-chikankari/week-1-campaign: 'house-of-chikankari' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, banjaaran-studio, isharya, polite-society, superbottoms, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=house-of-chikankari/week-2-campaign: 'house-of-chikankari' already has 2 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=isharya/week-1-campaign: First post for 'isharya' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=isharya/week-2-campaign: 'isharya' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=kaunteya/week-1-campaign: First post for 'kaunteya' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=kaunteya/week-2-campaign: 'kaunteya' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, banjaaran-studio, superbottoms, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=kaunteya/week-3-campaign: 'kaunteya' already has 2 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=kaunteya/week-4-campaign: 'kaunteya' already has 3 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=nicobar/week-1-campaign: First post for 'nicobar' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=pluchi/week-1-campaign: Brand 'pluchi' is not currently listed on shopatmela.com/brands.
+     fix: Remove the brand from this post. Add it to config/roster.yaml only after it is listed.
+FAIL rule 1 (brand coverage) post=polite-society/week-1-campaign: First post for 'polite-society' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=superbottoms/week-1-campaign: First post for 'superbottoms' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=suta/week-1-campaign: First post for 'suta' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=tarinika/week-1-campaign: First post for 'tarinika' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=tarinika/week-2-campaign: 'tarinika' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, banjaaran-studio, superbottoms, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=the-alternate/week-1-campaign: First post for 'the-alternate' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=the-alternate/week-2-campaign: 'the-alternate' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, aagghhoo, banjaaran-studio, polite-society, superbottoms, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=the-nesavu/week-1-campaign: Brand 'the-nesavu' is not currently listed on shopatmela.com/brands.
+     fix: Remove the brand from this post. Add it to config/roster.yaml only after it is listed.
+FAIL rule 1 (brand coverage) post=vilvah/week-1-campaign: First post for 'vilvah' has no outreach DM date in config.
+     fix: Add the brand's first outreach DM date to first_outreach_dm_dates in config/roster.yaml.
+FAIL rule 1 (brand coverage) post=vilvah/week-2-campaign: 'vilvah' already has 1 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, banjaaran-studio, superbottoms, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 1 (brand coverage) post=vilvah/week-3-campaign: 'vilvah' already has 2 named post(s) and these listed brands have none: saphed, needledust, hemant-and-nandita, masilo, suta.
+     fix: Post about saphed first, after its outreach DM date. No second post for any brand until every listed brand has a first.
+FAIL rule 2 (cadence) post=_education/certdecode-01-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/chikankari-01-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/chikankari-01-w1-campaign: 2 feed posts on 2026-08-09 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=_education/chikankari-01-w1-campaign: Scheduled 0 min from post nicobar/week-1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/chikankari-01-w1-campaign: 5 feed posts in the 7 days from 2026-08-03 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=_education/craft-farm-to-bottle-beauty-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/craft-farm-to-bottle-beauty-w1-campaign: 5 feed posts on 2026-11-11 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Scheduled 3 min from post _education/sizing-01-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Scheduled 1 min from post banjaaran-studio/week-2-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Scheduled 2 min from post kaunteya/week-4-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Scheduled 1 min from post suta/week-1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/craft-farm-to-bottle-beauty-w1-campaign: 5 feed posts in the 7 days from 2026-11-11 09:40. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=_education/craft-goldsmithing-isharya-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/craft-goldsmithing-isharya-w1-campaign: 5 feed posts in the 7 days from 2026-10-06 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=_education/craftknitwear-01-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/craftknitwear-01-w1-campaign: 2 feed posts on 2026-09-07 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=_education/craftknitwear-01-w1-campaign: 6 feed posts in the 7 days from 2026-09-06 11:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=_education/quality-superbottoms-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/quality-superbottoms-w1-campaign: 5 feed posts in the 7 days from 2026-10-06 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=_education/ship-01-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/ship-01-w1-campaign: 2 feed posts on 2026-08-11 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=_education/ship-01-w1-campaign: 6 feed posts in the 7 days from 2026-08-05 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=_education/sizing-01-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/sizing-01-w1-campaign: 5 feed posts on 2026-11-11 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=_education/sizing-01-w1-campaign: Scheduled 3 min from post _education/craft-farm-to-bottle-beauty-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/sizing-01-w1-campaign: Scheduled 4 min from post banjaaran-studio/week-2-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/sizing-01-w1-campaign: Scheduled 1 min from post kaunteya/week-4-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/sizing-01-w1-campaign: Scheduled 2 min from post suta/week-1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=_education/sizing-01-w1-campaign: 5 feed posts in the 7 days from 2026-11-11 09:40. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=_education/trust-small-batch-01-w1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=_education/trust-small-batch-01-w1-campaign: 5 feed posts in the 7 days from 2026-10-09 13:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=aagghhoo/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=aagghhoo/week-1-campaign: 3 feed posts on 2026-09-08 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=aagghhoo/week-1-campaign: 5 feed posts in the 7 days from 2026-09-07 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=ankid/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=ankid/week-2-campaign: 5 feed posts in the 7 days from 2026-08-03 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=ankid/week-2-education-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=ankid/week-2-education-campaign: 5 feed posts in the 7 days from 2026-08-03 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=ankid/week-3-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=ankid/week-3-campaign: 8 feed posts in the 7 days from 2026-09-04 11:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=babyforest/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=babyforest/week-1-campaign: 5 feed posts in the 7 days from 2026-08-03 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-2-campaign: 5 feed posts on 2026-11-11 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-2-campaign: Scheduled 1 min from post _education/craft-farm-to-bottle-beauty-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-2-campaign: Scheduled 4 min from post _education/sizing-01-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-2-campaign: Scheduled 3 min from post kaunteya/week-4-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-2-campaign: Scheduled 2 min from post suta/week-1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=banjaaran-studio/week-2-campaign: 5 feed posts in the 7 days from 2026-11-11 09:40. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=choosekind/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=fizzy-goblet/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=fizzy-goblet/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=gullylabs/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=gullylabs/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=gullylabs/week-2-campaign: 8 feed posts in the 7 days from 2026-09-04 11:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=house-of-chikankari/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=house-of-chikankari/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=isharya/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=isharya/week-1-campaign: 2 feed posts on 2026-08-27 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=isharya/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=isharya/week-2-campaign: 5 feed posts in the 7 days from 2026-10-06 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=kaunteya/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=kaunteya/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=kaunteya/week-2-campaign: 8 feed posts in the 7 days from 2026-09-04 11:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=kaunteya/week-3-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=kaunteya/week-3-campaign: 5 feed posts in the 7 days from 2026-10-06 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=kaunteya/week-4-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=kaunteya/week-4-campaign: 5 feed posts on 2026-11-11 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=kaunteya/week-4-campaign: Scheduled 2 min from post _education/craft-farm-to-bottle-beauty-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=kaunteya/week-4-campaign: Scheduled 1 min from post _education/sizing-01-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=kaunteya/week-4-campaign: Scheduled 3 min from post banjaaran-studio/week-2-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=kaunteya/week-4-campaign: Scheduled 1 min from post suta/week-1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=kaunteya/week-4-campaign: 5 feed posts in the 7 days from 2026-11-11 09:40. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=nicobar/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=nicobar/week-1-campaign: 2 feed posts on 2026-08-09 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=nicobar/week-1-campaign: Scheduled 0 min from post _education/chikankari-01-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=nicobar/week-1-campaign: 5 feed posts in the 7 days from 2026-08-03 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=pluchi/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=pluchi/week-1-campaign: 3 feed posts on 2026-09-08 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=pluchi/week-1-campaign: 5 feed posts in the 7 days from 2026-09-07 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=polite-society/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=superbottoms/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=suta/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=suta/week-1-campaign: 5 feed posts on 2026-11-11 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=suta/week-1-campaign: Scheduled 1 min from post _education/craft-farm-to-bottle-beauty-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=suta/week-1-campaign: Scheduled 2 min from post _education/sizing-01-w1-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=suta/week-1-campaign: Scheduled 2 min from post banjaaran-studio/week-2-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=suta/week-1-campaign: Scheduled 1 min from post kaunteya/week-4-campaign. Batch rejected: posts must be 6h apart.
+     fix: Space the posts at least 6 hours apart.
+FAIL rule 2 (cadence) post=suta/week-1-campaign: 5 feed posts in the 7 days from 2026-11-11 09:40. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=tarinika/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=tarinika/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=tarinika/week-2-campaign: 2 feed posts on 2026-09-07 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=tarinika/week-2-campaign: 5 feed posts in the 7 days from 2026-09-07 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=the-alternate/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=the-alternate/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=the-alternate/week-2-campaign: 2 feed posts on 2026-08-27 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=the-nesavu/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=vilvah/week-1-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=vilvah/week-1-campaign: 2 feed posts on 2026-08-11 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=vilvah/week-1-campaign: 6 feed posts in the 7 days from 2026-08-05 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=vilvah/week-2-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=vilvah/week-2-campaign: 3 feed posts on 2026-09-08 (America/New_York). Max 1.
+     fix: Move this post to a day with no other feed post.
+FAIL rule 2 (cadence) post=vilvah/week-2-campaign: 5 feed posts in the 7 days from 2026-09-07 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 2 (cadence) post=vilvah/week-3-campaign: No recorded human approval.
+     fix: Record approval.approved_by (a person) and approval.approved_at before scheduling.
+FAIL rule 2 (cadence) post=vilvah/week-3-campaign: 5 feed posts in the 7 days from 2026-10-06 12:00. Max 4.
+     fix: Drop or delay a post so no 7 day window has more than 4.
+FAIL rule 3 (people quota) post=_education/certdecode-01-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/chikankari-01-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/craft-goldsmithing-isharya-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/craftknitwear-01-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/quality-superbottoms-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/ship-01-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/sizing-01-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=_education/trust-small-batch-01-w1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=aagghhoo/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=ankid/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=ankid/week-2-education-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=ankid/week-3-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=babyforest/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=banjaaran-studio/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=banjaaran-studio/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=choosekind/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=fizzy-goblet/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=fizzy-goblet/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=gullylabs/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=gullylabs/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=house-of-chikankari/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=house-of-chikankari/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=isharya/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=isharya/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=kaunteya/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=kaunteya/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=kaunteya/week-3-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=kaunteya/week-4-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=nicobar/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=pluchi/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=polite-society/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=superbottoms/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=suta/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=tarinika/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=tarinika/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=the-alternate/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=the-alternate/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=the-nesavu/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=vilvah/week-1-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=vilvah/week-2-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 3 (people quota) post=vilvah/week-3-campaign: Candidate has no people_present tag.
+     fix: Set people_present to true or false. The validator reads tags, it does not look at images.
+FAIL rule 4 (rights) post=aagghhoo/week-1-campaign: Image 'Leaf Green Cotton Flannel Baby/Toddler Blanket' is aagghhoo's asset. Missing permission: permission_granted or collab_agreed from aagghhoo.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=aagghhoo/week-1-campaign: Image 'Vintage Baby Booties — Merino Wool (handknitted)' is aagghhoo's asset. Missing permission: permission_granted or collab_agreed from aagghhoo.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=aagghhoo/week-1-campaign: Image 'Chubby Mustard Seed Newborn Baby Pillow' is aagghhoo's asset. Missing permission: permission_granted or collab_agreed from aagghhoo.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=aagghhoo/week-1-campaign: Image 'Happy Jingles — Zero-Waste Herbal-Dyed Sensory Toys' is aagghhoo's asset. Missing permission: permission_granted or collab_agreed from aagghhoo.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=ankid/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b6e5efcf-1d03-4651-a367-7edab620d360.jpg' is ankid's asset. Missing permission: permission_granted or collab_agreed from ankid.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=ankid/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2bcf625c-1434-444e-90a9-596c3b95f981.jpg' is ankid's asset. Missing permission: permission_granted or collab_agreed from ankid.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=ankid/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-80ba4a9d-fd98-496c-b7b9-d1806e7b4464.jpg' is ankid's asset. Missing permission: permission_granted or collab_agreed from ankid.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=ankid/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-bdc3cc25-3dd5-4f60-b2a1-4b459b6b209d.jpg' is ankid's asset. Missing permission: permission_granted or collab_agreed from ankid.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=babyforest/week-1-campaign: Image 'Narial Tailam - Organic Cold Pressed Coconut Oil for Baby 200ml' is babyforest's asset. Missing permission: permission_granted or collab_agreed from babyforest.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=babyforest/week-1-campaign: Image 'Badami Sneh - Organic Cold Pressed Almond Oil for Baby 0-6M 200ml' is babyforest's asset. Missing permission: permission_granted or collab_agreed from babyforest.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=banjaaran-studio/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3018ea27-f3c8-44f5-b5bb-881822695e83.jpg' is banjaaran-studio's asset. Missing permission: permission_granted or collab_agreed from banjaaran-studio.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=banjaaran-studio/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-16ae8e63-2524-4fc3-9365-6029259880d6.jpg' is banjaaran-studio's asset. Missing permission: permission_granted or collab_agreed from banjaaran-studio.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=banjaaran-studio/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2304cd4c-2d1f-4077-b589-0abce324edc5.jpg' is banjaaran-studio's asset. Missing permission: permission_granted or collab_agreed from banjaaran-studio.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=banjaaran-studio/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0c11f3a5-1704-4684-8cd0-099de7bb7b04.jpg' is banjaaran-studio's asset. Missing permission: permission_granted or collab_agreed from banjaaran-studio.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=banjaaran-studio/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6720bb47-c4b9-4343-acc2-73eb6693fb42.jpg' is banjaaran-studio's asset. Missing permission: permission_granted or collab_agreed from banjaaran-studio.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=banjaaran-studio/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e41fddac-3d03-4700-991f-e7c70fcc4921.jpg' is banjaaran-studio's asset. Missing permission: permission_granted or collab_agreed from banjaaran-studio.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=choosekind/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-02682140-d8d7-4950-9cfa-2ad72de6a8a6.jpg' is choosekind's asset. Missing permission: permission_granted or collab_agreed from choosekind.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=choosekind/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-2c02cdf3-426f-4a70-b984-f2045294fe48.jpg' is choosekind's asset. Missing permission: permission_granted or collab_agreed from choosekind.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=choosekind/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3009193-3dab-4805-9e2f-f07212d68c25.jpg' is choosekind's asset. Missing permission: permission_granted or collab_agreed from choosekind.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=choosekind/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d3e67b85-82ec-46d0-a8be-0ecb88c17590.jpg' is choosekind's asset. Missing permission: permission_granted or collab_agreed from choosekind.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-33476dc3-d86c-4211-8a45-5861b604e6bb.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7734ae3d-694d-423a-96c4-9207f15a6c6e.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-eacae169-4966-4382-bdfd-a7bdcaf35d15.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e732f462-dcf9-4bcc-ab94-13c3bd124bc2.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e279a5da-7d25-4343-9e5b-eb9c6bb7e88c.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f8e01cc7-f885-4e4c-94fd-09806ab1cc50.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e3eb43c5-797e-4134-af32-3264e753a608.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e4dd02bd-944b-456f-84d3-81fa0361fbb5.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-a75dcf07-8675-46c5-8aba-9c4d208a9387.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-f84ed864-653b-4d2c-b902-c5ecb4f16f9d.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=fizzy-goblet/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-abf15a12-4a4d-4b22-8536-744cda0985cd.jpg' is fizzy-goblet's asset. Missing permission: permission_granted or collab_agreed from fizzy-goblet.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=gullylabs/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6847bc96-84fe-48d4-bd82-4b901238a7a4.jpg' is gullylabs's asset. Missing permission: permission_granted or collab_agreed from gullylabs.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=gullylabs/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-749e3311-9b6d-4ed4-8831-4d5ea3291086.jpg' is gullylabs's asset. Missing permission: permission_granted or collab_agreed from gullylabs.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=gullylabs/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e854f05e-f9b5-4c90-8445-9f51c8ccc23b.jpg' is gullylabs's asset. Missing permission: permission_granted or collab_agreed from gullylabs.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=gullylabs/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-b3ba3126-da44-42cf-a0c6-863adf4a9db3.jpg' is gullylabs's asset. Missing permission: permission_granted or collab_agreed from gullylabs.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=gullylabs/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-dd3f8ffe-ae1e-4ad7-8af3-9e3e5918e970.jpg' is gullylabs's asset. Missing permission: permission_granted or collab_agreed from gullylabs.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=gullylabs/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3e6c70e6-f3ab-4c46-9c9c-72125a5665c8.jpg' is gullylabs's asset. Missing permission: permission_granted or collab_agreed from gullylabs.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=house-of-chikankari/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/a7b2452a-b148-44e9-ac90-c9f298f09797.jpg' is house-of-chikankari's asset. Missing permission: permission_granted or collab_agreed from house-of-chikankari.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=house-of-chikankari/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/7b190ef5-df56-4a87-98d0-824a7a27aa6b.jpg' is house-of-chikankari's asset. Missing permission: permission_granted or collab_agreed from house-of-chikankari.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=house-of-chikankari/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/53166c22-b674-4bce-b040-e1b7966cb14e.jpg' is house-of-chikankari's asset. Missing permission: permission_granted or collab_agreed from house-of-chikankari.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=isharya/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/db712797-c9e0-49fd-ad55-adf015369a7c.jpg' is isharya's asset. Missing permission: permission_granted or collab_agreed from isharya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=isharya/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/ff07aac4-b89e-4696-9ab4-4bf686bd3b2c.jpg' is isharya's asset. Missing permission: permission_granted or collab_agreed from isharya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=isharya/week-2-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/61a71eca-626a-43f1-a71a-ca8866b2665e.jpg' is isharya's asset. Missing permission: permission_granted or collab_agreed from isharya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-3d4cb7de-23b0-4acd-8bf9-6fb1a599c1c4.jpg' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5b3f8015-efd4-4c3f-bb17-c424ed6f96a7.jpg' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-520833c6-65e9-446e-be6a-81df37f73fd5.jpg' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-d461c194-5f2a-4870-9b18-cb406148928a.jpg' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-3-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/343611db-1144-45f1-8520-6e39db34acdd.jpg' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-3-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/637d30e1-b1ed-4aa1-a1b8-64810fb77717.jpg' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-3-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/5a804af9-78e9-4232-91e9-4ca68c09efa4.jpg' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-4-campaign: Image 'https://cdn.shopify.com/s/files/1/0560/0198/6604/products/01-1_d5e6ce53-3b9c-4adb-a1e9-fbc50326a007.jpg?v=1642073998' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-4-campaign: Image 'https://cdn.shopify.com/s/files/1/0560/0198/6604/products/alf0482.jpg?v=1732103080' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=kaunteya/week-4-campaign: Image 'https://cdn.shopify.com/s/files/1/0560/0198/6604/products/alf0494.jpg?v=1677926586' is kaunteya's asset. Missing permission: permission_granted or collab_agreed from kaunteya.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=pluchi/week-1-campaign: Image 'Cotton-Knit All-Season Throw (Advent Grey — gnome motif)' is pluchi's asset. Missing permission: permission_granted or collab_agreed from pluchi.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=pluchi/week-1-campaign: Image 'Aarya Embroidered Cotton-Knit Bedcover (set)' is pluchi's asset. Missing permission: permission_granted or collab_agreed from pluchi.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=pluchi/week-1-campaign: Image 'Angel Doll Cotton-Knitted Soft Toy (Baby Pink Gold)' is pluchi's asset. Missing permission: permission_granted or collab_agreed from pluchi.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=superbottoms/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-842fcd03-5b34-4763-9dc0-ee81d64a47b0.jpg' is superbottoms's asset. Missing permission: permission_granted or collab_agreed from superbottoms.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=superbottoms/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-5cd1ec37-15d9-4db5-9c21-5868f4cb0f30.jpg' is superbottoms's asset. Missing permission: permission_granted or collab_agreed from superbottoms.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=superbottoms/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6c49d22c-4586-42c6-991f-3bd3147bac34.jpg' is superbottoms's asset. Missing permission: permission_granted or collab_agreed from superbottoms.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=suta/week-1-campaign: Image 'https://cdn.shopify.com/s/files/1/0283/7938/1805/files/manjaadi-361509.jpg?v=1753948113' is suta's asset. Missing permission: permission_granted or collab_agreed from suta.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=suta/week-1-campaign: Image 'https://cdn.shopify.com/s/files/1/0283/7938/1805/files/ReginaCassandra.png?v=1753948147' is suta's asset. Missing permission: permission_granted or collab_agreed from suta.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=suta/week-1-campaign: Image 'https://cdn.shopify.com/s/files/1/0283/7938/1805/files/aavani-636620.jpg?v=1742227311' is suta's asset. Missing permission: permission_granted or collab_agreed from suta.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-41eeaa80-180f-43a2-b4d9-732516958aeb.jpg' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-20eb596b-5327-44ff-9940-0f58cb39d665.jpg' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-0c3e0068-e2ee-48ea-8f81-c8c0a8b4d4d3.jpg' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6d173805-d29f-4bbd-9a50-4c3b39c01f75.jpg' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-2-campaign: Image 'Aaida Antique Necklace Set' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-2-campaign: Image 'Aaloka Kundan Necklace Set' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-2-campaign: Image 'Aaradhya Antique Necklace Set (Red & Green)' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=tarinika/week-2-campaign: Image 'Aashi Antique Gold Chandbali Earrings' is tarinika's asset. Missing permission: permission_granted or collab_agreed from tarinika.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-alternate/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6f8aca06-fae7-4d61-bec1-725dd7fba34d.jpg' is the-alternate's asset. Missing permission: permission_granted or collab_agreed from the-alternate.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-alternate/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4b1592a3-35b3-4603-b7c3-ea9f813b2a8a.jpg' is the-alternate's asset. Missing permission: permission_granted or collab_agreed from the-alternate.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-alternate/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4e0bf72f-ef52-46e0-a51b-c8140c7bce78.jpg' is the-alternate's asset. Missing permission: permission_granted or collab_agreed from the-alternate.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-alternate/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-47d65a03-ba9b-43a3-8392-30305f44cd49.jpg' is the-alternate's asset. Missing permission: permission_granted or collab_agreed from the-alternate.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-nesavu/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-7387352e-4e40-4231-bca7-e57676a7c5a0.jpg' is the-nesavu's asset. Missing permission: permission_granted or collab_agreed from the-nesavu.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-nesavu/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6433aedd-29b3-4384-8639-2236afc780c0.jpg' is the-nesavu's asset. Missing permission: permission_granted or collab_agreed from the-nesavu.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-nesavu/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e5ffcc3b-09a8-42da-88d9-125995ad651e.jpg' is the-nesavu's asset. Missing permission: permission_granted or collab_agreed from the-nesavu.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=the-nesavu/week-1-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-09ae64f7-3efb-42c5-a21e-dccb5566ebb7.jpg' is the-nesavu's asset. Missing permission: permission_granted or collab_agreed from the-nesavu.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=vilvah/week-2-campaign: Image 'Honey Fix Facewash (10% Raw Honey)' is vilvah's asset. Missing permission: permission_granted or collab_agreed from vilvah.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=vilvah/week-2-campaign: Image 'Goat Milk Hair Mask' is vilvah's asset. Missing permission: permission_granted or collab_agreed from vilvah.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=vilvah/week-2-campaign: Image 'Brightening Ritual Kit' is vilvah's asset. Missing permission: permission_granted or collab_agreed from vilvah.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=vilvah/week-2-campaign: Image 'Filter Kaapi Lip Balm' is vilvah's asset. Missing permission: permission_granted or collab_agreed from vilvah.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=vilvah/week-3-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/6704ac85-eab4-4666-af63-8309a83b46bb.jpg' is vilvah's asset. Missing permission: permission_granted or collab_agreed from vilvah.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=vilvah/week-3-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/cb71fee2-042c-4546-b97a-ae995d287fd1.jpg' is vilvah's asset. Missing permission: permission_granted or collab_agreed from vilvah.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 4 (rights) post=vilvah/week-3-campaign: Image 'https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/b42a4c16-5d56-410a-9c29-487850a57be8.jpg' is vilvah's asset. Missing permission: permission_granted or collab_agreed from vilvah.
+     fix: Draft copy only. Use Mela shot media instead. Default to a founder led post: Sana on camera, or Sana wearing or using a product she owns.
+FAIL rule 5 (format mix) post=(batch): 0 of 42 new posts are video. Need at least 26 (6 per 10).
+     fix: Plan more Reels. Carousel only plans fail.
+FAIL rule 6 (copy) post=_education/certdecode-01-w1-campaign: Sentence has 27 words (max 18): 'One, a named material and its percentage, not a vibe like 'e...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=_education/certdecode-01-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/chikankari-01-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Sentence has 21 words (max 18): 'Goat milk, cold pressed oils, and botanical extracts go in c...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/craft-farm-to-bottle-beauty-w1-campaign: Unverified shipping, duties or returns claim: 'Ships to the US from Vilvah, duties included at checkout.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=_education/craft-goldsmithing-isharya-w1-campaign: Sentence has 30 words (max 18): 'A goldsmith hand sets each mirror or stone before plating, h...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=_education/craft-goldsmithing-isharya-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/quality-superbottoms-w1-campaign: Sentence has 26 words (max 18): 'GOTS certified means no harmful synthetic dyes or bleach tou...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=_education/quality-superbottoms-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/ship-01-w1-campaign: Sentence has 20 words (max 18): 'Most makers pack your order in one to three days because it ...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=_education/ship-01-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/ship-01-w1-campaign: Unverified shipping, duties or returns claim: 'Then it ships by tracked courier and usually lands within two weeks.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=_education/ship-01-w1-campaign: Unverified shipping, duties or returns claim: 'One thing to check before you buy: duties.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=_education/ship-01-w1-campaign: Unverified shipping, duties or returns claim: 'Many do not, which means you may owe a customs fee on delivery.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=_education/ship-01-w1-campaign: Unverified shipping, duties or returns claim: 'It varies by brand, so read the shipping page first.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=_education/ship-01-w1-campaign: Unverified shipping, duties or returns claim: '📍 Shipping from India, explained'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=_education/sizing-01-w1-campaign: Sentence has 30 words (max 18): 'A label that says "Medium" can mean a different measurement ...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=_education/sizing-01-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/trust-small-batch-01-w1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=_education/trust-small-batch-01-w1-campaign: Unverified shipping, duties or returns claim: 'A slower ship date usually doesn't mean something went wrong.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=ankid/week-2-campaign: Sentence has 44 words (max 18): 'This edit spans a hand block printed bandana in rust gingham...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=ankid/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=ankid/week-2-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Ships to the US from Ankid'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=ankid/week-2-education-campaign: Sentence has 24 words (max 18): 'Carved wooden blocks are still stamping cotton by hand in wo...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=ankid/week-2-education-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=ankid/week-3-campaign: Caption contains an em dash near 'kid's Anar set — a red silk-Ch'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=ankid/week-3-campaign: Sentence has 23 words (max 18): 'Ankid's Anar set — a red silk-Chanderi-and-cotton kurta with...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=ankid/week-3-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=ankid/week-3-campaign: Unverified shipping, duties or returns claim: '📍 Made in India | Ships to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=babyforest/week-1-campaign: Sentence has 21 words (max 18): 'Badami Sneh is organic cold pressed almond oil, wood pressed...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=babyforest/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=babyforest/week-1-campaign: Unverified shipping, duties or returns claim: 'Ships from India to all 50 US states.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=banjaaran-studio/week-1-campaign: Sentence has 20 words (max 18): 'Working with artisan clusters across India, Banjaaran Studio...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=banjaaran-studio/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=banjaaran-studio/week-1-campaign: Unverified shipping, duties or returns claim: 'Ships to the US from Banjaaran Studio.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=banjaaran-studio/week-2-campaign: Sentence has 25 words (max 18): 'Banjaaran Studio works with textile artisans across India to...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=banjaaran-studio/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=banjaaran-studio/week-2-campaign: Unverified shipping, duties or returns claim: 'Ships to the US free from Banjaaran Studio, duties included.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=choosekind/week-1-campaign: Caption contains an em dash near 'in kids' shoes — the Dodo–LOVE'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=choosekind/week-1-campaign: Sentence has 42 words (max 18): 'Handcrafted by small ateliers in India, with a level of mate...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=choosekind/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=choosekind/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Ships to the US from ChooseKind'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=fizzy-goblet/week-1-campaign: Caption contains an em dash near '-tanned leather—techniques pas'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=fizzy-goblet/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=fizzy-goblet/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Shipped to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=fizzy-goblet/week-2-campaign: Sentence has 22 words (max 18): 'Fizzy Goblet's artisan kolhas, loafers, and juttis are handc...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=fizzy-goblet/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=fizzy-goblet/week-2-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Shipped to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=gullylabs/week-1-campaign: Caption contains an em dash near 'e of a sneaker — this drop run'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=gullylabs/week-1-campaign: Sentence has 28 words (max 18): 'Gully Labs takes India's street culture and puts regional cr...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=gullylabs/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=gullylabs/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Ships to the US from Gully Labs'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=gullylabs/week-2-campaign: Caption contains an em dash near 'ndia's streets — and near impo'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=gullylabs/week-2-campaign: Sentence has 21 words (max 18): 'Hand-finished suede and canvas, the Baaz embroidered on the ...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=gullylabs/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=gullylabs/week-2-campaign: Unverified shipping, duties or returns claim: '📍 Made in India | Ships to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=house-of-chikankari/week-2-campaign: Sentence has 22 words (max 18): 'House of Chikankari works directly with the artisans in Luck...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=house-of-chikankari/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=house-of-chikankari/week-2-campaign: Unverified shipping, duties or returns claim: 'Ships to the US from House of Chikankari.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=isharya/week-1-campaign: Sentence has 19 words (max 18): 'These drop earrings catch the light with hand cut mirrors an...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=isharya/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=isharya/week-1-campaign: Unverified shipping, duties or returns claim: 'It ships to your door now.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=isharya/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Ships to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=isharya/week-2-campaign: Sentence has 19 words (max 18): 'Each piece is finished with 18 karat gold plating, made to b...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=isharya/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=isharya/week-2-campaign: Unverified shipping, duties or returns claim: 'Isharya ships it straight to your door now.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=isharya/week-2-campaign: Unverified shipping, duties or returns claim: 'Ships to the US from Isharya.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=kaunteya/week-1-campaign: Caption contains an em dash near 'ry this Diwali — Kaunteya's ha'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=kaunteya/week-1-campaign: Sentence has 23 words (max 18): 'Set your festive table with a story this Diwali — Kaunteya's...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=kaunteya/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=kaunteya/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Hand-painted in India | Ships to the US from Kaunteya'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=kaunteya/week-2-campaign: Caption contains an em dash near 'a Oval Platter — fine bone chi'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=kaunteya/week-2-campaign: Sentence has 22 words (max 18): 'Kaunteya's Airavata Oval Platter — fine bone china, hand-pai...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=kaunteya/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=kaunteya/week-2-campaign: Unverified shipping, duties or returns claim: '📍 Made in India | Ships to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=kaunteya/week-3-campaign: Sentence has 19 words (max 18): 'Kaunteya hand paints each piece of this fine bone china in P...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=kaunteya/week-3-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=kaunteya/week-3-campaign: Unverified shipping, duties or returns claim: 'Ships to the US from Kaunteya.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=kaunteya/week-4-campaign: Sentence has 20 words (max 18): 'The bone china you'd normally wait for a trip to Delhi to br...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=kaunteya/week-4-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=kaunteya/week-4-campaign: Unverified shipping, duties or returns claim: 'The bone china you'd normally wait for a trip to Delhi to bring home now ships straight to your door.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=kaunteya/week-4-campaign: Unverified shipping, duties or returns claim: 'Ships to the US.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=nicobar/week-1-campaign: Sentence has 20 words (max 18): 'Named for the islands off India's coast, it designs linen sh...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=nicobar/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=nicobar/week-1-campaign: Unverified shipping, duties or returns claim: 'Ships to the US.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=polite-society/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=polite-society/week-1-campaign: Unverified shipping, duties or returns claim: 'This Indian label fills your feed but never seems to ship to you.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=polite-society/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Made in India | Ships to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=superbottoms/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=superbottoms/week-1-campaign: Unverified shipping, duties or returns claim: 'Ships to the US from SuperBottoms.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=suta/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=suta/week-1-campaign: Unverified shipping, duties or returns claim: 'Ships to the US.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=tarinika/week-1-campaign: Caption contains an em dash near 's across India — Tarinika's pi'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=tarinika/week-1-campaign: Sentence has 24 words (max 18): 'Antique-finish jewelry handcrafted by goldsmiths across Indi...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=tarinika/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=tarinika/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Ships to the US from Tarinika'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=the-alternate/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=the-alternate/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Shipped to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=the-alternate/week-2-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=the-alternate/week-2-campaign: Unverified shipping, duties or returns claim: '📍 Handcrafted in India | Ships to the US'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=the-nesavu/week-1-campaign: Caption contains an em dash near 'irst birthdays — The Nesavu's'.
+     fix: Replace it with a period or comma and split into two short sentences.
+FAIL rule 6 (copy) post=the-nesavu/week-1-campaign: Sentence has 23 words (max 18): 'Navratri, poojas, first birthdays — The Nesavu's pattu pavad...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=the-nesavu/week-1-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=the-nesavu/week-1-campaign: Unverified shipping, duties or returns claim: '📍 Woven in South India | Ships to the US from The Nesavu'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 6 (copy) post=vilvah/week-3-campaign: Sentence has 28 words (max 18): 'In these bottles: goat milk and pea protein in the shampoo, ...'
+     fix: Split it into short sentences.
+FAIL rule 6 (copy) post=vilvah/week-3-campaign: Voice is 'None'. Captions must be in Sana's voice.
+     fix: Rewrite as Sana, founder of Mela, and set voice: sana.
+FAIL rule 6 (copy) post=vilvah/week-3-campaign: Unverified shipping, duties or returns claim: 'Ships to the US from Vilvah.'.
+     fix: Omit the line. Or add that exact line, a check date and the brand page URL to config/verified_claims.yaml after checking shopatmela.com.
+FAIL rule 7 (link rule) post=_education/chikankari-01-w1-campaign: No same day Story draft for brand 'house-of-chikankari'.
+     fix: Add a story_drafts entry for house-of-chikankari linking to shopatmela.com/brands/house-of-chikankari with the post id in a utm tag.
+FAIL rule 7 (link rule) post=_education/craft-farm-to-bottle-beauty-w1-campaign: No same day Story draft for brand 'vilvah'.
+     fix: Add a story_drafts entry for vilvah linking to shopatmela.com/brands/vilvah with the post id in a utm tag.
+FAIL rule 7 (link rule) post=_education/craft-goldsmithing-isharya-w1-campaign: No same day Story draft for brand 'isharya'.
+     fix: Add a story_drafts entry for isharya linking to shopatmela.com/brands/isharya with the post id in a utm tag.
+FAIL rule 7 (link rule) post=_education/quality-superbottoms-w1-campaign: No same day Story draft for brand 'superbottoms'.
+     fix: Add a story_drafts entry for superbottoms linking to shopatmela.com/brands/superbottoms with the post id in a utm tag.
+FAIL rule 7 (link rule) post=aagghhoo/week-1-campaign: No same day Story draft for brand 'aagghhoo'.
+     fix: Add a story_drafts entry for aagghhoo linking to shopatmela.com/brands/aagghhoo with the post id in a utm tag.
+FAIL rule 7 (link rule) post=ankid/week-2-campaign: No same day Story draft for brand 'ankid'.
+     fix: Add a story_drafts entry for ankid linking to shopatmela.com/brands/ankid with the post id in a utm tag.
+FAIL rule 7 (link rule) post=ankid/week-2-education-campaign: No same day Story draft for brand 'ankid'.
+     fix: Add a story_drafts entry for ankid linking to shopatmela.com/brands/ankid with the post id in a utm tag.
+FAIL rule 7 (link rule) post=ankid/week-3-campaign: No same day Story draft for brand 'ankid'.
+     fix: Add a story_drafts entry for ankid linking to shopatmela.com/brands/ankid with the post id in a utm tag.
+FAIL rule 7 (link rule) post=babyforest/week-1-campaign: No same day Story draft for brand 'babyforest'.
+     fix: Add a story_drafts entry for babyforest linking to shopatmela.com/brands/babyforest with the post id in a utm tag.
+FAIL rule 7 (link rule) post=banjaaran-studio/week-1-campaign: No same day Story draft for brand 'banjaaran-studio'.
+     fix: Add a story_drafts entry for banjaaran-studio linking to shopatmela.com/brands/banjaaran-studio with the post id in a utm tag.
+FAIL rule 7 (link rule) post=banjaaran-studio/week-2-campaign: No same day Story draft for brand 'banjaaran-studio'.
+     fix: Add a story_drafts entry for banjaaran-studio linking to shopatmela.com/brands/banjaaran-studio with the post id in a utm tag.
+FAIL rule 7 (link rule) post=choosekind/week-1-campaign: No same day Story draft for brand 'choosekind'.
+     fix: Add a story_drafts entry for choosekind linking to shopatmela.com/brands/choosekind with the post id in a utm tag.
+FAIL rule 7 (link rule) post=fizzy-goblet/week-1-campaign: No same day Story draft for brand 'fizzy-goblet'.
+     fix: Add a story_drafts entry for fizzy-goblet linking to shopatmela.com/brands/fizzy-goblet with the post id in a utm tag.
+FAIL rule 7 (link rule) post=fizzy-goblet/week-2-campaign: No same day Story draft for brand 'fizzy-goblet'.
+     fix: Add a story_drafts entry for fizzy-goblet linking to shopatmela.com/brands/fizzy-goblet with the post id in a utm tag.
+FAIL rule 7 (link rule) post=gullylabs/week-1-campaign: No same day Story draft for brand 'gullylabs'.
+     fix: Add a story_drafts entry for gullylabs linking to shopatmela.com/brands/gullylabs with the post id in a utm tag.
+FAIL rule 7 (link rule) post=gullylabs/week-2-campaign: No same day Story draft for brand 'gullylabs'.
+     fix: Add a story_drafts entry for gullylabs linking to shopatmela.com/brands/gullylabs with the post id in a utm tag.
+FAIL rule 7 (link rule) post=house-of-chikankari/week-1-campaign: No same day Story draft for brand 'house-of-chikankari'.
+     fix: Add a story_drafts entry for house-of-chikankari linking to shopatmela.com/brands/house-of-chikankari with the post id in a utm tag.
+FAIL rule 7 (link rule) post=house-of-chikankari/week-2-campaign: No same day Story draft for brand 'house-of-chikankari'.
+     fix: Add a story_drafts entry for house-of-chikankari linking to shopatmela.com/brands/house-of-chikankari with the post id in a utm tag.
+FAIL rule 7 (link rule) post=isharya/week-1-campaign: No same day Story draft for brand 'isharya'.
+     fix: Add a story_drafts entry for isharya linking to shopatmela.com/brands/isharya with the post id in a utm tag.
+FAIL rule 7 (link rule) post=isharya/week-2-campaign: No same day Story draft for brand 'isharya'.
+     fix: Add a story_drafts entry for isharya linking to shopatmela.com/brands/isharya with the post id in a utm tag.
+FAIL rule 7 (link rule) post=kaunteya/week-1-campaign: No same day Story draft for brand 'kaunteya'.
+     fix: Add a story_drafts entry for kaunteya linking to shopatmela.com/brands/kaunteya with the post id in a utm tag.
+FAIL rule 7 (link rule) post=kaunteya/week-2-campaign: No same day Story draft for brand 'kaunteya'.
+     fix: Add a story_drafts entry for kaunteya linking to shopatmela.com/brands/kaunteya with the post id in a utm tag.
+FAIL rule 7 (link rule) post=kaunteya/week-3-campaign: No same day Story draft for brand 'kaunteya'.
+     fix: Add a story_drafts entry for kaunteya linking to shopatmela.com/brands/kaunteya with the post id in a utm tag.
+FAIL rule 7 (link rule) post=kaunteya/week-4-campaign: No same day Story draft for brand 'kaunteya'.
+     fix: Add a story_drafts entry for kaunteya linking to shopatmela.com/brands/kaunteya with the post id in a utm tag.
+FAIL rule 7 (link rule) post=nicobar/week-1-campaign: No same day Story draft for brand 'nicobar'.
+     fix: Add a story_drafts entry for nicobar linking to shopatmela.com/brands/nicobar with the post id in a utm tag.
+FAIL rule 7 (link rule) post=pluchi/week-1-campaign: No same day Story draft for brand 'pluchi'.
+     fix: Add a story_drafts entry for pluchi linking to shopatmela.com/brands/pluchi with the post id in a utm tag.
+FAIL rule 7 (link rule) post=polite-society/week-1-campaign: No same day Story draft for brand 'polite-society'.
+     fix: Add a story_drafts entry for polite-society linking to shopatmela.com/brands/polite-society with the post id in a utm tag.
+FAIL rule 7 (link rule) post=superbottoms/week-1-campaign: No same day Story draft for brand 'superbottoms'.
+     fix: Add a story_drafts entry for superbottoms linking to shopatmela.com/brands/superbottoms with the post id in a utm tag.
+FAIL rule 7 (link rule) post=suta/week-1-campaign: No same day Story draft for brand 'suta'.
+     fix: Add a story_drafts entry for suta linking to shopatmela.com/brands/suta with the post id in a utm tag.
+FAIL rule 7 (link rule) post=tarinika/week-1-campaign: No same day Story draft for brand 'tarinika'.
+     fix: Add a story_drafts entry for tarinika linking to shopatmela.com/brands/tarinika with the post id in a utm tag.
+FAIL rule 7 (link rule) post=tarinika/week-2-campaign: No same day Story draft for brand 'tarinika'.
+     fix: Add a story_drafts entry for tarinika linking to shopatmela.com/brands/tarinika with the post id in a utm tag.
+FAIL rule 7 (link rule) post=the-alternate/week-1-campaign: No same day Story draft for brand 'the-alternate'.
+     fix: Add a story_drafts entry for the-alternate linking to shopatmela.com/brands/the-alternate with the post id in a utm tag.
+FAIL rule 7 (link rule) post=the-alternate/week-2-campaign: No same day Story draft for brand 'the-alternate'.
+     fix: Add a story_drafts entry for the-alternate linking to shopatmela.com/brands/the-alternate with the post id in a utm tag.
+FAIL rule 7 (link rule) post=the-nesavu/week-1-campaign: No same day Story draft for brand 'the-nesavu'.
+     fix: Add a story_drafts entry for the-nesavu linking to shopatmela.com/brands/the-nesavu with the post id in a utm tag.
+FAIL rule 7 (link rule) post=vilvah/week-1-campaign: No same day Story draft for brand 'vilvah'.
+     fix: Add a story_drafts entry for vilvah linking to shopatmela.com/brands/vilvah with the post id in a utm tag.
+FAIL rule 7 (link rule) post=vilvah/week-2-campaign: No same day Story draft for brand 'vilvah'.
+     fix: Add a story_drafts entry for vilvah linking to shopatmela.com/brands/vilvah with the post id in a utm tag.
+FAIL rule 7 (link rule) post=vilvah/week-3-campaign: No same day Story draft for brand 'vilvah'.
+     fix: Add a story_drafts entry for vilvah linking to shopatmela.com/brands/vilvah with the post id in a utm tag.

@@ -1,0 +1,7 @@
+# Rule 3. Human tags per post id. people_present = a face, hands or a worn product is on the cover.
+# Text only covers and empty product staging are false. Untagged posts fail the quota.
+tags: {}
+# Example:
+# banjaaran-studio/week-2-campaign:
+#   people_present: false
+#   cover_kind: product_staging   # text_only | product_staging | person

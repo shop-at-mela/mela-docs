@@ -1,0 +1,45 @@
+# Rule 1. Roster snapshot of shopatmela.com/brands plus coverage gaps and outreach dates.
+# The validator prefers a live fetch (--live-roster). Offline it accepts this snapshot only
+# while it is younger than max_age_hours, otherwise it fails closed.
+# Refresh: python3 -m post_validators roster-update   (run where shopatmela.com is reachable)
+snapshot:
+  source: https://shopatmela.com/brands
+  fetched_at: "2026-11-13T15:00:00Z"
+  max_age_hours: 48
+  note: >
+    Fetched 2026-11-13 through a page fetcher. The page title says "23+" brands but 21
+    names were extracted, so 2 may be missing or lazy-loaded. A missing brand fails closed
+    (post blocked) until added here. Not on the page: The Nesavu, Pluchi.
+  brands:
+    - {slug: fizzy-goblet,        name: "Fizzy Goblet"}
+    - {slug: nicobar,             name: "Nicobar"}
+    - {slug: needledust,          name: "Needledust"}
+    - {slug: hemant-and-nandita,  name: "Hemant & Nandita", aliases: ["Hemant and Nandita"]}
+    - {slug: the-alternate,       name: "The Alternate India", aliases: ["The Alternate"]}
+    - {slug: banjaaran-studio,    name: "Banjaaran", aliases: ["Banjaaran Studio"]}
+    - {slug: suta,                name: "Suta"}
+    - {slug: house-of-chikankari, name: "House of Chikankari"}
+    - {slug: gullylabs,           name: "Gully Labs"}
+    - {slug: polite-society,      name: "Polite Society"}
+    - {slug: saphed,              name: "Saphed"}
+    - {slug: ankid,               name: "Ankid"}
+    - {slug: choosekind,          name: "Choose Kind", aliases: ["ChooseKind"]}
+    - {slug: masilo,              name: "Masilo"}
+    - {slug: babyforest,          name: "Baby Forest"}
+    - {slug: superbottoms,        name: "Supper Bottoms", aliases: ["SuperBottoms"]}
+    - {slug: aagghhoo,            name: "aagghhoo", aliases: ["Aagghhoo"]}
+    - {slug: tarinika,            name: "Tarinika"}
+    - {slug: kaunteya,            name: "Kaunteya"}
+    - {slug: isharya,             name: "Isharya"}
+    - {slug: vilvah,              name: "Vilvah"}
+
+# Brands that must get a first named post before any brand gets a second. Order = need.
+priority_gaps: [saphed, needledust, hemant-and-nandita, masilo]
+
+# A brand's first post is scheduled only after its first outreach DM date (America/New_York).
+# "After Nov 17" means from Nov 18 00:00 onward.
+first_outreach_dm_dates:
+  masilo: "2026-11-17"
+  saphed: "2026-11-18"
+  needledust: "2026-11-20"
+  hemant-and-nandita: "2026-11-20"

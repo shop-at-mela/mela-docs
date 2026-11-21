@@ -1,0 +1,10 @@
+# Rule 4. Per brand image rights. Default for every listed brand is "none".
+# States: owned_asset | permission_granted | collab_agreed | none
+# granted/collab/owned need `date` (YYYY-MM-DD) and `source` (where the permission is recorded).
+default_state: none
+brands: {}
+# Example (do not uncomment without a real record):
+# saphed:
+#   state: permission_granted
+#   date: "2026-11-25"
+#   source: "Instagram DM thread, founder reply"

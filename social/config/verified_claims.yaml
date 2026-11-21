@@ -1,0 +1,10 @@
+# Rule 6. A caption may state a shipping, duties or returns line only if the exact line is
+# listed here for a brand named in the post. Verify on the brand's own page on shopatmela.com.
+# Each entry: line (exact caption sentence), checked_on (date), source_url (shopatmela.com brand page).
+# Nothing is verified yet, so every such claim is omitted until a human adds it.
+brands: {}
+# Example:
+# vilvah:
+#   - line: "Free US shipping over $69."
+#     checked_on: "2026-11-13"
+#     source_url: "https://shopatmela.com/brands/vilvah"
