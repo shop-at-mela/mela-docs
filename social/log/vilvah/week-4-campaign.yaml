@@ -1,0 +1,149 @@
+---
+# Mela Social Campaign — Vilvah Week 4
+# Staged by the automated weekly staging routine, 2026-11-25. NOT scheduled/published.
+# See mela-docs/social/staging/week-of-2026-11-25.md for the full Review Sheet.
+
+brand: Vilvah Store
+brand_slug: vilvah
+week: 4
+date_posted: null
+status: staged
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Sarah
+category: beauty_and_wellness
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast
+hypothesis: "Testing angle #4 (claim-decoded) with Sarah lead on Vilvah — does single-farm traceability specificity ('own farm, cold pressed, no synthetic chemicals') outperform a vague clean-beauty framing on saves/outbound clicks?"
+gate_verdict: block   # BLOCKED on the visual-render row only — same environment gap as Ankid this week: no network access to database.blotato.io/cdn.shopify.com from this cloud sandbox to download the render for QC or composite the watermark locally. Copy and visual-source rows are clear.
+coaching_notes: "Diaspora anchor present but secondary — angle #4 leads with Sarah's certification-skepticism trigger rather than a diaspora situation hook, which matches her guardrail (never lead with Indian heritage). Hook is an untested hypothesis."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: null
+  destination: https://shopatmela.com/brands/vilvah-store?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w4&utm_content=collection_carousel
+  caption: |
+    Most clean beauty labels tell you what is not in the bottle. Here is where everything in Vilvah's actually comes from.
+
+    Vilvah grows, presses, and bottles its own ingredients on a working farm in Tamil Nadu. Goat milk, cold pressed oils, and botanical extracts go in at their freshest, with no synthetic chemicals.
+
+    This week we are spotlighting the Aloe Vera Gel, the Bestseller Hair Kit, and the Better Ageing Serum.
+
+    Featured in this carousel:
+    • Organic Aloe Vera Gel
+    • Bestseller Hair Kit
+    • Better Ageing Serum
+
+    Ships to the US from Vilvah. Duties included at checkout on US orders over $59.
+
+    Discover Vilvah on Mela →
+
+    #Vilvah #CleanBeauty #SingleOriginSkincare #NaturalHaircare #DiscoveredOnMela
+
+  products:
+    - name: Organic Aloe Vera Gel
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4d283a14-9a13-4543-be20-08443f94b1a3.jpg
+      blotato_visual_id: 261ebcec-1d97-4a19-b877-b4f04421dd53
+      watermarked: false
+      alt_text: Clear aloe vera gel bottle on a marble bathroom counter with a potted aloe plant, organic multi-purpose skin and hair gel
+      price_usd: 16
+      dev_listing_id: 6a13d515-99d2-401f-aa70-0387591db071
+      listing_status: verified_open
+      shopatmela_url: https://www.shopatmela.com/l/6a13d515-99d2-401f-aa70-0387591db071
+
+    - name: Bestseller Hair Kit
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-61689374-3d2c-4ae2-964d-5604552ab502.jpg
+      blotato_visual_id: 63a8700b-c48a-4b43-b868-3e63cf6fc399
+      watermarked: false
+      alt_text: Goat milk shampoo and conditioner duo on a wood shelf in a bright bathroom, Vilvah bestseller hair kit
+      price_usd: 40
+      dev_listing_id: 6a13d54f-551d-408f-aa3a-4bee01b3a679
+      listing_status: verified_open
+      shopatmela_url: https://www.shopatmela.com/l/6a13d54f-551d-408f-aa3a-4bee01b3a679
+
+    - name: Better Ageing Serum
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-90152ce0-7527-4cf7-a541-366843e0c6cf.jpg
+      blotato_visual_id: 8c7d0d7c-703a-4dc3-8291-ba6aac118ef2
+      watermarked: false
+      alt_text: Plant based bakuchiol face serum bottle on a stone vanity tray with a dried pomegranate half
+      price_usd: 32
+      dev_listing_id: 6a13d560-0fc4-45f7-9870-8643fb5176b8
+      listing_status: verified_open
+      shopatmela_url: https://www.shopatmela.com/l/6a13d560-0fc4-45f7-9870-8643fb5176b8
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Ayurvedic Skincare & Natural Beauty
+      board_id: "1103593152379723631"
+
+  pins:
+    - name: Organic Aloe Vera Gel
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723631"
+      title: Organic Aloe Vera Gel | Multi-Purpose Skin and Hair Care From India
+      description: Vilvah's organic aloe vera gel is cold stabilized to preserve nutrients, for skin and hair. Farm grown ingredients from Tamil Nadu, shipped to the US. Discovered on Mela.
+      alt_text: Clear aloe vera gel bottle on a marble bathroom counter with a potted aloe plant, organic multi-purpose skin and hair gel
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-4d283a14-9a13-4543-be20-08443f94b1a3.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a13d515-99d2-401f-aa70-0387591db071
+      link: https://www.shopatmela.com/l/6a13d515-99d2-401f-aa70-0387591db071?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w4&utm_content=organic_aloe_vera_gel
+
+    - name: Bestseller Hair Kit
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723631"
+      title: Goat Milk Shampoo and Conditioner Kit | Natural Hair Care From India
+      description: Vilvah's bestseller hair kit pairs goat milk shampoo with a Tucuma butter and broccoli oil conditioner to hydrate and detangle. Farm sourced in Tamil Nadu, shipped to the US. Discovered on Mela.
+      alt_text: Goat milk shampoo and conditioner duo on a wood shelf in a bright bathroom, Vilvah bestseller hair kit
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-61689374-3d2c-4ae2-964d-5604552ab502.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a13d54f-551d-408f-aa3a-4bee01b3a679
+      link: https://www.shopatmela.com/l/6a13d54f-551d-408f-aa3a-4bee01b3a679?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w4&utm_content=bestseller_hair_kit
+
+    - name: Better Ageing Serum
+      status: excluded
+      submission_id: null
+      board_id: "1103593152379723631"
+      title: Bakuchiol Face Serum | Plant Based Anti-Aging Skincare From India
+      description: Vilvah's Better Ageing Serum uses bakuchiol, blue pea flower, and pomegranate oil for overnight renewal. Farm sourced in Tamil Nadu, shipped to the US. Discovered on Mela.
+      alt_text: Plant based bakuchiol face serum bottle on a stone vanity tray with a dried pomegranate half
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-90152ce0-7527-4cf7-a541-366843e0c6cf.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a13d560-0fc4-45f7-9870-8643fb5176b8
+      link: https://www.shopatmela.com/l/6a13d560-0fc4-45f7-9870-8643fb5176b8?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w4&utm_content=better_ageing_serum
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/vilvah-store
+  checks:
+    brand_story:
+      result: pass
+      note: "Brand page live at the vilvah-store slug (NOT vilvah — corrected this run after an initial fetch of /brands/vilvah returned empty). Confirmed via blotato_create_source 2026-11-25: farm-fresh Tamil Nadu story, 61 products, free US shipping over $69 with duties included at checkout."
+    cultural_context:
+      result: pass
+      note: Single-farm traceability framing matches the live brand page and shopify_brands.py exactly.
+    product_findability:
+      result: pass
+      note: Product names listed in caption; brand page links to full catalog.
+    mobile_responsive:
+      result: tbd
+      note: Not checked this run (no browser access in this cloud sandbox).
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: No UX issues found in this run's available checks. One data-quality fix made mid-run — see notes.brand_slug_correction below.
+      mitigation: ""
+
+# NOTES
+notes:
+  cooldown_check: "CLEAR. Checked all 8 prior Vilvah dev_listing_ids (weeks 1-3) against the 3 selected here — no overlap. Last Vilvah PRODUCT post was week-3 (status published, no exact date recorded in that file); a Vilvah-sourced EDUCATION post (craft-farm-to-bottle-beauty) ran 2026-11-11, 14 days ago — different post type, noted for transparency though it doesn't trigger the product-post rotation rules."
+  listing_verification: "All 3 listings confirmed OPEN/live via blotato_create_source (same network-policy fallback as Ankid this week)."
+  brand_slug_correction: "shopatmela.com/brands/vilvah returned empty content on first fetch; the correct live slug is vilvah-store (confirmed via the product listing page's brand link, which resolved to https://www.vilvahstore.com and via a successful fetch of /brands/vilvah-store). Used vilvah-store everywhere above."
+  environment_gap: "Watermark compositing + visual-render QC could not be completed in this cloud session — see gate_verdict and mela-docs/social/staging/week-of-2026-11-25.md for detail."
+  phase_7b_status: "Not run — needs Sharetribe credentials unavailable in this cloud session. Run in the founder's local approval session after scheduling."
