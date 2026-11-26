@@ -32,11 +32,11 @@ tracking:
   utm_source_values: { instagram: instagram, pinterest: pinterest, reddit: reddit }
   example: "https://www.shopatmela.com/l/6a17b614-...?utm_source=pinterest&utm_medium=social&utm_campaign=fizzygoblet_w2&utm_content=bali_bellini_kolha_flats"
 
-# Posting cadence. Every-other-day spacing is the hard rule; the per-channel lines are current volume.
+# Posting cadence. 3-hours-apart spacing is the hard rule; the per-channel lines are current volume.
 # IG feed cadence is a multiple of 3 (theme-rows); Stories are grid-neutral and absorb overflow.
 cadence:
-  # No Blotato queue slots (useNextFreeSlot errors), so pass each post scheduledTime = prev + 24h explicitly.
-  posting_interval: daily   # 24h between posts (changed from every_other_day 2026-08-12); source of truth for both skills' scheduling
+  # No Blotato queue slots (useNextFreeSlot errors), so pass each post scheduledTime = prev + 3h explicitly.
+  posting_interval: 3h   # 3 hours between posts (changed from daily 2026-11-19, founder preference — a batch ships inside ~1 day instead of spread across 9; previously changed from every_other_day 2026-08-12); source of truth for both skills' scheduling. Pinterest's 10-pins/24h cap is a rolling-window cap, not a calendar-day one — still check it at this tighter spacing, not just at daily spacing.
   # CURRENT (cold-start) — what both skills follow now:
   pinterest: "Posts via Blotato like Instagram; cap 10/24h per account, schedule overflow past the cap"  # warmup cleared 2026-08-08 (memory project_mela_social_status)
   instagram: "MULTI-PRODUCT CAROUSELS PRIMARY (updated 2026-09-05, founder preference): IG default = a Blotato-improved collection carousel (3+ products/brand, each slide a Product Scene Placement scene — like the early Fizzy Goblet / ChooseKind posts). Reels are DEMOTED to the exception UNTIL a better reel-creation method exists (single-product Ken Burns reels underperformed on taste; founder kept the Blotato-scene reels over the real ones). Keep morph-QC: detail-critical slides (fine gold/jewelry/faces) use a real photo or founder sign-off. No grid while grid.enabled=false. (Supersedes the 2026-08-14 short-form-primary stance.)"
