@@ -12,8 +12,8 @@
 brand: null   # education content, brand-referenced (Banjaaran Studio) but not a brand post
 brand_slug: _education/craft-kantha
 week: 1
-date_posted: null   # not yet scheduled — staged only, awaiting founder approval
-status: staged   # staged | scheduled | published
+date_posted: "2026-11-27"   # scheduled via Blotato this date
+status: scheduled   # staged | scheduled | published
 platforms:
   - instagram   # education-topics.yaml marks craft-kantha instagram-only; no Reddit leg required
 format: carousel   # 2-slide: hook-card.html + teaching-card.html
@@ -31,7 +31,7 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: ded1360b-e351-44ea-8be5-e50017bdc5d2   # scheduled 2026-11-28T09:00:00Z via blotato_create_post (mediaUrls submitted as raw.githubusercontent.com links into this PR branch, per the week-of-2026-11-18 precedent — repo is public)
   destination: https://shopatmela.com/brands/banjaaran-studio?utm_source=instagram&utm_medium=social&utm_campaign=craftkantha_w1&utm_content=education
   caption: |
     That stack of worn out sarees can get a second life as kantha. Here's the stitch that does it.

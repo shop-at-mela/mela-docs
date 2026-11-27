@@ -6,8 +6,8 @@
 brand: Vilvah Store
 brand_slug: vilvah
 week: 4
-date_posted: null
-status: staged
+date_posted: "2026-11-27"
+status: scheduled
 platforms:
   - instagram
   - pinterest
@@ -18,7 +18,7 @@ category: beauty_and_wellness
 # LEARNING (warmup — see pre-publish-gate.md Step 3)
 lane: fast
 hypothesis: "Testing angle #4 (claim-decoded) with Sarah lead on Vilvah — does single-farm traceability specificity ('own farm, cold pressed, no synthetic chemicals') outperform a vague clean-beauty framing on saves/outbound clicks?"
-gate_verdict: block   # BLOCKED on the visual-render row only — same environment gap as Ankid this week: no network access to database.blotato.io/cdn.shopify.com from this cloud sandbox to download the render for QC or composite the watermark locally. Copy and visual-source rows are clear.
+gate_verdict: ship-override   # watermark + render QC were never completed (database.blotato.io/cdn.shopify.com egress-blocked in this cloud sandbox, confirmed again 2026-11-27). Founder's explicit instruction in a live session, 2026-11-27: "schedule the current without watermark i will test this in the next session." Deliberate, logged override of pre-publish-gate.md row #20, matching the week-of-2026-11-18 precedent. Founder to verify the live renders once network access is fixed.
 coaching_notes: "Diaspora anchor present but secondary — angle #4 leads with Sarah's certification-skepticism trigger rather than a diaspora situation hook, which matches her guardrail (never lead with Indian heritage). Hook is an untested hypothesis."
 northstar_metric:
   instagram_saves: null
@@ -26,7 +26,7 @@ northstar_metric:
 
 # INSTAGRAM
 instagram:
-  submission_id: null
+  submission_id: 65de384e-3077-4d96-aaac-86c8df5e5f0a   # scheduled 2026-11-27T21:00:00Z via blotato_create_post
   destination: https://shopatmela.com/brands/vilvah-store?utm_source=instagram&utm_medium=social&utm_campaign=vilvah_w4&utm_content=collection_carousel
   caption: |
     Most clean beauty labels tell you what is not in the bottle. Here is where everything in Vilvah's actually comes from.
@@ -85,8 +85,8 @@ pinterest:
 
   pins:
     - name: Organic Aloe Vera Gel
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: 7ba853f7-d54d-4d67-8304-887eacf670c5   # scheduled 2026-11-28T00:00:00Z
       board_id: "1103593152379723631"
       title: Organic Aloe Vera Gel | Multi-Purpose Skin and Hair Care From India
       description: Vilvah's organic aloe vera gel is cold stabilized to preserve nutrients, for skin and hair. Farm grown ingredients from Tamil Nadu, shipped to the US. Discovered on Mela.
@@ -96,8 +96,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6a13d515-99d2-401f-aa70-0387591db071?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w4&utm_content=organic_aloe_vera_gel
 
     - name: Bestseller Hair Kit
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: 215bb892-c15d-4dc6-8c8f-f6b94475f5f4   # scheduled 2026-11-28T03:00:00Z
       board_id: "1103593152379723631"
       title: Goat Milk Shampoo and Conditioner Kit | Natural Hair Care From India
       description: Vilvah's bestseller hair kit pairs goat milk shampoo with a Tucuma butter and broccoli oil conditioner to hydrate and detangle. Farm sourced in Tamil Nadu, shipped to the US. Discovered on Mela.
@@ -107,8 +107,8 @@ pinterest:
       link: https://www.shopatmela.com/l/6a13d54f-551d-408f-aa3a-4bee01b3a679?utm_source=pinterest&utm_medium=social&utm_campaign=vilvah_w4&utm_content=bestseller_hair_kit
 
     - name: Better Ageing Serum
-      status: excluded
-      submission_id: null
+      status: scheduled
+      submission_id: 34509a28-2002-4aca-a0e2-3db4282c6d6c   # scheduled 2026-11-28T06:00:00Z
       board_id: "1103593152379723631"
       title: Bakuchiol Face Serum | Plant Based Anti-Aging Skincare From India
       description: Vilvah's Better Ageing Serum uses bakuchiol, blue pea flower, and pomegranate oil for overnight renewal. Farm sourced in Tamil Nadu, shipped to the US. Discovered on Mela.
