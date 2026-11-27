@@ -242,7 +242,8 @@ topics:
     personas: [arun]
     source_brands: [banjaaran-studio]
     verify: true
-    status: backlog
+    status: used
+    week_used: 1  # automated staging run 2026-11-25, Arun lead; kantha claim verified against shopify_brands.py Banjaaran Studio brand_story/brand_tagline + live shopatmela.com/brands/banjaaran-studio page. See social/log/_education/craft-kantha-w1-campaign.yaml
 
   - id: craft-blockprint
     type: cultural_education

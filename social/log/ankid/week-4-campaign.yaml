@@ -1,0 +1,149 @@
+---
+# Mela Social Campaign — Ankid Week 4
+# Staged by the automated weekly staging routine, 2026-11-25. NOT scheduled/published.
+# See mela-docs/social/staging/week-of-2026-11-25.md for the full Review Sheet.
+
+brand: Ankid
+brand_slug: ankid
+week: 4
+date_posted: "2026-11-27"   # scheduled via Blotato this date — see submission_ids below
+status: scheduled   # staged | scheduled | published
+platforms:
+  - instagram
+  - pinterest
+format: collection_carousel
+persona: Priya
+category: baby_and_kids
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: fast
+hypothesis: "Testing angle #5 (occasion-in-America) with Priya lead on Ankid's hand-embroidered festive sets — does a situation-first 'costume anxiety' hook outperform craft-first framing on saves?"
+gate_verdict: ship-override   # watermark + render QC were never completed (this cloud sandbox has no network access to database.blotato.io/cdn.shopify.com — confirmed again 2026-11-27). Founder's explicit instruction in a live session, 2026-11-27: "schedule the current without watermark i will test this in the next session." Deliberate override of pre-publish-gate.md row #20 (missing watermark = blocking hard-fail), logged not silently skipped, matching the precedent set on week-of-2026-11-18 (Needledust/Tarinika). Scheduled as-is; founder to verify the live renders once network access is fixed, before the scheduled time if possible.
+coaching_notes: "Diaspora anchor: strong — scene stages a US-home Diwali/naming-ceremony moment, caption opens on Priya's 'costume energy' anxiety, not a product fact. Hook is an untested hypothesis (hook-engineering.md §7 — nothing promoted yet)."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null
+
+# INSTAGRAM
+instagram:
+  submission_id: b47a140b-60bc-4829-9cfd-b382c3b005c0   # scheduled 2026-11-27T09:00:00Z via blotato_create_post
+  destination: https://shopatmela.com/brands/ankid?utm_source=instagram&utm_medium=social&utm_campaign=ankid_w4&utm_content=collection_carousel
+  caption: |
+    Dressing your kids for Diwali in the US and don't want costume energy? Start here.
+
+    Ankid hand embroiders and hand finishes every kurta, lehenga, and sharara set in India, sized for babies and kids from newborn to age eleven. Silk Chanderi and cotton, made to match across the whole family.
+
+    A good fit for a naming ceremony, a birthday, or this year's Diwali table.
+
+    Featured in this carousel:
+    • Amaltas Kurta and Pyjama Set
+    • Camellia Ivory Kurta Lehenga Set
+    • Gulab Sharara Set with Dupatta
+
+    Ships to the US from Ankid.
+
+    Discover Ankid on Mela →
+
+    #Ankid #HandEmbroidered #DiwaliOutfit #DesiKidsFashion #DiscoveredOnMela
+
+  products:
+    - name: Amaltas Kurta and Pyjama Set
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-308c88be-bf26-42ca-8c60-2bc798f7eafc.jpg
+      blotato_visual_id: e0a84e04-3859-41fb-954c-33397e2a5abc
+      watermarked: false   # shipped unwatermarked — ship-override, see gate_verdict note
+      alt_text: Yellow silk Chanderi kurta and pajama set with hand embroidered brooch, styled in a warm sunlit nursery for Diwali
+      price_usd: 37
+      dev_listing_id: 6a5ffce0-5fe6-4c2e-9478-1dc1ac1bf23e
+      listing_status: verified_open   # confirmed via blotato_create_source 2026-11-25
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffce0-5fe6-4c2e-9478-1dc1ac1bf23e
+
+    - name: Camellia Ivory Kurta Lehenga Set
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6a6429ea-e044-4560-b88f-8ff25ab37687.jpg
+      blotato_visual_id: bdca6f85-c557-4af2-979c-71157ff13852
+      watermarked: false
+      alt_text: Ivory silk Chanderi kurta and lehenga skirt set for kids, folded on a wooden bench with a brass diya for festive dressing
+      price_usd: 71
+      dev_listing_id: 6a5ffd6e-5cbb-40d5-aa4c-da95fcb5c573
+      listing_status: verified_open
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffd6e-5cbb-40d5-aa4c-da95fcb5c573
+
+    - name: Gulab Sharara Set with Dupatta
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e01fd74b-865f-4801-9a88-eee3fc60a7b2.jpg
+      blotato_visual_id: 45137e1c-4326-4345-9852-b84048995258
+      watermarked: false
+      alt_text: Blush and ivory hand embroidered silk sharara set with dupatta, draped for a Diwali evening at home
+      price_usd: 62
+      dev_listing_id: 6a5ffedd-2a8b-4048-8a27-08b7db22abc4
+      listing_status: verified_open
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffedd-2a8b-4048-8a27-08b7db22abc4
+
+# PINTEREST
+pinterest:
+  boards:
+    - name: Indian Gift Ideas & Festive Occasions   # festive kidswear routes here, not the nursery/organic boards — see pinterest-playbook.md Ankid/Nesavu board-fit decision
+      board_id: "1103593152379723628"
+
+  pins:
+    - name: Amaltas Kurta and Pyjama Set
+      status: scheduled   # posted | scheduled | queued | excluded
+      submission_id: cfad0c10-e205-4c5d-b4dd-a45467e79988   # scheduled 2026-11-27T12:00:00Z
+      board_id: "1103593152379723628"
+      title: Yellow Silk Chanderi Kurta Pajama Set | Hand Embroidered Kids Festive Wear
+      description: Ankid's Amaltas kurta and pajama set is hand embroidered in silk Chanderi for babies and kids. A festive look for Diwali, a naming ceremony, or a birthday, shipped to the US. Discovered on Mela.
+      alt_text: Yellow silk Chanderi kurta and pajama set with hand embroidered brooch, styled in a warm sunlit nursery for Diwali
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-308c88be-bf26-42ca-8c60-2bc798f7eafc.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffce0-5fe6-4c2e-9478-1dc1ac1bf23e
+      link: https://www.shopatmela.com/l/6a5ffce0-5fe6-4c2e-9478-1dc1ac1bf23e?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w4&utm_content=amaltas_kurta_pyjama_set
+
+    - name: Camellia Ivory Kurta Lehenga Set
+      status: scheduled
+      submission_id: 62f0f2d1-e749-46e1-86bc-4311eed46219   # scheduled 2026-11-27T15:00:00Z
+      board_id: "1103593152379723628"
+      title: Ivory Silk Chanderi Kurta Lehenga Set | Hand Embroidered Kids Ethnic Wear
+      description: Ankid's Camellia kurta and lehenga set is gender neutral, hand finished in silk Chanderi for babies and kids. A dignified festive look for Diwali or a naming ceremony, shipped to the US. Discovered on Mela.
+      alt_text: Ivory silk Chanderi kurta and lehenga skirt set for kids, folded on a wooden bench with a brass diya for festive dressing
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-6a6429ea-e044-4560-b88f-8ff25ab37687.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffd6e-5cbb-40d5-aa4c-da95fcb5c573
+      link: https://www.shopatmela.com/l/6a5ffd6e-5cbb-40d5-aa4c-da95fcb5c573?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w4&utm_content=camellia_ivory_kurta_lehenga_set
+
+    - name: Gulab Sharara Set with Dupatta
+      status: scheduled
+      submission_id: bd88e513-bc95-48e6-8c63-28f18c2b0c81   # scheduled 2026-11-27T18:00:00Z
+      board_id: "1103593152379723628"
+      title: Blush Silk Sharara Set with Dupatta | Hand Embroidered Kids Festive Wear
+      description: Ankid's Gulab sharara set pairs silk Chanderi with hand embroidery and a dupatta, for babies and kids. A festive choice for Diwali gifting, shipped to the US. Discovered on Mela.
+      alt_text: Blush and ivory hand embroidered silk sharara set with dupatta, draped for a Diwali evening at home
+      image_url: https://database.blotato.io/storage/v1/object/public/public_media/40ff5931-a86e-4c86-8caf-693002fc13d9/videogen2-render-e01fd74b-865f-4801-9a88-eee3fc60a7b2.jpg
+      shopatmela_url: https://www.shopatmela.com/l/6a5ffedd-2a8b-4048-8a27-08b7db22abc4
+      link: https://www.shopatmela.com/l/6a5ffedd-2a8b-4048-8a27-08b7db22abc4?utm_source=pinterest&utm_medium=social&utm_campaign=ankid_w4&utm_content=gulab_sharara_set
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/ankid
+  checks:
+    brand_story:
+      result: pass
+      note: Brand page live; block-printed/hand-embroidered festive wear story confirmed via blotato_create_source 2026-11-25.
+    cultural_context:
+      result: pass
+      note: Caption frames occasion (Diwali, naming ceremony, birthday) matching the products' verified gift_occasion tags.
+    product_findability:
+      result: pass
+      note: Product names listed in caption; brand page links to full catalog.
+    mobile_responsive:
+      result: tbd
+      note: Not checked this run (no browser access in this cloud sandbox).
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: No UX issues found in this run's available checks.
+      mitigation: ""
+
+# NOTES
+notes:
+  cooldown_check: "CLEAR. Checked all 7 prior Ankid dev_listing_ids (week-2, week-2-education, week-3) against the 3 selected here — no overlap. Last Ankid product post was week-3, 2026-09-02 (84 days ago, well past brand_recency_days=7)."
+  listing_verification: "All 3 listings confirmed OPEN/live via blotato_create_source (shopatmela.com/l/{id} was not directly reachable by curl/WebFetch from this cloud sandbox — network policy blocks shopatmela.com for direct fetches — so the explicit fallback in the task spec, blotato_create_source, was used instead, exactly as the fallback instruction specifies)."
+  environment_gap: "Watermark compositing + visual-render QC could not be completed in this cloud session — see gate_verdict and mela-docs/social/staging/week-of-2026-11-25.md for detail. This is a network-access gap (cdn.shopify.com / database.blotato.io unreachable), not a content or process defect."
+  phase_7b_status: "Not run — needs Sharetribe credentials unavailable in this cloud session, per standing guardrail. Run in the founder's local approval session after scheduling."
+  meta_description_caveat: "The classifier-generated Meta_Description for the Amaltas listing contains the phrase 'for Indian families in the US' — a banned user-identity label per buyer-personas.md and visual-style-guide.md. This phrase was NOT used anywhere in the caption/alt text above; flagging here so the source CSV field itself is not copied verbatim in a future post."

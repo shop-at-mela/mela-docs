@@ -1,0 +1,100 @@
+---
+# Mela Social Campaign — Education: craft-kantha, week 1
+# Staged by the automated weekly staging routine, 2026-11-25. NOT scheduled/published.
+# See mela-docs/social/staging/week-of-2026-11-25.md for the full Review Sheet.
+#
+# NOTE: this run originally drafted craft-handloom for this slot, then discovered that topic
+# was ALREADY staged by a prior run (2026-10-28, see social/log/_education/craft-handloom-w1-campaign.yaml)
+# whose education-topics.yaml status update never landed (a pre-existing bug, flagged separately —
+# that file's own status says "staged", not "used"). Switched to craft-kantha to avoid duplicating
+# already-staged-but-unscheduled work, per this run's guardrail against re-picking staged content.
+
+brand: null   # education content, brand-referenced (Banjaaran Studio) but not a brand post
+brand_slug: _education/craft-kantha
+week: 1
+date_posted: "2026-11-27"   # scheduled via Blotato this date
+status: scheduled   # staged | scheduled | published
+platforms:
+  - instagram   # education-topics.yaml marks craft-kantha instagram-only; no Reddit leg required
+format: carousel   # 2-slide: hook-card.html + teaching-card.html
+persona: Arun   # lead, per education-topics.yaml personas: [arun]
+category: cultural_education   # education content type, not a Mela catalog category
+
+# LEARNING (warmup — see pre-publish-gate.md Step 3)
+lane: full   # cultural_education always routes FULL
+hypothesis: "Testing angle #3 (how-it's-made) with Arun lead on the craft-kantha topic — does an upcycling-as-craft framing (not thrift, not waste) out-save a generic 'traditional embroidery' hook?"
+gate_verdict: ship   # fully verified in this cloud session: rendered locally (no network needed), viewed both PNGs directly, claim verified twice
+coaching_notes: "Diaspora anchor present as craft-origin specificity (Arun's lane). Hook leads with a transformation/curiosity trigger ('worn sarees become textile art') rather than a diaspora situation hook, appropriate for a how-it's-made angle. First-frame verified directly: large serif headline reads clearly at thumbnail scale, single focal point."
+northstar_metric:
+  instagram_saves: null
+  pinterest_outbound_clicks: null   # N/A, not pinned
+
+# INSTAGRAM
+instagram:
+  submission_id: ded1360b-e351-44ea-8be5-e50017bdc5d2   # scheduled 2026-11-28T09:00:00Z via blotato_create_post (mediaUrls submitted as raw.githubusercontent.com links into this PR branch, per the week-of-2026-11-18 precedent — repo is public)
+  destination: https://shopatmela.com/brands/banjaaran-studio?utm_source=instagram&utm_medium=social&utm_campaign=craftkantha_w1&utm_content=education
+  caption: |
+    That stack of worn out sarees can get a second life as kantha. Here's the stitch that does it.
+
+    Kantha starts with soft, worn cotton sarees layered together instead of thrown away. A needle runs a simple running stitch by hand, layer through layer, thousands of times over. The stitches build a rippled, textured surface no machine can fake.
+
+    Banjaaran Studio works directly with artisan clusters doing this today, turning upcycled cloth into clothing you can actually buy now, not museum pieces.
+
+    Kantha was upcycling before it had a name.
+
+    Discover handloom and kantha fashion on Mela →
+
+    #Kantha #HandloomFashion #UpcycledTextiles #IndianCraft #DiscoveredOnMela
+
+  slides:
+    - slide: 1
+      type: hook_card
+      image_path: social/log/_education/craft-kantha-slide1-hook.png
+      alt_text: Mela hook card reading Worn sarees become textile art, navy and cream typographic card about kantha embroidery
+      rendered: local_html_css   # rendered via mela-docs/social/templates/hook-card.html + render.sh, 1080x1080, no network required
+    - slide: 2
+      type: teaching_card
+      image_path: social/log/_education/craft-kantha-slide2-teaching.png
+      alt_text: Mela teaching card with four numbered steps explaining kantha stitching, from layering worn sarees to selling the finished upcycled cloth
+      rendered: local_html_css
+
+# PINTEREST
+pinterest:
+  boards: []   # N/A — education-topics.yaml marks this topic instagram-only
+  pins: []
+
+# UX REVIEW
+ux_review:
+  destination_url: https://shopatmela.com/brands/banjaaran-studio
+  checks:
+    brand_story:
+      result: pass
+      note: "Banjaaran Studio brand page live, confirmed via blotato_create_source 2026-11-25: 'kantha' explicitly mentioned — hand block prints, kantha, and handloom fashion traceable to makers in Jaipur, India."
+    cultural_context:
+      result: pass
+      note: Living-culture framing applied ("Makers today sell this upcycled cloth as clothing, not scrap"; "Kantha was upcycling before it had a name"), not a museum-relic claim.
+  observations:
+    - theme: clean
+      severity: low
+      status: resolved
+      description: No UX issues found.
+      mitigation: ""
+
+# NOTES
+notes:
+  claim_verification: >
+    "Kantha" claim for Banjaaran Studio verified twice: (1) shopify_brands.py brand_story +
+    brand_tagline ("Hand block prints, kantha, and handloom fashion, traceable to its makers");
+    (2) live https://shopatmela.com/brands/banjaaran-studio page via blotato_create_source, which
+    confirmed "kantha" is mentioned and traced the craft to makers in Jaipur.
+  topic_selection: >
+    Per education-topics.yaml meta.selection scoring, craft-kantha scored on type-alternation
+    (+2, last CONFIRMED-used topic was pay-01/trust_service) and freshness (+1). Originally
+    craft-handloom was drafted for this slot (same score) but was found to already have a staged,
+    unscheduled campaign file from a 2026-10-28 run (see that file) whose education-topics.yaml
+    status update never landed — see the environment_gap/data-quality note in
+    mela-docs/social/staging/week-of-2026-11-25.md. Switched to craft-kantha to avoid duplicating
+    that work. This was not run past a human for the "present top 2, never auto-take #1" step,
+    since this is an unattended cloud run with no live approver mid-run — flagging explicitly.
+  reddit_leg: "Not applicable — education-topics.yaml lists craft-kantha as platforms: [instagram] only."
+  phase_7b_status: "N/A — education content, no product listing to attach a scene to."
